@@ -1,10 +1,6 @@
 Extension: PractitionerNationality
 Id: Practitioner-Nationality
-* ^meta.lastUpdated = "2022-07-25T17:25:24.6900037+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 * . ^short = "Nationalité du professionnel"

@@ -1,10 +1,6 @@
 Extension: HealthcareServiceActivityType
 Id: HealthcareService-ActivityType
-* ^meta.lastUpdated = "2022-07-25T17:35:25.9463394+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * value[x] only CodeableConcept

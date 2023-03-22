@@ -2,11 +2,7 @@ Profile: ASPractitionerRoleAmeli
 Parent: PractitionerRole
 Id: AS-PractitionerRole-Ameli
 Description: "Profil créé à partir de la ressource PractitionerRole dans le cadre de l'annuaire santé - décrit les caractéristiques opérationnelles de l’exercice d’un professionnel au sein d’une organisation interne."
-* ^meta.lastUpdated = "2022-07-26T16:47:14.6392724+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+
 * meta.source = "https://annuaire.sante.fr" (exactly)
 * meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-PractitionerRole-Ameli" (exactly)
 * meta.security ..0

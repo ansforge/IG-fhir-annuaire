@@ -2,8 +2,7 @@ Profile: ASPractitionerRole
 Parent: PractitionerRole
 Id: AS-PractitionerRole
 Description: "Profil créé à partir de la ressource PractitionerRole dans le cadre de l'annuaire santé - décrit l'exercice professionel et la situation d'exercice - contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les aractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée"
-* ^version = "0.3"
-* ^status = #draft
+
 * meta.source = "https://annuaire.sante.fr" (exactly)
 * meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-PractitionerRole" (exactly)
 * meta.security ..0
