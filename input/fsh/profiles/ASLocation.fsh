@@ -7,4 +7,4 @@ Description: "Profil créé à partir de la ressource Location dans le cadre de 
 * ^status = #draft
 * ^publisher = "ANS"
 * ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
-* address only FrAddressExtended
+* address only $fr-address-extended
