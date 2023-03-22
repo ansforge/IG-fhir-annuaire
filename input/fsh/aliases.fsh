@@ -58,4 +58,3 @@ Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV
 Alias: $JDV-J98-StatutHospitalier-RASS = https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS
 Alias: $JDV-J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS
 Alias: $FrAddressExtended = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended
-Alias: $FrHumanName = http://www.interopsante.org/fhir/structuredefinition/datatype/fr-human-name
