@@ -1,5 +1,5 @@
 Profile: ASOrganization
-Parent: FrOrganization
+Parent: $FrOrganization
 Id: AS-Organization
 Description: "Profil créé à partir de la ressource FrOrganization dans le cadre de l'annuaire santé - décrit les organismes du domaine sanitaire, médico-social et social."
 
