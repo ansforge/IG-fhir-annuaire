@@ -1,4 +1,3 @@
-Alias: $FrOrganization = http://interopsante.org/fhir/StructureDefinition/FrOrganization
 Alias: $FrAddress = http://interopsante.org/fhir/StructureDefinition/FrAddress
 Alias: $Device-PeriodImplentation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Device-PeriodImplentation
 Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/HealthcareService-DeleteAutorisationImplantation
