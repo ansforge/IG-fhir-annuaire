@@ -2,12 +2,7 @@ Profile: ASPractitioner
 Parent: Practitioner
 Id: AS-Practitioner
 Description: "Profil créé à partir de la ressource Practitioner dans le cadre de l'annuaire santé - décrit les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
-* ^meta.lastUpdated = "2022-10-28T09:46:26.2219259+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^experimental = false
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+
 * meta.source = "https://annuaire.sante.fr" (exactly)
 * meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Practitioner" (exactly)
 * meta.security ..0
@@ -25,7 +20,7 @@ Description: "Profil créé à partir de la ressource Practitioner dans le cadre
     PractitionerAuthorization named authorization 0..* and
     PractitionerBirthPlace named birthPlace 0..0 and
     PractitionerDeceasedDateTime named deceasedDateTime 0..* and
-    MailboxMSS named mailboxMSS 0..*
+    $MailboxMSS named mailboxMSS 0..*
 
 * extension[authorization] ^min = 0
 * extension[authorization] ^isModifier = false
@@ -193,5 +188,5 @@ Description: "Profil créé à partir de la ressource Practitioner dans le cadre
 * qualification.issuer.identifier.assigner ..0
 * qualification.issuer.display ..0
 * communication ..0
-* communication only CodeableConceptTimed
+* communication only $CodeableConceptTimed
 * communication.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_G00-Langue/FHIR/TRE-G00-Langue" (exactly)

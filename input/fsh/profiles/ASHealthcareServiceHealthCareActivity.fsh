@@ -2,11 +2,7 @@ Profile: ASHealthcareServiceHealthCareActivity
 Parent: HealthcareService
 Id: AS-HealthcareService-HealthCareActivity
 Description: "Profil créé à partir de la ressource HealthcareService dans le cadre de l'annuaire santé - décrit les activités sanitaires rattachées aux etablisemments FINESS."
-* ^meta.lastUpdated = "2022-07-29T12:26:34.1117165+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+
 * meta.source = "https://annuaire.sante.fr" (exactly)
 * meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-HealthcareService-HealthCareActivity" (exactly)
 * meta.security ..0

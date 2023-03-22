@@ -4,6 +4,7 @@ Alias: $Device-PeriodImplentation = https://annuaire.sante.gouv.fr/fhir/Structur
 Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/HealthcareService-DeleteAutorisationImplantation
 Alias: $FrHumanName = http://interopsante.org/fhir/StructureDefinition/FrHumanName
 Alias: $FrContactPoint = http://interopsante.org/fhir/StructureDefinition/FrContactPoint
+Alias: $mailboxMSS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS
 Alias: $Location-AS = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Location-AS
 Alias: $iso21090-ADXP-careOf = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-careOf
 Alias: $iso21090-ADXP-additionalLocator = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator

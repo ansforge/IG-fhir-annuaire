@@ -2,11 +2,7 @@ Profile: ASDevice
 Parent: Device
 Id: AS-Device
 Description: "Profil créé à partir de la ressource Device dans le cadre de l'annuaire santé - décrit les équipements matériels lourds ('EML') mis en oeuvre au sein d'établissements."
-* ^meta.lastUpdated = "2022-07-29T12:25:46.72588+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+
 * meta.source = "https://annuaire.sante.fr" (exactly)
 * meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Device" (exactly)
 * meta.security ..0

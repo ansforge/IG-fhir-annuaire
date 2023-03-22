@@ -2,10 +2,7 @@ Profile: ASOrganization
 Parent: FrOrganization
 Id: AS-Organization
 Description: "Profil créé à partir de la ressource FrOrganization dans le cadre de l'annuaire santé - décrit les organismes du domaine sanitaire, médico-social et social."
-* ^meta.lastUpdated = "2022-10-28T09:41:33.609065+00:00"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+
 * meta.source = "https://annuaire.sante.fr" (exactly)
 * meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Organization" (exactly)
 * meta.security ..0
@@ -22,7 +19,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 * extension contains
     DigitalCertificate named digitalCertificate 0..0 and
     OrganizationPharmacyLicence named pharmacyLicence 0..*  and
-    MailboxMSS named mailboxMSS 0..* 
+    $MailboxMSS named mailboxMSS 0..* 
 	
 * extension[usePeriod] ^sliceName = "usePeriod"
 * extension[usePeriod] ^min = 0
@@ -30,7 +27,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
 * extension[digitalCertificate] ^isModifier = false
-* extension[mailboxMSS] only MailboxMSS
+* extension[mailboxMSS] only $MailboxMSS
 * extension[mailboxMSS] ^sliceName = "mailboxMSS"
 * extension[mailboxMSS] ^min = 0
 * extension[mailboxMSS] ^isModifier = false
