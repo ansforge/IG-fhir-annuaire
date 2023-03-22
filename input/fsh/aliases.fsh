@@ -57,4 +57,5 @@ Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J
 Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
 Alias: $JDV-J98-StatutHospitalier-RASS = https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS
 Alias: $JDV-J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS
-Alias: $fr-address-extended = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended
+Alias: $FrAddressExtended = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended
+Alias: $FrHumanName = http://www.interopsante.org/fhir/structuredefinition/datatype/fr-human-name
