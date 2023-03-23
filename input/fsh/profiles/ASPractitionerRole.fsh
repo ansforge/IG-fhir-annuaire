@@ -157,7 +157,7 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
 * code.coding[metierPharmacienG05].system = "https://mos.esante.gouv.fr/NOS/TRE_G05-SousSectionTableauCNOP/FHIR/TRE-G05-SousSectionTableauCNOP" (exactly)
 * code.coding[metierPharmacienG05].system ^short = "Sous-section ou à défaut section du tableau de l’Ordre des pharmaciens."
 
-* specialty only CodeableConceptTimed
+* specialty only $codeableConcept-timed
 * specialty ^slicing.discriminator.type = #value
 * specialty ^slicing.discriminator.path = "coding.system"
 * specialty ^slicing.description = "Slicing pour séparer savoir-faire et attribution particulière"
