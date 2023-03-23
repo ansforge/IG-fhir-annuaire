@@ -1,6 +1,5 @@
 Alias: $FrPractitioner = http://interopsante.org/fhir/StructureDefinition/FrPractitioner
 Alias: $FrOrganization = http://interopsante.org/fhir/StructureDefinition/FrOrganization
-Alias: $FrAddress = http://interopsante.org/fhir/StructureDefinition/FrAddress
 Alias: $FrHumanName = http://interopsante.org/fhir/StructureDefinition/FrHumanName
 Alias: $FrContactPoint = http://interopsante.org/fhir/StructureDefinition/FrContactPoint
 Alias: $iso21090-ADXP-careOf = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-careOf
