@@ -244,7 +244,7 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
 * location ^type.aggregation = #contained
 * healthcareService ..0
 * telecom ..0
-* telecom only FrContactPoint
+* telecom only $FrContactPoint
 * availableTime ..0
 * notAvailable ..0
 * availabilityExceptions ..0
