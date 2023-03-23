@@ -27,7 +27,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
 * extension[digitalCertificate] ^isModifier = false
-* extension[mailboxMSS] only $MailboxMSS
+* extension[mailboxMSS] only MailboxMSS
 * extension[mailboxMSS] ^sliceName = "mailboxMSS"
 * extension[mailboxMSS] ^min = 0
 * extension[mailboxMSS] ^isModifier = false
@@ -103,7 +103,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
 * telecom.period.id ..0
 * telecom.period.start ..0
-* address only $FrAddressExtended
+* address only FrAddressExtended
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)"
 * partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
 * contact ..0
