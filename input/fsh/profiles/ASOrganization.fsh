@@ -103,8 +103,12 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
 * telecom.period.id ..0
 * telecom.period.start ..0
+
 * address only $fr-address-extended
+
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)"
 * partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
+
 * contact ..0
+
 * endpoint ..0
