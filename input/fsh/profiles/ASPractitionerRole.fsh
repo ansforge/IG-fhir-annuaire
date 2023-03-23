@@ -21,7 +21,7 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
     PractitionerRoleEducationLevel named educationLevel 0..1 and
     PractitionerRoleSmartCard named smartCard 0..1 and
     PractitionerRolePartOf named partOf 0..0 and
-    MailboxMSS named mailboxMSS 0..1
+    $mailboxMSS named mailboxMSS 0..1
 
 * extension[name] ^isModifier = false
 * extension[name].value[x].id ..0

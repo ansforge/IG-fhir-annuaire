@@ -13,7 +13,7 @@ Alias: $iso21090-ADXP-postBox = http://hl7.org/fhir/StructureDefinition/iso21090
 Alias: $fr-practioner-identifier-type = http://interopsante.org/fhir/ValueSet/fr-practioner-identifier-type
 
 Alias: $mailboxMSS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS
-Alias: $FrAddressExtended = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended
+Alias: $fr-address-extended = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended
 Alias: $Device-PeriodImplentation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Device-PeriodImplentation
 Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/HealthcareService-DeleteAutorisationImplantation
 Alias: $Location-AS = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Location-AS
