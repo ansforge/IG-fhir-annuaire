@@ -19,7 +19,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 * extension contains
     DigitalCertificate named digitalCertificate 0..0 and
     OrganizationPharmacyLicence named pharmacyLicence 0..*  and
-    $mailboxMSS named mailboxMSS 0..* 
+    mailboxMSS named mailboxMSS 0..* 
 	
 * extension[usePeriod] ^sliceName = "usePeriod"
 * extension[usePeriod] ^min = 0
@@ -27,7 +27,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
 * extension[digitalCertificate] ^isModifier = false
-* extension[mailboxMSS] only $MailboxMSS
+* extension[mailboxMSS] only MailboxMSS
 * extension[mailboxMSS] ^sliceName = "mailboxMSS"
 * extension[mailboxMSS] ^min = 0
 * extension[mailboxMSS] ^isModifier = false

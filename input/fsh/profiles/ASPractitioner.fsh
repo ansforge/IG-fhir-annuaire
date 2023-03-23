@@ -20,7 +20,7 @@ Description: "Profil créé à partir de la ressource Practitioner dans le cadre
     PractitionerAuthorization named authorization 0..* and
     PractitionerBirthPlace named birthPlace 0..0 and
     PractitionerDeceasedDateTime named deceasedDateTime 0..* and
-    $MailboxMSS named mailboxMSS 0..*
+    MailboxMSS named mailboxMSS 0..*
 
 * extension[authorization] ^min = 0
 * extension[authorization] ^isModifier = false
@@ -188,5 +188,5 @@ Description: "Profil créé à partir de la ressource Practitioner dans le cadre
 * qualification.issuer.identifier.assigner ..0
 * qualification.issuer.display ..0
 * communication ..0
-* communication only $CodeableConceptTimed
+* communication only CodeableConceptTimed
 * communication.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_G00-Langue/FHIR/TRE-G00-Langue" (exactly)
