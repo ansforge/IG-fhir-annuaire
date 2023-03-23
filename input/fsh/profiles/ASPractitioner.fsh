@@ -188,5 +188,5 @@ Description: "Profil créé à partir de la ressource Practitioner dans le cadre
 * qualification.issuer.identifier.assigner ..0
 * qualification.issuer.display ..0
 * communication ..0
-* communication only $CodeableConceptTimed
+* communication only $codeableConcept-timed
 * communication.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_G00-Langue/FHIR/TRE-G00-Langue" (exactly)
