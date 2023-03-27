@@ -15,7 +15,7 @@ L'objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir
 Les workflows associés à ce repository (.github/workflows) permettent : 
 * D'exécuter Sushi pour vérifier la grammaire
 * De faire les tests avec le validator_cli
-* De publier les pages : https://ansforge.github.io/IG_ans-ig-annuaire-dp/ig/main/
+* De publier les pages : https://ansforge.github.io/IG_ans-ig-annuaire-donnee-publique/ig/main/
 
 # Notes
 Ce repo "sample IG ANS" a été créé à partir du repo "sample-ig" de l'organisation GitHub FHIR : https://github.com/FHIR/sample-ig.
