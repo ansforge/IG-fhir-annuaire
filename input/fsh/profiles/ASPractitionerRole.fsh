@@ -19,7 +19,6 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
     PractitionerRoleRegistration named registration 0..* and
     PractitionerRoleEducationLevel named educationLevel 0..1 and
     PractitionerRoleSmartCard named smartCard 0..1 and
-    PractitionerRolePartOf named partOf 0..0 and
     $mailboxMSS named mailboxMSS 0..1
 
 * extension[name] ^isModifier = false
@@ -54,8 +53,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[educationLevel].extension[issuer] 0..0
 
 * extension[smartCard] ^isModifier = false
-* extension[partOf] ^short = "Référence vers l'id de l'exercice pro de ratachement"
-* extension[partOf] ^isModifier = false
+
 * extension[mailboxMSS] ^definition = "BALs MSS de type PER rattaché à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
 * extension[mailboxMSS] ^isModifier = false
 * extension[mailboxMSS].id ..0

@@ -1,5 +1,7 @@
-Extension: PractitionerNationality
-Id: Practitioner-Nationality
+Extension: 		PractitionerNationality
+Id: 			Practitioner-Nationality
+Title:			"EAS Practitioner Nationality"
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nationalité du professionnel (Practitioner)."
 
 * ^context.type = #element
 * ^context.expression = "Practitioner"

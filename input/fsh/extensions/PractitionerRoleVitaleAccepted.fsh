@@ -1,10 +1,8 @@
-Extension: PractitionerRoleVitaleAccepted
-Id: PractitionerRole-VitaleAccepted
-* ^meta.lastUpdated = "2022-07-08T13:28:56.3272356+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleVitaleAccepted
+Id: 			PractitionerRole-VitaleAccepted
+Title:			"EAS PractitionerRole Vitale Accepted"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l’indicateur Carte Vitale acceptée qui précise si le professionnel, dans le cadre de cette situation opérationnelle, dispose des moyens techniques pour prendre en charge la carte vitale ou pas."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * . ^short = "l’indicateur Carte Vitale acceptée précise si le professionnel, dans le cadre de cette situation opérationnelle, dispose des moyens techniques pour prendre en charge la carte vitale ou pas."

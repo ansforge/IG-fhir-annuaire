@@ -1,10 +1,8 @@
-Extension: PractitionerRoleContracted
-Id: PractitionerRole-Contracted
-* ^meta.lastUpdated = "2022-07-25T17:23:18.1587036+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleContracted
+Id: 			PractitionerRole-Contracted
+Title:			"EAS PractitionerRole Contracted"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du secteur de conventionnement du professionnel libéral par la CNAM (extracts AMELI)."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * value[x] only CodeableConcept

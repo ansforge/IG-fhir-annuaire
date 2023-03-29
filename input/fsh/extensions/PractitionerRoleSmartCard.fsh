@@ -1,11 +1,8 @@
-Extension: PractitionerRoleSmartCard
-Id: PractitionerRole-SmartCard
-Description: "Informations descriptives du moyen d’identification des personnes physiques via une carte de professionnel."
-* ^meta.lastUpdated = "2022-07-25T17:18:48.1178465+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleSmartCard
+Id: 			PractitionerRole-SmartCard
+Title:			"EAS Practitioner Role Smart Card"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrire les informations de la carte CPx utilisée comme moyen d’identification des personnes physiques."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * extension ^slicing.discriminator.type = #value
@@ -32,5 +29,3 @@ Description: "Informations descriptives du moyen d’identification des personne
 * extension[cancellationDate].value[x] ^comment = "Cette opposition implique la révocation des certifications embarquées dans la carte"
 * extension[date] ^min = 0
 * extension[date].value[x] only Meta
-* extension[date].value[x].source = "https://annuaire.sante.fr" (exactly)
-* extension[date].value[x].profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/PractitionerRole-SmartCard" (exactly)

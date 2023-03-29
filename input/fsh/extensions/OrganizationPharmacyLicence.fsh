@@ -1,11 +1,8 @@
-Extension: OrganizationPharmacyLicence
-Id: Organization-PharmacyLicence
-Description: "Numéro de licence officine"
-* ^meta.lastUpdated = "2022-07-25T17:28:38.8305088+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		OrganizationPharmacyLicence
+Id: 			Organization-PharmacyLicence
+Title:			"EAS Organization Pharmacy Licence"
+Description: 	"Extension créée dans le cadre de l'annuaire santé pour prise en compte de la licence d’exploitation d’une officine."
+
 * ^context.type = #element
 * ^context.expression = "Organization"
 * . ^short = "Numéro licence officine"

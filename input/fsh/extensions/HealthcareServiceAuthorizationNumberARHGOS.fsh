@@ -1,10 +1,8 @@
-Extension: HealthcareServiceAuthorizationNumberARHGOS
-Id: HealthcareService-AuthorizationNumberARHGOS
-* ^meta.lastUpdated = "2022-07-25T17:34:00.7673353+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		HealthcareServiceAuthorizationNumberARHGOS
+Id: 			HealthcareService-AuthorizationNumberARHGOS
+Title:			"EAS Healthcare Service Authorization Number ARHGOS"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du numéro d'autorisation ARHGOS."
+
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * . ^short = "Numéro autorisation ARGHOS"

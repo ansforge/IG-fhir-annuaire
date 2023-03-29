@@ -1,11 +1,8 @@
-Extension: PractitionerRoleRegistration
-Id: PractitionerRole-Registration
-Description: "Inscription/référencement du professionnel. Première inscription si \"isFirst = true\"."
-* ^meta.lastUpdated = "2022-07-25T17:19:33.8929367+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleRegistration
+Id: 			PractitionerRole-Registration
+Title:			"EAS Practitioner Role Registration"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\"."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * extension ^slicing.discriminator.type = #value

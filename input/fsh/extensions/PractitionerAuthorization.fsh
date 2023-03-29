@@ -1,11 +1,8 @@
-Extension: PractitionerAuthorization
-Id: Practitioner-Authorization
-Description: "Autorisation d'exercice"
-* ^meta.lastUpdated = "2022-07-25T17:28:43.7645544+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerAuthorization
+Id: 			Practitioner-Authorization
+Title:			"EAS Practitioner Authorization"
+Description:	"Extension créée dans le cadre de l'annuaire santé pour prise en compte de l'autorisation d'exercice du professionnel (Practitioner)."
+
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 * extension ^slicing.discriminator.type = #value

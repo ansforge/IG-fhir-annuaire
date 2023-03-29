@@ -1,10 +1,8 @@
-Extension: HealthcareServiceDeleteAutorizationImplantation
-Id: HealthcareService-DeleteAutorizationImplantation
-* ^meta.lastUpdated = "2022-07-25T17:32:36.909984+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		HealthcareServiceDeleteAutorizationImplantation
+Id: 			HealthcareService-DeleteAutorizationImplantation
+Title:			"EAS Healthcare Service Delete Autorization Implantation"
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour en compte de l'indicateur de suppression de l'autorisation de l'activité de soins."
+
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * . ^short = "Indicateur suppression sur implantation"

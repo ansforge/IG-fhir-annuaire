@@ -1,11 +1,8 @@
-Extension: PractitionerDeceasedDateTime
-Id: Practitioner-DeceasedDateTime
-Description: "Date of death of the practitioner if applicable."
-* ^meta.lastUpdated = "2022-07-25T17:25:57.5901528+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerDeceasedDateTime
+Id: 			Practitioner-DeceasedDateTime
+Title:			"EAS Practitioner Deceased Date Time"
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de décès du professionnel (Date of death of the practitioner if applicable)."		
+
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 * value[x] ^slicing.discriminator.type = #type

@@ -1,10 +1,8 @@
-Extension: PractitionerRoleActivityType
-Id: PractitionerRole-ActivityType
-* ^meta.lastUpdated = "2022-07-25T17:24:45.7871829+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleActivityType
+Id: 			PractitionerRole-ActivityType
+Title:			"EAS PractitionerRole Activity Type"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte des plages horaires types propres au professionnel."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole.availableTime"
 * value[x] only code

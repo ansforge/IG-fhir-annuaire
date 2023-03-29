@@ -1,10 +1,8 @@
-Extension: PractitionerBirthPlace
-Id: Practitioner-BirthPlace
-* ^meta.lastUpdated = "2022-07-25T17:26:30.8116702+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerBirthPlace
+Id: 			Practitioner-BirthPlace
+Title:			"EAS Practitioner Birth Place"
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du lieu de naissance du professionnel (Practitioner)."
+
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 * value[x] ^slicing.discriminator.type = #type

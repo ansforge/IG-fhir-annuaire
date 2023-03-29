@@ -1,5 +1,7 @@
-Extension: HealthcareServiceActivityType
-Id: HealthcareService-ActivityType
+Extension: 		HealthcareServiceActivityType
+Id: 			HealthcareService-ActivityType
+Title:			"EAS Healthcare Service Activity Type"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrire les types d’activités sanitaires des établissements FINESS."
 
 * ^context.type = #element
 * ^context.expression = "HealthcareService"

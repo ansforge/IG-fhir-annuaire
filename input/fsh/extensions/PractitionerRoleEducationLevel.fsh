@@ -1,11 +1,8 @@
-Extension: PractitionerRoleEducationLevel
-Id: PractitionerRole-EducationLevel
-Description: "Niveau de formation acquis de l'étudiant."
-* ^meta.lastUpdated = "2022-07-25T17:22:37.3111839+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleEducationLevel
+Id: 			PractitionerRole-EducationLevel
+Title:			"EAS Practitioner Role Education Level"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrire le niveau de formation acquis d'un étudiant."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * extension ^slicing.discriminator.type = #value

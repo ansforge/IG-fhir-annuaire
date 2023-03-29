@@ -1,7 +1,7 @@
 Extension: 		DeviceNumberaAuthorizationARHGOS
 Id: 			Device-NumberAuthorizationARHGOS
 Title:			"EAS Device Numbera Authorization ARHGOS"
-Description:	"Extension créée dans le cadre de l'annuaire santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd."
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd."
 
 * ^context.type = #element
 * ^context.expression = "Device"

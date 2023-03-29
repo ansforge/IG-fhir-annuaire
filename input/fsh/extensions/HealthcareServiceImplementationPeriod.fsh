@@ -1,10 +1,8 @@
-Extension: HealthcareServiceImplementationPeriod
-Id: HealthcareService-ImplementationPeriod
-* ^meta.lastUpdated = "2022-07-25T17:31:59.3499615+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		HealthcareServiceImplementationPeriod
+Id: 			HealthcareService-ImplementationPeriod
+Title:			"EAS Healthcare Service Implementation Period"
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour en compte de la date d'échéance de l'autorisation de l'activité de soins."
+
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * value[x] only Period

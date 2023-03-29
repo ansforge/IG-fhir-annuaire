@@ -1,10 +1,8 @@
-Extension: PractitionerRoleAppointmentRequired
-Id: PractitionerRole-AppointmentRequired
-* ^meta.lastUpdated = "2022-07-08T13:17:18.9970158+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleAppointmentRequired
+Id: 			PractitionerRole-AppointmentRequired
+Title:			"EAS PractitionerRole Appointment Required"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du type de consultation proposé par le professionnel de santé."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole.availableTime"
 * . ^short = "Type de consultation proposé par le professionnel de santé"
