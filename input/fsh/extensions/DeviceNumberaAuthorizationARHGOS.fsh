@@ -1,10 +1,8 @@
-Extension: DeviceNumberaAuthorizationARHGOS
-Id: Device-NumberAuthorizationARHGOS
-* ^meta.lastUpdated = "2022-07-25T17:42:26.8637043+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		DeviceNumberaAuthorizationARHGOS
+Id: 			Device-NumberAuthorizationARHGOS
+Title:			"EAS Device Numbera Authorization ARHGOS"
+Description:	"Extension créée dans le cadre de l'annuaire santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd."
+
 * ^context.type = #element
 * ^context.expression = "Device"
 * . ^short = "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML"

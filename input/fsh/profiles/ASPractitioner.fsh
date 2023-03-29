@@ -1,10 +1,9 @@
-Profile: ASPractitioner
-Parent: Practitioner
-Id: AS-Practitioner
-Description: "Profil créé à partir de la ressource Practitioner dans le cadre de l'annuaire santé - décrit les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
+Profile: 		ASPractitioner
+Parent: 		Practitioner
+Id: 			AS-Practitioner
+Title:			"AS Practitioner"
+Description: 	"Profil créé à partir de la ressource Practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
 
-* meta.source = "https://annuaire.sante.fr" (exactly)
-* meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Practitioner" (exactly)
 * meta.security ..0
 * meta.tag ..0
 * implicitRules ..0

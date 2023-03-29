@@ -1,10 +1,9 @@
-Profile: ASOrganization
-Parent: FrOrganization
-Id: AS-Organization
-Description: "Profil créé à partir de la ressource FrOrganization dans le cadre de l'annuaire santé - décrit les organismes du domaine sanitaire, médico-social et social."
+Profile: 		ASOrganization
+Parent: 		FrOrganization
+Id: 			AS-Organization
+Title:			"AS Organization"
+Description: 	"Profil créé à partir de la ressource FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public."
 
-* meta.source = "https://annuaire.sante.fr" (exactly)
-* meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Organization" (exactly)
 * meta.security ..0
 * meta.tag ..0
 * extension ^slicing.discriminator.type = #value
@@ -14,7 +13,6 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le cad
 
 * extension[shortName] 0..0
 * extension[description] 0..0
-
 
 * extension contains
     DigitalCertificate named digitalCertificate 0..0 and

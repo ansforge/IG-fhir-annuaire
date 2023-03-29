@@ -1,10 +1,9 @@
-Profile: ASHealthcareServiceHealthCareActivity
-Parent: HealthcareService
-Id: AS-HealthcareService-HealthCareActivity
-Description: "Profil créé à partir de la ressource HealthcareService dans le cadre de l'annuaire santé - décrit les activités sanitaires rattachées aux etablisemments FINESS."
+Profile: 		ASHealthcareServiceHealthCareActivity
+Parent: 		HealthcareService
+Id: 			AS-HealthcareService-HealthCareActivity
+Title:			"AS HealthcareService HealthCare Activity"
+Description:	"Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS."
 
-* meta.source = "https://annuaire.sante.fr" (exactly)
-* meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-HealthcareService-HealthCareActivity" (exactly)
 * meta.security ..0
 * meta.tag ..0
 * implicitRules ..0

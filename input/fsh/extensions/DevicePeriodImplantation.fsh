@@ -1,5 +1,7 @@
-Extension: DevicePeriodImplantation
-Id: Device-PeriodImplantation
+Extension: 		DevicePeriodImplantation
+Id: 			Device-PeriodImplantation
+Title:			"EAS Device Period Implantation"
+Description:	"Extension créée dans le cadre de l'annuaire santé pour prise en compte des dates de mise en oeuvre d’un équipement matériel lourd."
 
 * ^context.type = #element
 * ^context.expression = "Device"

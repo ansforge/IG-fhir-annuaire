@@ -1,8 +1,8 @@
 Profile: 		ASDevice
 Parent: 		Device
 Id: 			AS-Device
-Title:			"AS Device"
-Description: 	"Profil créé à partir de la ressource Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement."
+Title: 			"AS Device"
+Description:	"Profil créé à partir de la ressource Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement."
 
 * meta.security ..0
 * meta.tag ..0

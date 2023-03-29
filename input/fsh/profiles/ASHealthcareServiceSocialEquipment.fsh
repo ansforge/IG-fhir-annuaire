@@ -1,10 +1,9 @@
-Profile: ASHealthcareServiceSocialEquipment
-Parent: HealthcareService
-Id: AS-HealthcareService-SocialEquipment
-Description: "Profil créé à partir de la ressource HealthcareService dans le cadre de l'annuaire santé - décrit les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS."
+Profile: 		ASHealthcareServiceSocialEquipment
+Parent: 		HealthcareService
+Id: 			AS-HealthcareService-SocialEquipment
+Title:			"AS HealthcareService Social Equipment"
+Description: 	"Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS."
 
-* meta.source = "https://annuaire.sante.fr" (exactly)
-* meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-HealthcareService-SocialEquipment" (exactly)
 * meta.security ..0
 * meta.tag ..0
 * implicitRules ..0

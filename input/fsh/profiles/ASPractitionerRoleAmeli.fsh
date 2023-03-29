@@ -1,10 +1,9 @@
-Profile: ASPractitionerRoleAmeli
-Parent: PractitionerRole
-Id: AS-PractitionerRole-Ameli
-Description: "Profil créé à partir de la ressource PractitionerRole dans le cadre de l'annuaire santé - décrit les caractéristiques opérationnelles de l’exercice d’un professionnel au sein d’une organisation interne."
+Profile: 		ASPractitionerRoleAmeli
+Parent: 		PractitionerRole
+Id: 			AS-PractitionerRole-Ameli
+Title:			"AS PractitionerRole Ameli"
+Description: 	"Profil créé à partir de la ressource PractitionerRole dans le contexte de l'Annuaire Santé pour décrire les caractéristiques opérationnelles de l’exercice d’un professionnel au sein d’une organisation interne."
 
-* meta.source = "https://annuaire.sante.fr" (exactly)
-* meta.profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-PractitionerRole-Ameli" (exactly)
 * meta.security ..0
 * meta.tag ..0
 * implicitRules ..0
