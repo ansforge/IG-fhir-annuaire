@@ -25,6 +25,15 @@ Alias: $HealthcareService-authorizationNumberARHGOS = https://apifhir.annuaire.s
 Alias: $HealthcareService-implementationPeriod = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-implementationPeriod
 Alias: $HealthcareService-deleteAutorisationImplantation = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-deleteAutorisationImplantation
 Alias: $HealthcareService-dateUpdateActivity = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-dateUpdateActivity
+Alias: $digitalCertificate = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/digitalCertificate
+Alias: $organization-pharmacyLicence = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence
+Alias: $practitioner-nationality = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-nationality
+Alias: $practitioner-authorization = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-authorization
+Alias: $practitioner-birthPlace = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-birthPlace
+Alias: $practitioner-deceasedDateTime = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-deceasedDateTime
+Alias: $practitionerRole-name = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name
+Alias: $practitionerRole-educationLevel = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-educationLevel
+Alias: $practitionerRole-smartCard = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-smartCard
 
 Alias: $JDV-J135-EquipementMaterielLourd-RASS = https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS
 Alias: $JDV-J132-ModaliteActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS
