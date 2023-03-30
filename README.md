@@ -20,7 +20,7 @@ On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire
   * HealthcareService-SocialEquipment pour les équipements sociaux
   * HealthcareService-HealthCareActivity pour les activités de soin
 * Practitioner : Ressource comportant toutes les données publiques concernant les données d’identification pérennes des « [professionnels de santé](https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b) »
-* PractitionerRole : Ressource comportant toutes les données publiques concernant les données des exercices pro et des situations d’exercice des professionnels de santé décrites dans le MOS (https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b)
+* PractitionerRole : Ressource comportant toutes les données publiques concernant les données des [exercices professionnels](https://mos.esante.gouv.fr/2.html#_5579aac4-b414-41f1-8569-2e99403e3af3) et des [situations d’exercice](https://mos.esante.gouv.fr/2.html#_86e1685b-9e1d-47fb-bb66-d23ca0eb9679) des professionnels
 
 ## Profils utilisés
 * ans.annuaire.fhir.r4(0.2.0) : « [mailboxMSS](https://simplifier.net/resolve?scope=ANS.annuaire.fhir.r4@0.2.0&canonical=https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS) », « [FrAddressExtended](https://simplifier.net/resolve?scope=ANS.annuaire.fhir.r4@0.2.0&canonical=https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended) » et « [CodeableConceptTimed](https://simplifier.net/resolve?scope=ANS.annuaire.fhir.r4@0.2.0&canonical=https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed) »
