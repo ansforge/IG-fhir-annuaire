@@ -23,8 +23,8 @@ On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire
 * PractitionerRole : Ressource comportant toutes les données publiques concernant les données des exercices pro et des situations d’exercice des professionnels de santé décrites dans le MOS (https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b)
 
 ## Profils utilisés
-* ans.annuaire.fhir.r4(0.2.0) : « mailboxMSS », « Device-PeriodImplentation », « [FrAddressExtended](https://simplifier.net/resolve?scope=ANS.annuaire.fhir.r4@0.2.0&canonical=https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended) » et « codeableConcept-timed »
-* hl7.fhir.fr.core (1.1.0) : « FrPractitioner », « [FrOrganization](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrOrganization) », « FrHumanName », « FrContactPoint » et « fr-practioner-identifier-type »
+* ans.annuaire.fhir.r4(0.2.0) : « [mailboxMSS](https://simplifier.net/resolve?scope=ANS.annuaire.fhir.r4@0.2.0&canonical=https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS) », « Device-PeriodImplentation », « [FrAddressExtended](https://simplifier.net/resolve?scope=ANS.annuaire.fhir.r4@0.2.0&canonical=https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended) » et « [CodeableConceptTimed](https://simplifier.net/resolve?scope=ANS.annuaire.fhir.r4@0.2.0&canonical=https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed) »
+* hl7.fhir.fr.core (1.1.0) : « FrPractitioner », « [FrOrganization](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrOrganization) », « [FrHumanName](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrHumanName) », « [FrContactPoint](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrContactPoint) », « [FrAddress](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrAddress) » et « fr-practioner-identifier-type »
 
 # CI/CD
 Les workflows associés à ce repository (.github/workflows) permettent : 
@@ -33,7 +33,7 @@ Les workflows associés à ce repository (.github/workflows) permettent :
 * De publier les pages : https://ansforge.github.io/IG-fhir-annuaire-donnee-publique/ig/main/
 
 # Notes
-Ce repo "sample IG ANS" a été créé à partir du repo "sample-ig" de l'organisation GitHub FHIR : https://github.com/FHIR/sample-ig.
+Ce repo "sample IG ANS" a été créé à partir du repo "sample-ig" de l'organisation GitHub FHIR : https://github.com/FHIR/sample-ig.                                                                                                                                                                                                                                                                                                                                                                                                         
 
 Un commentaire ? Une remarque ? Utilisez les GitHub [issues](https://docs.github.com/fr/issues) pour indiquer vos propositions d'amélioration et de correction.
 
