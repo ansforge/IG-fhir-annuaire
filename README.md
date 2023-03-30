@@ -13,7 +13,7 @@ L'objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir
 
 On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire.
 
-Les principales ressources profilées sont :
+## Ressources profilées 
 * Organization : Ressource comportant toutes les données publiques des structures décrites dans le MOS (https://mos.esante.gouv.fr/4.html#_f6152a96-2f8f-4f69-89f5-18f024d4b4d8)
 * Device : Ressource comportant toutes le données publiques concernant les données complémentaires FINESS « équipements matériels lourds » décrites dans le MOS (https://mos.esante.gouv.fr/5.html#_1a21e9b8-d686-41ff-806d-38572f961ec6)
 * HealthcareService : Ressource divisée en deux profils pour décrire les activitéa de soin et les équipements sociaux décrites dans le MOS (https://mos.esante.gouv.fr/5.html#_2cdde74b-1b29-4d63-a2bc-c7ac5018b149 )
@@ -22,6 +22,9 @@ Les principales ressources profilées sont :
 * Practitioner : Ressource comportant toutes les données publiques concernant les données d’identification pérennes des professionnels de santé décrites dans le MOS (https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b)
 * PractitionerRole : Ressource comportant toutes les données publiques concernant les données des exercices pro et des situations d’exercice des professionnels de santé décrites dans le MOS (https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b)
 
+## Profils utilisés
+* ans.annuaire.fhir.r4(0.2.0): « mailboxMSS », « Device-PeriodImplentation », « fr-address-extended » et « codeableConcept-timed »
+* hl7.fhir.fr.core (1.1.0) : « FrPractitioner », « FrOrganization », « FrHumanName », « FrContactPoint », « fr-practioner-identifier-type »
 
 # CI/CD
 Les workflows associés à ce repository (.github/workflows) permettent : 
