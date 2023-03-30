@@ -16,7 +16,7 @@ On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire
 ## Ressources profilées 
 * Organization : Ressource comportant toutes les données publiques des « [structures](https://mos.esante.gouv.fr/4.html#_f6152a96-2f8f-4f69-89f5-18f024d4b4d8) »
 * Device : Ressource comportant toutes le données publiques concernant les données complémentaires FINESS « [équipements matériels lourds](https://mos.esante.gouv.fr/5.html#_1a21e9b8-d686-41ff-806d-38572f961ec6) »
-* HealthcareService : Ressource divisée en deux profils pour décrire les activités de soin et les équipements sociaux décrites dans le MOS (https://mos.esante.gouv.fr/5.html#_2cdde74b-1b29-4d63-a2bc-c7ac5018b149 )
+* HealthcareService : Ressource divisée en deux profils pour décrire les [activités de soin](https://mos.esante.gouv.fr/5.html#_2f0d6658-e0f7-4486-a646-424b09f01f76) et les [équipements sociaux ](https://mos.esante.gouv.fr/5.html#_def51d8f-2eb8-47f8-9c30-b03709096666) 
   * HealthcareService-SocialEquipment pour les équipements sociaux
   * HealthcareService-HealthCareActivity pour les activités de soin
 * Practitioner : Ressource comportant toutes les données publiques concernant les données d’identification pérennes des « [professionnels de santé](https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b) »
