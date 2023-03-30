@@ -15,7 +15,7 @@ On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire
 
 ## Ressources profilées 
 * Organization : Ressource comportant toutes les données publiques des structures décrites dans le MOS (https://mos.esante.gouv.fr/4.html#_f6152a96-2f8f-4f69-89f5-18f024d4b4d8)
-* Device : Ressource comportant toutes le données publiques concernant les données complémentaires FINESS « équipements matériels lourds » décrites dans le MOS (https://mos.esante.gouv.fr/5.html#_1a21e9b8-d686-41ff-806d-38572f961ec6)
+* Device : Ressource comportant toutes le données publiques concernant les données complémentaires FINESS « [équipements matériels lourds](https://mos.esante.gouv.fr/5.html#_1a21e9b8-d686-41ff-806d-38572f961ec6) »
 * HealthcareService : Ressource divisée en deux profils pour décrire les activitéa de soin et les équipements sociaux décrites dans le MOS (https://mos.esante.gouv.fr/5.html#_2cdde74b-1b29-4d63-a2bc-c7ac5018b149 )
   * HealthcareService-SocialEquipment pour les équipements sociaux
   * HealthcareService-HealthCareActivity pour les activités de soin
