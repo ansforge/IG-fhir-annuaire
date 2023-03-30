@@ -17,6 +17,7 @@ Alias: $Device-PeriodImplentation = https://annuaire.sante.gouv.fr/fhir/Structur
 Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/HealthcareService-DeleteAutorisationImplantation
 Alias: $Location-AS = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Location-AS
 Alias: $codeableConcept-timed = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed
+Alias: $Device-authorizationDateDevice = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-authorizationDateDevice
 
 Alias: $JDV-J135-EquipementMaterielLourd-RASS = https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS
 Alias: $JDV-J132-ModaliteActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS
