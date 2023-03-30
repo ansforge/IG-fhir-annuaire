@@ -1,10 +1,8 @@
-Extension: PractitionerRoleHasCAS
-Id: PractitionerRole-HasCAS
-* ^meta.lastUpdated = "2022-07-08T13:19:10.1242412+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleHasCAS
+Id: 			PractitionerRole-HasCAS
+Title:			"EAS PractitionerRole OPTAM"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'option pratique tarifaire maîtrisée (OPTAM)."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * . ^short = "Option pratique tarifaire maîtrisée"

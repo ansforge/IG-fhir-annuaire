@@ -1,10 +1,8 @@
-Extension: PractitionerRoleHomeCare
-Id: PractitionerRole-HomeCare
-* ^meta.lastUpdated = "2022-07-08T13:18:54.8596606+00:00"
-* ^version = "0.3"
-* ^status = #draft
-* ^publisher = "ANS"
-* ^contact.name = "monserviceclient.annuaire@esante.gouv.fr"
+Extension: 		PractitionerRoleHomeCare
+Id: 			PractitionerRole-HomeCare
+Title:			"EAS PractitionerRole HomeCare"
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'indicateur visite à domicile qui précise si le professionnel, dans le cadre de cette situation opérationnelle, propose des visites à domicile ou pas."
+
 * ^context.type = #element
 * ^context.expression = "PractitionerRole.availableTime"
 * . ^short = "Consultation à domicile"
