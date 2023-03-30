@@ -15,10 +15,10 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension ^slicing.rules = #open
 * extension ^min = 0
 * extension contains
-    PractitionerRoleName named name 0..* and
+    $practitionerRole-name named name 0..* and
     PractitionerRoleRegistration named registration 0..* and
-    PractitionerRoleEducationLevel named educationLevel 0..1 and
-    PractitionerRoleSmartCard named smartCard 0..1 and
+    $practitionerRole-educationLevel named educationLevel 0..1 and
+    $practitionerRole-smartCard named smartCard 0..1 and
     $mailboxMSS named mailboxMSS 0..1
 
 * extension[name] ^isModifier = false

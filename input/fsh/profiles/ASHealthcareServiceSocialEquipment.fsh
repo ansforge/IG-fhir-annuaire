@@ -14,8 +14,8 @@ Description: 	"Profil créé à partir de la ressource HealthcareService dans le
 * extension ^slicing.rules = #open
 * extension ^min = 0
 * extension contains
-    HealthcareServiceAuthorizationDate named authorizationDate 0..1 and
-    HealthcareServiceImplementationPeriod named installationDate 0..1
+    $HealthcareService-authorizationDate named authorizationDate 0..1 and
+    $HealthcareService-implementationPeriod named installationDate 0..1
 * extension[installationDate] ^isModifier = false
 * identifier ..0
 * providedBy ^short = "Référence vers la structure FINESS ET"

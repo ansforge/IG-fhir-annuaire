@@ -15,10 +15,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension ^min = 0
 
 * extension contains
-    PractitionerNationality named nationality 0..0 and
-    PractitionerAuthorization named authorization 0..* and
-    PractitionerBirthPlace named birthPlace 0..0 and
-    PractitionerDeceasedDateTime named deceasedDateTime 0..* and
+    $practitioner-nationality named nationality 0..0 and
+    $practitioner-authorization named authorization 0..* and
+    $practitioner-birthPlace named birthPlace 0..0 and
+    $practitioner-deceasedDateTime named deceasedDateTime 0..* and
     $mailboxMSS named mailboxMSS 0..*
 
 * extension[authorization] ^min = 0
