@@ -14,7 +14,7 @@ Description:	"Profil créé à partir de la ressource Device dans le contexte de
 * extension ^slicing.rules = #open
 * extension ^min = 0
 * extension contains
-    DeviceNumberaAuthorizationARHGOS named numberAuthorizationARHGOS 0..1 and
+    $Device-numberAuthorizationARHGOS named numberAuthorizationARHGOS 0..1 and
     $Device-authorizationDateDevice named authorizationDateDevice 0..1 and
     DevicePeriodImplantation named periodImplantation 0..1
 * identifier ^short = "Numéro autorisation ARGHOS"

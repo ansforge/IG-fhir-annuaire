@@ -18,6 +18,13 @@ Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sant
 Alias: $Location-AS = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Location-AS
 Alias: $codeableConcept-timed = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed
 Alias: $Device-authorizationDateDevice = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-authorizationDateDevice
+Alias: $Device-numberAuthorizationARHGOS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-numberAuthorizationARHGOS
+Alias: $HealthcareService-activityType = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-activityType
+Alias: $HealthcareService-authorizationDate = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationDate
+Alias: $HealthcareService-authorizationNumberARHGOS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationNumberARHGOS
+Alias: $HealthcareService-implementationPeriod = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-implementationPeriod
+Alias: $HealthcareService-deleteAutorisationImplantation = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-deleteAutorisationImplantation
+Alias: $HealthcareService-dateUpdateActivity = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-dateUpdateActivity
 
 Alias: $JDV-J135-EquipementMaterielLourd-RASS = https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS
 Alias: $JDV-J132-ModaliteActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS
