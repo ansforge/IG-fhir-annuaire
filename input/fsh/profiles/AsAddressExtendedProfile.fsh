@@ -1,8 +1,9 @@
-Profile:        AsAddressExtendedProfile
-Parent:         FrAddress
-Title:          "As Address Extended Profile"
-Id:             fr-address-extended
-Description:    ""
+Profile: AsAddressExtendedProfile
+Parent: FrAddress
+Title: "As Address Extended Profile"
+Id: fr-address-extended
+Description: ""
+
 * ^url = "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended"
 
 * extension ^slicing.discriminator.type = #value
