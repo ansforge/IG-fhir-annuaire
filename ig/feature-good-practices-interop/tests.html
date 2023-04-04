@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ANS.FHIR.FR.ANNUAIRE-DONNEE-PUBLIQUE\Tests - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+    <!-- CSS only -->
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+<div id="family-nav">
+    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+  </div>
+  <div id="ans-nav">
+    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+  </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Annuaire Santé données publiques</span>
+            <br/>
+            <span style="display:inline-block;">0.0.3 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="construction_des_flux.html">Construction des flux</a>
+      </li>
+      <li>
+        <a href="st_flux1.html">Flux 01</a>
+      </li>
+      <li>
+        <a href="st_flux2.html">Flux 02</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Ressources de conformance</a>
+  </li>
+  <li>
+    <a href="tests.html">Tests</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="about.html">A propos de ce guide</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Tests</b></li>
+
+          <span style="float:right;">
+
+            <a href="downloads.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="about.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
+  <h2>Tests</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#présentation" id="markdown-toc-présentation">Présentation</a></li>
+  <li><a href="#projectathon" id="markdown-toc-projectathon">Projectathon</a></li>
+</ul>
+
+</div>
+<h3 id="présentation">Présentation</h3>
+
+<div style="text-align: center;"><?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="498.9583px" preserveAspectRatio="none" style="width:614px;height:498px;background:#00000000;" version="1.1" viewBox="0 0 614 498" width="614.5833px" zoomAndPan="magnify"><defs /><g><rect fill="#999999" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="82.2917" x="10.4167" y="219.5231" /><text fill="#EEEEEE" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" textLength="40.625" x="31.25" y="253.893">Tests</text><rect fill="#343852" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="150" x="144.7917" y="60.5713" /><a href="https://interop.esante.gouv.fr/" target="_top" title="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" xlink:href="https://interop.esante.gouv.fr/" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="108.3333" x="165.625" y="94.9412">Espace de test</text></a><rect fill="#999999" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="73.9583" x="346.875" y="20.8333" /><a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="32.2917" x="367.7083" y="55.2032">CGU</text></a><path d="M294.7917,89.8926 L305.2083,89.8926 C320.8333,89.8926 320.8333,50.1546 336.4583,50.1546 L346.875,50.1546 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#999999" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="93.75" x="346.875" y="100.3092" /><a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="52.0833" x="367.7083" y="134.6792">Manuel</text></a><path d="M294.7917,89.8926 L305.2083,89.8926 C320.8333,89.8926 320.8333,129.6305 336.4583,129.6305 L346.875,129.6305 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><path d="M92.7083,248.8444 L103.125,248.8444 C118.75,248.8444 118.75,89.8926 134.375,89.8926 L144.7917,89.8926 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#D20050" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="110.4167" x="144.7917" y="140.0472" /><a href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="68.75" x="165.625" y="174.4171">HAPI FHIR</text></a><path d="M92.7083,248.8444 L103.125,248.8444 C118.75,248.8444 118.75,169.3685 134.375,169.3685 L144.7917,169.3685 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#EAB9BF" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="133.3333" x="144.7917" y="219.5231" /><text fill="#EEEEEE" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" textLength="91.6667" x="165.625" y="253.893">Projectathon</text><rect fill="#999999" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="133.3333" x="330.2083" y="179.7852" /><a href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="91.6667" x="351.0417" y="214.1551">Présentation</text></a><path d="M278.125,248.8444 L288.5417,248.8444 C304.1667,248.8444 304.1667,209.1064 319.7917,209.1064 L330.2083,209.1064 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#999999" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="181.25" x="330.2083" y="259.2611" /><a href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="139.5833" x="351.0417" y="293.631">Consulter les Tests</text></a><path d="M278.125,248.8444 L288.5417,248.8444 C304.1667,248.8444 304.1667,288.5824 319.7917,288.5824 L330.2083,288.5824 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><path d="M92.7083,248.8444 L103.125,248.8444 C118.75,248.8444 118.75,248.8444 134.375,248.8444 L144.7917,248.8444 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#383837" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="223.9583" x="144.7917" y="378.4749" /><text fill="#EEEEEE" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" textLength="182.2917" x="165.625" y="412.8448">Verification de conformité</text><rect fill="#999999" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="181.25" x="420.8333" y="338.737" /><a href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="139.5833" x="441.6667" y="373.1069">Consulter les Tests</text></a><path d="M368.75,407.7962 L379.1667,407.7962 C394.7917,407.7962 394.7917,368.0583 410.4167,368.0583 L420.8333,368.0583 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#999999" height="58.6426" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="171.875" x="420.8333" y="418.2129" /><a href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:type="simple"><text fill="#FD7E14" font-family="&quot;Verdana&quot;" font-size="14.5833" lengthAdjust="spacing" text-decoration="underline" textLength="130.2083" x="441.6667" y="452.5828">Programme Ségur</text></a><path d="M368.75,407.7962 L379.1667,407.7962 C394.7917,407.7962 394.7917,447.5342 410.4167,447.5342 L420.8333,447.5342 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><path d="M92.7083,248.8444 L103.125,248.8444 C118.75,248.8444 118.75,407.7962 134.375,407.7962 L144.7917,407.7962 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /></g></svg></div>
+
+<h4 id="espace-de-test">Espace de test</h4>
+<p>Cet outil permet de vérifier la conformité  :</p>
+<ul>
+  <li>des documents CDA</li>
+  <li>des archives IHE_XDM.ZIP utilisés pour les échanges</li>
+  <li>Des ressources FHIR</li>
+  <li>…..</li>
+</ul>
+
+<p>Il est accessible en ligne :</p>
+<ul>
+  <li><a href="https://interop.esante.gouv.fr/">https://interop.esante.gouv.fr/</a></li>
+</ul>
+
+<p>Il est notamment utilisé lors des Projectathons organisés par l’ANS pour les éditeurs.</p>
+
+<h4 id="hapi-fhir">HAPI FHIR</h4>
+
+<p>Cette methode est particulièrement utile lors de la phase de modélisation de nouveaux profils, ou lors de la création d’exemples.</p>
+
+<p>Vous pouvez retouver une description complète via le lien ci-dessous :</p>
+<ul>
+  <li><a href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil">https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil</a></li>
+</ul>
+
+<h3 id="projectathon">Projectathon</h3>
+<p>L’ANS organise régulièrement des Projectathons pour permettre à un industriel de vérifier la conformité de l’implémentation des spécifications d’interopérabilité et de réaliser des tests d’interopérabilité  avec d’autres éditeurs.</p>
+
+<p>Vous serez informé par l’ANS des prochains projectathons (date, lieu,…) pour pouvoir y participer.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="downloads.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="about.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire-donnee-publique#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 4, 2023 08:30+0000">2023-04-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                  | <a style="color: #81BEF7" target="_blank" href="http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
+                
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+
+  <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+  <!-- Fin ajout ANS -->
+
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+
+
+  <!-- AJOUT ANS -->
+
+<footer class="footer footer-principal" role="contentinfo">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" height="77" loading="lazy" />
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" height="74" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+          <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg class="svg-icon svg-angle-right" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+              <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li>
+               -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>
+
