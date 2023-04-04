@@ -1,6 +1,6 @@
 Profile: 		ASHealthcareServiceSocialEquipment
 Parent: 		HealthcareService
-Id: 			AS-HealthcareService-SocialEquipment
+Id: 			as-healthcareservice-social-equipment
 Title:			"AS HealthcareService Social Equipment"
 Description: 	"Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS."
 
