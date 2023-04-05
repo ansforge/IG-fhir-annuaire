@@ -73,12 +73,7 @@ Alias: $JDV-J129-CategorieEtablissement-RASS = https://mos.esante.gouv.fr/NOS/JD
 Alias: $JDV-J78-Civilite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS
 Alias: $JDV-J79-CiviliteExercice-RASS = https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS
 Alias: $JDV-J82-Langue-RASS = https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS
-Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS
-Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
 Alias: $JDV-J98-StatutHospitalier-RASS = https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS
 Alias: $JDV-J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS
 Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS
 Alias: $JDV_J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
-Alias: $JDV_J98-StatutHospitalier-RASS = https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS
-Alias: $JDV_J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR
-
