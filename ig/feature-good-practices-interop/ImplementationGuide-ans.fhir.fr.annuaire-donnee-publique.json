@@ -10,7 +10,7 @@
   "name" : "AnnuaireSantdonnespubliques",
   "title" : "Annuaire Santé données publiques",
   "status" : "draft",
-  "date" : "2023-04-04T08:35:39+00:00",
+  "date" : "2023-04-05T10:55:45+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -603,12 +603,24 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/fr-address-extended"
+      },
+      "name" : "As Address Extended Profile",
+      "description" : "Extension créée dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-device"
       },
-      "name" : "AS Device",
+      "name" : "As Device Profile",
       "description" : "Profil créé à partir de la ressource Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement.",
       "exampleBoolean" : false
     },
@@ -618,9 +630,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/AS-HealthcareService-HealthCareActivity"
+        "reference" : "StructureDefinition/as-healthcareservice-healthcare-activity"
       },
-      "name" : "AS HealthcareService HealthCare Activity",
+      "name" : "As HealthcareService HealthCare Activity Profile",
       "description" : "Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS.",
       "exampleBoolean" : false
     },
@@ -630,9 +642,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/AS-HealthcareService-SocialEquipment"
+        "reference" : "StructureDefinition/as-healthcareservice-social-equipment"
       },
-      "name" : "AS HealthcareService Social Equipment",
+      "name" : "AS HealthcareService Social Equipment Profile",
       "description" : "Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS.",
       "exampleBoolean" : false
     },
@@ -642,9 +654,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/AS-Location"
+        "reference" : "StructureDefinition/as-location"
       },
-      "name" : "AS Location",
+      "name" : "As Location Profile",
       "description" : "Profil créé à partir de la ressource Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRole.",
       "exampleBoolean" : false
     },
@@ -654,9 +666,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/AS-Organization"
+        "reference" : "StructureDefinition/as-organization"
       },
-      "name" : "AS Organization",
+      "name" : "As Organization Profile",
       "description" : "Profil créé à partir de la ressource FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public.",
       "exampleBoolean" : false
     },
@@ -666,9 +678,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/AS-Practitioner"
+        "reference" : "StructureDefinition/as-practitioner"
       },
-      "name" : "AS Practitioner",
+      "name" : "As Practitioner Profile",
       "description" : "Profil créé à partir de la ressource Practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social.",
       "exampleBoolean" : false
     },
@@ -678,21 +690,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/AS-PractitionerRole"
+        "reference" : "StructureDefinition/as-practitionerrole"
       },
-      "name" : "AS PractitionerRole",
+      "name" : "As PractitionerRole Profile",
       "description" : "Profil créé à partir de la ressource PractitionerRole dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/fr-address-extended"
-      },
-      "name" : "FrAddressExtended",
       "exampleBoolean" : false
     },
     {
@@ -701,9 +702,9 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/Device-PeriodImplantation"
+        "reference" : "StructureDefinition/as-ext-device-Period-implantation"
       },
-      "name" : "EAS Device Period Implantation",
+      "name" : "AS Device Period Implantation Extension",
       "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte des dates de mise en oeuvre d’un équipement matériel lourd.",
       "exampleBoolean" : false
     },
@@ -713,9 +714,9 @@
         "valueString" : "CapabilityStatement"
       }],
       "reference" : {
-        "reference" : "CapabilityStatement/ASClientCapabilityStatement"
+        "reference" : "CapabilityStatement/AsClientCapabilityStatement"
       },
-      "name" : "ASClientCapabilityStatement",
+      "name" : "AsClientCapabilityStatement",
       "exampleBoolean" : false
     }],
     "page" : {
