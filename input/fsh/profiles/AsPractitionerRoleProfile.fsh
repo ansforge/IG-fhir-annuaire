@@ -237,7 +237,7 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
 * specialty[attributionParticuliere].coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R03-AttributionParticuliere/FHIR/TRE-R03-AttributionParticuliere" (exactly)
 
 * location ..0
-* location only reference(as-location)
+* location only Reference(as-location)
 * location ^type.aggregation = #contained
 * healthcareService ..0
 * telecom ..0
