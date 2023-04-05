@@ -117,48 +117,64 @@ Description: "Profil créé à partir de la ressource Practitioner dans le conte
     deegreeR36 0..1 and
     degreeR47 0..1 and
     degreeR226 0..1
+
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Types de diplôme du RASS"
+
 * qualification.code.coding[degreeR48] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR48] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR48].system ^short = "Diplôme d'Etat français"
+
 * qualification.code.coding[degreeR49] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR49] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR49].system ^short = "Diplôme d'études spécialisées (DES"
+
 * qualification.code.coding[degreeR50] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR50] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR50].system ^short = "Diplôme d'études spécialisées complémentaires non qualifiants (DESC I)"
+
 * qualification.code.coding[degreeR51] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR51] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR51].system ^short = "Diplôme d'études spécialisées complémentaires qualifiants (DESC II)"
+
 * qualification.code.coding[degreeR52] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR52] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR52].system ^short = "Diplôme de capacité de médecine"
+
 * qualification.code.coding[degreeR53] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR53] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
-* qualification.code.coding[degreeR53].system ^short = "Diplôme d'un pays de l'espace économique européen."
+* qualification.code.coding[degreeR53].system ^short = "Diplôme d'un pays de l'espace économique européen"
+
 * qualification.code.coding[degreeR54] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR54] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
-* * qualification.code.coding[degreeR54].system ^short = "Diplôme universitaire ou interuniversitaire"
+* qualification.code.coding[degreeR54].system ^short = "Diplôme universitaire ou interuniversitaire"
+
 * qualification.code.coding[degreeR55] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR55] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR55].system ^short = "Certificat d'études spéciales (CES)"
+
 * qualification.code.coding[degreeR56] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR56] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR56].system ^short = "Attestation de formation."
+
 * qualification.code.coding[degreeR57] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR57] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR57].system ^short = "Diplôme européen d'études spécialisées"
+
 * qualification.code.coding[degreeR58] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR58] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
+
 * qualification.code.coding[deegreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[deegreeR36] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
+
 * qualification.code.coding[degreeR47] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR47] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR47].system ^short = "Qualification attribuée par une commission"
+
 * qualification.code.coding[degreeR226] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR226] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR226].system ^short = "Diplôme de deuxième cycle non qualifiant"
+
 * qualification.code.text ..0
 * qualification.period ..0
 * qualification.issuer ..0
@@ -173,4 +189,3 @@ Description: "Profil créé à partir de la ressource Practitioner dans le conte
 * qualification.issuer.display ..0
 * communication ..0
 * communication only $codeableConcept-timed
-
