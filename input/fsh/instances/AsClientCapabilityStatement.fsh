@@ -1,4 +1,4 @@
-Instance: ASClientCapabilityStatement
+Instance: AsClientCapabilityStatement
 InstanceOf: CapabilityStatement
 Usage: #definition
 * name = "RestServer"
