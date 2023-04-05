@@ -1,7 +1,7 @@
 Profile: AsAddressExtendedProfile
 Parent: FrAddress
 Title: "As Address Extended Profile"
-Id: fr-address-extended
+Id: as-address-extended
 Description: "Extension créée dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française"
 
 * extension ^slicing.discriminator.type = #value
