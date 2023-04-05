@@ -23,7 +23,6 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * category ..0
 * type from $JDV-J136-DisciplineEquipementSocial-RASS (required)
 * type ^binding.description = "La discipline détermine la nature de l’activité"
-* type.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R280-DisciplineEquipementSocial/FHIR/TRE-R280-DisciplineEquipementSocial" (exactly)
 * specialty ..0
 * location ..0
 * name ..0
@@ -35,12 +34,10 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * serviceProvisionCode ..0
 * eligibility.code from $JDV-J137-Clientele-RASS (extensible)
 * eligibility.code ^binding.description = "Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline"
-* eligibility.code.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R279-Clientele/FHIR/TRE-R279-Clientele" (exactly)
 * eligibility.comment ..0
 * program ..0
 * characteristic from $JDV-J138-TypeActivite-RASS (extensible)
 * characteristic ^binding.description = "Le mode de fonctionnement précise la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline"
-* characteristic.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R209-TypeActivite/FHIR/TRE-R209-TypeActivite" (exactly)
 * communication ..0
 * referralMethod ..0
 * appointmentRequired ..0
