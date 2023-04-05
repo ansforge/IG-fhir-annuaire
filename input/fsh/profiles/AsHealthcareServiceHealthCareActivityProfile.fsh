@@ -30,10 +30,8 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * providedBy ^comment = "Reference vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cette activité sanitaire"
 * category from $JDV-J132-ModaliteActivite-RASS (required)
 * category ^binding.description = "Modalité de l'activité de soins"
-* category.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite" (exactly)
 * type from $JDV-J133-ActiviteSanitaireRegulee-RASS (required)
 * type ^binding.description = "Code définissant l'activité de soins autorisée"
-* type.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee" (exactly)
 * specialty ..0
 * location ..0
 * name ..0
@@ -47,7 +45,6 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * program ..0
 * characteristic from $JDV-J134-FormeActivite-RASS (required)
 * characteristic ^binding.description = "Une forme est un type d’organisation de prise en charge"
-* characteristic.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite" (exactly)
 * communication ..0
 * referralMethod ..0
 * appointmentRequired ..0
