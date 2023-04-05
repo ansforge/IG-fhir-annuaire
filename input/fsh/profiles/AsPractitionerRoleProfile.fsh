@@ -117,13 +117,13 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
 * code.coding[modeExercice] from $JDV-J95-ModeExercice-RASS (required)
 * code.coding[modeExercice] ^binding.description = "Le mode d'exercice décrit selon quelle modalité une activité est exercée au regard de l'organisation de la rétribution du professionnel"
 
-* code.coding[typeActiviteLiberale] from $JDV_J96-TypeActiviteLiberale-RASS (required)
+* code.coding[typeActiviteLiberale] from $JDV-J96-TypeActiviteLiberale-RASS (required)
 * code.coding[typeActiviteLiberale] ^binding.description = "Type d’activité libérale"
 
-* code.coding[statutProfessionnelSSA] from $JDV_J97-StatutProfessionnelSSA-RASS (required)
+* code.coding[statutProfessionnelSSA] from $JDV-J97-StatutProfessionnelSSA-RASS (required)
 * code.coding[statutProfessionnelSSA] ^binding.description = "Statut du professionnel du Service de santé des armées"
 
-* code.coding[statutHospitalier] from $JDV_J98-StatutHospitalier-RASS (required)
+* code.coding[statutHospitalier] from $JDV-J98-StatutHospitalier-RASS (required)
 * code.coding[statutHospitalier] ^binding.description = "Statut hospitalier dans le cas d’une activité exercée en établissement public de santé"
 
 * code.coding[fonctionR21] from $JDV-J108-EnsembleFonction-RASS (required)
