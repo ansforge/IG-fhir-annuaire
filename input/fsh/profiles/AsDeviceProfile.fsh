@@ -33,7 +33,6 @@ Description: "Profil créé à partir de la ressource Device dans le contexte de
 * partNumber ..0
 * type from $JDV-J135-EquipementMaterielLourd-RASS (required)
 * type ^binding.description = "Code définissant l'équipement matériel lourd (EML) soumis à autorisation"
-* type.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R272-EquipementMaterielLourd/FHIR/TRE-R272-EquipementMaterielLourd" (exactly)
 * specialization ..0
 * version ..0
 * property ..0
