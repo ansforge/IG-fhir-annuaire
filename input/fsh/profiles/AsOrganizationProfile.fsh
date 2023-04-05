@@ -78,21 +78,18 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * type[activiteINSEE] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * type[activiteINSEE] ^binding.extension.valueString = "OrganizationType"
 * type[activiteINSEE] ^binding.description = "Sous-classes de la Nomenclature d'Activités Française - INSEE"
-* type[activiteINSEE].coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R75-InseeNAFrev2Niveau5/FHIR/TRE-R75-InseeNAFrev2Niveau5" (exactly)
 
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
 * type[statutJuridiqueINSEE] ^sliceName = "statutJuridiqueINSEE"
 * type[statutJuridiqueINSEE] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * type[statutJuridiqueINSEE] ^binding.extension.valueString = "OrganizationType"
 * type[statutJuridiqueINSEE] ^binding.description = "Statut juridique FINESS qui caracterise la situation juridique de la personne morale"
-* type[statutJuridiqueINSEE].coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R72-FinessStatutJuridique/FHIR/TRE-R72-FinessStatutJuridique" (exactly)
 
 * type[SPH] from $JDV-J162-ESPIC-RASS (required)
 * type[SPH] ^sliceName = "SPH"
 * type[SPH] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * type[SPH] ^binding.extension.valueString = "OrganizationType"
 * type[SPH] ^binding.description = "Modalités de participation au service public hospitalier"
-* type[SPH].coding.system = "https://mos.esante.gouv.fr/NOS/TRE_R73-ESPIC/FHIR/TRE-R73-ESPIC" (exactly)
 
 * name ^short = "Raison Sociale de la strcuture"
 * alias ^short = "Enseigne commerciale de la structure"
