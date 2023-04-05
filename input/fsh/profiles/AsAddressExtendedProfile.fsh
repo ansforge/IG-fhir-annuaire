@@ -4,8 +4,6 @@ Title: "As Address Extended Profile"
 Id: fr-address-extended
 Description: "Extension créée dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française"
 
-* ^url = "https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended"
-
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
