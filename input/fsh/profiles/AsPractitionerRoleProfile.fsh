@@ -9,7 +9,7 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
 * implicitRules ..0
 * text ..0
 * contained ..0
-* contained only ASLocation
+* contained only AsLocationProfile
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
