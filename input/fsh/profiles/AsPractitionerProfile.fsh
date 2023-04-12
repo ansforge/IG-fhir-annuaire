@@ -82,7 +82,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 * address MS
-* address only $fr-address-extended
+* address only AsAddressExtendedProfile
 * gender MS
 * birthDate MS
 * photo MS
