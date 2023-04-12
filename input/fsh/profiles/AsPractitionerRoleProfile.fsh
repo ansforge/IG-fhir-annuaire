@@ -4,16 +4,9 @@ Id: as-practitionerrole
 Title: "As PractitionerRole Profile"
 Description: "Profil créé à partir de la ressource PractitionerRole dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée."
 
-* meta.security ..0
-* meta.tag ..0
-* implicitRules ..0
-* text ..0
-* contained ..0
-* contained only AsLocationProfile
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension ^min = 0
 * extension contains
     $practitionerRole-name named name 0..* and
     PractitionerRoleRegistration named registration 0..* and
@@ -80,9 +73,9 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
     professionR291 0..1 and
     genreActivite 0..1 and
     modeExercice 0..1 and
-    typeActiviteLiberale 0..0 and
-    statutProfessionnelSSA 0..0 and
-    statutHospitalier 0..0 and
+    typeActiviteLiberale MS and
+    statutProfessionnelSSA MS and
+    statutHospitalier MS and
     fonctionR21 0..1 and
     fonctionR96 0..1 and
     fonctionR85 0..1 and
@@ -220,13 +213,13 @@ Description: "Profil créé à partir de la ressource PractitionerRole dans le c
 * specialty[attributionParticuliere] ^binding.description = "Activités ponctuelles du professionnel de type expertise"
 * specialty[attributionParticuliere].coding.system ^short = "Attribution Particulière"
 
-* location ..0
+* location MS
 * location only Reference(as-location)
 * location ^type.aggregation = #contained
-* healthcareService ..0
-* telecom ..0
+* healthcareService MS
+* telecom MS
 * telecom only $FrContactPoint
-* availableTime ..0
-* notAvailable ..0
-* availabilityExceptions ..0
-* endpoint ..0
+* availableTime MS
+* notAvailable MS
+* availabilityExceptions MS
+* endpoint MS
