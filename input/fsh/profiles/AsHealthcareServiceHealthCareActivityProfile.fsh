@@ -4,11 +4,6 @@ Id: as-healthcareservice-healthcare-activity
 Title: "As HealthcareService HealthCare Activity Profile"
 Description: "Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS."
 
-* meta.security ..0
-* meta.tag ..0
-* implicitRules ..0
-* text ..0
-* contained ..0
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
@@ -32,23 +27,23 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * category ^binding.description = "Modalité de l'activité de soins"
 * type from $JDV-J133-ActiviteSanitaireRegulee-RASS (required)
 * type ^binding.description = "Code définissant l'activité de soins autorisée"
-* specialty ..0
-* location ..0
-* name ..0
-* comment ..0
-* extraDetails ..0
-* photo ..0
-* telecom ..0
-* coverageArea ..0
-* serviceProvisionCode ..0
-* eligibility ..0
-* program ..0
+* specialty MS
+* location MS
+* name MS
+* comment MS
+* extraDetails MS
+* photo MS
+* telecom MS
+* coverageArea MS
+* serviceProvisionCode MS
+* eligibility MS
+* program MS
 * characteristic from $JDV-J134-FormeActivite-RASS (required)
 * characteristic ^binding.description = "Une forme est un type d’organisation de prise en charge"
-* communication ..0
-* referralMethod ..0
-* appointmentRequired ..0
-* availableTime ..0
-* notAvailable ..0
-* availabilityExceptions ..0
-* endpoint ..0
+* communication MS
+* referralMethod MS
+* appointmentRequired MS
+* availableTime MS
+* notAvailable MS
+* availabilityExceptions MS
+* endpoint MS
