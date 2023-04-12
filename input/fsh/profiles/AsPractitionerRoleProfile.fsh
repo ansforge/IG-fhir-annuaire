@@ -18,7 +18,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
     $mailboxMSS named mailboxMSS 0..1
 
 * extension[practitionerRole-name] ^isModifier = false
-* extension[practitionerRole-name].value[x].id ..0
+* extension[practitionerRole-name].value[x].id ..1 MS
 * extension[practitionerRole-name].value[x].use ..0
 * extension[practitionerRole-name].value[x].text ..0
 * extension[practitionerRole-name].value[x].prefix ..0
