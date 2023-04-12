@@ -4,50 +4,42 @@ Id: as-organization
 Title: "As Organization Profile"
 Description: "Profil créé à partir de la ressource FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public."
 
-* meta.security ..0
-* meta.tag ..0
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension ^min = 0
-
-* extension[shortName] 0..0
-* extension[description] 0..0
 
 * extension contains
-    $digitalCertificate named digitalCertificate 0..0 and
+    $digitalCertificate named digitalCertificate 0..1 MS and
     $organization-pharmacyLicence named pharmacyLicence 0..*  and
     $mailboxMSS named mailboxMSS 0..* 
 	
 * extension[usePeriod] ^sliceName = "usePeriod"
-* extension[usePeriod] ^min = 0
 * extension[usePeriod].valuePeriod ^sliceName = "valuePeriod"
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
+
 * extension[digitalCertificate] ^isModifier = false
+
 * extension[mailboxMSS] only $mailboxMSS
 * extension[mailboxMSS] ^sliceName = "mailboxMSS"
-* extension[mailboxMSS] ^min = 0
 * extension[mailboxMSS] ^isModifier = false
 * extension[mailboxMSS].extension ^slicing.discriminator.type = #value
 * extension[mailboxMSS].extension ^slicing.discriminator.path = "url"
 * extension[mailboxMSS].extension ^slicing.rules = #open
-* extension[mailboxMSS].extension ^min = 0
-* extension[mailboxMSS].extension[responsible] 0..0
-* extension[mailboxMSS].extension[phone] 0..0
-* extension[mailboxMSS].extension[date] 0..0
+* extension[mailboxMSS].extension[responsible] 0..1 MS
+* extension[mailboxMSS].extension[phone] 0..1 MS
+* extension[mailboxMSS].extension[date] 0..1 MS
  
 * extension[pharmacyLicence] only $organization-pharmacyLicence
 * extension[pharmacyLicence] ^sliceName = "pharmacyLicence"
-* extension[pharmacyLicence] ^min = 0
 * extension[pharmacyLicence] ^isModifier = false
 
 * identifier ^comment = "Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)"
 * identifier.use = #official (exactly)
 * identifier.type ^comment = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent du system  http://interopsante.org/CodeSystem/fr-v2-0203 ; Les codes 0,4 proviennent du system https://mos.esante.gouv.fr/NOS/TRE_G07-TypeIdentifiantStructure/FHIR/TRE-G07-TypeIdentifiantStructure"
 * identifier.system ^comment = "« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct) ; « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET ; « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ ; « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang; « https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure;"
-* identifier.period ..0
-* identifier.assigner ..0
+* identifier.period MS
+* identifier.assigner MS
 
 * type contains
     organizationActivityField 0..*  and
@@ -96,14 +88,14 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * telecom ^comment = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom.system ^comment = "https://www.hl7.org/fhir/valueset-contact-point-system.html"
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
-* telecom.period.id ..0
-* telecom.period.start ..0
+* telecom.period.id MS
+* telecom.period.start MS
 
 * address only AsAddressExtendedProfile
 
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)"
 * partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
 
-* contact ..0
+* contact MS
 
-* endpoint ..0
+* endpoint MS
