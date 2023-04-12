@@ -32,6 +32,7 @@ Alias: $practitioner-deceasedDateTime = https://apifhir.annuaire.sante.fr/ws-syn
 Alias: $practitionerRole-name = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name
 Alias: $practitionerRole-educationLevel = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-educationLevel
 Alias: $practitionerRole-smartCard = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-smartCard
+Alias: $practitionerRole-registration = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-registration
 
 Alias: $JDV-J135-EquipementMaterielLourd-RASS = https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS
 Alias: $JDV-J132-ModaliteActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS
