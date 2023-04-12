@@ -9,30 +9,30 @@ Description: "Profil créé à partir de la ressource Practitioner dans le conte
 * extension ^slicing.rules = #open
 
 * extension contains
-    $practitioner-nationality named nationality 0..0 and
-    $practitioner-authorization named authorization 0..* and
-    $practitioner-birthPlace named birthPlace 0..0 and
-    $practitioner-deceasedDateTime named deceasedDateTime 0..* and
+    $practitioner-nationality named practitioner-nationality 0..1 MS and
+    $practitioner-authorization named practitioner-authorization 0..* and
+    $practitioner-birthPlace named practitioner-authorization 0..1 MS and
+    $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* and
     $mailboxMSS named mailboxMSS 0..*
 
-* extension[authorization] ^isModifier = false
-* extension[authorization].extension ^slicing.discriminator.type = #value
-* extension[authorization].extension ^slicing.discriminator.path = "url"
-* extension[authorization].extension ^slicing.rules = #open
-* extension[authorization].extension[period] 0..0
+* extension[practitioner-authorization] ^isModifier = false
+* extension[practitioner-authorization].extension ^slicing.discriminator.type = #value
+* extension[practitioner-authorization].extension ^slicing.discriminator.path = "url"
+* extension[practitioner-authorization].extension ^slicing.rules = #open
+* extension[practitioner-authorization].extension[period] MS
 
-* extension[birthPlace] ^isModifier = false
+* extension[practitioner-authorization] ^isModifier = false
 
-* extension[deceasedDateTime] ^isModifier = false
+* extension[practitioner-deceasedDateTime] ^isModifier = false
 
 * extension[mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
 * extension[mailboxMSS] ^isModifier = false
 * extension[mailboxMSS].extension ^slicing.discriminator.type = #value
 * extension[mailboxMSS].extension ^slicing.discriminator.path = "url"
 * extension[mailboxMSS].extension ^slicing.rules = #open
-* extension[mailboxMSS].extension[responsible] 0..0
-* extension[mailboxMSS].extension[phone] 0..0
-* extension[mailboxMSS].extension[date] 0..0
+* extension[mailboxMSS].extension[responsible] MS
+* extension[mailboxMSS].extension[phone] MS
+* extension[mailboxMSS].extension[date] MS
 * extension[mailboxMSS].extension[publication] ^sliceName = "publication"
 * extension[mailboxMSS].extension[publication].value[x] ^short = "indicateur liste rouge"
 
@@ -53,43 +53,43 @@ Description: "Profil créé à partir de la ressource Practitioner dans le conte
 
 * name only $FrHumanName
 * name ^short = "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil"
-* name.id ..0
+* name.id MS
 * name.extension ^slicing.discriminator.type = #value
 * name.extension ^slicing.discriminator.path = "url"
 * name.extension ^slicing.rules = #open
-* name.extension[assemblyOrder] 0..0
+* name.extension[assemblyOrder] MS
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.type = #type
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.path = "$this"
 * name.extension[assemblyOrder].value[x] ^slicing.rules = #closed
-* name.use ..0
+* name.use MS
 * name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
-* name.text ..0
-* name.family ..0
-* name.given ..0
+* name.text MS
+* name.family MS
+* name.given MS
 * name.prefix ^binding.strength = #required
-* name.suffix ..0
-* name.period ..0
+* name.suffix MS
+* name.period MS
 
-* telecom ..0
+* telecom MS
 * telecom only $FrContactPoint
 * telecom ^comment = "Différentes instances pour les téléphones, la télécopie et l’adresse mail"
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 
-* address ..0
+* address MS
 * address only AsAddressExtendedProfile
 
-* gender ..0
+* gender MS
 
-* birthDate ..0
+* birthDate MS
 
-* photo ..0
+* photo MS
 
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
-* qualification.id ..0
-* qualification.identifier ..0
+* qualification.id MS
+* qualification.identifier MS
 * qualification.identifier ^short = "Numéro de diplôme"
-* qualification.code.id ..0
+* qualification.code.id MS
 * qualification.code.coding ^slicing.discriminator.type = #value
 * qualification.code.coding ^slicing.discriminator.path = "system"
 * qualification.code.coding ^slicing.description = "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)"
@@ -153,18 +153,18 @@ Description: "Profil créé à partir de la ressource Practitioner dans le conte
 * qualification.code.coding[degreeR226] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR226] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
 * qualification.code.coding[degreeR226].system ^short = "Diplôme de deuxième cycle non qualifiant"
-* qualification.code.text ..0
-* qualification.period ..0
-* qualification.issuer ..0
-* qualification.issuer.reference ..0
-* qualification.issuer.type ..0
+* qualification.code.text MS
+* qualification.period MS
+* qualification.issuer MS
+* qualification.issuer.reference MS
+* qualification.issuer.type MS
 * qualification.issuer.identifier ^short = "Code du lieu d'obtention du diplôme"
-* qualification.issuer.identifier.use ..0
-* qualification.issuer.identifier.type ..0
+* qualification.issuer.identifier.use MS
+* qualification.issuer.identifier.type MS
 * qualification.issuer.identifier.system = "urn:oid:1.2.250.1.213.1.6.4.1" (exactly)
-* qualification.issuer.identifier.period ..0
-* qualification.issuer.identifier.assigner ..0
-* qualification.issuer.display ..0
+* qualification.issuer.identifier.period MS
+* qualification.issuer.identifier.assigner MS
+* qualification.issuer.display MS
 
-* communication ..0
+* communication MS
 * communication only $codeableConcept-timed
