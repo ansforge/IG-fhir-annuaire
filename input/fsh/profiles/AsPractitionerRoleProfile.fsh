@@ -11,41 +11,41 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension ^slicing.rules = #open
 
 * extension contains
-    $practitionerRole-name named name 0..* and
-    PractitionerRoleRegistration named registration 0..* and
-    $practitionerRole-educationLevel named educationLevel 0..1 and
-    $practitionerRole-smartCard named smartCard 0..1 and
+    $practitionerRole-name named practitionerRole-name 0..* and
+    $PractitionerRoleRegistration named PractitionerRoleRegistration 0..* and
+    $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 and
+    $practitionerRole-smartCard named practitionerRole-smartCard 0..1 and
     $mailboxMSS named mailboxMSS 0..1
 
-* extension[name] ^isModifier = false
-* extension[name].value[x].id ..0
-* extension[name].value[x].use ..0
-* extension[name].value[x].text ..0
-* extension[name].value[x].prefix ..0
-* extension[name].value[x].period ..0
+* extension[practitionerRole-name] ^isModifier = false
+* extension[practitionerRole-name].value[x].id ..0
+* extension[practitionerRole-name].value[x].use ..0
+* extension[practitionerRole-name].value[x].text ..0
+* extension[practitionerRole-name].value[x].prefix ..0
+* extension[practitionerRole-name].value[x].period ..0
 
-* extension[registration] ^isModifier = false
-* extension[registration].extension ^slicing.discriminator.type = #value
-* extension[registration].extension ^slicing.discriminator.path = "url"
-* extension[registration].extension ^slicing.rules = #open
-* extension[registration].extension[registeringOrganizationDetail] 0..0
-* extension[registration].extension[period] 0..0
-* extension[registration].extension[status] 0..0
-* extension[registration].extension[hostingDepartment] 0..0
-* extension[registration].extension[isFirst] 0..0
+* extension[PractitionerRoleRegistration] ^isModifier = false
+* extension[PractitionerRoleRegistration].extension ^slicing.discriminator.type = #value
+* extension[PractitionerRoleRegistration].extension ^slicing.discriminator.path = "url"
+* extension[PractitionerRoleRegistration].extension ^slicing.rules = #open
+* extension[PractitionerRoleRegistration].extension[registeringOrganizationDetail] 0..0
+* extension[PractitionerRoleRegistration].extension[period] 0..0
+* extension[PractitionerRoleRegistration].extension[status] 0..0
+* extension[PractitionerRoleRegistration].extension[hostingDepartment] 0..0
+* extension[PractitionerRoleRegistration].extension[isFirst] 0..0
 
-* extension[educationLevel] ^isModifier = false
-* extension[educationLevel].id ..0
-* extension[educationLevel].extension ^slicing.discriminator.type = #value
-* extension[educationLevel].extension ^slicing.discriminator.path = "url"
-* extension[educationLevel].extension ^slicing.rules = #open
-* extension[educationLevel].extension[academicDegree] 0..0
-* extension[educationLevel].extension[achievedLevel] 0..0
-* extension[educationLevel].extension[academicYear] 0..0
-* extension[educationLevel].extension[period] 0..0
-* extension[educationLevel].extension[issuer] 0..0
+* extension[practitionerRole-educationLevel] ^isModifier = false
+* extension[practitionerRole-educationLevel].id ..0
+* extension[practitionerRole-educationLevel].extension ^slicing.discriminator.type = #value
+* extension[practitionerRole-educationLevel].extension ^slicing.discriminator.path = "url"
+* extension[practitionerRole-educationLevel].extension ^slicing.rules = #open
+* extension[practitionerRole-educationLevel].extension[academicDegree] 0..0
+* extension[practitionerRole-educationLevel].extension[achievedLevel] 0..0
+* extension[practitionerRole-educationLevel].extension[academicYear] 0..0
+* extension[practitionerRole-educationLevel].extension[period] 0..0
+* extension[practitionerRole-educationLevel].extension[issuer] 0..0
 
-* extension[smartCard] ^isModifier = false
+* extension[practitionerRole-smartCard] ^isModifier = false
 
 * extension[mailboxMSS] ^definition = "BALs MSS de type PER rattaché à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
 * extension[mailboxMSS] ^isModifier = false
