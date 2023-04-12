@@ -4,16 +4,12 @@ Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
 Description: 	"Profil créé à partir de la ressource PractitionerRole dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée."
 
-* meta.security ..0
-* meta.tag ..0
-* implicitRules ..0
-* text ..0
-* contained ..0
+
 * contained only AsLocationProfile
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension ^min = 0
+
 * extension contains
     $practitionerRole-name named name 0..* and
     PractitionerRoleRegistration named registration 0..* and
@@ -28,12 +24,10 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[name].value[x].prefix ..0
 * extension[name].value[x].period ..0
 
-* extension[registration] ^min = 0
 * extension[registration] ^isModifier = false
 * extension[registration].extension ^slicing.discriminator.type = #value
 * extension[registration].extension ^slicing.discriminator.path = "url"
 * extension[registration].extension ^slicing.rules = #open
-* extension[registration].extension ^min = 0
 * extension[registration].extension[registeringOrganizationDetail] 0..0
 * extension[registration].extension[period] 0..0
 * extension[registration].extension[status] 0..0
@@ -45,7 +39,6 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[educationLevel].extension ^slicing.discriminator.type = #value
 * extension[educationLevel].extension ^slicing.discriminator.path = "url"
 * extension[educationLevel].extension ^slicing.rules = #open
-* extension[educationLevel].extension ^min = 0
 * extension[educationLevel].extension[academicDegree] 0..0
 * extension[educationLevel].extension[achievedLevel] 0..0
 * extension[educationLevel].extension[academicYear] 0..0
@@ -60,7 +53,6 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[mailboxMSS].extension ^slicing.discriminator.type = #value
 * extension[mailboxMSS].extension ^slicing.discriminator.path = "url"
 * extension[mailboxMSS].extension ^slicing.rules = #open
-* extension[mailboxMSS].extension ^min = 0
 * extension[mailboxMSS].extension[responsible] 0..0
 * extension[mailboxMSS].extension[phone] 0..0
 * extension[mailboxMSS].extension[date] 0..0
