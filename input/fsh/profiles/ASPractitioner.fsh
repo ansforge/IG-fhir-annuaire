@@ -10,9 +10,9 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension ^min = 0
 
 * extension contains
-    $practitioner-nationality named nationality MS and
+    $practitioner-nationality named nationality 0..1 MS and
     $practitioner-authorization named authorization 0..* and
-    $practitioner-birthPlace named birthPlace MS and
+    $practitioner-birthPlace named birthPlace 0..1 MS and
     $practitioner-deceasedDateTime named deceasedDateTime 0..* and
     $mailboxMSS named mailboxMSS 0..*
 
@@ -71,7 +71,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.use MS
 * name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
 * name.text MS
-* name.family Ms
+* name.family MS
 * name.given MS
 * name.prefix ^binding.strength = #required
 * name.suffix MS
