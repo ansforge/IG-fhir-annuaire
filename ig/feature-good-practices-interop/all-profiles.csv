@@ -238,7 +238,7 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "as-ext-mailbox-mss","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","EAS Mailbox MSS","Extension créée dans le cadre de l'annuaire santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+","AS Mailbox MSS Extension","Extension créée dans le cadre de l'annuaire santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
 ",""
 "as-ext-mailbox-mss","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
@@ -282,7 +282,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Valeurs possibles :
 ORG pour une BAL organisationnelle;
 APP pour une BAL applicative;
-PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,"required","Type de  boîte aux lettre MSS","https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS","",,,,"Extension.value[x]",0,1,"ele-1
+PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,"","Type de  boîte aux lettre MSS","","","type:$this}
+","",,"closed","Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-mailbox-mss","Extension.extension:type.value[x].id","Extension.extension.value[x].id","","","",0,1,"","","","string {[]} {[]}
@@ -327,6 +328,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-ext-mailbox-mss","Extension.extension:type.value[x].text","Extension.extension.value[x].text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"as-ext-mailbox-mss","Extension.extension:type.value[x]:valueCodeableConcept","Extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-mailbox-mss","Extension.extension:description","Extension.extension","description","","",0,1,"Y","","","Extension {[]} {[]}
@@ -433,7 +438,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 N: La boîte aux lettres peut être publiée","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-ext-mailbox-mss","Extension.extension:date","Extension.extension","date","","",0,*,"Y","","","Extension {[]} {[]}
+"as-ext-mailbox-mss","Extension.extension:date","Extension.extension","date","","",0,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
