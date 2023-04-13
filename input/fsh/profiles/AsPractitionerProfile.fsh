@@ -7,41 +7,34 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension ^min = 0
 
 * extension contains
     $practitioner-nationality named nationality 0..1 MS and
     $practitioner-authorization named authorization 0..* and
     $practitioner-birthPlace named birthPlace 0..1 MS and
     $practitioner-deceasedDateTime named deceasedDateTime 0..* and
-    $mailboxMSS named mailboxMSS 0..*
+    AsMailboxMSSExtension named mailboxMSS 0..*
 
-* extension[authorization] ^min = 0
 * extension[authorization] ^isModifier = false
 * extension[authorization].extension ^slicing.discriminator.type = #value
 * extension[authorization].extension ^slicing.discriminator.path = "url"
 * extension[authorization].extension ^slicing.rules = #open
-* extension[authorization].extension ^min = 0
 * extension[authorization].extension[period] MS
 
 * extension[birthPlace] ^isModifier = false
 
-* extension[deceasedDateTime] ^min = 0
 * extension[deceasedDateTime] ^isModifier = false
 
 * extension[mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
-* extension[mailboxMSS] ^min = 0
 * extension[mailboxMSS] ^isModifier = false
 * extension[mailboxMSS].extension ^slicing.discriminator.type = #value
 * extension[mailboxMSS].extension ^slicing.discriminator.path = "url"
 * extension[mailboxMSS].extension ^slicing.rules = #open
-* extension[mailboxMSS].extension ^min = 0
 * extension[mailboxMSS].extension[responsible] MS
 * extension[mailboxMSS].extension[phone] MS
 * extension[mailboxMSS].extension[date] MS
 
 * extension[mailboxMSS].extension[publication] ^sliceName = "publication"
-* extension[mailboxMSS].extension[publication] ^min = 0
 * extension[mailboxMSS].extension[publication].value[x] ^short = "indicateur liste rouge"
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
 * identifier.type 1..
@@ -63,8 +56,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.extension ^slicing.discriminator.type = #value
 * name.extension ^slicing.discriminator.path = "url"
 * name.extension ^slicing.rules = #open
-* name.extension ^min = 0
-* name.extension[.assemblyOrder].0..0
+* name.extension[.assemblyOrder] 0..0
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.type = #type
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.path = "$this"
 * name.extension[assemblyOrder].value[x] ^slicing.rules = #closed
@@ -183,4 +175,3 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.issuer.display MS
 * communication MS
 * communication only $codeableConcept-timed
-* communication.coding.system = "https://mos.esante.gouv.fr/NOS/TRE_G00-Langue/FHIR/TRE-G00-Langue" (exactly)
