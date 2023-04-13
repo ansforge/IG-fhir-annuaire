@@ -11,7 +11,6 @@ Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/i
 Alias: $iso21090-ADXP-postBox = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox
 Alias: $fr-practioner-identifier-type = http://interopsante.org/fhir/ValueSet/fr-practioner-identifier-type
 
-Alias: $mailboxMSS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS
 Alias: $Device-PeriodImplentation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Device-PeriodImplentation
 Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/HealthcareService-DeleteAutorisationImplantation
 Alias: $codeableConcept-timed = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed
