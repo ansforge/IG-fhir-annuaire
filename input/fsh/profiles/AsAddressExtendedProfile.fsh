@@ -9,8 +9,8 @@ Description: "Extension créée dans le contexte de l'Annuaire Santé pour prise
 * extension ^slicing.rules = #open
 
 * extension contains
-    FrenchDepartment named frenchDepartment 0..1 and
-    CountryCode named countryCode 0..1
+    FrenchDepartment named frenchDepartment 0..1 MS and
+    CountryCode named countryCode 0..1 MS
 
 * line.extension ^slicing.discriminator.type = #value
 * line.extension ^slicing.discriminator.path = "url"
