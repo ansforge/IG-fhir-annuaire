@@ -261,31 +261,63 @@
  <tr><td colspan="3"><b>AsHealthcareServiceSocialEquipmentProfile</b></td></tr>
  <tr><td>HealthcareService</td><td>Entity. Role, or Act, act[classCode=ACT][moodCode=DEF]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td>n/a, N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;versionId</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastUpdated</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;profile</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;implicitRules</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;language</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>n/a, N/A, Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>Entity. Role, or Act, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (authorizationDate)</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (installationDate)</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>n/a, II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT], .id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>n/a, .statusCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;providedBy</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .scopingRole.Organization</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>n/a, CD, .code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, .actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>n/a, CD, .actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .location.role[classCode=SDLOC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>n/a, .name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;comment</td><td>n/a, .location.role[classCode=SDLOC].desc</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extraDetails</td><td>n/a, .actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>n/a, ED, .actrelationship[typeCode=SBJ].observation.value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>n/a, TEL, .telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;coverageArea</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .location.role[classCode=SDLOC].subjectOf.A_SpatialCoordinate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceProvisionCode</td><td>n/a, CD, .actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;eligibility</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>n/a, CD, .actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment</td><td>n/a, .actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT].text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;program</td><td>n/a, CD, .actrelationship[typeCode=PERT].observation</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;characteristic</td><td>n/a, CD, .actrelationship[typeCode=PERT].observation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td>n/a, CD</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referralMethod</td><td>n/a, CD, .actrelationship[typeCode=PERT].observation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;appointmentRequired</td><td>n/a, .actrelationship[typeCode=PERT].observation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;availableTime</td><td>n/a, .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daysOfWeek</td><td>n/a, .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allDay</td><td>n/a, .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;availableStartTime</td><td>n/a, .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;availableEndTime</td><td>n/a, .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;notAvailable</td><td>n/a, .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;availabilityExceptions</td><td>n/a, .effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;endpoint</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity)</td> </tr>
 </table>
 <a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
  <tr><td colspan="3"><b>AsHealthcareServiceSocialEquipmentProfile</b></td></tr>
  <tr><td>HealthcareService</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>FiveWs.where[x]</td> </tr>
 </table>
 
 
@@ -362,7 +394,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire-donnee-publique#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 13, 2023 08:34+0000">2023-04-13</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire-donnee-publique#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 13, 2023 08:54+0000">2023-04-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
