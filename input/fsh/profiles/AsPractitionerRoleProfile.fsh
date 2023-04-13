@@ -49,13 +49,13 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 
 * extension[as-mailbox-mss] ^definition = "BALs MSS de type PER rattaché à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
 * extension[as-mailbox-mss] ^isModifier = false
-* extension[as-mailbox-mss].id MS
+* extension[as-mailbox-mss].id 0..0
 * extension[as-mailbox-mss].extension ^slicing.discriminator.type = #value
 * extension[as-mailbox-mss].extension ^slicing.discriminator.path = "url"
 * extension[as-mailbox-mss].extension ^slicing.rules = #open
-* extension[as-mailbox-mss].extension[responsible] MS
-* extension[as-mailbox-mss].extension[phone] MS
-* extension[as-mailbox-mss].extension[date] MS
+* extension[as-mailbox-mss].extension[responsible] 0..0
+* extension[as-mailbox-mss].extension[phone] 0..0
+* extension[as-mailbox-mss].extension[date] 0..0
 
 * identifier ..0
 * period ..0
@@ -213,13 +213,13 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[attributionParticuliere].coding.system ^short = "Attribution Particulère"
 
 
-* location MS
+* location ..0
 * location only Reference(AsLocationProfile)
 * location ^type.aggregation = #contained
-* healthcareService MS
-* telecom MS
+* healthcareService ..0
+* telecom ..0
 * telecom only $FrContactPoint
-* availableTime MS
-* notAvailable MS
-* availabilityExceptions MS
-* endpoint MS
+* availableTime ..0
+* notAvailable ..0
+* availabilityExceptions ..0
+* endpoint ..0
