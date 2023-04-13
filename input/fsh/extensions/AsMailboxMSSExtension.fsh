@@ -49,7 +49,7 @@ Description: 	"Extension créée dans le cadre de l'annuaire santé pour décrir
 * extension[digitization].valueBoolean ^comment = "- O : Dématérialisation acceptée \r\n- N : Dématérialisation refusée"
 
 * extension[publication].value[x] only boolean
-* extension[publication]valueBoolean ^short = "ndicateur liste rouge"
-* extension[publication]valueBoolean ^comment = "O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée"
+* extension[publication].valueBoolean ^short = "ndicateur liste rouge"
+* extension[publication].valueBoolean ^comment = "O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée"
 
 * extension[date].value[x] only Meta
