@@ -65,21 +65,21 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * code.coding ^slicing.rules = #open
 
 * code.coding contains
-    CategorieProfession 0..1 MS and
-    professionG15 0..1 MS and
-	professionR94 0..1 MS and
-	professionR95 0..1 MS and
-	professionR291 0..1 MS and
-    genreActivite 0..1 MS and
-    modeExercice 0..1 MS and
-    typeActiviteLiberale MS and
-    statutProfessionnelSSA MS and
-    statutHospitalier MS and
-    fonctionR21 0..1 MS and
-    fonctionR96 0..1 MS and
-    fonctionR85 0..1 MS and
-    metierPharmacienR06 0..1 MS and
-    metierPharmacienG05 0..1 MS
+    CategorieProfession 0..1 and
+    professionG15 0..1  and
+	professionR94 0..1  and
+	professionR95 0..1  and
+	professionR291 0..1  and
+    genreActivite 0..1  and
+    modeExercice 0..1  and
+    typeActiviteLiberale 0..0 and
+    statutProfessionnelSSA 0..0 and
+    statutHospitalier 0..0 and
+    fonctionR21 0..1  and
+    fonctionR96 0..1  and
+    fonctionR85 0..1  and
+    metierPharmacienR06 0..1  and
+    metierPharmacienG05 0..1 
 	
 * code.coding[CategorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
 * code.coding[CategorieProfession] ^binding.description = "Catégories professionnelles dans le RASS"
