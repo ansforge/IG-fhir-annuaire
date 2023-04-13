@@ -11,7 +11,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension contains
     $digitalCertificate named digitalCertificate 0..1 MS and
     $organization-pharmacyLicence named pharmacyLicence 0..*  and
-    $mailboxMSS named mailboxMSS 0..* 
+    AsMailboxMSSExtension named mailboxMSS 0..* 
 	
 * extension[usePeriod] ^sliceName = "usePeriod"
 * extension[usePeriod].valuePeriod ^sliceName = "valuePeriod"
@@ -20,7 +20,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 
 * extension[digitalCertificate] ^isModifier = false
 
-* extension[mailboxMSS] only $mailboxMSS
+* extension[mailboxMSS] only AsMailboxMSSExtension
 * extension[mailboxMSS] ^sliceName = "mailboxMSS"
 * extension[mailboxMSS] ^isModifier = false
 * extension[mailboxMSS].extension ^slicing.discriminator.type = #value
