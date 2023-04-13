@@ -8,12 +8,12 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $HealthcareService-activityType named activityType 0..1 and
-    $HealthcareService-authorizationDate named authorizationDate 0..1 and
-    $HealthcareService-authorizationNumberARHGOS named authorizationNumberARHGOS 1..1 and
-    $HealthcareService-implementationPeriod named implementationPeriod 0..1 and
-    $HealthcareService-deleteAutorisationImplantation named deleteAutorisationImplantation 0..1 and
-    $HealthcareService-dateUpdateActivity named dateUpdateActivity 0..1
+    $HealthcareService-activityType named activityType 0..1 MS and
+    $HealthcareService-authorizationDate named authorizationDate 0..1 MS and
+    $HealthcareService-authorizationNumberARHGOS named authorizationNumberARHGOS 1..1 MS and
+    $HealthcareService-implementationPeriod named implementationPeriod 0..1 MS and
+    $HealthcareService-deleteAutorisationImplantation named deleteAutorisationImplantation 0..1 MS and
+    $HealthcareService-dateUpdateActivity named dateUpdateActivity 0..1 MS
 * extension[activityType] ^isModifier = false
 * extension[authorizationDate] ^isModifier = false
 * extension[authorizationNumberARHGOS] ^isModifier = false
