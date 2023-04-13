@@ -213,7 +213,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[attributionParticuliere].coding.system ^short = "Attribution Particulère"
 
 
-* location ..0
+* location MS
 * location only Reference(AsLocationProfile)
 * location ^type.aggregation = #contained
 * healthcareService ..0
