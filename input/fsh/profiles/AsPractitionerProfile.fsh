@@ -56,7 +56,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.extension ^slicing.discriminator.type = #value
 * name.extension ^slicing.discriminator.path = "url"
 * name.extension ^slicing.rules = #open
-* name.extension[.assemblyOrder] 0..0
+* name.extension[assemblyOrder] 0..0
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.type = #type
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.path = "$this"
 * name.extension[assemblyOrder].value[x] ^slicing.rules = #closed
