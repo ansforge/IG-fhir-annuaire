@@ -56,7 +56,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.extension ^slicing.discriminator.type = #value
 * name.extension ^slicing.discriminator.path = "url"
 * name.extension ^slicing.rules = #open
-* name.extension[assemblyOrder] 0..0
+* name.extension[assemblyOrder] MS
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.type = #type
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.path = "$this"
 * name.extension[assemblyOrder].value[x] ^slicing.rules = #closed
@@ -89,21 +89,21 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding ^slicing.ordered = false
 * qualification.code.coding ^slicing.rules = #open
 * qualification.code.coding contains
-    degreeType 0..1 and
-    degreeR48 0..1 and
-    degreeR49 0..1 and
-    degreeR50 0..1 and
-    degreeR51 0..1 and
-    degreeR52 0..1 and
-    degreeR53 0..1 and
-    degreeR54 0..1 and
-    degreeR55 0..1 and
-    degreeR56 0..1 and
-    degreeR57 0..1 and
-    degreeR58 0..1 and
-    deegreeR36 0..1 and
-    degreeR47 0..1 and
-    degreeR226 0..1
+    degreeType 0..1 MS and
+    degreeR48 0..1 MS and
+    degreeR49 0..1 MS and
+    degreeR50 0..1 MS and
+    degreeR51 0..1 MS and
+    degreeR52 0..1 MS and
+    degreeR53 0..1 MS and
+    degreeR54 0..1 MS and
+    degreeR55 0..1 MS and
+    degreeR56 0..1 MS and
+    degreeR57 0..1 MS and
+    degreeR58 0..1 MS and
+    deegreeR36 0..1 MS and
+    degreeR47 0..1 MS and
+    degreeR226 0..1 MS
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Types de diplôme du RASS"
 * qualification.code.coding[degreeType].system = "https://mos.esante.gouv.fr/NOS/TRE_R14-TypeDiplome/FHIR/TRE-R14-TypeDiplome" (exactly)
