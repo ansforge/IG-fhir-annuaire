@@ -13,9 +13,9 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension contains
     $practitionerRole-name named practitionerRole-name 0..* and
     $practitionerRole-registration named PractitionerRoleRegistration 0..* and
-    $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 MS and
+    $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1  and
     $practitionerRole-smartCard named practitionerRole-smartCard 0..1 MS and
-    AsMailboxMSSExtension named as-mailbox-mss 0..1 MS
+    AsMailboxMSSExtension named as-mailbox-mss 0..1 
 
 * extension[practitionerRole-name] ^isModifier = false
 * extension[practitionerRole-name].value[x].id ..0
