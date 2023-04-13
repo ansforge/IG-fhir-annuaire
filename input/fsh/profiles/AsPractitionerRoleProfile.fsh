@@ -13,9 +13,9 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension contains
     $practitionerRole-name named practitionerRole-name 0..* and
     $practitionerRole-registration named PractitionerRoleRegistration 0..* and
-    $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 and
-    $practitionerRole-smartCard named practitionerRole-smartCard 0..1 and
-    AsMailboxMSSExtension named mailboxMSS 0..1
+    $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 MS and
+    $practitionerRole-smartCard named practitionerRole-smartCard 0..1 MS and
+    AsMailboxMSSExtension named as-mailbox-mss 0..1 MS
 
 * extension[practitionerRole-name] ^isModifier = false
 * extension[practitionerRole-name].value[x].id ..0
@@ -47,15 +47,15 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 
 * extension[practitionerRole-smartCard] ^isModifier = false
 
-* extension[mailboxMSS] ^definition = "BALs MSS de type PER rattaché à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
-* extension[mailboxMSS] ^isModifier = false
-* extension[mailboxMSS].id ..0
-* extension[mailboxMSS].extension ^slicing.discriminator.type = #value
-* extension[mailboxMSS].extension ^slicing.discriminator.path = "url"
-* extension[mailboxMSS].extension ^slicing.rules = #open
-* extension[mailboxMSS].extension[responsible] 0..0
-* extension[mailboxMSS].extension[phone] 0..0
-* extension[mailboxMSS].extension[date] 0..0
+* extension[as-mailbox-mss] ^definition = "BALs MSS de type PER rattaché à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
+* extension[as-mailbox-mss] ^isModifier = false
+* extension[as-mailbox-mss].id MS
+* extension[as-mailbox-mss].extension ^slicing.discriminator.type = #value
+* extension[as-mailbox-mss].extension ^slicing.discriminator.path = "url"
+* extension[as-mailbox-mss].extension ^slicing.rules = #open
+* extension[as-mailbox-mss].extension[responsible] MS
+* extension[as-mailbox-mss].extension[phone] MS
+* extension[as-mailbox-mss].extension[date] MS
 
 * identifier ..0
 * period ..0
@@ -65,21 +65,21 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * code.coding ^slicing.rules = #open
 
 * code.coding contains
-    CategorieProfession 0..1 and
-    professionG15 0..1 and
-	professionR94 0..1 and
-	professionR95 0..1 and
-	professionR291 0..1 and
-    genreActivite 0..1 and
-    modeExercice 0..1 and
-    typeActiviteLiberale 0..0 and
-    statutProfessionnelSSA 0..0 and
-    statutHospitalier 0..0 and
-    fonctionR21 0..1 and
-    fonctionR96 0..1 and
-    fonctionR85 0..1 and
-    metierPharmacienR06 0..1 and
-    metierPharmacienG05 0..1
+    CategorieProfession 0..1 MS and
+    professionG15 0..1 MS and
+	professionR94 0..1 MS and
+	professionR95 0..1 MS and
+	professionR291 0..1 MS and
+    genreActivite 0..1 MS and
+    modeExercice 0..1 MS and
+    typeActiviteLiberale MS and
+    statutProfessionnelSSA MS and
+    statutHospitalier MS and
+    fonctionR21 0..1 MS and
+    fonctionR96 0..1 MS and
+    fonctionR85 0..1 MS and
+    metierPharmacienR06 0..1 MS and
+    metierPharmacienG05 0..1 MS
 	
 * code.coding[CategorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
 * code.coding[CategorieProfession] ^binding.description = "Catégories professionnelles dans le RASS"
@@ -213,13 +213,13 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[attributionParticuliere].coding.system ^short = "Attribution Particulère"
 
 
-* location ..0
+* location MS
 * location only Reference(AsLocationProfile)
 * location ^type.aggregation = #contained
-* healthcareService ..0
-* telecom ..0
+* healthcareService MS
+* telecom MS
 * telecom only $FrContactPoint
-* availableTime ..0
-* notAvailable ..0
-* availabilityExceptions ..0
-* endpoint ..0
+* availableTime MS
+* notAvailable MS
+* availabilityExceptions MS
+* endpoint MS
