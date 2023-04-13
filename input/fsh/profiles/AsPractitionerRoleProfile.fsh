@@ -207,7 +207,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[typeSavoirFaire] ^binding.description = "Le type de savoir-faire (qualifications/autres attributions)"
 * specialty[typeSavoirFaire].coding.system ^short = "Type savoir faire"
 
-* specialty[attributionParticuliere] from JDV-J90-AttributionParticuliere-RASS (required)
+* specialty[attributionParticuliere] from $JDV-J90-AttributionParticuliere-RASS (required)
 * specialty[attributionParticuliere] ^sliceName = "attributionParticuliere"
 * specialty[attributionParticuliere] ^binding.description = "Activités ponctuelles du professionnel de type expertise"
 * specialty[attributionParticuliere].coding.system ^short = "Attribution Particulère"
