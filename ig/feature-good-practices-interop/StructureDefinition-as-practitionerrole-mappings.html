@@ -281,7 +281,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (qualificationType)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>CX / EI (occasionally, more often EI maps to a resource id or a URL), PRD-7 (or XCN.1)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>STF-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>DR, PRD-8/9 / PRA-5.4</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (CategorieProfession)</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
@@ -510,7 +512,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueBoolean)</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>n/a, II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT], .id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>n/a, .statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], .performance[@typeCode &lt;= 'PPRF'].ActDefinitionOrEvent.effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;practitioner</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .player</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;organization</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>n/a, CD, .code</td> </tr>
@@ -761,6 +765,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (qualificationType)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Identifier, ./Identifiers</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specialty (attributionParticuliere)</td><td>./Specialty</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specialty (savoirFaireR38)</td><td>./Specialty</td> </tr>
@@ -779,7 +785,9 @@
 <a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
  <tr><td colspan="3"><b>ASPractitionerRoleProfile</b></td></tr>
  <tr><td>PractitionerRole</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>FiveWs.where[x]</td> </tr>
 </table>
 
@@ -857,7 +865,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire-donnee-publique#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 14, 2023 12:31+0000">2023-04-14</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire-donnee-publique#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 14, 2023 12:45+0000">2023-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

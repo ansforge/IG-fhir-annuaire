@@ -1472,7 +1472,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","Extensions are always sliced by (at least) url",,"open","DomainResource.modifierExtension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-practitionerrole","PractitionerRole.identifier","PractitionerRole.identifier","","","",0,0,"","","Y","Identifier {[]} {[]}
+"as-practitionerrole","PractitionerRole.identifier","PractitionerRole.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
 ","Business Identifiers that are specific to a role/location","Business Identifiers that are specific to a role/location.","","Often, specific identities are assigned for the agent.","","","","","","","",,,,,"",,,,"PractitionerRole.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -1480,7 +1480,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Whether this practitioner role record is in active use","Whether this practitioner role record is in active use.","If this value is false, you may refer to the period to see when the role was in active use. If there is no period specified, no inference can be made about when it was active.","Need to be able to mark a practitioner role record as not to be used because it was created in error, or otherwise no longer in active use.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"PractitionerRole.active",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-practitionerrole","PractitionerRole.period","PractitionerRole.period","","","",0,0,"","","Y","Period {[]} {[]}
+"as-practitionerrole","PractitionerRole.period","PractitionerRole.period","","","",0,1,"Y","","Y","Period {[]} {[]}
 ","The period during which the practitioner is authorized to perform in these role(s)","The period during which the person is authorized to act as a practitioner in these role(s) for the organization.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
 
 Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).","Even after the agencies is revoked, the fact that it existed must still be recorded.","","","","","","","",,,,,"",,,,"PractitionerRole.period",0,1,"ele-1
