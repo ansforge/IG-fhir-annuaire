@@ -28,7 +28,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[PractitionerRoleRegistration].extension ^slicing.discriminator.type = #value
 * extension[PractitionerRoleRegistration].extension ^slicing.discriminator.path = "url"
 * extension[PractitionerRoleRegistration].extension ^slicing.rules = #open
-* extension[PractitionerRoleRegistration].extension[registeringOrganizationDetail] 0..0
+* extension[PractitionerRoleRegistration].extension[registeringOrganizationDetail] MS
 * extension[PractitionerRoleRegistration].extension[period] 0..0
 * extension[PractitionerRoleRegistration].extension[status] 0..0
 * extension[PractitionerRoleRegistration].extension[hostingDepartment] 0..0
