@@ -216,10 +216,10 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * location MS
 * location only Reference(AsLocationProfile)
 * location ^type.aggregation = #contained
-* healthcareService ..0
-* telecom ..0
+* healthcareService MS
+* telecom MS
 * telecom only $FrContactPoint
-* availableTime ..0
-* notAvailable ..0
-* availabilityExceptions ..0
-* endpoint ..0
+* availableTime MS
+* notAvailable MS
+* availabilityExceptions MS
+* endpoint MS
