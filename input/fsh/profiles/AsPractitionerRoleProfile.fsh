@@ -72,7 +72,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 	professionR291 0..1 MS  and
     genreActivite 0..1 MS  and
     modeExercice 0..1 MS  and
-    typeActiviteLiberale 0..0 and
+    typeActiviteLiberale MS and
     statutProfessionnelSSA 0..0 and
     statutHospitalier 0..0 and
     fonctionR21 0..1 MS and
