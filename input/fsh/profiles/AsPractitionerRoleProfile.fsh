@@ -57,8 +57,8 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[as-mailbox-mss].extension[phone] 0..0
 * extension[as-mailbox-mss].extension[date] 0..0
 
-* identifier ..0
-* period ..0
+* identifier MS
+* period MS
 * practitioner 1..
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "system"
