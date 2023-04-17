@@ -11,18 +11,14 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension ^slicing.rules = #open
 
 * extension contains
-    $practitionerRole-name named practitionerRole-name 0..* and
+    AsPractitionerRoleNameExtension named practitionerRole-name 0..1 MS and
     $practitionerRole-registration named PractitionerRoleRegistration 0..* and
     $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 MS and
     $practitionerRole-smartCard named practitionerRole-smartCard 0..1 MS and
     AsMailboxMSSExtension named as-mailbox-mss 0..1 MS
 
 * extension[practitionerRole-name] ^isModifier = false
-* extension[practitionerRole-name].id MS
-* extension[practitionerRole-name].value[x].use MS
-* extension[practitionerRole-name].value[x].text MS
-* extension[practitionerRole-name].value[x].prefix MS
-* extension[practitionerRole-name].value[x].period MS
+* extension[practitionerRole-name] ^short = "civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)"
 
 * extension[PractitionerRoleRegistration] ^isModifier = false
 * extension[PractitionerRoleRegistration].extension ^slicing.discriminator.type = #value
