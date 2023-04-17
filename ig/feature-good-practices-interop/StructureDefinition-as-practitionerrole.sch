@@ -28,10 +28,10 @@
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'registeringOrganization']) &lt;= 1">extension with URL = 'registeringOrganization': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'registeringOrganizationDetail']) &lt;= 1">extension with URL = 'registeringOrganizationDetail': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'period']) &lt;= 0">extension with URL = 'period': maximum cardinality of 'extension' is 0</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'status']) &lt;= 0">extension with URL = 'status': maximum cardinality of 'extension' is 0</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'hostingDepartment']) &lt;= 0">extension with URL = 'hostingDepartment': maximum cardinality of 'extension' is 0</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'isFirst']) &lt;= 0">extension with URL = 'isFirst': maximum cardinality of 'extension' is 0</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'period']) &lt;= 1">extension with URL = 'period': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'status']) &lt;= 1">extension with URL = 'status': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'hostingDepartment']) &lt;= 1">extension with URL = 'hostingDepartment': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'isFirst']) &lt;= 1">extension with URL = 'isFirst': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
       <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>
       <sch:assert test="count(f:value[x]) &lt;= 0">value[x]: maximum cardinality of 'value[x]' is 0</sch:assert>
