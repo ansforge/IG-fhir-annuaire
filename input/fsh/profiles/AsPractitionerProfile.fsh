@@ -16,26 +16,21 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
     AsMailboxMSSExtension named mailboxMSS 0..*
 
 * extension[authorization] ^isModifier = false
-* extension[authorization].extension ^slicing.discriminator.type = #value
-* extension[authorization].extension ^slicing.discriminator.path = "url"
-* extension[authorization].extension ^slicing.rules = #open
-* extension[authorization].extension[period] MS
+* extension[authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
+* extension[authorization] ^short = "AutorisationExercice"
 
 * extension[birthPlace] ^isModifier = false
+* extension[birthPlace] ^definition = "Code officiel géographique (COG) de la commune (France) ou du pays"
+* extension[birthPlace] ^short = "lieuNaissance"
 
 * extension[deceasedDateTime] ^isModifier = false
+* extension[deceasedDateTime] ^definition = "Date de décès de la personne"
+* extension[deceasedDateTime] ^short = "dateDeces"
 
-* extension[mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
 * extension[mailboxMSS] ^isModifier = false
-* extension[mailboxMSS].extension ^slicing.discriminator.type = #value
-* extension[mailboxMSS].extension ^slicing.discriminator.path = "url"
-* extension[mailboxMSS].extension ^slicing.rules = #open
-* extension[mailboxMSS].extension[responsible] MS
-* extension[mailboxMSS].extension[phone] MS
-* extension[mailboxMSS].extension[date] MS
+* extension[mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
+* extension[mailboxMSS] ^short = "BoiteLettreMSS"
 
-* extension[mailboxMSS].extension[publication] ^sliceName = "publication"
-* extension[mailboxMSS].extension[publication].value[x] ^short = "indicateur liste rouge"
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
 * identifier.type 1..
 * identifier.type from $fr-practioner-identifier-type (extensible)
