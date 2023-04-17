@@ -35,27 +35,27 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[PractitionerRoleRegistration].extension[isFirst] MS
 
 * extension[practitionerRole-educationLevel] ^isModifier = false
-* extension[practitionerRole-educationLevel].id ..0
+* extension[practitionerRole-educationLevel].id MS
 * extension[practitionerRole-educationLevel].extension ^slicing.discriminator.type = #value
 * extension[practitionerRole-educationLevel].extension ^slicing.discriminator.path = "url"
 * extension[practitionerRole-educationLevel].extension ^slicing.rules = #open
-* extension[practitionerRole-educationLevel].extension[academicDegree] 0..0
-* extension[practitionerRole-educationLevel].extension[achievedLevel] 0..0
-* extension[practitionerRole-educationLevel].extension[academicYear] 0..0
-* extension[practitionerRole-educationLevel].extension[period] 0..0
-* extension[practitionerRole-educationLevel].extension[issuer] 0..0
+* extension[practitionerRole-educationLevel].extension[academicDegree] MS
+* extension[practitionerRole-educationLevel].extension[achievedLevel] MS
+* extension[practitionerRole-educationLevel].extension[academicYear] MS
+* extension[practitionerRole-educationLevel].extension[period] MS
+* extension[practitionerRole-educationLevel].extension[issuer] MS
 
 * extension[practitionerRole-smartCard] ^isModifier = false
 
 * extension[as-mailbox-mss] ^definition = "BALs MSS de type PER rattaché à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
 * extension[as-mailbox-mss] ^isModifier = false
-* extension[as-mailbox-mss].id 0..0
+* extension[as-mailbox-mss].id MS
 * extension[as-mailbox-mss].extension ^slicing.discriminator.type = #value
 * extension[as-mailbox-mss].extension ^slicing.discriminator.path = "url"
 * extension[as-mailbox-mss].extension ^slicing.rules = #open
-* extension[as-mailbox-mss].extension[responsible] 0..0
-* extension[as-mailbox-mss].extension[phone] 0..0
-* extension[as-mailbox-mss].extension[date] 0..0
+* extension[as-mailbox-mss].extension[responsible] MS
+* extension[as-mailbox-mss].extension[phone] MS
+* extension[as-mailbox-mss].extension[date] MS
 
 * identifier MS
 * period MS
