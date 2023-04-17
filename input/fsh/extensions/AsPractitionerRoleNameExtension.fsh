@@ -14,4 +14,4 @@ Description: "Extension créée dans le cadre de l'Annuaire Santé pour définir
     suffix 0..1 MS
 * extension[family].value[x] only string
 * extension[given].value[x] only string
-* extension[suffix].valueCodeableConcept from $JDV_J79-CiviliteExercice-RASS (required)
+* extension[suffix].valueCodeableConcept from $JDV-J79-CiviliteExercice-RASS (required)
