@@ -45,6 +45,13 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 
 * extension[as-mailbox-mss] ^definition = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
 * extension[as-mailbox-mss] ^isModifier = false
+* extension[as-mailbox-mss].id MS
+* extension[as-mailbox-mss].extension ^slicing.discriminator.type = #value
+* extension[as-mailbox-mss].extension ^slicing.discriminator.path = "url"
+* extension[as-mailbox-mss].extension ^slicing.rules = #open
+* extension[as-mailbox-mss].extension[responsible] MS
+* extension[as-mailbox-mss].extension[phone] MS
+* extension[as-mailbox-mss].extension[date] MS
 
 * identifier MS
 * period MS
