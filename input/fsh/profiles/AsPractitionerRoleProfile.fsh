@@ -18,7 +18,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
     AsMailboxMSSExtension named as-mailbox-mss 0..1 MS
 
 * extension[practitionerRole-name] ^isModifier = false
-* extension[practitionerRole-name].value[x].id MS
+* extension[practitionerRole-name].id MS
 * extension[practitionerRole-name].value[x].use MS
 * extension[practitionerRole-name].value[x].text MS
 * extension[practitionerRole-name].value[x].prefix MS
