@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AnnuaireSantdonnespubliques"] ; # 
   fhir:title [ fhir:v "Annuaire Santé données publiques"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-04-17T11:17:21+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-17T11:39:02+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -633,6 +633,18 @@
        ] ;
        fhir:name [ fhir:v "AS Mailbox MSS Extension" ] ;
        fhir:description [ fhir:v "Extension créée dans le cadre de l'annuaire santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-practitionerrole-name> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-ext-practitionerrole-name" ]
+       ] ;
+       fhir:name [ fhir:v "AS PractitionerRole Name Extension" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
