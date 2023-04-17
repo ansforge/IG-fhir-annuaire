@@ -1,0 +1,15 @@
+Extension: AsPractitionerRoleName
+Id: As-ext-practitionerrole-name
+Description: "Extension créée dans le cadre du ROR pour définir l'identité d’exercice d’un professionnel"
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+* extension contains
+    family 0..1 MS and
+    given 0..*
+    suffix 0..* and
+* extension[family].value[x] only string
+* extension[given].value[x] only string
+* extension[suffix].valueCodeableConcept from $JDV_J79-CiviliteExercice-RASS (required)
