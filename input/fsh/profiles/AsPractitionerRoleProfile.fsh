@@ -19,10 +19,10 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 
 * extension[practitionerRole-name] ^isModifier = false
 * extension[practitionerRole-name].id MS
-* extension[practitionerRole-name].value[x].use MS
-* extension[practitionerRole-name].value[x].text MS
-* extension[practitionerRole-name].value[x].prefix MS
-* extension[practitionerRole-name].value[x].period MS
+* extension[practitionerRole-name].use MS
+* extension[practitionerRole-name].text MS
+* extension[practitionerRole-name].prefix MS
+* extension[practitionerRole-name].period MS
 
 * extension[PractitionerRoleRegistration] ^isModifier = false
 * extension[PractitionerRoleRegistration].extension ^slicing.discriminator.type = #value
