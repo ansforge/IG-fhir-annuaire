@@ -19,20 +19,20 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 
 * extension[practitionerRole-name] ^isModifier = false
 * extension[practitionerRole-name].value[x].id MS
-* extension[practitionerRole-name].value[x].use ..0
-* extension[practitionerRole-name].value[x].text ..0
-* extension[practitionerRole-name].value[x].prefix ..0
-* extension[practitionerRole-name].value[x].period ..0
+* extension[practitionerRole-name].value[x].use MS
+* extension[practitionerRole-name].value[x].text MS
+* extension[practitionerRole-name].value[x].prefix MS
+* extension[practitionerRole-name].value[x].period MS
 
 * extension[PractitionerRoleRegistration] ^isModifier = false
 * extension[PractitionerRoleRegistration].extension ^slicing.discriminator.type = #value
 * extension[PractitionerRoleRegistration].extension ^slicing.discriminator.path = "url"
 * extension[PractitionerRoleRegistration].extension ^slicing.rules = #open
 * extension[PractitionerRoleRegistration].extension[registeringOrganizationDetail] MS
-* extension[PractitionerRoleRegistration].extension[period] 0..0
-* extension[PractitionerRoleRegistration].extension[status] 0..0
-* extension[PractitionerRoleRegistration].extension[hostingDepartment] 0..0
-* extension[PractitionerRoleRegistration].extension[isFirst] 0..0
+* extension[PractitionerRoleRegistration].extension[period] MS
+* extension[PractitionerRoleRegistration].extension[status] MS
+* extension[PractitionerRoleRegistration].extension[hostingDepartment] MS
+* extension[PractitionerRoleRegistration].extension[isFirst] MS
 
 * extension[practitionerRole-educationLevel] ^isModifier = false
 * extension[practitionerRole-educationLevel].id ..0
