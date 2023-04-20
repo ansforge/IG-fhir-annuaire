@@ -4,6 +4,7 @@ Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
 Description: 	"Profil créé à partir de la ressource PractitionerRole dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée."
 
+* meta.lastUpdated 1..1
 
 * contained only AsLocationProfile
 * extension ^slicing.discriminator.type = #value
