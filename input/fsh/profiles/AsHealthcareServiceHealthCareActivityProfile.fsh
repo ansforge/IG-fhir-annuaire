@@ -4,6 +4,8 @@ Id: as-healthcareservice-healthcare-activity
 Title: "As HealthcareService HealthCare Activity Profile"
 Description: "Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS."
 
+* meta.lastUpdated 1..1
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
