@@ -4,6 +4,8 @@ Id: as-device
 Title: "As Device Profile"
 Description: "Profil créé à partir de la ressource Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement."
 
+* meta.lastUpdated 1..1
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
