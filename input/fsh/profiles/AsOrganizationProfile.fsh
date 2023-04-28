@@ -33,7 +33,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
 // numeroLicence pour les officines
-* extension[pharmacyLicence] only $organization-pharmacyLicence MS
+* extension[pharmacyLicence] only $organization-pharmacyLicence
 * extension[pharmacyLicence] ^sliceName = "pharmacyLicence"
 * extension[pharmacyLicence] ^isModifier = false
 // digitalCertificate
