@@ -72,11 +72,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Practitioner.extension:birthPlace","Practitioner.extension","birthPlace","","",0,1,"Y","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-birthPlace]]} {[]}
-","lieuNaissance","Code officiel géographique (COG) de la commune (France) ou du pays","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","[DR] : lieuNaissance","Code officiel géographique (COG) de la commune (France) ou du pays","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Practitioner.extension:deceasedDateTime","Practitioner.extension","deceasedDateTime","","",0,*,"","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-deceasedDateTime]]} {[]}
-","dateDeces","Date de décès de la personne","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","[DR] : dateDeces","Date de décès de la personne","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Practitioner.extension:mailboxMSS","Practitioner.extension","mailboxMSS","","",0,*,"","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-mailbox-mss]]} {[]}
@@ -172,12 +172,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","implied by XPN.11","n/a","./formatted"
 "Practitioner.name.family","Practitioner.name.family","","surname
 ","",0,1,"Y","","Y","string {[]} {[]}
-","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"ele-1
+","[DR] : nomFamille/nomUsage","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XPN.1/FN.1","n/a","./part[partType = FAM]","./FamilyName"
 "Practitioner.name.given","Practitioner.name.given","","first name
 middle name","",0,*,"Y","","Y","string {[]} {[]}
-","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"ele-1
+","[DR] : prenom/prenomUsuel","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XPN.2 + XPN.3","n/a","./part[partType = GIV]","./GivenNames"
 "Practitioner.name.prefix","Practitioner.name.prefix","","","",0,1,"","","Y","string {[]} {[]}
@@ -195,7 +195,7 @@ Period is not used for a duration (a measure of elapsed time). See [Duration](ht
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}","DR","XPN.13 + XPN.14","n/a","IVL<TS>[lowClosed=""true"" and highClosed=""true""] or URG<TS>[lowClosed=""true"" and highClosed=""true""]","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
 "Practitioner.telecom","Practitioner.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPoint]]} {[]}
-","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Différentes instances pour les téléphones, la télécopie et l’adresse mail","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
+","[DR] : telecommunication","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Différentes instances pour les téléphones, la télécopie et l’adresse mail","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}","XTN","n/a","TEL","ContactPoint"
 "Practitioner.telecom.id","Practitioner.telecom.id","","","",0,1,"","","","string {[]} {[]}
@@ -234,18 +234,18 @@ Period is not used for a duration (a measure of elapsed time). See [Duration](ht
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}","DR","N/A","n/a","IVL<TS>[lowClosed=""true"" and highClosed=""true""] or URG<TS>[lowClosed=""true"" and highClosed=""true""]","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
 "Practitioner.address","Practitioner.address","","","",0,*,"Y","","","Address {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-address-extended]]} {[]}
-","An address expressed using postal conventions (as opposed to GPS or other location definition formats)","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).","The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations.","","","","","","","",,,,,"",,,,"Practitioner.address",0,*,"ele-1
+","[DR] : adresseCorrespondance","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).","The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations.","","","","","","","",,,,,"",,,,"Practitioner.address",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD","n/a","AD","Address"
 "Practitioner.gender","Practitioner.gender","","","",0,1,"Y","","Y","code {[]} {[]}
-","male | female | other | unknown","Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.","Note that FHIR strings SHALL NOT exceed 1MB in size","Needed to address the person correctly.","","","","","","","",,"required","The gender of a person used for administrative purposes.","http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1","",,,,"Practitioner.gender",0,1,"ele-1
+","[DR] : sexeAdministratif","Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.","Note that FHIR strings SHALL NOT exceed 1MB in size","Needed to address the person correctly.","","","","","","","",,"required","The gender of a person used for administrative purposes.","http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1","",,,,"Practitioner.gender",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","STF-5","n/a","./administrativeGender","./GenderCode"
 "Practitioner.birthDate","Practitioner.birthDate","","","",0,1,"Y","","Y","date {[]} {[]}
-","The date  on which the practitioner was born","The date of birth for the practitioner.","","Needed for identification.","","","","","","","",,,,,"",,,,"Practitioner.birthDate",0,1,"ele-1
+","[DR] - dateNaissance","The date of birth for the practitioner.","","Needed for identification.","","","","","","","",,,,,"",,,,"Practitioner.birthDate",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","STF-6","n/a","./birthTime","(not represented in ServD)"
-"Practitioner.photo","Practitioner.photo","","","",0,*,"Y","","","Attachment {[]} {[]}
+"Practitioner.photo","Practitioner.photo","","","",0,*,"","","","Attachment {[]} {[]}
 ","Image of the person","Image of the person.","When providing a summary view (for example with Observation.value[x]) Attachment should be represented with a brief display text such as ""Signed Procedure Consent"".","Many EHR systems have the capability to capture an image of patients and personnel. Fits with newer social media usage too.","","","","","","","",,,,,"",,,,"Practitioner.photo",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 att-1:If the Attachment has data, it SHALL have a contentType {data.empty() or contentType.exists()}","ED/RP","n/a","ED","./subjectOf/ObservationEvent[code=""photo""]/value","./ImageURI (only supports the URI reference)"
@@ -268,7 +268,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Practitioner.qualification.identifier","Practitioner.qualification.identifier","","","",0,*,"Y","","","Identifier {[]} {[]}
-","Numéro de diplôme","An identifier that applies to this person's qualification in this role.","","Often, specific identities are assigned for the qualification.","","","","","","","",,,,,"",,,,"Practitioner.qualification.identifier",0,*,"ele-1
+","numeroDiplome","An identifier that applies to this person's qualification in this role.","","Often, specific identities are assigned for the qualification.","","","","","","","",,,,,"",,,,"Practitioner.qualification.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CX / EI (occasionally, more often EI maps to a resource id or a URL)","n/a","II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]",".playingEntity.playingRole[classCode=QUAL].id","Identifier"
 "Practitioner.qualification.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
@@ -847,6 +847,6 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
 "Practitioner.communication","Practitioner.communication","","","",0,*,"Y","","","CodeableConcept {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed]]} {[]}
-","Concept - reference to a terminology or just  text","A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","Knowing which language a practitioner speaks can help in facilitating communication with patients.","","","","","","","",,"preferred","A human language.","http://hl7.org/fhir/ValueSet/languages","",,,,"Practitioner.communication",0,*,"ele-1
+","langueParlee","A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","Knowing which language a practitioner speaks can help in facilitating communication with patients.","","","","","","","",,"preferred","A human language.","http://hl7.org/fhir/ValueSet/languages","",,,,"Practitioner.communication",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CE/CNE/CWE","n/a","CD"
