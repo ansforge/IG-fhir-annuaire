@@ -37,13 +37,13 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension[organization-digitalCertificate] ^isModifier = false
 * extension[organization-digitalCertificate] ^short = "[DR] : certificat"
 // numeroLicence pour les officines
-* extension[organization-pharmacyLicence] only $organization-pharmacyLicence
 * extension[organization-pharmacyLicence] ^sliceName = "pharmacyLicence"
 * extension[organization-pharmacyLicence] ^isModifier = false
+* extension[organization-pharmacyLicence] ^short = "numeroLicence"
 // boiteLettresMSS
-* extension[organization-mailboxMSS] only AsMailboxMSSExtension
 * extension[organization-mailboxMSS] ^sliceName = "mailboxMSS"
 * extension[organization-mailboxMSS] ^isModifier = false
+* extension[organization-mailboxMSS] ^short = "boiteLettresMSS"
 * extension[organization-mailboxMSS].extension ^slicing.discriminator.type = #value
 * extension[organization-mailboxMSS].extension ^slicing.discriminator.path = "url"
 * extension[organization-mailboxMSS].extension ^slicing.rules = #open
