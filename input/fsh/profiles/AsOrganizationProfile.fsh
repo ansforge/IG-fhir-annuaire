@@ -55,32 +55,26 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
     statutJuridiqueINSEE 0..* and 
     sphParticipation  0..* 
 // typeEtablissement	
-* type[organizationType] ^sliceName = "organizationType"
 * type[organizationType] ^short = "typeEtablissement"
 * type[organizationType] ^comment = "Entitité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
 // secteurActivite
-* type[secteurActiviteRASS] ^sliceName = "secteurActivite"
 * type[secteurActiviteRASS] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * type[secteurActiviteRASS] ^binding.extension.valueString = "OrganizationType"
 * type[secteurActiviteRASS] ^binding.strength = #required
 * type[secteurActiviteRASS] ^binding.description = "Un secteur d'activité regroupe les établissements partageant la même activité de santé"
 // categorieEtablissement
-* type[categorieEtablissementRASS] ^sliceName = "categorieEtablissement"
 * type[categorieEtablissementRASS] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * type[categorieEtablissementRASS] ^binding.extension.valueString = "OrganizationType"
 * type[categorieEtablissementRASS] ^binding.strength = #required
 * type[categorieEtablissementRASS] ^binding.description = "La catégorie d'établissement est le cadre réglementaire dans lequel s'exerce l'activité de l'entité géographique"
 // activiteINSEE
 * type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
-* type[activiteINSEE] ^sliceName = "activiteINSEE"
 * type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG."
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
-* type[statutJuridiqueINSEE] ^sliceName = "statutJuridiqueINSEE"
 * type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caracterise la situation juridique de la personne morale"
 // modaliteParticipationSPH
 * type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
-* type[sphParticipation] ^sliceName = "modaliteParticipationSPH"
 * type[sphParticipation] ^short = "Modalités de participation au service public hospitalier"
 // adresse
 * address only AsAddressExtendedProfile
