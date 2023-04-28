@@ -31,17 +31,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * identifier.system ^comment = "« http://rpps.fr» si l’instance correspond à un identifiant RPPS ; « http://adeli.fr» si l’instance correspond à un identifiant ADELI ; « urn:oid:1.2.250.1.71.4.2.1 » si l’instance correspond à l’identification nationale PP (idNat_PS) ; « urn:oid:1.2.250.1.213.1.6.4.2 » si l’instance correspond à une identification locale : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
 * identifier.value 1..
 * identifier.value ^short = "la valeur de l'identifiant du PS"
-// nomFamille/nomUsage
+// noms et prenoms de la personne
 * name MS
 * name only $FrHumanName
 * name ^short = "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil"
-* name.extension ^slicing.discriminator.type = #value
-* name.extension ^slicing.discriminator.path = "url"
-* name.extension ^slicing.rules = #open
-* name.extension[assemblyOrder] MS
-* name.extension[assemblyOrder].value[x] ^slicing.discriminator.type = #type
-* name.extension[assemblyOrder].value[x] ^slicing.discriminator.path = "$this"
-* name.extension[assemblyOrder].value[x] ^slicing.rules = #closed
 * name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
 // nomFamille/nomUsage
 * name.family ^short = "[DR] : nomFamille/nomUsage"
@@ -121,43 +114,43 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // DiplomeEtudeSpecialisee
 * qualification.code.coding[degreeR49] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR49] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR49].system ^short = "DiplomeEtudeSpecialisee"
+* qualification.code.coding[degreeR49] ^short = "DiplomeEtudeSpecialisee"
 // DESC1
 * qualification.code.coding[degreeR50] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR50] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR50].system ^short = "DESC1"
+* qualification.code.coding[degreeR50] ^short = "DESC1"
 // DESC2
 * qualification.code.coding[degreeR51] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR51] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR51].system ^short = "DESC2"
+* qualification.code.coding[degreeR51] ^short = "DESC2"
 // capaciteDiplome
 * qualification.code.coding[degreeR52] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR52] ^binding.description = "Diplôme de capacité de médecine."
-* qualification.code.coding[degreeR52].system ^short = "capaciteDiplome"
+* qualification.code.coding[degreeR52] ^short = "capaciteDiplome"
 // DiplomeEEE
 * qualification.code.coding[degreeR53] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR53] ^binding.description = "Diplôme d'un pays de l'espace économique européen"
-* qualification.code.coding[degreeR53].system ^short = "DiplomeEEE"
+* qualification.code.coding[degreeR53] ^short = "DiplomeEEE"
 // DiplomeUniversitaire
 * qualification.code.coding[degreeR54] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR54] ^binding.description = "Diplôme universitaire ou interuniversitaire"
-* qualification.code.coding[degreeR54].system ^short = "DiplomeUniversitaire"
+* qualification.code.coding[degreeR54] ^short = "DiplomeUniversitaire"
 // certificatEtudeSpeciale
 * qualification.code.coding[degreeR55] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR55] ^binding.description = "Certificat d'études spéciales (CES)"
-* qualification.code.coding[degreeR55].system ^short = "certificatEtudeSpeciale"
+* qualification.code.coding[degreeR55] ^short = "certificatEtudeSpeciale"
 // attestation
 * qualification.code.coding[degreeR56] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR56] ^binding.description = "Attestation de formation"
-* qualification.code.coding[degreeR56].system ^short = "attestation"
+* qualification.code.coding[degreeR56] ^short = "attestation"
 // DiplomeEES
 * qualification.code.coding[degreeR57] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR57] ^binding.description = "Diplôme européen d'études spécialisées"
-* qualification.code.coding[degreeR57].system ^short = "DiplomeEES"
+* qualification.code.coding[degreeR57] ^short = "DiplomeEES"
 // 
 * qualification.code.coding[degreeR58] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR58] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
-* qualification.code.coding[degreeR58].system ^short = ""
+* qualification.code.coding[degreeR58] ^short = ""
 // AutreDiplomeObtenu
 * qualification.code.coding[deegreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[deegreeR36] ^binding.description = "Autre diplôme obtenu"
@@ -165,11 +158,11 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // qualification
 * qualification.code.coding[degreeR47] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR47] ^binding.description = "Qualification attribuée par une commission"
-* qualification.code.coding[degreeR47].system ^short = "qualification"
+* qualification.code.coding[degreeR47] ^short = "qualification"
 // diplomeDeuxiemeCycleNonQualifiant
 * qualification.code.coding[degreeR226] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR226] ^binding.description = "Diplôme de deuxième cycle non qualifiant"
-* qualification.code.coding[degreeR226].system ^short = "diplomeDeuxiemeCycleNonQualifiant"
+* qualification.code.coding[degreeR226] ^short = "diplomeDeuxiemeCycleNonQualifiant"
 * qualification.code.text MS
 * qualification.period MS
 * qualification.issuer MS
