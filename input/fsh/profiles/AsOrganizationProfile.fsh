@@ -26,7 +26,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * name ^short = "Raison Sociale de la strcuture"
 * alias ^short = "Enseigne commerciale de la structure"
 // periode d'activite
-* extension[usePeriod] only Periode MS
+* extension[usePeriod] only Period MS
 * extension[usePeriod] ^sliceName = "usePeriod"
 * extension[usePeriod].valuePeriod ^sliceName = "valuePeriod"
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
