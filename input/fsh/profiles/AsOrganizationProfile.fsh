@@ -7,14 +7,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * meta.lastUpdated 1..1
 // profils references
 * partOf only Reference(AsOrganizationProfile)
-// extensions
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-* extension contains
-    $digitalCertificate named organization-digitalCertificate 0..1 MS and
-    $organization-pharmacyLicence named organization-pharmacyLicence 0..* MS and
-    AsMailboxMSSExtension named organization-mailboxMSS 0..* MS
+
 // donnees
 * identifier MS 
 * identifier ^comment = "Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)"
@@ -32,18 +25,37 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension[usePeriod].valuePeriod ^sliceName = "valuePeriod"
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
+// extensions
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+* extension contains
+    $digitalCertificate named organization-digitalCertificate 0..1 MS and
+    $organization-pharmacyLicence named organization-pharmacyLicence 0..* MS and
+    AsMailboxMSSExtension named organization-mailboxMSS 0..* MS
+// digitalCertificate
+* extension[organization-digitalCertificate] ^isModifier = false
+* extension[organization-digitalCertificate] ^short = "[DR] : certificat"
 // numeroLicence pour les officines
 * extension[organization-pharmacyLicence] only $organization-pharmacyLicence
 * extension[organization-pharmacyLicence] ^sliceName = "pharmacyLicence"
 * extension[organization-pharmacyLicence] ^isModifier = false
-// digitalCertificate
-* extension[organization-digitalCertificate] ^isModifier = false
-* extension[organization-digitalCertificate] ^short = "[DR] : certificat"
+// boiteLettresMSS
+* extension[organization-mailboxMSS] only AsMailboxMSSExtension
+* extension[organization-mailboxMSS] ^sliceName = "mailboxMSS"
+* extension[organization-mailboxMSS] ^isModifier = false
+* extension[organization-mailboxMSS].extension ^slicing.discriminator.type = #value
+* extension[organization-mailboxMSS].extension ^slicing.discriminator.path = "url"
+* extension[organization-mailboxMSS].extension ^slicing.rules = #open
+* extension[organization-mailboxMSS].extension[responsible] ^short = "[DR] : mailBoxMSS.responsable"
+* extension[organization-mailboxMSS].extension[phone] ^short = "[DR] : mailBoxMSS.phone"
 // champ d'activite de la structure
+// Slice déjà défini dans FrOrganization
+* type MS
 * type contains
-    activiteINSEE 0..*  MS and
-    statutJuridiqueINSEE 0..* MS and 
-    SPH 0..* MS
+    activiteINSEE 0..*  and
+    statutJuridiqueINSEE 0..* and 
+    sphParticipation  0..* 
 // typeEtablissement	
 * type[organizationType] ^sliceName = "organizationType"
 * type[organizationType] ^short = "typeEtablissement"
@@ -63,22 +75,15 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 // activiteINSEE
 * type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
 * type[activiteINSEE] ^sliceName = "activiteINSEE"
-* type[activiteINSEE] ^comment = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG."
-* type[activiteINSEE] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* type[activiteINSEE] ^binding.extension.valueString = "OrganizationType"
-* type[activiteINSEE] ^binding.description = "Sous-classes de la Nomenclature d'Activités Française - INSEE"
+* type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG."
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
 * type[statutJuridiqueINSEE] ^sliceName = "statutJuridiqueINSEE"
-* type[statutJuridiqueINSEE] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* type[statutJuridiqueINSEE] ^binding.extension.valueString = "OrganizationType"
-* type[statutJuridiqueINSEE] ^binding.description = "Statut juridique FINESS qui caracterise la situation juridique de la personne morale"
+* type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caracterise la situation juridique de la personne morale"
 // modaliteParticipationSPH
-* type[SPH] from $JDV-J162-ESPIC-RASS (required)
-* type[SPH] ^sliceName = "modaliteParticipationSPH"
-* type[SPH] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* type[SPH] ^binding.extension.valueString = "OrganizationType"
-* type[SPH] ^binding.description = "Modalités de participation au service public hospitalier"
+* type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
+* type[sphParticipation] ^sliceName = "modaliteParticipationSPH"
+* type[sphParticipation] ^short = "Modalités de participation au service public hospitalier"
 // adresse
 * address only AsAddressExtendedProfile
 // telecommunication
@@ -90,15 +95,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * contact MS
 // 
 * endpoint MS
-// boiteLettresMSS
-* extension[organization-mailboxMSS] only AsMailboxMSSExtension
-* extension[organization-mailboxMSS] ^sliceName = "mailboxMSS"
-* extension[organization-mailboxMSS] ^isModifier = false
-* extension[organization-mailboxMSS].extension ^slicing.discriminator.type = #value
-* extension[organization-mailboxMSS].extension ^slicing.discriminator.path = "url"
-* extension[organization-mailboxMSS].extension ^slicing.rules = #open
-* extension[organization-mailboxMSS].extension[responsible] ^short = "[DR] : mailBoxMSS.responsable"
-* extension[organization-mailboxMSS].extension[phone] ^short = "[DR] : mailBoxMSS.phone"
+
 // lien EG/EJ
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)"
 * partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
