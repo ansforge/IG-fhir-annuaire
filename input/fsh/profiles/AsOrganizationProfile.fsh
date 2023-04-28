@@ -21,12 +21,13 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * identifier.use = #official (exactly)
 * identifier.type ^comment = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent du system  http://interopsante.org/CodeSystem/fr-v2-0203 ; Les codes 0,4 proviennent du system https://mos.esante.gouv.fr/NOS/TRE_G07-TypeIdentifiantStructure/FHIR/TRE-G07-TypeIdentifiantStructure"
 * identifier.system ^comment = "« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct) ; « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET ; « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ ; « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang; « https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure;"
-// denomination
+// raisonSociale
 * name MS
 * name ^short = "Raison Sociale de la strcuture"
+// complementRaisonSociale
+* alias MS
 * alias ^short = "Enseigne commerciale de la structure"
 // periode d'activite
-* extension[usePeriod] only Period MS
 * extension[usePeriod] ^sliceName = "usePeriod"
 * extension[usePeriod].valuePeriod ^sliceName = "valuePeriod"
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
