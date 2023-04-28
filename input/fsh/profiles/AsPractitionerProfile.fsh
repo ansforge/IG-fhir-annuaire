@@ -11,9 +11,9 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension ^slicing.rules = #open
 * extension contains
     $practitioner-nationality named practitioner-nationality 0..1 MS and
-    $practitioner-authorization named practitioner-authorization 0..* and
+    $practitioner-authorization named practitioner-authorization 0..* MS and
     $practitioner-birthPlace named practitioner-birthPlace 0..1 MS and
-    $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* and
+    $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* MS and
     AsMailboxMSSExtension named practitioner-mailboxMSS 0..*
 // Identifiants de la personne physique
 * identifier MS
@@ -86,21 +86,21 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding ^slicing.ordered = false
 * qualification.code.coding ^slicing.rules = #open
 * qualification.code.coding contains
-    degreeType 0..1 MS and
-    degreeR48 0..1 MS and
-    degreeR49 0..1 MS and
-    degreeR50 0..1 MS and
-    degreeR51 0..1 MS and
-    degreeR52 0..1 MS and
-    degreeR53 0..1 MS and
-    degreeR54 0..1 MS and
-    degreeR55 0..1 MS and
-    degreeR56 0..1 MS and
-    degreeR57 0..1 MS and
-    degreeR58 0..1 MS and
-    deegreeR36 0..1 MS and
-    degreeR47 0..1 MS and
-    degreeR226 0..1 MS
+    degreeType 0..1 and
+    degreeR48 0..1 and
+    degreeR49 0..1 and
+    degreeR50 0..1 and
+    degreeR51 0..1 and
+    degreeR52 0..1 and
+    degreeR53 0..1 and
+    degreeR54 0..1 and
+    degreeR55 0..1 and
+    degreeR56 0..1 and
+    degreeR57 0..1 and
+    degreeR58 0..1 and
+    deegreeR36 0..1 and
+    degreeR47 0..1 and
+    degreeR226 0..1 
 // typeDiplome
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
