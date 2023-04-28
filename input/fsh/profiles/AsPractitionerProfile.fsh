@@ -18,7 +18,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // Identifiants de la personne physique
 * identifier MS
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
-* identifier.type 1..
+* identifier.type 1.. // typeIdNat_PP
 * identifier.type from $fr-practioner-identifier-type (extensible)
 * identifier.type ^comment = "Les code ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les code 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier.type ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
@@ -110,7 +110,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // DiplomeEtat
 * qualification.code.coding[degreeR48] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR48] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR48].system ^short = "DiplomeEtat"
+* qualification.code.coding[degreeR48] ^short = "DiplomeEtat"
 // DiplomeEtudeSpecialisee
 * qualification.code.coding[degreeR49] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR49] ^binding.description = "Ensemble des diplômes et qualifications"
@@ -125,7 +125,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding[degreeR51] ^short = "DESC2"
 // capaciteDiplome
 * qualification.code.coding[degreeR52] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR52] ^binding.description = "Diplôme de capacité de médecine."
+* qualification.code.coding[degreeR52] ^binding.description = "Diplôme de capacité de médecine"
 * qualification.code.coding[degreeR52] ^short = "capaciteDiplome"
 // DiplomeEEE
 * qualification.code.coding[degreeR53] from $JDV-J105-EnsembleDiplome-RASS (required)
