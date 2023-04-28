@@ -79,10 +79,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // diplomeObtenu
 * qualification MS
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
-* qualification.id MS
-* qualification.identifier MS
 * qualification.identifier ^short = "numeroDiplome"
-* qualification.code.id MS
 * qualification.code.coding ^slicing.discriminator.type = #value
 * qualification.code.coding ^slicing.discriminator.path = "system"
 * qualification.code.coding ^slicing.description = "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)"
@@ -164,18 +161,8 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding[degreeR226] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR226] ^binding.description = "Diplôme de deuxième cycle non qualifiant"
 * qualification.code.coding[degreeR226] ^short = "diplomeDeuxiemeCycleNonQualifiant"
-* qualification.code.text MS
-* qualification.period MS
-* qualification.issuer MS
-* qualification.issuer.reference MS
-* qualification.issuer.type MS
 * qualification.issuer.identifier ^short = "Code du lieu d'obtention du diplôme"
-* qualification.issuer.identifier.use MS
-* qualification.issuer.identifier.type MS
 * qualification.issuer.identifier.system = "urn:oid:1.2.250.1.213.1.6.4.1" (exactly)
-* qualification.issuer.identifier.period MS
-* qualification.issuer.identifier.assigner MS
-* qualification.issuer.display MS
 // AutorisationExercice
 * extension[practitioner-authorization] ^isModifier = false
 * extension[practitioner-authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
