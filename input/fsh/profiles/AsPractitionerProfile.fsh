@@ -77,6 +77,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
 * extension[practitioner-mailboxMSS] ^short = "boiteLettreMSS"
 // diplomeObtenu
+* qualification MS
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
 * qualification.id MS
 * qualification.identifier MS
@@ -106,63 +107,63 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // typeDiplome
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
-* qualification.code.coding[degreeType] ^short = "typeDiplome"
+* qualification.code.coding[degreeType].system ^short = "typeDiplome"
 // DiplomeEtat
 * qualification.code.coding[degreeR48] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR48] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR48] ^short = "DiplomeEtat"
+* qualification.code.coding[degreeR48].system ^short = "DiplomeEtat"
 // DiplomeEtudeSpecialisee
 * qualification.code.coding[degreeR49] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR49] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR49] ^short = "DiplomeEtudeSpecialisee"
+* qualification.code.coding[degreeR49].system ^short = "DiplomeEtudeSpecialisee"
 // DESC1
 * qualification.code.coding[degreeR50] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR50] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR50] ^short = "DESC1"
+* qualification.code.coding[degreeR50].system ^short = "DESC1"
 // DESC2
 * qualification.code.coding[degreeR51] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR51] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR51] ^short = "DESC2"
+* qualification.code.coding[degreeR51].system ^short = "DESC2"
 // capaciteDiplome
 * qualification.code.coding[degreeR52] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR52] ^binding.description = "Diplôme de capacité de médecine"
-* qualification.code.coding[degreeR52] ^short = "capaciteDiplome"
+* qualification.code.coding[degreeR52].system ^short = "capaciteDiplome"
 // DiplomeEEE
 * qualification.code.coding[degreeR53] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR53] ^binding.description = "Diplôme d'un pays de l'espace économique européen"
-* qualification.code.coding[degreeR53] ^short = "DiplomeEEE"
+* qualification.code.coding[degreeR53].system ^short = "DiplomeEEE"
 // DiplomeUniversitaire
 * qualification.code.coding[degreeR54] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR54] ^binding.description = "Diplôme universitaire ou interuniversitaire"
-* qualification.code.coding[degreeR54] ^short = "DiplomeUniversitaire"
+* qualification.code.coding[degreeR54].system ^short = "DiplomeUniversitaire"
 // certificatEtudeSpeciale
 * qualification.code.coding[degreeR55] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR55] ^binding.description = "Certificat d'études spéciales (CES)"
-* qualification.code.coding[degreeR55] ^short = "certificatEtudeSpeciale"
+* qualification.code.coding[degreeR55].system ^short = "certificatEtudeSpeciale"
 // attestation
 * qualification.code.coding[degreeR56] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR56] ^binding.description = "Attestation de formation"
-* qualification.code.coding[degreeR56] ^short = "attestation"
+* qualification.code.coding[degreeR56].system ^short = "attestation"
 // DiplomeEES
 * qualification.code.coding[degreeR57] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR57] ^binding.description = "Diplôme européen d'études spécialisées"
 * qualification.code.coding[degreeR57] ^short = "DiplomeEES"
 // 
 * qualification.code.coding[degreeR58] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR58] ^binding.description = "Ensemble des diplômes et qualifications du RASS"
-* qualification.code.coding[degreeR58] ^short = ""
+* qualification.code.coding[degreeR58] ^binding.description = "Ensemble des diplômes et qualifications"
+* qualification.code.coding[degreeR58].system ^short = ""
 // AutreDiplomeObtenu
 * qualification.code.coding[deegreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[deegreeR36] ^binding.description = "Autre diplôme obtenu"
-* qualification.code.coding[deegreeR36] ^short = "autreDiplomeObtenu"
+* qualification.code.coding[deegreeR36].system ^short = "autreDiplomeObtenu"
 // qualification
 * qualification.code.coding[degreeR47] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR47] ^binding.description = "Qualification attribuée par une commission"
-* qualification.code.coding[degreeR47] ^short = "qualification"
+* qualification.code.coding[degreeR47].system ^short = "qualification"
 // diplomeDeuxiemeCycleNonQualifiant
 * qualification.code.coding[degreeR226] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR226] ^binding.description = "Diplôme de deuxième cycle non qualifiant"
-* qualification.code.coding[degreeR226] ^short = "diplomeDeuxiemeCycleNonQualifiant"
+* qualification.code.coding[degreeR226].system ^short = "diplomeDeuxiemeCycleNonQualifiant"
 * qualification.code.text MS
 * qualification.period MS
 * qualification.issuer MS
