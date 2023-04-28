@@ -35,7 +35,9 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension[pharmacyLicence] only $organization-pharmacyLicence MS
 * extension[pharmacyLicence] ^sliceName = "pharmacyLicence"
 * extension[pharmacyLicence] ^isModifier = false
+// digitalCertificate
 * extension[digitalCertificate] ^isModifier = false
+* extension[digitalCertificate] ^short = "[DR] : certificat"
 // champ d'activite de la structure
 * type contains
     activiteINSEE 0..*  MS and
