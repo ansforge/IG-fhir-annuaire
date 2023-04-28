@@ -22,11 +22,11 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 
 * extension[birthPlace] ^isModifier = false
 * extension[birthPlace] ^definition = "Code officiel géographique (COG) de la commune (France) ou du pays"
-* extension[birthPlace] ^short = "lieuNaissance"
+* extension[birthPlace] ^short = "[DR] : lieuNaissance"
 
 * extension[deceasedDateTime] ^isModifier = false
 * extension[deceasedDateTime] ^definition = "Date de décès de la personne"
-* extension[deceasedDateTime] ^short = "dateDeces"
+* extension[deceasedDateTime] ^short = "[DR] : dateDeces"
 
 * extension[mailboxMSS] ^isModifier = false
 * extension[mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
@@ -60,24 +60,29 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
 * name.text MS
 * name.family MS
+* name.family ^short = "[DR] : nomFamille/nomUsage"
 * name.given MS
+* name.given ^short = "[DR] : prenom/prenomUsuel"
 * name.prefix ^binding.strength = #required
 * name.suffix MS
 * name.period MS
 * telecom MS
+* telecom ^short = "[DR] : telecommunication"
 * telecom only $FrContactPoint
 * telecom ^comment = "Différentes instances pour les téléphones, la télécopie et l’adresse mail"
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 * address MS
+* address ^short = "[DR] : adresseCorrespondance"
 * address only AsAddressExtendedProfile
 * gender MS
+* gender ^short = "[DR] : sexeAdministratif"
 * birthDate MS
-* photo MS
+* birthDate ^short = "[DR] - dateNaissance"
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
 * qualification.id MS
 * qualification.identifier MS
-* qualification.identifier ^short = "Numéro de diplôme"
+* qualification.identifier ^short = "numeroDiplome"
 * qualification.code.id MS
 * qualification.code.coding ^slicing.discriminator.type = #value
 * qualification.code.coding ^slicing.discriminator.path = "system"
@@ -170,4 +175,5 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.issuer.identifier.assigner MS
 * qualification.issuer.display MS
 * communication MS
+* communication ^short = "langueParlee"
 * communication only $codeableConcept-timed
