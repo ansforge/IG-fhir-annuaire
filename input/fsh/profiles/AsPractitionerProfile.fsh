@@ -1,5 +1,5 @@
 Profile: 		ASPractitionerProfile
-Parent: 		Practitioner
+Parent: 		FrPractitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
 Description: 	"Profil créé à partir de la ressource Practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
@@ -10,12 +10,13 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $practitioner-nationality named nationality 0..1 MS and
-    $practitioner-authorization named authorization 0..* and
-    $practitioner-birthPlace named birthPlace 0..1 MS and
-    $practitioner-deceasedDateTime named deceasedDateTime 0..* and
-    AsMailboxMSSExtension named mailboxMSS 0..*
+    $practitioner-nationality named practitioner-nationality 0..1 MS and
+    $practitioner-authorization named practitioner-authorization 0..* and
+    $practitioner-birthPlace named practitioner-birthPlace 0..1 MS and
+    $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* and
+    AsMailboxMSSExtension named practitioner-mailboxMSS 0..*
 // Identifiants de la personne physique
+* identifier MS
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
 * identifier.type 1..
 * identifier.type from $fr-practioner-identifier-type (extensible)
@@ -31,9 +32,9 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * identifier.value 1..
 * identifier.value ^short = "la valeur de l'identifiant du PS"
 // nomFamille/nomUsage
+* name MS
 * name only $FrHumanName
 * name ^short = "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil"
-* name.id MS
 * name.extension ^slicing.discriminator.type = #value
 * name.extension ^slicing.discriminator.path = "url"
 * name.extension ^slicing.rules = #open
@@ -41,30 +42,32 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.type = #type
 * name.extension[assemblyOrder].value[x] ^slicing.discriminator.path = "$this"
 * name.extension[assemblyOrder].value[x] ^slicing.rules = #closed
-* name.use MS
 * name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
-* name.text MS
-* name.family MS
+// nomFamille/nomUsage
 * name.family ^short = "[DR] : nomFamille/nomUsage"
-* name.given MS
+// prenom/prenomUsuel
 * name.given ^short = "[DR] : prenom/prenomUsuel"
+// civilite
 * name.prefix ^binding.strength = #required
-* name.suffix MS
-* name.period MS
+* name.prefix ^short = "civilite"
 // sexeAdministratif
 * gender MS
 * gender ^short = "[DR] : sexeAdministratif"
 // dateNaissance
-* birthDate MSdateNaissance
+* birthDate MS
 * birthDate ^short = "[DR] - dateNaissance"
 // lieuNaissance
-* extension[birthPlace] ^isModifier = false
-* extension[birthPlace] ^definition = "Code officiel géographique (COG) de la commune (France) ou du pays"
-* extension[birthPlace] ^short = "[DR] : lieuNaissance"
+* extension[practitioner-birthPlace] ^isModifier = false
+* extension[practitioner-birthPlace] ^definition = "Code officiel géographique (COG) de la commune (France) ou du pays"
+* extension[practitioner-birthPlace] ^short = "[DR] : lieuNaissance"
+// nationalite
+* extension[practitioner-nationality] ^isModifier = false
+* extension[practitioner-nationality] ^definition = "Nationalité de la personne"
+* extension[practitioner-nationality] ^short = "[DR] : nationalite"
 // dateDeces
-* extension[deceasedDateTime] ^isModifier = false
-* extension[deceasedDateTime] ^definition = "Date de décès de la personne"
-* extension[deceasedDateTime] ^short = "[DR] : dateDeces"
+* extension[practitioner-deceasedDateTime] ^isModifier = false
+* extension[practitioner-deceasedDateTime] ^definition = "Date de décès de la personne"
+* extension[practitioner-deceasedDateTime] ^short = "[DR] : dateDeces"
 // telecommunication 
 * telecom MS
 * telecom ^short = "[DR] : telecommunication"
@@ -76,10 +79,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * address MS
 * address ^short = "[DR] : adresseCorrespondance"
 * address only AsAddressExtendedProfile
-// BoiteLettreMSS
-* extension[mailboxMSS] ^isModifier = false
-* extension[mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
-* extension[mailboxMSS] ^short = "BoiteLettreMSS"
+// boiteLettreMSS
+* extension[practitioner-mailboxMSS] ^isModifier = false
+* extension[practitioner-mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
+* extension[practitioner-mailboxMSS] ^short = "boiteLettreMSS"
 // diplomeObtenu
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
 * qualification.id MS
@@ -180,9 +183,9 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.issuer.identifier.assigner MS
 * qualification.issuer.display MS
 // AutorisationExercice
-* extension[authorization] ^isModifier = false
-* extension[authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
-* extension[authorization] ^short = "AutorisationExercice"
+* extension[practitioner-authorization] ^isModifier = false
+* extension[practitioner-authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
+* extension[practitioner-authorization] ^short = "[DR] : autorisationExercice"
 // langueParlee
 * communication MS
 * communication ^short = "langueParlee"
