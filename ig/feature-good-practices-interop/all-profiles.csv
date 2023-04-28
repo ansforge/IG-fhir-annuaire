@@ -2192,15 +2192,15 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","Extensions are always sliced by (at least) url",,"open","DomainResource.modifierExtension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-device","Device.identifier","Device.identifier","","","",0,*,"","","","Identifier {[]} {[]}
-","Numéro autorisation ARGHOS","Unique instance identifiers assigned to a device by manufacturers other organizations or owners.","The barcode string from a barcode present on a device label or package may identify the instance, include names given to the device in local usage, or may identify the type of device. If the identifier identifies the type of device, Device.type element should be used.","","","","","","","","",,,,,"",,,,"Device.identifier",0,*,"ele-1
+"as-device","Device.identifier","Device.identifier","","","",0,*,"Y","","","Identifier {[]} {[]}
+","numeroAutorisationARHGOS","Unique instance identifiers assigned to a device by manufacturers other organizations or owners.","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML","","","","","","","","",,,,,"",,,,"Device.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.definition","Device.definition","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/DeviceDefinition]]}
+"as-device","Device.definition","Device.definition","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/DeviceDefinition]]}
 ","The reference to the definition for the device","The reference to the definition for the device.","References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.","","","","","","","","",,,,,"",,,,"Device.definition",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
-"as-device","Device.udiCarrier","Device.udiCarrier","","","",0,*,"Y","","Y","BackboneElement {[]} {[]}
+"as-device","Device.udiCarrier","Device.udiCarrier","","","",0,*,"","","Y","BackboneElement {[]} {[]}
 ","Unique Device Identifier (UDI) Barcode string","Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.","UDI may identify an unique instance of a device, or it may only identify the type of the device.  See [UDI mappings](device-mappings.html#udi) for a complete mapping of UDI parts to Device.","","","","","","","","",,,,,"",,,,"Device.udiCarrier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2255,41 +2255,41 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.","see http://en.wikipedia.org/
 ","barcode | rfid | manual +","A coded entry to indicate how the data was entered.","Note that FHIR strings SHALL NOT exceed 1MB in size","Supports a way to distinguish hand entered from machine read data.","","","","","","","",,"required","Codes to identify how UDI data was entered.","http://hl7.org/fhir/ValueSet/udi-entry-type|4.0.1","",,,,"Device.udiCarrier.entryType",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.status","Device.status","","","",0,1,"","Y","Y","code {[]} {[]}
-","active | inactive | entered-in-error | unknown","Status of the Device availability.","= “active” par défaut; 
+"as-device","Device.status","Device.status","","","",0,1,"Y","Y","Y","code {[]} {[]}
+","actif","Status of the Device availability.","= “active” par défaut; 
 Sinon, si le matériel est inactif =” inactive”","","","","","","","","",,"required","The availability status of the device.","http://hl7.org/fhir/ValueSet/device-status|4.0.1","",,,,"Device.status",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.statusReason","Device.statusReason","","","",0,*,"Y","","","CodeableConcept {[]} {[]}
+"as-device","Device.statusReason","Device.statusReason","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","online | paused | standby | offline | not-ready | transduc-discon | hw-discon | off","Reason for the dtatus of the Device availability.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"extensible","The availability status reason of the device.","http://hl7.org/fhir/ValueSet/device-status-reason","",,,,"Device.statusReason",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-device","Device.distinctIdentifier","Device.distinctIdentifier","","Distinct Identification Code (DIC)
-","",0,1,"Y","","","string {[]} {[]}
+","",0,1,"","","","string {[]} {[]}
 ","The distinct identification string","The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.","For example, this applies to devices in the United States regulated under *Code of Federal Regulation 21CFR§1271.290(c)*.","","","","","","","","",,,,,"",,,,"Device.distinctIdentifier",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.manufacturer","Device.manufacturer","","","",0,1,"","","","string {[]} {[]}
-","Marque de l'équipement matériel lourd","A name of the manufacturer.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"Device.manufacturer",0,1,"ele-1
+"as-device","Device.manufacturer","Device.manufacturer","","","",0,1,"Y","","","string {[]} {[]}
+","marque","A name of the manufacturer.","Marque de l'équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.manufacturer",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.manufactureDate","Device.manufactureDate","","","",0,1,"Y","","","dateTime {[]} {[]}
+"as-device","Device.manufactureDate","Device.manufactureDate","","","",0,1,"","","","dateTime {[]} {[]}
 ","Date when the device was made","The date and time when the device was manufactured.","","","","","","","","","",,,,,"",,,,"Device.manufactureDate",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.expirationDate","Device.expirationDate","","","",0,1,"Y","","","dateTime {[]} {[]}
+"as-device","Device.expirationDate","Device.expirationDate","","","",0,1,"","","","dateTime {[]} {[]}
 ","Date and time of expiry of this device (if applicable)","The date and time beyond which this device is no longer valid or should not be used (if applicable).","","","","","","","","","",,,,,"",,,,"Device.expirationDate",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.lotNumber","Device.lotNumber","","","",0,1,"Y","","","string {[]} {[]}
+"as-device","Device.lotNumber","Device.lotNumber","","","",0,1,"","","","string {[]} {[]}
 ","Lot number of manufacture","Lot number assigned by the manufacturer.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"Device.lotNumber",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.serialNumber","Device.serialNumber","","","",0,1,"","","","string {[]} {[]}
-","Numéro de série de l'équipement matériel lourd","The serial number assigned by the organization when the device was manufactured.","Alphanumeric Maximum 20.","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"ele-1
+"as-device","Device.serialNumber","Device.serialNumber","","","",0,1,"Y","","","string {[]} {[]}
+","numeroSerie","The serial number assigned by the organization when the device was manufactured.","Numéro de série de l'équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.deviceName","Device.deviceName","","","",0,*,"Y","","","BackboneElement {[]} {[]}
+"as-device","Device.deviceName","Device.deviceName","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","The name of the device as given by the manufacturer","This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.","","","","","","","","","",,,,,"",,,,"Device.deviceName",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2318,19 +2318,19 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,"required","The type of name the device is referred by.","http://hl7.org/fhir/ValueSet/device-nametype|4.0.1","",,,,"Device.deviceName.type",1,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.modelNumber","Device.modelNumber","","","",0,1,"Y","","","string {[]} {[]}
+"as-device","Device.modelNumber","Device.modelNumber","","","",0,1,"","","","string {[]} {[]}
 ","The model number for the device","The model number for the device.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"Device.modelNumber",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.partNumber","Device.partNumber","","","",0,1,"Y","","","string {[]} {[]}
+"as-device","Device.partNumber","Device.partNumber","","","",0,1,"","","","string {[]} {[]}
 ","The part number of the device","The part number of the device.","Alphanumeric Maximum 20.","","","","","","","","",,,,,"",,,,"Device.partNumber",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.type","Device.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","The kind or type of device","The kind or type of device.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"required","Code définissant l'équipement matériel lourd (EML) soumis à autorisation","https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS","",,,,"Device.type",0,1,"ele-1
+"as-device","Device.type","Device.type","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
+","equipementMaterielLourd","The kind or type of device.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"required","Code définissant l'équipement matériel lourd (EML) soumis à autorisation","https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS","",,,,"Device.type",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.specialization","Device.specialization","","","",0,*,"Y","","","BackboneElement {[]} {[]}
+"as-device","Device.specialization","Device.specialization","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication","The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.","","","","","","","","","",,,,,"",,,,"Device.specialization",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2358,7 +2358,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","The version of the standard that is used to operate and communicate","The version of the standard that is used to operate and communicate.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"Device.specialization.version",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.version","Device.version","","","",0,*,"Y","","","BackboneElement {[]} {[]}
+"as-device","Device.version","Device.version","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","The actual design of the device or software version running on the device","The actual design of the device or software version running on the device.","","","","","","","","","",,,,,"",,,,"Device.version",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2390,7 +2390,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","The version text","The version text.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"Device.version.value",1,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.property","Device.property","","","",0,*,"Y","","","BackboneElement {[]} {[]}
+"as-device","Device.property","Device.property","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties","The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.","","","","","","","","","",,,,,"",,,,"Device.property",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2421,35 +2421,35 @@ qty-3:If a code for the unit is present, the system SHALL also be present {code.
 ","Property value as a code, e.g., NTP4 (synced to NTP)","Property value as a code, e.g., NTP4 (synced to NTP).","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,,,,"",,,,"Device.property.valueCode",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.patient","Device.patient","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient]]}
+"as-device","Device.patient","Device.patient","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient]]}
 ","Patient to whom Device is affixed","Patient information, If the device is affixed to a person.","References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.","If the device is implanted in a patient, then need to associate the device to the patient.","","","","","","","",,,,,"",,,,"Device.patient",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
-"as-device","Device.owner","Device.owner","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
-","Référence vers la structure FINESS ET","An organization that is responsible for the provision and ongoing maintenance of the device.","Reference vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
+"as-device","Device.owner","Device.owner","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization]]}
+","idStructure","An organization that is responsible for the provision and ongoing maintenance of the device.","Reference vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
-"as-device","Device.contact","Device.contact","","","",0,*,"Y","","","ContactPoint {[]} {[]}
+"as-device","Device.contact","Device.contact","","","",0,*,"","","","ContactPoint {[]} {[]}
 ","Details for human/organization for support","Contact details for an organization or a particular human that is responsible for the device.","used for troubleshooting etc.","","","","","","","","",,,,,"",,,,"Device.contact",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}"
-"as-device","Device.location","Device.location","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
+"as-device","Device.location","Device.location","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
 ","Where the device is found","The place where the device can be found.","References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.","Device.location can be used to track device location.","","","","","","","",,,,,"",,,,"Device.location",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
-"as-device","Device.url","Device.url","","","",0,1,"Y","","","uri {[]} {[]}
+"as-device","Device.url","Device.url","","","",0,1,"","","","uri {[]} {[]}
 ","Network address to contact device","A network address on which the device may be contacted directly.","If the device is running a FHIR server, the network address should  be the Base URL from which a conformance statement may be retrieved.","","","","","","","","",,,,,"",,,,"Device.url",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.note","Device.note","","","",0,*,"Y","","","Annotation {[]} {[]}
+"as-device","Device.note","Device.note","","","",0,*,"","","","Annotation {[]} {[]}
 ","Device notes and comments","Descriptive information, usage information or implantation information that is not captured in an existing element.","For systems that do not have structured annotations, they can simply communicate a single annotation with no author or time.  This element may need to be included in narrative because of the potential for modifying information.  *Annotations SHOULD NOT* be used to communicate ""modifying"" information that could be computable. (This is a SHOULD because enforcing user behavior is nearly impossible).","","","","","","","","",,,,,"",,,,"Device.note",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.safety","Device.safety","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+"as-device","Device.safety","Device.safety","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Safety Characteristics of Device","Provides additional safety characteristics about a medical device.  For example devices containing latex.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,,,,"",,,,"Device.safety",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-device","Device.parent","Device.parent","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Device]]}
+"as-device","Device.parent","Device.parent","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Device]]}
 ","The parent device","The parent device.","References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.","","","","","","","","",,,,,"",,,,"Device.parent",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
@@ -3227,211 +3227,212 @@ per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 ","Date de fermeture de la structure","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:digitalCertificate","Organization.extension","digitalCertificate","","",0,1,"Y","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/digitalCertificate]]} {[]}
-","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"as-organization","Organization.extension:organization-digitalCertificate","Organization.extension","organization-digitalCertificate","","",0,1,"Y","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/digitalCertificate]]} {[]}
+","[DR] : certificat","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:pharmacyLicence","Organization.extension","pharmacyLicence","","",0,*,"","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence]]} {[]}
-","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"as-organization","Organization.extension:organization-pharmacyLicence","Organization.extension","organization-pharmacyLicence","","",0,*,"Y","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence]]} {[]}
+","numeroLicence","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS","Organization.extension","mailboxMSS","","",0,*,"","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-mailbox-mss]]} {[]}
-","AS Mailbox MSS Extension","Extension créée dans le cadre de l'annuaire santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
-",""
-"as-organization","Organization.extension:mailboxMSS.id","Organization.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS","Organization.extension","organization-mailboxMSS","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-mailbox-mss]]} {[]}
+","boiteLettresMSS","Extension créée dans le cadre de l'annuaire santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-organization","Organization.extension:organization-mailboxMSS.id","Organization.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension","Organization.extension.extension","","extensions
+"as-organization","Organization.extension:organization-mailboxMSS.extension","Organization.extension.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:value","Organization.extension.extension","value","","",0,1,"Y","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:value","Organization.extension.extension","value","","",0,1,"Y","","","Extension {[]} {[]}
 ","BAL MSS","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:value.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:value.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:value.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:value.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:value.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:value.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""value""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:value.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:value.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:type","Organization.extension.extension","type","","",0,1,"Y","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:type","Organization.extension.extension","type","","",0,1,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:type.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:type.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:type.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:type.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:type.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:type.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""type""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:type.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:type.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
 ","",,"closed","Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:type.value[x]:valueCodeableConcept","Organization.extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:type.value[x]:valueCodeableConcept","Organization.extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Value of extension","Valeurs possibles :
 ORG pour une BAL organisationnelle;
 APP pour une BAL applicative;
 PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,"required","Type de  boîte aux lettre MSS","https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:description","Organization.extension.extension","description","","",0,1,"Y","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:description","Organization.extension.extension","description","","",0,1,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:description.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:description.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:description.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:description.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:description.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:description.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""description""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:description.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:description.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
 ","Description fonctionnelle de la boîte aux lettres","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:responsible","Organization.extension.extension","responsible","","",0,1,"Y","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"as-organization","Organization.extension:organization-mailboxMSS.extension:responsible","Organization.extension.extension","responsible","","",0,1,"Y","","","Extension {[]} {[]}
+","[DR] : mailBoxMSS.responsable","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:responsible.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:responsible.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:responsible.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:responsible.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:responsible.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:responsible.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""responsible""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:responsible.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:responsible.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
 ","Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres ""PER"".","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:service","Organization.extension.extension","service","","",0,1,"Y","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:service","Organization.extension.extension","service","","",0,1,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:service.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:service.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:service.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:service.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:service.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:service.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""service""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:service.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:service.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
 ","",,"closed","Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:service.value[x]:valueString","Organization.extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:service.value[x]:valueString","Organization.extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
 ","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:phone","Organization.extension.extension","phone","","",0,1,"Y","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"as-organization","Organization.extension:organization-mailboxMSS.extension:phone","Organization.extension.extension","phone","","",0,1,"Y","","","Extension {[]} {[]}
+","[DR] : mailBoxMSS.phone","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:phone.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:phone.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:phone.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:phone.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:phone.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:phone.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""phone""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:phone.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:phone.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
 ","",,"closed","Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:phone.value[x]:valueString","Organization.extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:phone.value[x]:valueString","Organization.extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
 ","Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:digitization","Organization.extension.extension","digitization","","",0,1,"Y","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:digitization","Organization.extension.extension","digitization","","",0,1,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:digitization.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:digitization.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:digitization.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:digitization.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:digitization.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:digitization.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""digitization""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:digitization.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:digitization.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
 ","",,"closed","Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:digitization.value[x]:valueBoolean","Organization.extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:digitization.value[x]:valueBoolean","Organization.extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
 ","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","- O : Dématérialisation acceptée 
 - N : Dématérialisation refusée","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:publication","Organization.extension.extension","publication","","",0,1,"Y","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:publication","Organization.extension.extension","publication","","",0,1,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:publication.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:publication.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:publication.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:publication.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:publication.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:publication.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""publication""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:publication.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:publication.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
 ","",,"closed","Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:publication.value[x]:valueBoolean","Organization.extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:publication.value[x]:valueBoolean","Organization.extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
 ","ndicateur liste rouge","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","O: Boîte aux lettres en liste rouge;
 N: La boîte aux lettres peut être publiée","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.extension:date","Organization.extension.extension","date","","",0,1,"Y","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:date","Organization.extension.extension","date","","",0,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:date.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:date.id","Organization.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:date.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:date.extension","Organization.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.extension:mailboxMSS.extension:date.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:date.url","Organization.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""date""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.extension:date.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","Meta {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.extension:date.value[x]","Organization.extension.extension.value[x]","","","",0,1,"","","","Meta {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.extension:mailboxMSS.url","Organization.extension.url","","","",1,1,"","","","uri {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.url","Organization.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-mailbox-mss""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-organization","Organization.extension:mailboxMSS.value[x]","Organization.extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
+"as-organization","Organization.extension:organization-mailboxMSS.value[x]","Organization.extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -3443,9 +3444,10 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","Extensions are always sliced by (at least) url",,"open","DomainResource.modifierExtension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.identifier","Organization.identifier","","","",0,*,"","","Y","Identifier {[]} {[]}
+"as-organization","Organization.identifier","Organization.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
 ","Identifies this organization  across multiple systems","Identifier for the organization that is used to identify the organization across multiple disparate systems.","Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)","Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization.","","","","","","","",,,,,"",,,,"Organization.identifier",0,*,"ele-1
-org-1",""
+org-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "as-organization","Organization.identifier.id","Organization.identifier.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "as-organization","Organization.identifier.extension","Organization.identifier.extension","","extensions
@@ -3470,13 +3472,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","The value that is unique","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.identifier.period","Organization.identifier.period","","","",0,1,"Y","","Y","Period {[]} {[]}
+"as-organization","Organization.identifier.period","Organization.identifier.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when id is/was valid for use","Time period during which identifier is/was valid for use.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
 
 Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"Identifier.period",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
-"as-organization","Organization.identifier.assigner","Organization.identifier.assigner","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"as-organization","Organization.identifier.assigner","Organization.identifier.assigner","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that issued id (may be just text)","Organization that issued/manages the identifier.","The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.","","","","","","","","",,,,,"",,,,"Identifier.assigner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
@@ -3486,7 +3488,7 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 This element is labeled as a modifier because it may be used to mark that the resource was created in error.","Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Organization.active",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.type","Organization.type","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-organization","Organization.type","Organization.type","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Kind of organization","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
 
 When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
@@ -3496,7 +3498,7 @@ We expect that some jurisdictions will profile this optionality to be a single c
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.type:organizationType","Organization.type","organizationType","","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","Type de strcuture","The kind(s) of organization that this is.","Entitité Juridique : LEGAL-ENTITY; 
+","typeEtablissement","The kind(s) of organization that this is.","Entitité Juridique : LEGAL-ENTITY; 
 Entité Géographique : GEOGRAPHICAL-ENTITY","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Used to categorize the organization.","http://interopsante.org/fhir/ValueSet/fr-organization-type","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -3549,7 +3551,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 
 When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
 
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Un secteur d'activité regroupe les établissements partageant la même activité de santé.","https://mos.esante.gouv.fr/NOS/JDV_J101-SecteurActivite-RASS/FHIR/JDV-J101-SecteurActivite-RASS","",,,,"Organization.type",0,*,"ele-1
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Un secteur d'activité regroupe les établissements partageant la même activité de santé","https://mos.esante.gouv.fr/NOS/JDV_J101-SecteurActivite-RASS/FHIR/JDV-J101-SecteurActivite-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.type:secteurActiviteRASS.id","Organization.type.id","","","",0,1,"","","","string {[]} {[]}
@@ -3648,56 +3650,45 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.type:organizationActivityField","Organization.type","organizationActivityField","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Kind of organization","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
+"as-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+","Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).
+Plus précisément, on distingue le code APET pour les EG.","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
 
 When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
 
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"example","Used to categorize the organization.","http://hl7.org/fhir/ValueSet/organization-type","",,,,"Organization.type",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Kind of organization","The kind(s) of organization that this is.","Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).
-Plus précisément, on distingue le code APET pour les EG.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Sous-classes de la Nomenclature d'Activités Française - INSEE","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Kind of organization","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
+","Statut juridique FINESS qui caracterise la situation juridique de la personne morale","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
 
 When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
 
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Statut juridique FINESS qui caracterise la situation juridique de la personne morale","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.type:CategorieEtablissement","Organization.type","CategorieEtablissement","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Kind of organization","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
+"as-organization","Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+","Modalités de participation au service public hospitalier","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
 
 When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
 
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"example","Used to categorize the organization.","http://hl7.org/fhir/ValueSet/organization-type","",,,,"Organization.type",0,*,"ele-1
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.type:SPH","Organization.type","SPH","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Kind of organization","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
-
-When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
-
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Modalités de participation au service public hospitalier","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-organization","Organization.name","Organization.name","","","",0,1,"","","Y","string {[]} {[]}
+"as-organization","Organization.name","Organization.name","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Raison Sociale de la strcuture","A name associated with the organization.","If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"ele-1
 org-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.alias","Organization.alias","","","",0,*,"","","","string {[]} {[]}
+"as-organization","Organization.alias","Organization.alias","","","",0,*,"Y","","","string {[]} {[]}
 ","Enseigne commerciale de la structure","A list of alternate names that the organization is known as, or was known as in the past.","There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.","Over time locations and organizations go through many changes and can be known by different names.
 
 For searching knowing previous names that the organization was known by can be very useful.","","","","","","","",,,,,"",,,,"Organization.alias",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.telecom","Organization.telecom","","","",0,*,"","","","ContactPoint {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPoint]]} {[]}
+"as-organization","Organization.telecom","Organization.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPoint]]} {[]}
 ","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Différentes instances pour les téléphones, la télécopie et l’adresse mail.","Human contact for the organization.","","","","","","","",,,,,"",,,,"Organization.telecom",0,*,"ele-1
-org-3",""
+org-3","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}org-3:The telecom of an organization can never be of use 'home' {where(use = 'home').empty()}"
 "as-organization","Organization.telecom.id","Organization.telecom.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "as-organization","Organization.telecom.extension","Organization.telecom.extension","","extensions
@@ -3731,28 +3722,13 @@ cpt-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 ","Time period when the contact point was/is in use","Time period when the contact point was/is in use.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
 
 Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"ele-1
-",""
-"as-organization","Organization.telecom.period.id","Organization.telecom.period.id","","","",0,1,"Y","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.telecom.period.extension","Organization.telecom.period.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-organization","Organization.telecom.period.start","Organization.telecom.period.start","","","",0,1,"Y","","Y","dateTime {[]} {[]}
-","Starting time with inclusive boundary","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
-per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-organization","Organization.telecom.period.end","Organization.telecom.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
-","End time with inclusive boundary, if not ongoing","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
-per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
 "as-organization","Organization.address","Organization.address","","","",0,*,"","","","Address {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-address-extended]]} {[]}
 ","An address expressed using postal conventions (as opposed to GPS or other location definition formats)","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-2:An address of an organization can never be of use 'home' {where(use = 'home').empty()}"
-"as-organization","Organization.partOf","Organization.partOf","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization]]}
+"as-organization","Organization.partOf","Organization.partOf","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization]]}
 ","Référence vers la structure de rattachement (lien EG/ EJ)","The organization of which this organization forms a part.","Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique.","Need to be able to track the hierarchy of organizations within an organization.","","","","","","","",,,,,"",,,,"Organization.partOf",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
