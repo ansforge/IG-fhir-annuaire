@@ -33,12 +33,12 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
 // numeroLicence pour les officines
-* extension[pharmacyLicence] only $organization-pharmacyLicence
-* extension[pharmacyLicence] ^sliceName = "pharmacyLicence"
-* extension[pharmacyLicence] ^isModifier = false
+* extension[organization-pharmacyLicence] only $organization-pharmacyLicence
+* extension[organization-pharmacyLicence] ^sliceName = "pharmacyLicence"
+* extension[organization-pharmacyLicence] ^isModifier = false
 // digitalCertificate
-* extension[digitalCertificate] ^isModifier = false
-* extension[digitalCertificate] ^short = "[DR] : certificat"
+* extension[organization-digitalCertificate] ^isModifier = false
+* extension[organization-digitalCertificate] ^short = "[DR] : certificat"
 // champ d'activite de la structure
 * type contains
     activiteINSEE 0..*  MS and
