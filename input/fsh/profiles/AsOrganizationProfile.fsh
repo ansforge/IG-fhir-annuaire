@@ -6,7 +6,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 // metadata
 * meta.lastUpdated 1..1
 // profils references
-* partOf only Reference(AsOrganizationProfile)
+* partOf only Reference(FrOrganization or AsOrganizationProfile)
 
 // donnees
 * identifier MS 
@@ -37,11 +37,9 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension[organization-digitalCertificate] ^isModifier = false
 * extension[organization-digitalCertificate] ^short = "[DR] : certificat"
 // numeroLicence pour les officines
-* extension[organization-pharmacyLicence] ^sliceName = "pharmacyLicence"
 * extension[organization-pharmacyLicence] ^isModifier = false
 * extension[organization-pharmacyLicence] ^short = "numeroLicence"
 // boiteLettresMSS
-* extension[organization-mailboxMSS] ^sliceName = "mailboxMSS"
 * extension[organization-mailboxMSS] ^isModifier = false
 * extension[organization-mailboxMSS] ^short = "boiteLettresMSS"
 * extension[organization-mailboxMSS].extension ^slicing.discriminator.type = #value
@@ -95,7 +93,6 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * contact MS
 // 
 * endpoint MS
-
 // lien EG/EJ
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)"
 * partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
