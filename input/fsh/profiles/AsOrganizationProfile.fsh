@@ -31,8 +31,8 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension ^slicing.rules = #open
 * extension contains
     $digitalCertificate named organization-digitalCertificate 0..1 MS and
-    $organization-pharmacyLicence named organization-pharmacyLicence 0..* MS and
-    AsMailboxMSSExtension named organization-mailboxMSS 0..* MS
+    $organization-pharmacyLicence named organization-pharmacyLicence 0..* and
+    AsMailboxMSSExtension named organization-mailboxMSS 0..* 
 // digitalCertificate
 * extension[organization-digitalCertificate] ^isModifier = false
 * extension[organization-digitalCertificate] ^short = "[DR] : certificat"
