@@ -26,7 +26,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension[practitionerRole-name] ^short = "civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)"
 // AutoriteEnregistrement
 * extension[PractitionerRoleRegistration] ^isModifier = false
-* extension[practitionerRole-name] ^short = "AutoriteEnregistrement""
+* extension[practitionerRole-name] ^short = "AutoriteEnregistrement"
 // SavoirFaire
 * extension[practitionerRole-educationLevel] ^isModifier = false
 * extension[practitionerRole-educationLevel] ^short = "SavoirFaire"
