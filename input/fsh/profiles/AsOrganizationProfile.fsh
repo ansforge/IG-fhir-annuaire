@@ -88,3 +88,5 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension[organization-mailboxMSS].extension ^slicing.rules = #open
 * extension[organization-mailboxMSS].extension[responsible] ^short = "[DR] : mailBoxMSS.responsable"
 * extension[organization-mailboxMSS].extension[phone] ^short = "[DR] : mailBoxMSS.phone"
+// Organization.endpoint
+* endpoint MS
