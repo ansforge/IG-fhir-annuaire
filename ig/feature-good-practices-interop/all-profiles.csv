@@ -3735,10 +3735,8 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","Organization that issued id (may be just text)","Organization that issued/manages the identifier.","The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.","","","","","","","","",,,,,"",,,,"Identifier.assigner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
-"as-organization","Organization.active","Organization.active","","","",0,1,"","Y","Y","boolean {[]} {[]}
-","Whether the organization's record is still in active use","Whether the organization's record is still in active use.","This active flag is not intended to be used to mark an organization as temporarily closed or under construction. Instead the Location(s) within the Organization should have the suspended status. If further details of the reason for the suspension are required, then an extension on this element should be used.
-
-This element is labeled as a modifier because it may be used to mark that the resource was created in error.","Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Organization.active",0,1,"ele-1
+"as-organization","Organization.active","Organization.active","","","",0,1,"Y","Y","Y","boolean {[]} {[]}
+","isActive","Whether the organization's record is still in active use.","true par défaut; false pour les structures supprimées","Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Organization.active",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.type","Organization.type","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
@@ -3932,11 +3930,11 @@ We expect that some jurisdictions will profile this optionality to be a single c
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.name","Organization.name","","","",0,1,"Y","","Y","string {[]} {[]}
-","Raison Sociale de la structure","A name associated with the organization.","If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"ele-1
+","raisonSociale","A name associated with the organization.","Raison Sociale de la structure","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"ele-1
 org-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.alias","Organization.alias","","","",0,*,"Y","","","string {[]} {[]}
-","Enseigne commerciale de la structure","A list of alternate names that the organization is known as, or was known as in the past.","There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.","Over time locations and organizations go through many changes and can be known by different names.
+","complementRaisonSociale","A list of alternate names that the organization is known as, or was known as in the past.","Enseigne commerciale de la structure","Over time locations and organizations go through many changes and can be known by different names.
 
 For searching knowing previous names that the organization was known by can be very useful.","","","","","","","",,,,,"",,,,"Organization.alias",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

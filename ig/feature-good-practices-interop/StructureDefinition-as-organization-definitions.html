@@ -1070,11 +1070,11 @@ A coded type for an identifier that can be used to determine which identifier to
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>This active flag is not intended to be used to mark an organization as temporarily closed or under construction. Instead the Location(s) within the Organization should have the suspended status. If further details of the reason for the suspension are required, then an extension on this element should be used.</p>
-<p>This element is labeled as a modifier because it may be used to mark that the resource was created in error.</p>
+  <tr><td>Comments</td><td><p>true par défaut; false pour les structures supprimées</p>
 </td></tr>
   <tr><td>Meaning if Missing</td><td>This resource is generally assumed to be active if no value is provided for the active element</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
@@ -1582,7 +1582,7 @@ Catégorie d'établissement du RAS
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>Need to use the name as the label of the organization.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.</p>
+  <tr><td>Comments</td><td><p>Raison Sociale de la structure</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1595,7 +1595,7 @@ Catégorie d'établissement du RAS
   <tr><td>Requirements</td><td><p>Over time locations and organizations go through many changes and can be known by different names.</p>
 <p>For searching knowing previous names that the organization was known by can be very useful.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.</p>
+  <tr><td>Comments</td><td><p>Enseigne commerciale de la structure</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1978,7 +1978,7 @@ The purpose for which you would contact a contact party
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire-donnee-publique#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 2, 2023 14:10+0000">2023-05-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire-donnee-publique#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 2, 2023 14:20+0000">2023-05-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
