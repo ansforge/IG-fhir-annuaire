@@ -85,10 +85,19 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding ^slicing.description = "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)"
 * qualification.code.coding ^slicing.ordered = false
 * qualification.code.coding ^slicing.rules = #open
+* qualification.code.coding contains degreeType  
 // typeDiplome
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
 * qualification.code.coding[degreeType] ^short = "typeDiplome"
+// AutreDiplomeObtenu
+* qualification.code.coding[deegreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
+* qualification.code.coding[deegreeR36] ^binding.description = "Autre diplôme obtenu"
+* qualification.code.coding[deegreeR36] ^short = "autreDiplomeObtenu"
+// qualification
+* qualification.code.coding[degreeR47] from $JDV-J105-EnsembleDiplome-RASS (required)
+* qualification.code.coding[degreeR47] ^binding.description = "Qualification attribuée par une commission"
+* qualification.code.coding[degreeR47] ^short = "qualification"
 // DiplomeEtat
 * qualification.code.coding[degreeR48] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR48] ^binding.description = "Ensemble des diplômes et qualifications"
@@ -133,14 +142,6 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding[degreeR58] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR58] ^binding.description = "Autre type de diplôme obtenu"
 * qualification.code.coding[degreeR58] ^short = "DiplomeDivers"
-// AutreDiplomeObtenu
-* qualification.code.coding[deegreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[deegreeR36] ^binding.description = "Autre diplôme obtenu"
-* qualification.code.coding[deegreeR36] ^short = "autreDiplomeObtenu"
-// qualification
-* qualification.code.coding[degreeR47] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR47] ^binding.description = "Qualification attribuée par une commission"
-* qualification.code.coding[degreeR47] ^short = "qualification"
 // diplomeDeuxiemeCycleNonQualifiant
 * qualification.code.coding[degreeR226] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR226] ^binding.description = "Diplôme de deuxième cycle non qualifiant"
