@@ -16,9 +16,11 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
     $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* MS and
     AsMailboxMSSExtension named practitioner-mailboxMSS 0..*
 // Identifiants de la personne physique
-* identifier MS
+* identifier 0..* MS
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
-* identifier.type 1.. // typeIdNat_PP
+// typeIdNat_PP
+* identifier.type 1.. MS
+* identifier.type ^short = "typeIdNat_PP"
 * identifier.type from $fr-practioner-identifier-type (extensible)
 * identifier.type ^comment = "Les code ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les code 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier.type ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
@@ -31,8 +33,8 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * identifier.system ^comment = "« http://rpps.fr» si l’instance correspond à un identifiant RPPS ; « http://adeli.fr» si l’instance correspond à un identifiant ADELI ; « urn:oid:1.2.250.1.71.4.2.1 » si l’instance correspond à l’identification nationale PP (idNat_PS) ; « urn:oid:1.2.250.1.213.1.6.4.2 » si l’instance correspond à une identification locale : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
 * identifier.value 1..
 * identifier.value ^short = "la valeur de l'identifiant du PS"
-// noms et prenoms de la personne
-* name MS
+/* noms et prenoms de la personne */
+* name 0..* MS
 * name only $FrHumanName
 * name ^short = "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil"
 * name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
@@ -44,10 +46,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.prefix ^binding.strength = #required
 * name.prefix ^short = "civilite"
 // sexeAdministratif
-* gender MS
+* gender 0..1 MS
 * gender ^short = "[DR] : sexeAdministratif"
 // dateNaissance
-* birthDate MS
+* birthDate 0..1 MS
 * birthDate ^short = "[DR] - dateNaissance"
 // lieuNaissance
 * extension[practitioner-birthPlace] ^isModifier = false
@@ -62,14 +64,14 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-deceasedDateTime] ^definition = "Date de décès de la personne"
 * extension[practitioner-deceasedDateTime] ^short = "[DR] : dateDeces"
 // telecommunication 
-* telecom MS
+* telecom 0..* MS
 * telecom ^short = "[DR] : telecommunication"
 * telecom only $FrContactPoint
 * telecom ^comment = "Différentes instances pour les téléphones, la télécopie et l’adresse mail"
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 // adresseCorrespondance
-* address MS
+* address 0..* MS
 * address ^short = "[DR] : adresseCorrespondance"
 * address only AsAddressExtendedProfile
 // boiteLettreMSS
@@ -77,7 +79,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
 * extension[practitioner-mailboxMSS] ^short = "boiteLettreMSS"
 // diplomeObtenu
-* qualification MS
+* qualification 0..* MS
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
 * qualification.identifier ^short = "numeroDiplome"
 * qualification.code.coding ^slicing.discriminator.type = #value
@@ -168,6 +170,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
 * extension[practitioner-authorization] ^short = "[DR] : autorisationExercice"
 // langueParlee
-* communication MS
+* communication 0..* MS
 * communication ^short = "langueParlee"
 * communication only $codeableConcept-timed
+* communication from $JDV_J82-Langue-RASS (required)
