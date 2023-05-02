@@ -219,7 +219,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[typeSavoirFaire].coding.system ^short = "typeSavoirFaire"
 // PractitionerRole.location
 * location MS
-* location ^short = ""
+* location ^short = "idLocation"
 * location ^comment = "Référence vers la ressource Location dans PractitionerRole.contained représentant les coordonnées de l'activité"
 * location ^type.aggregation = #contained
 // telecom - PractitionerRole.telecom
