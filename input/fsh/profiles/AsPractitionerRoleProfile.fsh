@@ -46,7 +46,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * active ^comment = "true par défaut; false pour les situations d’exercices supprimées"
 /* PractitionerRole.period */ 
 * period MS
-* periode ^comment = "Période d'activité"
+* period ^comment = "Période d'activité"
 // dateDebutActivite
 * period.start ^short = "[DR] : dateDebutActivite"
 // dateDebutActivite
@@ -54,7 +54,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 // dateFinActivite
 * period.end ^short = "[DR] : dateFinActivite"
 // PractitionerRole.practitioner
-* practitioner ^short ="idPP"
+* practitioner ^short = "idPP"
 * practitioner ^comment = "Référence permettant de lier l’exercice professionnel à un professionnel (Practitioner)"
 // PractitionerRole.organization
 * organization ^short = "idStructure"
@@ -194,7 +194,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[savoirFaireR43].coding.system ^short = "capaciteSavoirFaire"
 // Slice B6 : qualificationPAC
 * specialty[savoirFaireR44] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR44] ^// Slice B1 : sliceName = "savoirFaireR44"
+* specialty[savoirFaireR44] ^sliceName = "savoirFaireR44"
 * specialty[savoirFaireR44] ^binding.description = "Liste des qualifications de praticien adjoint contractuel"
 * specialty[savoirFaireR44].coding.system ^short = "qualificationPAC"
 // Slice B7 : fonctionQualifiee
