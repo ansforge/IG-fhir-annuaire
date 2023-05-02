@@ -6,7 +6,7 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 /* metadata */
 * meta.lastUpdated 1..1
 /* profils references */
-providedBy only reference(FrOrganization or AsOrganizationProfile)
+* providedBy only reference(FrOrganization or AsOrganizationProfile)
 // extensions
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
