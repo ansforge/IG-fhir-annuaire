@@ -4,7 +4,7 @@ Id: as-healthcareservice-social-equipment
 Title: "AS HealthcareService Social Equipment Profile"
 Description: "Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS."
 /* profils references */
-* providedBy only reference(FrOrganization or AsOrganizationProfile)
+* providedBy only Reference(FrOrganization or AsOrganizationProfile)
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
