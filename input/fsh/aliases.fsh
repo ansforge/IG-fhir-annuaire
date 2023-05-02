@@ -78,4 +78,4 @@ Alias: $JDV-J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JD
 Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS
 Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
 Alias: $JDV_J82-Langue-RASS = https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS
-alias: $TRE_R249-Sexe/AdministrativeGender = https://mos.esante.gouv.fr/NOS/TRE_R249-Sexe/FHIR/TRE-R249-Sexe
+alias: $TRE-R249-Sexe = https://mos.esante.gouv.fr/NOS/TRE_R249-Sexe/FHIR/TRE-R249-Sexe
