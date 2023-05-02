@@ -15,14 +15,14 @@ Description: 	"Extension créée dans le cadre de l'annuaire santé pour décrir
 * extension ^slicing.rules = #open
 
 * extension contains
-    value 0..1 MS and
-    type 0..1 MS and
-    description 0..1 MS and
-    responsible 0..1 MS and
-    service 0..1 MS and
-    phone 0..1 MS and
-    digitization 0..1 MS and
-    publication 0..1 MS and
+    value 0..1 and
+    type 0..1 and
+    description 0..1 and
+    responsible 0..1 and
+    service 0..1 and
+    phone 0..1 and
+    digitization 0..1 and
+    publication 0..1 and
     date 0..* 
 
 * extension[value] ^short = "BAL MSS"
