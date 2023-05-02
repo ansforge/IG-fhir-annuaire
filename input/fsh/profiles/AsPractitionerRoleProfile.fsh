@@ -8,7 +8,6 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 /* profils refences */
 * practitioner 1..1 MS 
 * organization 0..1 MS
-//* healthcareService 0.. MS
 * location only Reference(AsLocationProfile)
 
 * contained only AsLocationProfile
@@ -34,13 +33,12 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 // CarteProfessionnel
 * extension[practitionerRole-smartCard] ^isModifier = false
 * extension[practitionerRole-smartCard] ^short = "CarteProfessionnel"
-
 // identifiants
-* identifier MS
-/*
-periode de validite
-*/
-* period MS
+* identifier 0..* MS
+* identifier ^short = "idFonctionnel"
+* identifier ^comment = "identifiant métier calculé à partir des identifiants techniques de l'exercice professionnel et la situation d'exercice"
+/* periode de validite */ 
+* period 0..1 MS
 // dateDebutActivite
 * period.start ^short = "[DR] : dateDebutActivite"
 // dateDebutActivite
@@ -71,9 +69,7 @@ periode de validite
 * code.coding[CategorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
 * code.coding[CategorieProfession] ^binding.description = "Ensemble des catégories professionnelles indiqant Indique si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant"
 * code.coding[CategorieProfession].system ^short = "categorieProfessionnelle"
-/*
-Profession exercée ou future profession de l'étudiant 
-*/
+/* Profession exercée ou future profession de l'étudiant */
 // professionSante
 * code.coding[professionG15] from $JDV-J106-EnsembleProfession-RASS (required)
 * code.coding[professionG15] ^sliceName = "professionG15"
