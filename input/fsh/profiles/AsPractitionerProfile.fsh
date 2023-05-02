@@ -31,6 +31,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // Practitioner.identifier.value
 * identifier.value ^short = "idPP"
 * identifier.value ^comment = "la valeur de l'identifiant du PS"
+// Practitioner.active
+* active MS
+* active ^short = "isActive"
+* active ^comment = "true  par défaut; false pour les professionnels supprimés"
 /* Practitioner.name */
 * name MS
 * name only $FrHumanName
