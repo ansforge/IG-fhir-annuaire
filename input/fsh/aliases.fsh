@@ -77,3 +77,4 @@ Alias: $JDV-J98-StatutHospitalier-RASS = https://mos.esante.gouv.fr/NOS/JDV_J98-
 Alias: $JDV-J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS
 Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS
 Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
+Alias: $JDV_J82-Langue-RASS = https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS
