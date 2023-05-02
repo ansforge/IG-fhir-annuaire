@@ -12,7 +12,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
     $practitioner-authorization named practitioner-authorization 0..* MS and
     $practitioner-birthPlace named practitioner-birthPlace 0..1 MS and
     $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* MS and
-    AsMailboxMSSExtension named practitioner-mailboxMSS 0..*
+    AsMailboxMSSExtension named practitioner-mailboxMSS 0..* MS
 /* Practitioner.identifier */
 * identifier MS
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
