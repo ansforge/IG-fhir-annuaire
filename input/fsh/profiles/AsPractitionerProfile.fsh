@@ -1,10 +1,8 @@
 Profile: 		ASPractitionerProfile
-Parent: 		Practitioner
+Parent: 		FrPractitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
 Description: 	"Profil créé à partir de la ressource Practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
-// metadata
-* meta.lastUpdated 1..1
 // extensions
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -147,10 +145,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding[degreeR57] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR57] ^binding.description = "Diplôme européen d'études spécialisées"
 * qualification.code.coding[degreeR57] ^short = "DiplomeEES"
-// 
+// DiplomeDivers
 * qualification.code.coding[degreeR58] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR58] ^binding.description = "Ensemble des diplômes et qualifications"
-* qualification.code.coding[degreeR58] ^short = ""
+* qualification.code.coding[degreeR58] ^binding.description = "Autre type de diplôme obtenu"
+* qualification.code.coding[degreeR58] ^short = "DiplomeDivers"
 // AutreDiplomeObtenu
 * qualification.code.coding[deegreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[deegreeR36] ^binding.description = "Autre diplôme obtenu"
