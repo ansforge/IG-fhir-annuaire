@@ -37,5 +37,6 @@ Description: "Profil créé à partir de la ressource Device dans le contexte de
 * type ^binding.description = "Code définissant l'équipement matériel lourd (EML) soumis à autorisation"
 * type ^short = "equipementMaterielLourd"
 // Lien Equipement/Structure
+* owner 0..1 MS
 * owner ^short = "idStructure"
 * owner ^comment = "Reference vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd"
