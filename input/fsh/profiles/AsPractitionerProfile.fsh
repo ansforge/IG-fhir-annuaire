@@ -13,11 +13,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
     $practitioner-birthPlace named practitioner-birthPlace 0..1 MS and
     $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* MS and
     AsMailboxMSSExtension named practitioner-mailboxMSS 0..*
-// Identifiants de la personne physique
-* identifier 0..* MS
+/* Practitioner.identifier */
+* identifier MS
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
-// typeIdNat_PP
-* identifier.type 1.. MS
+// Practitioner.identifier.type
 * identifier.type ^short = "typeIdNat_PP"
 * identifier.type from $fr-practioner-identifier-type (extensible)
 * identifier.type ^comment = "Les code ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les code 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
@@ -26,13 +25,14 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * identifier.type ^binding.extension[+].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"
 * identifier.type ^binding.extension[=].valueBoolean = true
 * identifier.type ^binding.description = "ValueSet défini par Interop’Santé « fr-practioner-identifier-type"
-* identifier.system 1..
-* identifier.system ^short = "le system de l'identifiant dépend de la source d'où provient l'identifiant"
+// Practitioner.identifier.system
+* identifier.system ^short = "le système de l'identifiant dépend de la source d'où provient l'identifiant"
 * identifier.system ^comment = "« http://rpps.fr» si l’instance correspond à un identifiant RPPS ; « http://adeli.fr» si l’instance correspond à un identifiant ADELI ; « urn:oid:1.2.250.1.71.4.2.1 » si l’instance correspond à l’identification nationale PP (idNat_PS) ; « urn:oid:1.2.250.1.213.1.6.4.2 » si l’instance correspond à une identification locale : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
-* identifier.value 1..
-* identifier.value ^short = "la valeur de l'identifiant du PS"
-/* noms et prenoms de la personne */
-* name 0..* MS
+// Practitioner.identifier.value
+* identifier.value ^short = "idPP"
+* identifier.value ^comment = "la valeur de l'identifiant du PS"
+/* Practitioner.name */
+* name MS
 * name only $FrHumanName
 * name ^short = "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil"
 * name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
@@ -40,14 +40,15 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.family ^short = "[DR] : nomFamille/nomUsage"
 // prenom/prenomUsuel
 * name.given ^short = "[DR] : prenom/prenomUsuel"
-// civilite
+// HumanName.prefix
 * name.prefix ^binding.strength = #required
 * name.prefix ^short = "civilite"
-// sexeAdministratif
-* gender 0..1 MS
+// Practitioner.gender
+* gender MS
 * gender ^short = "[DR] : sexeAdministratif"
-// dateNaissance
-* birthDate 0..1 MS
+* gender from $TRE_R249-Sexe/AdministrativeGender
+// Practitioner.birthDate
+* birthDate MS
 * birthDate ^short = "[DR] - dateNaissance"
 // lieuNaissance
 * extension[practitioner-birthPlace] ^isModifier = false
@@ -62,22 +63,24 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-deceasedDateTime] ^definition = "Date de décès de la personne"
 * extension[practitioner-deceasedDateTime] ^short = "[DR] : dateDeces"
 // telecommunication 
-* telecom 0..* MS
+* telecom MS
 * telecom ^short = "[DR] : telecommunication"
 * telecom only $FrContactPoint
 * telecom ^comment = "Différentes instances pour les téléphones, la télécopie et l’adresse mail"
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 // adresseCorrespondance
-* address 0..* MS
+* address MS
 * address ^short = "[DR] : adresseCorrespondance"
 * address only AsAddressExtendedProfile
 // boiteLettreMSS
 * extension[practitioner-mailboxMSS] ^isModifier = false
 * extension[practitioner-mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
 * extension[practitioner-mailboxMSS] ^short = "boiteLettreMSS"
+// Practitioner.photo
+* photo MS
 // diplomeObtenu - slices deja existants dans FrPractitioner : degreeR36, degreeR47, degreeR48, degreeR49
-* qualification 0..* MS
+* qualification MS
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
 * qualification.identifier ^short = "numeroDiplome"
 * qualification.code.coding ^slicing.discriminator.type = #value
@@ -85,7 +88,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding ^slicing.description = "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)"
 * qualification.code.coding ^slicing.ordered = false
 * qualification.code.coding ^slicing.rules = #open
-* qualification.code.coding contains degreeType  
+* qualification.code.coding contains degreeType 0..*
 // typeDiplome
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
@@ -153,7 +156,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
 * extension[practitioner-authorization] ^short = "[DR] : autorisationExercice"
 // langueParlee
-* communication 0..* MS
+* communication MS
 * communication ^short = "langueParlee"
 * communication only $codeableConcept-timed
 * communication from $JDV_J82-Langue-RASS (required)
