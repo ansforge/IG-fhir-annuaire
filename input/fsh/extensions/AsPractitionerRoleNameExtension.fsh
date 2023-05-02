@@ -9,9 +9,9 @@ Description: "Extension créée dans le cadre de l'Annuaire Santé pour définir
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    family 0..1 MS and
-    given 0..1 MS and
-    suffix 0..1 MS
+    family 0..1 and
+    given 0..1 and
+    suffix 0..1 
 * extension[family].value[x] only string
 * extension[given].value[x] only string
 * extension[suffix].valueCodeableConcept from $JDV-J79-CiviliteExercice-RASS (required)
