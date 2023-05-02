@@ -6,8 +6,9 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 /* metadata */
 * meta.lastUpdated 1..1
 /* profils refences */
-* practitioner 1.. 
-* healthcareService 0.. MS
+* practitioner 1..1 MS 
+* organization 0..1 MS
+//* healthcareService 0.. MS
 * location only Reference(AsLocationProfile)
 
 * contained only AsLocationProfile
@@ -33,14 +34,19 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 // CarteProfessionnel
 * extension[practitionerRole-smartCard] ^isModifier = false
 * extension[practitionerRole-smartCard] ^short = "CarteProfessionnel"
-// BoiteLettreMSS
-* extension[as-mailbox-mss] ^definition = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
-* extension[as-mailbox-mss] ^isModifier = false
-* extension[as-mailbox-mss] ^short = ""BoiteLettreMSS"
+
 // identifiants
 * identifier MS
-// periode de validite
+/*
+periode de validite
+*/
 * period MS
+// dateDebutActivite
+* period.start ^short = "[DR] : dateDebutActivite"
+// dateDebutActivite
+* period.start ^short = "[DR] : dateDebutActivite"
+// dateFinActivite
+* period.end ^short = "[DR] : dateFinActivite"
 // slice
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "system"
@@ -63,8 +69,11 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
     metierPharmacienG05 0..1 MS
 // categorieProfessionnelle	
 * code.coding[CategorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
-* code.coding[CategorieProfession] ^binding.description = "Ensemble des catégories professionnelles de l'Annuaire Santé (RASS)"
+* code.coding[CategorieProfession] ^binding.description = "Ensemble des catégories professionnelles indiqant Indique si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant"
 * code.coding[CategorieProfession].system ^short = "categorieProfessionnelle"
+/*
+Profession exercée ou future profession de l'étudiant 
+*/
 // professionSante
 * code.coding[professionG15] from $JDV-J106-EnsembleProfession-RASS (required)
 * code.coding[professionG15] ^sliceName = "professionG15"
@@ -198,13 +207,13 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[attributionParticuliere] ^sliceName = "attributionParticuliere"
 * specialty[attributionParticuliere] ^binding.description = "Activités ponctuelles du professionnel de type expertise"
 * specialty[attributionParticuliere].coding.system ^short = "attributionParticuliere"
-// location
+// location - Address
 * location MS
 * location ^type.aggregation = #contained
-// telecom
+// telecom - PractitionerRole.telecom
 * telecom MS
 * telecom only $FrContactPoint
-* availableTime MS
-* notAvailable MS
-* availabilityExceptions MS
-* endpoint MS
+// BoiteLettreMSS - Extension
+* extension[as-mailbox-mss] ^definition = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
+* extension[as-mailbox-mss] ^isModifier = false
+* extension[as-mailbox-mss] ^short = ""BoiteLettreMSS"
