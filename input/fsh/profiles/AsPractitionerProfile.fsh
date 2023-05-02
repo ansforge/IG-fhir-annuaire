@@ -46,7 +46,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 // Practitioner.gender
 * gender MS
 * gender ^short = "[DR] : sexeAdministratif"
-* gender from $TRE-R249-Sexe
+* gender from $TRE-R249-Sexe (required)
 // Practitioner.birthDate
 * birthDate MS
 * birthDate ^short = "[DR] - dateNaissance"
