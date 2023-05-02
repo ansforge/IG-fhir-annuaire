@@ -87,9 +87,9 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
 * qualification.code.coding[degreeType] ^short = "typeDiplome"
 // AutreDiplomeObtenu
-* qualification.code.coding[deegreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[deegreeR36] ^binding.description = "Autre diplôme obtenu"
-* qualification.code.coding[deegreeR36] ^short = "autreDiplomeObtenu"
+* qualification.code.coding[degreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
+* qualification.code.coding[degreeR36] ^binding.description = "Autre diplôme obtenu"
+* qualification.code.coding[degreeR36] ^short = "autreDiplomeObtenu"
 // qualification
 * qualification.code.coding[degreeR47] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR47] ^binding.description = "Qualification attribuée par une commission"
