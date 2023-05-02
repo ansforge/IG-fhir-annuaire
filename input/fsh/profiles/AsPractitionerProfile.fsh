@@ -76,7 +76,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-mailboxMSS] ^isModifier = false
 * extension[practitioner-mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
 * extension[practitioner-mailboxMSS] ^short = "boiteLettreMSS"
-// diplomeObtenu
+// diplomeObtenu - slices deja existants dans FrPractitioner : degreeR36, degreeR47, degreeR48, degreeR49
 * qualification 0..* MS
 * qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
 * qualification.identifier ^short = "numeroDiplome"
@@ -85,22 +85,6 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding ^slicing.description = "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)"
 * qualification.code.coding ^slicing.ordered = false
 * qualification.code.coding ^slicing.rules = #open
-* qualification.code.coding contains
-    degreeType 0..1 and
-    degreeR48 0..1 and
-    degreeR49 0..1 and
-    degreeR50 0..1 and
-    degreeR51 0..1 and
-    degreeR52 0..1 and
-    degreeR53 0..1 and
-    degreeR54 0..1 and
-    degreeR55 0..1 and
-    degreeR56 0..1 and
-    degreeR57 0..1 and
-    degreeR58 0..1 and
-    deegreeR36 0..1 and
-    degreeR47 0..1 and
-    degreeR226 0..1 
 // typeDiplome
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
