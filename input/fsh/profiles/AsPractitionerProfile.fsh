@@ -3,7 +3,7 @@ Parent: 		FrPractitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
 Description: 	"Profil créé à partir de la ressource Practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
-// extensions
+/* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
@@ -88,7 +88,8 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding ^slicing.description = "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)"
 * qualification.code.coding ^slicing.ordered = false
 * qualification.code.coding ^slicing.rules = #open
-* qualification.code.coding contains degreeType 0..*
+* qualification.code.coding contains
+      degreeType 0..*
 // typeDiplome
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
