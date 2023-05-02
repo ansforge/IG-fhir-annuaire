@@ -79,17 +79,9 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[practitioner-mailboxMSS] ^short = "boiteLettreMSS"
 // Practitioner.photo
 * photo MS
-// diplomeObtenu - slices deja existants dans FrPractitioner : degreeR36, degreeR47, degreeR48, degreeR49
+// Slice deja défini dans FrPractitioner
 * qualification MS
-* qualification ^comment = "Une instance pour chaque diplôme ou autre diplôme obtenu"
-* qualification.identifier ^short = "numeroDiplome"
-* qualification.code.coding ^slicing.discriminator.type = #value
-* qualification.code.coding ^slicing.discriminator.path = "system"
-* qualification.code.coding ^slicing.description = "Two slices: one slice for the degree (diplôme obtenu) and one for its type (type diplôme obtenu)"
-* qualification.code.coding ^slicing.ordered = false
-* qualification.code.coding ^slicing.rules = #open
-* qualification.code.coding contains
-      degreeType 0..*
+* qualification.code.coding contains degreeType 0..* // slicing type de diplome
 // typeDiplome
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
