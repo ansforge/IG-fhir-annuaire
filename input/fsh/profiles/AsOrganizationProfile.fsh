@@ -26,10 +26,15 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * alias ^comment = "Enseigne commerciale de la structure"
 /* champ d'activite de la structure */
 // Slice deja defini dans FrOrganization
+* type MS
 * type contains
-    activiteINSEE 0..* MS and
-    statutJuridiqueINSEE 0..* MS and 
-    sphParticipation 0..* MS
+    activiteINSEE 0..* and
+    statutJuridiqueINSEE 0..* and 
+    sphParticipation 0..* 
+// organizationType - slice deja existant 
+* type[organizationType] ^sliceName = "organizationType"
+* type[organizationType] ^short = "Type de strcuture"
+* type[organizationType] ^comment = "Entitité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
 // activiteINSEE
 * type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
 * type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG."
