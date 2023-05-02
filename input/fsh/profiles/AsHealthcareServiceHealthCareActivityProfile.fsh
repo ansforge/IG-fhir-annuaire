@@ -47,5 +47,5 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 // forme
 * characteristic 0..* MS
 * characteristic from $JDV-J134-FormeActivite-RASS (required)
- characteristic ^short = "forme"
+* characteristic ^short = "forme"
 * characteristic ^binding.description = "Une forme est un type d’organisation de prise en charge"
