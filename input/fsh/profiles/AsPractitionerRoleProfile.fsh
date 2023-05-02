@@ -13,7 +13,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $FrHumanName named practitionerRole-name 0..1 MS and
+    FrHumanName named practitionerRole-name 0..1 MS and
     $practitionerRole-registration named PractitionerRoleRegistration 0..* MS and
     $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 MS and
     $practitionerRole-smartCard named practitionerRole-smartCard 0..1 MS and
