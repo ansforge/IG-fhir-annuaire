@@ -1556,8 +1556,8 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","Organization that issued id (may be just text)","Organization that issued/manages the identifier.","The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.","","","","","","","","",,,,,"",,,,"Identifier.assigner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
-"as-practitioner","Practitioner.active","Practitioner.active","","","",0,1,"","","Y","boolean {[]} {[]}
-","Whether this practitioner's record is in active use","Whether this practitioner's record is in active use.","If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role.","Need to be able to mark a practitioner record as not to be used because it was created in error.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Practitioner.active",0,1,"ele-1
+"as-practitioner","Practitioner.active","Practitioner.active","","","",0,1,"Y","","Y","boolean {[]} {[]}
+","isActive","Whether this practitioner's record is in active use.","true  par défaut; false pour les professionnels supprimés","Need to be able to mark a practitioner record as not to be used because it was created in error.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Practitioner.active",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-practitioner","Practitioner.name","Practitioner.name","","","",0,*,"Y","","Y","HumanName {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrHumanName]]} {[]}
