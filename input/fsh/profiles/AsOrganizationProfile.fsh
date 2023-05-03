@@ -73,7 +73,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension contains
     $digitalCertificate named organization-digitalCertificate 0..1 MS and
     $organization-pharmacyLicence named organization-pharmacyLicence 0..* MS
-    // AsMailboxMSSExtension named organization-mailboxMSS 0..* MS
+    
 // digitalCertificate
 * extension[organization-digitalCertificate] ^isModifier = false
 * extension[organization-digitalCertificate] ^short = "[DR] : certificat"
