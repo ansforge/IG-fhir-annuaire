@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+  <sch:ns prefix="f" uri="http://hl7.org/fhir"/>
+  <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
+  <!-- 
+    This file contains just the constraints for the profile HealthcareService
+    It includes the base constraints for the resource as well.
+    Because of the way that schematrons and containment work, 
+    you may need to use this schematron fragment to build a, 
+    single schematron that validates contained resources (if you have any) 
+  -->
+  <sch:pattern>
+    <sch:title>f:HealthcareService</sch:title>
+    <sch:rule context="f:HealthcareService">
+      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-activityType']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-activityType': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationDate']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationDate': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationNumberARHGOS']) &gt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationNumberARHGOS': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationNumberARHGOS']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationNumberARHGOS': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-implementationPeriod']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-implementationPeriod': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-deleteAutorisationImplantation']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-deleteAutorisationImplantation': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-dateUpdateActivity']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-dateUpdateActivity': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+</sch:schema>
