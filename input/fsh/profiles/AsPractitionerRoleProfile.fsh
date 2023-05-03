@@ -16,8 +16,8 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
     AsPractitionerRoleNameExtension named practitionerRole-name 0..1 MS and
     $practitionerRole-registration named PractitionerRoleRegistration 0..* MS and
     $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 MS and
-    $practitionerRole-smartCard named practitionerRole-smartCard 0..1 MS and
-    AsMailboxMSSExtension named as-mailbox-mss 0..* MS
+    $practitionerRole-smartCard named practitionerRole-smartCard 0..1 MS
+
 // civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)
 * extension[practitionerRole-name] ^isModifier = false
 * extension[practitionerRole-name] ^short = "civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)"
@@ -225,10 +225,17 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 // telecom - PractitionerRole.telecom
 * telecom MS
 * telecom only $FrContactPoint
+
 // BoiteLettreMSS - Extension
-* extension[as-mailbox-mss] ^definition = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
-* extension[as-mailbox-mss] ^isModifier = false
-* extension[as-mailbox-mss] ^short = ""BoiteLettreMSS"
+* telecom ^slicing.rules = #open
+* telecom ^slicing.discriminator.type = #pattern
+* telecom ^slicing.discriminator.path = "code"
+* telecom contains mailbox-mss 0..*
+* telecom[mailbox-mss] only as-mailbox-mss
+
+* telecom[mailbox-mss] ^definition = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice"
+* telecom[mailbox-mss] ^short = "BoiteLettreMSS"
+
 // PractitionerRole.availableTime
 * availableTime MS
 // PractitionerRole.notAvailable
