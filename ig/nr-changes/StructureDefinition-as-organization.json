@@ -10,7 +10,7 @@
   "name" : "AsOrganizationProfile",
   "title" : "As Organization Profile",
   "status" : "active",
-  "date" : "2023-05-03T15:25:16+00:00",
+  "date" : "2023-05-03T15:57:05+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -5223,7 +5223,7 @@
       "path" : "Organization.contact.telecom.extension.extension",
       "sliceName" : "type",
       "short" : "Extension",
-      "definition" : "An Extension",
+      "definition" : "Valeurs possibles :\r\nORG pour une BAL organisationnelle;\r\nAPP pour une BAL applicative;\r\nPER pour une BAL personnelle, rattachée à une personne physique",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -5391,7 +5391,7 @@
       "path" : "Organization.contact.telecom.extension.extension.value[x]",
       "sliceName" : "valueCodeableConcept",
       "short" : "Value of extension",
-      "definition" : "Valeurs possibles :\r\nORG pour une BAL organisationnelle;\r\nAPP pour une BAL applicative;\r\nPER pour une BAL personnelle, rattachée à une personne physique",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -5715,7 +5715,7 @@
     {
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.value[x]",
       "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "short" : "Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres \"PER\".",
+      "short" : "Value of extension",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
       "min" : 0,
       "max" : "1",
@@ -5749,7 +5749,7 @@
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service",
       "path" : "Organization.contact.telecom.extension.extension",
       "sliceName" : "service",
-      "short" : "Extension",
+      "short" : "Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.",
       "definition" : "An Extension",
       "min" : 0,
       "max" : "1",
@@ -5875,49 +5875,7 @@
     {
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.value[x]",
       "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
       "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.value[x]:valueString",
-      "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "sliceName" : "valueString",
-      "short" : "Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
       "min" : 0,
       "max" : "1",
@@ -6077,49 +6035,7 @@
     {
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.value[x]",
       "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
       "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.value[x]:valueString",
-      "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "sliceName" : "valueString",
-      "short" : "Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
       "min" : 0,
       "max" : "1",
@@ -6153,7 +6069,7 @@
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization",
       "path" : "Organization.contact.telecom.extension.extension",
       "sliceName" : "digitization",
-      "short" : "Extension",
+      "short" : "Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée \r\n- N : Dématérialisation refusée",
       "definition" : "An Extension",
       "min" : 0,
       "max" : "1",
@@ -6279,51 +6195,8 @@
     {
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.value[x]",
       "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
       "short" : "Value of extension",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "boolean"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.value[x]:valueBoolean",
-      "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "sliceName" : "valueBoolean",
-      "short" : "Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "comment" : "- O : Dématérialisation acceptée \r\n- N : Dématérialisation refusée",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -6356,7 +6229,7 @@
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication",
       "path" : "Organization.contact.telecom.extension.extension",
       "sliceName" : "publication",
-      "short" : "Extension",
+      "short" : "Indicateur liste rouge. O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée",
       "definition" : "An Extension",
       "min" : 0,
       "max" : "1",
@@ -6482,51 +6355,8 @@
     {
       "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.value[x]",
       "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
       "short" : "Value of extension",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "boolean"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.value[x]:valueBoolean",
-      "path" : "Organization.contact.telecom.extension.extension.value[x]",
-      "sliceName" : "valueBoolean",
-      "short" : "ndicateur liste rouge",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "comment" : "O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée",
       "min" : 0,
       "max" : "1",
       "base" : {

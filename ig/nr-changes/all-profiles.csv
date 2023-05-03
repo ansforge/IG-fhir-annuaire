@@ -1264,7 +1264,10 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-mailbox-mss-metadata","Extension.extension:type","Extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Extension","Valeurs possibles :
+ORG pour une BAL organisationnelle;
+APP pour une BAL applicative;
+PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-mailbox-mss-metadata","Extension.extension:type.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -1282,10 +1285,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.extension:type.value[x]:valueCodeableConcept","Extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Valeurs possibles :
-ORG pour une BAL organisationnelle;
-APP pour une BAL applicative;
-PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,"required","Type de  boîte aux lettre MSS","https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS","",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","Type de  boîte aux lettre MSS","https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.extension:description","Extension.extension","description","","",0,1,"","","","Extension {[]} {[]}
@@ -1306,7 +1306,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.extension:responsible","Extension.extension","responsible","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres ""PER"".","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-mailbox-mss-metadata","Extension.extension:responsible.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -1319,11 +1319,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-mailbox-mss-metadata","Extension.extension:responsible.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""responsible""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-mailbox-mss-metadata","Extension.extension:responsible.value[x]","Extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres ""PER"".","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.extension:service","Extension.extension","service","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-mailbox-mss-metadata","Extension.extension:service.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -1336,16 +1336,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-mailbox-mss-metadata","Extension.extension:service.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""service""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-mailbox-mss-metadata","Extension.extension:service.value[x]","Extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-mailbox-mss-metadata","Extension.extension:service.value[x]:valueString","Extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
-","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.extension:phone","Extension.extension","phone","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-mailbox-mss-metadata","Extension.extension:phone.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -1358,16 +1353,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-mailbox-mss-metadata","Extension.extension:phone.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""phone""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-mailbox-mss-metadata","Extension.extension:phone.value[x]","Extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-mailbox-mss-metadata","Extension.extension:phone.value[x]:valueString","Extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
-","Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.extension:digitization","Extension.extension","digitization","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée 
+- N : Dématérialisation refusée","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-mailbox-mss-metadata","Extension.extension:digitization.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -1380,17 +1371,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-mailbox-mss-metadata","Extension.extension:digitization.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""digitization""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-mailbox-mss-metadata","Extension.extension:digitization.value[x]","Extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-mailbox-mss-metadata","Extension.extension:digitization.value[x]:valueBoolean","Extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
-","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","- O : Dématérialisation acceptée 
-- N : Dématérialisation refusée","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.extension:publication","Extension.extension","publication","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Indicateur liste rouge. O: Boîte aux lettres en liste rouge;
+N: La boîte aux lettres peut être publiée","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-mailbox-mss-metadata","Extension.extension:publication.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -1403,13 +1389,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-mailbox-mss-metadata","Extension.extension:publication.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""publication""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-mailbox-mss-metadata","Extension.extension:publication.value[x]","Extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-mailbox-mss-metadata","Extension.extension:publication.value[x]:valueBoolean","Extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
-","ndicateur liste rouge","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","O: Boîte aux lettres en liste rouge;
-N: La boîte aux lettres peut être publiée","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-mailbox-mss-metadata","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
@@ -2862,74 +2842,61 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 ",""
 "as-ext-practitionerrole-name","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-ext-practitionerrole-name","Extension.extension","Extension.extension","","extensions
+"as-ext-practitionerrole-name","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-ext-practitionerrole-name","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-practitionerrole-name""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"as-ext-practitionerrole-name","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","HumanName {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrHumanName]]} {[]}
+","Name of a human - parts and usage","A human's name with the ability to identify parts and usage.","Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts might or might not be imbued with some implicit meaning; various cultures associate different importance with the name parts and the degree to which systems must care about name parts around the world varies widely.","","","","","","","","",,,,,"","type:$this}
+","",,"closed","Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName","Extension.value[x]","valueHumanName","","",0,1,"","","","HumanName {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+",""
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.id","Extension.value[x].id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.extension","Extension.value[x].extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-ext-practitionerrole-name","Extension.extension:family","Extension.extension","family","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-ext-practitionerrole-name","Extension.extension:family.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-ext-practitionerrole-name","Extension.extension:family.extension","Extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-ext-practitionerrole-name","Extension.extension:family.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""family""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-ext-practitionerrole-name","Extension.extension:family.value[x]","Extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.use","Extension.value[x].use","","","",0,1,"","Y","Y","code {[]} {[]}
+","usual | official | temp | nickname | anonymous | old | maiden","Identifies the purpose for this name.","Applications can assume that a name is current unless it explicitly says that it is temporary or old.","Allows the appropriate name for a particular context of use to be selected from among a set of names.","","","","","","","",,"required","The use of a human name.","http://hl7.org/fhir/ValueSet/name-use|4.0.1","",,,,"HumanName.use",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-ext-practitionerrole-name","Extension.extension:given","Extension.extension","given","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-ext-practitionerrole-name","Extension.extension:given.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-ext-practitionerrole-name","Extension.extension:given.extension","Extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-ext-practitionerrole-name","Extension.extension:given.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""given""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-ext-practitionerrole-name","Extension.extension:given.value[x]","Extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.text","Extension.value[x].text","","","",0,1,"","","Y","string {[]} {[]}
+","Text representation of the full name","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-ext-practitionerrole-name","Extension.extension:suffix","Extension.extension","suffix","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-ext-practitionerrole-name","Extension.extension:suffix.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-ext-practitionerrole-name","Extension.extension:suffix.extension","Extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-ext-practitionerrole-name","Extension.extension:suffix.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""suffix""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-ext-practitionerrole-name","Extension.extension:suffix.value[x]","Extension.extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.family","Extension.value[x].family","","surname
+","",0,1,"Y","","Y","string {[]} {[]}
+","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-ext-practitionerrole-name","Extension.extension:suffix.value[x]:valueCodeableConcept","Extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS","",,,,"Extension.value[x]",0,1,"ele-1
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.given","Extension.value[x].given","","first name
+middle name","",0,*,"Y","","Y","string {[]} {[]}
+","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-ext-practitionerrole-name","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-practitionerrole-name""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-ext-practitionerrole-name","Extension.value[x]","Extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
-boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.prefix","Extension.value[x].prefix","","","",0,*,"","","Y","string {[]} {[]}
+","Parts that come before the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"HumanName.prefix",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.suffix","Extension.value[x].suffix","","","",0,*,"Y","","Y","string {[]} {[]}
+","Parts that come after the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"HumanName.suffix",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"as-ext-practitionerrole-name","Extension.value[x]:valueHumanName.period","Extension.value[x].period","","","",0,1,"","","Y","Period {[]} {[]}
+","Time period when name was/is in use","Indicates the period of time when this name was valid for the named person.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
+
+Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).","Allows names to be placed in historical context.","","","","","","","",,,,,"",,,,"HumanName.period",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
 "as-ext-device-Period-implantation","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","Dates de mise en oeuvre de l'EML","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte des dates de mise en oeuvre d’un équipement matériel lourd.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
 ",""
@@ -3950,7 +3917,10 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type","Organization.contact.telecom.extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Extension","Valeurs possibles :
+ORG pour une BAL organisationnelle;
+APP pour une BAL applicative;
+PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3968,10 +3938,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.value[x]:valueCodeableConcept","Organization.contact.telecom.extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Valeurs possibles :
-ORG pour une BAL organisationnelle;
-APP pour une BAL applicative;
-PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,"required","Type de  boîte aux lettre MSS","https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS","",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","Type de  boîte aux lettre MSS","https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description","Organization.contact.telecom.extension.extension","description","","",0,1,"","","","Extension {[]} {[]}
@@ -4005,11 +3972,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.url","Organization.contact.telecom.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""responsible""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.value[x]","Organization.contact.telecom.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres ""PER"".","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service","Organization.contact.telecom.extension.extension","service","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -4022,12 +3989,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.url","Organization.contact.telecom.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""service""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.value[x]","Organization.contact.telecom.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.value[x]:valueString","Organization.contact.telecom.extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
-","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone","Organization.contact.telecom.extension.extension","phone","","",0,1,"","","","Extension {[]} {[]}
@@ -4044,16 +4006,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.url","Organization.contact.telecom.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""phone""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.value[x]","Organization.contact.telecom.extension.extension.value[x]","","","",0,1,"","","","string {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.value[x]:valueString","Organization.contact.telecom.extension.extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
-","Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization","Organization.contact.telecom.extension.extension","digitization","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée 
+- N : Dématérialisation refusée","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -4066,17 +4024,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.url","Organization.contact.telecom.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""digitization""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.value[x]","Organization.contact.telecom.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.value[x]:valueBoolean","Organization.contact.telecom.extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
-","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","- O : Dématérialisation acceptée 
-- N : Dématérialisation refusée","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication","Organization.contact.telecom.extension.extension","publication","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Indicateur liste rouge. O: Boîte aux lettres en liste rouge;
+N: La boîte aux lettres peut être publiée","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -4089,13 +4042,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.url","Organization.contact.telecom.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""publication""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.value[x]","Organization.contact.telecom.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.value[x]:valueBoolean","Organization.contact.telecom.extension.extension.value[x]","valueBoolean","","",0,1,"","","","boolean {[]} {[]}
-","ndicateur liste rouge","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","O: Boîte aux lettres en liste rouge;
-N: La boîte aux lettres peut être publiée","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.url","Organization.contact.telecom.extension.url","","","",1,1,"","","","uri {[]} {[]}
