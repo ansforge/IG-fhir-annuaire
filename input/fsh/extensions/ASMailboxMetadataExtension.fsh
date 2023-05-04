@@ -28,20 +28,21 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
 * extension[type].valueCodeableConcept from $JDV-J139-TypeBAL-RASS (required)
 * extension[type].valueCodeableConcept ^binding.description = "Type de  boîte aux lettre MSS"
 
+* extension[responsible].value[x] only string
 * extension[responsible] ^short = "Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres \"PER\"."
 * extension[description].value[x] only string
 * extension[description].value[x] ^short = "Description fonctionnelle de la boîte aux lettres"
-* extension[responsible].value[x] only string
 
-* extension[service] ^short = "Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation."
 * extension[service].value[x] only string
+* extension[service] ^short = "Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation."
 
-* extension[phone] ^short = "Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté"
 * extension[phone].value[x] only string
+* extension[phone] ^short = "Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté"
+
 
 * extension[digitization] ^short = "Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée \r\n- N : Dématérialisation refusée"
 * extension[digitization].value[x] only boolean
 
-
-* extension[publication] ^short = "Indicateur liste rouge. O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée"
 * extension[publication].value[x] only boolean
+* extension[publication] ^short = "Indicateur liste rouge. O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée"
+
