@@ -72,21 +72,23 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension ^slicing.rules = #open
 * extension contains
     $digitalCertificate named organization-digitalCertificate 0..1 MS and
-    $organization-pharmacyLicence named organization-pharmacyLicence 0..* MS and
-    AsMailboxMSSExtension named organization-mailboxMSS 0..* MS
+    $organization-pharmacyLicence named organization-pharmacyLicence 0..* MS
+    
 // digitalCertificate
 * extension[organization-digitalCertificate] ^isModifier = false
 * extension[organization-digitalCertificate] ^short = "[DR] : certificat"
 // numeroLicence pour les officines
 * extension[organization-pharmacyLicence] ^isModifier = false
 * extension[organization-pharmacyLicence] ^short = "numeroLicence"
-// boiteLettresMSS
-* extension[organization-mailboxMSS] ^isModifier = false
-* extension[organization-mailboxMSS] ^short = "boiteLettresMSS"
-* extension[organization-mailboxMSS].extension ^slicing.discriminator.type = #value
-* extension[organization-mailboxMSS].extension ^slicing.discriminator.path = "url"
-* extension[organization-mailboxMSS].extension ^slicing.rules = #open
-* extension[organization-mailboxMSS].extension[responsible] ^short = "[DR] : mailBoxMSS.responsable"
-* extension[organization-mailboxMSS].extension[phone] ^short = "[DR] : mailBoxMSS.phone"
 // Organization.endpoint
+
 * endpoint MS
+
+// boiteLettresMSS
+* contact.telecom ^slicing.rules = #open
+* contact.telecom ^slicing.discriminator.type = #pattern
+* contact.telecom ^slicing.discriminator.path = "code"
+* contact.telecom contains mailbox-mss 0..*
+* contact.telecom[mailbox-mss] only as-mailbox-mss
+* contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] ^short = "[DR] : mailBoxMSSresponsable"
+* contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] ^short = "[DR] : mailBoxMSS.phone"

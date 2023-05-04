@@ -11,8 +11,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
     $practitioner-nationality named practitioner-nationality 0..1 MS and
     $practitioner-authorization named practitioner-authorization 0..* MS and
     $practitioner-birthPlace named practitioner-birthPlace 0..1 MS and
-    $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* MS and
-    AsMailboxMSSExtension named practitioner-mailboxMSS 0..* MS
+    $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* MS
 /* Practitioner.identifier */
 * identifier MS
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
@@ -78,9 +77,14 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * address ^short = "[DR] : adresseCorrespondance"
 * address only AsAddressExtendedProfile
 // boiteLettreMSS
-* extension[practitioner-mailboxMSS] ^isModifier = false
-* extension[practitioner-mailboxMSS] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
-* extension[practitioner-mailboxMSS] ^short = "boiteLettreMSS"
+* telecom ^slicing.rules = #open
+* telecom ^slicing.discriminator.type = #pattern
+* telecom ^slicing.discriminator.path = "code"
+* telecom contains mailbox-mss 0..*
+* telecom[mailbox-mss] only as-mailbox-mss
+* telecom[mailbox-mss] ^definition = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé"
+* telecom[mailbox-mss] ^short = "boiteLettreMSS"
+
 // Practitioner.photo
 * photo MS
 // Slice deja défini dans FrPractitioner

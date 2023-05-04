@@ -5,13 +5,8 @@ Description: "Extension créée dans le cadre de l'Annuaire Santé pour définir
 
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-* extension contains
-    family 0..1 and
-    given 0..1 and
-    suffix 0..1 
-* extension[family].value[x] only string
-* extension[given].value[x] only string
-* extension[suffix].valueCodeableConcept from $JDV-J79-CiviliteExercice-RASS (required)
+
+* value[x] only FrHumanName
+* valueHumanName.family MS
+* valueHumanName.given MS
+* valueHumanName.suffix MS
