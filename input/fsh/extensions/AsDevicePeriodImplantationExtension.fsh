@@ -9,7 +9,9 @@ Description: "Extension créée dans le cadre de l'Annuaire Santé pour prise en
 * value[x] only Period
 // datePremiereMEO
 * valuePeriod.start ^short = "datePremiereMEO"
-* valuePeriod.start ^comment = "Date de mise en œuvre"
+* valuePeriod.start ^definition = "Date de première mise en œuvre de l'activité de soin."
+* valuePeriod.start ^comment = "Synonyme FINESS : date de mise en œuvre"
 // dateFin
 * valuePeriod.end ^short = "dateFin"
-* valuePeriod.end ^comment = "Date de fin de mise en œuvre"
+* valuePeriod.end ^definition = "Date d'échéance de l'autorisation."
+* valuePeriod.end ^comment = "Synonyme FINESS : date de fin de mise en œuvre"

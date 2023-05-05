@@ -13,23 +13,23 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPractitionerRoleNameExtension named practitionerRole-name 0..1 MS and
-    $practitionerRole-registration named PractitionerRoleRegistration 0..* MS and
-    $practitionerRole-educationLevel named practitionerRole-educationLevel 0..1 MS and
-    $practitionerRole-smartCard named practitionerRole-smartCard 0..1 MS
+    AsPractitionerRoleNameExtension named as-ext-practitionerrole-name 0..1 MS and
+    AsPractitionerRoleRegistrationExtension named as-ext-practitionerrole-registration 0..* MS and
+    AsPractitionerRoleEducationLevelExtension named as-ext-practitionerrole-education-level 0..1 MS and
+    AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..1 MS
 
 // civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)
-* extension[practitionerRole-name] ^isModifier = false
-* extension[practitionerRole-name] ^short = "civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)"
+* extension[as-ext-practitionerrole-name] ^isModifier = false
+* extension[as-ext-practitionerrole-name] ^short = "civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)"
 // AutoriteEnregistrement
-* extension[PractitionerRoleRegistration] ^isModifier = false
-* extension[practitionerRole-name] ^short = "AutoriteEnregistrement"
+* extension[as-ext-practitionerrole-registration] ^isModifier = false
+* extension[as-ext-practitionerrole-name] ^short = "AutoriteEnregistrement"
 // SavoirFaire
-* extension[practitionerRole-educationLevel] ^isModifier = false
-* extension[practitionerRole-educationLevel] ^short = "SavoirFaire"
+* extension[as-ext-practitionerrole-education-level] ^isModifier = false
+* extension[as-ext-practitionerrole-education-level] ^short = "SavoirFaire"
 // CarteProfessionnel
-* extension[practitionerRole-smartCard] ^isModifier = false
-* extension[practitionerRole-smartCard] ^short = "CarteProfessionnel"
+* extension[as-ext-practitionerrole-smartcard] ^isModifier = false
+* extension[as-ext-practitionerrole-smartcard] ^short = "CarteProfessionnel"
 /* PractitionerRole.identifier */
 * identifier MS
 * identifier ^short = "idFonctionnel"
@@ -144,7 +144,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * code.coding[metierPharmacienG05] ^binding.description = "Liste des sous-sections du tableau de l'Ordre des Pharmaciens"
 * code.coding[metierPharmacienG05].system ^short = "sousSectionTableauCNOP"
 /* Slicing pour separer savoir-faire et attribution particuliere */
-* specialty only $codeableConcept-timed
+* specialty only as-codeableconcept-timed
 * specialty ^slicing.discriminator.type = #value
 * specialty ^slicing.discriminator.path = "coding.system"
 * specialty ^slicing.description = "Slicing pour séparer savoir-faire et attribution particulière"

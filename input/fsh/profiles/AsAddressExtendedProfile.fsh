@@ -1,16 +1,16 @@
 Profile: AsAddressExtendedProfile
 Parent: FrAddress
-Title: "As Address Extended Profile"
+Title: "As Address Extended Profile (datatype)"
 Id: as-address-extended
-Description: "Extension créée dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française"
+Description: "Datatype profile créé dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française"
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-
+// departement
 * district from https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS
 * district MS // remplace FrenchDepartment from https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS
-
+// pays
 * country from https://mos.esante.gouv.fr/NOS/JDV_J74-Pays-RASS/FHIR/JDV-J74-Pays-RASS
 * country MS // remplace extension countryCode 0..1 MS from https://mos.esante.gouv.fr/NOS/JDV_J74-Pays-RASS/FHIR/JDV-J74-Pays-RASS
 

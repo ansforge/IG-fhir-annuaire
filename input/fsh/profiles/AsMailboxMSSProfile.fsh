@@ -12,4 +12,4 @@ Description: 	"Profil du type de données ContactPoint créé dans le cadre de l
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 
-* extension contains as-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1
+* extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1

@@ -10,21 +10,21 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $HealthcareService-activityType named activityType 0..1 MS and
-    $HealthcareService-authorizationDate named authorizationDate 0..1 MS and
-    $HealthcareService-authorizationNumberARHGOS named authorizationNumberARHGOS 1..1 MS and
-    $HealthcareService-implementationPeriod named implementationPeriod 0..1 MS and
-    $HealthcareService-deleteAutorisationImplantation named deleteAutorisationImplantation 0..1 MS and
-    $HealthcareService-dateUpdateActivity named dateUpdateActivity 0..1 MS
-* extension[activityType] ^isModifier = false
-* extension[authorizationDate] ^isModifier = false
-* extension[authorizationNumberARHGOS] ^isModifier = false
-* extension[implementationPeriod] ^isModifier = false
-* extension[deleteAutorisationImplantation] ^isModifier = false
-* extension[dateUpdateActivity] ^isModifier = false
+    AsHealthcareServiceActivityTypeExtension named as-ext-healthcareservice-activity-type 0..1 MS and
+    AsHealthcareServiceAuthorizationDateExtension named as-ext-healthcareservice-authorization-date 0..1 MS and
+    AsHealthcareServiceAuthorizationNumberARHGOSExtension named as-ext-healthcareservice-authorization-number-arhgos 1..1 MS and
+    AsHealthcareServiceImplementationPeriodExtension named as-ext-healthcareservice-implementation-period 0..1 MS and
+    AsHealthcareServiceDeleteAutorizationImplantationExtension named as-ext-healthcareservice-delete-autorization-implantation 0..1 MS and
+    AsHealthcareServiceDateUpdateActivityExtension named as-ext-healthcareservice-date-update-activity 0..1 MS
+* extension[as-ext-healthcareservice-activity-type] ^isModifier = false
+* extension[as-ext-healthcareservice-authorization-date] ^isModifier = false
+* extension[as-ext-healthcareservice-authorization-number-arhgos] ^isModifier = false
+* extension[as-ext-healthcareservice-implementation-period] ^isModifier = false
+* extension[as-ext-healthcareservice-delete-autorization-implantation] ^isModifier = false
+* extension[as-ext-healthcareservice-date-update-activity] ^isModifier = false
 // numeroAutorisationARHGOS
 * identifier 0..* MS
-* identifier ^short = "numeroAutorisationARHGOS"
+* identifier ^short = "numeroAutorisationARHGOS"as-ext-healthcareservice-date-update-activity
 * identifier ^comment = "Identifiant fonctionnel, numéro d'autorisation ARHGOS"
 // idStructure
 * providedBy 0..1 MS

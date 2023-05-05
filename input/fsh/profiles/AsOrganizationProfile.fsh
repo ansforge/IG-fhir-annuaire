@@ -71,15 +71,15 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $digitalCertificate named organization-digitalCertificate 0..1 MS and
-    $organization-pharmacyLicence named organization-pharmacyLicence 0..* MS
+    AsDigitalCertificateExtension named as-ext-digital-certificate 0..1 MS and
+    AsOrganizationPharmacyLicenceExtension named as-ext-organization-pharmacy-licence 0..* MS
     
 // digitalCertificate
-* extension[organization-digitalCertificate] ^isModifier = false
-* extension[organization-digitalCertificate] ^short = "[DR] : certificat"
+* extension[as-ext-digital-certificate] ^isModifier = false
+* extension[as-ext-digital-certificate] ^short = "[DR] : certificat"
 // numeroLicence pour les officines
-* extension[organization-pharmacyLicence] ^isModifier = false
-* extension[organization-pharmacyLicence] ^short = "numeroLicence"
+* extension[as-ext-organization-pharmacy-licence] ^isModifier = false
+* extension[as-ext-organization-pharmacy-licence] ^short = "numeroLicence"
 // Organization.endpoint
 
 * endpoint MS

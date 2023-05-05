@@ -10,9 +10,9 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $HealthcareService-authorizationDate named authorizationDate 0..1 MS and
-    $HealthcareService-implementationPeriod named installationDate 0..1 MS
-* extension[installationDate] ^isModifier = false
+    AsHealthcareServiceAuthorizationDateExtension named as-ext-healthcareservice-authorization-date 0..1 MS and
+    AsHealthcareServiceImplementationPeriodExtension named as-ext-healthcareservice-implementation-period 0..1 MS // date d'installation
+* extension[as-ext-healthcareservice-implementation-period] ^isModifier = false 
 // identifiant
 * identifier 0..* MS
 * identifier ^short = "numeroAutorisationARHGOS"

@@ -8,10 +8,10 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $practitioner-nationality named practitioner-nationality 0..1 MS and
-    $practitioner-authorization named practitioner-authorization 0..* MS and
-    $practitioner-birthPlace named practitioner-birthPlace 0..1 MS and
-    $practitioner-deceasedDateTime named practitioner-deceasedDateTime 0..* MS
+    AsPractitionerNationalityExtension named as-ext-practitioner-nationality 0..1 MS and
+    AsPractitionerAuthorizationExtension named as-ext-practitioner-authorization 0..* MS and
+    AsPractitionerBirthPlaceExtension named as-ext-practitioner-birth-place 0..1 MS and
+    AsPractitionerDeceasedDateTimeExtension named as-ext-practitioner-deceased-date-time 0..* MS
 /* Practitioner.identifier */
 * identifier MS
 * identifier ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
@@ -54,17 +54,17 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * birthDate MS
 * birthDate ^short = "[DR] - dateNaissance"
 // lieuNaissance
-* extension[practitioner-birthPlace] ^isModifier = false
-* extension[practitioner-birthPlace] ^definition = "Code officiel géographique (COG) de la commune (France) ou du pays"
-* extension[practitioner-birthPlace] ^short = "[DR] : lieuNaissance"
+* extension[as-ext-practitioner-birth-place] ^isModifier = false
+* extension[as-ext-practitioner-birth-place] ^definition = "Code officiel géographique (COG) de la commune (France) ou du pays"
+* extension[as-ext-practitioner-birth-place] ^short = "[DR] : lieuNaissance"
 // nationalite
-* extension[practitioner-nationality] ^isModifier = false
-* extension[practitioner-nationality] ^definition = "Nationalité de la personne"
-* extension[practitioner-nationality] ^short = "[DR] : nationalite"
+* extension[as-ext-practitioner-nationality] ^isModifier = false
+* extension[as-ext-practitioner-nationality] ^definition = "Nationalité de la personne"
+* extension[as-ext-practitioner-nationality] ^short = "[DR] : nationalite"
 // dateDeces
-* extension[practitioner-deceasedDateTime] ^isModifier = false
-* extension[practitioner-deceasedDateTime] ^definition = "Date de décès de la personne"
-* extension[practitioner-deceasedDateTime] ^short = "[DR] : dateDeces"
+* extension[as-ext-practitioner-deceased-date-time] ^isModifier = false
+* extension[as-ext-practitioner-deceased-date-time] ^definition = "Date de décès de la personne"
+* extension[as-ext-practitioner-deceased-date-time] ^short = "[DR] : dateDeces"
 // telecommunication 
 * telecom MS
 * telecom ^short = "[DR] : telecommunication"
@@ -153,11 +153,11 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.issuer.identifier ^short = "Code du lieu d'obtention du diplôme"
 * qualification.issuer.identifier.system = "urn:oid:1.2.250.1.213.1.6.4.1" (exactly)
 // AutorisationExercice
-* extension[practitioner-authorization] ^isModifier = false
-* extension[practitioner-authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
-* extension[practitioner-authorization] ^short = "[DR] : autorisationExercice"
+* extension[as-ext-practitioner-authorization] ^isModifier = false
+* extension[as-ext-practitioner-authorization] ^definition = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France"
+* extension[as-ext-practitioner-authorization] ^short = "[DR] : autorisationExercice"
 // langueParlee
 * communication MS
 * communication ^short = "langueParlee"
-* communication only $codeableConcept-timed
+* communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
