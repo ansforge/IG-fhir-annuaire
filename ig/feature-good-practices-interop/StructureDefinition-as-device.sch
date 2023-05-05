@@ -12,8 +12,8 @@
   <sch:pattern>
     <sch:title>f:Device</sch:title>
     <sch:rule context="f:Device">
-      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-numberAuthorizationARHGOS']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-numberAuthorizationARHGOS': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-authorizationDateDevice']) &lt;= 1">extension with URL = 'https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-authorizationDateDevice': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-number-authorization-arhgos']) &lt;= 1">extension with URL = 'http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-number-authorization-arhgos': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-authorization-date-device']) &lt;= 1">extension with URL = 'http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-authorization-date-device': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-Period-implantation']) &lt;= 1">extension with URL = 'http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-Period-implantation': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

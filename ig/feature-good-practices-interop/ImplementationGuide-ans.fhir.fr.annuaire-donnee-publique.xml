@@ -11,7 +11,7 @@
   <name value="AnnuaireSantdonnespubliques"/>
   <title value="Annuaire Santé données publiques"/>
   <status value="draft"/>
-  <date value="2023-05-04T14:08:50+00:00"/>
+  <date value="2023-05-05T17:21:25+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -35,11 +35,6 @@
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
     <version value="5.0.0"/>
-  </dependsOn>
-  <dependsOn id="ans_annuaire_fhir_r4">
-    <uri value="http://fhir.org/packages/ans.annuaire.fhir.r4/ImplementationGuide/ans.annuaire.fhir.r4"/>
-    <packageId value="ans.annuaire.fhir.r4"/>
-    <version value="0.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
     <uri value="http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core"/>
@@ -479,8 +474,19 @@
       <reference>
         <reference value="StructureDefinition/as-address-extended"/>
       </reference>
-      <name value="As Address Extended Profile"/>
-      <description value="Extension créée dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française"/>
+      <name value="As Address Extended Profile (datatype)"/>
+      <description value="Datatype profile créé dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-codeableconcept-timed"/>
+      </reference>
+      <name value="AS CodeableConceptTimed Datatype Profile"/>
+      <description value="Profil du type de données CodeableConcept créé dans le cadre de l'Annuaire Santé pour ?"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -554,6 +560,39 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/as-ext-codeableconcept-timed-metadata"/>
+      </reference>
+      <name value="AS CodeableConceptTimed Metadata"/>
+      <description value="Extension contenant les métadonnées du CodeableConceptTimed."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-device-authorization-date-device"/>
+      </reference>
+      <name value="AS Device Authorization Date Device Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de délivrance de l’autorisation d’un équipement matériel lourd."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-device-number-authorization-arhgos"/>
+      </reference>
+      <name value="AS Device Numbera Authorization ARHGOS Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/as-ext-device-Period-implantation"/>
       </reference>
       <name value="AS Device Period Implantation Extension"/>
@@ -565,10 +604,153 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/as-mailbox-mss-metadata"/>
+        <reference value="StructureDefinition/as-ext-digital-certificate"/>
+      </reference>
+      <name value="AS Digital Certificate Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-healthcareservice-activity-type"/>
+      </reference>
+      <name value="AS Healthcare Service Activity Type Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire les types d’activités sanitaires des établissements FINESS."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-healthcareservice-authorization-date"/>
+      </reference>
+      <name value="AS Healthcare Service Authorization Date Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date  délivrance de l’autorisation de l’activité de soins."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-healthcareservice-authorization-number-arhgos"/>
+      </reference>
+      <name value="AS HealthcareService Authorization Number ARHGOS Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du numéro d'autorisation ARHGOS."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-healthcareservice-date-update-activity"/>
+      </reference>
+      <name value="AS HealthcareService Date Update Activity Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date  de mise à  jour des données de l'activité de soins."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-healthcareservice-delete-autorization-implantation"/>
+      </reference>
+      <name value="AS HealthcareService Delete Autorization Implantation Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour en compte de l'indicateur de suppression de l'autorisation de l'activité de soins."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-healthcareservice-implementation-period"/>
+      </reference>
+      <name value="AS HealthcareService Implementation Period Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour en compte de la date d'échéance de l'autorisation de l'activité de soins."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-mailbox-mss-metadata"/>
       </reference>
       <name value="AS Mailbox Metadata"/>
       <description value="Extension contenant les métadonnées de la mailbox mss."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-organization-pharmacy-licence"/>
+      </reference>
+      <name value="AS Organization Pharmacy Licence Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-practitioner-authorization"/>
+      </reference>
+      <name value="AS Practitioner Authorization Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'autorisation d'exercice du professionnel (AutorisationExercice)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-practitioner-birth-place"/>
+      </reference>
+      <name value="AS Practitioner Birth Place Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du lieu de naissance du professionnel (Practitioner)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-practitioner-deceased-date-time"/>
+      </reference>
+      <name value="AS Practitioner Deceased Date Time Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de décès du professionnel (Date of death of the practitioner if applicable)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-practitioner-nationality"/>
+      </reference>
+      <name value="AS Practitioner Nationality Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nationalité du professionnel (Practitioner)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-practitionerrole-education-level"/>
+      </reference>
+      <name value="AS PractitionerRole Education Level Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire le niveau de formation acquis d'un étudiant."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -580,6 +762,28 @@
       </reference>
       <name value="AS PractitionerRole Name Extension"/>
       <description value="Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-practitionerrole-registration"/>
+      </reference>
+      <name value="AS PractitionerRole Registration Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si &quot;isFirst = true&quot;."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-practitionerrole-smartcard"/>
+      </reference>
+      <name value="AS PractitionerRole Smart Card Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire les informations de la carte CPx utilisée comme moyen d’identification des personnes physiques."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

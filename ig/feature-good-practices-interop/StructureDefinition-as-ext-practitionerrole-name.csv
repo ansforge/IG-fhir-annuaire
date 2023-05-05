@@ -1,6 +1,6 @@
 "Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: RIM Mapping"
 "Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","AS PractitionerRole Name Extension","Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+","civiliteNomPrenomExercice","La civilité, le nom et le prénom sous lequels exerce le professionnel.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
 ",""
 "Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -37,12 +37,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a","./formatted"
 "Extension.value[x]:valueHumanName.family","Extension.value[x].family","","surname
 ","",0,1,"Y","","Y","string {[]} {[]}
-","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"ele-1
+","nomExercice","Nom sous lequel exerce le professionnel.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","./part[partType = FAM]"
 "Extension.value[x]:valueHumanName.given","Extension.value[x].given","","first name
 middle name","",0,*,"Y","","Y","string {[]} {[]}
-","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"ele-1
+","prenomExercice","Prénom sous lequel exerce le professionnel.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","./part[partType = GIV]"
 "Extension.value[x]:valueHumanName.prefix","Extension.value[x].prefix","","","",0,*,"","","Y","string {[]} {[]}
@@ -50,7 +50,7 @@ middle name","",0,*,"Y","","Y","string {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","./part[partType = PFX]"
 "Extension.value[x]:valueHumanName.suffix","Extension.value[x].suffix","","","",0,*,"Y","","Y","string {[]} {[]}
-","Parts that come after the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"HumanName.suffix",0,*,"ele-1
+","civiliteExercice","Civilité d’exercice du professionnel.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"HumanName.suffix",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","./part[partType = SFX]"
 "Extension.value[x]:valueHumanName.period","Extension.value[x].period","","","",0,1,"","","Y","Period {[]} {[]}

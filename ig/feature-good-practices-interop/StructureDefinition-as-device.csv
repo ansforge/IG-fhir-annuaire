@@ -29,15 +29,15 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","Extensions are always sliced by (at least) url",,"open","DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
-"Device.extension:numberAuthorizationARHGOS","Device.extension","numberAuthorizationARHGOS","","",0,1,"Y","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-numberAuthorizationARHGOS]]} {[]}
-","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"Device.extension:as-ext-device-number-authorization-arhgos","Device.extension","as-ext-device-number-authorization-arhgos","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-number-authorization-arhgos]]} {[]}
+","numeroAutorisationARHGOS","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
-"Device.extension:authorizationDateDevice","Device.extension","authorizationDateDevice","","",0,1,"Y","","","Extension {[CanonicalType[https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-authorizationDateDevice]]} {[]}
-","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Device.extension:as-ext-device-authorization-date-device","Device.extension","as-ext-device-authorization-date-device","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-authorization-date-device]]} {[]}
+","dateDecision","Date de délivrance de l’autorisation d’EML.","Synonyme FINESS : date d’autorisation.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
-"Device.extension:periodImplantation","Device.extension","periodImplantation","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-Period-implantation]]} {[]}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Device.extension:as-ext-device-Period-implantation","Device.extension","as-ext-device-Period-implantation","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-device-Period-implantation]]} {[]}
 ","Dates de mise en oeuvre de l'EML","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte des dates de mise en oeuvre d’un équipement matériel lourd.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -291,7 +291,7 @@ qty-3:If a code for the unit is present, the system SHALL also be present {code.
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}","n/a","The target of a resource reference is a RIM entry point (Act, Role, or Entity)",".playedRole[typeCode=USED].scoper.playedRole[typeCode=PAT]","FiveWs.subject[x]","FiveWs.subject"
 "Device.owner","Device.owner","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization]]}
-","idStructure","An organization that is responsible for the provision and ongoing maintenance of the device.","Reference vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
+","idStructure","An organization that is responsible for the provision and ongoing maintenance of the device.","Référence vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd.","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}","n/a","The target of a resource reference is a RIM entry point (Act, Role, or Entity)",".playedRole[typeCode=OWN].scoper","FiveWs.source"
 "Device.contact","Device.contact","","","",0,*,"","","","ContactPoint {[]} {[]}
