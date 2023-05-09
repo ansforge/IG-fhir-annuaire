@@ -138,7 +138,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * qualification.code.coding[degreeR53] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR53] ^binding.description = "Liste des diplômes EEE"
 * qualification.code.coding[degreeR53] ^comment = "Synonyme MOS : DiplomeEEE"
-* qualification.code.coding[degreeR53] ^short = "Synonyme MOS : DiplomeEEE"
+* qualification.code.coding[degreeR53] ^short = "Diplôme d'un pays de l'espace économique européen."
 // DiplomeUniversitaire
 * qualification.code.coding[degreeR54] from $JDV-J105-EnsembleDiplome-RASS (required)
 * qualification.code.coding[degreeR54] ^binding.description = "Liste des diplômes"

@@ -14,7 +14,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * identifier.system ^comment = "« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct) ; « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET ; « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ ; « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang; « https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure;"
 // Organization.active
 * active MS
-* active ^short = "La ressource est-elle active? active | inactive"
+* active ^short = "La ressource est-elle active? (active | inactive)"
 * active ^comment = "true par défaut; false pour les structures supprimées"
 // Organization.name
 * name MS
@@ -41,7 +41,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * type[activiteINSEE] ^comment = "Synonyme : codeAPEN"
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
-* type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caracterise la situation juridique de la personne morale."
+* type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caractérise la situation juridique de la personne morale."
 * type[statutJuridiqueINSEE] ^comment = "Synonyme : statutJuridiqueINSEE"
 // modaliteParticipationSPH
 * type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
@@ -50,7 +50,7 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 // adresse
 * address MS
 * address ^comment = "adresse"
-* address ^short = "adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique "
+* address ^short = "adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique."
 * address only AsAddressExtendedProfile
 // telecommunication
 * telecom MS
@@ -67,8 +67,8 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 // periode d'activite
 * extension[usePeriod] ^sliceName = "usePeriod"
 * extension[usePeriod].valuePeriod ^sliceName = "valuePeriod"
-* extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure"
-* extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure"
+* extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure."
+* extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure."
 // extensions
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

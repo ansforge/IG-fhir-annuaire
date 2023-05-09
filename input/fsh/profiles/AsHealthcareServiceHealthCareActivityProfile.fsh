@@ -24,28 +24,29 @@ Description: "Profil créé à partir de la ressource HealthcareService dans le 
 * extension[as-ext-healthcareservice-date-update-activity] ^isModifier = false
 // numeroAutorisationARHGOS
 * identifier 0..* MS
-* identifier ^comment = "Synonyme MOS : numeroAutorisationARHGOS"
+* identifier ^comment = "Synonyme : numeroAutorisationARHGOS"
 * identifier ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS."
 // idStructure
 * providedBy 0..1 MS
-* providedBy ^comment = "Synonyme MOS : idNat_Struct"
-* providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cette activité sanitaire"
+* providedBy ^comment = "Synonyme : idNat_Struct"
+* providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattachée cette activité sanitaire."
 // modalite
 * category 0..* MS
-* category ^comment = "Synonyme MOS : modalite"
+* category ^comment = "Synonyme : modalite"
 * category ^short = "La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins."
 * category from $JDV-J132-ModaliteActivite-RASS (required)
 * category ^binding.description = "Liste des modalités"
 //
+* type ^short = "Code définissant l'activité de soins autorisée."
 * type from $JDV-J133-ActiviteSanitaireRegulee-RASS (required)
-* type ^binding.description = "Code définissant l'activité de soins autorisée"
+* type ^binding.description = "Liste des activités sanitaires"
 // activite - HealthcareService.specialty
 * specialty 0..* MS
-* specialty ^comment = "Synonyme MOS : activite"
-* specialty ^short = "Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP), la liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP)"
+* specialty ^comment = "Synonyme : activite"
+* specialty ^short = "Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP), \r\nla liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP)"
 // forme
 * characteristic 0..* MS
 * characteristic from $JDV-J134-FormeActivite-RASS (required)
-* characteristic ^comment = "Synonyme MOS : forme"
+* characteristic ^comment = "Synonyme : forme"
 * characteristic ^short = "La forme d'activité étant un type d’organisation de prise en charge."
-* characteristic ^binding.description = "Liste des formes d'activité."
+* characteristic ^binding.description = "Liste des formes d'activité"
