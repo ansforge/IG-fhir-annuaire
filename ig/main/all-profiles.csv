@@ -3450,7 +3450,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-device","Device.identifier","Device.identifier","","","",0,*,"Y","","","Identifier {[]} {[]}
-","numeroAutorisationARHGOS","Unique instance identifiers assigned to a device by manufacturers other organizations or owners.","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML","","","","","","","","",,,,,"",,,,"Device.identifier",0,*,"ele-1
+","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Unique instance identifiers assigned to a device by manufacturers other organizations or owners.","Synonyme MOS : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"Device.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-device","Device.definition","Device.definition","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/DeviceDefinition]]}
@@ -3513,7 +3513,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.","see http://en.wikipedia.org/
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-device","Device.status","Device.status","","","",0,1,"Y","Y","Y","code {[]} {[]}
-","actif","Status of the Device availability.","= “active” par défaut; 
+","Le matériel est-il actif? O/N","Status of the Device availability.","= “active” par défaut; 
 Sinon, si le matériel est inactif =” inactive”","","","","","","","","",,"required","The availability status of the device.","http://hl7.org/fhir/ValueSet/device-status|4.0.1","",,,,"Device.status",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -3527,7 +3527,7 @@ Sinon, si le matériel est inactif =” inactive”","","","","","","","","",,"r
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-device","Device.manufacturer","Device.manufacturer","","","",0,1,"Y","","","string {[]} {[]}
-","marque","A name of the manufacturer.","Marque de l'équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.manufacturer",0,1,"ele-1
+","Marque de l'équipement matériel lourd.","A name of the manufacturer.","marque","","","","","","","","",,,,,"",,,,"Device.manufacturer",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-device","Device.manufactureDate","Device.manufactureDate","","","",0,1,"","","","dateTime {[]} {[]}
@@ -3543,7 +3543,7 @@ Sinon, si le matériel est inactif =” inactive”","","","","","","","","",,"r
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-device","Device.serialNumber","Device.serialNumber","","","",0,1,"Y","","","string {[]} {[]}
-","numeroSerie","The serial number assigned by the organization when the device was manufactured.","Numéro de série de l'équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"ele-1
+","Synonyme MOS : numeroSerie","The serial number assigned by the organization when the device was manufactured.","Numéro de série de l'équipement matériel lourd","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-device","Device.deviceName","Device.deviceName","","","",0,*,"","","","BackboneElement {[]} {[]}
@@ -3683,7 +3683,7 @@ qty-3:If a code for the unit is present, the system SHALL also be present {code.
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "as-device","Device.owner","Device.owner","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization]]}
-","idStructure","An organization that is responsible for the provision and ongoing maintenance of the device.","Référence vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd.","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
+","Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd.","An organization that is responsible for the provision and ongoing maintenance of the device.","Synonyme MOS : idStructure","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "as-device","Device.contact","Device.contact","","","",0,*,"","","","ContactPoint {[]} {[]}
