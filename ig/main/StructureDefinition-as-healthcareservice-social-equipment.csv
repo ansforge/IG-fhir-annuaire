@@ -30,7 +30,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "HealthcareService.extension:as-ext-healthcareservice-authorization-date","HealthcareService.extension","as-ext-healthcareservice-authorization-date","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-healthcareservice-authorization-date]]} {[]}
-","Date autorisation","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date  délivrance de l’autorisation de l’activité de soins.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Date  délivrance de l’autorisation de l’activité de soins.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date  délivrance de l’autorisation de l’activité de soins.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "HealthcareService.extension:as-ext-healthcareservice-implementation-period","HealthcareService.extension","as-ext-healthcareservice-implementation-period","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-healthcareservice-implementation-period]]} {[]}
@@ -46,7 +46,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "HealthcareService.identifier","HealthcareService.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
-","numeroAutorisationARHGOS","External identifiers for this item.","Identifiant fonctionnel, numéro d'autorisation ARHGOS","","","","","","","","",,,,,"",,,,"HealthcareService.identifier",0,*,"ele-1
+","Identifiant fonctionnel, numéro d'autorisation ARHGOS.","External identifiers for this item.","Synonyme : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"HealthcareService.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]",".id","FiveWs.identifier"
 "HealthcareService.active","HealthcareService.active","","","",0,1,"","Y","Y","boolean {[]} {[]}
@@ -54,17 +54,17 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a",".statusCode","FiveWs.status"
 "HealthcareService.providedBy","HealthcareService.providedBy","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization]]}
-","idStructure","The organization that provides this healthcare service.","Reference vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet equipement social","","","","","","","","",,,,,"",,,,"HealthcareService.providedBy",0,1,"ele-1
+","Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social.","The organization that provides this healthcare service.","Synonyme : idNat_Struct, identifiantEJ, identifiantEG","","","","","","","","",,,,,"",,,,"HealthcareService.providedBy",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}","n/a","The target of a resource reference is a RIM entry point (Act, Role, or Entity)",".scopingRole.Organization"
 "HealthcareService.category","HealthcareService.category","","service category
 ","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
-","disciplineEquipementSociale","Identifies the broad category of service being performed or delivered.","Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.","","","","","","","","",,"example","A category of the service(s) that could be provided.","http://hl7.org/fhir/ValueSet/service-category","",,,,"HealthcareService.category",0,*,"ele-1
+","La discipline déterminant la nature de l’activité.","Identifies the broad category of service being performed or delivered.","Synonyme : disciplineEquipementSociale","","","","","","","","",,"example","A category of the service(s) that could be provided.","http://hl7.org/fhir/ValueSet/service-category","",,,,"HealthcareService.category",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".code","FiveWs.class"
 "HealthcareService.type","HealthcareService.type","","service type
 ","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Type of service that may be delivered or performed","The specific type of service that may be delivered or performed.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"required","La discipline détermine la nature de l’activité","https://mos.esante.gouv.fr/NOS/JDV_J136-DisciplineEquipementSocial-RASS/FHIR/JDV-J136-DisciplineEquipementSocial-RASS","",,,,"HealthcareService.type",0,*,"ele-1
+","Type of service that may be delivered or performed","The specific type of service that may be delivered or performed.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"required","Liste des disciplines","https://mos.esante.gouv.fr/NOS/JDV_J136-DisciplineEquipementSocial-RASS/FHIR/JDV-J136-DisciplineEquipementSocial-RASS","",,,,"HealthcareService.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"
 "HealthcareService.specialty","HealthcareService.specialty","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
@@ -104,7 +104,7 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]"
 "HealthcareService.eligibility","HealthcareService.eligibility","","","",0,*,"Y","","","BackboneElement {[]} {[]}
-","clientele","Does this service have specific eligibility requirements that need to be met in order to use the service?","","","","","","","","","",,,,,"",,,,"HealthcareService.eligibility",0,*,"ele-1
+","Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline.","Does this service have specific eligibility requirements that need to be met in order to use the service?","Synonyme : clientele, public, patientèle","","","","","","","","",,,,,"",,,,"HealthcareService.eligibility",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"
 "HealthcareService.eligibility.id","HealthcareService.eligibility.id","","","",0,1,"","","","string {[]} {[]}
@@ -123,7 +123,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "HealthcareService.eligibility.code","HealthcareService.eligibility.code","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Coded value for the eligibility","Coded value for the eligibility.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"extensible","Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline","https://mos.esante.gouv.fr/NOS/JDV_J137-Clientele-RASS/FHIR/JDV-J137-Clientele-RASS","",,,,"HealthcareService.eligibility.code",0,1,"ele-1
+","Coded value for the eligibility","Coded value for the eligibility.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"extensible","Liste des populations prises en charge","https://mos.esante.gouv.fr/NOS/JDV_J137-Clientele-RASS/FHIR/JDV-J137-Clientele-RASS","",,,,"HealthcareService.eligibility.code",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]"
 "HealthcareService.eligibility.comment","HealthcareService.eligibility.comment","","","",0,1,"","","","markdown {[]} {[]}
@@ -135,7 +135,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=PERT].observation"
 "HealthcareService.characteristic","HealthcareService.characteristic","","","",0,*,"Y","","","CodeableConcept {[]} {[]}
-","modeFonctionnement","Collection of characteristics (attributes).","These could be such things as is wheelchair accessible.","","","","","","","","",,"extensible","Le mode de fonctionnement précise la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline","https://mos.esante.gouv.fr/NOS/JDV_J138-TypeActivite-RASS/FHIR/JDV-J138-TypeActivite-RASS","",,,,"HealthcareService.characteristic",0,*,"ele-1
+","Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline.","Collection of characteristics (attributes).","Synonyme : modeFonctionnement, type d'activité","","","","","","","","",,"extensible","Liste des modes de fonctionnement","https://mos.esante.gouv.fr/NOS/JDV_J138-TypeActivite-RASS/FHIR/JDV-J138-TypeActivite-RASS","",,,,"HealthcareService.characteristic",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=PERT].observation"
 "HealthcareService.communication","HealthcareService.communication","","","",0,*,"","","","CodeableConcept {[]} {[]}
