@@ -16,20 +16,20 @@ Description: "Profil créé à partir de la ressource Device dans le contexte de
 /* donnees */
 // numeroAutorisationARHGOS
 * identifier 0..* MS
-* identifier ^short = "numeroAutorisationARHGOS"
-* identifier ^comment = "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML"
+* identifier ^short = "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML."
+* identifier ^comment = "Synonyme MOS : numeroAutorisationARHGOS"
 // actif
 * status 0..1 MS
 * status ^comment = "= “active” par défaut; \r\nSinon, si le matériel est inactif =” inactive”"
-* status ^short = "actif"
+* status ^short = "Le matériel est-il actif? O/N"
 // marque
 * manufacturer 0..1 MS
-* manufacturer ^short = "marque"
-* manufacturer ^comment = "Marque de l'équipement matériel lourd"
+* manufacturer ^short = "Marque de l'équipement matériel lourd."
+* manufacturer ^comment = "marque"
 // numeroSerie
 * serialNumber 0..1 MS
 * serialNumber ^comment = "Numéro de série de l'équipement matériel lourd"
-* serialNumber ^short = "numeroSerie"
+* serialNumber ^short = "Synonyme MOS : numeroSerie"
 // equipementMaterielLourd
 * type 0..1 MS
 * type from $JDV-J135-EquipementMaterielLourd-RASS (required)
@@ -37,5 +37,5 @@ Description: "Profil créé à partir de la ressource Device dans le contexte de
 * type ^short = "equipementMaterielLourd"
 // Lien Equipement/Structure
 * owner 0..1 MS
-* owner ^short = "idStructure"
-* owner ^comment = "Référence vers l'id de la ressource de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd."
+* owner ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd."
+* owner ^comment = "Synonyme MOS : idStructure"
