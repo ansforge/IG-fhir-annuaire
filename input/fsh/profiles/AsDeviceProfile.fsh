@@ -21,20 +21,21 @@ Description: "Profil créé à partir de la ressource Device dans le contexte de
 // actif
 * status 0..1 MS
 * status ^comment = "= “active” par défaut; \r\nSinon, si le matériel est inactif =” inactive”"
-* status ^short = "Le matériel est-il actif? O/N"
+* status ^short = "Le matériel est-il actif? active | inactive"
 // marque
 * manufacturer 0..1 MS
 * manufacturer ^short = "Marque de l'équipement matériel lourd."
 * manufacturer ^comment = "marque"
 // numeroSerie
 * serialNumber 0..1 MS
-* serialNumber ^comment = "Numéro de série de l'équipement matériel lourd"
-* serialNumber ^short = "Synonyme MOS : numeroSerie"
+* serialNumber ^short = "Numéro de série de l'équipement matériel lourd"
+* serialNumber ^comment = "Synonyme MOS : numeroSerie"
 // equipementMaterielLourd
 * type 0..1 MS
 * type from $JDV-J135-EquipementMaterielLourd-RASS (required)
-* type ^binding.description = "Code définissant l'équipement matériel lourd (EML) soumis à autorisation"
-* type ^short = "equipementMaterielLourd"
+* type ^binding.description = "Liste des types d'EML"
+* type ^comment = "Synonyme MOS : equipementMaterielLourd"
+* type ^short = "Code définissant l'équipement matériel lourd (EML) soumis à autorisation."
 // Lien Equipement/Structure
 * owner 0..1 MS
 * owner ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd."
