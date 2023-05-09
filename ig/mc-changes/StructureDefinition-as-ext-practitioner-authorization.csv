@@ -11,7 +11,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Extension.extension:type","Extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","typeAutorisation","Type d’autorisation (ex. Autorisation ministérielle de plein exercice, etc.).","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Type d’autorisation (ex. Autorisation ministérielle de plein exercice, etc.).","An Extension","Synonyme MOS : typeAutorisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.extension:type.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -33,7 +33,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
 "Extension.extension:period","Extension.extension","period","","",0,1,"","","","Extension {[]} {[]}
-","periodValidite","Période de validité de l'autorisation d'exercice.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Période de validité de l'autorisation d'exercice.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.extension:period.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -63,15 +63,15 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Extension.extension:period.value[x]:valuePeriod.start","Extension.extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
-","dateDebutAutorisation","Date à partir de laquelle l’autorisation s’applique","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
+","Date à partir de laquelle l’autorisation s’applique.","The start of the period. The boundary is inclusive.","Synonyme MOS : dateDebutAutorisation","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","./low"
 "Extension.extension:period.value[x]:valuePeriod.end","Extension.extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
-","dateFinAutorisation","Date de fin de validité de l'autorisation","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
+","Date de fin de validité de l'autorisation.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme MOS : dateFinAutorisation","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","./high"
 "Extension.extension:field","Extension.extension","field","","",0,1,"","","","Extension {[]} {[]}
-","disciplineAutorisee","Discipline à laquelle l'autorisation d'exercice est restreinte, le cas échéant.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Discipline à laquelle l'autorisation d'exercice est restreinte, le cas échéant.","An Extension","Synonyme MOS : disciplineAutorisee","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.extension:field.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -89,11 +89,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
 "Extension.extension:field.value[x]:valueCodeableConcept","Extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","Discipline à laquelle l'autorisation d'exercice est restreinte dans le RASS","https://mos.esante.gouv.fr/NOS/JDV_J76-DisciplineAutorisation-RASS/FHIR/JDV-J76-DisciplineAutorisation-RASS","",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","Liste des disciplines","https://mos.esante.gouv.fr/NOS/JDV_J76-DisciplineAutorisation-RASS/FHIR/JDV-J76-DisciplineAutorisation-RASS","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
 "Extension.extension:profession","Extension.extension","profession","","",0,1,"","","","Extension {[]} {[]}
-","profession","Profession pour laquelle l'autorisation est délivrée.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Profession pour laquelle l'autorisation est délivrée.","An Extension","Synonyme MOS : profession","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.extension:profession.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -111,7 +111,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
 "Extension.extension:profession.value[x]:valueCodeableConcept","Extension.extension.value[x]","valueCodeableConcept","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","Profession pour laquelle l'autorisation est délivrée","https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS","",,,,"Extension.value[x]",0,1,"ele-1
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","Liste des professions","https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
 "Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}

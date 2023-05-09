@@ -79,11 +79,11 @@ per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.extension:as-ext-digital-certificate","Organization.extension","as-ext-digital-certificate","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-digital-certificate]]} {[]}
-","[DR] : certificat","Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","[DR] : certificat.","Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.","Données descriptives du moyen d’identification par certificat.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.extension:as-ext-organization-pharmacy-licence","Organization.extension","as-ext-organization-pharmacy-licence","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-organization-pharmacy-licence]]} {[]}
-","numeroLicence","Numéro de la licence d'exploitation d’une officine.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Numéro de la licence d'exploitation d’une officine.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine.","Synonyme : numeroLicence","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.modifierExtension","Organization.modifierExtension","","extensions
@@ -133,7 +133,7 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "Organization.active","Organization.active","","","",0,1,"Y","Y","Y","boolean {[]} {[]}
-","isActive","Whether the organization's record is still in active use.","true par défaut; false pour les structures supprimées","Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Organization.active",0,1,"ele-1
+","La ressource est-elle active? active | inactive","Whether the organization's record is still in active use.","true par défaut; false pour les structures supprimées","Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Organization.active",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type","Organization.type","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
@@ -146,8 +146,9 @@ We expect that some jurisdictions will profile this optionality to be a single c
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type:organizationType","Organization.type","organizationType","","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","Type de strcuture","The kind(s) of organization that this is.","Entitité Juridique : LEGAL-ENTITY; 
-Entité Géographique : GEOGRAPHICAL-ENTITY","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Used to categorize the organization.","http://interopsante.org/fhir/ValueSet/fr-organization-type","",,,,"Organization.type",0,*,"ele-1
+","Type de structure 
+Entité Juridique : LEGAL-ENTITY; 
+Entité Géographique : GEOGRAPHICAL-ENTITY","The kind(s) of organization that this is.","typeStructure","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Used to categorize the organization.","http://interopsante.org/fhir/ValueSet/fr-organization-type","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type:organizationType.id","Organization.type.id","","","",0,1,"","","","string {[]} {[]}
@@ -300,41 +301,29 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).
-Plus précisément, on distingue le code APET pour les EG.","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
-
-When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
-
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
+Plus précisément, on distingue le code APET pour les EG.","The kind(s) of organization that this is.","Synonyme : codeAPEN","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Statut juridique FINESS qui caracterise la situation juridique de la personne morale","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
-
-When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
-
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
+","Statut juridique FINESS qui caracterise la situation juridique de la personne morale.","The kind(s) of organization that this is.","Synonyme : statutJuridiqueINSEE","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Modalités de participation au service public hospitalier","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
-
-When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
-
-We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
+","Modalités de participation au service public hospitalier.","The kind(s) of organization that this is.","Synonyme : modaliteParticipationSPH","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.name","Organization.name","","","",0,1,"Y","","Y","string {[]} {[]}
-","raisonSociale","A name associated with the organization.","Raison Sociale de la structure","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"ele-1
+","Raison sociale de la structure.","A name associated with the organization.","Synonyme : raisonSociale, dénomination","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"ele-1
 org-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.alias","Organization.alias","","","",0,*,"Y","","","string {[]} {[]}
-","complementRaisonSociale","A list of alternate names that the organization is known as, or was known as in the past.","Enseigne commerciale de la structure","Over time locations and organizations go through many changes and can be known by different names.
+","Enseigne commerciale de la structure.","A list of alternate names that the organization is known as, or was known as in the past.","Synonyme : complementRaisonSociale","Over time locations and organizations go through many changes and can be known by different names.
 
 For searching knowing previous names that the organization was known by can be very useful.","","","","","","","",,,,,"",,,,"Organization.alias",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.telecom","Organization.telecom","","","",0,*,"Y","","","ContactPoint {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPoint]]} {[]}
-","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Différentes instances pour les téléphones, la télécopie et l’adresse mail.","Human contact for the organization.","","","","","","","",,,,,"",,,,"Organization.telecom",0,*,"ele-1
+","Différentes instances pour les téléphones, la télécopie et l’adresse mail.","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.","Human contact for the organization.","","","","","","","",,,,,"",,,,"Organization.telecom",0,*,"ele-1
 org-3","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}org-3:The telecom of an organization can never be of use 'home' {where(use = 'home').empty()}"
 "Organization.telecom.id","Organization.telecom.id","","","",0,1,"","","","string {[]} {[]}
@@ -373,11 +362,11 @@ Period is not used for a duration (a measure of elapsed time). See [Duration](ht
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
 "Organization.address","Organization.address","","","",0,*,"Y","","","Address {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-address-extended]]} {[]}
-","adresse","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique ","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"ele-1
+","adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique ","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","adresse","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-2:An address of an organization can never be of use 'home' {where(use = 'home').empty()}"
 "Organization.partOf","Organization.partOf","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization]]}
-","Référence vers la structure de rattachement (lien EG/ EJ)","The organization of which this organization forms a part.","Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique.","Need to be able to track the hierarchy of organizations within an organization.","","","","","","","",,,,,"",,,,"Organization.partOf",0,1,"ele-1
+","Référence vers la structure de rattachement (lien EG/ EJ).","The organization of which this organization forms a part.","Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique.","Need to be able to track the hierarchy of organizations within an organization.","","","","","","","",,,,,"",,,,"Organization.partOf",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "Organization.partOf.id","Organization.partOf.id","","","",0,1,"","","","string {[]} {[]}
@@ -413,7 +402,7 @@ Reference is intended to point to a structure that can potentially be expressed 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact","Organization.contact","","","",0,*,"Y","","","BackboneElement {[]} {[]}
-","contact","Contact for the organization for a certain purpose.","Point(s) de contact","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"ele-1
+","Point de contact.","Contact for the organization for a certain purpose.","Personne ou service agissant comme point de contact auprès d'une autre personne ou d'un autre service.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.id","Organization.contact.id","","","",0,1,"","","","string {[]} {[]}
@@ -473,10 +462,11 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type","Organization.contact.telecom.extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","Extension","Valeurs possibles :
+","Type de boîte aux lettres.","An Extension","Synonyme MOS : typeBAL 
+Valeurs possibles :
 ORG pour une BAL organisationnelle;
 APP pour une BAL applicative;
-PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+PER pour une BAL personnelle, rattachée à une personne physique","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -498,7 +488,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description","Organization.contact.telecom.extension.extension","description","","",0,1,"","","","Extension {[]} {[]}
-","Description fonctionnelle de la boîte aux lettres","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Description fonctionnelle de la boîte aux lettres.","An Extension","Synonyme MOS : description","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -515,7 +505,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible","Organization.contact.telecom.extension.extension","responsible","","",0,1,"","","","Extension {[]} {[]}
-","[DR] : mailBoxMSSresponsable","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","[DR] : responsable de la BAL MSS.","An Extension","Synonyme : mailBoxMSSresponsable","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -532,7 +522,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service","Organization.contact.telecom.extension.extension","service","","",0,1,"","","","Extension {[]} {[]}
-","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","Synonyme MOS : serviceRattachement","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -549,7 +539,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone","Organization.contact.telecom.extension.extension","phone","","",0,1,"","","","Extension {[]} {[]}
-","[DR] : mailBoxMSS.phone","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","[DR] : Coordonnées téléphoniques spécifiques à l’usage de la BAL MSS.","An Extension","Synonyme : mailBoxMSS.phone","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -567,7 +557,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization","Organization.contact.telecom.extension.extension","digitization","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée 
-- N : Dématérialisation refusée","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+- N : Dématérialisation refusée.","An Extension","Synonyme MOS : dematerialisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -585,7 +575,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication","Organization.contact.telecom.extension.extension","publication","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur liste rouge. O: Boîte aux lettres en liste rouge;
-N: La boîte aux lettres peut être publiée","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+N: La boîte aux lettres peut être publiée","An Extension","Synonyme MOS : listeRouge","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
