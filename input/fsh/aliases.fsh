@@ -11,11 +11,8 @@ Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/i
 Alias: $iso21090-ADXP-postBox = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox
 Alias: $fr-practioner-identifier-type = http://interopsante.org/fhir/ValueSet/fr-practioner-identifier-type
 
-Alias: $mailboxMSS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/mailboxMSS
-Alias: $fr-address-extended = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/fr-address-extended
 Alias: $Device-PeriodImplentation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Device-PeriodImplentation
 Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/HealthcareService-DeleteAutorisationImplantation
-Alias: $Location-AS = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Location-AS
 Alias: $codeableConcept-timed = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed
 Alias: $Device-authorizationDateDevice = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-authorizationDateDevice
 Alias: $Device-numberAuthorizationARHGOS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-numberAuthorizationARHGOS
@@ -34,7 +31,7 @@ Alias: $practitioner-deceasedDateTime = https://apifhir.annuaire.sante.fr/ws-syn
 Alias: $practitionerRole-name = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name
 Alias: $practitionerRole-educationLevel = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-educationLevel
 Alias: $practitionerRole-smartCard = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-smartCard
-Alias: $PractitionerRoleRegistration = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-Registration
+Alias: $practitionerRole-registration = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-registration
 
 Alias: $JDV-J135-EquipementMaterielLourd-RASS = https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS
 Alias: $JDV-J132-ModaliteActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS
@@ -76,9 +73,9 @@ Alias: $JDV-J129-CategorieEtablissement-RASS = https://mos.esante.gouv.fr/NOS/JD
 Alias: $JDV-J78-Civilite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS
 Alias: $JDV-J79-CiviliteExercice-RASS = https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS
 Alias: $JDV-J82-Langue-RASS = https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS
-Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS
-Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
 Alias: $JDV-J98-StatutHospitalier-RASS = https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS
 Alias: $JDV-J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS
+Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS
+Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
 Alias: $JDV_J82-Langue-RASS = https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS
-
+Alias: $TRE-R249-Sexe = https://mos.esante.gouv.fr/NOS/TRE_R249-Sexe/FHIR/TRE-R249-Sexe

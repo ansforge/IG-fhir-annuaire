@@ -1,7 +1,7 @@
-Instance: ASClientCapabilityStatement
+Instance: AsClientCapabilityStatement
 InstanceOf: CapabilityStatement
 Usage: #definition
-* name = "RestServer"
+* name = "AsRestServer"
 * status = #active
 * date = "2023-03-23T13:49:59.485+00:00"
 * publisher = "ANS"
@@ -17,7 +17,7 @@ Usage: #definition
 * format[+] = #json
 * rest.mode = #server
 * rest.resource[0].type = #Device
-* rest.resource[=].profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Device"
+* rest.resource[=].profile = "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-device"
 * rest.resource[=].interaction[0].code = #update
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #read
@@ -91,7 +91,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].documentation = "Only return resources which were last updated as specified by the given range"
 * rest.resource[=].searchParam[+].name = "_profile"
 * rest.resource[=].searchParam[=].type = #uri
-* rest.resource[=].searchParam[=].documentation = "Sélectionner le profil de la ressource Healthcare Service. Pour les activités de soins https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-HealthcareService-HealthCareActivity / ; Pour les équipements sociaux https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-HealthcareService-SocialEquipment"
+* rest.resource[=].searchParam[=].documentation = "Sélectionner le profil de la ressource Healthcare Service. Pour les activités de soins http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-healthcareservice-healthcare-activity / ; Pour les équipements sociaux http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-healthcareservice-social-equipment"
 * rest.resource[=].searchParam[+].name = "_since"
 * rest.resource[=].searchParam[=].type = #date
 * rest.resource[=].searchParam[+].name = "_total"
@@ -126,7 +126,7 @@ Usage: #definition
 * rest.resource[=].searchRevInclude[+] = "PractitionerRole:organization"
 * rest.resource[=].searchRevInclude[+] = "PractitionerRole:practitioner"
 * rest.resource[+].type = #Organization
-* rest.resource[=].profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Organization"
+* rest.resource[=].profile = "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization"
 * rest.resource[=].interaction[0].code = #update
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #read
@@ -193,7 +193,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Recherche sur le type de structure/ code APE/ catégorie juridique/ secteur d'activité/ catégorie d'établissement ou le code SPH de la structure"
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "https://annuaire.sante.gouv.fr/fhir/StructureDefinition/AS-Practitioner"
+* rest.resource[=].profile = "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitioner"
 * rest.resource[=].interaction[0].code = #update
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #read
@@ -228,7 +228,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de HumanName, ici sur le préfix  correspondant à la civilité des professionnels de santé"
 * rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/PractitionerRole"
+* rest.resource[=].profile = "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitionerrole"
 * rest.resource[=].interaction[0].code = #update
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #read
