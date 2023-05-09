@@ -11,5 +11,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 * value[x] ^slicing.rules = #open
 * valueDateTime only dateTime
 * valueDateTime ^sliceName = "valueDateTime"
-* valueDateTime ^short = "dateDeces"
-* valueDateTime ^definition = "Date de décès de la personne."
+* valueDateTime ^comment = "Synonyme MOS : dateDeces"
+* valueDateTime ^short = "Date de décès de la personne."

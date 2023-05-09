@@ -6,6 +6,6 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour en compt
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * . ^short = "suppressionAutorisation"
-* . ^definition = "ndicateur de suppression de l'autorisation de l'activité de soins."
-* . ^comment = "Donnée propre à FINESS"
+* . ^short = "Indicateur de suppression de l'autorisation de l'activité de soins."
+* . ^comment = "Synonyme MOS : suppressionAutorisation ; donnée propre à FINESS"
 * value[x] only boolean

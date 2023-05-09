@@ -19,28 +19,27 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
     field 0..1 and
     profession 0..1
 // typeAutorisation
-* extension[type] ^short = "typeAutorisation"
-* extension[type] ^definition = "Type d’autorisation (ex. Autorisation ministérielle de plein exercice, etc.)."
+* extension[type] ^comment = "Synonyme MOS : typeAutorisation"
+* extension[type] ^short = "Type d’autorisation (ex. Autorisation ministérielle de plein exercice, etc.)."
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from $JDV-J75-TypeAutorisation-RASS (required)
 * extension[type].valueCodeableConcept ^binding.description = "Liste des types d'autorisation"
 // periodValidite
-* extension[period] ^short = "periodValidite"
-* extension[period] ^definition = "Période de validité de l'autorisation d'exercice."
+* extension[period] ^short = "Période de validité de l'autorisation d'exercice."
 * extension[period].value[x] only Period
-* extension[period].valuePeriod.start ^short = "dateDebutAutorisation"
-* extension[period].valuePeriod.start ^definition = "Date à partir de laquelle l’autorisation s’applique"
-* extension[period].valuePeriod.end ^short = "dateFinAutorisation"
-* extension[period].valuePeriod.end ^definition = "Date de fin de validité de l'autorisation"
+* extension[period].valuePeriod.start ^comment = "Synonyme MOS : dateDebutAutorisation"
+* extension[period].valuePeriod.start ^short = "Date à partir de laquelle l’autorisation s’applique."
+* extension[period].valuePeriod.end ^comment = "Synonyme MOS : dateFinAutorisation"
+* extension[period].valuePeriod.end ^short = "Date de fin de validité de l'autorisation."
 // disciplineAutorisee
-* extension[field] ^short = "disciplineAutorisee"
-* extension[field] ^definition = "Discipline à laquelle l'autorisation d'exercice est restreinte, le cas échéant."
+* extension[field] ^comment = "Synonyme MOS : disciplineAutorisee"
+* extension[field] ^short = "Discipline à laquelle l'autorisation d'exercice est restreinte, le cas échéant."
 * extension[field].value[x] only CodeableConcept
 * extension[field].valueCodeableConcept from $JDV-J76-DisciplineAutorisation-RASS (required)
-* extension[field].valueCodeableConcept ^binding.description = "Discipline à laquelle l'autorisation d'exercice est restreinte dans le RASS"
+* extension[field].valueCodeableConcept ^binding.description = "Liste des disciplines"
 // profession
-* extension[profession] ^short = "profession"
-* extension[profession] ^definition = "Profession pour laquelle l'autorisation est délivrée."
+* extension[profession] ^comment = "Synonyme MOS : profession"
+* extension[profession] ^short = "Profession pour laquelle l'autorisation est délivrée."
 * extension[profession].value[x] only CodeableConcept
 * extension[profession].valueCodeableConcept from $JDV-J106-EnsembleProfession-RASS (required)
-* extension[profession].valueCodeableConcept ^binding.description = "Profession pour laquelle l'autorisation est délivrée"
+* extension[profession].valueCodeableConcept ^binding.description = "Liste des professions"
