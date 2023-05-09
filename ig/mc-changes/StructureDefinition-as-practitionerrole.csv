@@ -1,0 +1,352 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"PractitionerRole","PractitionerRole","","","",0,*,"","","","null {[]} {[]}
+","Roles/organizations the practitioner is associated with","A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.","","","","","","","","","",,,,,"",,,,"PractitionerRole",0,*,"",""
+"PractitionerRole.id","PractitionerRole.id","","","",0,1,"","","Y","id {[]} {[]}
+","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
+"PractitionerRole.meta","PractitionerRole.meta","","","",0,1,"","","Y","Meta {[]} {[]}
+","Metadata about the resource","The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.","","","","","","","","","",,,,,"",,,,"Resource.meta",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.implicitRules","PractitionerRole.implicitRules","","","",0,1,"","Y","Y","uri {[]} {[]}
+","A set of rules under which this content was created","A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.","Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.","","","","","","","","",,,,,"",,,,"Resource.implicitRules",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.language","PractitionerRole.language","","","",0,1,"","","","code {[]} {[]}
+","Language of the resource content","The base language in which the resource is written.","Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).","","","","","","","","",,"preferred","A human language.","http://hl7.org/fhir/ValueSet/languages","",,,,"Resource.language",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.text","PractitionerRole.text","","narrative
+htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
+","Text summary of the resource, for human interpretation","A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it ""clinically safe"" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.","Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a ""text blob"" or where text is additionally entered raw or narrated and encoded information is added later.","","","","","","","","",,,,,"",,,,"DomainResource.text",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.contained","PractitionerRole.contained","","inline resources
+anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
+","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"",""
+"PractitionerRole.extension","PractitionerRole.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:serviceTypeDuration","PractitionerRole.extension","serviceTypeDuration","extensions
+user content","",0,*,"","","","Extension {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrServiceTypeDuration]]} {[]}
+","Optional Extensions Element","Optional Extension Element - found in all resources.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-name","PractitionerRole.extension","as-ext-practitionerrole-name","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-practitionerrole-name]]} {[]}
+","Autorité d'enregistrement représentant une institution (Ordre/ARS).","La civilité, le nom et le prénom sous lequels exerce le professionnel.","Synonyme MOS : AutoriteEnregistrement","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-registration","PractitionerRole.extension","as-ext-practitionerrole-registration","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-practitionerrole-registration]]} {[]}
+","InscriptionOrdre","Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.","Synonymes RPPS : Inscription à ordre","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-education-level","PractitionerRole.extension","as-ext-practitionerrole-education-level","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-practitionerrole-education-level]]} {[]}
+","Synonyme MOS : SavoirFaire","Le niveau de formation.","Savoir-faire (qualifications/autres attributions).","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-smartcard","PractitionerRole.extension","as-ext-practitionerrole-smartcard","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-ext-practitionerrole-smartcard]]} {[]}
+","Synonyme MOS : Numéro de carte du professionnel.","Données descriptives du moyen d’identification des personnes physiques via une carte de professionnel.","Synonyme MOS : CarteProfessionnel","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.modifierExtension","PractitionerRole.modifierExtension","","extensions
+user content","",0,*,"","Y","","Extension {[]} {[]}
+","Extensions that cannot be ignored","May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","DomainResource.modifierExtension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.identifier","PractitionerRole.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
+","Synonyme MOS : idFonctionnel","Business Identifiers that are specific to a role/location.","identifiant métier calculé à partir des identifiants techniques de l'exercice professionnel et la situation d'exercice.","Often, specific identities are assigned for the agent.","","","","","","","",,,,,"",,,,"PractitionerRole.identifier",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.identifier.id","PractitionerRole.identifier.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"PractitionerRole.identifier.extension","PractitionerRole.identifier.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.identifier.use","PractitionerRole.identifier.use","","","",0,1,"","Y","Y","code {[]} {[]}
+","usual | official | temp | secondary | old (If known)","The purpose of this identifier.","Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.","Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.","","","","","","","",,"required","Identifies the purpose for this identifier, if known .","http://hl7.org/fhir/ValueSet/identifier-use","",,,,"Identifier.use",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.identifier.type","PractitionerRole.identifier.type","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
+","Description of identifier","A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.","This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.","Allows users to make use of identifiers when the identifier system is not known.","","","","","","","",,"extensible","A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.","http://hl7.org/fhir/ValueSet/identifier-type","",,,,"Identifier.type",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.identifier.system","PractitionerRole.identifier.system","","","",0,1,"","","Y","uri {[]} {[]}
+","system (https://annuaire.sante.fr par défaut).","Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
+Namespace du RASS (inconnu à ce jour)","Identifier.system is always case sensitive.","There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers.","","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://www.acme.com/identifiers/patient""/>","","",,,,,"",,,,"Identifier.system",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.identifier.value","PractitionerRole.identifier.value","","","",0,1,"","","Y","string {[]} {[]}
+","Synonyme MOS : idActivite","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","Identifiant technique de l'activité.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.identifier.period","PractitionerRole.identifier.period","","","",0,1,"","","Y","Period {[]} {[]}
+","Time period when id is/was valid for use","Time period during which identifier is/was valid for use.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
+
+Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"Identifier.period",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
+"PractitionerRole.identifier.assigner","PractitionerRole.identifier.assigner","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+","Organization that issued id (may be just text)","Organization that issued/manages the identifier.","The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.","","","","","","","","",,,,,"",,,,"Identifier.assigner",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
+"PractitionerRole.active","PractitionerRole.active","","","",0,1,"Y","","Y","boolean {[]} {[]}
+","la sitation d'exercice est-elle active? active/inactive","Whether this practitioner role record is in active use.","true par défaut; false pour les situations d’exercices supprimées","Need to be able to mark a practitioner role record as not to be used because it was created in error, or otherwise no longer in active use.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"PractitionerRole.active",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.period","PractitionerRole.period","","","",0,1,"Y","","Y","Period {[]} {[]}
+","Période d'activité de la situation d'exercice.","The period during which the person is authorized to act as a practitioner in these role(s) for the organization.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
+
+Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).","Even after the agencies is revoked, the fact that it existed must still be recorded.","","","","","","","",,,,,"",,,,"PractitionerRole.period",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
+"PractitionerRole.period.id","PractitionerRole.period.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"PractitionerRole.period.extension","PractitionerRole.period.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.period.start","PractitionerRole.period.start","","","",0,1,"","","Y","dateTime {[]} {[]}
+","[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié.","The start of the period. The boundary is inclusive.","Synonyme MOS : dateDebutActivite","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
+per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.period.end","PractitionerRole.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
+","[Donnée restreinte] : Date de fin de l’activité.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme MOS : dateFinActivite","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
+per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.practitioner","PractitionerRole.practitioner","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrPractitioner]]}
+","Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner).","Practitioner that is able to provide the defined services for the organization.","Synonyme MOS : idPP","","","","","","","","",,,,,"",,,,"PractitionerRole.practitioner",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
+"PractitionerRole.organization","PractitionerRole.organization","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization]]}
+","Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)","The organization where the Practitioner performs the roles associated.","Synonyme MOS : idStructure","","","","","","","","",,,,,"",,,,"PractitionerRole.organization",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
+"PractitionerRole.code","PractitionerRole.code","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation","The role a person plays representing an organization | Situation d'exercice (Fonction dans le NOS)","A person may have more than one role.","Need to know what authority the practitioner has - what can they do?","","","","","","","",,"required","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation. Correspond à la notion de Fonction dans le NOS.","http://interopsante.org/fhir/ValueSet/fr-practioner-role-exercice","",,,,"PractitionerRole.code",0,*,"ele-1
+",""
+"PractitionerRole.code.id","PractitionerRole.code.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"PractitionerRole.code.extension","PractitionerRole.code.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.code.coding","PractitionerRole.code.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","value:system}
+","",,"open","CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:CategorieProfession","PractitionerRole.code.coding","CategorieProfession","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant.","A reference to a code defined by a terminology system.","Synonyme MOS : categorieProfessionnelle","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des catégories professionnelles","https://mos.esante.gouv.fr/NOS/JDV_J89-CategorieProfessionnelle-RASS/FHIR/JDV-J89-CategorieProfessionnelle-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:professionG15","PractitionerRole.code.coding","professionG15","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Profession exercée ou future profession de l'étudiant.","A reference to a code defined by a terminology system.","Synonyme MOS : professionSante","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des professions de santé  définies par le code de la santé publique","https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:professionR94","PractitionerRole.code.coding","professionR94","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Profession du social.","A reference to a code defined by a terminology system.","Synonyme MOS : professionSocial","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des professions du social","https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:professionR95","PractitionerRole.code.coding","professionR95","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Profession à usage de titre professionnel.","A reference to a code defined by a terminology system.","Synonyme MOS : usagerTitre","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des professions à usage de titre professionnel","https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:professionR291","PractitionerRole.code.coding","professionR291","","",0,1,"Y","","Y","Coding {[]} {[]}
+","professionnel non membre d'une profession réglementée.","A reference to a code defined by a terminology system.","Synonyme MOS : autreProfession","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste de professionnels non membres d'une profession réglementée","https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:genreActivite","PractitionerRole.code.coding","genreActivite","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Le genre identifiant une activité qui nécessite l’application de règles de gestion spécifiques.","A reference to a code defined by a terminology system.","Synonyme MOS : genreActivite","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des genres d'activité","https://mos.esante.gouv.fr/NOS/JDV_J94-GenreActivite-RASS/FHIR/JDV-J94-GenreActivite-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:modeExercice","PractitionerRole.code.coding","modeExercice","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Le mode d'exercice décrit selon quelle modalité une activité est exercée au regard de l'organisation de la rétribution du professionnel.","A reference to a code defined by a terminology system.","Synonyme MOS : modeExercice","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des modes d'exercice","https://mos.esante.gouv.fr/NOS/JDV_J95-ModeExercice-RASS/FHIR/JDV-J95-ModeExercice-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:typeActiviteLiberale","PractitionerRole.code.coding","typeActiviteLiberale","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Synonyme MOS : typeActiviteLiberale","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Type d’activité libérale, par exemple: Cabinet; Secteur privé à l'hôpital","https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:statutProfessionnelSSA","PractitionerRole.code.coding","statutProfessionnelSSA","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Statut du professionnel du Service de santé des armées.","A reference to a code defined by a terminology system.","Synonyme MOS : statutProfessionnelSSA","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des statuts SSA","https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:statutHospitalier","PractitionerRole.code.coding","statutHospitalier","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Statut hospitalier dans le cas d’une activité exercée en établissement public de santé.","A reference to a code defined by a terminology system.","Synonyme MOS : statutHospitalier","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des statuts hospitaliers","https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:fonctionR21","PractitionerRole.code.coding","fonctionR21","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Fonction du professionnel au sein de la structure d’exercice.","A reference to a code defined by a terminology system.","Synonyme MOS : role","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des fonctions et rôles","https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:fonctionR96","PractitionerRole.code.coding","fonctionR96","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Autre fonction du domaine sanitaire exercée par le professionnel au sein de la structure d’exercice.","A reference to a code defined by a terminology system.","Synonyme MOS : role","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des fonctions et rôles","https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:fonctionR85","PractitionerRole.code.coding","fonctionR85","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Rôle du professionnel dans la prise en charge des patients ou des usagers.","A reference to a code defined by a terminology system.","Synonyme MOS : role","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des rôles","https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:metierPharmacienR06","PractitionerRole.code.coding","metierPharmacienR06","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Section du tableau de l’Ordre des pharmaciens (CNOP).","A reference to a code defined by a terminology system.","Synonyme MOS : sectionOrdrePharmacien","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des sections du tableau CNOP","https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.coding:metierPharmacienG05","PractitionerRole.code.coding","metierPharmacienG05","","",0,1,"Y","","Y","Coding {[]} {[]}
+","Sous-section ou à défaut section du tableau de l’Ordre des pharmaciens (CNOP).","A reference to a code defined by a terminology system.","Synonyme MOS : sousSectionOrdrePharmacien","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","Liste des sous-sections du tableau CNOP","https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.code.text","PractitionerRole.code.text","","","",0,1,"","","Y","string {[]} {[]}
+","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty","PractitionerRole.specialty","","","",0,*,"","","Y","CodeableConcept {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-codeableconcept-timed]]} {[]}
+","Concept - reference to a terminology or just  text","A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"required","Specific specialty associated with the agency.","http://interopsante.org/fhir/ValueSet/fr-practitioner-specialty","","value:coding.system}
+","Slicing pour séparer savoir-faire et attribution particulière",,"open","PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:attributionParticuliere","PractitionerRole.specialty","attributionParticuliere","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Activité ponctuelle du professionnel de type expertise.","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : attributionParticuliere","","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR38","PractitionerRole.specialty","savoirFaireR38","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Spécialité ordinale  reconnue par une autorité d'enregistrement (Ordre ou SSA).","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : specialite","","","","","","","","",,"required","Liste des spécialités ordinales","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR39","PractitionerRole.specialty","savoirFaireR39","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Compétence acquise par le professionnel.","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : competence","","","","","","","","",,"required","Liste des compétences","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR40","PractitionerRole.specialty","savoirFaireR40","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Compétence exclusive exercée par le professionnel à titre exclusif.","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : competenceExclusive","","","","","","","","",,"required","Liste des compétences exclusives","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR42","PractitionerRole.specialty","savoirFaireR42","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Diplôme d'études spécialisées complémentaires (DESC).","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : DESCnonQualifian","","","","","","","","",,"required","Liste des DESC","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR43","PractitionerRole.specialty","savoirFaireR43","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Capacité (savoir-faire)d e médecine","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : capaciteSavoirFaire","","","","","","","","",,"required","Liste des capacités","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR44","PractitionerRole.specialty","savoirFaireR44","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Qualification de praticien adjoint contractuel.","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : qualificationPAC","","","","","","","","",,"required","Liste des qualifications","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR45","PractitionerRole.specialty","savoirFaireR45","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Fonction qualifiée.","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : fonctionQualifiee","","","","","","","","",,"required","Liste des fonctions qualifiées","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireR97","PractitionerRole.specialty","savoirFaireR97","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Droit d'exercice complémentaire.","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : droitExerciceComplementaire","","","","","","","","",,"required","Liste des droits d'exercice complémentaires","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:savoirFaireG13","PractitionerRole.specialty","savoirFaireG13","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Orientation particulière.","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : orientationParticuliere","","","","","","","","",,"required","Liste des orientations particulières","https://mos.esante.gouv.fr/NOS/JDV_J107-EnsembleSavoirFaire-RASS/FHIR/JDV-J107-EnsembleSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.specialty:typeSavoirFaire","PractitionerRole.specialty","typeSavoirFaire","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","Le type de savoir-faire (qualifications/autres attributions).","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme MOS : typeSavoirFaire","","","","","","","","",,"required","Liste des types de savoir-faire","https://mos.esante.gouv.fr/NOS/JDV_J91-TypeSavoirFaire-RASS/FHIR/JDV-J91-TypeSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.location","PractitionerRole.location","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrLocation]]} (contained
+)
+","Référence vers la location dans PractitionerRole.contained représentant les coordonnées de l'activité.","The location(s) at which this practitioner provides care.","idLocation","","","","","","","","",,,,,"",,,,"PractitionerRole.location",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
+"PractitionerRole.healthcareService","PractitionerRole.healthcareService","","","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrHealthcareService]]}
+","The list of healthcare services that this worker provides for this role's Organization/Location(s)","The list of healthcare services that this worker provides for this role's Organization/Location(s).","References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.","","","","","","","","",,,,,"",,,,"PractitionerRole.healthcareService",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
+"PractitionerRole.telecom","PractitionerRole.telecom","","","",0,*,"Y","","Y","ContactPoint {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPoint]]} {[]}
+","Details of a Technology mediated contact point | Coordonnées électroniques détaillées","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","","Often practitioners have a dedicated line for each location (or service) that they work at, and need to be able to define separate contact details for each of these.","","","","","","","",,,,,"","pattern:code}
+","",,"open","PractitionerRole.telecom",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}"
+"PractitionerRole.telecom:mailbox-mss","PractitionerRole.telecom","mailbox-mss","","",0,*,"","","","ContactPoint {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-mailbox-mss]]} {[]}
+","BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice.","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Synonyme MOS : BoiteLettreMSS","Often practitioners have a dedicated line for each location (or service) that they work at, and need to be able to define separate contact details for each of these.","","","","","","","",,,,,"",,,,"PractitionerRole.telecom",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}"
+"PractitionerRole.availableTime","PractitionerRole.availableTime","","","",0,*,"Y","","","BackboneElement {[]} {[]}
+","Times the Service Site is available","A collection of times the practitioner is available or performing this role at the location and/or healthcareservice.","More detailed availability information may be provided in associated Schedule/Slot resources.","","","","","","","","",,,,,"",,,,"PractitionerRole.availableTime",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.availableTime.id","PractitionerRole.availableTime.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"PractitionerRole.availableTime.extension","PractitionerRole.availableTime.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.availableTime.modifierExtension","PractitionerRole.availableTime.modifierExtension","","extensions
+user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
+","Extensions that cannot be ignored even if unrecognized","May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.availableTime.daysOfWeek","PractitionerRole.availableTime.daysOfWeek","","","",0,*,"","","","code {[]} {[]}
+","mon | tue | wed | thu | fri | sat | sun","Indicates which days of the week are available between the start and end Times.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,"required","The days of the week.","http://hl7.org/fhir/ValueSet/days-of-week","",,,,"PractitionerRole.availableTime.daysOfWeek",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.availableTime.allDay","PractitionerRole.availableTime.allDay","","","",0,1,"","","","boolean {[]} {[]}
+","Always available? e.g. 24 hour service","Is this always available? (hence times are irrelevant) e.g. 24 hour service.","","","","","","","","","",,,,,"",,,,"PractitionerRole.availableTime.allDay",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.availableTime.availableStartTime","PractitionerRole.availableTime.availableStartTime","","","",0,1,"","","","time {[]} {[]}
+","Opening time of day (ignored if allDay = true)","The opening time of day. Note: If the AllDay flag is set, then this time is ignored.","The timezone is expected to be for where this HealthcareService is provided at.","","","","","","","","",,,,,"",,,,"PractitionerRole.availableTime.availableStartTime",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.availableTime.availableEndTime","PractitionerRole.availableTime.availableEndTime","","","",0,1,"","","","time {[]} {[]}
+","Closing time of day (ignored if allDay = true)","The closing time of day. Note: If the AllDay flag is set, then this time is ignored.","The timezone is expected to be for where this HealthcareService is provided at.","","","","","","","","",,,,,"",,,,"PractitionerRole.availableTime.availableEndTime",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.notAvailable","PractitionerRole.notAvailable","","","",0,*,"Y","","","BackboneElement {[]} {[]}
+","Not available during this time due to provided reason","The practitioner is not available or performing this role during this period of time due to the provided reason.","","","","","","","","","",,,,,"",,,,"PractitionerRole.notAvailable",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.notAvailable.id","PractitionerRole.notAvailable.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"PractitionerRole.notAvailable.extension","PractitionerRole.notAvailable.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.notAvailable.modifierExtension","PractitionerRole.notAvailable.modifierExtension","","extensions
+user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
+","Extensions that cannot be ignored even if unrecognized","May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.notAvailable.description","PractitionerRole.notAvailable.description","","","",1,1,"","","","string {[]} {[]}
+","Reason presented to the user explaining why time not available","The reason that can be presented to the user as to why this time is not available.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"PractitionerRole.notAvailable.description",1,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.notAvailable.during","PractitionerRole.notAvailable.during","","","",0,1,"","","","Period {[]} {[]}
+","Service not available from this date","Service is not available (seasonally or for a public holiday) from this date.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
+
+Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"PractitionerRole.notAvailable.during",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
+"PractitionerRole.availabilityExceptions","PractitionerRole.availabilityExceptions","","","",0,1,"Y","","","string {[]} {[]}
+","Description of availability exceptions","A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,,,,"",,,,"PractitionerRole.availabilityExceptions",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"PractitionerRole.endpoint","PractitionerRole.endpoint","","","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Endpoint]]}
+","Technical endpoints providing access to services operated for the practitioner with this role","Technical endpoints providing access to services operated for the practitioner with this role.","References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.","Organizations have multiple systems that provide various services and ,ay also be different for practitioners too.So the endpoint satisfies the need to be able to define the technical connection details for how to connect to them, and for what purpose.","","","","","","","",,,,,"",,,,"PractitionerRole.endpoint",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
