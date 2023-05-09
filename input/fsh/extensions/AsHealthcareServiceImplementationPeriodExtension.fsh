@@ -6,5 +6,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour en compt
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * value[x] only Period
-* valuePeriod.start ^short = "Date mise en œuvre"
-* valuePeriod.end ^short = "Date fin de mise en oeuvre"
+* valuePeriod.start ^short = "Date de mise en œuvre de l'autorisation de l'activité de soins."
+* valuePeriod.end ^short = "Date fin de mise en oeuvre de l'autorisation de l'activité de soins."

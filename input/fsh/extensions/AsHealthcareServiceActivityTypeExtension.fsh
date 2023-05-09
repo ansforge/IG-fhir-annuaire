@@ -5,8 +5,8 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * . ^short = "activite"
-* . ^definition = "Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP)"
-* . ^comment = "la liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP)."
+* . ^short = "Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP)"
+* . ^comment = "Synonyme MOS : activite ; la liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP)."
 * value[x] only CodeableConcept
 * valueCodeableConcept from $JDV-J131-CategorieActiviteSanitaireRegulee-RASS (required)
 * valueCodeableConcept ^binding.description = "Liste des types d'activités autorisées"
