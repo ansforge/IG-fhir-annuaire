@@ -19,11 +19,6 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * identifier.type ^short = "Type d’identifiant national de la personne physique."
 * identifier.type ^comment = "Synonymes MOS : typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier.type from $fr-practioner-identifier-type (extensible)
-* identifier.type ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* identifier.type ^binding.extension[=].valueString = "IdentifierType"
-* identifier.type ^binding.extension[+].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"
-* identifier.type ^binding.extension[=].valueBoolean = true
-* identifier.type ^binding.description = "ValueSet défini par Interop’Santé « fr-practioner-identifier-type"
 // Practitioner.identifier.system
 * identifier.system ^short = "le système de l'identifiant dépend de la source d'où provient l'identifiant."
 * identifier.system ^comment = "« http://rpps.fr» si l’instance correspond à un identifiant RPPS ; « http://adeli.fr» si l’instance correspond à un identifiant ADELI ; « urn:oid:1.2.250.1.71.4.2.1 » si l’instance correspond à l’identification nationale PP (idNat_PS) ; « urn:oid:1.2.250.1.213.1.6.4.2 » si l’instance correspond à une identification locale : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
@@ -93,89 +88,6 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * photo MS
 // Slice deja défini dans FrPractitioner
 * qualification MS
-* qualification.code.coding contains degreeType 0..* // slicing type de diplome
-// typeDiplome
-* qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
-* qualification.code.coding[degreeType] ^binding.description = "Liste des types de diplôme"
-* qualification.code.coding[degreeType] ^comment = "Synonyme MOS : typeDiplome"
-* qualification.code.coding[degreeType] ^short = "Type de diplôme."
-// AutreDiplomeObtenu
-* qualification.code.coding[degreeR36] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR36] ^binding.description = "Liste des diplômes"
-* qualification.code.coding[degreeR36] ^comment = "Synonyme MOS : tautreDiplomeObtenu"
-* qualification.code.coding[degreeR36] ^short = "Autre diplôme obtenu."
-// qualification
-* qualification.code.coding[degreeR47] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR47] ^binding.description = "Liste des qualifications"
-* qualification.code.coding[degreeR47] ^comment = "Synonyme MOS : qualification"
-* qualification.code.coding[degreeR47] ^short = "Qualification attribuée par une commission."
-// DiplomeEtat
-* qualification.code.coding[degreeR48] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR48] ^binding.description = "Liste des diplômes et qualifications"
-* qualification.code.coding[degreeR48] ^comment = "Synonyme MOS : DiplomeEtat"
-* qualification.code.coding[degreeR48] ^short = "Diplôme d'Etat français."
-// DiplomeEtudeSpecialisee
-* qualification.code.coding[degreeR49] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR49] ^binding.description = "Liste des DES"
-* qualification.code.coding[degreeR49] ^comment = "Synonyme MOS : DiplomeEtudeSpecialisee"
-* qualification.code.coding[degreeR49] ^short = "Diplôme d'études spécialisées (DES)."
-// DESC1
-* qualification.code.coding[degreeR50] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR50] ^binding.description = "Liste des DES I"
-* qualification.code.coding[degreeR50] ^comment = "Synonyme MOS : DESC1"
-* qualification.code.coding[degreeR50] ^short = "Diplôme d'études spécialisées complémentaires non qualifiants (DESC I)."
-// DESC2
-* qualification.code.coding[degreeR51] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR51] ^binding.description = "Liste des DESC II"
-* qualification.code.coding[degreeR51] ^comment = "Synonyme MOS : DESC2"
-* qualification.code.coding[degreeR51] ^short = "Diplôme d'études spécialisées complémentaires qualifiants (DESC II)."
-// capaciteDiplome
-* qualification.code.coding[degreeR52] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR52] ^binding.description = "Liste des diplômes"
-* qualification.code.coding[degreeR52] ^comment = "Synonyme MOS : capaciteDiplome"
-* qualification.code.coding[degreeR52] ^short = "Diplôme de capacité de médecine."
-// DiplomeEEE
-* qualification.code.coding[degreeR53] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR53] ^binding.description = "Liste des diplômes EEE"
-* qualification.code.coding[degreeR53] ^comment = "Synonyme MOS : DiplomeEEE"
-* qualification.code.coding[degreeR53] ^short = "Diplôme d'un pays de l'espace économique européen."
-// DiplomeUniversitaire
-* qualification.code.coding[degreeR54] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR54] ^binding.description = "Liste des diplômes"
-* qualification.code.coding[degreeR54] ^comment = "Synonyme MOS : DiplomeUniversitaire"
-* qualification.code.coding[degreeR54] ^short = "Diplôme universitaire ou interuniversitaire."
-// certificatEtudeSpeciale
-* qualification.code.coding[degreeR55] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR55] ^binding.description = "Liste des CES"
-* qualification.code.coding[degreeR55] ^comment = "Synonyme MOS : certificatEtudeSpeciale"
-* qualification.code.coding[degreeR55] ^short = "Certificat d'études spéciales (CES)."
-// attestation
-* qualification.code.coding[degreeR56] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR56] ^binding.description = "Liste des attestations"
-* qualification.code.coding[degreeR56] ^comment = "Synonyme MOS : attestation"
-* qualification.code.coding[degreeR56] ^short = "Attestation de formation."
-// DiplomeEES
-* qualification.code.coding[degreeR57] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR57] ^binding.description = "Liste des diplômes EES"
-* qualification.code.coding[degreeR57] ^comment = "Synonyme MOS : DiplomeEES"
-* qualification.code.coding[degreeR57] ^short = "Diplôme européen d'études spécialisées."
-// DiplomeDivers
-* qualification.code.coding[degreeR58] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR58] ^binding.description = "Liste des diplômes"
-* qualification.code.coding[degreeR58] ^comment = "Synonyme MOS : DiplomeDivers"
-* qualification.code.coding[degreeR58] ^short = "Autre type de diplôme obtenu"
-// diplomeDeuxiemeCycleNonQualifiant
-* qualification.code.coding[degreeR226] from $JDV-J105-EnsembleDiplome-RASS (required)
-* qualification.code.coding[degreeR226] ^binding.description = "Liste des diplômes"
-* qualification.code.coding[degreeR226] ^comment = "Synonyme MOS : diplomeDeuxiemeCycleNonQualifiant"
-* qualification.code.coding[degreeR226] ^short = "Diplôme de deuxième cycle non qualifiant."
-* qualification.issuer.identifier ^short = "Code du lieu d'obtention du diplôme"
-* qualification.issuer.identifier.system = "urn:oid:1.2.250.1.213.1.6.4.1" (exactly)
-// AutorisationExercice
-* extension[as-ext-practitioner-authorization] ^isModifier = false
-* extension[as-ext-practitioner-authorization] ^binding.description = "Liste des autorisations"
-* extension[as-ext-practitioner-authorization] ^short = "L'autorisation d'exercice pour les personnes diposant de diplômes étrangers non reconnus en France."
-* extension[as-ext-practitioner-authorization] ^comment = "Synonyme MOS : autorisationExercice"
 // langueParlee
 * communication MS
 * communication ^comment = "Synonyme MOS : langueParlee"
