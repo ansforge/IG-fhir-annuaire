@@ -60,10 +60,12 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * birthDate MS
 * birthDate ^comment = "Synonyme MOS : dateNaissance"
 * birthDate ^short = "[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles."
+
 // lieuNaissance
 * extension[as-ext-practitioner-birth-place] ^isModifier = false
 * extension[as-ext-practitioner-birth-place] ^short = "[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays"
 * extension[as-ext-practitioner-birth-place] ^comment = "Synonyme MOS : lieuNaissance"
+
 // nationalite
 * extension[as-ext-practitioner-nationality] ^isModifier = false
 * extension[as-ext-practitioner-nationality] ^short = "[Donnée restreinte] : Nationalité de la personne."
@@ -72,6 +74,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension[as-ext-practitioner-deceased-date-time] ^isModifier = false
 * extension[as-ext-practitioner-deceased-date-time] ^short = "[Donnée restreinte] : Date de décès de la personne."
 * extension[as-ext-practitioner-deceased-date-time] ^comment = "Synonyme MOS : dateDeces"
+
 // telecommunication 
 * telecom MS
 * telecom ^short = "[DR] : telecommunication"
@@ -79,11 +82,13 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
+
 // adresseCorrespondance
 * address MS
 * address ^comment = "Synonyme MOS : adresseCorrespondance"
 * address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel."
 * address only AsAddressExtendedProfile
+
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #pattern
@@ -95,8 +100,9 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 
 // Practitioner.photo
 * photo MS
-// Slice deja défini dans FrPractitioner
+
 * qualification MS
+
 // langueParlee
 * communication MS
 * communication ^comment = "Synonyme MOS : langueParlee"
