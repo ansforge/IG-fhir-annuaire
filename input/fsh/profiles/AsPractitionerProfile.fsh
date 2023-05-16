@@ -62,16 +62,13 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * birthDate ^short = "[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles."
 
 // lieuNaissance
-* extension[as-ext-practitioner-birth-place] ^isModifier = false
 * extension[as-ext-practitioner-birth-place] ^short = "[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays"
 * extension[as-ext-practitioner-birth-place] ^comment = "Synonyme MOS : lieuNaissance"
 
 // nationalite
-* extension[as-ext-practitioner-nationality] ^isModifier = false
 * extension[as-ext-practitioner-nationality] ^short = "[Donnée restreinte] : Nationalité de la personne."
 * extension[as-ext-practitioner-nationality] ^comment = "Synonyme MOS : nationalite"
 // dateDeces
-* extension[as-ext-practitioner-deceased-date-time] ^isModifier = false
 * extension[as-ext-practitioner-deceased-date-time] ^short = "[Donnée restreinte] : Date de décès de la personne."
 * extension[as-ext-practitioner-deceased-date-time] ^comment = "Synonyme MOS : dateDeces"
 

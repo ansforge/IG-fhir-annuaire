@@ -103,28 +103,24 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * code.coding[professionG15] ^short = "Profession exercée ou future profession de l'étudiant."
 * code.coding[professionG15] ^comment = "Synonyme : professionSante"
 * code.coding[professionG15] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionG15] ^sliceName = "professionG15"
 * code.coding[professionG15] ^binding.description = "Liste des professions de santé  définies par le code de la santé publique"
 
 // Slice 3 : profession sociale
 * code.coding[professionR94] ^comment = "Synonyme : professionSocial"
 * code.coding[professionR94] ^short = "Profession du social."
 * code.coding[professionR94] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR94] ^sliceName = "professionR94"
 * code.coding[professionR94] ^binding.description = "Liste des professions du social"
 
 // Slice 4 : usage de titre professionnel
 * code.coding[professionR95] ^comment = "Synonyme : usagerTitre"
 * code.coding[professionR95] ^short = "Profession à usage de titre professionnel."
 * code.coding[professionR95] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR95] ^sliceName = "professionR95"
 * code.coding[professionR95] ^binding.description = "Liste des professions à usage de titre professionnel"
 
 // Slice 5 : autre profession
 * code.coding[professionR291] ^comment = "Synonyme : autreProfession"
 * code.coding[professionR291] ^short = "professionnel non membre d'une profession réglementée."
 * code.coding[professionR291] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR291] ^sliceName = "professionR291"
 * code.coding[professionR291] ^binding.description = "Liste de professionnels non membres d'une profession réglementée"
 
 // Slice 6 : genre activite
@@ -210,7 +206,6 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[attributionParticuliere] ^short = "Activité ponctuelle du professionnel de type expertise."
 * specialty[attributionParticuliere] ^comment = "Synonyme : attributionParticuliere"
 * specialty[attributionParticuliere] from $JDV-J90-AttributionParticuliere-RASS (required)
-* specialty[attributionParticuliere] ^sliceName = "attributionParticuliere"
 
 /* Slice B : savoir-faire */
 
@@ -218,70 +213,60 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * specialty[savoirFaireR38] ^comment = "Synonyme : specialite"
 * specialty[savoirFaireR38] ^short = "Spécialité ordinale  reconnue par une autorité d'enregistrement (Ordre ou SSA)."
 * specialty[savoirFaireR38] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR38] ^sliceName = "savoirFaireR38"
 * specialty[savoirFaireR38] ^binding.description = "Liste des spécialités ordinales"
 
 // Slice B2 : competence
 * specialty[savoirFaireR39] ^comment = "Synonyme : competence"
 * specialty[savoirFaireR39] ^short = "Compétence acquise par le professionnel."
 * specialty[savoirFaireR39] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR39] ^sliceName = "savoirFaireR39"
 * specialty[savoirFaireR39] ^binding.description = "Liste des compétences"
 
 // Slice B3 : competenceExclusive
 * specialty[savoirFaireR40] ^comment = "Synonyme : competenceExclusive"
 * specialty[savoirFaireR40] ^short = "Compétence exclusive exercée par le professionnel à titre exclusif."
 * specialty[savoirFaireR40] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR40] ^sliceName = "savoirFaireR40"
 * specialty[savoirFaireR40] ^binding.description = "Liste des compétences exclusives"
 
 // Slice B4 : DESCnonQualifian
 * specialty[savoirFaireR42] ^comment = "Synonyme : DESCnonQualifian"
 * specialty[savoirFaireR42] ^short = "Diplôme d'études spécialisées complémentaires (DESC)."
 * specialty[savoirFaireR42] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR42] ^sliceName = "savoirFaireR42"
 * specialty[savoirFaireR42] ^binding.description = "Liste des DESC"
 
 // Slice B5 : capaciteSavoirFaire
 * specialty[savoirFaireR43] ^comment = "Synonyme : capaciteSavoirFaire"
 * specialty[savoirFaireR43] ^short = "Capacité (savoir-faire)d e médecine"
 * specialty[savoirFaireR43] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR43] ^sliceName = "savoirFaireR43"
 * specialty[savoirFaireR43] ^binding.description = "Liste des capacités"
 
 // Slice B6 : qualificationPAC
 * specialty[savoirFaireR44] ^comment = "Synonyme : qualificationPAC"
 * specialty[savoirFaireR44] ^short = "Qualification de praticien adjoint contractuel."
 * specialty[savoirFaireR44] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR44] ^sliceName = "savoirFaireR44"
 * specialty[savoirFaireR44] ^binding.description = "Liste des qualifications"
 
 // Slice B7 : fonctionQualifiee
 * specialty[savoirFaireR45] ^comment = "Synonyme : fonctionQualifiee"
 * specialty[savoirFaireR45] ^short = "Fonction qualifiée."
 * specialty[savoirFaireR45] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR45] ^sliceName = "savoirFaireR45"
 * specialty[savoirFaireR45] ^binding.description = "Liste des fonctions qualifiées"
 
 // Slice B8 : droitExerciceComplementaire
 * specialty[savoirFaireR97] ^comment = "Synonyme : droitExerciceComplementaire"
 * specialty[savoirFaireR97] ^short = "Droit d'exercice complémentaire."
 * specialty[savoirFaireR97] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR97] ^sliceName = "savoirFaireR97"
 * specialty[savoirFaireR97] ^binding.description = "Liste des droits d'exercice complémentaires"
 
 // Slice B9 : orientationParticuliere
 * specialty[savoirFaireG13] ^comment = "Synonyme : orientationParticuliere"
 * specialty[savoirFaireG13] ^short = "Orientation particulière."
 * specialty[savoirFaireG13] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireG13] ^sliceName = "savoirFaireG13"
 * specialty[savoirFaireG13] ^binding.description = "Liste des orientations particulières"
 
 // Slice B10 : typeSavoirFaire
 * specialty[typeSavoirFaire] ^comment = "Synonyme : typeSavoirFaire"
 * specialty[typeSavoirFaire] ^short = "Le type de savoir-faire (qualifications/autres attributions)."
 * specialty[typeSavoirFaire] from $JDV-J91-TypeSavoirFaire-RASS (required)
-* specialty[typeSavoirFaire] ^sliceName = "typeSavoirFaire"
 * specialty[typeSavoirFaire] ^binding.description = "Liste des types de savoir-faire"
 
 // PractitionerRole.location
