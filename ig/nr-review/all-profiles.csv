@@ -837,11 +837,11 @@ user content","",0,*,"","","","Extension {[CanonicalType[http://interopsante.org
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-practitionerrole","PractitionerRole.extension:as-ext-practitionerrole-name","PractitionerRole.extension","as-ext-practitionerrole-name","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name]]} {[]}
-","Autorité d'enregistrement représentant une institution (Ordre/ARS).","Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel.","Synonyme : AutoriteEnregistrement, Ordre","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)","Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel.","Concaténation des champs MOS : civilite + nomExercice + prenom","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-practitionerrole","PractitionerRole.extension:as-ext-practitionerrole-registration","PractitionerRole.extension","as-ext-practitionerrole-registration","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration]]} {[]}
-","Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"".","Synonymes RPPS : InscriptionOrdre","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Autorité d'enregistrement représentant une institution (Ordre/ARS).","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"".","Synonyme : AutoriteEnregistrement, Ordre","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-practitionerrole","PractitionerRole.extension:as-ext-practitionerrole-education-level","PractitionerRole.extension","as-ext-practitionerrole-education-level","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-education-level]]} {[]}
@@ -1062,8 +1062,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Le type de savoir-faire (qualifications/autres attributions).","Specific specialty associated with the agency | spécialité du professionnel de santé au sein de l'organisation.","Synonyme : typeSavoirFaire","","","","","","","","",,"required","Liste des types de savoir-faire","https://mos.esante.gouv.fr/NOS/JDV_J91-TypeSavoirFaire-RASS/FHIR/JDV-J91-TypeSavoirFaire-RASS","",,,,"PractitionerRole.specialty",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-practitionerrole","PractitionerRole.location","PractitionerRole.location","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrLocation]]} (contained
-)
+"as-practitionerrole","PractitionerRole.location","PractitionerRole.location","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrLocation]]}
 ","Référence vers la location dans PractitionerRole.contained représentant les coordonnées de l'activité.","The location(s) at which this practitioner provides care.","idLocation","","","","","","","","",,,,,"",,,,"PractitionerRole.location",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
