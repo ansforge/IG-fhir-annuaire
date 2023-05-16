@@ -6,10 +6,6 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 
-* value[x] ^slicing.discriminator.type = #type
-* value[x] ^slicing.discriminator.path = "$this"
-* value[x] ^slicing.rules = #open
 * valueDateTime only dateTime
-* valueDateTime ^sliceName = "valueDateTime"
 * valueDateTime ^comment = "Synonyme MOS : dateDeces"
 * valueDateTime ^short = "Date de décès de la personne."

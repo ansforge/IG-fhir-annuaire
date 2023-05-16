@@ -5,4 +5,5 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
 * . ^short = "Numéro d'autorisation ARGHOS."
+
 * value[x] only string

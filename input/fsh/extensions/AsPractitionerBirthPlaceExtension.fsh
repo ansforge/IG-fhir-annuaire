@@ -6,11 +6,6 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 
-* value[x] ^slicing.discriminator.type = #type
-* value[x] ^slicing.discriminator.path = "$this"
-* value[x] ^slicing.rules = #closed
-
 * valueAddress only AsAddressExtendedProfile
-* valueAddress ^sliceName = "valueAddress"
 * valueAddress ^comment = "Synonyme MOS : lieuNaissance"
 * valueAddress ^short = "Lieu de naissance de la personne."

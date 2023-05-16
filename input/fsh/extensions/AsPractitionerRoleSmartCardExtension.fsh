@@ -19,17 +19,18 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
     period 0..1 and
     cancellationDate 0..1 and
     date 0..*
+
 // 	typeCarte
 * extension[type] ^short = "typeCarte"
 * extension[type] ^definition = "Type de carte de professionnel (CPx)"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from $JDV-J128-TypeCarte-RASS (extensible)
 
-
 // numeroCarte
 * extension[number] ^short = "numeroCarte"
 * extension[number] ^definition = "Numéro de carte du professionnel."
 * extension[number].value[x] only string
+
 // periodValidite
 * extension[period] ^short = "periodValidite"
 * extension[period] ^definition = "Période de validité de la carte."
@@ -44,5 +45,3 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 * extension[cancellationDate] ^definition = "Date de mise en opposition de la carte."
 * extension[cancellationDate] ^comment = "Cette opposition implique la révocation des certifications embarquées dans la carte."
 * extension[cancellationDate].value[x] only dateTime
-// metadata
-* extension[date].value[x] only Meta
