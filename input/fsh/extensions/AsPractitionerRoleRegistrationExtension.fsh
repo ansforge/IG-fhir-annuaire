@@ -22,18 +22,21 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
     status 0..1 and
     hostingDepartment 0..1 and
     isFirst 0..1 
+
 // ordre
 * extension[registeringOrganization] ^comment = "Synonyme : ordre, autorité d'enregistrement"
 * extension[registeringOrganization] ^short = "Instance de régulation d'une profession de santé réglementée."
 * extension[registeringOrganization].value[x] only CodeableConcept
 * extension[registeringOrganization].valueCodeableConcept from $JDV-J83-AutoriteEnregistrement-RASS (required)
 * extension[registeringOrganization].valueCodeableConcept ^binding.description = "Liste des autorités d'enregistrement."
+
 // conseilDepartemental
 * extension[registeringOrganizationDetail] ^comment = "Synonyme : conseilDepartemental"
 * extension[registeringOrganizationDetail] ^short = "Département du Conseil départemental."
 * extension[registeringOrganizationDetail].value[x] only CodeableConcept
 * extension[registeringOrganizationDetail].valueCodeableConcept from $JDV-J84-DepartementOM-RASS (required)
 * extension[registeringOrganizationDetail].valueCodeableConcept ^binding.description = "Liste des départements (outre-mer et Monaco inclus)."
+
 // periodValidite
 * extension[period] ^comment = "Synonyme : periodValidite"
 * extension[period] ^short = "Période durant laquelle la personne est autorisée à exercer la profession pour laquelle elle a été inscrite."
@@ -48,13 +51,15 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 * extension[status].value[x] only CodeableConcept
 * extension[status].valueCodeableConcept from $JDV-J85-StatutInscription-RASS (required)
 * extension[status].valueCodeableConcept ^binding.description = "Liste des statuts de l'inscription."
+
 // departementPremierReferencementAE
 * extension[hostingDepartment] ^comment = "Synonyme : departementPremierReferencementAE"
 * extension[hostingDepartment] ^short = "Code du département du premier référencement, pour un référencement de nature « inscription à l’ordre »."
 * extension[hostingDepartment].value[x] only CodeableConcept
 * extension[hostingDepartment].valueCodeableConcept from $JDV-J84-DepartementOM-RASS (required)
 * extension[hostingDepartment].valueCodeableConcept ^binding.description = "Liste des départements (outre-mer et Monaco inclus)."
+
 // indicateurPremiereInscription
 * extension[isFirst] ^short = "Indicateur de la première inscription."
-* extension[isFirst].value[x] only boolean
 * extension[isFirst] ^comment = "Si 1ère inscription => practitionerRole-registration.isFirst= « true »\r\nSinon, practitionerRole-registration.isFirst= « false »"	
+* extension[isFirst].value[x] only boolean

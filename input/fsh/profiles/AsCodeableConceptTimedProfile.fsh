@@ -4,7 +4,6 @@ Id: 			as-codeableconcept-timed
 Title:			"AS CodeableConceptTimed Datatype Profile"
 Description:	"Profil du type de données CodeableConcept créé dans le cadre de l'Annuaire Santé pour ?"
 
-
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
