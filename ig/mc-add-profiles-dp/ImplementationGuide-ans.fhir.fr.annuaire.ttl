@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AnnuaireSant"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-05-16T09:47:39+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-05-16T10:20:11+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -515,6 +515,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dp-practitioner" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Publique Practitioner Profile" ] ;
+       fhir:description [ fhir:v "Profil créé à partir de as-practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner> ;
          fhir:reference [ fhir:v "StructureDefinition/as-practitioner" ]
        ] ;
@@ -908,6 +920,14 @@
          ] ) ;
          fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Accueil" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "liste_profils.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "liste_profils.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Liste des profils par permission" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
