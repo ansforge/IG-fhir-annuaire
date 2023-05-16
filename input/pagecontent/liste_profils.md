@@ -14,4 +14,4 @@ Liste des profils applicatifs héritant des profils génériques pour détailler
 
 ### Liste des profils applicatifs - données restreintes
 
-TBD
+Les profils applicatifs des données restreintes seront publiés dans une prochaine release.
