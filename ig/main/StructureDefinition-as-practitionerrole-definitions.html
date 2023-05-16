@@ -244,7 +244,7 @@
         
           Active
           
-            as of 2023-05-12
+            as of 2023-05-16
           
         
       </td>
@@ -356,7 +356,7 @@ A human language
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a>(<a href="StructureDefinition-as-ext-practitionerrole-name.html" title="http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name">AsPractitionerRoleNameExtension</a>)  (Extension Type: <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName">HumanName</a>(<a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrHumanName" title="http://interopsante.org/fhir/StructureDefinition/FrHumanName">FrHumanName</a>))</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
-  <tr><td>Comments</td><td><p>Synonyme : AutoriteEnregistrement, Ordre</p>
+  <tr><td>Comments</td><td><p>Concaténation des champs MOS : civilite + nomExercice + prenom</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
@@ -367,7 +367,7 @@ A human language
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..* This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a>(<a href="StructureDefinition-as-ext-practitionerrole-registration.html" title="http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration">AsPractitionerRoleRegistrationExtension</a>)  (Complex Extension)</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
-  <tr><td>Comments</td><td><p>Synonymes RPPS : InscriptionOrdre</p>
+  <tr><td>Comments</td><td><p>Synonyme : AutoriteEnregistrement, Ordre</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
@@ -1105,7 +1105,7 @@ Liste des types de savoir-fair
   <tr><td>Definition</td><td><p>The location(s) at which this practitioner provides care.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..* This element is affected by the following invariants: ele-1</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrLocation" title="http://interopsante.org/fhir/StructureDefinition/FrLocation">FrLocation</a>) :  <a href="http://hl7.org/fhir/R4/codesystem-resource-aggregation-mode.html#content" title="The reference is a local reference to a contained resource.">{c}</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrLocation" title="http://interopsante.org/fhir/StructureDefinition/FrLocation">FrLocation</a>)</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Comments</td><td><p>idLocation</p>
@@ -1388,7 +1388,7 @@ The days of the week
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 12, 2023 07:42+0000">2023-05-12</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 16, 2023 12:00+0000">2023-05-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
