@@ -7,5 +7,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 * ^context.expression = "Practitioner"
 
 * valueDateTime only dateTime
-* valueDateTime ^comment = "Synonyme MOS : dateDeces"
+* valueDateTime ^comment = "Synonyme : dateDeces"
 * valueDateTime ^short = "Date de décès de la personne."

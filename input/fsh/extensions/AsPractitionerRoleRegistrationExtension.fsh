@@ -7,7 +7,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 * ^context.expression = "PractitionerRole"
 
 * . ^short = "Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné."
-* . ^comment = "Synonymes RPPS : InscriptionOrdre"
+* . ^comment = "Synonymes : InscriptionOrdre"
 
 
 * extension ^slicing.discriminator.type = #value
@@ -38,12 +38,11 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 * extension[registeringOrganizationDetail].valueCodeableConcept ^binding.description = "Liste des départements (outre-mer et Monaco inclus)."
 
 // periodValidite
-* extension[period] ^comment = "Synonyme : periodValidite"
 * extension[period] ^short = "Période durant laquelle la personne est autorisée à exercer la profession pour laquelle elle a été inscrite."
 * extension[period].value[x] only Period
 * extension[period].valuePeriod.start ^comment = "Synonyme : dateDebutInscription"
 * extension[period].valuePeriod.start ^short = "Date d’inscription de la personne au tableau de l’ordre."
-* extension[period].valuePeriod.end ^comment = "Synonyme MOS : dateRadiation"
+* extension[period].valuePeriod.end ^comment = "Synonyme : dateRadiation"
 * extension[period].valuePeriod.end ^short = "Date à partir de laquelle la personne n’est plus autorisée à exercer la profession pour laquelle elle a été inscrite."
 // statutInscription
 * extension[status] ^comment = "Synonyme : statutInscription"

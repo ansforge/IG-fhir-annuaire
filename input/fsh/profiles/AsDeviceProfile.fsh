@@ -1,8 +1,8 @@
 Profile: AsDeviceProfile
 Parent: Device
 Id: as-device
-Title: "As Device Profile"
-Description: "Profil créé à partir de la ressource Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement."
+Title: "AS Device Profile"
+Description: "Profil créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement."
 
 // profils references
 * owner only Reference(FrOrganization or AsOrganizationProfile)
@@ -20,7 +20,7 @@ Description: "Profil créé à partir de la ressource Device dans le contexte de
 // numeroAutorisationARHGOS
 * identifier 0..* MS
 * identifier ^short = "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML."
-* identifier ^comment = "Synonyme MOS : numeroAutorisationARHGOS"
+* identifier ^comment = "Synonyme : numeroAutorisationARHGOS"
 
 // actif
 * status 0..1 MS
@@ -35,16 +35,16 @@ Description: "Profil créé à partir de la ressource Device dans le contexte de
 // numeroSerie
 * serialNumber 0..1 MS
 * serialNumber ^short = "Numéro de série de l'équipement matériel lourd"
-* serialNumber ^comment = "Synonyme MOS : numeroSerie"
+* serialNumber ^comment = "Synonyme : numeroSerie"
 
 // equipementMaterielLourd
 * type 0..1 MS
 * type from $JDV-J135-EquipementMaterielLourd-RASS (required)
 * type ^binding.description = "Liste des types d'EML"
-* type ^comment = "Synonyme MOS : equipementMaterielLourd"
+* type ^comment = "Synonyme : equipementMaterielLourd"
 * type ^short = "Code définissant l'équipement matériel lourd (EML) soumis à autorisation."
 
 // Lien Equipement/Structure
 * owner 0..1 MS
 * owner ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd."
-* owner ^comment = "Synonyme MOS : idStructure"
+* owner ^comment = "Synonyme : idStructure"

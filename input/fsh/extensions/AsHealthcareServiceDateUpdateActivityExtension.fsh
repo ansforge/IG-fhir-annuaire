@@ -5,7 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
-* . ^comment = "Synonyme MOS : dateMajAutorisation"
+* . ^comment = "Synonyme : dateMajAutorisation"
 * . ^short = "Date de dernière mise à jour de l’autorisation."
 
 * value[x] only date

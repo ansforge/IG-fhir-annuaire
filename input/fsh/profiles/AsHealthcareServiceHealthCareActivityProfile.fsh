@@ -1,8 +1,8 @@
 Profile: AsHealthcareServiceHealthCareActivityProfile
 Parent: HealthcareService
 Id: as-healthcareservice-healthcare-activity
-Title: "As HealthcareService HealthCare Activity Profile"
-Description: "Profil créé à partir de la ressource HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS."
+Title: "AS HealthcareService HealthCare Activity Profile"
+Description: "Profil créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS."
 
 /* profils references */
 * providedBy only Reference(FrOrganization or AsOrganizationProfile)

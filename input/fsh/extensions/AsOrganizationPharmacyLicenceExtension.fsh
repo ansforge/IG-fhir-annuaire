@@ -5,7 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
-* . ^comment = "Synonyme MOS : numeroLicence"
+* . ^comment = "Synonyme : numeroLicence"
 * . ^short = "Numéro de la licence d'exploitation d’une officine."
 
 * value[x] only string
