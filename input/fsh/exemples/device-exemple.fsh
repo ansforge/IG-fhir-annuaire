@@ -1,5 +1,5 @@
 Instance: device-exemple-1
-InstanceOf: Device
+InstanceOf: as-device
 Usage: #example
 * id = "002-3635099"
 * meta.versionId = "1"
@@ -19,4 +19,4 @@ Usage: #example
 * manufacturer = "0000"
 * serialNumber = "INCISIVE CT N 550020"
 * type = $JDV-J135-EquipementMaterielLourd-RASS#05602
-* owner = Reference(Organization/001-01-960859)
+* owner = Reference(as-organization/001-01-960859)

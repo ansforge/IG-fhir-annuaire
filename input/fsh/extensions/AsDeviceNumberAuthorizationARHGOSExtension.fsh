@@ -5,6 +5,6 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 
 * ^context.type = #element
 * ^context.expression = "Device"
-* . ^comment = "Synonyme MOS : numeroAutorisationARHGOS"
+* . ^comment = "Synonyme : numeroAutorisationARHGOS"
 * . ^short = "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML."
 * value[x] only string

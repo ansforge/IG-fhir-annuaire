@@ -12,5 +12,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 
 * valueAddress only AsAddressExtendedProfile
 * valueAddress ^sliceName = "valueAddress"
-* valueAddress ^comment = "Synonyme MOS : lieuNaissance"
+* valueAddress ^comment = "Synonyme : lieuNaissance"
 * valueAddress ^short = "Lieu de naissance de la personne."

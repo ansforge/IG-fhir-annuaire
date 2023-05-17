@@ -1,5 +1,5 @@
-Instance: healthcareservice-exemple-2
-InstanceOf: HealthcareService
+Instance: healthcareservice-social-equipment-exemple
+InstanceOf: as-healthcareservice-social-equipment
 Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2023-03-05T12:24:31.361+00:00"
