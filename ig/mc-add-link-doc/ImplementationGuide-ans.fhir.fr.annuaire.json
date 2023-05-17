@@ -10,7 +10,7 @@
   "name" : "AnnuaireSant",
   "title" : "Annuaire Santé",
   "status" : "draft",
-  "date" : "2023-05-12T10:30:52+00:00",
+  "date" : "2023-05-17T07:53:32+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -36,6 +36,16 @@
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
     "version" : "5.0.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "1.0.0"
   },
   {
     "id" : "hl7_fhir_fr_core",
@@ -973,6 +983,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/002-3635099"
+      },
+      "name" : "device-exemple-1",
+      "exampleCanonical" : "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
       }],
       "reference" : {
@@ -980,6 +1001,28 @@
       },
       "name" : "AsClientCapabilityStatement",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "HealthcareService"
+      }],
+      "reference" : {
+        "reference" : "HealthcareService/healthcareservice-healthcare-activity-exemple"
+      },
+      "name" : "healthcareservice-healthcare-activity-exemple",
+      "exampleCanonical" : "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-healthcare-activity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "HealthcareService"
+      }],
+      "reference" : {
+        "reference" : "HealthcareService/healthcareservice-social-equipment-exemple"
+      },
+      "name" : "healthcareservice-social-equipment-exemple",
+      "exampleCanonical" : "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-social-equipment"
     }],
     "page" : {
       "extension" : [{
@@ -1001,42 +1044,6 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "specifications_techniques.html"
-        }],
-        "nameUrl" : "specifications_techniques.html",
-        "title" : "Specifications Techniques",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "construction_des_flux.html"
-          }],
-          "nameUrl" : "construction_des_flux.html",
-          "title" : "Construction Des Flux",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_flux1.html"
-          }],
-          "nameUrl" : "st_flux1.html",
-          "title" : "Flux 01",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_flux2.html"
-          }],
-          "nameUrl" : "st_flux2.html",
-          "title" : "Flux 02",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "autres_ressources.html"
         }],
         "nameUrl" : "autres_ressources.html",
@@ -1045,30 +1052,12 @@
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "securite.html"
-          }],
-          "nameUrl" : "securite.html",
-          "title" : "Sécurité",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "downloads.html"
           }],
           "nameUrl" : "downloads.html",
           "title" : "Téléchargements et usages",
           "generation" : "markdown"
         }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "tests.html"
-        }],
-        "nameUrl" : "tests.html",
-        "title" : "Tests",
-        "generation" : "markdown"
       },
       {
         "extension" : [{

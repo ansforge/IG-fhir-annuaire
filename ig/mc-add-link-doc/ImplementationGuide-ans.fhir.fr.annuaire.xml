@@ -11,7 +11,7 @@
   <name value="AnnuaireSant"/>
   <title value="Annuaire Santé"/>
   <status value="draft"/>
-  <date value="2023-05-12T10:30:52+00:00"/>
+  <date value="2023-05-17T07:53:32+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -35,6 +35,14 @@
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
     <version value="5.0.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="1.0.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
     <uri value="http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core"/>
@@ -788,6 +796,16 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/002-3635099"/>
+      </reference>
+      <name value="device-exemple-1"/>
+      <exampleCanonical value="http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CapabilityStatement"/>
       </extension>
       <reference>
@@ -795,6 +813,26 @@
       </reference>
       <name value="AsClientCapabilityStatement"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/healthcareservice-healthcare-activity-exemple"/>
+      </reference>
+      <name value="healthcareservice-healthcare-activity-exemple"/>
+      <exampleCanonical value="http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-healthcare-activity"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/healthcareservice-social-equipment-exemple"/>
+      </reference>
+      <name value="healthcareservice-social-equipment-exemple"/>
+      <exampleCanonical value="http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-social-equipment"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -813,51 +851,11 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="specifications_techniques.html"/>
-        </extension>
-        <nameUrl value="specifications_techniques.html"/>
-        <title value="Specifications Techniques"/>
-        <generation value="markdown"/>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="construction_des_flux.html"/>
-          </extension>
-          <nameUrl value="construction_des_flux.html"/>
-          <title value="Construction Des Flux"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_flux1.html"/>
-          </extension>
-          <nameUrl value="st_flux1.html"/>
-          <title value="Flux 01"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_flux2.html"/>
-          </extension>
-          <nameUrl value="st_flux2.html"/>
-          <title value="Flux 02"/>
-          <generation value="markdown"/>
-        </page>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="autres_ressources.html"/>
         </extension>
         <nameUrl value="autres_ressources.html"/>
         <title value="Autres Ressources"/>
         <generation value="markdown"/>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="securite.html"/>
-          </extension>
-          <nameUrl value="securite.html"/>
-          <title value="Sécurité"/>
-          <generation value="markdown"/>
-        </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
             <valueUrl value="downloads.html"/>
@@ -866,14 +864,6 @@
           <title value="Téléchargements et usages"/>
           <generation value="markdown"/>
         </page>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="tests.html"/>
-        </extension>
-        <nameUrl value="tests.html"/>
-        <title value="Tests"/>
-        <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

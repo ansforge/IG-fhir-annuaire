@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://interop.esante.gouv.fr/ig/fhir/annuaire/Device/002-3635099> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "002-3635099"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-03-05T12:24:00.236+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "https://annuaire.sante.fr"^^xsd:anyURI ] ;
+     fhir:profile ( [
+       fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device"^^xsd:anyURI ;
+       fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "fr"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\" lang=\"fr\"><p><b>Generated Narrative: Device</b><a name=\"002-3635099\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Device &quot;002-3635099&quot; Version &quot;1&quot; Updated &quot;2023-03-05 12:24:00+0000&quot;  (Language &quot;fr&quot;) </p><p style=\"margin-bottom: 0px\">Information Source: https://annuaire.sante.fr!</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-device.html\">As Device Profile</a></p></div><p><b>AS Device Numbera Authorization ARHGOS Extension</b>: 93-93-1905</p><p><b>AS Device Authorization Date Device Extension</b>: 2007-06-19</p><p><b>AS Device Period Implantation Extension</b>: 2014-09-26 --&gt; 2027-03-25</p><p><b>identifier</b>: id: 93-93-1905</p><p><b>status</b>: active</p><p><b>manufacturer</b>: 0000</p><p><b>serialNumber</b>: INCISIVE CT N 550020</p><p><b>type</b>: 05602 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J135-EquipementMaterielLourd-RASS#05602)</span></p><p><b>owner</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://fhir.org/packages/hl7.fhir.fr.core/as-organization/001-01-960859\">as-organization/001-01-960859</a></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-number-authorization-arhgos"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "93-93-1905" ]
+  ] [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-authorization-date-device"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "2007-06-19"^^xsd:date ]
+  ] [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-Period-implantation"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2014-09-26"^^xsd:date ] ;
+       fhir:end [ fhir:v "2027-03-25"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "93-93-1905" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:manufacturer [ fhir:v "0000"] ; # 
+  fhir:serialNumber [ fhir:v "INCISIVE CT N 550020"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "05602" ]
+     ] )
+  ] ; # 
+  fhir:owner [
+     fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/as-organization/001-01-960859> ;
+     fhir:reference [ fhir:v "as-organization/001-01-960859" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

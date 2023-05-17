@@ -29,11 +29,11 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-device-Period-implantation","Extension.value[x]:valuePeriod.start","Extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
-","Date de première mise en œuvre de l'activité de soin.","The start of the period. The boundary is inclusive.","Synonyme FINESS : date de mise en œuvre","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
+","Date de première mise en œuvre de l'activité de soin.","The start of the period. The boundary is inclusive.","Synonyme : date de mise en œuvre, datePremiereMEO","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-device-Period-implantation","Extension.value[x]:valuePeriod.end","Extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
-","Date d'échéance de l'autorisation.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme FINESS : date de fin de mise en œuvre","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
+","Date d'échéance de l'autorisation.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme : date de fin de mise en œuvre, dateFin","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitionerrole-registration","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
@@ -215,11 +215,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitioner-deceased-date-time","Extension.value[x]:valueDateTime","Extension.value[x]","valueDateTime","","",0,1,"","","","dateTime {[]} {[]}
-","Date de décès de la personne.","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","Synonyme MOS : dateDeces","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Date de décès de la personne.","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","Synonyme : dateDeces","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitionerrole-smartcard","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","CarteProfessionnel","Données descriptives du moyen d’identification des personnes physiques via une carte de professionnel.","La carte est rattachée à l’exercice d’une profession donnée et non au professionnel lui-même, un professionnel exerçant simultanément deux professions a deux cartes.","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+","Données descriptives du moyen d’identification des personnes physiques via une carte de professionnel.","Extension créée dans le cadre de l'Annuaire Santé pour décrire les informations de la carte CPx utilisée comme moyen d’identification des personnes physiques.","Synonyme : CarteProfessionnel ; la carte est rattachée à l’exercice d’une profession donnée et non au professionnel lui-même, un professionnel exerçant simultanément deux professions a deux cartes.","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
 ",""
 "as-ext-practitionerrole-smartcard","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
@@ -230,7 +230,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:type","Extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","typeCarte","Type de carte de professionnel (CPx)","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Type de carte de professionnel (CPx)","An Extension","Synonyme : typeCarte","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:type.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -252,7 +252,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitionerrole-smartcard","Extension.extension:number","Extension.extension","number","","",0,1,"","","","Extension {[]} {[]}
-","numeroCarte","Numéro de carte du professionnel.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Numéro de carte du professionnel.","An Extension","Synonyme : numeroCarte","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:number.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -269,7 +269,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitionerrole-smartcard","Extension.extension:period","Extension.extension","period","","",0,1,"","","","Extension {[]} {[]}
-","periodValidite","Période de validité de la carte.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Période de validité de la carte.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:period.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -299,15 +299,15 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:period.value[x]:valuePeriod.start","Extension.extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
-","dateDebutValidite","Date de début de validité de la carte","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
+","Date de début de validité de la carte.","The start of the period. The boundary is inclusive.","Synonyme : dateDebutValidite","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitionerrole-smartcard","Extension.extension:period.value[x]:valuePeriod.end","Extension.extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
-","dateFinValidite","Date de fin de validité de la carte","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
+","Date de fin de validité de la carte.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme : dateFinValidite","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitionerrole-smartcard","Extension.extension:cancellationDate","Extension.extension","cancellationDate","","",0,1,"","","","Extension {[]} {[]}
-","dateOpposition","Date de mise en opposition de la carte.","Cette opposition implique la révocation des certifications embarquées dans la carte.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Date de mise en opposition de la carte.","An Extension","Synonyme : dateOpposition ; une opposition implique la révocation des certifications embarquées dans la carte.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:cancellationDate.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -329,15 +329,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:date.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-ext-practitionerrole-smartcard","Extension.extension:date.extension","Extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+"as-ext-practitionerrole-smartcard","Extension.extension:date.extension","Extension.extension.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitionerrole-smartcard","Extension.extension:date.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""date""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"as-ext-practitionerrole-smartcard","Extension.extension:date.value[x]","Extension.extension.value[x]","","","",0,1,"","","","Meta {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+"as-ext-practitionerrole-smartcard","Extension.extension:date.value[x]","Extension.extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitionerrole-smartcard","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
@@ -536,7 +537,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitioner-birth-place","Extension.value[x]:valueAddress","Extension.value[x]","valueAddress","","",0,1,"","","","Address {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended]]} {[]}
-","Lieu de naissance de la personne.","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Synonyme MOS : lieuNaissance","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","Lieu de naissance de la personne.","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Synonyme : lieuNaissance","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-device-authorization-date-device","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
@@ -592,7 +593,7 @@ per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-organization-pharmacy-licence","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","Numéro de la licence d'exploitation d’une officine.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine.","Synonyme MOS : numeroLicence","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+","Numéro de la licence d'exploitation d’une officine.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine.","Synonyme : numeroLicence","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
 ",""
 "as-ext-organization-pharmacy-licence","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
@@ -656,7 +657,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:serialNumber","Extension.extension","serialNumber","","",0,1,"","","","Extension {[]} {[]}
-","Numéro de série du certificat.","An Extension","Synonyme MOS : numeroSerie ; format de codage des caractères en binaire codé en ASCII.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Numéro de série du certificat.","An Extension","Synonyme : numeroSerie ; format de codage des caractères en binaire codé en ASCII.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:serialNumber.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -673,7 +674,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-digital-certificate","Extension.extension:issuer","Extension.extension","issuer","","",0,1,"","","","Extension {[]} {[]}
-","DN (Distinguished Name - Nom distinctif) de l’autorité de certification (AC) émettrice du certificat","An Extension","Synonyme MOS : dNEmetteur ; le format respecte le standard RFC-4514, avec un codage des caractères en UTF8","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","DN (Distinguished Name - Nom distinctif) de l’autorité de certification (AC) émettrice du certificat","An Extension","Synonyme : dNEmetteur ; le format respecte le standard RFC-4514, avec un codage des caractères en UTF8","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:issuer.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -690,7 +691,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-digital-certificate","Extension.extension:subject","Extension.extension","subject","","",0,1,"","","","Extension {[]} {[]}
-","DN (Distinguished Name - Nom distinctif) du porteur du certificat","An Extension","Synonyme MOS : dNSujet ; codage des caractères en UTF8","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","DN (Distinguished Name - Nom distinctif) du porteur du certificat","An Extension","Synonyme : dNSujet ; codage des caractères en UTF8","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:subject.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -707,7 +708,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-digital-certificate","Extension.extension:validity","Extension.extension","validity","","",0,1,"","","","Extension {[]} {[]}
-","Période de validité du certificat.","An Extension","Synonyme MOS : periodValidite ; la date est en UTC (avec translation de l'heure locale en heure UTC par ajout du décalage négatif ou retranchement du décalage positif).","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Période de validité du certificat.","An Extension","Synonyme : periodValidite ; la date est en UTC (avec translation de l'heure locale en heure UTC par ajout du décalage négatif ou retranchement du décalage positif).","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:validity.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -737,15 +738,15 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:validity.value[x]:valuePeriod.start","Extension.extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
-","Date et heure (en heure, minute, seconde) de début de validité du certificat.","The start of the period. The boundary is inclusive.","Synonyme MOS : dateDebutValidite","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
+","Date et heure (en heure, minute, seconde) de début de validité du certificat.","The start of the period. The boundary is inclusive.","Synonyme : dateDebutValidite","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-digital-certificate","Extension.extension:validity.value[x]:valuePeriod.end","Extension.extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
-","Date et heure (en heure, minute, seconde) de fin de validité du certificat.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme MOS : dateFinValidite","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
+","Date et heure (en heure, minute, seconde) de fin de validité du certificat.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme : dateFinValidite","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-digital-certificate","Extension.extension:domain","Extension.extension","domain","","",0,1,"","","","Extension {[]} {[]}
-","Ce champ correspond au CN du DNSujet, il contient soit un <FQDN> pour les certificats de type serveur <SSL>, soit un nom applicatif pour les autres certificats.","An Extension","Synonyme MOS : domaine ; renseigné uniquement pour les certificats logiciels de portée Structure.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Ce champ correspond au CN du DNSujet, il contient soit un <FQDN> pour les certificats de type serveur <SSL>, soit un nom applicatif pour les autres certificats.","An Extension","Synonyme : domaine ; renseigné uniquement pour les certificats logiciels de portée Structure.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:domain.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -779,7 +780,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-digital-certificate","Extension.extension:value","Extension.extension","value","","",0,1,"","","","Extension {[]} {[]}
-","Valeur binaire du certificat.","An Extension","Synonyme MOS : valeurBinaire ; format .crt en hexadécimal, codé en ASCII","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Valeur binaire du certificat.","An Extension","Synonyme : valeurBinaire ; format .crt en hexadécimal, codé en ASCII","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-digital-certificate","Extension.extension:value.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -849,7 +850,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-practitionerrole","PractitionerRole.extension:as-ext-practitionerrole-smartcard","PractitionerRole.extension","as-ext-practitionerrole-smartcard","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-smartcard]]} {[]}
-","Numéro de carte du professionnel.","Données descriptives du moyen d’identification des personnes physiques via une carte de professionnel.","Synonyme MOS : CarteProfessionnel","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Numéro de carte du professionnel.","Extension créée dans le cadre de l'Annuaire Santé pour décrire les informations de la carte CPx utilisée comme moyen d’identification des personnes physiques.","Synonyme MOS : CarteProfessionnel","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-practitionerrole","PractitionerRole.modifierExtension","PractitionerRole.modifierExtension","","extensions
@@ -2077,7 +2078,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type","Organization.contact.telecom.extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","Type de boîte aux lettres.","An Extension","Synonyme MOS : typeBAL 
+","Type de boîte aux lettres.","An Extension","Synonyme : typeBAL 
 Valeurs possibles :
 ORG pour une BAL organisationnelle;
 APP pour une BAL applicative;
@@ -2103,7 +2104,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description","Organization.contact.telecom.extension.extension","description","","",0,1,"","","","Extension {[]} {[]}
-","Description fonctionnelle de la boîte aux lettres.","An Extension","Synonyme MOS : description","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Description fonctionnelle de la boîte aux lettres.","An Extension","Synonyme : description","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -2137,7 +2138,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service","Organization.contact.telecom.extension.extension","service","","",0,1,"","","","Extension {[]} {[]}
-","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","Synonyme MOS : serviceRattachement","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","Synonyme : serviceRattachement","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -2172,7 +2173,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization","Organization.contact.telecom.extension.extension","digitization","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée 
-- N : Dématérialisation refusée.","An Extension","Synonyme MOS : dematerialisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+- N : Dématérialisation refusée.","An Extension","Synonyme : dematerialisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -2190,7 +2191,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication","Organization.contact.telecom.extension.extension","publication","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur liste rouge. O: Boîte aux lettres en liste rouge;
-N: La boîte aux lettres peut être publiée","An Extension","Synonyme MOS : listeRouge","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+N: La boîte aux lettres peut être publiée","An Extension","Synonyme : listeRouge","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-organization","Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -2582,7 +2583,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-device","Device.extension:as-ext-device-number-authorization-arhgos","Device.extension","as-ext-device-number-authorization-arhgos","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-number-authorization-arhgos]]} {[]}
-","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd.","Synonyme MOS : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd.","Synonyme : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-device","Device.extension:as-ext-device-authorization-date-device","Device.extension","as-ext-device-authorization-date-device","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-authorization-date-device]]} {[]}
@@ -2863,7 +2864,7 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "as-ext-device-number-authorization-arhgos","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd.","Synonyme MOS : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd.","Synonyme : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
 ",""
 "as-ext-device-number-authorization-arhgos","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
@@ -3684,7 +3685,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitioner-authorization","Extension.extension:type","Extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","Type d’autorisation (ex. Autorisation ministérielle de plein exercice, etc.).","An Extension","Synonyme MOS : typeAutorisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Type d’autorisation (ex. Autorisation ministérielle de plein exercice, etc.).","An Extension","Synonyme : typeAutorisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitioner-authorization","Extension.extension:type.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3736,11 +3737,11 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitioner-authorization","Extension.extension:period.value[x]:valuePeriod.start","Extension.extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
-","Date à partir de laquelle l’autorisation s’applique.","The start of the period. The boundary is inclusive.","Synonyme MOS : dateDebutAutorisation","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
+","Date à partir de laquelle l’autorisation s’applique.","The start of the period. The boundary is inclusive.","Synonyme : dateDebutAutorisation","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitioner-authorization","Extension.extension:period.value[x]:valuePeriod.end","Extension.extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
-","Date de fin de validité de l'autorisation.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme MOS : dateFinAutorisation","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
+","Date de fin de validité de l'autorisation.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","Synonyme : dateFinAutorisation","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitioner-authorization","Extension.extension:field","Extension.extension","field","","",0,1,"","","","Extension {[]} {[]}
@@ -3766,7 +3767,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-practitioner-authorization","Extension.extension:profession","Extension.extension","profession","","",0,1,"","","","Extension {[]} {[]}
-","Profession pour laquelle l'autorisation est délivrée.","An Extension","Synonyme MOS : profession","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Profession pour laquelle l'autorisation est délivrée.","An Extension","Synonyme : profession","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-practitioner-authorization","Extension.extension:profession.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3886,7 +3887,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-mailbox-mss-metadata","Extension.extension:type","Extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","Type de boîte aux lettres.","An Extension","Synonyme MOS : typeBAL 
+","Type de boîte aux lettres.","An Extension","Synonyme : typeBAL 
 Valeurs possibles :
 ORG pour une BAL organisationnelle;
 APP pour une BAL applicative;
@@ -3912,7 +3913,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-mailbox-mss-metadata","Extension.extension:description","Extension.extension","description","","",0,1,"","","","Extension {[]} {[]}
-","Description fonctionnelle de la boîte aux lettres.","An Extension","Synonyme MOS : description","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Description fonctionnelle de la boîte aux lettres.","An Extension","Synonyme : description","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-mailbox-mss-metadata","Extension.extension:description.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3929,7 +3930,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-mailbox-mss-metadata","Extension.extension:responsible","Extension.extension","responsible","","",0,1,"","","","Extension {[]} {[]}
-","Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres ""PER"".","An Extension","Synonyme MOS : responsable","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres ""PER"".","An Extension","Synonyme : responsable","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-mailbox-mss-metadata","Extension.extension:responsible.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3946,7 +3947,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-mailbox-mss-metadata","Extension.extension:service","Extension.extension","service","","",0,1,"","","","Extension {[]} {[]}
-","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","Synonyme MOS : serviceRattachement","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","Synonyme : serviceRattachement","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-mailbox-mss-metadata","Extension.extension:service.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3963,7 +3964,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-ext-mailbox-mss-metadata","Extension.extension:phone","Extension.extension","phone","","",0,1,"","","","Extension {[]} {[]}
-","Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté.","An Extension","Synonyme MOS : telephone","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté.","An Extension","Synonyme : telephone","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-mailbox-mss-metadata","Extension.extension:phone.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3981,7 +3982,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-ext-mailbox-mss-metadata","Extension.extension:digitization","Extension.extension","digitization","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée 
-- N : Dématérialisation refusée.","An Extension","Synonyme MOS : dematerialisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+- N : Dématérialisation refusée.","An Extension","Synonyme : dematerialisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-mailbox-mss-metadata","Extension.extension:digitization.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -3999,7 +4000,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-ext-mailbox-mss-metadata","Extension.extension:publication","Extension.extension","publication","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur liste rouge. O: Boîte aux lettres en liste rouge;
-N: La boîte aux lettres peut être publiée","An Extension","Synonyme MOS : listeRouge","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+N: La boîte aux lettres peut être publiée","An Extension","Synonyme : listeRouge","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-ext-mailbox-mss-metadata","Extension.extension:publication.id","Extension.extension.id","","","",0,1,"","","","string {[]} {[]}
