@@ -3,15 +3,15 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.annuaire"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>AnnuaireSant</h2><p>The official URL for this implementation guide is: </p><pre>http://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire</pre><div><p>Ressources de conformité basé sur le modèle d'exposition de l'Annuaire Santé.</p>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>AnnuaireSante</h2><p>The official URL for this implementation guide is: </p><pre>http://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire</pre><div><p>Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé.</p>
 </div></div>
   </text>
   <url value="http://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire"/>
-  <version value="0.0.3"/>
-  <name value="AnnuaireSant"/>
+  <version value="0.1.0"/>
+  <name value="AnnuaireSante"/>
   <title value="Annuaire Santé"/>
-  <status value="draft"/>
-  <date value="2023-05-16T12:00:29+00:00"/>
+  <status value="active"/>
+  <date value="2023-05-17T08:16:04+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -24,7 +24,7 @@
       <value value="monserviceclient.annuaire@esante.gouv.fr"/>
     </telecom>
   </contact>
-  <description value="Ressources de conformité basé sur le modèle d'exposition de l'Annuaire Santé."/>
+  <description value="Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé."/>
   <packageId value="ans.fhir.fr.annuaire"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -35,6 +35,14 @@
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
     <version value="5.0.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="1.0.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
     <uri value="http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core"/>
@@ -55,7 +63,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="ci-build"/>
+        <valueString value="STU1"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -258,7 +266,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="ci-build"/>
+        <valueString value="STU1"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -445,6 +453,17 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-dp-practitioner"/>
+      </reference>
+      <name value="AS Donnée Publique Practitioner Profile"/>
+      <description value="Profil créé à partir de as-practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."/>
+      <exampleBoolean value="false"/>
+    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
@@ -809,6 +828,14 @@
         </extension>
         <nameUrl value="index.html"/>
         <title value="Accueil"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="liste_profils.html"/>
+        </extension>
+        <nameUrl value="liste_profils.html"/>
+        <title value="Liste des profils par permission"/>
         <generation value="markdown"/>
       </page>
       <page>
