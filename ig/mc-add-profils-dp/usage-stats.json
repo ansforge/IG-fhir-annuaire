@@ -372,6 +372,14 @@
       ]
     },
     {
+      "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted",
+      "title": "AS PractitionerRole Contracted",
+      "types": [
+        "CodeableConcept",
+        "CodeableConcept"
+      ]
+    },
+    {
       "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-education-level",
       "title": "AS PractitionerRole Education Level Extension",
       "types": [
@@ -442,6 +450,21 @@
         "UsageContext",
         "Dosage",
         "Meta"
+      ]
+    },
+    {
+      "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-end-cause",
+      "title": "AS PractitionerRole End Cause Extension",
+      "types": [
+        "CodeableConcept",
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas",
+      "title": "AS PractitionerRole Has CAS",
+      "types": [
+        "boolean"
       ]
     },
     {
@@ -647,13 +670,26 @@
         "Dosage",
         "Meta"
       ]
+    },
+    {
+      "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted",
+      "title": "AS PractitionerRole Vitale Accepted",
+      "types": [
+        "boolean"
+      ]
     }
   ],
   "profiles": {
     "Device": [
       {
         "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device",
-        "title": "As Device Profile"
+        "title": "AS Device Profile"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization",
+        "title": "AS Organization Profile"
       }
     ],
     "Practitioner": [
@@ -662,10 +698,16 @@
         "title": "AS Practitioner Profile"
       }
     ],
+    "PractitionerRole": [
+      {
+        "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole",
+        "title": "AS PractitionerRole Profile"
+      }
+    ],
     "HealthcareService": [
       {
         "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-healthcare-activity",
-        "title": "As HealthcareService HealthCare Activity Profile"
+        "title": "AS HealthcareService HealthCare Activity Profile"
       },
       {
         "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-social-equipment",
@@ -675,19 +717,7 @@
     "Location": [
       {
         "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-location",
-        "title": "As Location Profile"
-      }
-    ],
-    "Organization": [
-      {
-        "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization",
-        "title": "As Organization Profile"
-      }
-    ],
-    "PractitionerRole": [
-      {
-        "url": "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole",
-        "title": "AS PractitionerRole Profile"
+        "title": "AS Location Profile"
       }
     ]
   },
@@ -783,7 +813,8 @@
       "Device"
     ],
     "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate": [
-      "Organization"
+      "Organization",
+      "PractitionerRole"
     ],
     "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-activity-type": [
       "HealthcareService"
@@ -822,7 +853,16 @@
     "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-nationality": [
       "Practitioner"
     ],
+    "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted": [
+      "PractitionerRole"
+    ],
     "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-education-level": [
+      "PractitionerRole"
+    ],
+    "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-end-cause": [
+      "PractitionerRole"
+    ],
+    "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas": [
       "PractitionerRole"
     ],
     "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name": [
@@ -832,6 +872,9 @@
       "PractitionerRole"
     ],
     "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-smartcard": [
+      "PractitionerRole"
+    ],
+    "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted": [
       "PractitionerRole"
     ],
     "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode": [

@@ -95,7 +95,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.identifier","Organization.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
-","Identifies this organization  across multiple systems","Identifier for the organization that is used to identify the organization across multiple disparate systems.","Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)","Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization.","","","","","","","",,,,,"",,,,"Organization.identifier",0,*,"ele-1
+","Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…).","Identifier for the organization that is used to identify the organization across multiple disparate systems.","","Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization.","","","","","","","",,,,,"",,,,"Organization.identifier",0,*,"ele-1
 org-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.identifier.id","Organization.identifier.id","","","",0,1,"","","","string {[]} {[]}
@@ -111,15 +111,29 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.identifier.type","Organization.identifier.type","","","",1,1,"","","Y","CodeableConcept {[]} {[]}
-","Description of identifier","A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.","Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent du system  http://interopsante.org/CodeSystem/fr-v2-0203 ; Les codes 0,4 proviennent du system https://mos.esante.gouv.fr/NOS/TRE_G07-TypeIdentifiantStructure/FHIR/TRE-G07-TypeIdentifiantStructure","Allows users to make use of identifiers when the identifier system is not known.","","","","","","","",,"extensible","A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.","http://interopsante.org/fhir/ValueSet/fr-organization-identifier-type","",,,,"Identifier.type",0,1,"ele-1
+","Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent de la terminologie  http://interopsante.org/CodeSystem/fr-v2-0203 
+ Les codes 0,4 proviennent de la terminologie TRE-G07-TypeIdentifiantStructure.","A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.","This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.","Allows users to make use of identifiers when the identifier system is not known.","","","","","","","",,"extensible","A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.","http://interopsante.org/fhir/ValueSet/fr-organization-identifier-type","",,,,"Identifier.type",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+constr-bind-type:Les valeurs possibles pour cet élément doivent provenir d’une des terminologies de référence suivantes :
+
+ fr-organization-identifier-type , URL : http://interopsante.org/CodeSystem/fr-v2-0203
+
+ TRE_G07-TypeIdentifiantStructure , OID : 1.2.250.1.71.1.2.14 
+
+ JDV_J104-TypeIdentifiantStructure-RASS , OID : 1.2.250.1.213.1.6.1.172
+
+Les valeurs possibles peuvent être restreintes en fonction du jeu de valeurs correspondant mis à disposition par le projet (exemple : fr-organization-identifier-type ).
+En l’absence de spécifications complémentaires, le jeu de valeurs JDV_J104-TypeIdentifiantStructure-RASS peut être utilisé. {f:type}"
 "Organization.identifier.system","Organization.identifier.system","","","",1,1,"","","Y","uri {[]} {[]}
-","The namespace for the identifier value","Establishes the namespace for the value - that is, a URL that describes a set values that are unique.","« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct) ; « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET ; « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ ; « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang; « https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure;","There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers.","","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://www.acme.com/identifiers/patient""/>","","",,,,,"",,,,"Identifier.system",0,1,"ele-1
+","« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct)
+ « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET 
+ « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ 
+ « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang
+« https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure.","Establishes the namespace for the value - that is, a URL that describes a set values that are unique.","Identifier.system is always case sensitive.","There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers.","","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://www.acme.com/identifiers/patient""/>","","",,,,,"",,,,"Identifier.system",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.identifier.value","Organization.identifier.value","","","",1,1,"","","Y","string {[]} {[]}
-","The value that is unique","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"ele-1
+","Identification nationale de la structure, Numéro SIRET, Numéro SIREN, Numéro FINESS Etablissement, Numéro FINESS EJ, RPPS rang, ADELI rang, Identifiant technique de la structure.","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.identifier.period","Organization.identifier.period","","","",0,1,"","","Y","Period {[]} {[]}
@@ -133,7 +147,7 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "Organization.active","Organization.active","","","",0,1,"Y","Y","Y","boolean {[]} {[]}
-","La ressource est-elle active? (active | inactive)","Whether the organization's record is still in active use.","true par défaut; false pour les structures supprimées","Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Organization.active",0,1,"ele-1
+","La ressource est-elle active? (active | inactive)","Whether the organization's record is still in active use.","true par défaut; false pour les structures supprimées.","Need a flag to indicate a record is no longer to be used and should generally be hidden for the user in the UI.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"Organization.active",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type","Organization.type","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
@@ -462,7 +476,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type","Organization.contact.telecom.extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
-","Type de boîte aux lettres.","An Extension","Synonyme MOS : typeBAL 
+","Type de boîte aux lettres.","An Extension","Synonyme : typeBAL 
 Valeurs possibles :
 ORG pour une BAL organisationnelle;
 APP pour une BAL applicative;
@@ -488,7 +502,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description","Organization.contact.telecom.extension.extension","description","","",0,1,"","","","Extension {[]} {[]}
-","Description fonctionnelle de la boîte aux lettres.","An Extension","Synonyme MOS : description","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Description fonctionnelle de la boîte aux lettres.","An Extension","Synonyme : description","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -522,7 +536,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service","Organization.contact.telecom.extension.extension","service","","",0,1,"","","","Extension {[]} {[]}
-","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","Synonyme MOS : serviceRattachement","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation.","An Extension","Synonyme : serviceRattachement","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -557,7 +571,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization","Organization.contact.telecom.extension.extension","digitization","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée 
-- N : Dématérialisation refusée.","An Extension","Synonyme MOS : dematerialisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+- N : Dématérialisation refusée.","An Extension","Synonyme : dematerialisation","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -575,7 +589,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication","Organization.contact.telecom.extension.extension","publication","","",0,1,"","","","Extension {[]} {[]}
 ","Indicateur liste rouge. O: Boîte aux lettres en liste rouge;
-N: La boîte aux lettres peut être publiée","An Extension","Synonyme MOS : listeRouge","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+N: La boîte aux lettres peut être publiée","An Extension","Synonyme : listeRouge","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.contact.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id","Organization.contact.telecom.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
@@ -616,7 +630,7 @@ cpt-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 "Organization.contact.telecom:mailbox-mss.period","Organization.contact.telecom.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when the contact point was/is in use","Time period when the contact point was/is in use.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
 
-Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"ele-1
+Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
 "Organization.contact.address","Organization.contact.address","","","",0,1,"","","","Address {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrAddress]]} {[]}

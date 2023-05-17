@@ -34,20 +34,41 @@ user content","",0,*,"","","","Extension {[CanonicalType[http://interopsante.org
 ","Optional Extensions Element","Optional Extension Element - found in all resources.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"PractitionerRole.extension:as-ext-practitionerrole-name","PractitionerRole.extension","as-ext-practitionerrole-name","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name]]} {[]}
-","civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)","Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel.","Concaténation des champs MOS : civilite + nomExercice + prenom","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"PractitionerRole.extension:as-ext-practitionerrole-name","PractitionerRole.extension","as-ext-practitionerrole-name","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name]]} {[]}
+","La civilité, le nom et le prénom sous lequels exerce le professionnel.","Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel.","Concaténation des champs MOS : civilite + nomExercice + prenom","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "PractitionerRole.extension:as-ext-practitionerrole-registration","PractitionerRole.extension","as-ext-practitionerrole-registration","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration]]} {[]}
-","Autorité d'enregistrement représentant une institution (Ordre/ARS).","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"".","Synonyme : AutoriteEnregistrement, Ordre","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"".","Synonymes : InscriptionOrdre","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"PractitionerRole.extension:as-ext-practitionerrole-education-level","PractitionerRole.extension","as-ext-practitionerrole-education-level","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-education-level]]} {[]}
-","Savoir-faire (qualifications/autres attributions).","Le niveau de formation.","Synonyme MOS : SavoirFaire","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"PractitionerRole.extension:as-ext-practitionerrole-education-level","PractitionerRole.extension","as-ext-practitionerrole-education-level","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-education-level]]} {[]}
+","niveauFormation","Le niveau de formation.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"PractitionerRole.extension:as-ext-practitionerrole-smartcard","PractitionerRole.extension","as-ext-practitionerrole-smartcard","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-smartcard]]} {[]}
-","Numéro de carte du professionnel.","Données descriptives du moyen d’identification des personnes physiques via une carte de professionnel.","Synonyme MOS : CarteProfessionnel","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"PractitionerRole.extension:as-ext-practitionerrole-smartcard","PractitionerRole.extension","as-ext-practitionerrole-smartcard","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-smartcard]]} {[]}
+","Données descriptives du moyen d’identification des personnes physiques via une carte de professionnel.","Extension créée dans le cadre de l'Annuaire Santé pour décrire les informations de la carte CPx utilisée comme moyen d’identification des personnes physiques.","Synonyme : CarteProfessionnel 
+ La carte est rattachée à l’exercice d’une profession donnée et non au professionnel lui-même, un professionnel exerçant simultanément deux professions a deux cartes","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-digital-certificate","PractitionerRole.extension","as-ext-digital-certificate","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate]]} {[]}
+","AS Digital Certificate Extension","Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-end-cause","PractitionerRole.extension","as-ext-practitionerrole-end-cause","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-end-cause]]} {[]}
+","Motif de fin d'activité, par exemple: décès, retraite libérale, changement de profession, etc.","Extension créée dans le cadre de l'Annuaire Santé pour décrire le motif de fin d'activité du professionnel (décès, retraite libérale, changement de profession par exemple.","Synonyme : motifFinActivite","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-contracted","PractitionerRole.extension","as-ext-practitionerrole-contracted","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted]]} {[]}
+","Secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie.","Extension créée dans le cadre de l'Annuaire Santé pour décrire le secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie.","Synonyme : secteurConventionnement","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-hascas","PractitionerRole.extension","as-ext-practitionerrole-hascas","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas]]} {[]}
+","OPTAM est un dispositif proposé par l’Assurance Maladie aux médecins conventionnés, ayant pour objectif principal de faciliter l’accès aux soins.","Extension créée dans le cadre de l'Annuaire Santé pour décrire le contrat d'accès aux soins (CAS), remplacée récemment par l'option pratique tarifaire maîtrisée (OPTAM).","Synonyme : optionContratAccesSoins, optionPratiqueTarifaireMaîtrisée","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"PractitionerRole.extension:as-ext-practitionerrole-vitale-accepted","PractitionerRole.extension","as-ext-practitionerrole-vitale-accepted","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted]]} {[]}
+","L’indicateur Carte Vitale acceptée précisant si le professionnel, dans le cadre de cette situation opérationnelle, dispose des moyens techniques pour prendre en charge la carte vitale ou pas.","Extension créée dans le cadre de l'Annuaire Santé pour décrire l’indicateur Carte Vitale acceptée (oui/non).","Synonyme : carteVitaleAcceptee, optionPratiqueTarifaireMaîtrisée","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "PractitionerRole.modifierExtension","PractitionerRole.modifierExtension","","extensions
@@ -59,7 +80,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "PractitionerRole.identifier","PractitionerRole.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
-","identifiant métier calculé à partir des identifiants techniques de l'exercice professionnel et la situation d'exercice.","Business Identifiers that are specific to a role/location.","Synonyme MOS : idFonctionnel","Often, specific identities are assigned for the agent.","","","","","","","",,,,,"",,,,"PractitionerRole.identifier",0,*,"ele-1
+","identifiant métier calculé à partir des identifiants techniques de l'exercice professionnel et la situation d'exercice.","Business Identifiers that are specific to a role/location.","Synonyme : idFonctionnel","Often, specific identities are assigned for the agent.","","","","","","","",,,,,"",,,,"PractitionerRole.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "PractitionerRole.identifier.id","PractitionerRole.identifier.id","","","",0,1,"","","","string {[]} {[]}
@@ -98,7 +119,7 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "PractitionerRole.active","PractitionerRole.active","","","",0,1,"Y","","Y","boolean {[]} {[]}
-","La sitation d'exercice est-elle active? (active | inactive)","Whether this practitioner role record is in active use.","true par défaut; false pour les situations d’exercices supprimées","Need to be able to mark a practitioner role record as not to be used because it was created in error, or otherwise no longer in active use.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"PractitionerRole.active",0,1,"ele-1
+","La situation d'exercice est-elle active? (active | inactive)","Whether this practitioner role record is in active use.","true par défaut; false pour les situations d’exercices supprimées","Need to be able to mark a practitioner role record as not to be used because it was created in error, or otherwise no longer in active use.","","This resource is generally assumed to be active if no value is provided for the active element","","","","","",,,,,"",,,,"PractitionerRole.active",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "PractitionerRole.period","PractitionerRole.period","","","",0,1,"Y","","Y","Period {[]} {[]}
@@ -116,7 +137,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "PractitionerRole.period.start","PractitionerRole.period.start","","","",0,1,"","","Y","dateTime {[]} {[]}
-","[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié.","The start of the period. The boundary is inclusive.","Synonyme MOS : dateDebutActivite","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
+","[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié.","The start of the period. The boundary is inclusive.","Synonyme : dateDebutActivite","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "PractitionerRole.period.end","PractitionerRole.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
