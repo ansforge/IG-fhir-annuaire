@@ -19,5 +19,5 @@ L'onglet de [téléchargement](downloads.html) vous permettra de télécharger :
 Ce guide a été généré à partir de ce [repository GitHub](https://github.com/ansforge/FIG_ans-ig-PDSm), qui contient également l'historique des commits.
 
 Liens utiles :
-- [Wiki ANS sur les IGs](https://github.com/ansforge/FIG_ans-ig-sample/wiki) (en cours de construction)
+- [Wiki ANS sur les IGs](https://github.com/ansforge/IG-documentation)
 - [Documentation IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
