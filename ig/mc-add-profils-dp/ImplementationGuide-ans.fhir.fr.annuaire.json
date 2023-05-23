@@ -10,7 +10,7 @@
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "active",
-  "date" : "2023-05-17T18:27:08+00:00",
+  "date" : "2023-05-23T08:43:56+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -641,7 +641,7 @@
         "reference" : "StructureDefinition/as-codeableconcept-timed"
       },
       "name" : "AS CodeableConceptTimed Datatype Profile",
-      "description" : "Profil du type de données CodeableConcept créé dans le cadre de l'Annuaire Santé pour ?",
+      "description" : "Datatype profile créé à partir CodeableConcept dans le cadre de l'Annuaire Santé pour ajouter une extension Period au type CodeableConcept.",
       "exampleBoolean" : false
     },
     {
@@ -662,10 +662,46 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/as-dp-device"
+      },
+      "name" : "AS Donnée Publique Device Profile",
+      "description" : "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dp-healthcareservice-healthcare-activity"
+      },
+      "name" : "AS Donnée Publique HealthcareService HealthCare Activity Profile",
+      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dp-healthcareservice-social-equipment"
+      },
+      "name" : "AS Donnée Publique HealthcareService Social Equipment Profile",
+      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/as-dp-organization"
       },
       "name" : "AS Donnée Publique Organization Profile",
-      "description" : "Profil créé à partir de as-organization  dans le contexte des données en libre accès.",
+      "description" : "Profil applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -677,7 +713,7 @@
         "reference" : "StructureDefinition/as-dp-practitioner"
       },
       "name" : "AS Donnée Publique Practitioner Profile",
-      "description" : "Profil créé à partir de as-practitioner dans le contexte des données en libre accès.",
+      "description" : "Profil applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -689,7 +725,79 @@
         "reference" : "StructureDefinition/as-dp-practitionerrole"
       },
       "name" : "AS Donnée Publique PractitionerRole Profile",
-      "description" : "Profil créé à partir de as-practitionerrole dans le contexte des données en libre accès.",
+      "description" : "Profil applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dr-device"
+      },
+      "name" : "AS Donnée Restreinte Device Profile",
+      "description" : "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dr-healthcareservice-healthcare-activity"
+      },
+      "name" : "AS Donnée Restreinte HealthcareService HealthCare Activity Profile",
+      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès restreint de l'Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dr-healthcareservice-social-equipment"
+      },
+      "name" : "AS Donnée Restreinte HealthcareService Social Equipment Profile",
+      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dr-organization"
+      },
+      "name" : "AS Donnée Restreinte Organization Profile",
+      "description" : "Profil créé à partir de as-organization  dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dr-practitioner"
+      },
+      "name" : "AS Donnée Restreinte Practitioner Profile",
+      "description" : "Profil créé à partir de as-practitioner dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-dr-practitionerrole"
+      },
+      "name" : "AS Donnée Restreinte PractitionerRole Profile",
+      "description" : "Profil créé à partir de as-practitionerrole dans le contexte des données en accès restreint de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -737,7 +845,7 @@
         "reference" : "StructureDefinition/as-mailbox-mss"
       },
       "name" : "AS Mailbox MSS Datatype Profile",
-      "description" : "Profil du type de données ContactPoint créé dans le cadre de l'Annuaire Santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures.",
+      "description" : "Datatype profile créé à partir ContactPoint dans le cadre de l'Annuaire Santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures.",
       "exampleBoolean" : false
     },
     {

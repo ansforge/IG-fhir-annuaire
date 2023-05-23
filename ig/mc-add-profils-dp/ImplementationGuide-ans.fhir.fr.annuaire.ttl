@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-05-17T18:27:08+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-05-23T08:43:56+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -555,7 +555,7 @@
          fhir:reference [ fhir:v "StructureDefinition/as-codeableconcept-timed" ]
        ] ;
        fhir:name [ fhir:v "AS CodeableConceptTimed Datatype Profile" ] ;
-       fhir:description [ fhir:v "Profil du type de données CodeableConcept créé dans le cadre de l'Annuaire Santé pour ?" ] ;
+       fhir:description [ fhir:v "Datatype profile créé à partir CodeableConcept dans le cadre de l'Annuaire Santé pour ajouter une extension Period au type CodeableConcept." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -575,11 +575,47 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-device> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dp-device" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Publique Device Profile" ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dp-healthcareservice-healthcare-activity" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Publique HealthcareService HealthCare Activity Profile" ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-social-equipment> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dp-healthcareservice-social-equipment" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Publique HealthcareService Social Equipment Profile" ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization> ;
          fhir:reference [ fhir:v "StructureDefinition/as-dp-organization" ]
        ] ;
        fhir:name [ fhir:v "AS Donnée Publique Organization Profile" ] ;
-       fhir:description [ fhir:v "Profil créé à partir de as-organization  dans le contexte des données en libre accès." ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -591,7 +627,7 @@
          fhir:reference [ fhir:v "StructureDefinition/as-dp-practitioner" ]
        ] ;
        fhir:name [ fhir:v "AS Donnée Publique Practitioner Profile" ] ;
-       fhir:description [ fhir:v "Profil créé à partir de as-practitioner dans le contexte des données en libre accès." ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -603,7 +639,79 @@
          fhir:reference [ fhir:v "StructureDefinition/as-dp-practitionerrole" ]
        ] ;
        fhir:name [ fhir:v "AS Donnée Publique PractitionerRole Profile" ] ;
-       fhir:description [ fhir:v "Profil créé à partir de as-practitionerrole dans le contexte des données en libre accès." ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-device> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dr-device" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Restreinte Device Profile" ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-healthcareservice-healthcare-activity> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dr-healthcareservice-healthcare-activity" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Restreinte HealthcareService HealthCare Activity Profile" ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès restreint de l'Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-healthcareservice-social-equipment> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dr-healthcareservice-social-equipment" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Restreinte HealthcareService Social Equipment Profile" ] ;
+       fhir:description [ fhir:v "Profil applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dr-organization" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Restreinte Organization Profile" ] ;
+       fhir:description [ fhir:v "Profil créé à partir de as-organization  dans le contexte des données en accès restreint de l’Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dr-practitioner" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Restreinte Practitioner Profile" ] ;
+       fhir:description [ fhir:v "Profil créé à partir de as-practitioner dans le contexte des données en accès restreint de l’Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dr-practitionerrole" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Restreinte PractitionerRole Profile" ] ;
+       fhir:description [ fhir:v "Profil créé à partir de as-practitionerrole dans le contexte des données en accès restreint de l’Annuaire Santé." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -651,7 +759,7 @@
          fhir:reference [ fhir:v "StructureDefinition/as-mailbox-mss" ]
        ] ;
        fhir:name [ fhir:v "AS Mailbox MSS Datatype Profile" ] ;
-       fhir:description [ fhir:v "Profil du type de données ContactPoint créé dans le cadre de l'Annuaire Santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures." ] ;
+       fhir:description [ fhir:v "Datatype profile créé à partir ContactPoint dans le cadre de l'Annuaire Santé pour décrire les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) rattachées aux professionnels et aux structures." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
