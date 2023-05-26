@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://interop.esante.gouv.fr/ig/fhir/annuaire/HealthcareService/as-dp-healthcareservice-healthcare-activity-exemple> a fhir:HealthcareService ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "as-dp-healthcareservice-healthcare-activity-exemple"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-03-05T12:20:42.832+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "https://annuaire.sante.fr"^^xsd:anyURI ] ;
+     fhir:profile ( [
+       fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity"^^xsd:anyURI ;
+       fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "fr"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\" lang=\"fr\"><p><b>Generated Narrative: HealthcareService</b><a name=\"as-dp-healthcareservice-healthcare-activity-exemple\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource HealthcareService &quot;as-dp-healthcareservice-healthcare-activity-exemple&quot; Version &quot;1&quot; Updated &quot;2023-03-05 12:20:42+0000&quot;  (Language &quot;fr&quot;) </p><p style=\"margin-bottom: 0px\">Information Source: https://annuaire.sante.fr!</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-dp-healthcareservice-healthcare-activity.html\">AS Donnée Publique HealthcareService HealthCare Activity Profile</a></p></div><p><b>AS Healthcare Service Activity Type Extension</b>: 01 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J131-CategorieActiviteSanitaireRegulee-RASS#01)</span></p><p><b>AS Healthcare Service Authorization Date Extension</b>: 2010-09-28</p><p><b>AS HealthcareService Authorization Number ARHGOS Extension</b>: 04-04-52938</p><p><b>AS HealthcareService Implementation Period Extension</b>: 2010-10-13 --&gt; 2028-04-12</p><p><b>AS HealthcareService Delete Autorization Implantation Extension</b>: false</p><p><b>AS HealthcareService Date Update Activity Extension</b>: 2023-03-03</p><p><b>identifier</b>: id: 04-04-52938</p><p><b>active</b>: true</p><p><b>providedBy</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://fhir.org/packages/hl7.fhir.fr.core/Organization/001-01-222976\">Organization/001-01-222976</a></p><p><b>category</b>: 09 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J132-ModaliteActivite-RASS#09)</span></p><p><b>type</b>: 50 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J133-ActiviteSanitaireRegulee-RASS#50)</span></p><p><b>characteristic</b>: 02 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J134-FormeActivite-RASS#02)</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-activity-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J131-CategorieActiviteSanitaireRegulee-RASS/FHIR/JDV-J131-CategorieActiviteSanitaireRegulee-RASS"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "01" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-authorization-date"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "2010-09-28"^^xsd:date ]
+  ] [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-authorization-number-arhgos"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "04-04-52938" ]
+  ] [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-implementation-period"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2010-10-13"^^xsd:date ] ;
+       fhir:end [ fhir:v "2028-04-12"^^xsd:date ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-delete-autorization-implantation"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "false"^^xsd:boolean ]
+  ] [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-date-update-activity"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "2023-03-03"^^xsd:date ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "04-04-52938" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:providedBy [
+     fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/001-01-222976> ;
+     fhir:reference [ fhir:v "Organization/001-01-222976" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "09" ]
+     ] )
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "50" ]
+     ] )
+  ] ) ; # 
+  fhir:characteristic ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J134-FormeActivite-RASS/FHIR/JDV-J134-FormeActivite-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "02" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://interop.esante.gouv.fr/ig/fhir/annuaire/PractitionerRole/as-dp-practitionerrole-exemple> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "as-dp-practitionerrole-exemple"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-03-04T01:54:39.836+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "https://annuaire.sante.fr"^^xsd:anyURI ] ;
+     fhir:profile ( [
+       fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole"^^xsd:anyURI ;
+       fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole>
+     ] [
+       fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole"^^xsd:anyURI ;
+       fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "fr"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\" lang=\"fr\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"as-dp-practitionerrole-exemple\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;as-dp-practitionerrole-exemple&quot; Version &quot;1&quot; Updated &quot;2023-03-04 01:54:39+0000&quot;  (Language &quot;fr&quot;) </p><p style=\"margin-bottom: 0px\">Information Source: https://annuaire.sante.fr!</p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-as-dp-practitionerrole.html\">AS Donnée Publique PractitionerRole Profile</a>, <a href=\"StructureDefinition-as-dr-practitionerrole.html\">AS Donnée Restreinte PractitionerRole Profile</a></p></div><p><b>AS PractitionerRole Name Extension</b>: MARCEL MINATCHY </p><p><b>active</b>: true</p><p><b>practitioner</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://fhir.org/packages/hl7.fhir.fr.core/Practitioner/003-137410\">Practitioner/003-137410</a></p><p><b>code</b>: 10 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J106-EnsembleProfession-RASS#10; JDV-J89-CategorieProfessionnelle-RASS#C)</span></p><p><b>specialty</b>: SM54 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (TRE-R38-SpecialiteOrdinale#SM54; JDV-J91-TypeSavoirFaire-RASS#S)</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:HumanName ;
+       fhir:family [ fhir:v "MINATCHY" ] ;
+       fhir:given ( [ fhir:v "MARCEL" ] ) ;
+       fhir:suffix ( [ fhir:v "DR" ] )
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:practitioner [
+     fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/Practitioner/003-137410> ;
+     fhir:reference [ fhir:v "Practitioner/003-137410" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "10" ]
+     ] [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J89-CategorieProfessionnelle-RASS/FHIR/JDV-J89-CategorieProfessionnelle-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "C" ]
+     ] )
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R38-SpecialiteOrdinale/FHIR/TRE-R38-SpecialiteOrdinale"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SM54" ]
+     ] [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J91-TypeSavoirFaire-RASS/FHIR/JDV-J91-TypeSavoirFaire-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "S" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

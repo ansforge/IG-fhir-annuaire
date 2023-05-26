@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/as-dp-organization-geographical-entity-exemple> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "as-dp-organization-geographical-entity-exemple"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-03-05T10:35:57.668+00:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "https://annuaire.sante.fr"^^xsd:anyURI ] ;
+     fhir:profile ( [
+       fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization"^^xsd:anyURI ;
+       fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "fr"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\" lang=\"fr\"><p><b>Generated Narrative: Organization</b><a name=\"as-dp-organization-geographical-entity-exemple\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;as-dp-organization-geographical-entity-exemple&quot; Version &quot;1&quot; Updated &quot;2023-03-05 10:35:57+0000&quot;  (Language &quot;fr&quot;) </p><p style=\"margin-bottom: 0px\">Information Source: https://annuaire.sante.fr!</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-dp-organization.html\">AS Donnée Publique Organization Profile</a></p></div><p><b>identifier</b>: IDNST: 1060016219 (use: OFFICIAL), FINEG: 060016219 (use: OFFICIAL)</p><p><b>active</b>: true</p><p><b>type</b>: Entité géographique <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/CodeSystem/fr-v2-3307\">Types d'organisations</a>#GEOGRAPHICAL-ENTITY)</span>, SA41 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J101-SecteurActivite-RASS#SA41)</span>, 354 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (JDV-J129-CategorieEtablissement-RASS#354)</span></p><p><b>name</b>: SSIAD ADMR MENTON</p><p><b>telecom</b>: ph: 0492105973, fax: 0492102127, <a href=\"mailto:siege@admr06.org\">siege@admr06.org</a></p><p><b>address</b>: null 06500 MENTON 06500 </p><p><b>partOf</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://fhir.org/packages/hl7.fhir.fr.core/Organization/001-01-74546\">Organization/001-01-74546</a></p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://interopsante.org/CodeSystem/fr-v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "IDNST" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.250.1.71.4.2.2"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1060016219" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://interopsante.org/CodeSystem/fr-v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "FINEG" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "http://finess.sante.gouv.fr"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "060016219" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://interopsante.org/fhir/CodeSystem/fr-v2-3307"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "GEOGRAPHICAL-ENTITY" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J101-SecteurActivite-RASS/FHIR/JDV-J101-SecteurActivite-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SA41" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J129-CategorieEtablissement-RASS/FHIR/JDV-J129-CategorieEtablissement-RASS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "354" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "SSIAD ADMR MENTON"] ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "0492105973" ] ;
+     fhir:rank [ fhir:v "1"^^xsd:positiveInteger ]
+  ] [
+     fhir:system [ fhir:v "fax" ] ;
+     fhir:value [ fhir:v "0492102127" ]
+  ] [
+     fhir:system [ fhir:v "email" ] ;
+     fhir:value [ fhir:v "siege@admr06.org" ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "06083" ]
+       ]
+     ] ) ;
+     fhir:line ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "5" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "R" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "VICTOR HUGO" ]
+       ] )
+     ] ) ;
+     fhir:city [ fhir:v "06500 MENTON" ] ;
+     fhir:postalCode [ fhir:v "06500" ]
+  ] ) ; # 
+  fhir:partOf [
+     fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/001-01-74546> ;
+     fhir:reference [ fhir:v "Organization/001-01-74546" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
