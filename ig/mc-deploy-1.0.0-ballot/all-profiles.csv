@@ -510,16 +510,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-dr-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-dr-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).
 Plus précisément, on distingue le code APET pour les EG.","The kind(s) of organization that this is.","Synonyme : codeAPEN","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-dr-organization","Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-dr-organization","Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Statut juridique FINESS qui caractérise la situation juridique de la personne morale.","The kind(s) of organization that this is.","Synonyme : statutJuridiqueINSEE","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-dr-organization","Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-dr-organization","Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Modalités de participation au service public hospitalier.","The kind(s) of organization that this is.","Synonyme : modaliteParticipationSPH","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -1117,8 +1117,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-dp-practitioner","Practitioner.qualification.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","Coded representation of the qualification","Coded representation of the qualification.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"example","Specific qualification the practitioner has to provide a service.","http://terminology.hl7.org/ValueSet/v2-2.7-0360","",,,,"Practitioner.qualification.code",1,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+",""
 "as-dp-practitioner","Practitioner.qualification.code.id","Practitioner.qualification.code.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "as-dp-practitioner","Practitioner.qualification.code.extension","Practitioner.qualification.code.extension","","extensions
@@ -1578,6 +1577,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-dp-practitioner","Practitioner.qualification.code.coding:degreeR226.userSelected","Practitioner.qualification.code.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"as-dp-practitioner","Practitioner.qualification.code.coding:degreeType","Practitioner.qualification.code.coding","degreeType","","",0,*,"Y","","Y","Coding {[]} {[]}
+","Type de diplôme, par exemple : DE, DES, CES, etc.","A reference to a code defined by a terminology system.","typeDiplome","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-dp-practitioner","Practitioner.qualification.code.text","Practitioner.qualification.code.text","","","",0,1,"","","Y","string {[]} {[]}
@@ -2064,8 +2067,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-dr-practitioner","Practitioner.qualification.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","Coded representation of the qualification","Coded representation of the qualification.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"example","Specific qualification the practitioner has to provide a service.","http://terminology.hl7.org/ValueSet/v2-2.7-0360","",,,,"Practitioner.qualification.code",1,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+",""
 "as-dr-practitioner","Practitioner.qualification.code.id","Practitioner.qualification.code.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "as-dr-practitioner","Practitioner.qualification.code.extension","Practitioner.qualification.code.extension","","extensions
@@ -2525,6 +2527,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-dr-practitioner","Practitioner.qualification.code.coding:degreeR226.userSelected","Practitioner.qualification.code.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"as-dr-practitioner","Practitioner.qualification.code.coding:degreeType","Practitioner.qualification.code.coding","degreeType","","",0,*,"Y","","Y","Coding {[]} {[]}
+","Type de diplôme, par exemple : DE, DES, CES, etc.","A reference to a code defined by a terminology system.","typeDiplome","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-dr-practitioner","Practitioner.qualification.code.text","Practitioner.qualification.code.text","","","",0,1,"","","Y","string {[]} {[]}
@@ -5078,16 +5084,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-dp-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-dp-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).
 Plus précisément, on distingue le code APET pour les EG.","The kind(s) of organization that this is.","Synonyme : codeAPEN","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-dp-organization","Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-dp-organization","Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Statut juridique FINESS qui caractérise la situation juridique de la personne morale.","The kind(s) of organization that this is.","Synonyme : statutJuridiqueINSEE","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-dp-organization","Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-dp-organization","Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Modalités de participation au service public hospitalier.","The kind(s) of organization that this is.","Synonyme : modaliteParticipationSPH","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -6219,16 +6225,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-organization","Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).
 Plus précisément, on distingue le code APET pour les EG.","The kind(s) of organization that this is.","Synonyme : codeAPEN","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-organization","Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Statut juridique FINESS qui caractérise la situation juridique de la personne morale.","The kind(s) of organization that this is.","Synonyme : statutJuridiqueINSEE","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"as-organization","Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,*,"","","Y","CodeableConcept {[]} {[]}
+"as-organization","Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Modalités de participation au service public hospitalier.","The kind(s) of organization that this is.","Synonyme : modaliteParticipationSPH","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -8234,8 +8240,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-practitioner","Practitioner.qualification.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","Coded representation of the qualification","Coded representation of the qualification.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"example","Specific qualification the practitioner has to provide a service.","http://terminology.hl7.org/ValueSet/v2-2.7-0360","",,,,"Practitioner.qualification.code",1,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+",""
 "as-practitioner","Practitioner.qualification.code.id","Practitioner.qualification.code.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "as-practitioner","Practitioner.qualification.code.extension","Practitioner.qualification.code.extension","","extensions
@@ -8695,6 +8700,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "as-practitioner","Practitioner.qualification.code.coding:degreeR226.userSelected","Practitioner.qualification.code.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"as-practitioner","Practitioner.qualification.code.coding:degreeType","Practitioner.qualification.code.coding","degreeType","","",0,*,"Y","","Y","Coding {[]} {[]}
+","Type de diplôme, par exemple : DE, DES, CES, etc.","A reference to a code defined by a terminology system.","typeDiplome","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-practitioner","Practitioner.qualification.code.text","Practitioner.qualification.code.text","","","",0,1,"","","Y","string {[]} {[]}
