@@ -2,7 +2,7 @@ Profile: 		AsCodeableConceptTimedProfile
 Parent: 		CodeableConcept
 Id: 			as-codeableconcept-timed
 Title:			"AS CodeableConceptTimed Datatype Profile"
-Description:	"Profil du type de données CodeableConcept créé dans le cadre de l'Annuaire Santé pour ?"
+Description:	"Datatype profile créé à partir CodeableConcept dans le cadre de l'Annuaire Santé pour ajouter une extension Period au type CodeableConcept."
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

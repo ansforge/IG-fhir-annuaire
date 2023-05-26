@@ -20,7 +20,7 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
     profession 0..1
 
 // typeAutorisation
-* extension[type] ^comment = "Synonyme MOS : typeAutorisation"
+* extension[type] ^comment = "Synonyme : typeAutorisation"
 * extension[type] ^short = "Type d’autorisation (ex. Autorisation ministérielle de plein exercice, etc.)."
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from $JDV-J75-TypeAutorisation-RASS (required)
@@ -29,20 +29,20 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 // periodValidite
 * extension[period] ^short = "Période de validité de l'autorisation d'exercice."
 * extension[period].value[x] only Period
-* extension[period].valuePeriod.start ^comment = "Synonyme MOS : dateDebutAutorisation"
+* extension[period].valuePeriod.start ^comment = "Synonyme : dateDebutAutorisation"
 * extension[period].valuePeriod.start ^short = "Date à partir de laquelle l’autorisation s’applique."
-* extension[period].valuePeriod.end ^comment = "Synonyme MOS : dateFinAutorisation"
+* extension[period].valuePeriod.end ^comment = "Synonyme : dateFinAutorisation"
 * extension[period].valuePeriod.end ^short = "Date de fin de validité de l'autorisation."
 
 // disciplineAutorisee
-* extension[field] ^comment = "Synonyme MOS : disciplineAutorisee"
+* extension[field] ^comment = "Synonyme : disciplineAutorisee"
 * extension[field] ^short = "Discipline à laquelle l'autorisation d'exercice est restreinte, le cas échéant."
 * extension[field].value[x] only CodeableConcept
 * extension[field].valueCodeableConcept from $JDV-J76-DisciplineAutorisation-RASS (required)
 * extension[field].valueCodeableConcept ^binding.description = "Liste des disciplines"
 
 // profession
-* extension[profession] ^comment = "Synonyme MOS : profession"
+* extension[profession] ^comment = "Synonyme : profession"
 * extension[profession] ^short = "Profession pour laquelle l'autorisation est délivrée."
 * extension[profession].value[x] only CodeableConcept
 * extension[profession].valueCodeableConcept from $JDV-J106-EnsembleProfession-RASS (required)

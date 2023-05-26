@@ -2,7 +2,7 @@ Profile: 		ASPractitionerProfile
 Parent: 		FrPractitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
-Description: 	"Profil créé à partir de la ressource Practitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
+Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
 
 /* extensions */
 * extension ^slicing.discriminator.type = #value
@@ -10,7 +10,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * extension ^slicing.rules = #open
 * extension contains
     AsPractitionerNationalityExtension named as-ext-practitioner-nationality 0..1 MS and
-    AsPractitionerAuthorizationExtension named as-ext-practitioner-authorization 0..* MS and
+    AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS and
     AsPractitionerBirthPlaceExtension named as-ext-practitioner-birth-place 0..1 MS and
     AsPractitionerDeceasedDateTimeExtension named as-ext-practitioner-deceased-date-time 0..* MS
 
@@ -20,7 +20,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 
 // Practitioner.identifier.type
 * identifier.type ^short = "Type d’identifiant national de la personne physique."
-* identifier.type ^comment = "Synonymes MOS : typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
+* identifier.type ^comment = "Synonyme : typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier.type from $fr-practioner-identifier-type (extensible)
 
 // Practitioner.identifier.system
@@ -28,7 +28,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * identifier.system ^comment = "« http://rpps.fr» si l’instance correspond à un identifiant RPPS ; « http://adeli.fr» si l’instance correspond à un identifiant ADELI ; « urn:oid:1.2.250.1.71.4.2.1 » si l’instance correspond à l’identification nationale PP (idNat_PS) ; « urn:oid:1.2.250.1.213.1.6.4.2 » si l’instance correspond à une identification locale : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
 
 // Practitioner.identifier.value
-* identifier.value ^comment = "Synonyme MOS : idPP"
+* identifier.value ^comment = "Synonyme : idPP\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
 * identifier.value ^short = "Identifiant national de la personne physique."
 
 // Practitioner.active
@@ -47,30 +47,30 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * name.given ^short = "[Donnée restreinte] : Prénom(s) déclarés à sa naissance de la personne."
 // HumanName.prefix
 * name.prefix ^binding.strength = #required
-* name.prefix ^comment = "Synonyme MOS : civilite"
+* name.prefix ^comment = "Synonyme : civilite"
 * name.prefix ^short = "Civilité de la personne physique."
 
 // Practitioner.gender
 * gender MS
-* gender ^comment = "Synonyme MOS : sexeAdministratif"
+* gender ^comment = "Synonyme : sexeAdministratif"
 * gender ^short = "[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin."
 // * gender from $TRE-R249-Sexe (required) 
 
 // Practitioner.birthDate
 * birthDate MS
-* birthDate ^comment = "Synonyme MOS : dateNaissance"
+* birthDate ^comment = "Synonyme : dateNaissance"
 * birthDate ^short = "[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles."
 
 // lieuNaissance
 * extension[as-ext-practitioner-birth-place] ^short = "[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays"
-* extension[as-ext-practitioner-birth-place] ^comment = "Synonyme MOS : lieuNaissance"
+* extension[as-ext-practitioner-birth-place] ^comment = "Synonyme : lieuNaissance"
 
 // nationalite
 * extension[as-ext-practitioner-nationality] ^short = "[Donnée restreinte] : Nationalité de la personne."
-* extension[as-ext-practitioner-nationality] ^comment = "Synonyme MOS : nationalite"
+* extension[as-ext-practitioner-nationality] ^comment = "Synonyme : nationalite"
 // dateDeces
 * extension[as-ext-practitioner-deceased-date-time] ^short = "[Donnée restreinte] : Date de décès de la personne."
-* extension[as-ext-practitioner-deceased-date-time] ^comment = "Synonyme MOS : dateDeces"
+* extension[as-ext-practitioner-deceased-date-time] ^comment = "Synonyme : dateDeces"
 
 // telecommunication 
 * telecom MS
@@ -82,7 +82,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 
 // adresseCorrespondance
 * address MS
-* address ^comment = "Synonyme MOS : adresseCorrespondance"
+* address ^comment = "Synonyme : adresseCorrespondance"
 * address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel."
 * address only AsAddressExtendedProfile
 
@@ -93,7 +93,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé."
-* telecom[mailbox-mss] ^comment = "Synonyme MOS : boiteLettreMSS"
+* telecom[mailbox-mss] ^comment = "Synonyme : boiteLettreMSS"
 
 // Practitioner.photo
 * photo MS
@@ -102,7 +102,7 @@ Description: 	"Profil créé à partir de la ressource Practitioner dans le cont
 
 // langueParlee
 * communication MS
-* communication ^comment = "Synonyme MOS : langueParlee"
+* communication ^comment = "Synonyme : langueParlee"
 * communication ^short = "Langue parlée."
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)

@@ -1,8 +1,8 @@
 Profile: AsOrganizationProfile
 Parent: FrOrganization
 Id: as-organization
-Title: "As Organization Profile"
-Description: "Profil créé à partir de la ressource FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public."
+Title: "AS Organization Profile"
+Description: "Profil créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public."
 
 /* profils references */
 * partOf only Reference(FrOrganization or AsOrganizationProfile)
@@ -10,15 +10,17 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 /* donnees metiers */
 // Organization.identifier
 * identifier MS 
-* identifier ^comment = "Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)"
+* identifier ^short = "Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)."
 * identifier.use = #official (exactly)
-* identifier.type ^comment = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent du system  http://interopsante.org/CodeSystem/fr-v2-0203 ; Les codes 0,4 proviennent du system https://mos.esante.gouv.fr/NOS/TRE_G07-TypeIdentifiantStructure/FHIR/TRE-G07-TypeIdentifiantStructure"
-* identifier.system ^comment = "« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct) ; « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET ; « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ ; « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang; « https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure;"
+* identifier.type ^short = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent de la terminologie  http://interopsante.org/CodeSystem/fr-v2-0203 \r\n Les codes 0,4 proviennent de la terminologie TRE-G07-TypeIdentifiantStructure."
+* identifier.type obeys constr-bind-type
+* identifier.system ^short = "« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct)\r\n « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET \r\n « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ \r\n « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang\r\n« https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure."
+* identifier.value ^short = "Identification nationale de la structure, Numéro SIRET, Numéro SIREN, Numéro FINESS Etablissement, Numéro FINESS EJ, RPPS rang, ADELI rang, Identifiant technique de la structure."
 
 // Organization.active
 * active MS
 * active ^short = "La ressource est-elle active? (active | inactive)"
-* active ^comment = "true par défaut; false pour les structures supprimées"
+* active ^comment = "true par défaut; false pour les structures supprimées."
 
 // Organization.name
 * name MS
@@ -116,3 +118,13 @@ Description: "Profil créé à partir de la ressource FrOrganization dans le con
 * contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] ^comment = "Synonyme : mailBoxMSSresponsable"
 * contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] ^short = "[DR] : Coordonnées téléphoniques spécifiques à l’usage de la BAL MSS."
 * contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] ^comment = "Synonyme : mailBoxMSS.phone"
+
+Invariant:   constr-bind-type
+Description: "Les valeurs possibles pour cet élément doivent provenir d’une des terminologies de référence suivantes :
+\r\n fr-organization-identifier-type , URL : http://interopsante.org/CodeSystem/fr-v2-0203
+\r\n TRE_G07-TypeIdentifiantStructure , OID : 1.2.250.1.71.1.2.14 
+\r\n JDV_J104-TypeIdentifiantStructure-RASS , OID : 1.2.250.1.213.1.6.1.172
+\r\nLes valeurs possibles peuvent être restreintes en fonction du jeu de valeurs correspondant mis à disposition par le projet (exemple : fr-organization-identifier-type ).\r\nEn l’absence de spécifications complémentaires, le jeu de valeurs JDV_J104-TypeIdentifiantStructure-RASS peut être utilisé."
+Expression:       "f:type"
+Severity:    #error
+

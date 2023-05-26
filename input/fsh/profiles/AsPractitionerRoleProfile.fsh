@@ -1,8 +1,8 @@
-Profile: 		ASPractitionerRoleProfile
+Profile: 		AsPractitionerRoleProfile
 Parent: 		FrPractitionerRoleExercice
 Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
-Description: 	"Profil créé à partir de la ressource PractitionerRole dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée."
+Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée."
 /* profils refences */
 * practitioner MS 
 * organization MS
@@ -14,30 +14,19 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPractitionerRoleNameExtension named as-ext-practitionerrole-name 0..1 MS and
-    AsPractitionerRoleRegistrationExtension named as-ext-practitionerrole-registration 0..* MS and
-    AsPractitionerRoleEducationLevelExtension named as-ext-practitionerrole-education-level 0..1 MS and
-    AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..1 MS
-
-/* Donnees metiers */
-// civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)
-* extension[as-ext-practitionerrole-name] ^short = "civiliteExercie + nomExercice + prenomExercice (ExerciceProfessionnel)"
-
-// AutoriteEnregistrement
-* extension[as-ext-practitionerrole-registration] ^short = "Autorité d'enregistrement représentant une institution (Ordre/ARS)."
-* extension[as-ext-practitionerrole-registration] ^comment = "Synonyme : AutoriteEnregistrement, Ordre"
-
-// SavoirFaire
-* extension[as-ext-practitionerrole-education-level] ^comment = "Synonyme MOS : SavoirFaire"
-* extension[as-ext-practitionerrole-education-level] ^short = "Savoir-faire (qualifications/autres attributions)."
-
-// CarteProfessionnel
-* extension[as-ext-practitionerrole-smartcard] ^short = "Numéro de carte du professionnel."
-* extension[as-ext-practitionerrole-smartcard] ^comment = "Synonyme MOS : CarteProfessionnel"
-
+    AsPractitionerRoleNameExtension named as-ext-practitionerrole-name 0..* MS and  // nom d'exercice + prénom d'exercice
+    AsPractitionerRoleRegistrationExtension named as-ext-practitionerrole-registration 0..* MS and // inscription ordre
+    AsPractitionerRoleEducationLevelExtension named as-ext-practitionerrole-education-level 0..* MS and // under discussion
+    AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..* MS and // carte cpx
+    AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS and //  certificat
+	AsPractitionerRoleEndCauseExtension named as-ext-practitionerrole-end-cause 0..1 MS and // motif de fin d’activité, renseigné si period.end not null
+	AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..1 MS and // secteur de conventionnement
+	AsPractitionerRoleHasCas named as-ext-practitionerrole-hascas 0..1 MS and // Option pratique tarifaire maîtrisée
+	AsPractitionerRoleVitaleAccepted named as-ext-practitionerrole-vitale-accepted 0..1 MS // Indicateur carte Vitale acceptée
+	
 /* PractitionerRole.identifier */
 * identifier MS
-* identifier ^comment = "Synonyme MOS : idFonctionnel"
+* identifier ^comment = "Synonyme : idFonctionnel"
 * identifier ^short = "identifiant métier calculé à partir des identifiants techniques de l'exercice professionnel et la situation d'exercice."
 
 // PractitionerRole.identifier.value
@@ -49,7 +38,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 
 // PractitionerRole.active
 * active MS
-* active ^short = "La sitation d'exercice est-elle active? (active | inactive)"
+* active ^short = "La situation d'exercice est-elle active? (active | inactive)"
 * active ^comment = "true par défaut; false pour les situations d’exercices supprimées"
 
 /* PractitionerRole.period */ 
@@ -58,7 +47,7 @@ Description: 	"Profil créé à partir de la ressource PractitionerRole dans le 
 
 // dateDebutActivite
 * period.start ^short = "[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié."
-* period.start ^comment = "Synonyme MOS : dateDebutActivite"
+* period.start ^comment = "Synonyme : dateDebutActivite"
 
 // dateFinActivite
 * period.end ^short = "[Donnée restreinte] : Date de fin de l’activité."

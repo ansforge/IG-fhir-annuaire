@@ -1,8 +1,8 @@
 Profile: AsAddressExtendedProfile
 Parent: FrAddress
-Title: "As Address Extended Profile (datatype)"
+Title: "AS Address Extended Datatype Profile"
 Id: as-address-extended
-Description: "Datatype profile créé dans le contexte de l'Annuaire Santé pour prise en compte des spécificités de l'adresse postale française"
+Description: "Datatype profile créé à partir de FrAddress dans le contexte de l'Annuaire Santé pour slicer  Address.line."
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
