@@ -30,7 +30,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Device.extension:as-ext-device-number-authorization-arhgos","Device.extension","as-ext-device-number-authorization-arhgos","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-number-authorization-arhgos]]} {[]}
-","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd.","Synonyme MOS : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd.","Synonyme : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Device.extension:as-ext-device-authorization-date-device","Device.extension","as-ext-device-authorization-date-device","","",0,1,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-authorization-date-device]]} {[]}
@@ -50,7 +50,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Device.identifier","Device.identifier","","","",0,*,"Y","","","Identifier {[]} {[]}
-","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Unique instance identifiers assigned to a device by manufacturers other organizations or owners.","Synonyme MOS : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"Device.identifier",0,*,"ele-1
+","Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.","Unique instance identifiers assigned to a device by manufacturers other organizations or owners.","Synonyme : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"Device.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]",".id","FiveWs.identifier","The serial number which is a component of the production identifier (PI), a conditional, variable portion of a UDI.   The identifier.type code should be set to “SNO”(Serial Number) and the system left empty."
 "Device.definition","Device.definition","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/DeviceDefinition]]}
@@ -151,7 +151,7 @@ Sinon, si le matériel est inactif =” inactive”","","","","","","","","",,"r
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a",".lotNumberText","FiveWs.what[x]","The lot or batch number within which a device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI."
 "Device.serialNumber","Device.serialNumber","","","",0,1,"Y","","","string {[]} {[]}
-","Numéro de série de l'équipement matériel lourd","The serial number assigned by the organization when the device was manufactured.","Synonyme MOS : numeroSerie","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"ele-1
+","Numéro de série de l'équipement matériel lourd","The serial number assigned by the organization when the device was manufactured.","Synonyme : numeroSerie","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a",".playedRole[typeCode=MANU].id","FiveWs.what[x]"
 "Device.deviceName","Device.deviceName","","","",0,*,"","","","BackboneElement {[]} {[]}
@@ -192,7 +192,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a",".playedRole[typeCode=MANU].id","FiveWs.what[x]"
 "Device.type","Device.type","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
-","Code définissant l'équipement matériel lourd (EML) soumis à autorisation.","The kind or type of device.","Synonyme MOS : equipementMaterielLourd","","","","","","","","",,"required","Liste des types d'EML","https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS","",,,,"Device.type",0,1,"ele-1
+","Code définissant l'équipement matériel lourd (EML) soumis à autorisation.","The kind or type of device.","Synonyme : equipementMaterielLourd","","","","","","","","",,"required","Liste des types d'EML","https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS","",,,,"Device.type",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD"
 "Device.specialization","Device.specialization","","","",0,*,"","","","BackboneElement {[]} {[]}
@@ -291,7 +291,7 @@ qty-3:If a code for the unit is present, the system SHALL also be present {code.
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}","n/a","The target of a resource reference is a RIM entry point (Act, Role, or Entity)",".playedRole[typeCode=USED].scoper.playedRole[typeCode=PAT]","FiveWs.subject[x]","FiveWs.subject"
 "Device.owner","Device.owner","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization]]}
-","Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd.","An organization that is responsible for the provision and ongoing maintenance of the device.","Synonyme MOS : idStructure","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
+","Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd.","An organization that is responsible for the provision and ongoing maintenance of the device.","Synonyme : idStructure","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}","n/a","The target of a resource reference is a RIM entry point (Act, Role, or Entity)",".playedRole[typeCode=OWN].scoper","FiveWs.source"
 "Device.contact","Device.contact","","","",0,*,"","","","ContactPoint {[]} {[]}

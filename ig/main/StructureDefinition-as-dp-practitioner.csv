@@ -33,7 +33,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","nationnalite","Nationalité du professionnel","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Practitioner.extension:as-ext-practitioner-authorization","Practitioner.extension","as-ext-practitioner-authorization","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization]]} {[]}
+"Practitioner.extension:as-ext-frpractitioner-authorization","Practitioner.extension","as-ext-frpractitioner-authorization","","",0,*,"Y","","","Extension {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization]]} {[]}
 ","AutorisationExercice","Il s'agit d'une autorisation délivrée par le Ministère de la Santé ou par l'Ordre au professionnel pour accès à l'exercice de la profession.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -70,7 +70,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Practitioner.identifier.type","Practitioner.identifier.type","","","",1,1,"","","Y","CodeableConcept {[]} {[]}
-","Type d’identifiant national de la personne physique.","A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.","Synonymes MOS : typeIdNat_PP,
+","Type d’identifiant national de la personne physique.","A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.","Synonyme : typeIdNat_PP,
 Les codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne","Allows users to make use of identifiers when the identifier system is not known.","","","","","","","",,"extensible","","http://interopsante.org/fhir/ValueSet/fr-practioner-identifier-type","",,,,"Identifier.type",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -126,16 +126,17 @@ Pour un employé identifié au sein de sa structure, OID de l'établissement, br
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Practitioner.identifier.value","Practitioner.identifier.value","","","",1,1,"","","Y","string {[]} {[]}
-","Identifiant national de la personne physique.","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","Synonyme MOS : idPP","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"ele-1
+","Identifiant national de la personne physique.","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","Synonyme : idPP
+ Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Practitioner.identifier.period","Practitioner.identifier.period","","","",0,1,"","","Y","Period {[]} {[]}
+"Practitioner.identifier.period","Practitioner.identifier.period","","","",0,0,"","","Y","Period {[]} {[]}
 ","Time period when id is/was valid for use","Time period during which identifier is/was valid for use.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
 
 Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"Identifier.period",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
-"Practitioner.identifier.assigner","Practitioner.identifier.assigner","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"Practitioner.identifier.assigner","Practitioner.identifier.assigner","","","",0,0,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that issued id (may be just text)","Organization that issued/manages the identifier.","The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.","","","","","","","","",,,,,"",,,,"Identifier.assigner",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
@@ -147,7 +148,7 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 ","Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil","A human's name with the ability to identify parts and usage.","Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts might or might not be imbued with some implicit meaning; various cultures associate different importance with the name parts and the degree to which systems must care about name parts around the world varies widely.","The name(s) that a Practitioner is known by. Where there are multiple, the name that the practitioner is usually known as should be used in the display.","","","","","","","",,,,,"",,,,"Practitioner.name",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Practitioner.name.id","Practitioner.name.id","","","",0,1,"","","","string {[]} {[]}
+"Practitioner.name.id","Practitioner.name.id","","","",0,0,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "Practitioner.name.extension","Practitioner.name.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
@@ -164,7 +165,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","usual | official | temp | nickname | anonymous | old | maiden","Identifies the purpose for this name.","« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)","Allows the appropriate name for a particular context of use to be selected from among a set of names.","","","","","","","",,"required","The use of a human name.","http://hl7.org/fhir/ValueSet/name-use","",,,,"HumanName.use",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Practitioner.name.text","Practitioner.name.text","","","",0,1,"","","Y","string {[]} {[]}
+"Practitioner.name.text","Practitioner.name.text","","","",0,0,"","","Y","string {[]} {[]}
 ","Text representation of the full name","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -179,14 +180,14 @@ middle name","",0,0,"","","Y","string {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Practitioner.name.prefix","Practitioner.name.prefix","","","",0,1,"","","Y","string {[]} {[]}
-","Civilité de la personne physique.","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","Synonyme MOS : civilite","","","","","","","","",,"required","Civilités des personnes physiques du RASS","https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS","",,,,"HumanName.prefix",0,*,"ele-1
+","Civilité de la personne physique.","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","Synonyme : civilite","","","","","","","","",,"required","Civilités des personnes physiques du RASS","https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS","",,,,"HumanName.prefix",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Practitioner.name.suffix","Practitioner.name.suffix","","","",0,*,"","","Y","string {[]} {[]}
+"Practitioner.name.suffix","Practitioner.name.suffix","","","",0,0,"","","Y","string {[]} {[]}
 ","jeu de valeurs pour spécifier le titre de la personne","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.","Note that FHIR strings SHALL NOT exceed 1MB in size","","","","","","","","",,"extensible","Civilités d'exercice d'un professionnel du RASS","https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS","",,,,"HumanName.suffix",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Practitioner.name.period","Practitioner.name.period","","","",0,1,"","","Y","Period {[]} {[]}
+"Practitioner.name.period","Practitioner.name.period","","","",0,0,"","","Y","Period {[]} {[]}
 ","Time period when name was/is in use","Indicates the period of time when this name was valid for the named person.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
 
 Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).","Allows names to be placed in historical context.","","","","","","","",,,,,"",,,,"HumanName.period",0,1,"ele-1
@@ -198,7 +199,7 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}"
 "Practitioner.telecom:mailbox-mss","Practitioner.telecom","mailbox-mss","","",0,*,"","","","ContactPoint {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss]]} {[]}
-","Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé.","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Synonyme MOS : boiteLettreMSS","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
+","Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé.","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Synonyme : boiteLettreMSS","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}"
 "Practitioner.telecom:mailbox-mss.id","Practitioner.telecom.id","","","",0,1,"","","","string {[]} {[]}
@@ -237,15 +238,15 @@ Period is not used for a duration (a measure of elapsed time). See [Duration](da
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
 "Practitioner.address","Practitioner.address","","","",0,0,"Y","","","Address {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended]]} {[]}
-","[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel.","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Synonyme MOS : adresseCorrespondance","The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations.","","","","","","","",,,,,"",,,,"Practitioner.address",0,*,"ele-1
+","[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel.","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Synonyme : adresseCorrespondance","The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations.","","","","","","","",,,,,"",,,,"Practitioner.address",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Practitioner.gender","Practitioner.gender","","","",0,0,"Y","","Y","code {[]} {[]}
-","[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin.","Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.","Synonyme MOS : sexeAdministratif","Needed to address the person correctly.","","","","","","","",,"required","The gender of a person used for administrative purposes.","http://hl7.org/fhir/ValueSet/administrative-gender","",,,,"Practitioner.gender",0,1,"ele-1
+","[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin.","Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.","Synonyme : sexeAdministratif","Needed to address the person correctly.","","","","","","","",,"required","The gender of a person used for administrative purposes.","http://hl7.org/fhir/ValueSet/administrative-gender","",,,,"Practitioner.gender",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Practitioner.birthDate","Practitioner.birthDate","","","",0,0,"Y","","Y","date {[]} {[]}
-","[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles.","The date of birth for the practitioner.","Synonyme MOS : dateNaissance","Needed for identification.","","","","","","","",,,,,"",,,,"Practitioner.birthDate",0,1,"ele-1
+","[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles.","The date of birth for the practitioner.","Synonyme : dateNaissance","Needed for identification.","","","","","","","",,,,,"",,,,"Practitioner.birthDate",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Practitioner.photo","Practitioner.photo","","","",0,0,"Y","","","Attachment {[]} {[]}
@@ -750,11 +751,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration).","Qualifications are often for a limited period of time, and can be revoked.","","","","","","","",,,,,"",,,,"Practitioner.qualification.period",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
-"Practitioner.qualification.issuer","Practitioner.qualification.issuer","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"Practitioner.qualification.issuer","Practitioner.qualification.issuer","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that regulates and issues the qualification","Organization that regulates and issues the qualification.","References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.","","","","","","","","",,,,,"",,,,"Practitioner.qualification.issuer",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "Practitioner.communication","Practitioner.communication","","","",0,0,"Y","","","CodeableConcept {[CanonicalType[http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed]]} {[]}
-","Langue parlée.","A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.","Synonyme MOS : langueParlee","Knowing which language a practitioner speaks can help in facilitating communication with patients.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS","",,,,"Practitioner.communication",0,*,"ele-1
+","Langue parlée.","A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.","Synonyme : langueParlee","Knowing which language a practitioner speaks can help in facilitating communication with patients.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS","",,,,"Practitioner.communication",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
