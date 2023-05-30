@@ -1,14 +1,14 @@
 ﻿AnnuaireSante : Validation Results
 =========================================
 
-err = 2, warn = 312, info = 49
+err = 2, warn = 313, info = 47
 IG Publisher Version: 1.3.13
-Generated Tue May 30 16:42:27 UTC 2023. FHIR version 4.0.1 for ans.fhir.fr.annuaire#1.0.0-ballot (canonical = http://interop.esante.gouv.fr/ig/fhir/annuaire)
+Generated Tue May 30 16:56:37 UTC 2023. FHIR version 4.0.1 for ans.fhir.fr.annuaire#1.0.0-ballot (canonical = http://interop.esante.gouv.fr/ig/fhir/annuaire)
  Build Errors : 1154 / 7 / 0
  /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/CapabilityStatement-AsClientCapabilityStatement : 0 / 0 / 1
  /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/ImplementationGuide-ans.fhir.fr.annuaire : 0 / 0 / 1
  /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/Practitioner-as-dp-practitioner-adeli-identifier-exemple : 0 / 1 / 3
- /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/Practitioner-as-dp-practitioner-rpps-identifier-exemple : 2 / 2 / 5
+ /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/Practitioner-as-dp-practitioner-rpps-identifier-exemple : 2 / 3 / 3
  /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/StructureDefinition-as-address-extended : 0 / 5 / 2
  /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/StructureDefinition-as-codeableconcept-timed : 0 / 1 / 1
  /home/runner/work/IG-fhir-annuaire/IG-fhir-annuaire/fsh-generated/resources/StructureDefinition-as-device : 0 / 3 / 1
@@ -1229,11 +1229,10 @@ WARNING: Practitioner/as-dp-practitioner-adeli-identifier-exemple: Practitioner.
 INFORMATION: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.identifier[0].type.coding[0]: Code System URI 'http://interopsante.org/CodeSystem/fr-v2-0203' is unknown so the code cannot be validated
 INFORMATION: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.identifier[1].type.coding[0]: Code System URI 'http://interopsante.org/CodeSystem/fr-v2-0203' is unknown so the code cannot be validated
 WARNING: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.name[0].prefix[0]: ValueSet https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS not found by validator
-INFORMATION: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.qualification[0].code.coding[0]: Code System URI 'https://mos.esante.gouv.fr/NOS/TRE_R48-DiplomeEtatFrancais/FHIR/TRE-R48-DiplomeEtatFrancais' is unknown so the code cannot be validated
-INFORMATION: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.qualification[0].code.coding[1]: Code System URI 'https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS' is unknown so the code cannot be validated
+WARNING: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.qualification[0].code.coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.qualification[0].code.coding[1]: A code with no system has no defined meaning. A system should be provided
 ERROR: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.qualification[0].code.coding[0]: Slicing cannot be evaluated: Could not match discriminator (1) for slice [system] in profile Practitioner.qualification.code.coding:degreeType - the discriminator http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.0.0-ballot does not have fixed value, binding or existence assertions
 ERROR: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.qualification[0].code.coding[1]: Slicing cannot be evaluated: Could not match discriminator (1) for slice [system] in profile Practitioner.qualification.code.coding:degreeType - the discriminator http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.0.0-ballot does not have fixed value, binding or existence assertions
-WARNING: Practitioner/as-dp-practitioner-rpps-identifier-exemple: Practitioner.qualification[0].code.coding[0]: ValueSet https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS not found by validator
 == fsh-generated/resources/StructureDefinition-as-address-extended.json ==
 INFORMATION: StructureDefinition/as-address-extended: StructureDefinition.snapshot.element[23].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 WARNING: StructureDefinition/as-address-extended: StructureDefinition.differential.element[8].binding: The valueSet reference https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS on element Address.district could not be resolved
