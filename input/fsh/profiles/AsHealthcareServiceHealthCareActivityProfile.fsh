@@ -1,4 +1,4 @@
-Profile: AsHealthcareServiceHealthCareActivityProfile
+Profile: AsHealthcareServiceHealthcareActivityProfile
 Parent: HealthcareService
 Id: as-healthcareservice-healthcare-activity
 Title: "AS HealthcareService HealthCare Activity Profile"

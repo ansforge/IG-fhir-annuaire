@@ -1,7 +1,7 @@
-Profile: AsDpHealthcareServiceHealthCareActivityProfile
+Profile: AsDpHealthcareServiceHealthcareActivityProfile
 Parent: as-healthcareservice-healthcare-activity
 Id: as-dp-healthcareservice-healthcare-activity
-Title: "AS Donnée Publique HealthcareService HealthCare Activity Profile"
+Title: "AS Donnée Publique HealthcareService Healthcare Activity Profile"
 Description: "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé."
 
 * active 1..1 // true par défaut; false pour  flaguer les activités de soins supprimées entre deux dates pour permettre aux utilisateurs du delta d'identifier les ressources supprimées. 
