@@ -11,7 +11,7 @@
   <name value="AnnuaireSante"/>
   <title value="Annuaire Santé"/>
   <status value="active"/>
-  <date value="2023-05-26T12:00:53+00:00"/>
+  <date value="2023-06-02T12:29:31+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -711,6 +711,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/as-data-trace"/>
+      </reference>
+      <name value="AS DataTrace"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/as-ext-device-authorization-date-device"/>
       </reference>
       <name value="AS Device Authorization Date Device Extension"/>
@@ -968,6 +979,28 @@
       </reference>
       <name value="AS PractitionerRole Vitale Accepted"/>
       <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire l’indicateur Carte Vitale acceptée (oui/non)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/type-systeme-information-vs"/>
+      </reference>
+      <name value="Type de système d'information"/>
+      <description value="Type de système d'information pouvant alimenter l'annuaire santé."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/type-systeme-information-cs"/>
+      </reference>
+      <name value="Type de système d'information"/>
+      <description value="Type de système d'information pouvant alimenter l'annuaire santé."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-05-26T12:00:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-02T12:29:31+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -803,6 +803,18 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-data-trace> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-data-trace" ]
+       ] ;
+       fhir:name [ fhir:v "AS DataTrace" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-authorization-date-device> ;
          fhir:reference [ fhir:v "StructureDefinition/as-ext-device-authorization-date-device" ]
        ] ;
@@ -1084,6 +1096,30 @@
        ] ;
        fhir:name [ fhir:v "AS PractitionerRole Vitale Accepted" ] ;
        fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour décrire l’indicateur Carte Vitale acceptée (oui/non)." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/type-systeme-information-vs> ;
+         fhir:reference [ fhir:v "ValueSet/type-systeme-information-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Type de système d'information" ] ;
+       fhir:description [ fhir:v "Type de système d'information pouvant alimenter l'annuaire santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/type-systeme-information-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/type-systeme-information-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Type de système d'information" ] ;
+       fhir:description [ fhir:v "Type de système d'information pouvant alimenter l'annuaire santé." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
