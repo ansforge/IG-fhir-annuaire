@@ -6,7 +6,7 @@ L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) e
 
 En publiant ces données, le service Annuaire Santé permet à ces clients de vérifier l’identité des professionnels de santé, leurs qualifications (diplômes et spécialités) et leurs activités.
 
-Les nouveaux services de publication de l'Annuaire Santé permettent d’exposer ce référentiel, via une API RESTfull, au format JSON, structurés selon la norme d’interopérabilité FHIR.
+Les nouveaux services de publication de l'Annuaire Santé permettent d’exposer ce référentiel, via une API RESTful, au format JSON, structurés selon la norme d’interopérabilité FHIR.
 
 Ce guide d'implémentation remplace l'ancien package ANS.annuaire.fhir.r4 0.2.0.
 
