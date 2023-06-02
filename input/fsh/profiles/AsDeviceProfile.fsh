@@ -7,6 +7,12 @@ Description: "Profil créé à partir de Device dans le contexte de l'Annuaire S
 // profils references
 * owner only Reference(FrOrganization or AsOrganizationProfile)
 
+// Data trace
+* meta.extension ^slicing.discriminator.type = #value
+* meta.extension ^slicing.discriminator.path = "url"
+* meta.extension ^slicing.rules = #open
+* meta.extension contains as-data-trace named as-data-trace 0..1 MS
+
 // extensions
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

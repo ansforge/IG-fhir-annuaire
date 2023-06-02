@@ -4,6 +4,13 @@ Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
 Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
 
+// Data trace
+* meta.extension ^slicing.discriminator.type = #value
+* meta.extension ^slicing.discriminator.path = "url"
+* meta.extension ^slicing.rules = #open
+* meta.extension contains as-data-trace named as-data-trace 0..1 MS
+
+
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
