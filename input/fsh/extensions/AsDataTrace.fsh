@@ -33,7 +33,7 @@ Description:  "Type de système d'information pouvant alimenter l'annuaire sant�
 * #RPPS "Répertoire partagé des professionnels de santé" "Répertoire partagé des professionnels de santé"
 * #ADELI "Numéro ADELI" "Adeli est un répertoire national qui recense les professionnels de santé réglementés, qu'ils exercent en libéral ou salarial."
 * #FINESS "Fichier national des établissements sanitaires et sociaux" "FINESS (Fichier National des Etablissements Sanitaires et Sociaux) est le répertoire national de référence des personnes morales intervenant dans les domaines sanitaire, médico-social et social et de l’enseignement des professions sanitaires et sociales."
-* #CG "CG" "CG"
+* #CG "CG" "SI CPS"
 
 
 ValueSet: TypeSystemeInformationVS
