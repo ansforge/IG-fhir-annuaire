@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Annuaire Santé</span>
             <br/>
-            <span style="display:inline-block;">0.0.3 - ci-build
+            <span style="display:inline-block;">1.0.0-ballot - STU1
 
 
             </span>
@@ -87,27 +87,11 @@
   <li>
     <a href="index.html">Accueil</a>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="construction_des_flux.html">Construction des flux</a>
-      </li>
-      <li>
-        <a href="st_flux1.html">Flux 01</a>
-      </li>
-      <li>
-        <a href="st_flux2.html">Flux 02</a>
-      </li>
-    </ul>
+  <li>
+    <a href="liste_profils.html">Liste des profils</a>
   </li>
   <li>
     <a href="artifacts.html">Ressources de conformité</a>
-  </li>
-  <li>
-    <a href="tests.html">Tests</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
@@ -115,10 +99,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="securite.html">Sécurité</a>
+        <a href="downloads.html">Téléchargements et usage</a>
       </li>
       <li>
-        <a href="downloads.html">Téléchargements et usage</a>
+        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
       </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
@@ -151,7 +135,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="specifications_techniques.html">next&gt;</a>
+          | <a href="liste_profils.html">next&gt;</a>
 
           </span>
 
@@ -182,13 +166,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-  <table class="colsd">
+  <table class="colsi">
 
     <tr>
-      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire"/></span>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.0.3<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire|0.0.3"/></span>
+      <span class="copy-text">1.0.0-ballot<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire|1.0.0-ballot"/></span>
       </td>
     </tr>
 
@@ -202,16 +186,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <td colspan="4">
         
-          Draft
+          Active
           
-            as of 2023-05-16
+            as of 2023-06-08
           
         
       </td>
 
 
 
-      <td><i>Computable Name</i>: <span style="font-family: monospace;">AnnuaireSant</span></td>
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">AnnuaireSante</span></td>
     </tr>
 
 
@@ -228,50 +212,55 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#auteurs-et-contributeurs" id="markdown-toc-auteurs-et-contributeurs">Auteurs et contributeurs</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <h3 id="introduction">Introduction</h3>
 
-<p>Il s’agit d’un exemple d’Implementation Guide de l’ANS, à prendre comme base pour créer de nouveaux IGs.</p>
+<h4 id="contexte-métier-du-projet">Contexte métier du projet</h4>
 
-<p>Selon la documentation officielle, cette page d’accueil de l’IG doit contenir :</p>
+<p>L’<a href="https://esante.gouv.fr/produits-services/annuaire-sante">Annuaire Santé</a> est un annuaire national de référence des professionnels de santé, avec les données opposables du RPPS, d’ADELI et de FINESS, complétées par les données des CPx, des BAL MSSanté et d’Ameli.fr, pour un usage orienté professionnel. C’est le maillon central de l’identification des acteurs de santé en France.</p>
+
+<p>En publiant ces données, le service Annuaire Santé permet à ces clients de vérifier l’identité des professionnels de santé, leurs qualifications (diplômes et spécialités) et leurs activités.</p>
+
+<p>Les nouveaux services de publication de l’Annuaire Santé permettent d’exposer ce référentiel, via une API RESTful, au format JSON, structurés selon la norme d’interopérabilité FHIR.</p>
+
+<p>Ce guide d’implémentation remplace l’ancien package ANS.annuaire.fhir.r4 0.2.0.</p>
+
+<h4 id="contexte-technique-du-projet">Contexte technique du projet</h4>
+
+<p>L’objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir consommer ce référentiel via l’API FHIR.</p>
+
+<p>On s’intéresse ici au modèle d’exposition des données publiques de l’Annuaire.</p>
+
+<h5 id="ressources-profilées">Ressources profilées</h5>
+
 <ul>
-  <li>De quoi parle l’IG (En termes non expert, compréhensible par un patient)</li>
-  <li>Des détails techniques sur le contexte et le besoin</li>
+  <li>Organization : Ressource comportant toutes les données publiques des « <a href="https://mos.esante.gouv.fr/4.html#_f6152a96-2f8f-4f69-89f5-18f024d4b4d8">structures</a> »</li>
+  <li>Device : Ressource comportant toutes le données publiques concernant les données complémentaires FINESS « <a href="https://mos.esante.gouv.fr/5.html#_1a21e9b8-d686-41ff-806d-38572f961ec6">équipements matériels lourds</a> »</li>
+  <li>HealthcareService : Ressource divisée en deux profils pour décrire les « <a href="https://mos.esante.gouv.fr/5.html#_2f0d6658-e0f7-4486-a646-424b09f01f76">activités de soin</a> » et les « <a href="https://mos.esante.gouv.fr/5.html#_def51d8f-2eb8-47f8-9c30-b03709096666">équipements sociaux </a> »
+    <ul>
+      <li>HealthcareService-SocialEquipment pour les équipements sociaux</li>
+      <li>HealthcareService-HealthCareActivity pour les activités de soin</li>
+    </ul>
+  </li>
+  <li>Practitioner : Ressource comportant toutes les données publiques concernant les données d’identification pérennes des « <a href="https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b">professionnels de santé</a> »</li>
+  <li>PractitionerRole : Ressource comportant toutes les données publiques concernant les données des « <a href="https://mos.esante.gouv.fr/2.html#_5579aac4-b414-41f1-8569-2e99403e3af3">exercices professionnels</a> » et des « <a href="https://mos.esante.gouv.fr/2.html#_86e1685b-9e1d-47fb-bb66-d23ca0eb9679">situations d’exercice</a> » des professionnels</li>
 </ul>
 
-<p>Les principales sections de l’IG  sont :</p>
+<h5 id="profils-utilisés">Profils utilisés</h5>
+
 <ul>
-  <li>Le contexte de l’IG et les points dont les implémenteurs doivent être familier avant dans s’avoir plus sur l’IG</li>
-  <li>Ce que les Implémenteurs doivent mettre en place</li>
-  <li>Un onglet “télécharger”</li>
+  <li>hl7.fhir.fr.core (1.1.0) : « <a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitioner">FrPractitioner</a> », « <a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitionerRoleExercice">FrPractitionerRoleExercice</a> », « <a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrOrganization">FrOrganization</a> », « <a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrHumanName">FrHumanName</a> », « <a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrContactPoint">FrContactPoint</a> » et « <a href="https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;canonical=http://interopsante.org/fhir/StructureDefinition/FrAddress">FrAddress</a> »</li>
 </ul>
 
-<h3 id="auteurs-et-contributeurs">Auteurs et contributeurs</h3>
+<h4 id="liens-utiles-">Liens utiles :</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Role</th>
-      <th>Nom</th>
-      <th>Organisation</th>
-      <th>Contact</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Primary Editor</strong></td>
-      <td>Prenom Nom</td>
-      <td>Agence du Numérique en Santé</td>
-      <td>prenom.nom@address.email</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li><a href="https://ansforge.github.io/annuaire-sante-fhir-documentation/">Documentation API FHIR Annuaire Santé en libre accès</a></li>
+  <li><a href="https://portail.openfhir.annuaire.sante.fr/">Démonstration</a></li>
+</ul>
+
 
 
 
@@ -309,7 +298,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="specifications_techniques.html">next&gt;</a>
+                <a href="liste_profils.html">next&gt;</a>
 
               </td>
             </tr>
@@ -319,12 +308,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#0.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 16, 2023 15:53+0000">2023-05-16</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 8, 2023 09:25+0000">2023-06-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="http://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
+                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-annuaire/issues/new">New Issue</a>
                 
 
           </span>
