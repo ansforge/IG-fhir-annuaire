@@ -21,6 +21,7 @@
       <sch:assert test="count(f:gender) &lt;= 0">gender: maximum cardinality of 'gender' is 0</sch:assert>
       <sch:assert test="count(f:birthDate) &lt;= 0">birthDate: maximum cardinality of 'birthDate' is 0</sch:assert>
       <sch:assert test="count(f:photo) &lt;= 0">photo: maximum cardinality of 'photo' is 0</sch:assert>
+      <sch:assert test="count(f:qualification) &lt;= 1">qualification: maximum cardinality of 'qualification' is 1</sch:assert>
       <sch:assert test="count(f:communication) &lt;= 0">communication: maximum cardinality of 'communication' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>

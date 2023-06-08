@@ -290,7 +290,7 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","Image of the person","Image of the person.","When providing a summary view (for example with Observation.value[x]) Attachment should be represented with a brief display text such as ""Signed Procedure Consent"".","Many EHR systems have the capability to capture an image of patients and personnel. Fits with newer social media usage too.","","","","","","","",,,,,"",,,,"Practitioner.photo",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 att-1:If the Attachment has data, it SHALL have a contentType {data.empty() or contentType.exists()}"
-"Practitioner.qualification","Practitioner.qualification","","","",0,*,"Y","","","BackboneElement {[]} {[]}
+"Practitioner.qualification","Practitioner.qualification","","","",0,1,"Y","","","BackboneElement {[]} {[]}
 ","Qualifications obtained by training and certification/Diplômes","Qualifications obtained by training and certification/Diplômes obtenus","","","","","","","","","",,,,,"",,,,"Practitioner.qualification",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -315,8 +315,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Practitioner.qualification.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","Coded representation of the qualification","Coded representation of the qualification.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"example","Specific qualification the practitioner has to provide a service.","http://terminology.hl7.org/ValueSet/v2-2.7-0360","",,,,"Practitioner.qualification.code",1,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+",""
 "Practitioner.qualification.code.id","Practitioner.qualification.code.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "Practitioner.qualification.code.extension","Practitioner.qualification.code.extension","","extensions
@@ -776,6 +775,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Practitioner.qualification.code.coding:degreeR226.userSelected","Practitioner.qualification.code.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"Practitioner.qualification.code.coding:degreeType","Practitioner.qualification.code.coding","degreeType","","",0,*,"Y","","Y","Coding {[]} {[]}
+","Type de diplôme, par exemple : DE, DES, CES, etc.","A reference to a code defined by a terminology system.","typeDiplome","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J81-TypeDiplome-RASS/FHIR/JDV-J81-TypeDiplome-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Practitioner.qualification.code.text","Practitioner.qualification.code.text","","","",0,1,"","","Y","string {[]} {[]}
