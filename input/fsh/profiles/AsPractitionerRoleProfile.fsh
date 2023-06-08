@@ -3,7 +3,15 @@ Parent: 		FrPractitionerRoleExercice
 Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
 Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée."
-/* profils refences */
+
+// Data trace
+* meta.extension ^slicing.discriminator.type = #value
+* meta.extension ^slicing.discriminator.path = "url"
+* meta.extension ^slicing.rules = #open
+* meta.extension contains as-data-trace named as-data-trace 0..1 MS
+
+
+/* profils references */
 * practitioner MS 
 * organization MS
 * location MS
