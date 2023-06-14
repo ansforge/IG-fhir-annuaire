@@ -113,3 +113,9 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * communication ^short = "Langue parlée."
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
+
+
+* qualification.code.coding contains degreeType 0..* MS
+* qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
+* qualification.code.coding[degreeType] ^comment = "typeDiplome"
+* qualification.code.coding[degreeType] ^short = "Type de diplôme, par exemple : DE, DES, CES, etc."
