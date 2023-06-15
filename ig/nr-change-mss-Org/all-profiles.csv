@@ -6136,57 +6136,6 @@ For searching knowing previous names that the organization was known by can be v
 ","",,"open","Organization.telecom",0,*,"ele-1
 org-3","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}org-3:The telecom of an organization can never be of use 'home' {where(use = 'home').empty()}"
-"as-dp-organization","Organization.telecom.id","Organization.telecom.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-dp-organization","Organization.telecom.extension","Organization.telecom.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-dp-organization","Organization.telecom.extension:emailType","Organization.telecom.extension","emailType","extensions
-user content","",0,1,"","","","Extension {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType]]} {[]}
-","Type of email | type de messagerie électronique","Optional Extension Element - found in all resources.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-dp-organization","Organization.telecom.system","Organization.telecom.system","","","",1,1,"","","Y","code {[]} {[]}
-","phone | fax | email | pager | url | sms | other","Telecommunications form for contact point - what communications system is required to make use of the contact.","https://www.hl7.org/fhir/valueset-contact-point-system.html","","","","","","","","",,"required","Telecommunications form for contact point.","http://hl7.org/fhir/ValueSet/contact-point-system","",,,,"ContactPoint.system",0,1,"ele-1
-cpt-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-dp-organization","Organization.telecom.value","Organization.telecom.value","","","",1,1,"","","Y","string {[]} {[]}
-","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-dp-organization","Organization.telecom.use","Organization.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
-","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","« old » si les coordonnées de structure ont une date de fin","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","","","","",,"required","Use of contact point.","http://hl7.org/fhir/ValueSet/contact-point-use","",,,,"ContactPoint.use",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-dp-organization","Organization.telecom.rank","Organization.telecom.rank","","","",0,1,"","","Y","positiveInt {[]} {[]}
-","Specify preferred order of use (1 = highest)","Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.","Note that rank does not necessarily follow the order in which the contacts are represented in the instance.","","","","","","","","",,,,,"",,,,"ContactPoint.rank",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-dp-organization","Organization.telecom.period","Organization.telecom.period","","","",0,1,"","","Y","Period {[]} {[]}
-","Time period when the contact point was/is in use","Time period when the contact point was/is in use.","A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. ""the patient was an inpatient of the hospital for this time range"") or one value from the range applies (e.g. ""give to the patient between these two times"").
-
-Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
-"as-dp-organization","Organization.telecom.period.id","Organization.telecom.period.id","","","",0,0,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-dp-organization","Organization.telecom.period.extension","Organization.telecom.period.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"as-dp-organization","Organization.telecom.period.start","Organization.telecom.period.start","","","",0,0,"","","Y","dateTime {[]} {[]}
-","Starting time with inclusive boundary","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
-per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"as-dp-organization","Organization.telecom.period.end","Organization.telecom.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
-","End time with inclusive boundary, if not ongoing","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
-per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
 "as-dp-organization","Organization.telecom:mailbox-mss","Organization.telecom","mailbox-mss","","",0,0,"Y","","","ContactPoint {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss]]} {[]}
 ","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.","Human contact for the organization.","","","","","","","",,,,,"",,,,"Organization.telecom",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

@@ -34,18 +34,4 @@
       <sch:assert test="count(f:assigner) &lt;= 0">assigner: maximum cardinality of 'assigner' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Organization/f:telecom</sch:title>
-    <sch:rule context="f:Organization/f:telecom">
-      <sch:assert test="count(f:extension[@url = 'http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType']) &lt;= 1">extension with URL = 'http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType': maximum cardinality of 'extension' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Organization/f:telecom/f:period</sch:title>
-    <sch:rule context="f:Organization/f:telecom/f:period">
-      <sch:assert test="count(f:id) &lt;= 0">id: maximum cardinality of 'id' is 0</sch:assert>
-      <sch:assert test="count(f:start) &lt;= 0">start: maximum cardinality of 'start' is 0</sch:assert>
-      <sch:assert test="count(f:end) &lt;= 1">end: maximum cardinality of 'end' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
 </sch:schema>
