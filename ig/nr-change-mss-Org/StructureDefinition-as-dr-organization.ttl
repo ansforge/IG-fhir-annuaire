@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsDrOrganizationProfile"] ; # 
   fhir:title [ fhir:v "AS Donnée Restreinte Organization Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-06-15T11:25:47+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-15T14:56:56+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -4550,6 +4550,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Organization>
          ]
        ] ) ;
+       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
@@ -4950,10 +4951,17 @@
        ] )
      ] [
        fhir:id [ fhir:v "Organization.contact" ] ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "normative" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "4.0.0" ]
+       ] ) ;
        fhir:path [ fhir:v "Organization.contact" ] ;
-       fhir:short [ fhir:v "Point de contact." ] ;
+       fhir:short [ fhir:v "Contact for the organization for a certain purpose" ] ;
        fhir:definition [ fhir:v "Contact for the organization for a certain purpose." ] ;
-       fhir:comment [ fhir:v "Personne ou service agissant comme point de contact auprès d'une autre personne ou d'un autre service." ] ;
+       fhir:comment [ fhir:v "Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use." ] ;
        fhir:requirements [ fhir:v "Need to keep track of assigned contact points within bigger organization." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
@@ -4977,7 +4985,6 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
-       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]

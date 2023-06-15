@@ -407,7 +407,7 @@ cpt-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
-"Organization.telecom:mailbox-mss","Organization.telecom","mailbox-mss","","",0,*,"","","","ContactPoint {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss]]} {[]}
+"Organization.telecom:mailbox-mss","Organization.telecom","mailbox-mss","","",0,*,"Y","","","ContactPoint {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss]]} {[]}
 ","[DR] : Coordonnées téléphoniques spécifiques à l’usage de la BAL MSS.","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","mailBoxMSS.phone","Human contact for the organization.","","","","","","","",,,,,"",,,,"Organization.telecom",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}org-3:The telecom of an organization can never be of use 'home' {where(use = 'home').empty()}"
@@ -451,8 +451,8 @@ Reference is intended to point to a structure that can potentially be expressed 
 ","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Organization.contact","Organization.contact","","","",0,*,"Y","","","BackboneElement {[]} {[]}
-","Point de contact.","Contact for the organization for a certain purpose.","Personne ou service agissant comme point de contact auprès d'une autre personne ou d'un autre service.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"ele-1
+"Organization.contact","Organization.contact","","","",0,*,"","","","BackboneElement {[]} {[]}
+","Contact for the organization for a certain purpose","Contact for the organization for a certain purpose.","Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact.id","Organization.contact.id","","","",0,1,"","","","string {[]} {[]}

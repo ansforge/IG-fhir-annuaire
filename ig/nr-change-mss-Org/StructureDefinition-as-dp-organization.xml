@@ -23,7 +23,7 @@
   <name value="AsDpOrganizationProfile"/>
   <title value="AS Donnée Publique Organization Profile"/>
   <status value="active"/>
-  <date value="2023-06-15T11:25:47+00:00"/>
+  <date value="2023-06-15T14:56:56+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -4499,6 +4499,7 @@
         <xpath value="count(f:use[@value='home']) = 0"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Organization"/>
       </constraint>
+      <mustSupport value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -4876,9 +4877,9 @@
     </element>
     <element id="Organization.contact">
       <path value="Organization.contact"/>
-      <short value="Point de contact."/>
+      <short value="Contact for the organization for a certain purpose"/>
       <definition value="Contact for the organization for a certain purpose."/>
-      <comment value="Personne ou service agissant comme point de contact auprès d'une autre personne ou d'un autre service."/>
+      <comment value="Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use."/>
       <requirements value="Need to keep track of assigned contact points within bigger organization."/>
       <min value="0"/>
       <max value="0"/>
@@ -4899,7 +4900,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mustSupport value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>

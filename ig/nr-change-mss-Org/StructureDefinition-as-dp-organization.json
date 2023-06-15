@@ -10,7 +10,7 @@
   "name" : "AsDpOrganizationProfile",
   "title" : "AS Donnée Publique Organization Profile",
   "status" : "active",
-  "date" : "2023-06-15T11:25:47+00:00",
+  "date" : "2023-06-15T14:56:56+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -4672,6 +4672,7 @@
         "xpath" : "count(f:use[@value='home']) = 0",
         "source" : "http://hl7.org/fhir/StructureDefinition/Organization"
       }],
+      "mustSupport" : true,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -5066,9 +5067,9 @@
     {
       "id" : "Organization.contact",
       "path" : "Organization.contact",
-      "short" : "Point de contact.",
+      "short" : "Contact for the organization for a certain purpose",
       "definition" : "Contact for the organization for a certain purpose.",
-      "comment" : "Personne ou service agissant comme point de contact auprès d'une autre personne ou d'un autre service.",
+      "comment" : "Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.",
       "requirements" : "Need to keep track of assigned contact points within bigger organization.",
       "min" : 0,
       "max" : "0",
@@ -5089,7 +5090,6 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : true,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
