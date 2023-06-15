@@ -88,8 +88,6 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] MS
 * telecom[mailbox-mss] only as-mailbox-mss
-* telecom[mailbox-mss] ^short = "[DR] : Coordonnées téléphoniques spécifiques à l’usage de la BAL MSS."
-* telecom[mailbox-mss] ^comment = "mailBoxMSS.phone"
 
 // lien EG/EJ
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)."
