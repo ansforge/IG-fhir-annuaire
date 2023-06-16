@@ -79,10 +79,15 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * telecom.system ^comment = "https://www.hl7.org/fhir/valueset-contact-point-system.html"
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
 
-// Organization.contact
-* contact MS
-* contact ^short = "Point de contact."
-* contact ^comment = "Personne ou service agissant comme point de contact auprès d'une autre personne ou d'un autre service."
+// boiteLettresMSS
+
+// boiteLettreMSS
+* telecom ^slicing.rules = #open
+* telecom ^slicing.discriminator.type = #pattern
+* telecom ^slicing.discriminator.path = "code"
+* telecom contains mailbox-mss 0..*
+* telecom[mailbox-mss] MS
+* telecom[mailbox-mss] only as-mailbox-mss
 
 // lien EG/EJ
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)."
@@ -115,16 +120,6 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // Organization.endpoint
 * endpoint MS
 
-// boiteLettresMSS
-* contact.telecom ^slicing.rules = #open
-* contact.telecom ^slicing.discriminator.type = #pattern
-* contact.telecom ^slicing.discriminator.path = "code"
-* contact.telecom contains mailbox-mss 0..*
-* contact.telecom[mailbox-mss] only as-mailbox-mss
-* contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] ^short = "[DR] : responsable de la BAL MSS."
-* contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] ^comment = "Synonyme : mailBoxMSSresponsable"
-* contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] ^short = "[DR] : Coordonnées téléphoniques spécifiques à l’usage de la BAL MSS."
-* contact.telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] ^comment = "Synonyme : mailBoxMSS.phone"
 
 Invariant:   constr-bind-type
 Description: "Les valeurs possibles pour cet élément doivent provenir d’une des terminologies de référence suivantes :
