@@ -11,3 +11,4 @@ Description: "Profil applicatif créé à partir du profil générique as-organi
 * extension[as-ext-digital-certificate] 0..0
 * endpoint 0..0
 * telecom[mailbox-mss] 0..0
+* telecom.period 0..0 // telecom is used to show mail, fax, or org phone. History is only available for DR 
