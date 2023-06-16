@@ -84,8 +84,9 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #pattern
-* telecom ^slicing.discriminator.path = "code"
+* telecom ^slicing.discriminator.path = "code" // TODO : à réfléchir
 * telecom contains mailbox-mss 0..*
+
 * telecom[mailbox-mss] MS
 * telecom[mailbox-mss] only as-mailbox-mss
 
