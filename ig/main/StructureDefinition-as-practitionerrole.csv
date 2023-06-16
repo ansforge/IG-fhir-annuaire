@@ -327,7 +327,7 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}"
 "PractitionerRole.telecom","PractitionerRole.telecom","","","",0,*,"Y","","Y","ContactPoint {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPoint]]} {[]}
-","Details of a Technology mediated contact point | Coordonnées électroniques détaillées","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","","Often practitioners have a dedicated line for each location (or service) that they work at, and need to be able to define separate contact details for each of these.","","","","","","","",,,,,"","pattern:code}
+","Details of a Technology mediated contact point | Coordonnées électroniques détaillées","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","","Often practitioners have a dedicated line for each location (or service) that they work at, and need to be able to define separate contact details for each of these.","","","","","","","",,,,,"","profile:$this.resolve()}
 ","",,"open","PractitionerRole.telecom",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}"

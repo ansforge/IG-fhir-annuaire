@@ -38,33 +38,7 @@
     <sch:title>f:Organization/f:telecom</sch:title>
     <sch:rule context="f:Organization/f:telecom">
       <sch:assert test="count(f:extension[@url = 'http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType']) &lt;= 1">extension with URL = 'http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType': maximum cardinality of 'extension' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Organization/f:telecom/f:period</sch:title>
-    <sch:rule context="f:Organization/f:telecom/f:period">
-      <sch:assert test="count(f:id) &lt;= 0">id: maximum cardinality of 'id' is 0</sch:assert>
-      <sch:assert test="count(f:start) &lt;= 0">start: maximum cardinality of 'start' is 0</sch:assert>
-      <sch:assert test="count(f:end) &lt;= 1">end: maximum cardinality of 'end' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Organization/f:contact/f:telecom</sch:title>
-    <sch:rule context="f:Organization/f:contact/f:telecom">
-      <sch:assert test="count(f:extension[@url = 'http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType']) &lt;= 1">extension with URL = 'http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata']) &lt;= 1">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata': maximum cardinality of 'extension' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Organization/f:contact/f:telecom/f:extension</sch:title>
-    <sch:rule context="f:Organization/f:contact/f:telecom/f:extension">
-      <sch:assert test="count(f:extension[@url = 'type']) &lt;= 1">extension with URL = 'type': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'description']) &lt;= 1">extension with URL = 'description': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'responsible']) &lt;= 0">extension with URL = 'responsible': maximum cardinality of 'extension' is 0</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'service']) &lt;= 1">extension with URL = 'service': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'phone']) &lt;= 0">extension with URL = 'phone': maximum cardinality of 'extension' is 0</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'digitization']) &lt;= 1">extension with URL = 'digitization': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'publication']) &lt;= 1">extension with URL = 'publication': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:period) &lt;= 0">period: maximum cardinality of 'period' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
