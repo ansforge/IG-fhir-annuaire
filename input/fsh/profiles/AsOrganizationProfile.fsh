@@ -79,13 +79,12 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * telecom.system ^comment = "https://www.hl7.org/fhir/valueset-contact-point-system.html"
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
 
-// boiteLettresMSS
-
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
-* telecom ^slicing.discriminator.type = #pattern
-* telecom ^slicing.discriminator.path = "code"
+* telecom ^slicing.discriminator.type = #profile
+* telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
+
 * telecom[mailbox-mss] MS
 * telecom[mailbox-mss] only as-mailbox-mss
 

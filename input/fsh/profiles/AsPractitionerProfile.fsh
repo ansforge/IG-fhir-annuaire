@@ -95,8 +95,8 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
-* telecom ^slicing.discriminator.type = #pattern
-* telecom ^slicing.discriminator.path = "code"
+* telecom ^slicing.discriminator.type = #profile
+* telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé."
