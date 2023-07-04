@@ -4,8 +4,19 @@
   "fhirVersion": "4.0.1",
   "extensions": [
     {
-      "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-data-trace",
-      "title": "AS DataTrace",
+      "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata",
+      "title": "AS CodeableConceptTimed Metadata",
+      "types": [
+        "Period",
+        "string",
+        "Extension",
+        "dateTime",
+        "dateTime"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace",
+      "title": "AS Data Trace Extension",
       "types": [
         "CodeableConcept",
         "code",
@@ -59,17 +70,6 @@
         "UsageContext",
         "Dosage",
         "Meta"
-      ]
-    },
-    {
-      "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata",
-      "title": "AS CodeableConceptTimed Metadata",
-      "types": [
-        "Period",
-        "string",
-        "Extension",
-        "dateTime",
-        "dateTime"
       ]
     },
     {
@@ -838,7 +838,6 @@
     ],
     "http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType": [
       "ContactPoint",
-      "Organization.contact.telecom",
       "Organization.telecom",
       "Practitioner.telecom"
     ],
@@ -851,16 +850,16 @@
     "http://interopsante.org/fhir/StructureDefinition/FrServiceTypeDuration": [
       "PractitionerRole"
     ],
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-data-trace": [
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata": [
+      "CodeableConcept"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace": [
       "Device.meta",
       "HealthcareService.meta",
       "Location.meta",
       "Organization.meta",
       "Practitioner.meta",
       "PractitionerRole.meta"
-    ],
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata": [
-      "CodeableConcept"
     ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-device-Period-implantation": [
       "Device"
@@ -894,8 +893,7 @@
       "HealthcareService"
     ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata": [
-      "ContactPoint",
-      "Organization.contact.telecom"
+      "ContactPoint"
     ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence": [
       "Organization"
