@@ -1,4 +1,4 @@
-Profile: AsDrOrganizationProfile
+wProfile: AsDrOrganizationProfile
 Parent: as-organization
 Id: as-dr-organization
 Title: "AS Donnée Restreinte Organization Profile"
