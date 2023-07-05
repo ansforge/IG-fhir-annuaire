@@ -29,7 +29,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 // Contains rule
 * identifier contains idNatPs 0..*
-* identifier[idNatPs] ^short = "Une instance par identifiant (RPPS, ADELI, idNat_PS…)"
+* identifier[idNatPs] ^short = "Une instance par identifiant idNat_PS"
 
 // Practitioner.identifier.type
 * identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique."

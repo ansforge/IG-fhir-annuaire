@@ -24,7 +24,7 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // Contains rule
 * identifier contains idNatSt 0..*
 
-* identifier[idNatSt] ^short = "Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)."
+* identifier[idNatSt] ^short = "Une instance par identifiant idNat_Struct"
 
 
 * identifier[idNatSt].use = #official
