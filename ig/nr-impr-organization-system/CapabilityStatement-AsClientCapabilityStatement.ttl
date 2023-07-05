@@ -1,0 +1,458 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsClientCapabilityStatement> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AsClientCapabilityStatement"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>AsRestServer</h2><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td>y</td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Device</td><td><a href=\"http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-device\">http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-device</a></td><td>y</td><td>y</td><td>y</td><td>y</td></tr><tr><td>HealthcareService</td><td><a href=\"http://hl7.org/fhir/StructureDefinition/HealthcareService\">http://hl7.org/fhir/StructureDefinition/HealthcareService</a></td><td>y</td><td>y</td><td>y</td><td>y</td></tr><tr><td>OperationDefinition</td><td><a href=\"http://hl7.org/fhir/StructureDefinition/OperationDefinition\">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td></td><td></td><td></td></tr><tr><td>Organization</td><td><a href=\"http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization\">http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization</a></td><td>y</td><td>y</td><td>y</td><td>y</td></tr><tr><td>Practitioner</td><td><a href=\"http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitioner\">http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitioner</a></td><td>y</td><td>y</td><td>y</td><td>y</td></tr><tr><td>PractitionerRole</td><td><a href=\"http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitionerrole\">http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitionerrole</a></td><td>y</td><td>y</td><td>y</td><td>y</td></tr><tr><td>Subscription</td><td><a href=\"http://hl7.org/fhir/StructureDefinition/Subscription\">http://hl7.org/fhir/StructureDefinition/Subscription</a></td><td>y</td><td>y</td><td>y</td><td></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsClientCapabilityStatement"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0-ballot"] ; # 
+  fhir:name [ fhir:v "AsRestServer"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2023-03-23T13:49:59.485+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ANS" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "monserviceclient.annuaire@esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "instance"] ; # 
+  fhir:software [
+     fhir:name [ fhir:v "Afas Fhir server" ] ;
+     fhir:version [ fhir:v "V1-R4" ]
+  ] ; # 
+  fhir:implementation [
+     fhir:description [ fhir:v "Afas data" ] ;
+     fhir:url [ fhir:v "https://gateway.api.esante.gouv.fr/fhir/v1"^^xsd:anyURI ]
+  ] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+xml"] [ fhir:v "xml"] [ fhir:v "application/fhir+json"] [ fhir:v "json"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "Device" ] ;
+       fhir:profile [
+         fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-device"^^xsd:anyURI ;
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-device>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "Device:organization" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "Device:location" ] [ fhir:v "Device:organization" ] [ fhir:v "HealthcareService:organization" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur l'id de la ressource Device" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Renvoie uniquement les ressources qui ont été mises à jour pour la dernière fois comme spécifié par la periode donnée" ]
+       ] [
+         fhir:name [ fhir:v "_since" ] ;
+         fhir:type [ fhir:v "date" ]
+       ] [
+         fhir:name [ fhir:v "_total" ] ;
+         fhir:type [ fhir:v "string" ]
+       ] [
+         fhir:name [ fhir:v "device-name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The device name" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur l'identifiant de l'équipement matériel lourd" ]
+       ] [
+         fhir:name [ fhir:v "location" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The location of the device" ]
+       ] [
+         fhir:name [ fhir:v "manufacturer" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur la marque des équipements matériels lourds" ]
+       ] [
+         fhir:name [ fhir:v "model" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The model of the device" ]
+       ] [
+         fhir:name [ fhir:v "number-authorization-arhgos" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le numéro d'autorisation ARHGOS" ]
+       ] [
+         fhir:name [ fhir:v "organization" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche les équipements matériels lourds rattachés à la structure sélectionnée" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "active | inactive | entered-in-error | unknown" ]
+       ] [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le type de l'équipement matériel lourd" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "HealthcareService" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/HealthcareService"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/HealthcareService>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "HealthcareService:organization" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "Device:location" ] [ fhir:v "Device:organization" ] [ fhir:v "HealthcareService:organization" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Any id for the healthcare service" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Sélectionner le profil de la ressource Healthcare Service. Pour les activités de soins http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-healthcareservice-healthcare-activity / ; Pour les équipements sociaux http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-healthcareservice-social-equipment" ]
+       ] [
+         fhir:name [ fhir:v "_since" ] ;
+         fhir:type [ fhir:v "date" ]
+       ] [
+         fhir:name [ fhir:v "_total" ] ;
+         fhir:type [ fhir:v "string" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche que les ressources Healthcare Service actives" ]
+       ] [
+         fhir:name [ fhir:v "characteristic" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le type d'activité des équipements sociaux ou sur la forme d'activité des activités de soins" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur l'identifiant des équipements sociaux ou des activités de soins" ]
+       ] [
+         fhir:name [ fhir:v "organization" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche tous les équipements sociaux ou activités de soins rattachés à une structure" ]
+       ] [
+         fhir:name [ fhir:v "service-category" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur la modalité des activités de soins" ]
+       ] [
+         fhir:name [ fhir:v "service-type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur la discipline des équipements sociaux ou sur l'activité sanitaire régulée des activité de soins" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "OperationDefinition" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/OperationDefinition>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "Device:location" ] [ fhir:v "Device:organization" ] [ fhir:v "HealthcareService:organization" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] )
+     ] [
+       fhir:type [ fhir:v "Organization" ] ;
+       fhir:profile [
+         fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization"^^xsd:anyURI ;
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-organization>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "Organization:partof" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "Device:location" ] [ fhir:v "Device:organization" ] [ fhir:v "HealthcareService:organization" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur l'id de la ressource Organization" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Renvoie uniquement les ressources qui ont été mises à jour pour la dernière fois comme spécifié par la période donnée" ]
+       ] [
+         fhir:name [ fhir:v "_since" ] ;
+         fhir:type [ fhir:v "date" ]
+       ] [
+         fhir:name [ fhir:v "_total" ] ;
+         fhir:type [ fhir:v "string" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche que les ressources Organizations actives" ]
+       ] [
+         fhir:name [ fhir:v "address" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur (une partie) de l'adresse de la structure." ]
+       ] [
+         fhir:name [ fhir:v "address-city" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur la commune spécifiée dans une adresse" ]
+       ] [
+         fhir:name [ fhir:v "address-country" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le pays spécifié dans une adresse" ]
+       ] [
+         fhir:name [ fhir:v "address-postalcode" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le code postal spécifié dans une adresse" ]
+       ] [
+         fhir:name [ fhir:v "address-state" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A state specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-use" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur un code use spécifié dans adresse" ]
+       ] [
+         fhir:name [ fhir:v "endpoint" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Technical endpoints providing access to services operated for the organization" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur tous les identifiants des structures" ]
+       ] [
+         fhir:name [ fhir:v "mailbox-mss" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur les messageries sécurisées de santé rattachées aux Organization" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur la raison sociale des structures" ]
+       ] [
+         fhir:name [ fhir:v "partof" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche tous les établissements géographiques rattachés à une même entité juridique" ]
+       ] [
+         fhir:name [ fhir:v "pharmacy-licence" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le numéro de licence des officines" ]
+       ] [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le type de structure/ code APE/ catégorie juridique/ secteur d'activité/ catégorie d'établissement ou le code SPH de la structure" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Practitioner" ] ;
+       fhir:profile [
+         fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitioner"^^xsd:anyURI ;
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitioner>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "Device:location" ] [ fhir:v "Device:organization" ] [ fhir:v "HealthcareService:organization" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Renvoie uniquement les ressources qui ont été mises à jour pour la dernière fois comme spécifié par la période donnée" ]
+       ] [
+         fhir:name [ fhir:v "_since" ] ;
+         fhir:type [ fhir:v "date" ]
+       ] [
+         fhir:name [ fhir:v "_total" ] ;
+         fhir:type [ fhir:v "string" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche les ressources Practitioner actives" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur tous les identifiants des professionnels de santé" ]
+       ] [
+         fhir:name [ fhir:v "mailbox-mss" ] ;
+         fhir:type [ fhir:v "string" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de HumanName, ici sur le préfix  correspondant à la civilité des professionnels de santé" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "PractitionerRole" ] ;
+       fhir:profile [
+         fhir:v "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitionerrole"^^xsd:anyURI ;
+         fhir:link <http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-practitionerrole>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:partof" ] [ fhir:v "PractitionerRole:practitioner" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "Device:location" ] [ fhir:v "Device:organization" ] [ fhir:v "HealthcareService:organization" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "l'id de la ressource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Renvoie uniquement les ressources qui ont été mises à jour pour la dernière fois comme spécifié par la période donnée" ]
+       ] [
+         fhir:name [ fhir:v "_since" ] ;
+         fhir:type [ fhir:v "date" ]
+       ] [
+         fhir:name [ fhir:v "_total" ] ;
+         fhir:type [ fhir:v "string" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche les ressources PractitionerRole actives" ]
+       ] [
+         fhir:name [ fhir:v "family" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le nom d'exercice des professionnels de santé" ]
+       ] [
+         fhir:name [ fhir:v "given" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le prénom d'exercice des professionnels de santé" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Any identifier for the practitioner role" ]
+       ] [
+         fhir:name [ fhir:v "mailbox-mss" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur les messageries sécurisées de santé rattachées à la situation d'exercice des Professionnel de santé" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de l'élément name : Code civilité d’exercice, le nom ou prénom d'exercice des professionnel de santé." ]
+       ] [
+         fhir:name [ fhir:v "number-smartcard" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le numéro de carte des professionnels de santé" ]
+       ] [
+         fhir:name [ fhir:v "organization" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche les exercices professionnels et les situation d'exercice rattachés à la structure sélectionnée" ]
+       ] [
+         fhir:name [ fhir:v "practitioner" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche les exercices professionnels et les situation d'exercice rattachés aux professionnels de santé sélectionnés" ]
+       ] [
+         fhir:name [ fhir:v "role" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur la profession/ la catégorie professionnelle/ la fonction/ le genre d'activité/ le mode d'exercice ou la section tableau des pharmaciens" ]
+       ] [
+         fhir:name [ fhir:v "specialty" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le savoir-faire ou le Type de savoir-faire" ]
+       ] [
+         fhir:name [ fhir:v "type-smartcard" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le type de carte du professionnels de santé" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Subscription" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Subscription"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Subscription>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "Device:location" ] [ fhir:v "Device:organization" ] [ fhir:v "HealthcareService:organization" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur l'id de la ressource Subscription" ]
+       ] [
+         fhir:name [ fhir:v "criteria" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le critère de la subscription" ]
+       ] [
+         fhir:name [ fhir:v "payload" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le type de payload de la subscription" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le status de la subscription" ]
+       ] [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le type de la subscription" ]
+       ] [
+         fhir:name [ fhir:v "url" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Recherche sur le url (payload) de la subscription" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "deactivate-all" ] ;
+         fhir:definition [
+           fhir:v "https://gateway.api.esante.gouv.fr/fhir/v1/OperationDefinition/Subscription-t-deactivate-all"^^xsd:anyURI ;
+           fhir:link <https://gateway.api.esante.gouv.fr/fhir/v1/OperationDefinition/Subscription-t-deactivate-all>
+         ]
+       ] [
+         fhir:name [ fhir:v "activate-all" ] ;
+         fhir:definition [
+           fhir:v "https://gateway.api.esante.gouv.fr/fhir/v1/OperationDefinition/Subscription-t-activate-all"^^xsd:anyURI ;
+           fhir:link <https://gateway.api.esante.gouv.fr/fhir/v1/OperationDefinition/Subscription-t-activate-all>
+         ]
+       ] )
+     ] ) ;
+     fhir:interaction ( [
+       fhir:code [ fhir:v "transaction" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
