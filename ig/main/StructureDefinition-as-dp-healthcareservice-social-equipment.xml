@@ -33,7 +33,7 @@
   <name value="AsDpHealthcareServiceSocialEquipmentProfile"/>
   <title value="AS Donnée Publique HealthcareService Social Equipment Profile"/>
   <status value="active"/>
-  <date value="2023-07-10T14:48:30+00:00"/>
+  <date value="2023-07-10T14:51:06+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -914,9 +914,8 @@
     </element>
     <element id="HealthcareService.identifier">
       <path value="HealthcareService.identifier"/>
-      <short value="Identifiant fonctionnel, numéro d'autorisation ARHGOS."/>
+      <short value="Identifiant fonctionnel, numéro d'autorisation ARHGOS (Synonyme : numeroAutorisationARHGOS)."/>
       <definition value="External identifiers for this item."/>
-      <comment value="Synonyme : numeroAutorisationARHGOS"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1006,9 +1005,9 @@
     </element>
     <element id="HealthcareService.providedBy">
       <path value="HealthcareService.providedBy"/>
-      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social."/>
+      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (Synonyme : idNat_Struct, identifiantEJ, identifiantEG)."/>
       <definition value="The organization that provides this healthcare service."/>
-      <comment value="Synonyme : idNat_Struct, identifiantEJ, identifiantEG"/>
+      <comment value="This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1054,9 +1053,9 @@
     </element>
     <element id="HealthcareService.category">
       <path value="HealthcareService.category"/>
-      <short value="La discipline déterminant la nature de l’activité."/>
+      <short value="La discipline déterminant la nature de l’activité (Synonyme : disciplineEquipementSociale)."/>
       <definition value="Identifies the broad category of service being performed or delivered."/>
-      <comment value="Synonyme : disciplineEquipementSociale"/>
+      <comment value="Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type."/>
       <alias value="service category"/>
       <min value="0"/>
       <max value="0"/>
@@ -1574,9 +1573,8 @@
     </element>
     <element id="HealthcareService.eligibility">
       <path value="HealthcareService.eligibility"/>
-      <short value="Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline."/>
+      <short value="Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline (Synonyme : clientele, public, patientèle)."/>
       <definition value="Does this service have specific eligibility requirements that need to be met in order to use the service?"/>
-      <comment value="Synonyme : clientele, public, patientèle"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1874,9 +1872,9 @@
     </element>
     <element id="HealthcareService.characteristic">
       <path value="HealthcareService.characteristic"/>
-      <short value="Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline."/>
+      <short value="Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline (Synonyme : modeFonctionnement, type d'activité)."/>
       <definition value="Collection of characteristics (attributes)."/>
-      <comment value="Synonyme : modeFonctionnement, type d'activité"/>
+      <comment value="These could be such things as is wheelchair accessible."/>
       <min value="0"/>
       <max value="*"/>
       <base>

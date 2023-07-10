@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsDrDeviceProfile"] ; # 
   fhir:title [ fhir:v "AS Donnée Restreinte Device Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-10T14:48:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-10T14:51:06+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -1041,9 +1041,9 @@
      ] [
        fhir:id [ fhir:v "Device.identifier" ] ;
        fhir:path [ fhir:v "Device.identifier" ] ;
-       fhir:short [ fhir:v "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML." ] ;
+       fhir:short [ fhir:v "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML (Synonyme : numeroAutorisationARHGOS)." ] ;
        fhir:definition [ fhir:v "Unique instance identifiers assigned to a device by manufacturers other organizations or owners." ] ;
-       fhir:comment [ fhir:v "Synonyme : numeroAutorisationARHGOS" ] ;
+       fhir:comment [ fhir:v "The barcode string from a barcode present on a device label or package may identify the instance, include names given to the device in local usage, or may identify the type of device. If the identifier identifies the type of device, Device.type element should be used." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -1612,7 +1612,7 @@
        fhir:path [ fhir:v "Device.status" ] ;
        fhir:short [ fhir:v "Le matériel est-il actif? active | inactive" ] ;
        fhir:definition [ fhir:v "Status of the Device availability." ] ;
-       fhir:comment [ fhir:v "= “active” par défaut; \r\nSinon, si le matériel est inactif =” inactive”" ] ;
+       fhir:comment [ fhir:v "This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -1764,7 +1764,7 @@
        fhir:path [ fhir:v "Device.manufacturer" ] ;
        fhir:short [ fhir:v "Marque de l'équipement matériel lourd." ] ;
        fhir:definition [ fhir:v "A name of the manufacturer." ] ;
-       fhir:comment [ fhir:v "marque" ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -1925,9 +1925,9 @@
      ] [
        fhir:id [ fhir:v "Device.serialNumber" ] ;
        fhir:path [ fhir:v "Device.serialNumber" ] ;
-       fhir:short [ fhir:v "Numéro de série de l'équipement matériel lourd" ] ;
+       fhir:short [ fhir:v "Numéro de série de l'équipement matériel lourd (Synonyme : numeroSerie)." ] ;
        fhir:definition [ fhir:v "The serial number assigned by the organization when the device was manufactured." ] ;
-       fhir:comment [ fhir:v "Synonyme : numeroSerie" ] ;
+       fhir:comment [ fhir:v "Alphanumeric Maximum 20." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2312,7 +2312,7 @@
        fhir:path [ fhir:v "Device.type" ] ;
        fhir:short [ fhir:v "Code définissant l'équipement matériel lourd (EML) soumis à autorisation." ] ;
        fhir:definition [ fhir:v "The kind or type of device." ] ;
-       fhir:comment [ fhir:v "Synonyme : equipementMaterielLourd" ] ;
+       fhir:comment [ fhir:v "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2338,7 +2338,7 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
-         fhir:description [ fhir:v "Liste des types d'EML" ] ;
+         fhir:description [ fhir:v "Liste des types d'EML (Synonyme : equipementMaterielLourd)" ] ;
          fhir:valueSet [
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS>
@@ -3318,9 +3318,9 @@
      ] [
        fhir:id [ fhir:v "Device.owner" ] ;
        fhir:path [ fhir:v "Device.owner" ] ;
-       fhir:short [ fhir:v "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd." ] ;
+       fhir:short [ fhir:v "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd (Synonyme : idStructure)." ] ;
        fhir:definition [ fhir:v "An organization that is responsible for the provision and ongoing maintenance of the device." ] ;
-       fhir:comment [ fhir:v "Synonyme : idStructure" ] ;
+       fhir:comment [ fhir:v "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [

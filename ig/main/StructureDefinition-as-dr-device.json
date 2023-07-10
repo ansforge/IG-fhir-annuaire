@@ -10,7 +10,7 @@
   "name" : "AsDrDeviceProfile",
   "title" : "AS Donnée Restreinte Device Profile",
   "status" : "active",
-  "date" : "2023-07-10T14:48:30+00:00",
+  "date" : "2023-07-10T14:51:06+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -991,9 +991,9 @@
     {
       "id" : "Device.identifier",
       "path" : "Device.identifier",
-      "short" : "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML.",
+      "short" : "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML (Synonyme : numeroAutorisationARHGOS).",
       "definition" : "Unique instance identifiers assigned to a device by manufacturers other organizations or owners.",
-      "comment" : "Synonyme : numeroAutorisationARHGOS",
+      "comment" : "The barcode string from a barcode present on a device label or package may identify the instance, include names given to the device in local usage, or may identify the type of device. If the identifier identifies the type of device, Device.type element should be used.",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -1562,7 +1562,7 @@
       "path" : "Device.status",
       "short" : "Le matériel est-il actif? active | inactive",
       "definition" : "Status of the Device availability.",
-      "comment" : "= “active” par défaut; \r\nSinon, si le matériel est inactif =” inactive”",
+      "comment" : "This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1711,7 +1711,7 @@
       "path" : "Device.manufacturer",
       "short" : "Marque de l'équipement matériel lourd.",
       "definition" : "A name of the manufacturer.",
-      "comment" : "marque",
+      "comment" : "Note that FHIR strings SHALL NOT exceed 1MB in size",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1876,9 +1876,9 @@
     {
       "id" : "Device.serialNumber",
       "path" : "Device.serialNumber",
-      "short" : "Numéro de série de l'équipement matériel lourd",
+      "short" : "Numéro de série de l'équipement matériel lourd (Synonyme : numeroSerie).",
       "definition" : "The serial number assigned by the organization when the device was manufactured.",
-      "comment" : "Synonyme : numeroSerie",
+      "comment" : "Alphanumeric Maximum 20.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2258,7 +2258,7 @@
       "path" : "Device.type",
       "short" : "Code définissant l'équipement matériel lourd (EML) soumis à autorisation.",
       "definition" : "The kind or type of device.",
-      "comment" : "Synonyme : equipementMaterielLourd",
+      "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2281,7 +2281,7 @@
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "description" : "Liste des types d'EML",
+        "description" : "Liste des types d'EML (Synonyme : equipementMaterielLourd)",
         "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS"
       },
       "mapping" : [{
@@ -3262,9 +3262,9 @@
     {
       "id" : "Device.owner",
       "path" : "Device.owner",
-      "short" : "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd.",
+      "short" : "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd (Synonyme : idStructure).",
       "definition" : "An organization that is responsible for the provision and ongoing maintenance of the device.",
-      "comment" : "Synonyme : idStructure",
+      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
       "min" : 0,
       "max" : "1",
       "base" : {

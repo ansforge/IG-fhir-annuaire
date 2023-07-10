@@ -30,7 +30,7 @@
   <name value="AsDpHealthcareServiceHealthcareActivityProfile"/>
   <title value="AS Donnée Publique HealthcareService Healthcare Activity Profile"/>
   <status value="active"/>
-  <date value="2023-07-10T14:48:30+00:00"/>
+  <date value="2023-07-10T14:51:06+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -1037,9 +1037,8 @@
     </element>
     <element id="HealthcareService.identifier">
       <path value="HealthcareService.identifier"/>
-      <short value="Identifiant fonctionnel, numéro d'autorisation ARHGOS."/>
+      <short value="Identifiant fonctionnel, numéro d'autorisation ARHGOS (Synonyme : numeroAutorisationARHGOS)."/>
       <definition value="External identifiers for this item."/>
-      <comment value="Synonyme : numeroAutorisationARHGOS"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1129,9 +1128,9 @@
     </element>
     <element id="HealthcareService.providedBy">
       <path value="HealthcareService.providedBy"/>
-      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattachée cette activité sanitaire."/>
+      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattachée cette activité sanitaire (Synonyme : idNat_Struct)."/>
       <definition value="The organization that provides this healthcare service."/>
-      <comment value="Synonyme : idNat_Struct"/>
+      <comment value="This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1178,9 +1177,9 @@
     </element>
     <element id="HealthcareService.category">
       <path value="HealthcareService.category"/>
-      <short value="La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins."/>
+      <short value="La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins (Synonyme : modalite)."/>
       <definition value="Identifies the broad category of service being performed or delivered."/>
-      <comment value="Synonyme : modalite"/>
+      <comment value="Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type."/>
       <alias value="service category"/>
       <min value="0"/>
       <max value="*"/>
@@ -1287,9 +1286,9 @@
     </element>
     <element id="HealthcareService.specialty">
       <path value="HealthcareService.specialty"/>
-      <short value="Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP), &#xD;&#xA;la liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP)"/>
+      <short value="Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP), &#xD;&#xA;la liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP). Synonyme : activite"/>
       <definition value="Collection of specialties handled by the service site. This is more of a medical term."/>
-      <comment value="Synonyme : activite"/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -2008,9 +2007,9 @@
     </element>
     <element id="HealthcareService.characteristic">
       <path value="HealthcareService.characteristic"/>
-      <short value="La forme d'activité étant un type d’organisation de prise en charge."/>
+      <short value="La forme d'activité étant un type d’organisation de prise en charge (Synonyme : forme)."/>
       <definition value="Collection of characteristics (attributes)."/>
-      <comment value="Synonyme : forme"/>
+      <comment value="These could be such things as is wheelchair accessible."/>
       <min value="0"/>
       <max value="*"/>
       <base>

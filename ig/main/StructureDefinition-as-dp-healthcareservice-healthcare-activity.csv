@@ -99,7 +99,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "HealthcareService.identifier","HealthcareService.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
-","Identifiant fonctionnel, numéro d'autorisation ARHGOS.","External identifiers for this item.","Synonyme : numeroAutorisationARHGOS","","","","","","","","",,,,,"",,,,"HealthcareService.identifier",0,*,"ele-1
+","Identifiant fonctionnel, numéro d'autorisation ARHGOS (Synonyme : numeroAutorisationARHGOS).","External identifiers for this item.","","","","","","","","","",,,,,"",,,,"HealthcareService.identifier",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]",".id","FiveWs.identifier"
 "HealthcareService.active","HealthcareService.active","","","",1,1,"","Y","Y","boolean {[]} {[]}
@@ -107,12 +107,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a",".statusCode","FiveWs.status"
 "HealthcareService.providedBy","HealthcareService.providedBy","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization]]}
-","Référence vers l'id de la structure FINESS ET à laquelle est rattachée cette activité sanitaire.","The organization that provides this healthcare service.","Synonyme : idNat_Struct","","","","","","","","",,,,,"",,,,"HealthcareService.providedBy",0,1,"ele-1
+","Référence vers l'id de la structure FINESS ET à laquelle est rattachée cette activité sanitaire (Synonyme : idNat_Struct).","The organization that provides this healthcare service.","This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated.","","","","","","","","",,,,,"",,,,"HealthcareService.providedBy",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}","n/a","The target of a resource reference is a RIM entry point (Act, Role, or Entity)",".scopingRole.Organization"
 "HealthcareService.category","HealthcareService.category","","service category
 ","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
-","La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins.","Identifies the broad category of service being performed or delivered.","Synonyme : modalite","","","","","","","","",,"required","Liste des modalités","https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS","",,,,"HealthcareService.category",0,*,"ele-1
+","La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins (Synonyme : modalite).","Identifies the broad category of service being performed or delivered.","Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.","","","","","","","","",,"required","Liste des modalités","https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS","",,,,"HealthcareService.category",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".code","FiveWs.class"
 "HealthcareService.type","HealthcareService.type","","service type
@@ -122,7 +122,7 @@ ref-1:SHALL have a contained resource if a local reference is provided {referenc
 ","n/a","CD",".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"
 "HealthcareService.specialty","HealthcareService.specialty","","","",0,0,"Y","","Y","CodeableConcept {[]} {[]}
 ","Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP), 
-la liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP)","Collection of specialties handled by the service site. This is more of a medical term.","Synonyme : activite","","","","","","","","",,"preferred","A specialty that a healthcare service may provide.","http://hl7.org/fhir/ValueSet/c80-practice-codes","",,,,"HealthcareService.specialty",0,*,"ele-1
+la liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP). Synonyme : activite","Collection of specialties handled by the service site. This is more of a medical term.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"preferred","A specialty that a healthcare service may provide.","http://hl7.org/fhir/ValueSet/c80-practice-codes","",,,,"HealthcareService.specialty",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"
 "HealthcareService.location","HealthcareService.location","","","",0,0,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
@@ -189,7 +189,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=PERT].observation"
 "HealthcareService.characteristic","HealthcareService.characteristic","","","",0,*,"Y","","","CodeableConcept {[]} {[]}
-","La forme d'activité étant un type d’organisation de prise en charge.","Collection of characteristics (attributes).","Synonyme : forme","","","","","","","","",,"required","Liste des formes d'activité","https://mos.esante.gouv.fr/NOS/JDV_J134-FormeActivite-RASS/FHIR/JDV-J134-FormeActivite-RASS","",,,,"HealthcareService.characteristic",0,*,"ele-1
+","La forme d'activité étant un type d’organisation de prise en charge (Synonyme : forme).","Collection of characteristics (attributes).","These could be such things as is wheelchair accessible.","","","","","","","","",,"required","Liste des formes d'activité","https://mos.esante.gouv.fr/NOS/JDV_J134-FormeActivite-RASS/FHIR/JDV-J134-FormeActivite-RASS","",,,,"HealthcareService.characteristic",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=PERT].observation"
 "HealthcareService.communication","HealthcareService.communication","","","",0,0,"","","","CodeableConcept {[]} {[]}

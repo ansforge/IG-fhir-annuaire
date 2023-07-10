@@ -746,7 +746,9 @@ Used to categorize the organization
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>Need to be able to track the kind of organization that this is - different organization types have different uses.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>typeStructure</p>
+  <tr><td>Comments</td><td><p>Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes</p>
+<p>When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.</p>
+<p>We expect that some jurisdictions will profile this optionality to be a single cardinality.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1200,7 +1202,9 @@ Catégorie d'établissement du RAS
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>Need to be able to track the kind of organization that this is - different organization types have different uses.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>Synonyme : codeAPEN</p>
+  <tr><td>Comments</td><td><p>Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes</p>
+<p>When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.</p>
+<p>We expect that some jurisdictions will profile this optionality to be a single cardinality.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1214,7 +1218,9 @@ Catégorie d'établissement du RAS
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>Need to be able to track the kind of organization that this is - different organization types have different uses.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>Synonyme : statutJuridiqueINSEE</p>
+  <tr><td>Comments</td><td><p>Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes</p>
+<p>When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.</p>
+<p>We expect that some jurisdictions will profile this optionality to be a single cardinality.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1228,7 +1234,9 @@ Catégorie d'établissement du RAS
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>Need to be able to track the kind of organization that this is - different organization types have different uses.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>Synonyme : modaliteParticipationSPH</p>
+  <tr><td>Comments</td><td><p>Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes</p>
+<p>When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.</p>
+<p>We expect that some jurisdictions will profile this optionality to be a single cardinality.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1242,7 +1250,7 @@ Catégorie d'établissement du RAS
   <tr><td><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>Need to use the name as the label of the organization.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>Synonyme : raisonSociale, dénomination</p>
+  <tr><td>Comments</td><td><p>If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1256,7 +1264,7 @@ Catégorie d'établissement du RAS
   <tr><td>Requirements</td><td><p>Over time locations and organizations go through many changes and can be known by different names.</p>
 <p>For searching knowing previous names that the organization was known by can be very useful.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>Synonyme : complementRaisonSociale</p>
+  <tr><td>Comments</td><td><p>There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
@@ -1392,7 +1400,7 @@ Use of contact point
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td>Requirements</td><td><p>May need to keep track of the organization's addresses for contacting, billing or reporting requirements.</p>
 </td></tr>
-  <tr><td>Comments</td><td><p>adresse</p>
+  <tr><td>Comments</td><td><p>Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the <a href="http://hl7.org/fhir/R4/location.html#">Location</a> resource).</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">org-2</b>: An address of an organization can never be of use 'home' (: where(use = 'home').empty())</td></tr>
@@ -1580,7 +1588,7 @@ Aa resource (or, for logical models, the URI of the logical model)
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 10, 2023 14:48+0000">2023-07-10</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 10, 2023 14:51+0000">2023-07-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

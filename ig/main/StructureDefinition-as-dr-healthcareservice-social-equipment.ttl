@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsDrHealthcareServiceSocialEquipmentProfile"] ; # 
   fhir:title [ fhir:v "AS Donnée Restreinte HealthcareService Social Equipment Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-10T14:48:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-10T14:51:06+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -992,9 +992,8 @@
      ] [
        fhir:id [ fhir:v "HealthcareService.identifier" ] ;
        fhir:path [ fhir:v "HealthcareService.identifier" ] ;
-       fhir:short [ fhir:v "Identifiant fonctionnel, numéro d'autorisation ARHGOS." ] ;
+       fhir:short [ fhir:v "Identifiant fonctionnel, numéro d'autorisation ARHGOS (Synonyme : numeroAutorisationARHGOS)." ] ;
        fhir:definition [ fhir:v "External identifiers for this item." ] ;
-       fhir:comment [ fhir:v "Synonyme : numeroAutorisationARHGOS" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "0" ] ;
        fhir:base [
@@ -1090,9 +1089,9 @@
      ] [
        fhir:id [ fhir:v "HealthcareService.providedBy" ] ;
        fhir:path [ fhir:v "HealthcareService.providedBy" ] ;
-       fhir:short [ fhir:v "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social." ] ;
+       fhir:short [ fhir:v "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (Synonyme : idNat_Struct, identifiantEJ, identifiantEG)." ] ;
        fhir:definition [ fhir:v "The organization that provides this healthcare service." ] ;
-       fhir:comment [ fhir:v "Synonyme : idNat_Struct, identifiantEJ, identifiantEG" ] ;
+       fhir:comment [ fhir:v "This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -1146,9 +1145,9 @@
      ] [
        fhir:id [ fhir:v "HealthcareService.category" ] ;
        fhir:path [ fhir:v "HealthcareService.category" ] ;
-       fhir:short [ fhir:v "La discipline déterminant la nature de l’activité." ] ;
+       fhir:short [ fhir:v "La discipline déterminant la nature de l’activité (Synonyme : disciplineEquipementSociale)." ] ;
        fhir:definition [ fhir:v "Identifies the broad category of service being performed or delivered." ] ;
-       fhir:comment [ fhir:v "Synonyme : disciplineEquipementSociale" ] ;
+       fhir:comment [ fhir:v "Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type." ] ;
        fhir:alias ( [ fhir:v "service category" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "0" ] ;
@@ -1696,9 +1695,8 @@
      ] [
        fhir:id [ fhir:v "HealthcareService.eligibility" ] ;
        fhir:path [ fhir:v "HealthcareService.eligibility" ] ;
-       fhir:short [ fhir:v "Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline." ] ;
+       fhir:short [ fhir:v "Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline (Synonyme : clientele, public, patientèle)." ] ;
        fhir:definition [ fhir:v "Does this service have specific eligibility requirements that need to be met in order to use the service?" ] ;
-       fhir:comment [ fhir:v "Synonyme : clientele, public, patientèle" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -2014,9 +2012,9 @@
      ] [
        fhir:id [ fhir:v "HealthcareService.characteristic" ] ;
        fhir:path [ fhir:v "HealthcareService.characteristic" ] ;
-       fhir:short [ fhir:v "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline." ] ;
+       fhir:short [ fhir:v "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline (Synonyme : modeFonctionnement, type d'activité)." ] ;
        fhir:definition [ fhir:v "Collection of characteristics (attributes)." ] ;
-       fhir:comment [ fhir:v "Synonyme : modeFonctionnement, type d'activité" ] ;
+       fhir:comment [ fhir:v "These could be such things as is wheelchair accessible." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [

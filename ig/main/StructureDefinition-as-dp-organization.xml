@@ -21,7 +21,7 @@
   <name value="AsDpOrganizationProfile"/>
   <title value="AS Donnée Publique Organization Profile"/>
   <status value="active"/>
-  <date value="2023-07-10T14:48:30+00:00"/>
+  <date value="2023-07-10T14:51:06+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -1227,7 +1227,7 @@
     <element id="Organization.extension:as-ext-organization-pharmacy-licence">
       <path value="Organization.extension"/>
       <sliceName value="as-ext-organization-pharmacy-licence"/>
-      <short value="Numéro de la licence d'exploitation d’une officine."/>
+      <short value="Numéro de la licence d'exploitation d’une officine (Synonyme : numeroLicence)."/>
       <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine."/>
       <comment value="Synonyme : numeroLicence"/>
       <min value="0"/>
@@ -1917,7 +1917,7 @@
       <sliceName value="organizationType"/>
       <short value="Type de structure &#xD;&#xA;Entité Juridique : LEGAL-ENTITY; &#xD;&#xA;Entité Géographique : GEOGRAPHICAL-ENTITY"/>
       <definition value="The kind(s) of organization that this is."/>
-      <comment value="typeStructure"/>
+      <comment value="Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes&#xA;&#xA;When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.&#xA;&#xA;We expect that some jurisdictions will profile this optionality to be a single cardinality."/>
       <requirements value="Need to be able to track the kind of organization that this is - different organization types have different uses."/>
       <min value="0"/>
       <max value="1"/>
@@ -3594,9 +3594,9 @@
     <element id="Organization.type:activiteINSEE">
       <path value="Organization.type"/>
       <sliceName value="activiteINSEE"/>
-      <short value="Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).&#xD;&#xA;Plus précisément, on distingue le code APET pour les EG."/>
+      <short value="Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).&#xD;&#xA;Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN)."/>
       <definition value="The kind(s) of organization that this is."/>
-      <comment value="Synonyme : codeAPEN"/>
+      <comment value="Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes&#xA;&#xA;When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.&#xA;&#xA;We expect that some jurisdictions will profile this optionality to be a single cardinality."/>
       <requirements value="Need to be able to track the kind of organization that this is - different organization types have different uses."/>
       <min value="0"/>
       <max value="*"/>
@@ -3658,9 +3658,9 @@
     <element id="Organization.type:statutJuridiqueINSEE">
       <path value="Organization.type"/>
       <sliceName value="statutJuridiqueINSEE"/>
-      <short value="Statut juridique FINESS qui caractérise la situation juridique de la personne morale."/>
+      <short value="Statut juridique FINESS qui caractérise la situation juridique de la personne morale (Synonyme : statutJuridiqueINSEE)."/>
       <definition value="The kind(s) of organization that this is."/>
-      <comment value="Synonyme : statutJuridiqueINSEE"/>
+      <comment value="Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes&#xA;&#xA;When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.&#xA;&#xA;We expect that some jurisdictions will profile this optionality to be a single cardinality."/>
       <requirements value="Need to be able to track the kind of organization that this is - different organization types have different uses."/>
       <min value="0"/>
       <max value="*"/>
@@ -3722,9 +3722,9 @@
     <element id="Organization.type:sphParticipation">
       <path value="Organization.type"/>
       <sliceName value="sphParticipation"/>
-      <short value="Modalités de participation au service public hospitalier."/>
+      <short value="Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH)."/>
       <definition value="The kind(s) of organization that this is."/>
-      <comment value="Synonyme : modaliteParticipationSPH"/>
+      <comment value="Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes&#xA;&#xA;When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.&#xA;&#xA;We expect that some jurisdictions will profile this optionality to be a single cardinality."/>
       <requirements value="Need to be able to track the kind of organization that this is - different organization types have different uses."/>
       <min value="0"/>
       <max value="*"/>
@@ -3785,9 +3785,9 @@
     </element>
     <element id="Organization.name">
       <path value="Organization.name"/>
-      <short value="Raison sociale de la structure."/>
+      <short value="Raison sociale de la structure (Synonyme : raisonSociale, dénomination)."/>
       <definition value="A name associated with the organization."/>
-      <comment value="Synonyme : raisonSociale, dénomination"/>
+      <comment value="If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches."/>
       <requirements value="Need to use the name as the label of the organization."/>
       <min value="0"/>
       <max value="1"/>
@@ -3830,9 +3830,9 @@
     </element>
     <element id="Organization.alias">
       <path value="Organization.alias"/>
-      <short value="Enseigne commerciale de la structure."/>
+      <short value="Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."/>
       <definition value="A list of alternate names that the organization is known as, or was known as in the past."/>
-      <comment value="Synonyme : complementRaisonSociale"/>
+      <comment value="There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization."/>
       <requirements value="Over time locations and organizations go through many changes and can be known by different names.&#xA;&#xA;For searching knowing previous names that the organization was known by can be very useful."/>
       <min value="0"/>
       <max value="*"/>
@@ -4378,7 +4378,7 @@
       <path value="Organization.address"/>
       <short value="adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique."/>
       <definition value="An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world."/>
-      <comment value="adresse"/>
+      <comment value="Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource)."/>
       <requirements value="May need to keep track of the organization's addresses for contacting, billing or reporting requirements."/>
       <min value="0"/>
       <max value="*"/>

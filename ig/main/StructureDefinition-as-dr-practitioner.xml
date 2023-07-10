@@ -14,7 +14,7 @@
   <name value="AsDrPractitionerProfile"/>
   <title value="AS Donnée Restreinte Practitioner Profile"/>
   <status value="active"/>
-  <date value="2023-07-10T14:48:30+00:00"/>
+  <date value="2023-07-10T14:51:06+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -752,9 +752,8 @@
     <element id="Practitioner.extension:as-ext-practitioner-nationality">
       <path value="Practitioner.extension"/>
       <sliceName value="as-ext-practitioner-nationality"/>
-      <short value="[Donnée restreinte] : Nationalité de la personne."/>
+      <short value="[Donnée restreinte] : Nationalité de la personne (Synonyme : nationalite)."/>
       <definition value="Nationalité du professionnel"/>
-      <comment value="Synonyme : nationalite"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -823,9 +822,8 @@
     <element id="Practitioner.extension:as-ext-practitioner-birth-place">
       <path value="Practitioner.extension"/>
       <sliceName value="as-ext-practitioner-birth-place"/>
-      <short value="[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays"/>
+      <short value="[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays (Synonyme : lieuNaissance)."/>
       <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du lieu de naissance du professionnel (Practitioner)."/>
-      <comment value="Synonyme : lieuNaissance"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -859,9 +857,8 @@
     <element id="Practitioner.extension:as-ext-practitioner-deceased-date-time">
       <path value="Practitioner.extension"/>
       <sliceName value="as-ext-practitioner-deceased-date-time"/>
-      <short value="[Donnée restreinte] : Date de décès de la personne."/>
+      <short value="[Donnée restreinte] : Date de décès de la personne (Synonyme : dateDeces)."/>
       <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de décès du professionnel (Date of death of the practitioner if applicable)."/>
-      <comment value="Synonyme : dateDeces"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1915,9 +1912,9 @@
     </element>
     <element id="Practitioner.active">
       <path value="Practitioner.active"/>
-      <short value="Le professionnel est-il actif? active | inactive"/>
+      <short value="Le professionnel est-il actif? active | inactive. true  par défaut; false pour les professionnels supprimés"/>
       <definition value="Whether this practitioner's record is in active use."/>
-      <comment value="true  par défaut; false pour les professionnels supprimés"/>
+      <comment value="If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role."/>
       <requirements value="Need to be able to mark a practitioner record as not to be used because it was created in error."/>
       <min value="0"/>
       <max value="1"/>
@@ -1956,7 +1953,7 @@
     </element>
     <element id="Practitioner.name">
       <path value="Practitioner.name"/>
-      <short value="Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil"/>
+      <short value="Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil. « usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"/>
       <definition value="A human's name with the ability to identify parts and usage."/>
       <comment value="Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts might or might not be imbued with some implicit meaning; various cultures associate different importance with the name parts and the degree to which systems must care about name parts around the world varies widely."/>
       <requirements value="The name(s) that a Practitioner is known by. Where there are multiple, the name that the practitioner is usually known as should be used in the display."/>
@@ -2146,7 +2143,7 @@
       <path value="Practitioner.name.use"/>
       <short value="usual | official | temp | nickname | anonymous | old | maiden"/>
       <definition value="Identifies the purpose for this name."/>
-      <comment value="« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"/>
+      <comment value="Applications can assume that a name is current unless it explicitly says that it is temporary or old."/>
       <requirements value="Allows the appropriate name for a particular context of use to be selected from among a set of names."/>
       <min value="0"/>
       <max value="1"/>
@@ -2324,9 +2321,9 @@
     </element>
     <element id="Practitioner.name.prefix">
       <path value="Practitioner.name.prefix"/>
-      <short value="Civilité de la personne physique."/>
+      <short value="Civilité de la personne physique (Synonyme : civilite)."/>
       <definition value="Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name."/>
-      <comment value="Synonyme : civilite"/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -3365,9 +3362,9 @@
     </element>
     <element id="Practitioner.address">
       <path value="Practitioner.address"/>
-      <short value="[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel."/>
+      <short value="[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (Synonyme : adresseCorrespondance)."/>
       <definition value="An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world."/>
-      <comment value="Synonyme : adresseCorrespondance"/>
+      <comment value="Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource)."/>
       <requirements value="The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations."/>
       <min value="0"/>
       <max value="*"/>
@@ -3409,9 +3406,9 @@
     </element>
     <element id="Practitioner.gender">
       <path value="Practitioner.gender"/>
-      <short value="[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin."/>
+      <short value="[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin (Synonyme : sexeAdministratif)."/>
       <definition value="Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes."/>
-      <comment value="Synonyme : sexeAdministratif"/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <requirements value="Needed to address the person correctly."/>
       <min value="0"/>
       <max value="1"/>
@@ -3464,9 +3461,8 @@
     </element>
     <element id="Practitioner.birthDate">
       <path value="Practitioner.birthDate"/>
-      <short value="[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles."/>
+      <short value="[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles (Synonyme : dateNaissance)."/>
       <definition value="The date of birth for the practitioner."/>
-      <comment value="Synonyme : dateNaissance"/>
       <requirements value="Needed for identification."/>
       <min value="0"/>
       <max value="1"/>
@@ -9097,9 +9093,9 @@
     <element id="Practitioner.qualification.code.coding:degreeType">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeType"/>
-      <short value="Type de diplôme, par exemple : DE, DES, CES, etc."/>
+      <short value="Type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"/>
       <definition value="A reference to a code defined by a terminology system."/>
-      <comment value="typeDiplome"/>
+      <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
       <max value="*"/>
@@ -9315,9 +9311,9 @@
     </element>
     <element id="Practitioner.communication">
       <path value="Practitioner.communication"/>
-      <short value="Langue parlée."/>
+      <short value="Langue parlée (Synonyme : langueParlee)."/>
       <definition value="A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text."/>
-      <comment value="Synonyme : langueParlee"/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <requirements value="Knowing which language a practitioner speaks can help in facilitating communication with patients."/>
       <min value="0"/>
       <max value="*"/>

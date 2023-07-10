@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsDrPractitionerProfile"] ; # 
   fhir:title [ fhir:v "AS Donnée Restreinte Practitioner Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-10T14:48:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-10T14:51:06+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -826,9 +826,8 @@
        fhir:id [ fhir:v "Practitioner.extension:as-ext-practitioner-nationality" ] ;
        fhir:path [ fhir:v "Practitioner.extension" ] ;
        fhir:sliceName [ fhir:v "as-ext-practitioner-nationality" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Nationalité de la personne." ] ;
+       fhir:short [ fhir:v "[Donnée restreinte] : Nationalité de la personne (Synonyme : nationalite)." ] ;
        fhir:definition [ fhir:v "Nationalité du professionnel" ] ;
-       fhir:comment [ fhir:v "Synonyme : nationalite" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -913,9 +912,8 @@
        fhir:id [ fhir:v "Practitioner.extension:as-ext-practitioner-birth-place" ] ;
        fhir:path [ fhir:v "Practitioner.extension" ] ;
        fhir:sliceName [ fhir:v "as-ext-practitioner-birth-place" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays" ] ;
+       fhir:short [ fhir:v "[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays (Synonyme : lieuNaissance)." ] ;
        fhir:definition [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du lieu de naissance du professionnel (Practitioner)." ] ;
-       fhir:comment [ fhir:v "Synonyme : lieuNaissance" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -957,9 +955,8 @@
        fhir:id [ fhir:v "Practitioner.extension:as-ext-practitioner-deceased-date-time" ] ;
        fhir:path [ fhir:v "Practitioner.extension" ] ;
        fhir:sliceName [ fhir:v "as-ext-practitioner-deceased-date-time" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Date de décès de la personne." ] ;
+       fhir:short [ fhir:v "[Donnée restreinte] : Date de décès de la personne (Synonyme : dateDeces)." ] ;
        fhir:definition [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de décès du professionnel (Date of death of the practitioner if applicable)." ] ;
-       fhir:comment [ fhir:v "Synonyme : dateDeces" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -2045,9 +2042,9 @@
      ] [
        fhir:id [ fhir:v "Practitioner.active" ] ;
        fhir:path [ fhir:v "Practitioner.active" ] ;
-       fhir:short [ fhir:v "Le professionnel est-il actif? active | inactive" ] ;
+       fhir:short [ fhir:v "Le professionnel est-il actif? active | inactive. true  par défaut; false pour les professionnels supprimés" ] ;
        fhir:definition [ fhir:v "Whether this practitioner's record is in active use." ] ;
-       fhir:comment [ fhir:v "true  par défaut; false pour les professionnels supprimés" ] ;
+       fhir:comment [ fhir:v "If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role." ] ;
        fhir:requirements [ fhir:v "Need to be able to mark a practitioner record as not to be used because it was created in error." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -2087,7 +2084,7 @@
      ] [
        fhir:id [ fhir:v "Practitioner.name" ] ;
        fhir:path [ fhir:v "Practitioner.name" ] ;
-       fhir:short [ fhir:v "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil" ] ;
+       fhir:short [ fhir:v "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil. « usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)" ] ;
        fhir:definition [ fhir:v "A human's name with the ability to identify parts and usage." ] ;
        fhir:comment [ fhir:v "Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts might or might not be imbued with some implicit meaning; various cultures associate different importance with the name parts and the degree to which systems must care about name parts around the world varies widely." ] ;
        fhir:requirements [ fhir:v "The name(s) that a Practitioner is known by. Where there are multiple, the name that the practitioner is usually known as should be used in the display." ] ;
@@ -2289,7 +2286,7 @@
        fhir:path [ fhir:v "Practitioner.name.use" ] ;
        fhir:short [ fhir:v "usual | official | temp | nickname | anonymous | old | maiden" ] ;
        fhir:definition [ fhir:v "Identifies the purpose for this name." ] ;
-       fhir:comment [ fhir:v "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)" ] ;
+       fhir:comment [ fhir:v "Applications can assume that a name is current unless it explicitly says that it is temporary or old." ] ;
        fhir:requirements [ fhir:v "Allows the appropriate name for a particular context of use to be selected from among a set of names." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -2471,9 +2468,9 @@
      ] [
        fhir:id [ fhir:v "Practitioner.name.prefix" ] ;
        fhir:path [ fhir:v "Practitioner.name.prefix" ] ;
-       fhir:short [ fhir:v "Civilité de la personne physique." ] ;
+       fhir:short [ fhir:v "Civilité de la personne physique (Synonyme : civilite)." ] ;
        fhir:definition [ fhir:v "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name." ] ;
-       fhir:comment [ fhir:v "Synonyme : civilite" ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -3571,9 +3568,9 @@
      ] [
        fhir:id [ fhir:v "Practitioner.address" ] ;
        fhir:path [ fhir:v "Practitioner.address" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel." ] ;
+       fhir:short [ fhir:v "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (Synonyme : adresseCorrespondance)." ] ;
        fhir:definition [ fhir:v "An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world." ] ;
-       fhir:comment [ fhir:v "Synonyme : adresseCorrespondance" ] ;
+       fhir:comment [ fhir:v "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource)." ] ;
        fhir:requirements [ fhir:v "The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
@@ -3618,9 +3615,9 @@
      ] [
        fhir:id [ fhir:v "Practitioner.gender" ] ;
        fhir:path [ fhir:v "Practitioner.gender" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin." ] ;
+       fhir:short [ fhir:v "[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin (Synonyme : sexeAdministratif)." ] ;
        fhir:definition [ fhir:v "Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes." ] ;
-       fhir:comment [ fhir:v "Synonyme : sexeAdministratif" ] ;
+       fhir:comment [ fhir:v "Note that FHIR strings SHALL NOT exceed 1MB in size" ] ;
        fhir:requirements [ fhir:v "Needed to address the person correctly." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -3677,9 +3674,8 @@
      ] [
        fhir:id [ fhir:v "Practitioner.birthDate" ] ;
        fhir:path [ fhir:v "Practitioner.birthDate" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles." ] ;
+       fhir:short [ fhir:v "[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles (Synonyme : dateNaissance)." ] ;
        fhir:definition [ fhir:v "The date of birth for the practitioner." ] ;
-       fhir:comment [ fhir:v "Synonyme : dateNaissance" ] ;
        fhir:requirements [ fhir:v "Needed for identification." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -9423,9 +9419,9 @@
        fhir:id [ fhir:v "Practitioner.qualification.code.coding:degreeType" ] ;
        fhir:path [ fhir:v "Practitioner.qualification.code.coding" ] ;
        fhir:sliceName [ fhir:v "degreeType" ] ;
-       fhir:short [ fhir:v "Type de diplôme, par exemple : DE, DES, CES, etc." ] ;
+       fhir:short [ fhir:v "Type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)" ] ;
        fhir:definition [ fhir:v "A reference to a code defined by a terminology system." ] ;
-       fhir:comment [ fhir:v "typeDiplome" ] ;
+       fhir:comment [ fhir:v "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true." ] ;
        fhir:requirements [ fhir:v "Allows for alternative encodings within a code system, and translations to other code systems." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
@@ -9651,9 +9647,9 @@
      ] [
        fhir:id [ fhir:v "Practitioner.communication" ] ;
        fhir:path [ fhir:v "Practitioner.communication" ] ;
-       fhir:short [ fhir:v "Langue parlée." ] ;
+       fhir:short [ fhir:v "Langue parlée (Synonyme : langueParlee)." ] ;
        fhir:definition [ fhir:v "A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text." ] ;
-       fhir:comment [ fhir:v "Synonyme : langueParlee" ] ;
+       fhir:comment [ fhir:v "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination." ] ;
        fhir:requirements [ fhir:v "Knowing which language a practitioner speaks can help in facilitating communication with patients." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;

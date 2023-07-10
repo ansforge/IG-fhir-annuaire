@@ -31,7 +31,7 @@
   <name value="AsDrDeviceProfile"/>
   <title value="AS Donnée Restreinte Device Profile"/>
   <status value="active"/>
-  <date value="2023-07-10T14:48:30+00:00"/>
+  <date value="2023-07-10T14:51:06+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -954,9 +954,9 @@
     </element>
     <element id="Device.identifier">
       <path value="Device.identifier"/>
-      <short value="Identifiant fonctionnel de l'autorisation ARHGOS de l'EML."/>
+      <short value="Identifiant fonctionnel de l'autorisation ARHGOS de l'EML (Synonyme : numeroAutorisationARHGOS)."/>
       <definition value="Unique instance identifiers assigned to a device by manufacturers other organizations or owners."/>
-      <comment value="Synonyme : numeroAutorisationARHGOS"/>
+      <comment value="The barcode string from a barcode present on a device label or package may identify the instance, include names given to the device in local usage, or may identify the type of device. If the identifier identifies the type of device, Device.type element should be used."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1495,7 +1495,7 @@
       <path value="Device.status"/>
       <short value="Le matériel est-il actif? active | inactive"/>
       <definition value="Status of the Device availability."/>
-      <comment value="= “active” par défaut; &#xD;&#xA;Sinon, si le matériel est inactif =” inactive”"/>
+      <comment value="This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1639,7 +1639,7 @@
       <path value="Device.manufacturer"/>
       <short value="Marque de l'équipement matériel lourd."/>
       <definition value="A name of the manufacturer."/>
-      <comment value="marque"/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1800,9 +1800,9 @@
     </element>
     <element id="Device.serialNumber">
       <path value="Device.serialNumber"/>
-      <short value="Numéro de série de l'équipement matériel lourd"/>
+      <short value="Numéro de série de l'équipement matériel lourd (Synonyme : numeroSerie)."/>
       <definition value="The serial number assigned by the organization when the device was manufactured."/>
-      <comment value="Synonyme : numeroSerie"/>
+      <comment value="Alphanumeric Maximum 20."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2163,7 +2163,7 @@
       <path value="Device.type"/>
       <short value="Code définissant l'équipement matériel lourd (EML) soumis à autorisation."/>
       <definition value="The kind or type of device."/>
-      <comment value="Synonyme : equipementMaterielLourd"/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2186,7 +2186,7 @@
       <mustSupport value="true"/>
       <binding>
         <strength value="required"/>
-        <description value="Liste des types d'EML"/>
+        <description value="Liste des types d'EML (Synonyme : equipementMaterielLourd)"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS"/>
       </binding>
       <mapping>
@@ -3114,9 +3114,9 @@
     </element>
     <element id="Device.owner">
       <path value="Device.owner"/>
-      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd."/>
+      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd (Synonyme : idStructure)."/>
       <definition value="An organization that is responsible for the provision and ongoing maintenance of the device."/>
-      <comment value="Synonyme : idStructure"/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="0"/>
       <max value="1"/>
       <base>

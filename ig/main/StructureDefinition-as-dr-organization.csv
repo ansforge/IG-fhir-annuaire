@@ -110,11 +110,11 @@ per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.extension:as-ext-digital-certificate","Organization.extension","as-ext-digital-certificate","","",0,1,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate]]} {[]}
-","[DR] : certificat.","Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.","Données descriptives du moyen d’identification par certificat.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","[DR] : certificat. Données descriptives du moyen d’identification par certificat.","Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.extension:as-ext-organization-pharmacy-licence","Organization.extension","as-ext-organization-pharmacy-licence","","",0,*,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence]]} {[]}
-","Numéro de la licence d'exploitation d’une officine.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine.","Synonyme : numeroLicence","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","Numéro de la licence d'exploitation d’une officine (Synonyme : numeroLicence).","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine.","Synonyme : numeroLicence","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Organization.modifierExtension","Organization.modifierExtension","","extensions
@@ -193,7 +193,11 @@ We expect that some jurisdictions will profile this optionality to be a single c
 "Organization.type:organizationType","Organization.type","organizationType","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Type de structure 
 Entité Juridique : LEGAL-ENTITY; 
-Entité Géographique : GEOGRAPHICAL-ENTITY","The kind(s) of organization that this is.","typeStructure","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Used to categorize the organization.","http://interopsante.org/fhir/ValueSet/fr-organization-type","",,,,"Organization.type",0,*,"ele-1
+Entité Géographique : GEOGRAPHICAL-ENTITY","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
+
+When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
+
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","Used to categorize the organization.","http://interopsante.org/fhir/ValueSet/fr-organization-type","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type:organizationType.id","Organization.type.id","","","",0,1,"","","","string {[]} {[]}
@@ -346,23 +350,35 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Organization.type:activiteINSEE","Organization.type","activiteINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).
-Plus précisément, on distingue le code APET pour les EG.","The kind(s) of organization that this is.","Synonyme : codeAPEN","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
+Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
+
+When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
+
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type:statutJuridiqueINSEE","Organization.type","statutJuridiqueINSEE","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Statut juridique FINESS qui caractérise la situation juridique de la personne morale.","The kind(s) of organization that this is.","Synonyme : statutJuridiqueINSEE","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
+","Statut juridique FINESS qui caractérise la situation juridique de la personne morale (Synonyme : statutJuridiqueINSEE).","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
+
+When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
+
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.type:sphParticipation","Organization.type","sphParticipation","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Modalités de participation au service public hospitalier.","The kind(s) of organization that this is.","Synonyme : modaliteParticipationSPH","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
+","Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH).","The kind(s) of organization that this is.","Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
+
+When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
+
+We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS","",,,,"Organization.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.name","Organization.name","","","",0,1,"Y","","Y","string {[]} {[]}
-","Raison sociale de la structure.","A name associated with the organization.","Synonyme : raisonSociale, dénomination","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"ele-1
+","Raison sociale de la structure (Synonyme : raisonSociale, dénomination).","A name associated with the organization.","If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"ele-1
 org-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.alias","Organization.alias","","","",0,*,"Y","","","string {[]} {[]}
-","Enseigne commerciale de la structure.","A list of alternate names that the organization is known as, or was known as in the past.","Synonyme : complementRaisonSociale","Over time locations and organizations go through many changes and can be known by different names.
+","Enseigne commerciale de la structure (Synonyme : complementRaisonSociale).","A list of alternate names that the organization is known as, or was known as in the past.","There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.","Over time locations and organizations go through many changes and can be known by different names.
 
 For searching knowing previous names that the organization was known by can be very useful.","","","","","","","",,,,,"",,,,"Organization.alias",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -412,7 +428,7 @@ per-1:If present, start SHALL have a lower value than end {start.hasValue().not(
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}org-3:The telecom of an organization can never be of use 'home' {where(use = 'home').empty()}"
 "Organization.address","Organization.address","","","",0,*,"Y","","","Address {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended]]} {[]}
-","adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique.","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","adresse","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"ele-1
+","adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique.","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource).","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-2:An address of an organization can never be of use 'home' {where(use = 'home').empty()}"
 "Organization.partOf","Organization.partOf","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrOrganization], CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization]]}
