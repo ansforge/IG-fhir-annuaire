@@ -40,44 +40,36 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // Practitioner.active
 * active MS
-* active ^short = "Le professionnel est-il actif? active | inactive"
-* active ^comment = "true  par défaut; false pour les professionnels supprimés"
+* active ^short = "Le professionnel est-il actif? active | inactive. true  par défaut; false pour les professionnels supprimés"
 
 /* Practitioner.name */
 * name MS
 * name only $FrHumanName
-* name ^short = "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil"
-* name.use ^comment = "« usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
+* name ^short = "Une instance pour le nom d’usage et une instance pour le nom issu de l’état-civil. « usual » pour nom et prénom d’usage (Personne) ; « official » pour nom de famille et prénoms (Etat-civil)"
 // nomFamille/nomUsage
 * name.family ^short = "[Donnée restreinte] : Le nom de famille (également nommé nom de naissance) ou le nom d'usage de la personne."
 // prenom/prenomUsuel
 * name.given ^short = "[Donnée restreinte] : Prénom(s) déclarés à sa naissance de la personne."
 // HumanName.prefix
 * name.prefix ^binding.strength = #required
-* name.prefix ^comment = "Synonyme : civilite"
-* name.prefix ^short = "Civilité de la personne physique."
+* name.prefix ^short = "Civilité de la personne physique (Synonyme : civilite)."
 
 // Practitioner.gender
 * gender MS
-* gender ^comment = "Synonyme : sexeAdministratif"
-* gender ^short = "[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin."
+* gender ^short = "[Donnée restreinte] : Sexe administratif de la personne physique, au sens de l'état civil, masculin ou féminin (Synonyme : sexeAdministratif)."
 // * gender from $TRE-R249-Sexe (required) 
 
 // Practitioner.birthDate
 * birthDate MS
-* birthDate ^comment = "Synonyme : dateNaissance"
-* birthDate ^short = "[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles."
+* birthDate ^short = "[Donnée restreinte] : Date de naissance de la personne, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles (Synonyme : dateNaissance)."
 
 // lieuNaissance
-* extension[as-ext-practitioner-birth-place] ^short = "[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays"
-* extension[as-ext-practitioner-birth-place] ^comment = "Synonyme : lieuNaissance"
+* extension[as-ext-practitioner-birth-place] ^short = "[Donnée restreinte] : Code officiel géographique (COG) de la commune (France) ou du pays (Synonyme : lieuNaissance)."
 
 // nationalite
-* extension[as-ext-practitioner-nationality] ^short = "[Donnée restreinte] : Nationalité de la personne."
-* extension[as-ext-practitioner-nationality] ^comment = "Synonyme : nationalite"
+* extension[as-ext-practitioner-nationality] ^short = "[Donnée restreinte] : Nationalité de la personne (Synonyme : nationalite)."
 // dateDeces
-* extension[as-ext-practitioner-deceased-date-time] ^short = "[Donnée restreinte] : Date de décès de la personne."
-* extension[as-ext-practitioner-deceased-date-time] ^comment = "Synonyme : dateDeces"
+* extension[as-ext-practitioner-deceased-date-time] ^short = "[Donnée restreinte] : Date de décès de la personne (Synonyme : dateDeces)."
 
 // telecommunication 
 * telecom MS
@@ -89,8 +81,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // adresseCorrespondance
 * address MS
-* address ^comment = "Synonyme : adresseCorrespondance"
-* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel."
+* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (Synonyme : adresseCorrespondance)."
 * address only AsAddressExtendedProfile
 
 // boiteLettreMSS
@@ -109,13 +100,11 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // langueParlee
 * communication MS
-* communication ^comment = "Synonyme : langueParlee"
-* communication ^short = "Langue parlée."
+* communication ^short = "Langue parlée (Synonyme : langueParlee)."
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
 
 
 * qualification.code.coding contains degreeType 0..* MS
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
-* qualification.code.coding[degreeType] ^comment = "typeDiplome"
-* qualification.code.coding[degreeType] ^short = "Type de diplôme, par exemple : DE, DES, CES, etc."
+* qualification.code.coding[degreeType] ^short = "Type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"

@@ -23,30 +23,25 @@ Description: "Profil créé à partir de HealthcareService dans le contexte de l
 
 // identifiant
 * identifier 0..* MS
-* identifier ^comment = "Synonyme : numeroAutorisationARHGOS"
-* identifier ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS."
+* identifier ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (Synonyme : numeroAutorisationARHGOS)."
 
 // idStructure
-* providedBy ^comment = "Synonyme : idNat_Struct, identifiantEJ, identifiantEG"
-* providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social."
+* providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (Synonyme : idNat_Struct, identifiantEJ, identifiantEG)."
 
 // disciplineEquipementSociale
 * category 0..* MS
-* category ^comment = "Synonyme : disciplineEquipementSociale"
-* category ^short = "La discipline déterminant la nature de l’activité."
+* category ^short = "La discipline déterminant la nature de l’activité (Synonyme : disciplineEquipementSociale)."
 * type from $JDV-J136-DisciplineEquipementSocial-RASS (required)
 * type ^binding.description = "Liste des disciplines"
 
 // clientele
 * eligibility 0..* MS
-* eligibility ^comment = "Synonyme : clientele, public, patientèle"
-* eligibility ^short = "Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline."
+* eligibility ^short = "Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline (Synonyme : clientele, public, patientèle)."
 * eligibility.code from $JDV-J137-Clientele-RASS (extensible)
 * eligibility.code ^binding.description = "Liste des populations prises en charge"
 
 // modeFonctionnement
 * characteristic 0..* MS
-* characteristic ^comment = "Synonyme : modeFonctionnement, type d'activité"
-* characteristic ^short = "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline."
+* characteristic ^short = "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline (Synonyme : modeFonctionnement, type d'activité)."
 * characteristic from $JDV-J138-TypeActivite-RASS (extensible)
 * characteristic ^binding.description = "Liste des modes de fonctionnement"
