@@ -17,12 +17,30 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 /* donnees metiers */
 // Organization.identifier
 * identifier MS 
-* identifier ^short = "Une instance par identifiant (FINESS, SIREN, SIRET, idNat_Struct…)."
-* identifier.use = #official (exactly)
-* identifier.type ^short = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent de la terminologie  http://interopsante.org/CodeSystem/fr-v2-0203 \r\n Les codes 0,4 proviennent de la terminologie TRE-G07-TypeIdentifiantStructure."
-* identifier.type obeys constr-bind-type
-* identifier.system ^short = "« urn:oid:1.2.250.1.71.4.2.2 » si l’instance correspond à l’identification nationale des structures (idNat_Struct)\r\n « http://sirene.fr» si l’instance correspond à un identifiant SIREN ou SIRET \r\n « http://finess.sante.gouv.fr» si l’instance correspond à un identifiant FINESS EG ou EJ \r\n « urn:oid:1.2.250.1.213.1.6.4.3 » si l’instance correspond à un identifiant ADELI rang ou RPPS rang\r\n« https://annuaire.sante.fr » si l’instance correspond à l’identifiant technique de la structure."
-* identifier.value ^short = "Identification nationale de la structure, Numéro SIRET, Numéro SIREN, Numéro FINESS Etablissement, Numéro FINESS EJ, RPPS rang, ADELI rang, Identifiant technique de la structure."
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+
+// Contains rule
+* identifier contains idNatSt 0..* and sirene 0..* and finess 0..* and adeliRpps 0..*
+
+* identifier[idNatSt] ^short = "Identifiant idNat_Struct qui doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
+* identifier[idNatSt].use = #official
+* identifier[idNatSt].type ^short = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent de la terminologie  http://interopsante.org/CodeSystem/fr-v2-0203 \r\n Les codes 0,4 proviennent de la terminologie TRE-G07-TypeIdentifiantStructure."
+* identifier[idNatSt].type obeys constr-bind-type
+* identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
+* identifier[idNatSt].value ^short = "Identification nationale de la structure préfixé : 3 + Numéro SIRET, 2 + Numéro SIREN, 1 + Numéro FINESS Etablissement, 1 + Numéro FINESS EJ, 4 + RPPS rang, 0 + ADELI rang, Identifiant technique de la structure."
+
+* identifier[sirene] ^short = "Identifiant SIREN ou SIRET"
+* identifier[sirene].system = "http://sirene.fr"
+
+* identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
+* identifier[finess].system = "http://finess.sante.gouv.fr"
+
+* identifier[adeliRpps] ^short = "Identifiant ADELI rang ou RPPS rang"
+* identifier[adeliRpps].system = "https://annuaire.sante.fr"
+
 
 // Organization.active
 * active MS
