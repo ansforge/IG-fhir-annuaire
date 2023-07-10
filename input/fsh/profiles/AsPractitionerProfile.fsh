@@ -50,7 +50,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[adeli].system = "http://adeli.fr"
 
 * identifier[localId] ^short = "Identifiant local : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
-* identifier[sirene].system = "urn:oid:1.2.250.1.213.1.6.4.2"
+* identifier[localId].system = "urn:oid:1.2.250.1.213.1.6.4.2"
 
 
 // Practitioner.active
