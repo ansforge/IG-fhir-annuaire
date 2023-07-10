@@ -31,13 +31,11 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 
 // Organization.name
 * name MS
-* name ^comment = "Synonyme : raisonSociale, dénomination"
-* name ^short = "Raison sociale de la structure."
+* name ^short = "Raison sociale de la structure (Synonyme : raisonSociale, dénomination)."
 
 // Organization.alias
 * alias MS
-* alias ^comment = "Synonyme : complementRaisonSociale"
-* alias ^short = "Enseigne commerciale de la structure."
+* alias ^short = "Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."
 
 /* champ d'activite de la structure */
 // Slice deja defini dans FrOrganization
@@ -49,27 +47,22 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 
 // organizationType - slice deja existant 
 * type[organizationType] ^sliceName = "organizationType"
-* type[organizationType] ^comment = "typeStructure"
 * type[organizationType] ^short = "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
 
 // activiteINSEE
 * type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
-* type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG."
-* type[activiteINSEE] ^comment = "Synonyme : codeAPEN"
+* type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN)."
 
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
-* type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caractérise la situation juridique de la personne morale."
-* type[statutJuridiqueINSEE] ^comment = "Synonyme : statutJuridiqueINSEE"
+* type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caractérise la situation juridique de la personne morale (Synonyme : statutJuridiqueINSEE)."
 
 // modaliteParticipationSPH
 * type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
-* type[sphParticipation] ^short = "Modalités de participation au service public hospitalier."
-* type[sphParticipation] ^comment = "Synonyme : modaliteParticipationSPH"
+* type[sphParticipation] ^short = "Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH)."
 
 // adresse
 * address MS
-* address ^comment = "adresse"
 * address ^short = "adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique."
 * address only AsAddressExtendedProfile
 
@@ -108,13 +101,11 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
     
 // digitalCertificate
 * extension[as-ext-digital-certificate] ^isModifier = false
-* extension[as-ext-digital-certificate] ^short = "[DR] : certificat."
-* extension[as-ext-digital-certificate] ^comment = "Données descriptives du moyen d’identification par certificat."
+* extension[as-ext-digital-certificate] ^short = "[DR] : certificat. Données descriptives du moyen d’identification par certificat."
 
 // numeroLicence pour les officines
 * extension[as-ext-organization-pharmacy-licence] ^isModifier = false
-* extension[as-ext-organization-pharmacy-licence] ^comment = "Synonyme : numeroLicence"
-* extension[as-ext-organization-pharmacy-licence] ^short = "Numéro de la licence d'exploitation d’une officine."
+* extension[as-ext-organization-pharmacy-licence] ^short = "Numéro de la licence d'exploitation d’une officine (Synonyme : numeroLicence)."
 
 // Organization.endpoint
 * endpoint MS
