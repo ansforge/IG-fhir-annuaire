@@ -1,5 +1,4 @@
 # Contexte
-En cours de constrcution.
 
 ## Contexte métier du projet
 L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) est un annuaire national de référence des professionnels de santé, avec les données opposables du RPPS, d’ADELI et de FINESS, complétées par les données des CPx, des BAL MSSanté et d'Ameli.fr, pour un usage orienté professionnel. C’est le maillon central de l’identification des acteurs de santé en France.
@@ -31,13 +30,11 @@ Les workflows associés à ce repository (.github/workflows) permettent :
 * De faire les tests avec le validator_cli
 * De publier les pages : https://ansforge.github.io/IG-fhir-annuaire-donnee-publique/ig/main/
 
-# Notes
-Ce repo "sample IG ANS" a été créé à partir du repo "sample-ig" de l'organisation GitHub FHIR : https://github.com/FHIR/sample-ig.                                                                                                                                                                                                                                                                                                                                                                                                         
-
-Un commentaire ? Une remarque ? Utilisez les GitHub [issues](https://docs.github.com/fr/issues) pour indiquer vos propositions d'amélioration et de correction.
 
 ## Acronymes
 * IG : Implementation Guide
 * FHIR : Fast Healthcare Interoperability Resources
 * FIG : FHIR Implementation Guide
 * HL7 : Health Level Seven
+
+Un commentaire ? Une remarque ? Utilisez les GitHub [issues](https://docs.github.com/fr/issues) pour indiquer vos propositions d'amélioration et de correction.
