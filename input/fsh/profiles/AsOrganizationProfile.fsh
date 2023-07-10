@@ -21,20 +21,26 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
+
 // Contains rule
-* identifier contains idNatSt 0..*
+* identifier contains idNatSt 0..* and sirene 0..* and finess 0..* and adeliRpps
 
-* identifier[idNatSt] ^short = "Une instance par identifiant idNat_Struct"
-
-
+* identifier[idNatSt] ^short = "Identifiant idNat_Struct qui doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
 * identifier[idNatSt].use = #official
 * identifier[idNatSt].type ^short = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent de la terminologie  http://interopsante.org/CodeSystem/fr-v2-0203 \r\n Les codes 0,4 proviennent de la terminologie TRE-G07-TypeIdentifiantStructure."
 * identifier[idNatSt].type obeys constr-bind-type
 * identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
-
-* identifier.system ^short = "Le système doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
-
 * identifier[idNatSt].value ^short = "Identification nationale de la structure préfixé : 3 + Numéro SIRET, 2 + Numéro SIREN, 1 + Numéro FINESS Etablissement, 1 + Numéro FINESS EJ, 4 + RPPS rang, 0 + ADELI rang, Identifiant technique de la structure."
+
+* identifier[sirene] ^short = "Identifiant SIREN ou SIRET"
+* identifier[sirene].system = "http://sirene.fr"
+
+* identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
+* identifier[finess].system = "http://finess.sante.gouv.fr"
+
+* identifier[adeliRpps] ^short = "Identifiant ADELI rang ou RPPS rang"
+* identifier[adeliRpps].system = "https://annuaire.sante.fr"
+
 
 // Organization.active
 * active MS

@@ -28,22 +28,30 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 // Contains rule
-* identifier contains idNatPs 0..*
-* identifier[idNatPs] ^short = "Une instance par identifiant idNat_PS"
+
+* identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* and localId 0..*
+
+* identifier[idNatPs] ^short = "Identifiant national des PS.  dépend de la source d'où provient l'identifiant. Il est préfixé selon l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
 
 // Practitioner.identifier.type
 * identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique."
 * identifier[idNatPs].type ^comment = "Synonyme : typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier[idNatPs].type from $fr-practioner-identifier-type (extensible)
-
 // Practitioner.identifier.system
-* identifier[idNatPs].system ^short = "le système de l'identifiant dépend de la source d'où provient l'identifiant. Il est préfixé selon l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
-
 * identifier[idNatPs].system = "urn:oid:1.2.250.1.71.4.2.1"
-
 // Practitioner.identifier.value
 * identifier[idNatPs].value ^comment = "Synonyme : idPP\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
 * identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPS"
+
+* identifier[rpps] ^short = "Identifiant RPPS"
+* identifier[rpps].system = "http://rpps.fr"
+
+* identifier[adeli] ^short = "Identifiant ADELI"
+* identifier[adeli].system = "http://adeli.fr"
+
+* identifier[localId] ^short = "Identifiant local : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
+* identifier[sirene].system = "urn:oid:1.2.250.1.213.1.6.4.2"
+
 
 // Practitioner.active
 * active MS
