@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-03T12:37:47+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-10T14:48:30+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -1103,11 +1103,71 @@
          fhir:value [ fhir:v "SearchParameter" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-ms-sante> ;
-         fhir:reference [ fhir:v "SearchParameter/as-sp-ms-sante" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-data-information-system" ]
        ] ;
-       fhir:name [ fhir:v "as-sp-ms-sante" ] ;
-       fhir:description [ fhir:v "Paramètre de recherche pour récupérer une organisation, un praticien ou une situation d'exercice par adresse MSSanté" ] ;
+       fhir:name [ fhir:v "as-sp-data-information-system" ] ;
+       fhir:description [ fhir:v "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-data-registration-authority" ]
+       ] ;
+       fhir:name [ fhir:v "as-sp-data-registration-authority" ] ;
+       fhir:description [ fhir:v "Paramètre de recherche pour récupérer une ressource par autorité d'enregistrement des données." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-mailbox-mss" ]
+       ] ;
+       fhir:name [ fhir:v "as-sp-mailbox-mss" ] ;
+       fhir:description [ fhir:v "Paramètre de recherche pour récupérer une organisation, un praticien ou une situation d'exercice par adresse MSSanté." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-number-smartcard> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-number-smartcard" ]
+       ] ;
+       fhir:name [ fhir:v "as-sp-number-smartcard" ] ;
+       fhir:description [ fhir:v "Paramètre de recherche pour récupérer les situations d'exercice d'un professionnel par son numéro de carte CPx." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-pharmacy-licence> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-pharmacy-licence" ]
+       ] ;
+       fhir:name [ fhir:v "as-sp-pharmacy-licence" ] ;
+       fhir:description [ fhir:v "Paramètre de recherche pour récupérer une pharmacie par son numéro de licence." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-type-smartcard> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-type-smartcard" ]
+       ] ;
+       fhir:name [ fhir:v "as-sp-type-smartcard" ] ;
+       fhir:description [ fhir:v "Paramètre de recherche pour récupérer les situations d'exercice d'un professionnel par type de carte CPx." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
