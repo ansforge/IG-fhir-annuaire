@@ -28,7 +28,7 @@ On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire
 Les workflows associés à ce repository (.github/workflows) permettent : 
 * D'exécuter Sushi pour vérifier la grammaire
 * De faire les tests avec le validator_cli
-* De publier les pages : https://ansforge.github.io/IG-fhir-annuaire-donnee-publique/ig/main/
+* De publier les pages : https://ansforge.github.io/IG-fhir-annuaire/ig/main/
 
 
 ## Acronymes
