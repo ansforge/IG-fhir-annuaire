@@ -1,4 +1,4 @@
-Profile: 		ASPractitionerProfile
+Profile: 		AsPractitionerProfile
 Parent: 		FrPractitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
