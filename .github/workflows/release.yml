@@ -49,10 +49,7 @@ jobs:
           CHECK_FIRELY_TERMINAL_VERSION=$(fhir -v | tr '\n' ' ') # Print everything in a single line
           echo "FIRELY_TERMINAL_VERSION: $CHECK_FIRELY_TERMINAL_VERSION"
         
-      - name: Run bake  ans.annuaire.fhir.r4
-        run: |
-          fhir install ans.annuaire.fhir.r4 0.2.0
-          fhir bake --package ans.annuaire.fhir.r4
+
       - name: Run bake hl7.fhir.fr.core
         run: |
           fhir install hl7.fhir.fr.core 1.1.0
