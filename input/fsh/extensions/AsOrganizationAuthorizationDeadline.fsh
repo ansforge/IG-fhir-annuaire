@@ -12,6 +12,6 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 
 * extension contains
     endDate 0..1 and 
-    indicator 0..1 and
+    indicator 0..1 
 * extension[endDate].value[x] only dateTime
 * extension[indicator].value[x] only boolean
