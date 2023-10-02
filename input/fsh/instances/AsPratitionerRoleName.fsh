@@ -1,7 +1,7 @@
 Instance: as-sp-practitionerrole-name
 InstanceOf: SearchParameter
 Usage: #definition
-* name = "AsPractitionerRoleName"
+* name = "AsPractitionerRoleNameSearchParameter"
 * status = #active
 * date = "2021-12-01"
 * publisher = "ANS"
