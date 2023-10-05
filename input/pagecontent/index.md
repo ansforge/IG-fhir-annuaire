@@ -35,3 +35,7 @@ On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire
 
 - [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
 - [Démonstration](https://portail.openfhir.annuaire.sante.fr/)
+
+### Dépendances
+
+{% include dependency-table.xhtml %}
