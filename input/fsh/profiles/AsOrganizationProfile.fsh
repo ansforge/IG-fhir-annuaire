@@ -32,13 +32,13 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
 * identifier[idNatSt].value ^short = "Identification nationale de la structure préfixé : 3 + Numéro SIRET, 2 + Numéro SIREN, 1 + Numéro FINESS Etablissement, 1 + Numéro FINESS EJ, 4 + RPPS rang, 0 + ADELI rang, Identifiant technique de la structure."
 
-* identifier[sirene] ^short = "Identifiant SIREN ou SIRET"
+* identifier[sirene] ^short = "Identifiant SIREN (9 chiffres) ou SIRET (14 chiffres)"
 * identifier[sirene].system = "http://sirene.fr"
 
 * identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
-* identifier[finess].system = "http://finess.sante.gouv.fr"
+* identifier[finess].system = "http://finess.esante.gouv.fr"
 
-* identifier[adeliRpps] ^short = "Identifiant ADELI rang ou RPPS rang"
+* identifier[adeliRpps] ^short = "Identifiant ADELI rang (9 caractères) ou RPPS rang (11 chiffres)"
 * identifier[adeliRpps].system = "https://annuaire.sante.fr"
 
 
