@@ -59,9 +59,10 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // Slice deja defini dans FrOrganization
 * type MS
 * type contains
-    activiteINSEE 0..* and
-    statutJuridiqueINSEE 0..* and 
-    sphParticipation 0..* 
+    activiteINSEE 0..1 and
+    statutJuridiqueINSEE 0..1 and 
+    sphParticipation 0..1 and
+	typeEtablissement 0..1
 
 // organizationType - slice deja existant 
 * type[organizationType] ^sliceName = "organizationType"
@@ -78,6 +79,10 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // modaliteParticipationSPH
 * type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
 * type[sphParticipation] ^short = "Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH)."
+
+// typeEtablissement
+* type[typeEtablissement] ^short = "Le type d’établissement détermine si c'est un établissement principal ou secondaire."
+
 
 // adresse
 * address MS
@@ -115,8 +120,12 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * extension ^slicing.rules = #open
 * extension contains
     AsDigitalCertificateExtension named as-ext-digital-certificate 0..1 MS and
-    AsOrganizationPharmacyLicenceExtension named as-ext-organization-pharmacy-licence 0..* MS
-    
+    AsOrganizationPharmacyLicenceExtension named as-ext-organization-pharmacy-licence 0..* MS and
+ 	AsOrganizationPricingModelExtension named as-ext-organization-pricing-model 0..1 MS and
+	AsOrganizationClosingTypeExtension named as-ext-organization-closing-type 0..1 MS and
+	AsOrganizationBudgetTypeExtension named as-ext-organization-budget-type 0..1 MS and
+	AsOrganizationAuthorizationDeadlineExtension named as-ext-organization-authorization-deadline 0..1 MS
+	
 // digitalCertificate
 * extension[as-ext-digital-certificate] ^isModifier = false
 * extension[as-ext-digital-certificate] ^short = "[DR] : certificat. Données descriptives du moyen d’identification par certificat."
