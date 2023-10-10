@@ -10,6 +10,7 @@ Les nouveaux services de publication de l'Annuaire Santé permettent d’exposer
 
 Ce guide d'implémentation remplace l'ancien package ANS.annuaire.fhir.r4 0.2.0.
 
+
 #### Contexte technique du projet
 
 L'objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir consommer ce référentiel via l'API FHIR.
@@ -17,24 +18,38 @@ L'objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir
 On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire.
 
 
+#### Standards utilisés
+
+Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4. Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est JSON.
+
+Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Modèle des Objets de Santé [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) gérés par l’ANS est disponible sur ce site (en cliquant [ici](mapping.html)). 
+
+
 ##### Ressources profilées 
 
-* Organization : Ressource comportant toutes les données publiques des « [structures](https://mos.esante.gouv.fr/4.html#_f6152a96-2f8f-4f69-89f5-18f024d4b4d8) »
-* Device : Ressource comportant toutes le données publiques concernant les données complémentaires FINESS « [équipements matériels lourds](https://mos.esante.gouv.fr/5.html#_1a21e9b8-d686-41ff-806d-38572f961ec6) »
-* HealthcareService : Ressource divisée en deux profils pour décrire les « [activités de soin](https://mos.esante.gouv.fr/5.html#_2f0d6658-e0f7-4486-a646-424b09f01f76) » et les « [équipements sociaux ](https://mos.esante.gouv.fr/5.html#_def51d8f-2eb8-47f8-9c30-b03709096666) »
-  * HealthcareService-SocialEquipment pour les équipements sociaux
-  * HealthcareService-HealthCareActivity pour les activités de soin
-* Practitioner : Ressource comportant toutes les données publiques concernant les données d’identification pérennes des « [professionnels de santé](https://mos.esante.gouv.fr/2.html#_9d79ff39-6b00-4aa6-ac03-7afb4a8aad2b) »
-* PractitionerRole : Ressource comportant toutes les données publiques concernant les données des « [exercices professionnels](https://mos.esante.gouv.fr/2.html#_5579aac4-b414-41f1-8569-2e99403e3af3) » et des « [situations d’exercice](https://mos.esante.gouv.fr/2.html#_86e1685b-9e1d-47fb-bb66-d23ca0eb9679) » des professionnels
+Les ressources FHIR utilisées sont les suivantes :
+
+* Practitioner
+* PractitionerRole 
+* Organization 
+* Device 
+* HealthcareService 
+* CapabilityStatement
+
 
 ##### Profils utilisés
 
+Une source est utilsée dans le cadre de ce volet :
 * hl7.fhir.fr.core (1.1.0) : « [FrPractitioner](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitioner) », « [FrPractitionerRoleExercice](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitionerRoleExercice) », « [FrOrganization](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrOrganization) », « [FrHumanName](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrHumanName) », « [FrContactPoint](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrContactPoint) » et « [FrAddress](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrAddress) » 
+
+Cet Implementation Guide contient 19 profils dont la liste est fournie sur ce site (en cliquant [ici](index.html))
+
 
 #### Liens utiles :
 
 - [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
 - [Démonstration](https://portail.openfhir.annuaire.sante.fr/)
+
 
 ### Dépendances
 
