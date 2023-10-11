@@ -7,7 +7,7 @@ Description: "Extension créée dans le cadre de l'Annuaire Santé pour définir
 * ^context.expression = "PractitionerRole"
 
 * . ^comment = "Concaténation des champs MOS : civilite + nomExercice + prenom"
-* . ^short = "La civilité, le nom et le prénom sous lequels exerce le professionnel."
+* . ^short = "La civilité, le nom et le prénom choisis par le professionnel lors de son enregistrement auprès de son Autorité d'Enregistrement AE (Ordre, ...) pour être publié en libre accès. Ce nom est à distinguer de celui indiqué par Practitioner.name qui correspond au nom d'état civil et est une donnée personnelle uniquement disponible en accès restreint."
 
 * value[x] only FrHumanName
 
