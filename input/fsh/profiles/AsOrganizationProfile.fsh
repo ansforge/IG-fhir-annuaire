@@ -104,8 +104,6 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
 
 // periode d'activite
-* extension[usePeriod] ^sliceName = "usePeriod"
-* extension[usePeriod].valuePeriod ^sliceName = "valuePeriod"
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure."
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure."
 
@@ -118,11 +116,9 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
     AsOrganizationPharmacyLicenceExtension named as-ext-organization-pharmacy-licence 0..* MS
     
 // digitalCertificate
-* extension[as-ext-digital-certificate] ^isModifier = false
 * extension[as-ext-digital-certificate] ^short = "[DR] : certificat. Données descriptives du moyen d’identification par certificat."
 
 // numeroLicence pour les officines
-* extension[as-ext-organization-pharmacy-licence] ^isModifier = false
 * extension[as-ext-organization-pharmacy-licence] ^short = "Numéro de la licence d'exploitation d’une officine (Synonyme : numeroLicence)."
 
 // Organization.endpoint
