@@ -34,7 +34,7 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 	
 /* PractitionerRole.identifier */
 * identifier MS
-* identifier ^short = "identifiant métier calculé à partir des identifiants techniques de l'exercice professionnel et la situation d'exercice (Synonyme : idFonctionnel)."
+* identifier ^short = "clé métier composée comme suit : Identifiant national de la personne physique + id EntiteGeographique + rôle + date début + date de fin de validité de la situation d'exercice (avec l’hypothèse -qui doit déjà être implémentée- qu’un professionnel ne peut pas avoir 2 exercices pro de même rôle et de même EntiteGeographique à un même moment)."
 
 // PractitionerRole.identifier.value
 * identifier.value ^short = "Identifiant technique de l'activité (Synonyme : idActivite)." 
@@ -250,7 +250,6 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 * telecom[mailbox-mss] ^short = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice (Synonyme : BoiteLettreMSS)."
-* telecom[mailbox-mss] ^comment = ""
 
 // PractitionerRole.availableTime
 * availableTime MS
