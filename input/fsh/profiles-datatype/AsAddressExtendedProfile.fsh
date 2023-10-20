@@ -21,10 +21,21 @@ Description: "Datatype profile créé à partir de FrAddress dans le contexte de
 * line.extension ^slicing.rules = #open
 
 * line.extension contains
-    iso21090-ADXP-careOf named careOf 0..* and 
-    iso21090-ADXP-additionalLocator named additionalLocator 0..* and
-    iso21090-ADXP-houseNumber named houseNumber 0..* and
-    iso21090-ADXP-buildingNumberSuffix named buildingNumberSuffix 0..* and
-    iso21090-ADXP-streetNameType named streetNameType 0..* and 
-    iso21090-ADXP-streetNameBase named streetNamebase 0..* and
-    iso21090-ADXP-postBox named postBox 0..*
+    iso21090-ADXP-careOf named careOf 0..1 and 
+    iso21090-ADXP-additionalLocator named additionalLocator 0..1 and
+    iso21090-ADXP-houseNumber named houseNumber 0..1 and
+    iso21090-ADXP-buildingNumberSuffix named buildingNumberSuffix 0..1 and
+    iso21090-ADXP-streetNameType named streetNameType 0..1 and 
+    iso21090-ADXP-streetNameBase named streetNamebase 0..1 and
+	iso21090-ADXP-precinct named precinct 0..1 and
+    iso21090-ADXP-postBox named postBox 0..1
+	
+* line.extension[careOf] ^short = "pointRemise (Adresse)"
+* line.extension[additionalLocator] ^short = "complementPointGeographique (Adresse)"
+* line.extension[houseNumber] ^short = "numeroVoie(Adresse)"
+* line.extension[buildingNumberSuffix] ^short = "(Adresse)"
+* line.extension[streetNameType] ^short = "typeVoie (Adresse)"
+* line.extension[streetNameType].valueString from $JDV-J103-TypeVoie-RASS (required)
+* line.extension[precinct] ^short = "lieuDit (Adresse) : Lieu qui porte un nom rappelant une particularité topographique ou historique."
+* line.extension[postBox] ^short = "mentionDistribution (Adresse)"
+	
