@@ -40,14 +40,14 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 
 // Contains rule
-* identifier contains activityId 0..* and amId 0..*
+* identifier contains idSituationExercice 0..* and numeroAm 0..*
 
 // PractitionerRole.identifier.system
-* identifier[activityId] ^short = "Identifiant d'activité propre au RPPS"
-* identifier[activityId].system = "http://rpps.fr"
+* identifier[idSituationExercice] ^short = "Identifiant d'activité propre au RPPS"
+* identifier[idSituationExercice].system = "http://rpps.fr"
 
-* identifier[amId] ^short = "[Donnée restreinte] : Identifiant d’activité propre à l’Assurance Maladie. format: 9 digits. synonyme: numeroAM"
-* identifier[amId].system = "http://ameli.fr"
+* identifier[numeroAm] ^short = "[Donnée restreinte] : Identifiant d’activité propre à l’Assurance Maladie. format: 9 digits. synonyme: numeroAM"
+* identifier[numeroAm].system = "http://ameli.fr"
 
 // PractitionerRole.active
 * active MS

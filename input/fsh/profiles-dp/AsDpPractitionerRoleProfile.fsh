@@ -15,7 +15,8 @@ Description: 	"Profil applicatif créé à partir du profil générique as-pract
 * extension[as-ext-practitionerrole-contracted] 0..0
 * extension[as-ext-practitionerrole-hascas] 0..0
 * extension[as-ext-practitionerrole-vitale-accepted] 0..0
-* identifier 0..0
+* identifier[idSituationExercice] 0..1
+* identifier[numeroAm] 0..0
 * active 1..1
 * period 0..0
 * telecom ^slicing.rules = #closed // only boiteLettreMSS is an open data
