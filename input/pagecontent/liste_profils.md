@@ -1,4 +1,5 @@
-Les profils spécifient le format de données exposées par l'API Annuaire. Certains champs contiennent un tag Must Support (MS), symbolisés par un S encadré d'un carré rouge, indiquant que ce champs est supporté par l'API.
+Les profils spécifient le format de données exposées par l'API Annuaire. Certains champs contiennent un tag Must Support (MS), symbolisés par un S encadré d'un carré rouge, indiquant que cette donnée est exposée par l'API si celle-ci existe.
+
 
 ### Liste des profils génériques
 
