@@ -7,4 +7,4 @@ Usage: #definition
 * code = #number-smartcard
 * base = #PractitionerRole
 * type = #string
-* expression = "PractitionerRole.extension.where(url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-smartcard').extension.where(url='number').valueString"
+* expression = "extension.where(url='https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-smartcard').extension.where(url='number').valueString"
