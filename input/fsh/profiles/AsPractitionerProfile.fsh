@@ -48,11 +48,11 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[adeli] ^short = "Identifiant ADELI"
 * identifier[adeli].system = "http://adeli.fr"
 
-* identifier[localId] ^short = "Identifiant local : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
+* identifier[localId] ^short = "Identifiant local : FINESS/localId, SIREN/localId, SIRET/localId ou Id Cabinet RPPS/localId, ADELI/localId"
 * identifier[localId].system 1..1
 * identifier[localId].system from AsVSLocalIdSystems (required)
-* identifier[localId].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr"
-* identifier[localId].value ^short = "Valeur de l'identifiant au format xxxxx/12345 où xxxxx est l'identifiant finess/siren/siret ou rpss et 12345 le numéro de registre"
+* identifier[localId].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
+* identifier[localId].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy l'identifiant interne"
 
 
 // Practitioner.active
@@ -138,7 +138,8 @@ CodeSystem: AsCSLocalIdSystems
 Id: as-cs-local-id-systems
 Title: "Local Id Systems"
 Description: "Systèmes des identifiants locaux"
-* #finess.local.esante.gouv.fr "Identifiant local finess"
-* #siren.local.esante.gouv.fr "Identifiant local siren"
-* #siret.local.esante.gouv.fr "Identifiant local siret"
-* #rpss.local.esante.gouv.fr "Identifiant local rpps"
+* #finess.local.esante.gouv.fr "Système de l'identifiant local finess"
+* #siren.local.esante.gouv.fr "Système de l'identifiant local siren"
+* #siret.local.esante.gouv.fr "Système de l'identifiant local siret"
+* #rpss.local.esante.gouv.fr "Système de l'identifiant local rpps"
+* #adeli.local.esante.gouv.fr "Système de l'identifiant local adeli"
