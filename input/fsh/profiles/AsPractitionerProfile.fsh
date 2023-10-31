@@ -34,12 +34,11 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[idNatPs] ^short = "Identifiant national des PS.  dépend de la source d'où provient l'identifiant. Il est préfixé selon l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
 
 // Practitioner.identifier.type
+
 * identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique."
 * identifier[idNatPs].type ^comment = "Synonyme : typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier[idNatPs].type from $fr-practioner-identifier-type (extensible)
-// Practitioner.identifier.system
 * identifier[idNatPs].system = "urn:oid:1.2.250.1.71.4.2.1"
-// Practitioner.identifier.value
 * identifier[idNatPs].value ^comment = "Synonyme : idPP\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
 * identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPS"
 
@@ -53,7 +52,6 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[localId].system 1..1
 * identifier[localId].system from AsVSLocalIdSystems (required)
 * identifier[localId].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr"
-* identifier[localId].value 1..1
 * identifier[localId].value ^short = "Valeur de l'identifiant au format xxxxx/12345 où xxxxx est l'identifiant finess/siren/siret ou rpss et 12345 le numéro de registre"
 
 
