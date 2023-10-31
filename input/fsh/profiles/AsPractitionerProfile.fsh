@@ -48,12 +48,18 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[adeli] ^short = "Identifiant ADELI"
 * identifier[adeli].system = "http://adeli.fr"
 
-* identifier[localId] ^short = "Identifiant local : FINESS/localId, SIREN/localId, SIRET/localId ou Id Cabinet RPPS/localId, ADELI/localId"
-* identifier[localId].system 1..1
-* identifier[localId].system from AsVSLocalIdSystems (required)
-* identifier[localId].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
-* identifier[localId].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy l'identifiant interne"
+* identifier[nRegistre] ^short = "Numéro de registre du practicien (Carte CPA)"
+* identifier[nRegistre].system 1..1
+* identifier[nRegistre].system from as-vs-registry-id-systems (required)
+* identifier[nRegistre].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
+* identifier[nRegistre].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy le numéro de registre."
 
+
+* identifier[identifiantInterne] ^short = "Identifiant interne du practicien, au sein d'un établissement"
+* identifier[identifiantInterne].system 1..1
+* identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
+* identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
+* identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy l'identifiant interne."
 
 // Practitioner.active
 * active MS
@@ -127,19 +133,37 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * qualification.code.coding[degreeType] ^short = "Type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
 
 
-ValueSet: AsVSLocalIdSystems
-Id: as-vs-local-id-systems
+ValueSet: AsVSRegistryIdSystems
+Id: as-vs-registry-id-systems
 Title: "Local Id Systems VS"
-Description: "Systèmes des identifiants locaux"
-* include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-local-id-systems
+Description: "Systèmes des identifiants registre"
+* include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-registry-id-systems
 
 
-CodeSystem: AsCSLocalIdSystems
-Id: as-cs-local-id-systems
-Title: "Local Id Systems"
+CodeSystem: AsCSRegistryIdSystems
+Id: as-cs-registry-id-systems
+Title: "Registre Id Systems"
+Description: "Systèmes des identifiants registre"
+* #finess.registre.esante.gouv.fr "Système de l'identifiant registre finess"
+* #siren.registre.esante.gouv.fr "Système de l'identifiant registre siren"
+* #siret.registre.esante.gouv.fr "Système de l'identifiant registre siret"
+* #rpss.registre.esante.gouv.fr "Système de l'identifiant registre rpps"
+* #adeli.registre.esante.gouv.fr "Système de l'identifiant registre adeli"
+
+
+ValueSet: AsVSInterneIdSystems
+Id: as-vs-intern-id-systems
+Title: "Internal Id Systems VS"
+Description: "Systèmes des identifiants internes"
+* include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems
+
+
+CodeSystem: AsCSInterneIdSystems
+Id: as-cs-intern-id-systems
+Title: "Internal Id Systems"
 Description: "Systèmes des identifiants locaux"
-* #finess.local.esante.gouv.fr "Système de l'identifiant local finess"
-* #siren.local.esante.gouv.fr "Système de l'identifiant local siren"
-* #siret.local.esante.gouv.fr "Système de l'identifiant local siret"
-* #rpss.local.esante.gouv.fr "Système de l'identifiant local rpps"
-* #adeli.local.esante.gouv.fr "Système de l'identifiant local adeli"
+* #finess.interne.esante.gouv.fr "Système de l'identifiant interne finess"
+* #siren.interne.esante.gouv.fr "Système de l'identifiant interne siren"
+* #siret.interne.esante.gouv.fr "Système de l'identifiant interne siret"
+* #rpss.interne.esante.gouv.fr "Système de l'identifiant interne rpps"
+* #adeli.interne.esante.gouv.fr "Système de l'identifiant interne adeli"
