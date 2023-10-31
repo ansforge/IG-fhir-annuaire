@@ -51,6 +51,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 * identifier[localId] ^short = "Identifiant local : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
 * identifier[localId].system 1..1
+* identifier[localId].system from AsVSLocalIdSystems (required)
 * identifier[localId].system ^short = "finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr"
 * identifier[localId].value 1..1
 * identifier[localId].value ^short = "Value au format xxxxx/12345 où xxxxx est l'identifiant finess/siren/siret ou rpss et 12345 le numéro de registre"
@@ -126,3 +127,20 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * qualification.code.coding contains degreeType 0..* MS
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^short = "Type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
+
+
+ValueSet: AsVSLocalIdSystems
+Id: as-vs-local-id-systems
+Title: "Local Id Systems VS"
+Description: "Systèmes des identifiants locaux"
+* include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-local-id-systems
+
+
+CodeSystem: AsCSLocalIdSystems
+Id: as-cs-local-id-systems
+Title: "Local Id Systems"
+Description: "Systèmes des identifiants locaux"
+* #finess.local.esante.gouv.fr "Identifiant local finess"
+* #siren.local.esante.gouv.fr "Identifiant local siren"
+* #siret.local.esante.gouv.fr "Identifiant local siret"
+* #rpss.local.esante.gouv.fr "Identifiant local rpps"
