@@ -15,9 +15,6 @@ Ce guide d'implémentation remplace l'ancien package ANS.annuaire.fhir.r4 0.2.0.
 
 L'objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir consommer ce référentiel via l'API FHIR.
 
-On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire.
-
-
 #### Standards utilisés
 
 Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4. Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est JSON.

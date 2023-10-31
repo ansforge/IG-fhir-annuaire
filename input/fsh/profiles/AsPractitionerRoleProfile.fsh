@@ -25,12 +25,12 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
     AsPractitionerRoleNameExtension named as-ext-practitionerrole-name 0..* MS and  // nom d'exercice + prénom d'exercice
     AsPractitionerRoleRegistrationExtension named as-ext-practitionerrole-registration 0..* MS and // inscription ordre
     AsPractitionerRoleEducationLevelExtension named as-ext-practitionerrole-education-level 0..* MS and // under discussion
-    AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..* MS and // carte cpx
+    AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..* MS and // carte CPX
     AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS and //  certificat
-	AsPractitionerRoleEndCauseExtension named as-ext-practitionerrole-end-cause 0..1 MS and // motif de fin d’activité, renseigné si period.end not null
-	AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..1 MS and // secteur de conventionnement
-	AsPractitionerRoleHasCas named as-ext-practitionerrole-hascas 0..1 MS and // Option pratique tarifaire maîtrisée
-	AsPractitionerRoleVitaleAccepted named as-ext-practitionerrole-vitale-accepted 0..1 MS // Indicateur carte Vitale acceptée
+	AsPractitionerRoleEndCauseExtension named as-ext-practitionerrole-end-cause 0..* MS and // motif de fin d’activité, renseigné si period.end not null
+	AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..* MS and // secteur de conventionnement
+	AsPractitionerRoleHasCas named as-ext-practitionerrole-hascas 0..* MS and // Option pratique tarifaire maîtrisée
+	AsPractitionerRoleVitaleAccepted named as-ext-practitionerrole-vitale-accepted 0..* MS // Indicateur carte Vitale acceptée
 	
 /* PractitionerRole.identifier */
 * identifier MS
@@ -94,77 +94,62 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 // Slice 1 : categorie profession
 * code.coding[CategorieProfession] ^short = "Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (Synonyme : categorieProfessionnelle)."
 * code.coding[CategorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
-* code.coding[CategorieProfession] ^binding.description = "Liste des catégories professionnelles"
 
 // Slice 2 : profession de sante
 * code.coding[professionG15] ^short = "Profession exercée ou future profession de l'étudiant (Synonyme: professionSante)."
 * code.coding[professionG15] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionG15] ^binding.description = "Liste des professions de santé  définies par le code de la santé publique"
 
 // Slice 3 : profession sociale
 * code.coding[professionR94] ^short = "Profession du social (Synonyme: professionSocial)."
 * code.coding[professionR94] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR94] ^binding.description = "Liste des professions du social"
 
 // Slice 4 : usage de titre professionnel
 * code.coding[professionR95] ^short = "Profession à usage de titre professionnel (Synonyme: usagerTitre)."
 * code.coding[professionR95] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR95] ^binding.description = "Liste des professions à usage de titre professionnel"
 
 // Slice 5 : autre profession
 * code.coding[professionR291] ^short = "professionnel non membre d'une profession réglementée (Synonyme: autreProfession)."
 * code.coding[professionR291] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR291] ^binding.description = "Liste de professionnels non membres d'une profession réglementée"
 
 // Slice 6 : genre activite
 * code.coding[genreActivite] ^short = "Le genre identifiant une activité qui nécessite l’application de règles de gestion spécifiques (Synonyme: genreActivite)."
 * code.coding[genreActivite] from $JDV-J94-GenreActivite-RASS (required)
-* code.coding[genreActivite] ^binding.description = "Liste des genres d'activité"
 
 // Slice 7 : mode exercice  
 * code.coding[modeExercice] ^short = "Le mode d'exercice décrit selon quelle modalité une activité est exercée au regard de l'organisation de la rétribution du professionnel (Synonyme: modeExercice)."
 * code.coding[modeExercice] from $JDV-J95-ModeExercice-RASS (required)
-* code.coding[modeExercice] ^binding.description = "Liste des modes d'exercice"
 
 // Slice 8 : type activite liberale
 * code.coding[typeActiviteLiberale] from $JDV-J96-TypeActiviteLiberale-RASS (required)
-* code.coding[typeActiviteLiberale] ^binding.description = "Liste des types d’activité"
 * code.coding[typeActiviteLiberale] ^short = "Type d’activité libérale, par exemple: Cabinet; Secteur privé à l'hôpital (Synonyme: typeActiviteLiberale)."
 
 // Slice 9 : statut des PS du SSA  
 * code.coding[statutProfessionnelSSA] ^short = "Statut du professionnel du Service de santé des armées (Synonyme: statutProfessionnelSSA)."
 * code.coding[statutProfessionnelSSA] from $JDV-J97-StatutProfessionnelSSA-RASS (required)
-* code.coding[statutProfessionnelSSA] ^binding.description = "Liste des statuts SSA"
 
 // Slice 10 : statut hospitalier 
 * code.coding[statutHospitalier] ^short = "Statut hospitalier dans le cas d’une activité exercée en établissement public de santé (Synonyme: statutHospitalier)."
 * code.coding[statutHospitalier] from $JDV-J98-StatutHospitalier-RASS (required)
-* code.coding[statutHospitalier] ^binding.description = "Liste des statuts hospitaliers"
 
 // Slice 11 : fonction
 * code.coding[fonctionR21] ^short = "Fonction du professionnel au sein de la structure d’exercice (Synonyme: role)."
 * code.coding[fonctionR21] from $JDV-J108-EnsembleFonction-RASS (required)
-* code.coding[fonctionR21] ^binding.description = "Liste des fonctions et rôles"
 
 // Slice 12 : autreFonctionSanitaire
 * code.coding[fonctionR96] ^short = "Autre fonction du domaine sanitaire exercée par le professionnel au sein de la structure d’exercice (Synonyme: role)."
 * code.coding[fonctionR96] from $JDV-J108-EnsembleFonction-RASS (required)
-* code.coding[fonctionR96] ^binding.description = "Liste des fonctions et rôles"
 
 // Slice 13 : role prise en charge
 * code.coding[fonctionR85] ^short = "Rôle du professionnel dans la prise en charge des patients ou des usagers (Synonyme: role)."
 * code.coding[fonctionR85] from $JDV-J108-EnsembleFonction-RASS (required)
-* code.coding[fonctionR85] ^binding.description = "Liste des rôles"
 
 // Slice 14 : section tableau pharmaciens 
 * code.coding[metierPharmacienR06] ^short = "Section du tableau de l’Ordre des pharmaciens (CNOP) (Synonyme: sectionOrdrePharmacien)." 
 * code.coding[metierPharmacienR06] from $JDV-J73-MetierPharmacien-RASS (required)
-* code.coding[metierPharmacienR06] ^binding.description = "Liste des sections du tableau CNOP"
 
 // Slice 15 : sous section tableau pharmaciens  
 * code.coding[metierPharmacienG05] ^short = "Sous-section ou à défaut section du tableau de l’Ordre des pharmaciens (CNOP). (Synonyme: sousSectionOrdrePharmacien)"
 * code.coding[metierPharmacienG05] from $JDV-J73-MetierPharmacien-RASS (required)
-* code.coding[metierPharmacienG05] ^binding.description = "Liste des sous-sections du tableau CNOP"
 
 /* Slicing pour separer savoir-faire et attribution particuliere */
 * specialty only as-codeableconcept-timed
@@ -194,52 +179,42 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 // Slice B1 : specialiteOrdinal
 * specialty[savoirFaireR38] ^short = "Spécialité ordinale  reconnue par une autorité d'enregistrement (Ordre ou SSA) (Synonyme: specialite)."
 * specialty[savoirFaireR38] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR38] ^binding.description = "Liste des spécialités ordinales"
 
 // Slice B2 : competence
 * specialty[savoirFaireR39] ^short = "Compétence acquise par le professionnel (Synonyme: competence)."
 * specialty[savoirFaireR39] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR39] ^binding.description = "Liste des compétences"
 
 // Slice B3 : competenceExclusive
 * specialty[savoirFaireR40] ^short = "Compétence exclusive exercée par le professionnel à titre exclusif (Synonyme: competenceExclusive)."
 * specialty[savoirFaireR40] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR40] ^binding.description = "Liste des compétences exclusives"
 
 // Slice B4 : DESCnonQualifian
 * specialty[savoirFaireR42] ^short = "Diplôme d'études spécialisées complémentaires (DESC). Synonyme: DESCnonQualifian"
 * specialty[savoirFaireR42] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR42] ^binding.description = "Liste des DESC"
 
 // Slice B5 : capaciteSavoirFaire
 * specialty[savoirFaireR43] ^short = "Capacité (savoir-faire)de médecine (Synonyme: capaciteSavoirFaire)"
 * specialty[savoirFaireR43] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR43] ^binding.description = "Liste des capacités"
 
 // Slice B6 : qualificationPAC
 * specialty[savoirFaireR44] ^short = "Qualification de praticien adjoint contractuel (Synonyme: qualificationPAC)."
 * specialty[savoirFaireR44] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR44] ^binding.description = "Liste des qualifications"
 
 // Slice B7 : fonctionQualifiee
 * specialty[savoirFaireR45] ^short = "Fonction qualifiée (Synonyme: fonctionQualifiee)."
 * specialty[savoirFaireR45] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR45] ^binding.description = "Liste des fonctions qualifiées"
 
 // Slice B8 : droitExerciceComplementaire
 * specialty[savoirFaireR97] ^short = "Droit d'exercice complémentaire (Synonyme: droitExerciceComplementaire)."
 * specialty[savoirFaireR97] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR97] ^binding.description = "Liste des droits d'exercice complémentaires"
 
 // Slice B9 : orientationParticuliere
 * specialty[savoirFaireG13] ^short = "Orientation particulière (Synonyme: orientationParticuliere)."
 * specialty[savoirFaireG13] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireG13] ^binding.description = "Liste des orientations particulières"
 
 // Slice B10 : typeSavoirFaire
 * specialty[typeSavoirFaire] ^short = "Le type de savoir-faire (qualifications/autres attributions). (Synonyme: typeSavoirFaire)"
 * specialty[typeSavoirFaire] from $JDV-J91-TypeSavoirFaire-RASS (required)
-* specialty[typeSavoirFaire] ^binding.description = "Liste des types de savoir-faire"
 
 // PractitionerRole.location
 * location MS

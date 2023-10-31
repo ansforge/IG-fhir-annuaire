@@ -83,3 +83,5 @@ Alias: $JDV-J83-AutoriteEnregistrement-RASS = https://mos.esante.gouv.fr/NOS/JDV
 Alias: $TRE-R286-TypeFermeture = https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture
 Alias: $TRE_R74-ModeFixationTarifaire = https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire
 Alias: $JDV-J103-TypeVoie-RASS = https://mos.esante.gouv.fr/NOS/JDV_J103-TypeVoie-RASS/FHIR/JDV-J103-TypeVoie-RASS
+Alias: $TRE-R301-SourceInformationInstallation = https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation
+Alias: $JDV_J131-CategorieActiviteSanitaireRegulee-RASS = https://mos.esante.gouv.fr/NOS/JDV_J131-CategorieActiviteSanitaireRegulee-RASS/FHIR/JDV-J131-CategorieActiviteSanitaireRegulee-RASS

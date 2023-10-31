@@ -4,8 +4,12 @@ Id: as-dp-healthcareservice-healthcare-activity
 Title: "AS Donnée Publique HealthcareService Healthcare Activity Profile"
 Description: "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé."
 
+* identifier 0..1
 * active 1..1 // true par défaut; false pour  flaguer les activités de soins supprimées entre deux dates pour permettre aux utilisateurs du delta d'identifier les ressources supprimées. 
-* specialty 0..0
+* specialty 0..1
+* category 0..1
+* type 0..1
+* characteristic 0..1
 * location 0..0
 * name 0..0
 * comment 0..0
