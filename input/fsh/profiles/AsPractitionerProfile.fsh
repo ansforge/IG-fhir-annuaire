@@ -52,9 +52,9 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[localId] ^short = "Identifiant local : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
 * identifier[localId].system 1..1
 * identifier[localId].system from AsVSLocalIdSystems (required)
-* identifier[localId].system ^short = "finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr"
+* identifier[localId].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr"
 * identifier[localId].value 1..1
-* identifier[localId].value ^short = "Value au format xxxxx/12345 où xxxxx est l'identifiant finess/siren/siret ou rpss et 12345 le numéro de registre"
+* identifier[localId].value ^short = "Valeur de l'identifiant au format xxxxx/12345 où xxxxx est l'identifiant finess/siren/siret ou rpss et 12345 le numéro de registre"
 
 
 // Practitioner.active
