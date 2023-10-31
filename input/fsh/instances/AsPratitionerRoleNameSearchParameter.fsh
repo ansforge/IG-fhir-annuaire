@@ -9,4 +9,4 @@ Usage: #definition
 * code = #name
 * base = #PractitionerRole
 * type = #string
-* expression = "PractitionerRole.extension.where(url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name').valueHumanName"
+* expression = "extension.where(url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name').valueHumanName"

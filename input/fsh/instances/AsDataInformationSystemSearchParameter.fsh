@@ -11,4 +11,4 @@ Usage: #definition
 * base[+] = #Device
 * base[+] = #HealthcareService
 * type = #token
-* expression = "extension.where(url='https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace').extension(url='systeme-information').valueCode"
+* expression = "extension.where(url='https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace').extension.where(url='systeme-information').valueCode"
