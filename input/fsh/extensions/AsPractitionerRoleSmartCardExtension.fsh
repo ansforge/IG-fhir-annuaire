@@ -29,6 +29,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 * extension[number] ^comment = "Synonyme : numeroCarte"
 * extension[number] ^short = "Numéro de carte du professionnel."
 * extension[number].value[x] only string
+* extension[number].valueString ^short = "Numéro de carte du professionnel."
 
 // periodValidite
 * extension[period] ^short = "Période de validité de la carte."
