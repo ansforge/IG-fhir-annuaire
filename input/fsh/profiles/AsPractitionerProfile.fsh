@@ -54,7 +54,6 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[nRegistre].system from as-vs-registry-id-systems (required)
 * identifier[nRegistre].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
 * identifier[nRegistre].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy le numéro de registre."
-?
 
 * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 * identifier[identifiantInterne].system 1..1
