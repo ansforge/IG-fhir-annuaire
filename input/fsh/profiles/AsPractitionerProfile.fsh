@@ -29,9 +29,10 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 // Contains rule
 
-* identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* and localId 0..*
+* identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* and nRegistre 0..* and identifiantInterne 0..*
 
-* identifier[idNatPs] ^short = "Identifiant national des PS.  dépend de la source d'où provient l'identifiant. Il est préfixé selon l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
+
+* identifier[idNatPs] ^short = "Identifiant national des PS.  dépend de la source d'où provient l'identifiant. Il est préfixé selon l'Annexe Transverse – Source des données métier pour les professionnels et les structures du CI-SIS."
 
 // Practitioner.identifier.type
 
@@ -48,18 +49,18 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[adeli] ^short = "Identifiant ADELI"
 * identifier[adeli].system = "http://adeli.fr"
 
-* identifier[nRegistre] ^short = "Numéro de registre du practicien (Carte CPA)"
+* identifier[nRegistre] ^short = "Numéro de registre du practicien indiqué sur la carte CPA"
 * identifier[nRegistre].system 1..1
 * identifier[nRegistre].system from as-vs-registry-id-systems (required)
 * identifier[nRegistre].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
 * identifier[nRegistre].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy le numéro de registre."
+?
 
-
-* identifier[identifiantInterne] ^short = "Identifiant interne du practicien, au sein d'un établissement"
+* identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est un identifiant local propre à une structure."
 * identifier[identifiantInterne].system 1..1
 * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
 * identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
-* identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy l'identifiant interne."
+* identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy l'identifiant local."
 
 // Practitioner.active
 * active MS
