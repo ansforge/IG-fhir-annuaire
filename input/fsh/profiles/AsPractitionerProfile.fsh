@@ -36,6 +36,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // Practitioner.identifier.type
 
+// Identifiant national des professionels de santé
 * identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique."
 * identifier[idNatPs].type ^comment = "Synonyme : typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier[idNatPs].type from $fr-practioner-identifier-type (extensible)
@@ -43,18 +44,23 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[idNatPs].value ^comment = "Synonyme : idPP\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
 * identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPS"
 
+// Identifiant du Répertoire Partagé des Professionnels intervenant dans le système de Santé (RPPS). Celui-ci peut aussi être inclus dans l'iNatPs.
 * identifier[rpps] ^short = "Identifiant RPPS"
 * identifier[rpps].system = "http://rpps.fr"
 
+// Identifiant ADELI. Celui-ci peut aussi être inclus dans l'iNatPs.
 * identifier[adeli] ^short = "Identifiant ADELI"
 * identifier[adeli].system = "http://adeli.fr"
 
+
+// Identifiant par numéro de registre.
 * identifier[nRegistre] ^short = "Numéro de registre du practicien indiqué sur la carte CPA"
 * identifier[nRegistre].system 1..1
 * identifier[nRegistre].system from as-vs-registry-id-systems (required)
 * identifier[nRegistre].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpss.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
 * identifier[nRegistre].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpss/adeli et yyyyy le numéro de registre."
 
+// Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'iNatPs.
 * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 * identifier[identifiantInterne].system 1..1
 * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
