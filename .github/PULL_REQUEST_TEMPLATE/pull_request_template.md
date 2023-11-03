@@ -6,4 +6,5 @@
 
 ## Preview
 
-https://ansforge.github.io/IG-documentation/ig/[ajouter_nom_de_la_branche] 
+https://ansforge.github.io/IG-fhir-annuaire/ig/[ajouter_nom_de_la_branche] 
+
