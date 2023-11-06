@@ -19,8 +19,7 @@ Description: "Profil créé à partir de HealthcareService dans le contexte de l
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsHealthcareServiceAuthorizationExtension named as-ext-healthcareservice-authorization 0..* MS and
-    AsHealthcareServiceDateUpdateActivityExtension named as-ext-healthcareservice-date-update-activity 0..* MS
+    AsHealthcareServiceAuthorizationExtension named as-ext-healthcareservice-authorization 0..* MS
 
 // numeroAutorisationARHGOS
 * identifier 0..* MS
