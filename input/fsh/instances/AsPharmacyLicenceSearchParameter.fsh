@@ -7,4 +7,4 @@ Usage: #definition
 * code = #pharmacy-licence
 * base = #Organization
 * type = #string
-* expression = "extension.where(url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence').valueString"
+* expression = "extension.where(url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence').value"
