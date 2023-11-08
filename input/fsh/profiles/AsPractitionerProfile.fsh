@@ -32,7 +32,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* and nRegistre 0..* and identifiantInterne 0..*
 
 
-* identifier[idNatPs] ^short = "Identifiant national des PS.  dépend de la source d'où provient l'identifiant. Il est préfixé selon l'Annexe Transverse – Source des données métier pour les professionnels et les structures du CI-SIS."
+* identifier[idNatPs] ^short = "Identifiant national des PS. Cet identifiant est notamment utilisé dans le cadre du DMP et de la CPS. Cet identifiant est préfixé selon source de provenance de l'identifiant (cf Annexe Transverse – Source des données métier pour les professionnels et les structures du CI-SIS.)"
 
 // Practitioner.identifier.type
 
