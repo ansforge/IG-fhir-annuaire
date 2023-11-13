@@ -29,29 +29,36 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 // Contains rule
 
-* identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* and localId 0..*
+* identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* 
+// and identifiantInterne 0..*
 
-* identifier[idNatPs] ^short = "Identifiant national des PS.  dépend de la source d'où provient l'identifiant. Il est préfixé selon l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
+
+* identifier[idNatPs] ^short = "Identifiant national des PS. Cet identifiant est notamment utilisé dans le cadre du DMP et de la CPS. Cet identifiant est préfixé selon source de provenance de l'identifiant (cf Annexe Transverse – Source des données métier pour les professionnels et les structures du CI-SIS.)"
 
 // Practitioner.identifier.type
+
+// Identifiant national des professionels de santé
 * identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique."
 * identifier[idNatPs].type ^comment = "Synonyme : typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier[idNatPs].type from $fr-practioner-identifier-type (extensible)
-// Practitioner.identifier.system
 * identifier[idNatPs].system = "urn:oid:1.2.250.1.71.4.2.1"
-// Practitioner.identifier.value
 * identifier[idNatPs].value ^comment = "Synonyme : idPP\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
 * identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPS"
 
+// Identifiant du Répertoire Partagé des Professionnels intervenant dans le système de Santé (RPPS). Celui-ci peut aussi être inclus dans l'idNatPs.
 * identifier[rpps] ^short = "Identifiant RPPS"
 * identifier[rpps].system = "http://rpps.fr"
 
+// Identifiant ADELI. Celui-ci peut aussi être inclus dans l'idNatPs.
 * identifier[adeli] ^short = "Identifiant ADELI"
 * identifier[adeli].system = "http://adeli.fr"
 
-* identifier[localId] ^short = "Identifiant local : Id Cabinet ADELI/N° de registre, FINESS/N° de registre, SIREN/N° de registre, SIRET/N° de registre ou Id Cabinet RPPS/N° de registre"
-* identifier[localId].system = "urn:oid:1.2.250.1.213.1.6.4.2"
-
+// // Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
+// * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
+// * identifier[identifiantInterne].system 1..1
+// * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
+// * identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
+// * identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps/adeli et yyyyy l'identifiant local."
 
 // Practitioner.active
 * active MS
@@ -123,3 +130,21 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * qualification.code.coding contains degreeType 0..* MS
 * qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 * qualification.code.coding[degreeType] ^short = "Type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
+
+
+// ValueSet: AsVSInterneIdSystems
+// Id: as-vs-intern-id-systems
+// Title: "Internal Id Systems VS"
+// Description: "Systèmes des identifiants internes"
+// * include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems
+
+
+// CodeSystem: AsCSInterneIdSystems
+// Id: as-cs-intern-id-systems
+// Title: "Internal Id Systems"
+// Description: "Systèmes des identifiants locaux"
+// * #finess.interne.esante.gouv.fr "Système de l'identifiant interne FINESS"
+// * #siren.interne.esante.gouv.fr "Système de l'identifiant interne SIREN"
+// * #siret.interne.esante.gouv.fr "Système de l'identifiant interne SIRET"
+// * #rpps.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet RPPS"
+// * #adeli.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet ADELI"
