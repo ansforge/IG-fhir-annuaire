@@ -38,9 +38,11 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
 * identifier[finess].system = "http://finess.esante.gouv.fr"
 
-* identifier[adeliRpps] ^short = "Identifiant ADELI rang (9 caractères) ou RPPS rang (11 chiffres)"
-* identifier[adeliRpps].system = "https://annuaire.sante.fr"
+* identifier[adeliRang] ^short = "Identifiant ADELI rang (9 chiffres ADELI + 2 chiffres RANG)"
+* identifier[adeliRang].system = "https://adelirang.esante.gouv.fr"
 
+* identifier[rppsRang] ^short = "RPPS rang (11 chiffres RPPS + 2 chiffres RANG)"
+* identifier[rppsRang].system = "https://rppsrang.esante.gouv.fr"
 
 // Organization.active
 * active MS
