@@ -1,0 +1,98 @@
+Instance: pp19dr-organization-eg-cab
+InstanceOf: AsDrOrganizationProfile
+Usage: #example
+// Basé sur le fichier tests-Platines-rass\Services_delta_donnees_actives\lot_complet\detail_jdd\2-Full_jour1\PM\PM1\PM1.json
+
+// Identifiant technique
+* id = "158480"
+
+// Métadonnées
+* meta
+  * versionId = "0.1"
+  * source = "https://annuaire.sante.fr"
+  * lastUpdated = "2019-09-01T01:00:00.000+01:00"
+  * profile[+] = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization"
+
+// Actif
+* active = true
+
+// Identifiant fonctionnel 
+* identifier[idNatSt][+]
+  * system = "urn:oid:1.2.250.1.71.4.2.2"
+  * use = #official
+  * value = "1754567860"
+  * type
+    * coding[+]
+      * system = "http://interopsante.org/CodeSystem/fr-v2-0203"
+      * code = #IDNST
+* identifier[+][finess]
+  * system = "http://finess.esante.gouv.fr"
+  * use = #official
+  * value = "754567860"
+  * type
+    * coding[+]
+      * system = "http://interopsante.org/CodeSystem/fr-v2-0203"
+      * code = #FINEG
+* identifier[adeliRpps][+]
+  * system = "https://annuaire.sante.fr"
+  * use = #official
+  * value = "F754567860"
+  * type
+    * coding[+]
+      * system = "http://interopsante.org/CodeSystem/fr-v2-0203"
+      * code = #INTRN
+
+// Nom
+* name = "CH EURE-SEINE"
+
+// Langage
+* language = #fr
+
+// Type
+* type[organizationType][+]
+  * coding
+    * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-3307"
+    * code = #GEOGRAPHICAL-ENTITY
+* type[secteurActiviteRASS][+]
+  * coding
+    * system = "https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite"
+    * code = #SA01
+* type[activiteINSEE][+]
+  * coding
+    * system = "https://mos.esante.gouv.fr/NOS/TRE_R75-InseeNAFrev2Niveau5/FHIR/TRE-R75-InseeNAFrev2Niveau5/"
+    * code = #86.10Z
+
+// Télécommunication
+* telecom[+]
+  * system = #phone
+  * value = "0450636363"
+  * rank = 1
+* telecom[+]
+  * system = #fax
+  * value = "0450455933"
+
+// Adresse
+* address
+  * city = "75014 PARIS"
+  * postalCode = "75014"
+  * extension[+]
+    * url = "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"
+    * valueCoding
+      * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
+      * code = #75114
+  * line
+    * extension[+]
+      * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+      * valueString = "96"
+    * extension[+]
+      * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType"
+      * valueString = "R"
+    * extension[+]
+      * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase"
+      * valueString = "DIDOT"
+
+// Période
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/organization-period"
+  * valuePeriod
+    * start = "2019-06-01"
