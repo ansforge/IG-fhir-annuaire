@@ -29,7 +29,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 // Contains rule
 
-* identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* 
+* identifier contains idNatPs 0..1 and rpps 0..* and adeli 0..* 
 // and identifiantInterne 0..*
 
 

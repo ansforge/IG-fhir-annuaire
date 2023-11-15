@@ -23,7 +23,7 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 
 // Contains rule
-* identifier contains idNatSt 0..* and sirene 0..* and finess 0..* and adeliRang 0..* and rppsRang 0..*
+* identifier contains idNatSt 0..1 and sirene 0..* and finess 0..* and adeliRang 0..* and rppsRang 0..*
 
 * identifier[idNatSt] ^short = "Identifiant idNat_Struct qui doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
 * identifier[idNatSt].use = #official
