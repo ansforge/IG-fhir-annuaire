@@ -23,7 +23,7 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 
 // Contains rule
-* identifier contains idNatSt 0..* and sirene 0..* and finess 0..* and adeliRpps 0..*
+* identifier contains idNatSt 0..1 and sirene 0..* and finess 0..* and adeliRang 0..* and rppsRang 0..*
 
 * identifier[idNatSt] ^short = "Identifiant idNat_Struct qui doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
 * identifier[idNatSt].use = #official
@@ -38,9 +38,11 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
 * identifier[finess].system = "http://finess.esante.gouv.fr"
 
-* identifier[adeliRpps] ^short = "Identifiant ADELI rang (9 caractères) ou RPPS rang (11 chiffres)"
-* identifier[adeliRpps].system = "https://annuaire.sante.fr"
+* identifier[adeliRang] ^short = "Identifiant ADELI rang (9 chiffres ADELI + 2 chiffres RANG)"
+* identifier[adeliRang].system = "https://adelirang.esante.gouv.fr"
 
+* identifier[rppsRang] ^short = "RPPS rang (11 chiffres RPPS + 2 chiffres RANG)"
+* identifier[rppsRang].system = "https://rppsrang.esante.gouv.fr"
 
 // Organization.active
 * active MS

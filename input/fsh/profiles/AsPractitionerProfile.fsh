@@ -29,7 +29,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 // Contains rule
 
-* identifier contains idNatPs 0..* and rpps 0..* and adeli 0..* 
+* identifier contains idNatPs 0..1 and rpps 0..* and adeli 0..* 
 // and identifiantInterne 0..*
 
 
@@ -46,12 +46,12 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPS"
 
 // Identifiant du Répertoire Partagé des Professionnels intervenant dans le système de Santé (RPPS). Celui-ci peut aussi être inclus dans l'idNatPs.
-* identifier[rpps] ^short = "Identifiant RPPS"
-* identifier[rpps].system = "http://rpps.fr"
+* identifier[rpps] ^short = "Identifiant RPPS (11 chiffres)"
+* identifier[rpps].system = "http://rpps.esante.gouv.fr"
 
 // Identifiant ADELI. Celui-ci peut aussi être inclus dans l'idNatPs.
-* identifier[adeli] ^short = "Identifiant ADELI"
-* identifier[adeli].system = "http://adeli.fr"
+* identifier[adeli] ^short = "Identifiant ADELI (9 chiffres)"
+* identifier[adeli].system = "http://adeli.esante.gouv.fr"
 
 // // Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
 // * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
