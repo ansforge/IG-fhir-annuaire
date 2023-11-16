@@ -5,8 +5,7 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 
 * ^context.type = #element
 * ^context.expression = "Person"
-* ^short = "nationnalite"
-* ^definition = "Nationalité du professionnel"
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
@@ -23,3 +22,4 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 // dateAcquisitionNatFR
 * extension[period] ^short = "Date d'acquisition de la nationalité française (dateAcquisitionNatFR).\nrenseignée uniquement si la nationalité actuelle est française et qu'elle n’a pas été acquise à la naissance."
 * extension[period].value[x] only Period
+

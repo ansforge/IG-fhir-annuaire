@@ -16,13 +16,13 @@ Description: 	"Profil créé à partir de Person dans le contexte de l'Annuaire 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPersonNationalityExtension named as-ext-person-nationality 0..1 MS and
+    AsPersonNationalityExtension named as-ext-person-nationality 0..* MS and
     AsPersonBirthPlaceExtension named as-ext-person-birth-place 0..1 MS and
-    AsPersonDeceasedDateTimeExtension named as-ext-person-deceased-date-time 0..* MS
+    AsPersonDeceasedDateTimeExtension named as-ext-person-deceased-date-time 0..1 MS
 
 // Person.active
 * active MS
-* active ^short = "Le professionnel est-il actif? active | inactive. true  par défaut; false pour les professionnels supprimés"
+* active ^short = "La ressource est-elle active? active | inactive. true  par défaut; false pour les professionnels supprimés"
 
 /* Person.name */
 * name MS
@@ -42,14 +42,6 @@ Description: 	"Profil créé à partir de Person dans le contexte de l'Annuaire 
 // Person.birthDate
 * birthDate MS
 * birthDate ^short = "Date de naissance du professionnel, modifiée selon les règles du RNIV dans le cas des dates exceptionnelles (MOS : dateNaissance)."
-
-// lieuNaissance
-* extension[as-ext-person-birth-place] ^short = "Code officiel géographique (COG) de la commune (France) ou du pays (MOS : lieuNaissance)."
-
-// nationalite
-* extension[as-ext-Person-nationality] ^short = "Nationalité du professionnel (MOS : nationalite)."
-// dateDeces
-* extension[as-ext-Person-deceased-date-time] ^short = "Date de décès du professionnel (MOS : dateDeces)."
 
 // telecommunication 
 * telecom MS
