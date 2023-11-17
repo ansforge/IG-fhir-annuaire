@@ -27,21 +27,26 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 
 * identifier[idNatSt] ^short = "Identifiant idNat_Struct qui doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
 * identifier[idNatSt].use = #official
-* identifier[idNatSt].type ^short = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent de la terminologie  http://interopsante.org/CodeSystem/fr-v2-0203 \r\n Les codes 0,4 proviennent de la terminologie TRE-G07-TypeIdentifiantStructure."
-* identifier[idNatSt].type obeys constr-bind-type
+* identifier[idNatSt].type = http://interopsante.org/CodeSystem/fr-v2-0203#IDNST
 * identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
 * identifier[idNatSt].value ^short = "Identification nationale de la structure préfixé : 3 + Numéro SIRET, 2 + Numéro SIREN, 1 + Numéro FINESS Etablissement, 1 + Numéro FINESS EJ, 4 + RPPS rang, 0 + ADELI rang, Identifiant technique de la structure."
 
 * identifier[sirene] ^short = "Identifiant SIREN (9 chiffres) ou SIRET (14 chiffres)"
+* identifier[sirene].type.coding.code ^short = "SIREN | SIRET"
+* identifier[sirene].type.coding.system = "http://interopsante.org/CodeSystem/fr-v2-0203"
 * identifier[sirene].system = "http://sirene.fr"
 
 * identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
+* identifier[finess].type.coding.code ^short = "FINEJ | FINEG"
+* identifier[finess].type.coding.system = "http://interopsante.org/CodeSystem/fr-v2-0203"
 * identifier[finess].system = "http://finess.esante.gouv.fr"
 
 * identifier[adeliRang] ^short = "Identifiant ADELI rang (9 chiffres ADELI + 2 chiffres RANG)"
+* identifier[adeliRang].type = http://interopsante.org/CodeSystem/fr-v2-0203#EXTRN
 * identifier[adeliRang].system = "https://adelirang.esante.gouv.fr"
 
 * identifier[rppsRang] ^short = "RPPS rang (11 chiffres RPPS + 2 chiffres RANG)"
+* identifier[rppsRang].type = http://interopsante.org/CodeSystem/fr-v2-0203#EXTRN
 * identifier[rppsRang].system = "https://rppsrang.esante.gouv.fr"
 
 // Organization.active
@@ -134,14 +139,3 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 
 // Organization.endpoint
 * endpoint MS
-
-
-Invariant:   constr-bind-type
-Description: "Les valeurs possibles pour cet élément doivent provenir d’une des terminologies de référence suivantes :
-\r\n fr-organization-identifier-type , URL : http://interopsante.org/CodeSystem/fr-v2-0203
-\r\n TRE_G07-TypeIdentifiantStructure , OID : 1.2.250.1.71.1.2.14 
-\r\n JDV_J104-TypeIdentifiantStructure-RASS , OID : 1.2.250.1.213.1.6.1.172
-\r\nLes valeurs possibles peuvent être restreintes en fonction du jeu de valeurs correspondant mis à disposition par le projet (exemple : fr-organization-identifier-type ).\r\nEn l’absence de spécifications complémentaires, le jeu de valeurs JDV_J104-TypeIdentifiantStructure-RASS peut être utilisé."
-Expression:       "f:type"
-Severity:    #error
-
