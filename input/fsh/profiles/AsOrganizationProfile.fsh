@@ -25,7 +25,7 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // Contains rule
 * identifier contains idNatSt 0..1 and sirene 0..* and finess 0..* and adeliRang 0..* and rppsRang 0..*
 
-* identifier[idNatSt] ^short = "Identifiant idNat_Struct qui doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
+* identifier[idNatSt] ^short = "Identifiant idNat_Struct délivré par une autorité d'entregistrement tel que défini dans l'Annexe Transverse \"Source des données métier pour les professionnels et les structures\"."
 * identifier[idNatSt].use = #official
 * identifier[idNatSt].type = http://interopsante.org/CodeSystem/fr-v2-0203#IDNST
 * identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
@@ -42,11 +42,11 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier[finess].system = "http://finess.esante.gouv.fr"
 
 * identifier[adeliRang] ^short = "Identifiant ADELI rang (9 chiffres ADELI + 2 chiffres RANG)"
-* identifier[adeliRang].type = http://interopsante.org/CodeSystem/fr-v2-0203#EXTRN
+* identifier[adeliRang].type = http://interopsante.org/CodeSystem/fr-v2-0203#INTRN
 * identifier[adeliRang].system = "https://adelirang.esante.gouv.fr"
 
 * identifier[rppsRang] ^short = "RPPS rang (11 chiffres RPPS + 2 chiffres RANG)"
-* identifier[rppsRang].type = http://interopsante.org/CodeSystem/fr-v2-0203#EXTRN
+* identifier[rppsRang].type = http://interopsante.org/CodeSystem/fr-v2-0203#INTRN
 * identifier[rppsRang].system = "https://rppsrang.esante.gouv.fr"
 
 // Organization.active
