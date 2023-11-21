@@ -25,7 +25,7 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // Contains rule
 * identifier contains idNatSt 0..1 and sirene 0..* and finess 0..* and adeliRang 0..* and rppsRang 0..*
 
-* identifier[idNatSt] ^short = "Identifiant idNat_Struct délivré par une autorité d'entregistrement tel que défini dans l'Annexe Transverse \"Source des données métier pour les professionnels et les structures\"."
+* identifier[idNatSt] ^short = "Identifiant idNat_Struct délivré par une autorité d'entregistrement tel que défini dans l'Annexe Transverse Source des données métier pour les professionnels et les structures."
 * identifier[idNatSt].use = #official
 * identifier[idNatSt].type = http://interopsante.org/CodeSystem/fr-v2-0203#IDNST
 * identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
