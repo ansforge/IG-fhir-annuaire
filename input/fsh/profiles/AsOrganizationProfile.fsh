@@ -29,7 +29,7 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * identifier[idNatSt].use = #official
 * identifier[idNatSt].type = http://interopsante.org/CodeSystem/fr-v2-0203#IDNST
 * identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
-* identifier[idNatSt].value ^short = "Identification nationale de la structure préfixé : 3 + Numéro SIRET, 2 + Numéro SIREN, 1 + Numéro FINESS Etablissement, 1 + Numéro FINESS EJ, 4 + RPPS rang, 0 + ADELI rang, Identifiant technique de la structure."
+* identifier[idNatSt].value ^short = "Identification nationale de la structure préfixé : 0 + ADELI rang, 1 + Numéro FINESS Etablissement, 2 + Numéro SIREN, 3 + Numéro SIRET, 4 + RPPS rang ou identifiant technique de la structure."
 
 * identifier[sirene] ^short = "Identifiant SIREN (9 chiffres) ou SIRET (14 chiffres)"
 * identifier[sirene].type.coding.code ^short = "SIREN | SIRET"
