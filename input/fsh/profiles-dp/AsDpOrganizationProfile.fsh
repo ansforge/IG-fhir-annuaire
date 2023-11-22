@@ -4,6 +4,16 @@ Id: as-dp-organization
 Title: "AS Donnée Publique Organization Profile"
 Description: "Profil applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé."
 
+// Organization.identifier - slice identifiantInterne
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+// Contains rule
+* identifier contains identifiantInterne 0..1
+* identifier[identifiantInterne] ^short = "Identifiant interne à porté nationale des structures enregistrées au RPPS sans aucun identifiant métier.\nIl est composé de 14 chiffres.\nIl s’agit généralement de structures enregistrées temporairement par les ordres, en attente de vérification ou de changement d’identifiant."
+* identifier[identifiantInterne].type = http://interopsante.org/CodeSystem/fr-v2-0203#INTRN
+* identifier[identifiantInterne].system = "http://rpps.interne.esante.gouv.fr"
 * identifier.period 0..0
 * identifier.assigner 0..0
 * active 1..1
