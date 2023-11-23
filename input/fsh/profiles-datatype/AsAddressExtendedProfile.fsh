@@ -26,9 +26,10 @@ Description: "Datatype profile créé à partir de FrAddress dans le contexte de
     iso21090-ADXP-houseNumber named houseNumber 0..1 and
     iso21090-ADXP-buildingNumberSuffix named buildingNumberSuffix 0..1 and
     iso21090-ADXP-streetNameType named streetNameType 0..1 and 
-    iso21090-ADXP-streetNameBase named streetNamebase 0..1 and
-	iso21090-ADXP-precinct named precinct 0..1 and
-    iso21090-ADXP-postBox named postBox 0..1
+    iso21090-ADXP-postBox named postBox 0..1 and
+    iso21090-ADXP-streetNameBase named streetNameBase 0..1 and
+	iso21090-ADXP-precinct named precinct 0..1 
+
 	
 * line.extension[careOf] ^short = "pointRemise (Adresse)"
 * line.extension[additionalLocator] ^short = "complementPointGeographique (Adresse)"
@@ -36,6 +37,6 @@ Description: "Datatype profile créé à partir de FrAddress dans le contexte de
 * line.extension[buildingNumberSuffix] ^short = "(Adresse)"
 * line.extension[streetNameType] ^short = "typeVoie (Adresse)"
 * line.extension[streetNameType].valueString from $JDV-J103-TypeVoie-RASS (required)
-* line.extension[precinct] ^short = "lieuDit (Adresse) : Lieu qui porte un nom rappelant une particularité topographique ou historique."
 * line.extension[postBox] ^short = "mentionDistribution (Adresse)"
-	
+* line.extension[streetNameBase] ^short = "libelleVoie (Adresse)"
+* line.extension[precinct] ^short = "lieuDit (Adresse) : Lieu qui porte un nom rappelant une particularité topographique ou historique."
