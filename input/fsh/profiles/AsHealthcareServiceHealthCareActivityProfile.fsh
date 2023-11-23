@@ -23,8 +23,8 @@ Description: "Profil créé à partir de HealthcareService dans le contexte de l
     AsHealthcareServiceAuthorizationDateExtension named as-ext-healthcareservice-authorization-date 0..1 MS and
     AsHealthcareServiceAuthorizationNumberARHGOSExtension named as-ext-healthcareservice-authorization-number-arhgos 1..1 MS and
     AsHealthcareServiceImplementationPeriodExtension named as-ext-healthcareservice-implementation-period 0..1 MS and
-    AsHealthcareServiceDeleteAutorizationImplantationExtension named as-ext-healthcareservice-delete-autorization-implantation 0..1 MS and
-    AsHealthcareServiceDateUpdateActivityExtension named as-ext-healthcareservice-date-update-activity 0..1 MS
+    AsHealthcareServiceDeleteAutorizationImplantationExtension named as-ext-healthcareservice-delete-autorization-implantation 0..1 MS 
+    //AsHealthcareServiceDateUpdateActivityExtension named as-ext-healthcareservice-date-update-activity 0..1 MS
 
 // numeroAutorisationARHGOS
 * identifier 0..* MS
