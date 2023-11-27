@@ -23,10 +23,16 @@ Description: "Profil créé à partir de HealthcareService dans le contexte de l
     AsHealthcareServiceAuthorizationNumberARHGOSExtension named as-ext-healthcareservice-authorization-number-arhgos 1..1 MS and
     AsHealthcareServiceImplementationPeriodExtension named as-ext-healthcareservice-implementation-period 0..1 MS and
     AsHealthcareServiceDeleteAutorizationImplantationExtension named as-ext-healthcareservice-delete-autorization-implantation 0..1 MS 
-    
-// numeroAutorisationARHGOS
-* identifier 0..* MS
-* identifier ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)."
+
+/* HealthcareService.identifier */
+* identifier MS
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+// Contains rule
+* identifier contains numAutorisationArhgos 0..1 // Slice numeroAutorisationARHGOS
+* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)."
 
 // idStructure
 * providedBy 0..1 MS
