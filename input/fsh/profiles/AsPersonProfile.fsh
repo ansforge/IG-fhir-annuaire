@@ -59,4 +59,4 @@ Description: 	"Profil créé à partir de Person dans le contexte de l'Annuaire 
 * link ^slicing.discriminator.path = "target"
 * link ^slicing.rules = #open
 * link contains as-practitioner-exercice-professionnel 0..* MS
-* link[as-practitioner-exercice-professionnel].target only as-practitioner
+* link[as-practitioner-exercice-professionnel].target only Reference(as-practitioner)

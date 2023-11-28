@@ -22,7 +22,6 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPractitionerRoleNameExtension named as-ext-practitionerrole-name 0..* MS and  // nom d'exercice + prénom d'exercice
     AsPractitionerRoleRegistrationExtension named as-ext-practitionerrole-registration 0..* MS and // inscription ordre
     AsPractitionerRoleEducationLevelExtension named as-ext-practitionerrole-education-level 0..* MS and // under discussion
     AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..* MS and // carte cpx
@@ -167,79 +166,18 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * code.coding[metierPharmacienG05] ^binding.description = "Liste des sous-sections du tableau CNOP"
 
 /* Slicing pour separer savoir-faire et attribution particuliere */
-* specialty only as-codeableconcept-timed
-* specialty ^slicing.discriminator.type = #value
-* specialty ^slicing.discriminator.path = "coding.system"
-* specialty ^slicing.description = "Slicing pour séparer savoir-faire et attribution particulière"
-* specialty ^slicing.rules = #open
-* specialty contains
-    attributionParticuliere 0..* MS and
-    savoirFaireR38 0..* MS and
-    savoirFaireR39 0..* MS and
-    savoirFaireR40 0..* MS and
-    savoirFaireR42 0..* MS and
-    savoirFaireR43 0..* MS and
-    savoirFaireR44 0..* MS and
-    savoirFaireR45 0..* MS and
-    savoirFaireR97 0..* MS and
-    savoirFaireG13 0..* MS and
-    typeSavoirFaire 0..* MS
-
-/* Slice A : attribution particuliere */
-* specialty[attributionParticuliere] ^short = "Activité ponctuelle du professionnel de type expertise (Synonyme: attributionParticuliere)."
-* specialty[attributionParticuliere] from $JDV-J90-AttributionParticuliere-RASS (required)
-
-/* Slice B : savoir-faire */
-
-// Slice B1 : specialiteOrdinal
-* specialty[savoirFaireR38] ^short = "Spécialité ordinale  reconnue par une autorité d'enregistrement (Ordre ou SSA) (Synonyme: specialite)."
-* specialty[savoirFaireR38] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR38] ^binding.description = "Liste des spécialités ordinales"
-
-// Slice B2 : competence
-* specialty[savoirFaireR39] ^short = "Compétence acquise par le professionnel (Synonyme: competence)."
-* specialty[savoirFaireR39] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR39] ^binding.description = "Liste des compétences"
-
-// Slice B3 : competenceExclusive
-* specialty[savoirFaireR40] ^short = "Compétence exclusive exercée par le professionnel à titre exclusif (Synonyme: competenceExclusive)."
-* specialty[savoirFaireR40] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR40] ^binding.description = "Liste des compétences exclusives"
-
-// Slice B4 : DESCnonQualifian
-* specialty[savoirFaireR42] ^short = "Diplôme d'études spécialisées complémentaires (DESC). Synonyme: DESCnonQualifian"
-* specialty[savoirFaireR42] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR42] ^binding.description = "Liste des DESC"
-
-// Slice B5 : capaciteSavoirFaire
-* specialty[savoirFaireR43] ^short = "Capacité (savoir-faire)de médecine (Synonyme: capaciteSavoirFaire)"
-* specialty[savoirFaireR43] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR43] ^binding.description = "Liste des capacités"
-
-// Slice B6 : qualificationPAC
-* specialty[savoirFaireR44] ^short = "Qualification de praticien adjoint contractuel (Synonyme: qualificationPAC)."
-* specialty[savoirFaireR44] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR44] ^binding.description = "Liste des qualifications"
-
-// Slice B7 : fonctionQualifiee
-* specialty[savoirFaireR45] ^short = "Fonction qualifiée (Synonyme: fonctionQualifiee)."
-* specialty[savoirFaireR45] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR45] ^binding.description = "Liste des fonctions qualifiées"
-
-// Slice B8 : droitExerciceComplementaire
-* specialty[savoirFaireR97] ^short = "Droit d'exercice complémentaire (Synonyme: droitExerciceComplementaire)."
-* specialty[savoirFaireR97] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireR97] ^binding.description = "Liste des droits d'exercice complémentaires"
-
-// Slice B9 : orientationParticuliere
-* specialty[savoirFaireG13] ^short = "Orientation particulière (Synonyme: orientationParticuliere)."
-* specialty[savoirFaireG13] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-* specialty[savoirFaireG13] ^binding.description = "Liste des orientations particulières"
-
-// Slice B10 : typeSavoirFaire
-* specialty[typeSavoirFaire] ^short = "Le type de savoir-faire (qualifications/autres attributions). (Synonyme: typeSavoirFaire)"
-* specialty[typeSavoirFaire] from $JDV-J91-TypeSavoirFaire-RASS (required)
-* specialty[typeSavoirFaire] ^binding.description = "Liste des types de savoir-faire"
+// * specialty contains
+//     attributionParticuliere 0..* MS and
+//     savoirFaireR38 0..* MS and
+//     savoirFaireR39 0..* MS and
+//     savoirFaireR40 0..* MS and
+//     savoirFaireR42 0..* MS and
+//     savoirFaireR43 0..* MS and
+//     savoirFaireR44 0..* MS and
+//     savoirFaireR45 0..* MS and
+//     savoirFaireR97 0..* MS and
+//     savoirFaireG13 0..* MS and
+//     typeSavoirFaire 0..* MS
 
 // PractitionerRole.location
 * location MS

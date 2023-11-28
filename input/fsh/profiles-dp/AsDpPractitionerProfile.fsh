@@ -29,12 +29,7 @@ Description: 	"Profil applicatif créé à partir du profil générique as-pract
 * name.period 0..0
 // gender
 * gender 0..0
-// birthDate
-* birthDate 0..0
-// extension : birth-place, nationality, deceased-date-time
-* extension[as-ext-practitioner-birth-place] 0..0
-* extension[as-ext-practitioner-nationality] 0..0
-* extension[as-ext-practitioner-deceased-date-time] 0..0
+
 // telecommunication - boiteLettreMSS
 * telecom ^slicing.rules = #closed // only boiteLettreMSS is an open data
 // adresseCorrespondance

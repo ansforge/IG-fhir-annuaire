@@ -16,10 +16,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPractitionerNationalityExtension named as-ext-practitioner-nationality 0..1 MS and
-    AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS and
-    AsPractitionerBirthPlaceExtension named as-ext-practitioner-birth-place 0..1 MS and
-    AsPractitionerDeceasedDateTimeExtension named as-ext-practitioner-deceased-date-time 0..* MS
+    AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS
 
 /* Practitioner.identifier */
 * identifier MS
@@ -113,103 +110,81 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 // ajout dates de validite de l'exercice prof
 
 * qualification MS
-* qualification.code.coding ^slicing.discriminator.type = #value
-* qualification.code.coding ^slicing.discriminator.path = "system"
-* qualification.code.coding ^slicing.rules = #open
-* qualification.code.coding contains
-	// slices profession
-    categorieProfession 0..1 MS and
-	professionG15 0..1 MS  and
-	professionR94 0..1 MS  and
-	professionR95 0..1 MS  and
-	professionR291 0..1 MS and
-    // slices specialty
-    attributionParticuliere 0..* MS and
-    savoirFaireR38 0..1 MS and
-    savoirFaireR39 0..1 MS and
-    savoirFaireR40 0..1 MS and
-    savoirFaireR42 0..1 MS and
-    savoirFaireR43 0..1 MS and
-    savoirFaireR44 0..1 MS and
-    savoirFaireR45 0..1 MS and
-    savoirFaireR97 0..1 MS and
-    savoirFaireG13 0..1 MS and
-    typeSavoirFaire 0..1 MS and
-    // slice typeDiplome
-    degreeType 0..1 MS
 
-// Slice 1 : categorie profession
-* qualification[CategorieProfession] ^short = "Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
-* qualification.code.coding[CategorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
+* qualification ^slicing.discriminator.type = #value
+* qualification ^slicing.discriminator.path = "code"
+* qualification ^slicing.rules = #open
 
-// Slice 2 : profession de sante
-* qualification[professionG15] ^short = "Profession exercée ou future profession de l'étudiant (professionSante)."
-* qualification.code.coding[professionG15] from $JDV-J106-EnsembleProfession-RASS (required)
+// ###########
+// # DIPLOME #
+// ###########
+* qualification contains degree 0..*
+* qualification[degree] MS
+* qualification[degree] ^short = "Diplôme et type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
 
-// Slice 3 : profession sociale
-* qualification[professionR94] ^short = "Profession du social (professionSocial)."
-* qualification.code.coding[professionR94] from $JDV-J106-EnsembleProfession-RASS (required)
+* qualification[degree].code.coding ^slicing.discriminator.type = #value
+* qualification[degree].code.coding ^slicing.discriminator.path = "system"
+* qualification[degree].code.coding ^slicing.rules = #closed
 
-// Slice 4 : usage de titre professionnel
-* qualification[professionR95] ^short = "Profession à usage de titre professionnel (usagerTitre)."
-* qualification.code.coding[professionR95] from $JDV-J106-EnsembleProfession-RASS (required)
-
-// Slice 5 : autre profession
-* qualification[professionR291] ^short = "professionnel non membre d'une profession réglementée (autreProfession)."
-* qualification.code.coding[professionR291] from $JDV-J106-EnsembleProfession-RASS (required)
-
-
-/* Slicing pour separer savoir-faire et attribution particuliere */
-/* Slice A : attribution particuliere */
-* qualification[attributionParticuliere] ^short = "Activité ponctuelle du professionnel de type expertise (attributionParticuliere)."
-* qualification[attributionParticuliere].code.coding from $JDV-J90-AttributionParticuliere-RASS (required)
-
-/* Slice B : savoir-faire */
-
-// Slice B1 : specialiteOrdinal
-* qualification[savoirFaireR38] ^short = "Spécialité ordinale  reconnue par une autorité d'enregistrement (Ordre ou SSA).\nspecialite)."
-* qualification[savoirFaireR38].code.coding from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B2 : competence
-* qualification[savoirFaireR39] ^short = "Compétence acquise par le professionnel (competence)."
-* qualification[savoirFaireR39].code.coding from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B3 : competenceExclusive
-* qualification[savoirFaireR40] ^short = "Compétence exclusive exercée par le professionnel à titre exclusif (competenceExclusive)."
-* qualification.code.coding[savoirFaireR40] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B4 : DESCnonQualifian
-* qualification[savoirFaireR42] ^short = "Diplôme d'études spécialisées complémentaires (DESC).\nDESCnonQualifian"
-* qualification.code.coding[savoirFaireR42] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B5 : capaciteSavoirFaire
-* qualification[savoirFaireR43] ^short = "Capacité (savoir-faire)de médecine (capaciteSavoirFaire)"
-* qualification.code.coding[savoirFaireR43] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B6 : qualificationPAC
-* qualification[savoirFaireR44] ^short = "Qualification de praticien adjoint contractuel (qualificationPAC)."
-* qualification.code.coding[savoirFaireR44] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B7 : fonctionQualifiee
-* qualification[savoirFaireR45] ^short = "Fonction qualifiée (Synonyme: fonctionQualifiee)."
-* qualification.code.coding[savoirFaireR45] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B8 : droitExerciceComplementaire
-* qualification[savoirFaireR97] ^short = "Droit d'exercice complémentaire (Synonyme: droitExerciceComplementaire)."
-* qualification.code.coding.code.coding[savoirFaireR97] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B9 : orientationParticuliere
-* qualification[savoirFaireG13] ^short = "Orientation particulière (Synonyme: orientationParticuliere)."
-* qualification.code.coding[savoirFaireG13] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
-
-// Slice B10 : typeSavoirFaire
-* qualification[typeSavoirFaire] ^short = "Le type de savoir-faire (qualifications/autres attributions).\ntypeSavoirFaire"
-* qualification.code.coding[typeSavoirFaire] from $JDV-J91-TypeSavoirFaire-RASS (required)
+* qualification[degree].code.coding contains degreeType 0..1 and degree 0..1 
 
 // Slice typeDiplome
-* qualification[degreeType] ^short = "Type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
-* qualification.code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
+* qualification[degree].code.coding[degree] MS
+* qualification[degree].code.coding[degree] from $JDV-J105-EnsembleDiplome-RASS (required)
+* qualification[degree].code.coding[degreeType] MS
+* qualification[degree].code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 
+// ##############
+// # PROFESSION #
+// ##############
+
+* qualification contains profession 0..1
+
+* qualification[profession] ^short = "" //TODO
+
+* qualification[profession].code.coding ^slicing.discriminator.type = #value
+* qualification[profession].code.coding ^slicing.discriminator.path = "system"
+* qualification[profession].code.coding ^slicing.rules = #closed
+
+* qualification[profession].code.coding contains 
+    categorieProfession 0..1 MS and
+	profession 0..1 MS
+
+// Slice 1 : Catégorie professionnelle
+* qualification[profession].code.coding[categorieProfession] ^short = "Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
+* qualification[profession].code.coding[categorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
+
+// Slice 2 : profession de sante
+* qualification[profession].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
+* qualification[profession].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
+* qualification[profession].period MS
+* qualification[profession].period.start ^short = "dateEffetExercice : Date à partir de laquelle le professionnel exerce cette profession."
+* qualification[profession].period.start ^short = "dateFinEffetExercice : Date à partir de laquelle le professionnel n’exerce plus cette profession."
+
+// ################
+// # SAVOIR FAIRE #
+// ################
+
+* qualification contains savoirFaire 0..*
+
+* qualification[savoirFaire] ^short = "savoirFAire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc."
+
+* qualification[savoirFaire].code.coding ^slicing.discriminator.type = #value
+* qualification[savoirFaire].code.coding ^slicing.discriminator.path = "system"
+* qualification[savoirFaire].code.coding ^slicing.rules = #open
+
+
+* qualification[savoirFaire].code.coding contains
+    typeSavoirFaire 0..1 MS and
+    savoirFaire 0..1 MS 
+
+// Slice : typeSavoirFaire
+* qualification[savoirFaire].code.coding[typeSavoirFaire] ^short = "Le type de savoir-faire (qualifications/autres attributions).\ntypeSavoirFaire"
+* qualification[savoirFaire].code.coding[typeSavoirFaire] from $JDV-J91-TypeSavoirFaire-RASS (required)
+
+// Slice : savoirFaire
+* qualification[savoirFaire].code.coding[savoirFaire] ^short = "Compétence acquise par le professionnel (competence) R39 ou Compétence exclusive exercée par le professionnel à titre exclusif (competenceExclusive) R40 ou Diplôme d'études spécialisées complémentaires (DESC)DESCnonQualifian R42 ou Capacité (savoir-faire)de médecine (capaciteSavoirFaire) R43 ou Qualification de praticien adjoint contractuel (qualificationPAC) R44 ou Fonction qualifiée (Synonyme: fonctionQualifiee) R45 ou Droit d'exercice complémentaire (Synonyme: droitExerciceComplementaire) R97 ou Orientation particulière (Synonyme: orientationParticuliere) G13 ou Activité ponctuelle du professionnel de type expertise (attributionParticuliere) G13."
+* qualification[savoirFaire].code.coding[savoirFaire] from $JDV-J107-EnsembleSavoirFaire-RASS (required)
 
 // ValueSet: AsVSInterneIdSystems
 // Id: as-vs-intern-id-systems
