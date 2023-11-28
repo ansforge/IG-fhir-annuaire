@@ -10,10 +10,6 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
 * ^context[+].type = #element
 * ^context[=].expression = "Organization"
 
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-
 * extension contains
     type 0..1 and
     description 0..1 and
