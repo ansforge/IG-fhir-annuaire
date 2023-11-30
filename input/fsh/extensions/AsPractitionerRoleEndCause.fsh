@@ -5,9 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
-* . ^comment = "Synonyme : motifFinActivite"
-* . ^short = "Motif de fin d'activité, par exemple: décès, retraite libérale, changement de profession, etc."
+* . ^short = "motifFinActivite : Motif de fin d'activité, par exemple: décès, retraite libérale, changement de profession, etc."
 
 * value[x] only CodeableConcept
 * valueCodeableConcept from $JDV-J92-MotifFinActivite-RASS (required)
-* valueCodeableConcept ^binding.description = "Liste des motifs de fin d'activité."
