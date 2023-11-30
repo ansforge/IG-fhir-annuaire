@@ -22,10 +22,10 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPractitionerRoleRegistrationExtension named as-ext-practitionerrole-registration 0..* MS and // inscription ordre
-    AsPractitionerRoleEducationLevelExtension named as-ext-practitionerrole-education-level 0..* MS and // under discussion
-    AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..* MS and // carte cpx
-    AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS and //  certificat
+    //AsPractitionerRoleRegistrationExtension named as-ext-practitionerrole-registration 0..* MS and // inscription ordre
+    //AsPractitionerRoleEducationLevelExtension named as-ext-practitionerrole-education-level 0..* MS and // under discussion
+    //AsPractitionerRoleSmartCardExtension named as-ext-practitionerrole-smartcard 0..* MS and // carte cpx
+    //AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS and //  certificat
 	AsPractitionerRoleEndCauseExtension named as-ext-practitionerrole-end-cause 0..1 MS and // motif de fin d’activité, renseigné si period.end not null
 	AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..1 MS and // secteur de conventionnement
 	AsPractitionerRoleHasCas named as-ext-practitionerrole-hascas 0..1 MS and // Option pratique tarifaire maîtrisée

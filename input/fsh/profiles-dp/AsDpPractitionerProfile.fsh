@@ -32,19 +32,28 @@ Description: 	"Profil applicatif créé à partir du profil générique as-pract
 
 // telecommunication - boiteLettreMSS
 * telecom ^slicing.rules = #closed // only boiteLettreMSS is an open data
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] 0..0
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
 // adresseCorrespondance
 * address 0..0
 // photo
 * photo 0..0
-// qualification
+// qualification - Donnees restreintes
 * qualification.identifier 0..0
-* qualification.period 0..0 // under discussion
+* qualification.period 0..0 
 * qualification.issuer 0..0 
+* qualification[degree].extension[as-ext-education-level] 0..0 
+
 // langueParlee
 * communication 0..0
 
+//
+* extension[as-ext-registration] 0..0
+* extension[as-ext-smartcard] 0..1
+* extension[as-ext-digital-certificate] 0..0 
 
-
+// mailbox-mss
+//* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] 0..0
 
 ValueSet: AsVSInterneIdSystems
 Id: as-vs-intern-id-systems

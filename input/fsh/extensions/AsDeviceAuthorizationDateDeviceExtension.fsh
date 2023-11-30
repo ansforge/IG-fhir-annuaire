@@ -6,6 +6,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 * ^context[+].type = #element
 * ^context[=].expression = "Device"
 
-* . ^short = "Date de délivrance de l’autorisation d’EML."
-* . ^comment = "Synonyme FINESS : date d’autorisation."
+* . ^short = "Date de délivrance de l’autorisation d’EML (date d’autorisation)."
 * value[x] only date

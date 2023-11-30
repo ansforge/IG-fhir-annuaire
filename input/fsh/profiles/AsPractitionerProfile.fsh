@@ -16,8 +16,10 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS
-
+    AsRegistrationExtension named as-ext-registration 0..* MS and // inscription ordre
+    AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS and
+    AsSmartCardExtension named as-ext-smartcard 0..* MS and // carte cpx
+    AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS //  certificat
 /* Practitioner.identifier */
 * identifier MS
 * identifier ^slicing.discriminator.type = #pattern
@@ -81,7 +83,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // telecommunication 
 * telecom MS
-* telecom ^short = "[DR] : telecommunication"
+* telecom ^short = "[Donnée restreinte] : telecommunication"
 * telecom only $FrContactPoint
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
@@ -98,7 +100,9 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
+* telecom[mailbox-mss].extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1 MS
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS)."
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
 
 // langueParlee
 * communication MS
@@ -134,6 +138,18 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * qualification[degree].code.coding[degreeType] MS
 * qualification[degree].code.coding[degreeType] from $JDV-J81-TypeDiplome-RASS (required)
 
+// periodValidite
+* qualification[degree].period ^short = "[Donnée restreinte] : Période durant laquelle le niveau de formation est actif."
+* qualification[degree].period.start ^short = "dateDebut : Date d’obtention du diplôme (dateDiplome)\ncette date est renseignée par l’ordre à la clôture de l’exercice professionnel."
+* qualification[degree].period.end ^short = "dateFin : Date à laquelle le niveau de formation n’est plus actif (non visible hormis dans les données historisées)."
+
+// lieuFormation
+* qualification[degree].issuer ^short = "[Donnée restreinte] : Lieu de formation pour l'obtention du diplôme (lieuFormation)."
+//* qualification[degree].issuer.value[x] only Reference(AsOrganizationProfile or FrOrganization)
+
+//
+* qualification[degree].extension contains AsEducationLevelExtension named as-ext-education-level 0..* MS
+
 // ##############
 // # PROFESSION #
 // ##############
@@ -158,8 +174,8 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * qualification[profession].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
 * qualification[profession].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
 * qualification[profession].period MS
-* qualification[profession].period.start ^short = "dateEffetExercice : Date à partir de laquelle le professionnel exerce cette profession."
-* qualification[profession].period.start ^short = "dateFinEffetExercice : Date à partir de laquelle le professionnel n’exerce plus cette profession."
+* qualification[profession].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
+* qualification[profession].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
 
 // ################
 // # SAVOIR FAIRE #

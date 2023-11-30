@@ -14,13 +14,11 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour tracer l
     systeme-information 0..1
 
 // typeAutorisation
-* extension[autorite-enregistrement] ^comment = "Autorité d'enregistrement"
 * extension[autorite-enregistrement] ^short = "Autorité d'enregistrement de la ressource."
 * extension[autorite-enregistrement].value[x] only CodeableConcept
 * extension[autorite-enregistrement].valueCodeableConcept from $JDV-J83-AutoriteEnregistrement-RASS (required)
 
 // periodValidite
-* extension[systeme-information] ^comment = "Système d'information."
 * extension[systeme-information] ^short = "Système d'information de la ressource."
 * extension[systeme-information].value[x] only code
 * extension[systeme-information].valueCode ^short = "RPPS | ADELI | FINESS | MSS | CG"
