@@ -2,8 +2,7 @@ Extension: 		AsDataTraceExtension
 Id: 			as-ext-data-trace
 Title:			"AS Data Trace Extension"
 Description:	"Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source"
-* . ^short = "DataTrace"
-* . ^definition = "Informe sur l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)).."
+* . ^short = "DataTrace : Informe sur l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)."
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

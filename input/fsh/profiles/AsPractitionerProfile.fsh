@@ -145,7 +145,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // lieuFormation
 * qualification[degree].issuer ^short = "[Donnée restreinte] : Lieu de formation pour l'obtention du diplôme (lieuFormation)."
-//* qualification[degree].issuer.value[x] only Reference(AsOrganizationProfile or FrOrganization)
+* qualification[degree].issuer only Reference(AsOrganizationProfile or FrOrganization)
 
 //
 * qualification[degree].extension contains AsEducationLevelExtension named as-ext-education-level 0..* MS
@@ -156,8 +156,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 * qualification contains profession 0..1
 
-* qualification[profession] ^short = "" //TODO
-
+* qualification[profession] ^short = "profession : Profession exercée ou future profession de l'étudiant.\r\ncategorieProfessionnelle : Indique si le professionnel exerce sa profession en tant que :\r\nM: Militaire\r\nC: Civil\r\nF: Fonctionnaire\r\nE: Etudiant" 
 * qualification[profession].code.coding ^slicing.discriminator.type = #value
 * qualification[profession].code.coding ^slicing.discriminator.path = "system"
 * qualification[profession].code.coding ^slicing.rules = #closed

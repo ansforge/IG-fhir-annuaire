@@ -1,8 +1,8 @@
 Profile: 		AsPractitionerRoleProfile
-Parent: 		FrPractitionerRoleExercice
+Parent: 		PractitionerRole // remplacement de FrPractitionerRoleExercice par PractitionerRole en raison des contraintes trop fortes sur les bindings, exemple : PractitionerRole.code
 Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
-Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée."
+Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
@@ -22,9 +22,7 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-	AsPractitionerRoleEndCauseExtension named as-ext-practitionerrole-end-cause 0..1 MS and // motif de fin d’activité, renseigné si period.end not null
-	// Proposition : suppression des ces extension au profit de PractitionerRole.characteristic
-    AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..1 MS and // secteur de conventionnement
+	AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..1 MS and // secteur de conventionnement
 	AsPractitionerRoleHasCas named as-ext-practitionerrole-hascas 0..1 MS and // Option pratique tarifaire maîtrisée
 	AsPractitionerRoleVitaleAccepted named as-ext-practitionerrole-vitale-accepted 0..1 MS // Indicateur carte Vitale acceptée
 	
@@ -66,115 +64,46 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 // PractitionerRole.organization
 * organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization) (Synonyme: idNat_Struct)"
 
-// Slicing au niveau de PractitionerRole.code.coding
-* code.coding ^slicing.discriminator.type = #value
-* code.coding ^slicing.discriminator.path = "system"
-* code.coding ^slicing.rules = #open
-* code.coding contains
-	CategorieProfession 0..1 MS and
-	professionG15 0..1 MS  and
-	professionR94 0..1 MS  and
-	professionR95 0..1 MS  and
-	professionR291 0..1 MS and
+// Slicing au niveau de PractitionerRole.code
+* code ^slicing.discriminator.type = #value
+* code ^slicing.discriminator.path = "coding.system"
+* code ^slicing.rules = #open
+* code contains
     genreActivite 0..1 MS  and
     modeExercice 0..1 MS  and
     typeActiviteLiberale 0..1 MS and
     statutProfessionnelSSA 0..1 MS and
     statutHospitalier 0..1 MS and
-    fonctionR21 0..1 MS and
-    fonctionR96 0..1 MS and
-    fonctionR85 0..1 MS and
-    metierPharmacienR06 0..1 MS and
-    metierPharmacienG05 0..1 MS
-
-// Slice 1 : categorie profession
-* code.coding[CategorieProfession] ^short = "Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (Synonyme : categorieProfessionnelle)."
-* code.coding[CategorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
-* code.coding[CategorieProfession] ^binding.description = "Liste des catégories professionnelles"
-
-// Slice 2 : profession de sante
-* code.coding[professionG15] ^short = "Profession exercée ou future profession de l'étudiant (Synonyme: professionSante)."
-* code.coding[professionG15] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionG15] ^binding.description = "Liste des professions de santé  définies par le code de la santé publique"
-
-// Slice 3 : profession sociale
-* code.coding[professionR94] ^short = "Profession du social (Synonyme: professionSocial)."
-* code.coding[professionR94] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR94] ^binding.description = "Liste des professions du social"
-
-// Slice 4 : usage de titre professionnel
-* code.coding[professionR95] ^short = "Profession à usage de titre professionnel (Synonyme: usagerTitre)."
-* code.coding[professionR95] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR95] ^binding.description = "Liste des professions à usage de titre professionnel"
-
-// Slice 5 : autre profession
-* code.coding[professionR291] ^short = "professionnel non membre d'une profession réglementée (Synonyme: autreProfession)."
-* code.coding[professionR291] from $JDV-J106-EnsembleProfession-RASS (required)
-* code.coding[professionR291] ^binding.description = "Liste de professionnels non membres d'une profession réglementée"
+    fonction 0..1 MS and
+    metierPharmacien 0..* MS // ou 0..2 ?
 
 // Slice 6 : genre activite
-* code.coding[genreActivite] ^short = "Le genre identifiant une activité qui nécessite l’application de règles de gestion spécifiques (Synonyme: genreActivite)."
-* code.coding[genreActivite] from $JDV-J94-GenreActivite-RASS (required)
-* code.coding[genreActivite] ^binding.description = "Liste des genres d'activité"
+* code[genreActivite] ^short = "Le genre identifiant une activité qui nécessite l’application de règles de gestion spécifiques (Synonyme: genreActivite)."
+* code[genreActivite] from $JDV-J94-GenreActivite-RASS (required)
 
 // Slice 7 : mode exercice  
-* code.coding[modeExercice] ^short = "Le mode d'exercice décrit selon quelle modalité une activité est exercée au regard de l'organisation de la rétribution du professionnel (Synonyme: modeExercice)."
-* code.coding[modeExercice] from $JDV-J95-ModeExercice-RASS (required)
-* code.coding[modeExercice] ^binding.description = "Liste des modes d'exercice"
+* code[modeExercice] ^short = "Le mode d'exercice décrit selon quelle modalité une activité est exercée au regard de l'organisation de la rétribution du professionnel (Synonyme: modeExercice)."
+* code[modeExercice] from $JDV-J95-ModeExercice-RASS (required)
 
 // Slice 8 : type activite liberale
-* code.coding[typeActiviteLiberale] from $JDV-J96-TypeActiviteLiberale-RASS (required)
-* code.coding[typeActiviteLiberale] ^binding.description = "Liste des types d’activité"
-* code.coding[typeActiviteLiberale] ^short = "Type d’activité libérale, par exemple: Cabinet; Secteur privé à l'hôpital (Synonyme: typeActiviteLiberale)."
+* code[typeActiviteLiberale] from $JDV-J96-TypeActiviteLiberale-RASS (required)
+* code[typeActiviteLiberale] ^short = "Type d’activité libérale, par exemple: Cabinet; Secteur privé à l'hôpital (Synonyme: typeActiviteLiberale)."
 
 // Slice 9 : statut des PS du SSA  
-* code.coding[statutProfessionnelSSA] ^short = "Statut du professionnel du Service de santé des armées (Synonyme: statutProfessionnelSSA)."
-* code.coding[statutProfessionnelSSA] from $JDV-J97-StatutProfessionnelSSA-RASS (required)
-* code.coding[statutProfessionnelSSA] ^binding.description = "Liste des statuts SSA"
+* code[statutProfessionnelSSA] ^short = "Statut du professionnel du Service de santé des armées (Synonyme: statutProfessionnelSSA)."
+* code[statutProfessionnelSSA] from $JDV-J97-StatutProfessionnelSSA-RASS (required)
 
 // Slice 10 : statut hospitalier 
-* code.coding[statutHospitalier] ^short = "Statut hospitalier dans le cas d’une activité exercée en établissement public de santé (Synonyme: statutHospitalier)."
-* code.coding[statutHospitalier] from $JDV-J98-StatutHospitalier-RASS (required)
-* code.coding[statutHospitalier] ^binding.description = "Liste des statuts hospitaliers"
+* code[statutHospitalier] ^short = "Statut hospitalier dans le cas d’une activité exercée en établissement public de santé (Synonyme: statutHospitalier)."
+* code[statutHospitalier] from $JDV-J98-StatutHospitalier-RASS (required)
 
 // Slice 11 : fonction
-* code.coding[fonctionR21] ^short = "Fonction du professionnel au sein de la structure d’exercice (Synonyme: role)."
-* code.coding[fonctionR21] from $JDV-J108-EnsembleFonction-RASS (required)
-* code.coding[fonctionR21] ^binding.description = "Liste des fonctions et rôles"
+* code[fonction] ^short = "role : Fonction du professionnel au sein de la structure d’exercice."
+* code[fonction] from $JDV-J108-EnsembleFonction-RASS (required)
 
-// Slice 12 : autreFonctionSanitaire
-* code.coding[fonctionR96] ^short = "Autre fonction du domaine sanitaire exercée par le professionnel au sein de la structure d’exercice (Synonyme: role)."
-* code.coding[fonctionR96] from $JDV-J108-EnsembleFonction-RASS (required)
-* code.coding[fonctionR96] ^binding.description = "Liste des fonctions et rôles"
-
-// Slice 13 : role prise en charge
-* code.coding[fonctionR85] ^short = "Rôle du professionnel dans la prise en charge des patients ou des usagers (Synonyme: role)."
-* code.coding[fonctionR85] from $JDV-J108-EnsembleFonction-RASS (required)
-* code.coding[fonctionR85] ^binding.description = "Liste des rôles"
-
-// Slice 14 : section tableau pharmaciens 
-* code.coding[metierPharmacienR06] ^short = "Section du tableau de l’Ordre des pharmaciens (CNOP) (Synonyme: sectionOrdrePharmacien)." 
-* code.coding[metierPharmacienR06] from $JDV-J73-MetierPharmacien-RASS (required)
-* code.coding[metierPharmacienR06] ^binding.description = "Liste des sections du tableau CNOP"
-
-// Slice 15 : sous section tableau pharmaciens  
-* code.coding[metierPharmacienG05] ^short = "Sous-section ou à défaut section du tableau de l’Ordre des pharmaciens (CNOP). (Synonyme: sousSectionOrdrePharmacien)"
-* code.coding[metierPharmacienG05] from $JDV-J73-MetierPharmacien-RASS (required)
-* code.coding[metierPharmacienG05] ^binding.description = "Liste des sous-sections du tableau CNOP"
-
-/* Slicing pour separer savoir-faire et attribution particuliere */
-// * specialty contains
-//     attributionParticuliere 0..* MS and
-//     savoirFaireR38 0..* MS and
-//     savoirFaireR39 0..* MS and
-//     savoirFaireR40 0..* MS and
-//     savoirFaireR42 0..* MS and
-//     savoirFaireR43 0..* MS and
-//     savoirFaireR44 0..* MS and
-//     savoirFaireR45 0..* MS and
-//     savoirFaireR97 0..* MS and
-//     savoirFaireG13 0..* MS and
-//     typeSavoirFaire 0..* MS
+// Slice 14 : section/sous-section tableau pharmaciens 
+* code[metierPharmacien] ^short = "Section/Sous-section du tableau de l’Ordre des pharmaciens (CNOP) (sectionOrdrePharmacien/sousSectionOrdrePharmacien)." 
+* code[metierPharmacien] from $JDV-J73-MetierPharmacien-RASS (required)
 
 // PractitionerRole.location
 * location MS
