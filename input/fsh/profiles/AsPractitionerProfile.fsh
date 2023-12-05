@@ -38,18 +38,18 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 // Practitioner.identifier.type
 
 // Identifiant national des professionels de santé
-* identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique.typeIdNat_PP,\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
+* identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 * identifier[idNatPs].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#IDNPS
 * identifier[idNatPs].system = "urn:oid:1.2.250.1.71.4.2.1"
-* identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPSidPP\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
+* identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPSidPP,\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
 
 // Identifiant du Répertoire Partagé des Professionnels intervenant dans le système de Santé (RPPS). Celui-ci peut aussi être inclus dans l'idNatPs.
-* identifier[rpps] ^short = "Identifiant RPPS (11 chiffres)"
+* identifier[rpps] ^short = "Numéro RPPS (11 chiffres)"
 * identifier[rpps].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#RPPS
 * identifier[rpps].system = "http://rpps.esante.gouv.fr"
 
 // Identifiant ADELI. Celui-ci peut aussi être inclus dans l'idNatPs.
-* identifier[adeli] ^short = "Identifiant ADELI (9 chiffres)"
+* identifier[adeli] ^short = "Numéro ADELI (9 chiffres)"
 * identifier[adeli].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#ADELI
 * identifier[adeli].system = "http://adeli.esante.gouv.fr"
 
@@ -113,9 +113,6 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS)."
-//// boiteLettreMSS - donnees restreintes
-//* telecom[mailbox-mss].extension[responsible] ^short = "[Donnée Restreinte] : Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres \"PER\" (responsable)."
-//* telecom[mailbox-mss].extension[phone] ^short = "[Donnée Restreinte] : Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté (telephone)."
 
 // Practitioner.photo
 * photo MS
@@ -124,7 +121,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // langueParlee
 * communication MS
-* communication ^short = "Langue parlée (Synonyme : langueParlee)."
+* communication ^short = "Langue parlée (langueParlee)."
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
 
