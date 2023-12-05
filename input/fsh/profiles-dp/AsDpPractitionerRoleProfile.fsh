@@ -17,6 +17,9 @@ Description: 	"Profil applicatif créé à partir du profil générique as-pract
 * active 1..1
 * period 0..0
 * telecom ^slicing.rules = #closed // only boiteLettreMSS is an open data
+// mailbox-mss - Donnees privees
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] 0..0
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
 * availableTime 0..0
 * notAvailable 0..0
 * availabilityExceptions 0..0

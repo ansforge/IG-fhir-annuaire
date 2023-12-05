@@ -113,14 +113,16 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * telecom MS
 * telecom only $FrContactPoint
 
-// BoiteLettreMSS - Extension
+/// boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #profile
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
-
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
-* telecom[mailbox-mss] ^short = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice (Synonyme: BoiteLettreMSS)."
+* telecom[mailbox-mss].extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1 MS
+* telecom[mailbox-mss] ^short = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice (BoiteLettreMSS)."
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
+
 
 // PractitionerRole.availableTime
 * availableTime MS
