@@ -95,7 +95,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 
 // telecommunication 
 * telecom MS
-* telecom ^short = "[DR] : telecommunication"
+* telecom ^short = "[Donnée restreinte] : telecommunication"
 * telecom only $FrContactPoint
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom.system ^comment = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
@@ -112,10 +112,13 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
+* telecom[mailbox-mss].extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1 MS
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS)."
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
 
-// Practitioner.photo
+// Practitioner.photoas-mailbox-mss-metadata
 * photo MS
+
 
 * qualification MS
 
