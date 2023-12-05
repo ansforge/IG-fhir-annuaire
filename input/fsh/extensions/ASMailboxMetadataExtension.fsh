@@ -24,13 +24,13 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
     publication 0..1
 
 // typeBAL
-* extension[type] ^short = "Type de boîte aux lettres.typeBAL \r\nValeurs possibles :\r\nORG pour une BAL organisationnelle;\r\nAPP pour une BAL applicative;\r\nPER pour une BAL personnelle, rattachée à une personne physique"
+* extension[type] ^short = "Type de boîte aux lettres (typeBAL),\nValeurs possibles :\nORG pour une BAL organisationnelle;\nAPP pour une BAL applicative;\nPER pour une BAL personnelle, rattachée à une personne physique."
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from $JDV-J139-TypeBAL-RASS (required)
 
 // responsable
 * extension[responsible].value[x] only string
-* extension[responsible] ^short = "Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres \"PER\" (responsable)."
+* extension[responsible] ^short = "Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres (responsable).\nNon renseigné pour les types de boîte aux lettres \"PER\"."
 
 // description
 * extension[description].value[x] only string
@@ -46,8 +46,8 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
 
 // dematerialisation
 * extension[digitization].value[x] only boolean
-* extension[digitization] ^short = "Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée \r\n- N : Dématérialisation refusée (dematerialisation)."
+* extension[digitization] ^short = "Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée \r\n- N : Dématérialisation refusée."
 
 // listeRouge
 * extension[publication].value[x] only boolean
-* extension[publication] ^short = "Indicateur liste rouge. O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée (listeRouge)."
+* extension[publication] ^short = "Indicateur liste rouge (listeRouge).\nO: Boîte aux lettres en liste rouge;\nN: La boîte aux lettres peut être publiée"

@@ -47,9 +47,9 @@ Description: 	"Profil applicatif créé à partir du profil générique as-pract
 * qualification.issuer 0..0 
 // langueParlee
 * communication 0..0
-// mailbox-mss
-//* telecom[mailbox-mss].extension[responsible] 0..0
-//* telecom[mailbox-mss].extension[phone] 0..0
+// mailbox-mss - Donnees privees
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] 0..0
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
 
 
 
