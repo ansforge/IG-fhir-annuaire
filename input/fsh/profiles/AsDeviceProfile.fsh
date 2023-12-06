@@ -19,10 +19,15 @@ Description: "Profil créé à partir de Device dans le contexte de l'Annuaire S
 * extension ^slicing.rules = #open
 * extension contains AsHealthcareServiceAuthorizationExtension named as-ext-healthcareservice-authorization 0..1 MS
 
-/* donnees */
-// numeroAutorisationARHGOS
-* identifier 0..* MS
-* identifier ^short = "Identifiant fonctionnel de l'autorisation ARHGOS de l'EML (numeroAutorisationARHGOS)."
+/* !device.identifier */
+* identifier MS
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+// Contains rule
+* identifier contains numAutorisationArhgos 0..1 // Slice numeroAutorisationARHGOS
+* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)."
 
 // actif
 * status 0..1 MS

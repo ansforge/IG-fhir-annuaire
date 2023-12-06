@@ -51,24 +51,23 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 
 // PractitionerRole.active
 * active MS
-* active ^short = "La situation d'exercice est-elle active? (active | inactive)"
-* active ^comment = "true par défaut; false pour les situations d’exercices supprimées"
+* active ^short = "La situation d'exercice est-elle active? (active | inactive)\r\ntrue par défaut; false pour les situations d’exercices supprimées"
 
 /* PractitionerRole.period */ 
 * period MS
 * period ^short = "Période d'activité de la situation d'exercice."
 
 // dateDebutActivite
-* period.start ^short = "[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié (Synonyme: dateDebutActivite)."
+* period.start ^short = "[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié (dateDebutActivite)."
 
 // dateFinActivite
-* period.end ^short = "[Donnée restreinte] : Date de fin de l’activité (Synonyme: dateFinActivite)."
+* period.end ^short = "[Donnée restreinte] : Date de fin de l’activité (dateFinActivite)."
 
 // PractitionerRole.practitioner
-* practitioner ^short = "Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner). (Synonyme: idPP)"
+* practitioner ^short = "Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner)."
 
 // PractitionerRole.organization
-* organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization) (Synonyme: idNat_Struct)"
+* organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)"
 
 // Slicing au niveau de PractitionerRole.code.coding
 * code.coding ^slicing.discriminator.type = #value
