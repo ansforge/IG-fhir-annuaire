@@ -69,6 +69,9 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 // PractitionerRole.organization
 * organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)"
 
+// PractitionerRole.location
+* location ^short = "Adresse(s) géopostale(s) rattachée(s) à la situation d'exercice (adresseSE)."
+
 // Slicing au niveau de PractitionerRole.code.coding
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "system"
