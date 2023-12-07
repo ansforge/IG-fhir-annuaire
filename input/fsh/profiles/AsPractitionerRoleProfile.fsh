@@ -244,14 +244,13 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * specialty[typeSavoirFaire] ^binding.description = "Liste des types de savoir-faire"
 
 // PractitionerRole.location
-* location MS
 * location ^short = "Référence vers la location dans PractitionerRole.contained représentant les coordonnées de l'activité (idLocation)."
 
 // telecom - PractitionerRole.telecom
 * telecom MS
 * telecom only $FrContactPoint
 
-/// boiteLettreMSS
+// boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #profile
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
