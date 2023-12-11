@@ -104,6 +104,7 @@ Description: 	"Profil créé à partir de FrPractitioner dans le contexte de l'A
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS)."
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
 
+
 // langueParlee
 * communication MS
 * communication ^short = "Langue parlée (langueParlee)."

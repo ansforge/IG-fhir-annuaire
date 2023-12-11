@@ -5,8 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
-* . ^comment = "Synonyme : typeFermeture"
-* . ^short = "Type de fermeture de la structure."
+* . ^short = "Type de fermeture de la structure (typeFermeture)."
 
 * value[x] only CodeableConcept
 * valueCodeableConcept from $TRE-R286-TypeFermeture (required)
