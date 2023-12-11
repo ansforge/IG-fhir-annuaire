@@ -6,3 +6,4 @@ Description: 	"Profil créé à partir de as-practitioner dans le contexte des d
 
 * name.suffix 0..0
 * photo 0..0
+* extension[as-ext-digital-certificate].extension[domain] ..0 // Cardinalité : 0..0 pour les personnes physiques ; 0..1 pour les structures
