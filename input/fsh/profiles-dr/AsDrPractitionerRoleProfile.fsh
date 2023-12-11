@@ -6,7 +6,7 @@ Description: 	"Profil créé à partir de as-practitionerrole dans le contexte d
 
 * practitioner 1..1 
 * organization 0..1
-* location 0..0
+* location 0..*
 * healthcareService 0..0
 * identifier[idSituationExercice] 0..1
 * identifier[numeroAm] 0..1

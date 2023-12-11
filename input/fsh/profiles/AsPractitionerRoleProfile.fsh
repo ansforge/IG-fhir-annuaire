@@ -63,6 +63,11 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 // PractitionerRole.organization
 * organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)"
 
+
+// PractitionerRole.location
+* location ^short = "Adresse(s) géopostale(s) rattachée(s) à la situation d'exercice (adresseSE)."
+
+
 // Slicing au niveau de PractitionerRole.code
 * code ^slicing.discriminator.type = #value
 * code ^slicing.discriminator.path = "coding.system"
@@ -105,14 +110,13 @@ Description: 	"Profil créé à partir de FrPractitionerRoleExercice dans le con
 * code[metierPharmacien] from $JDV-J73-MetierPharmacien-RASS (required)
 
 // PractitionerRole.location
-* location MS
 * location ^short = "Référence vers la location dans PractitionerRole.contained représentant les coordonnées de l'activité (idLocation)."
 
 // telecom - PractitionerRole.telecom
 * telecom MS
 * telecom only $FrContactPoint
 
-/// boiteLettreMSS
+// boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #profile
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
