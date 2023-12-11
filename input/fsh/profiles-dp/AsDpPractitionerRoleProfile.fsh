@@ -8,10 +8,7 @@ Description: 	"Profil applicatif créé à partir du profil générique as-pract
 * organization 0..1
 * location 0..0
 * healthcareService 0..0
-* extension[as-ext-practitionerrole-registration] 0..0
-* extension[as-ext-practitionerrole-education-level] 0..*
-* extension[as-ext-practitionerrole-smartcard] 0..1
-* extension[as-ext-digital-certificate] 0..0 
+
 * extension[as-ext-practitionerrole-contracted] 0..0
 * extension[as-ext-practitionerrole-hascas] 0..0
 * extension[as-ext-practitionerrole-vitale-accepted] 0..0
