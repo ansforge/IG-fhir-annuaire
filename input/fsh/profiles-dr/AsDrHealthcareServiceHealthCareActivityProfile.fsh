@@ -2,7 +2,7 @@ Profile: AsDrHealthcareServiceHealthcareActivityProfile
 Parent: as-healthcareservice-healthcare-activity
 Id: as-dr-healthcareservice-healthcare-activity
 Title: "AS Donnée Restreinte HealthcareService Healthcare Activity Profile"
-Description: "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès restreint de l'Annuaire Santé."
+Description: "Profil restreint applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès restreint de l'Annuaire Santé."
 
 * specialty 0..0
 * location 0..0

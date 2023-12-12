@@ -2,7 +2,7 @@ Profile: 		AsPersonProfile
 Parent: 		Person
 Id: 			as-person
 Title:			"AS Person Profile"
-Description: 	"Profil créé à partir de Person dans le contexte de l'Annuaire Santé pour décrire les différents concepts utilisés pour définir et caractériser un professionnel en tant que personne physique (données restreintes)."
+Description: 	"Profil générique créé à partir de Person dans le contexte de l'Annuaire Santé pour décrire les différents concepts utilisés pour définir et caractériser un professionnel en tant que personne physique (données restreintes)."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value

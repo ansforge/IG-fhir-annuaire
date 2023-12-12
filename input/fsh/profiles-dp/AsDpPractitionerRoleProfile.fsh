@@ -2,7 +2,7 @@ Profile: 		AsDpPractitionerRoleProfile
 Parent: 		as-practitionerrole
 Id: 			as-dp-practitionerrole
 Title:			"AS Donnée Publique PractitionerRole Profile"
-Description: 	"Profil applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé."
+Description: 	"Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé."
 
 * practitioner 1..1 
 * organization 0..1
