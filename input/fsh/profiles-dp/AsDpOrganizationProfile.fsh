@@ -2,7 +2,7 @@ Profile: AsDpOrganizationProfile
 Parent: as-organization
 Id: as-dp-organization
 Title: "AS Donnée Publique Organization Profile"
-Description: "Profil applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé."
+Description: "Profil public applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé."
 
 // Organization.identifier - slice identifiantInterne
 * identifier contains identifiantInterne 0..1

@@ -2,7 +2,7 @@ Profile: 		AsDrPractitionerRoleProfile
 Parent: 		as-practitionerrole
 Id: 			as-dr-practitionerrole
 Title:			"AS Donnée Restreinte PractitionerRole Profile"
-Description: 	"Profil créé à partir de as-practitionerrole dans le contexte des données en accès restreint de l’Annuaire Santé."
+Description: 	"Profil restreint créé à partir de as-practitionerrole dans le contexte des données en accès restreint de l’Annuaire Santé."
 
 * practitioner 1..1 
 * organization 0..1

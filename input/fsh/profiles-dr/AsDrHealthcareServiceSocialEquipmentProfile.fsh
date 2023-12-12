@@ -2,7 +2,7 @@ Profile: AsDrHealthcareServiceSocialEquipmentProfile
 Parent: as-healthcareservice-social-equipment
 Id: as-dr-healthcareservice-social-equipment
 Title: "AS Donnée Restreinte HealthcareService Social Equipment Profile"
-Description: "Profil applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé."
+Description: "Profil restreint applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé."
 
 * identifier 0..0
 * category 0..0
