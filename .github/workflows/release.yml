@@ -89,7 +89,7 @@ jobs:
         run : java -Dfile.encoding=UTF-8 -jar publisher.jar -generate-package-registry ./IG-website-release
         
       - name: 🏃‍♂️ Run  Publisher to release
-        run :   java -Dfile.encoding=UTF-8 -jar publisher.jar -go-publish -source igRepo -web  ./IG-website-release/www/ig -registry ./IG-website-release/ig-registry/fhir-ig-list.json -history ./IG-website-release/fhir-ig-history-template -templates ./IG-website-release/templates 
+        run :   java -Dfile.encoding=UTF-8 -jar publisher.jar -go-publish -source igRepo -web  ./IG-website-release/www/ig/fhir -registry ./IG-website-release/ig-registry/fhir-ig-list.json -history ./IG-website-release/fhir-ig-history-template -templates ./IG-website-release/templates 
         
       - name: Commit change on IG-website-release
         run: |
