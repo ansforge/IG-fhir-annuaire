@@ -10,46 +10,33 @@ Les nouveaux services de publication de l'Annuaire Santé permettent d’exposer
 
 Ce guide d'implémentation remplace l'ancien package ANS.annuaire.fhir.r4 0.2.0.
 
-
 #### Contexte technique du projet
 
 L'objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir consommer ce référentiel via l'API FHIR.
 
 On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire.
 
-
 #### Standards utilisés
 
 Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4. Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est JSON.
 
-Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Modèle des Objets de Santé [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) gérés par l’ANS est disponible sur ce site (en cliquant [ici](mapping.html)). 
+Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Modèle des Objets de Santé [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) gérés par l’ANS est disponible sur ce site (en cliquant [ici](mapping.html)).
 
+##### Ressources profilées
 
-##### Ressources profilées 
+La liste ci-dessous expose la liste des profils génériques profilés. Ceux-si ont été re-profilés pour rajouter les contraintes applicatives dans l'onglet "liste des profils".
 
-Les ressources FHIR utilisées sont les suivantes :
+{% sql SELECT '[' || Title ||'](StructureDefinition-' || id || '.html)' as "Titre du profil", Description, json_extract(Json, '$.baseDefinition') as "Parent" FROM Resources WHERE Type = 'StructureDefinition' and Description like "Profil générique%" %}
 
-* Practitioner
-* PractitionerRole 
-* Organization 
-* Device 
-* HealthcareService 
-* CapabilityStatement
+<!-- like "%Profil%" rajouté car induit une erreur si vide -->
+<div class="figure" style="width:100%;">
+    <p>{% include document-overview.svg %}</p>
+</div>
 
+#### Liens utiles
 
-##### Profils utilisés
-
-Une source est utilsée dans le cadre de ce volet :
-* hl7.fhir.fr.core (1.1.0) : « [FrPractitioner](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitioner) », « [FrPractitionerRoleExercice](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitionerRoleExercice) », « [FrOrganization](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrOrganization) », « [FrHumanName](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrHumanName) », « [FrContactPoint](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrContactPoint) » et « [FrAddress](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrAddress) » 
-
-Cet Implementation Guide contient 19 profils dont la liste est fournie sur ce site (en cliquant [ici](index.html))
-
-
-#### Liens utiles :
-
-- [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
-- [Démonstration](https://portail.openfhir.annuaire.sante.fr/)
-
+* *[Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
+* *[Démonstration](https://portail.openfhir.annuaire.sante.fr/)
 
 ### Dépendances
 
