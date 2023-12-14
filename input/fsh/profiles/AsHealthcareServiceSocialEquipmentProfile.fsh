@@ -3,9 +3,6 @@ Parent: HealthcareService
 Id: as-healthcareservice-social-equipment
 Title: "AS HealthcareService Social Equipment Profile"
 Description: "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS."
-/* profils references */
-* providedBy only Reference(FrOrganization or AsOrganizationProfile)
-
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
 * meta.extension ^slicing.discriminator.path = "url"
@@ -34,6 +31,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 
 // idStructure
 * providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (idNat_Struct, identifiantEJ, identifiantEG)."
+* providedBy only Reference(FrOrganization or AsOrganizationProfile)
 
 // disciplineEquipementSociale
 * category 0..* MS
