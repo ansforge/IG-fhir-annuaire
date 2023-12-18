@@ -1,0 +1,65 @@
+@startuml
+
+skinparam linetype ortho
+
+artifact "AS Device Profile" as device
+artifact "AS HealthcareService activity" as healthcareserviceActivity
+artifact "AS HealthcareService equipment" as healthcareserviceEquipment
+artifact "AS Organization" as organization
+artifact "AS Person" as person
+artifact "AS Practitioner" as practitioner
+artifact "AS PractitionerRole" as practitionerrole
+
+url of device is  [[StructureDefinition-as-device.html]]
+url of healthcareserviceActivity is  [[StructureDefinition-as-healthcareservice-healthcare-activity.html]]
+url of healthcareserviceEquipment is  [[StructureDefinition-as-healthcareservice-social-equipment.html]]
+url of organization [[StructureDefinition-as-organization.html]]
+url of person [[StructureDefinition-as-person.html]]
+url of practitioner [[StructureDefinition-as-practitioner.html]]
+url of practitionerrole [[StructureDefinition-as-practitionerrole.html]]
+
+' ##########
+' # Device #
+' ##########
+
+device --> organization : owner
+
+
+' #############################
+' # healthcareserviceActivity #
+' #############################
+
+healthcareserviceActivity --> organization : providedBy
+
+' ##############################
+' # healthcareserviceEquipment #
+' ##############################
+
+healthcareserviceEquipment --> organization : providedBy
+
+
+' ################
+' # organization #
+' ################
+
+organization --> organization : partOf
+
+' ##########
+' # person #
+' ##########
+
+person --> practitioner : link
+
+
+' ####################
+' # practitionerrole # TODO
+' ####################
+
+' organization TODO constraint
+practitionerrole --> organization : organization
+
+' practitioner TODO Constraint
+practitionerrole --> practitioner : practitioner
+
+
+@enduml

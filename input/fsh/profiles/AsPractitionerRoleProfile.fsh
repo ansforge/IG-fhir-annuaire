@@ -10,7 +10,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
-
 /* profils references */
 * practitioner MS 
 * organization MS
@@ -59,9 +58,11 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // PractitionerRole.practitioner
 * practitioner ^short = "Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner)."
+* practitioner only Reference(Practitioner or as-practitioner)
 
 // PractitionerRole.organization
 * organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)"
+* organization only Reference(Organization or as-organization)
 
 
 // PractitionerRole.location
