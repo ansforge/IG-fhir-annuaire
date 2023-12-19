@@ -4,9 +4,6 @@ Id: as-healthcareservice-healthcare-activity
 Title: "AS HealthcareService HealthCare Activity Profile"
 Description: "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS."
 
-/* profils references */
-* providedBy only Reference(FrOrganization or AsOrganizationProfile)
-
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
 * meta.extension ^slicing.discriminator.path = "url"
@@ -32,6 +29,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 
 // idStructure
 * providedBy 0..1 MS
+* providedBy only Reference(FrOrganization or AsOrganizationProfile)
 * providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattachée cette activité sanitaire (idNat_Struct)."
 
 // modalite - HealthcareService.category

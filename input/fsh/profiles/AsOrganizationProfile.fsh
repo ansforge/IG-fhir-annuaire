@@ -4,9 +4,6 @@ Id: as-organization
 Title: "AS Organization Profile"
 Description: "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public."
 
-/* profils references */
-* partOf only Reference(FrOrganization or AsOrganizationProfile)
-
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
 * meta.extension ^slicing.discriminator.path = "url"
@@ -51,8 +48,7 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 
 // Organization.active
 * active MS
-* active ^short = "La ressource est-elle active? (active | inactive)"
-* active ^comment = "true par défaut; false pour les structures supprimées."
+* active ^short = "La ressource est-elle active? (active | inactive). true par défaut; false pour les structures supprimées."
 
 // Organization.name
 * name MS
@@ -99,7 +95,6 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 // telecommunication
 * telecom MS
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
-* telecom.system ^comment = "https://www.hl7.org/fhir/valueset-contact-point-system.html"
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
 
 // boiteLettreMSS
@@ -113,8 +108,8 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
 
 // lien EG/EJ
-* partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)."
-* partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
+* partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ). Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
+* partOf only Reference(FrOrganization or AsOrganizationProfile)
 
 // periode d'activite
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure."

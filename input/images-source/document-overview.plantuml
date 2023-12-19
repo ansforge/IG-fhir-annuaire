@@ -21,45 +21,40 @@ url of practitionerrole [[StructureDefinition-as-practitionerrole.html]]
 ' ##########
 ' # Device #
 ' ##########
-
-device --> organization : owner
+device --> organization : owner 0..1
 
 
 ' #############################
 ' # healthcareserviceActivity #
 ' #############################
-
-healthcareserviceActivity --> organization : providedBy
+healthcareserviceActivity --> organization : providedBy 0..1
 
 ' ##############################
 ' # healthcareserviceEquipment #
 ' ##############################
-
-healthcareserviceEquipment --> organization : providedBy
+healthcareserviceEquipment --> organization : providedBy 0..1
 
 
 ' ################
 ' # organization #
 ' ################
-
-organization --> organization : partOf
+organization --> organization : partOf 0..1
 
 ' ##########
 ' # person #
 ' ##########
-
-person --> practitioner : link
+person --> practitioner : link 0..*
 
 
 ' ####################
-' # practitionerrole # TODO
+' # practitionerrole #
 ' ####################
 
-' organization TODO constraint
-practitionerrole --> organization : organization
+' organization
+practitionerrole --> organization : organization 0..1
 
-' practitioner TODO Constraint
-practitionerrole --> practitioner : practitioner
+' practitioner
+practitionerrole --> practitioner : practitioner 0..1
 
 
 @enduml
