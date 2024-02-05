@@ -8,4 +8,4 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 * . ^short = "Mode de tarification de la structure (modeFixationTarif)."
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from $TRE_R74-ModeFixationTarifaire (required)
+* valueCodeableConcept from as-vs-mode-fixation-tarifaire (required)
