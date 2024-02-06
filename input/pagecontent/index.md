@@ -5,24 +5,19 @@
 This implementation guide contains the FHIR profiles of French caregivers and document how the data are exposed in the national API.
 </p>
 
+#### Périmètre du guide
+
 Ce guide permet d'exposer le modèle de données des praticiens hospitaliers en France. Celui-ci a deux objectifs : 1/ décrire les données exposées par l'API nationale Annuaire Santé et 1/ Servir de base à la modélisation FHIR des practiciens en France (cf profils génériques).
 Il est important de noter qu'il se concentre uniquement sur le modèle de données et non sur la solution technique API nationale. Pour en savoir davantage sur le fonctionnement de l'API nationale, il est nécessaire de consulter [la page dédiée](https://ansforge.github.io/annuaire-sante-fhir-documentation)
 
-#### Contexte métier du projet
+#### Contexte du projet
 
 L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) est un annuaire national de référence des professionnels de santé, avec les données opposables du RPPS, d’ADELI et de FINESS, complétées par les données des CPx, des BAL MSSanté et d'Ameli.fr, pour un usage orienté professionnel. C’est le maillon central de l’identification des acteurs de santé en France.
-
 En publiant ces données, le service Annuaire Santé permet à ces clients de vérifier l’identité des professionnels de santé, leurs qualifications (diplômes et spécialités) et leurs activités.
 
 Les nouveaux services de publication de l'Annuaire Santé permettent d’exposer ce référentiel, via une API RESTful, au format JSON, structurés selon la norme d’interopérabilité FHIR.
-
+L'objectif de ce projet est de définir les profils Annuaire Santé exposés par l'API FHIR.
 Ce guide d'implémentation remplace l'ancien package ANS.annuaire.fhir.r4 0.2.0.
-
-#### Contexte technique du projet
-
-L'objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir consommer ce référentiel via l'API FHIR.
-
-On s'intéresse ici au modèle d'exposition des données publiques de l'Annuaire.
 
 #### Standards utilisés
 
