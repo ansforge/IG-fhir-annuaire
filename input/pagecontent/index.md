@@ -7,7 +7,7 @@ This implementation guide contains the FHIR profiles of French caregivers and do
 
 #### Périmètre du guide
 
-Ce guide permet d'exposer le modèle de données des praticiens hospitaliers en France. Celui-ci a deux objectifs : 1/ décrire les données exposées par l'API nationale Annuaire Santé et 1/ Servir de base à la modélisation FHIR des practiciens en France (cf profils génériques).
+Ce guide indique comment modéliser en FHIR les données des praticiens hospitaliers en France. Celui-ci a deux objectifs : 1/ décrire les données exposées par l'API nationale Annuaire Santé et 2/ Servir de base à la modélisation FHIR des practiciens en France (cf profils génériques) dans le cadre du CI-SIS par exemple.
 Il est important de noter qu'il se concentre uniquement sur le modèle de données et non sur la solution technique API nationale. Pour en savoir davantage sur le fonctionnement de l'API nationale, il est nécessaire de consulter [la page dédiée](https://ansforge.github.io/annuaire-sante-fhir-documentation)
 
 #### Contexte du projet
