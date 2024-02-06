@@ -1,5 +1,13 @@
 ### Introduction
 
+<p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; width: 65%">
+<b>Healthcare professional Directory Implementation Guide</b><br>
+This implementation guide contains the FHIR profiles of French caregivers and document how the data are exposed in the national API.
+</p>
+
+Ce guide permet d'exposer le modèle de données des praticiens hospitaliers en France. Celui-ci a deux objectifs : 1/ décrire les données exposées par l'API nationale Annuaire Santé et 1/ Servir de base à la modélisation FHIR des practiciens en France (cf profils génériques).
+Il est important de noter qu'il se concentre uniquement sur le modèle de données et non sur la solution technique API nationale. Pour en savoir davantage sur le fonctionnement de l'API nationale, il est nécessaire de consulter [la page dédiée](https://ansforge.github.io/annuaire-sante-fhir-documentation)
+
 #### Contexte métier du projet
 
 L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) est un annuaire national de référence des professionnels de santé, avec les données opposables du RPPS, d’ADELI et de FINESS, complétées par les données des CPx, des BAL MSSanté et d'Ameli.fr, pour un usage orienté professionnel. C’est le maillon central de l’identification des acteurs de santé en France.
@@ -24,7 +32,7 @@ Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Mod
 
 ##### Ressources profilées
 
-La liste ci-dessous expose la liste des profils génériques profilés. Ceux-si ont été re-profilés pour rajouter les contraintes applicatives dans l'onglet "liste des profils".
+La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci ont été re-profilés pour rajouter les contraintes applicatives dans l'onglet "liste des profils".
 
 {% sql SELECT '[' || Title ||'](StructureDefinition-' || id || '.html)' as "Titre du profil", Description, json_extract(Json, '$.baseDefinition') as "Parent" FROM Resources WHERE Type = 'StructureDefinition' and Description like "Profil générique%" %}
 
