@@ -194,7 +194,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Active
           
-            as of 2024-02-05
+            as of 2024-02-07
           
         
       </td>
@@ -227,21 +227,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h3 id="introduction">Introduction</h3>
 
-<h4 id="contexte-métier-du-projet">Contexte métier du projet</h4>
+<p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; width: 65%">
+<b>Healthcare professional Directory Implementation Guide</b><br />
+This implementation guide contains the FHIR profiles of French health professionals and document how the data are exposed in the national API.
+</p>
 
-<p>L’<a href="https://esante.gouv.fr/produits-services/annuaire-sante">Annuaire Santé</a> est un annuaire national de référence des professionnels de santé, avec les données opposables du RPPS, d’ADELI et de FINESS, complétées par les données des CPx, des BAL MSSanté et d’Ameli.fr, pour un usage orienté professionnel. C’est le maillon central de l’identification des acteurs de santé en France.</p>
+<h4 id="périmètre-du-guide">Périmètre du guide</h4>
 
-<p>En publiant ces données, le service Annuaire Santé permet à ces clients de vérifier l’identité des professionnels de santé, leurs qualifications (diplômes et spécialités) et leurs activités.</p>
+<p>Ce guide indique comment modéliser en FHIR les données des professionnels intervenant dans le système de santé en France. Celui-ci a deux objectifs : 1/ décrire les données exposées par l’API nationale Annuaire Santé et 2/ Servir de base à la modélisation FHIR des professionnels en France (cf profils génériques) dans le cadre du CI-SIS par exemple.
+Il est important de noter qu’il se concentre uniquement sur le modèle de données et non sur la solution technique API nationale. Pour en savoir davantage sur le fonctionnement de l’API nationale, il est nécessaire de consulter <a href="https://ansforge.github.io/annuaire-sante-fhir-documentation">la page dédiée</a></p>
 
-<p>Les nouveaux services de publication de l’Annuaire Santé permettent d’exposer ce référentiel, via une API RESTful, au format JSON, structurés selon la norme d’interopérabilité FHIR.</p>
+<h4 id="contexte-du-projet">Contexte du projet</h4>
 
-<p>Ce guide d’implémentation remplace l’ancien package ANS.annuaire.fhir.r4 0.2.0.</p>
+<p>L’<a href="https://esante.gouv.fr/produits-services/annuaire-sante">Annuaire Santé</a> est un annuaire national de référence des professionnels de santé, avec les données opposables du RPPS, d’ADELI et de FINESS, complétées par les données des CPx, des BAL MSSanté et d’Ameli.fr, pour un usage orienté professionnel. C’est le maillon central de l’identification des acteurs de santé en France.
+En publiant ces données, le service Annuaire Santé permet à ces clients de vérifier l’identité des professionnels de santé, leurs qualifications (diplômes et spécialités) et leurs activités.</p>
 
-<h4 id="contexte-technique-du-projet">Contexte technique du projet</h4>
-
-<p>L’objectif de ce projet est de définir les profils Annuaire Santé pour pouvoir consommer ce référentiel via l’API FHIR.</p>
-
-<p>On s’intéresse ici au modèle d’exposition des données publiques de l’Annuaire.</p>
+<p>Les nouveaux services de publication de l’Annuaire Santé permettent d’exposer ce référentiel, via une API RESTful, au format JSON, structurés selon la norme d’interopérabilité FHIR.
+L’objectif de ce projet est de définir les profils Annuaire Santé exposés par l’API FHIR.
+Ce guide d’implémentation remplace l’ancien package ANS.annuaire.fhir.r4 0.2.0.</p>
 
 <h4 id="standards-utilisés">Standards utilisés</h4>
 
@@ -251,7 +254,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h5 id="ressources-profilées">Ressources profilées</h5>
 
-<p>La liste ci-dessous expose la liste des profils génériques profilés. Ceux-si ont été re-profilés pour rajouter les contraintes applicatives dans l’onglet “liste des profils”.</p>
+<p>La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci ont été re-profilés pour rajouter les contraintes applicatives dans l’onglet “liste des profils”.</p>
 
 <table class="grid"><tr><td style="background-color: #eeeeee">Titre du profil</td><td style="background-color: #eeeeee">Description</td><td style="background-color: #eeeeee">Parent</td></tr><tr><td><div><p><a href="StructureDefinition-as-device.html">AS Device Profile</a></p>
 </div></td><td>Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement.</td><td><a href="http://hl7.org/fhir/StructureDefinition/Device">http://hl7.org/fhir/StructureDefinition/Device</a></td></tr><tr><td><div><p><a href="StructureDefinition-as-healthcareservice-healthcare-activity.html">AS HealthcareService HealthCare Activity Profile</a></p>
@@ -340,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot-3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 5, 2024 18:23+0000">2024-02-05</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot-3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 7, 2024 08:22+0000">2024-02-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
