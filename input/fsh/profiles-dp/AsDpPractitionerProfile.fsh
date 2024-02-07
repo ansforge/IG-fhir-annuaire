@@ -63,7 +63,11 @@ ValueSet: AsVSInterneIdSystems
 Id: as-vs-intern-id-systems
 Title: "Internal Id Systems VS"
 Description: "Systèmes des identifiants internes"
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems
+
+// SVS profile
+* ^experimental = false
 
 
 CodeSystem: AsCSInterneIdSystems

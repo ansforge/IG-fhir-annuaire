@@ -37,4 +37,8 @@ ValueSet: TypeSystemeInformationVS
 Id: type-systeme-information-vs
 Title: "Type de système d'information"
 Description:  "Type de système d'information pouvant alimenter l'annuaire santé."
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * include codes from system type-systeme-information-cs
+
+// SVS profile
+* ^experimental = false
