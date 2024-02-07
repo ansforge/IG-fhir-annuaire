@@ -24,7 +24,8 @@ Description: "Profil générique créé à partir de Device dans le contexte de 
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 // Contains rule
 * identifier contains numAutorisationArhgos 0..1 // Slice numeroAutorisationARHGOS
-* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)."
+* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS). Le system est mis à titre indicatif et pourra être changé."
+* identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr"
 
 // actif
 * status 0..1 MS
