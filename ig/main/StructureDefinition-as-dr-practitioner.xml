@@ -16,7 +16,7 @@
   <name value="AsDrPractitionerProfile"/>
   <title value="AS Donnée Restreinte Practitioner Profile"/>
   <status value="active"/>
-  <date value="2024-02-07T08:22:38+00:00"/>
+  <date value="2024-02-08T15:43:07+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -2616,7 +2616,7 @@
     </element>
     <element id="Practitioner.identifier.type">
       <path value="Practitioner.identifier.type"/>
-      <short value="Description of identifier"/>
+      <short value="Type d’identifiant national de la personne physique (typeIdNat_PP),&#xD;&#xA;Les codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"/>
       <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
       <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
       <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
@@ -3290,7 +3290,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -3563,7 +3563,7 @@
     </element>
     <element id="Practitioner.identifier:idNatPs.type">
       <path value="Practitioner.identifier.type"/>
-      <short value="Type d’identifiant national de la personne physique (typeIdNat_PP),&#xD;&#xA;Les codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"/>
+      <short value="Description of identifier"/>
       <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
       <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
       <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
@@ -4244,7 +4244,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -5198,7 +5198,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -6152,7 +6152,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -6770,7 +6770,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -7216,7 +7216,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -7676,7 +7676,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -7872,7 +7872,7 @@
         <human value="If the Attachment has data, it SHALL have a contentType"/>
         <expression value="data.empty() or contentType.exists()"/>
         <xpath value="not(exists(f:data)) or exists(f:contentType)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/HealthcareService"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -13914,7 +13914,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -20147,7 +20147,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -26504,7 +26504,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
@@ -32867,7 +32867,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
       </constraint>
       <mapping>
         <identity value="rim"/>

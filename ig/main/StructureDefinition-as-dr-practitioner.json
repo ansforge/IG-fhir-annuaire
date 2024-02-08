@@ -10,7 +10,7 @@
   "name" : "AsDrPractitionerProfile",
   "title" : "AS Donnée Restreinte Practitioner Profile",
   "status" : "active",
-  "date" : "2024-02-07T08:22:38+00:00",
+  "date" : "2024-02-08T15:43:07+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -2719,7 +2719,7 @@
     {
       "id" : "Practitioner.identifier.type",
       "path" : "Practitioner.identifier.type",
-      "short" : "Description of identifier",
+      "short" : "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne",
       "definition" : "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
       "comment" : "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
       "requirements" : "Allows users to make use of identifiers when the identifier system is not known.",
@@ -3416,7 +3416,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "isSummary" : true,
       "mapping" : [{
@@ -3699,7 +3699,7 @@
     {
       "id" : "Practitioner.identifier:idNatPs.type",
       "path" : "Practitioner.identifier.type",
-      "short" : "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne",
+      "short" : "Description of identifier",
       "definition" : "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
       "comment" : "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
       "requirements" : "Allows users to make use of identifiers when the identifier system is not known.",
@@ -4403,7 +4403,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "isSummary" : true,
       "mapping" : [{
@@ -5390,7 +5390,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "isSummary" : true,
       "mapping" : [{
@@ -6377,7 +6377,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "isSummary" : true,
       "mapping" : [{
@@ -7014,7 +7014,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "isSummary" : true,
       "mapping" : [{
@@ -7476,7 +7476,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "isSummary" : true,
       "mapping" : [{
@@ -7953,7 +7953,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "isSummary" : true,
       "mapping" : [{
@@ -8154,7 +8154,7 @@
         "human" : "If the Attachment has data, it SHALL have a contentType",
         "expression" : "data.empty() or contentType.exists()",
         "xpath" : "not(exists(f:data)) or exists(f:contentType)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/HealthcareService"
+        "source" : "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
       }],
       "mapping" : [{
         "identity" : "rim",
@@ -14553,7 +14553,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "mapping" : [{
         "identity" : "rim",
@@ -21145,7 +21145,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "mapping" : [{
         "identity" : "rim",
@@ -27867,7 +27867,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "mustSupport" : true,
       "mapping" : [{
@@ -34597,7 +34597,7 @@
         "human" : "If present, start SHALL have a lower value than end",
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Identifier"
+        "source" : "http://hl7.org/fhir/StructureDefinition/Encounter"
       }],
       "mapping" : [{
         "identity" : "rim",

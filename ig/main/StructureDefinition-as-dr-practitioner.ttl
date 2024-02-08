@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsDrPractitionerProfile"] ; # 
   fhir:title [ fhir:v "AS Donnée Restreinte Practitioner Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-02-07T08:22:38+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-08T15:43:07+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -2784,7 +2784,7 @@
      ] [
        fhir:id [ fhir:v "Practitioner.identifier.type" ] ;
        fhir:path [ fhir:v "Practitioner.identifier.type" ] ;
-       fhir:short [ fhir:v "Description of identifier" ] ;
+       fhir:short [ fhir:v "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne" ] ;
        fhir:definition [ fhir:v "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." ] ;
        fhir:comment [ fhir:v "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." ] ;
        fhir:requirements [ fhir:v "Allows users to make use of identifiers when the identifier system is not known." ] ;
@@ -3469,8 +3469,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
@@ -3749,7 +3749,7 @@
      ] [
        fhir:id [ fhir:v "Practitioner.identifier:idNatPs.type" ] ;
        fhir:path [ fhir:v "Practitioner.identifier.type" ] ;
-       fhir:short [ fhir:v "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne" ] ;
+       fhir:short [ fhir:v "Description of identifier" ] ;
        fhir:definition [ fhir:v "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." ] ;
        fhir:comment [ fhir:v "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." ] ;
        fhir:requirements [ fhir:v "Allows users to make use of identifiers when the identifier system is not known." ] ;
@@ -4442,8 +4442,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
@@ -5415,8 +5415,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
@@ -6388,8 +6388,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
@@ -7034,8 +7034,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
@@ -7503,8 +7503,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
@@ -7994,8 +7994,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
@@ -8197,8 +8197,8 @@
          fhir:expression [ fhir:v "data.empty() or contentType.exists()" ] ;
          fhir:xpath [ fhir:v "not(exists(f:data)) or exists(f:contentType)" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/HealthcareService"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/HealthcareService>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/RelatedPerson"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/RelatedPerson>
          ]
        ] ) ;
        fhir:mapping ( [
@@ -14406,8 +14406,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:mapping ( [
@@ -20819,8 +20819,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:mapping ( [
@@ -27355,8 +27355,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
@@ -33896,8 +33896,8 @@
          fhir:expression [ fhir:v "start.hasValue().not() or end.hasValue().not() or (start <= end)" ] ;
          fhir:xpath [ fhir:v "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Identifier"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Encounter"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Encounter>
          ]
        ] ) ;
        fhir:mapping ( [
