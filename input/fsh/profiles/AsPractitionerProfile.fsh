@@ -127,20 +127,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * qualification contains degree 0..*
 
 
-* qualification[degree].code.coding[degreeR36] 0..0
-* qualification[degree].code.coding[degreeR47] 0..0
-* qualification[degree].code.coding[degreeR48] 0..0
-* qualification[degree].code.coding[degreeR49] 0..0
-* qualification[degree].code.coding[degreeR50] 0..0
-* qualification[degree].code.coding[degreeR51] 0..0
-* qualification[degree].code.coding[degreeR52] 0..0
-* qualification[degree].code.coding[degreeR53] 0..0
-* qualification[degree].code.coding[degreeR54] 0..0
-* qualification[degree].code.coding[degreeR55] 0..0
-* qualification[degree].code.coding[degreeR56] 0..0
-* qualification[degree].code.coding[degreeR57] 0..0
-* qualification[degree].code.coding[degreeR58] 0..0
-* qualification[degree].code.coding[degreeR226] 0..0
 
 
 * qualification[degree] MS
@@ -174,33 +160,65 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // # PROFESSION #
 // ##############
 
-* qualification contains profession 0..1
+* qualification contains exercicePro 0..1
 
-* qualification[profession] ^short = "profession : Profession exercée ou future profession de l'étudiant.\r\ncategorieProfessionnelle : Indique si le professionnel exerce sa profession en tant que :\r\nM: Militaire\r\nC: Civil\r\nF: Fonctionnaire\r\nE: Etudiant" 
-* qualification[profession].code.coding ^slicing.discriminator.type = #value
-* qualification[profession].code.coding ^slicing.discriminator.path = "system"
-* qualification[profession].code.coding ^slicing.rules = #closed
+* qualification[exercicePro].code.coding[degreeR36] 0..0
+* qualification[exercicePro].code.coding[degreeR47] 0..0
+* qualification[exercicePro].code.coding[degreeR48] 0..0
+* qualification[exercicePro].code.coding[degreeR49] 0..0
+* qualification[exercicePro].code.coding[degreeR50] 0..0
+* qualification[exercicePro].code.coding[degreeR51] 0..0
+* qualification[exercicePro].code.coding[degreeR52] 0..0
+* qualification[exercicePro].code.coding[degreeR53] 0..0
+* qualification[exercicePro].code.coding[degreeR54] 0..0
+* qualification[exercicePro].code.coding[degreeR55] 0..0
+* qualification[exercicePro].code.coding[degreeR56] 0..0
+* qualification[exercicePro].code.coding[degreeR57] 0..0
+* qualification[exercicePro].code.coding[degreeR58] 0..0
+* qualification[exercicePro].code.coding[degreeR226] 0..0
 
-* qualification[profession].code.coding contains 
+
+* qualification[exercicePro] ^short = "profession : exercice professionnel ou future profession de l'étudiant et la catégorie de profession." 
+* qualification[exercicePro].code.coding ^slicing.discriminator.type = #value
+* qualification[exercicePro].code.coding ^slicing.discriminator.path = "system"
+* qualification[exercicePro].code.coding ^slicing.rules = #closed
+
+* qualification[exercicePro].code.coding contains 
     categorieProfession 0..1 MS and
 	profession 0..1 MS
 
 // Slice 1 : Catégorie professionnelle
-* qualification[profession].code.coding[categorieProfession] ^short = "Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
-* qualification[profession].code.coding[categorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
+* qualification[exercicePro].code.coding[categorieProfession] ^short = "Catégorie professionnelle indiquant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
+* qualification[exercicePro].code.coding[categorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
 
 // Slice 2 : profession de sante
-* qualification[profession].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
-* qualification[profession].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
-* qualification[profession].period MS
-* qualification[profession].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
-* qualification[profession].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
+* qualification[exercicePro].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
+* qualification[exercicePro].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
+* qualification[exercicePro].period MS
+* qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
+* qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
 
 // ################
 // # SAVOIR FAIRE #
 // ################
 
 * qualification contains savoirFaire 0..*
+
+* qualification[savoirFaire].code.coding[degreeR36] 0..0
+* qualification[savoirFaire].code.coding[degreeR47] 0..0
+* qualification[savoirFaire].code.coding[degreeR48] 0..0
+* qualification[savoirFaire].code.coding[degreeR49] 0..0
+* qualification[savoirFaire].code.coding[degreeR50] 0..0
+* qualification[savoirFaire].code.coding[degreeR51] 0..0
+* qualification[savoirFaire].code.coding[degreeR52] 0..0
+* qualification[savoirFaire].code.coding[degreeR53] 0..0
+* qualification[savoirFaire].code.coding[degreeR54] 0..0
+* qualification[savoirFaire].code.coding[degreeR55] 0..0
+* qualification[savoirFaire].code.coding[degreeR56] 0..0
+* qualification[savoirFaire].code.coding[degreeR57] 0..0
+* qualification[savoirFaire].code.coding[degreeR58] 0..0
+* qualification[savoirFaire].code.coding[degreeR226] 0..0
+
 
 * qualification[savoirFaire] ^short = "savoirFAire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc."
 
