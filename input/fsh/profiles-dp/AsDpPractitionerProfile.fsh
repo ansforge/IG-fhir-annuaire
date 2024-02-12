@@ -19,14 +19,7 @@ Description: 	"Profil public applicatif créé à partir du profil générique a
 // active
 * active 1..1 // 'true' par défaut, 'false' pour notifier aux clients du mode delta les practitioner supprimées entre 2 dates, dans ce cas seuls l'id et le champs active sont renseignés.
 // name
-* name.id 0..0
-* name.use 0..0
-* name.text 0..0
-* name.family 0..0
-* name.given 0..0
-* name.prefix 0..1
-* name.suffix 0..0
-* name.period 0..0
+* name 0..0
 // gender
 * gender 0..0
 

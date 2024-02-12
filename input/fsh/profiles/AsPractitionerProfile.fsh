@@ -119,10 +119,30 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * qualification ^slicing.discriminator.path = "code"
 * qualification ^slicing.rules = #open
 
+
+
 // ###########
 // # DIPLOME #
 // ###########
 * qualification contains degree 0..*
+
+
+* qualification[degree].code.coding[degreeR36] 0..0
+* qualification[degree].code.coding[degreeR47] 0..0
+* qualification[degree].code.coding[degreeR48] 0..0
+* qualification[degree].code.coding[degreeR49] 0..0
+* qualification[degree].code.coding[degreeR50] 0..0
+* qualification[degree].code.coding[degreeR51] 0..0
+* qualification[degree].code.coding[degreeR52] 0..0
+* qualification[degree].code.coding[degreeR53] 0..0
+* qualification[degree].code.coding[degreeR54] 0..0
+* qualification[degree].code.coding[degreeR55] 0..0
+* qualification[degree].code.coding[degreeR56] 0..0
+* qualification[degree].code.coding[degreeR57] 0..0
+* qualification[degree].code.coding[degreeR58] 0..0
+* qualification[degree].code.coding[degreeR226] 0..0
+
+
 * qualification[degree] MS
 * qualification[degree] ^short = "Diplôme et type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
 
