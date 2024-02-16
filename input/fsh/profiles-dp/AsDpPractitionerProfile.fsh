@@ -19,44 +19,38 @@ Description: 	"Profil public applicatif créé à partir du profil générique a
 // active
 * active 1..1 // 'true' par défaut, 'false' pour notifier aux clients du mode delta les practitioner supprimées entre 2 dates, dans ce cas seuls l'id et le champs active sont renseignés.
 // name
-* name 0..0
-// gender
-* gender 0..0
-
+* name 0..1
 // telecommunication - boiteLettreMSS
 * telecom ^slicing.rules = #closed // only boiteLettreMSS is an open data
+// mailbox-mss - Donnees privees
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] 0..0
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
 // adresseCorrespondance
 * address 0..0
-// photo
-* photo 0..0
 // qualification - Donnees restreintes
-* qualification.identifier 0..0
-* qualification.period 0..0 
-* qualification.issuer 0..0 
+* qualification[degree].period 0..0
+* qualification[degree].issuer 0..0
 * qualification[degree].extension[as-ext-education-level] 0..0 
+* qualification[profession].period 0..0
 
 // langueParlee
 * communication 0..0
 
-//
+// extensions
 * extension[as-ext-registration] 0..0
+* extension[as-ext-frpractitioner-authorization] 0..0
 * extension[as-ext-smartcard] 0..1
 * extension[as-ext-digital-certificate] 0..0
-
-// mailbox-mss - Donnees privees
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] 0..0
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
-
-// mailbox-mss
-//* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] 0..0
 
 ValueSet: AsVSInterneIdSystems
 Id: as-vs-intern-id-systems
 Title: "Internal Id Systems VS"
 Description: "Systèmes des identifiants internes"
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems
+
+// SVS profile
+* ^experimental = false
 
 
 CodeSystem: AsCSInterneIdSystems
