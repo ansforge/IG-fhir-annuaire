@@ -27,11 +27,13 @@ Description: 	"Profil public applicatif créé à partir du profil générique a
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
 // adresseCorrespondance
 * address 0..0
+
 // qualification - Donnees restreintes
 * qualification[degree].period 0..0
 * qualification[degree].issuer 0..0
 * qualification[degree].extension[as-ext-education-level] 0..0 
-* qualification[profession].period 0..0
+
+* qualification[exercicePro].period 0..0
 
 // langueParlee
 * communication 0..0
