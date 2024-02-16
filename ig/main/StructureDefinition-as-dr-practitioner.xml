@@ -14,7 +14,7 @@
   <name value="AsDrPractitionerProfile"/>
   <title value="AS Donnée Restreinte Practitioner Profile"/>
   <status value="active"/>
-  <date value="2024-02-16T10:57:00+00:00"/>
+  <date value="2024-02-16T18:38:53+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -20374,10 +20374,10 @@
         <map value=".playingEntity.playingRole[classCode=QUAL].scoper"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession">
+    <element id="Practitioner.qualification:exercicePro">
       <path value="Practitioner.qualification"/>
-      <sliceName value="profession"/>
-      <short value="profession : Profession exercée ou future profession de l'étudiant.&#xD;&#xA;categorieProfessionnelle : Indique si le professionnel exerce sa profession en tant que :&#xD;&#xA;M: Militaire&#xD;&#xA;C: Civil&#xD;&#xA;F: Fonctionnaire&#xD;&#xA;E: Etudiant"/>
+      <sliceName value="exercicePro"/>
+      <short value="exercicePro : exercice professionnel décrivant la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.)."/>
       <definition value="Qualifications obtained by training and certification/Diplômes obtenus"/>
       <min value="0"/>
       <max value="1"/>
@@ -20415,7 +20415,7 @@
         <map value="./Qualifications"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.id">
+    <element id="Practitioner.qualification:exercicePro.id">
       <path value="Practitioner.qualification.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -20438,7 +20438,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.extension">
+    <element id="Practitioner.qualification:exercicePro.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -20495,7 +20495,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.modifierExtension">
+    <element id="Practitioner.qualification:exercicePro.modifierExtension">
       <path value="Practitioner.qualification.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
@@ -20543,7 +20543,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.identifier">
+    <element id="Practitioner.qualification:exercicePro.identifier">
       <path value="Practitioner.qualification.identifier"/>
       <short value="An identifier for this qualification for the practitioner"/>
       <definition value="An identifier that applies to this person's qualification in this role."/>
@@ -20588,7 +20588,7 @@
         <map value=".playingEntity.playingRole[classCode=QUAL].id"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code">
+    <element id="Practitioner.qualification:exercicePro.code">
       <path value="Practitioner.qualification.code"/>
       <short value="Coded representation of the qualification"/>
       <definition value="Coded representation of the qualification."/>
@@ -20645,7 +20645,7 @@
         <map value="./Qualifications.Value"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.id">
+    <element id="Practitioner.qualification:exercicePro.code.id">
       <path value="Practitioner.qualification.code.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -20668,7 +20668,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.extension">
+    <element id="Practitioner.qualification:exercicePro.code.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -20725,7 +20725,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding">
+    <element id="Practitioner.qualification:exercicePro.code.coding">
       <path value="Practitioner.qualification.code.coding"/>
       <slicing>
         <discriminator>
@@ -20787,13 +20787,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR36"/>
       <short value="Code defined by a terminology system"/>
@@ -20801,7 +20795,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -20853,7 +20847,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -20876,7 +20870,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -20933,13 +20927,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Autre diplôme obtenu"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -20983,13 +20971,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -21031,13 +21013,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -21080,13 +21056,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -21132,13 +21102,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR36.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR36.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -21181,13 +21145,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR47"/>
       <short value="Code defined by a terminology system"/>
@@ -21195,7 +21153,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -21247,7 +21205,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -21270,7 +21228,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -21327,13 +21285,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Commission de qualification"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -21377,13 +21329,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -21425,13 +21371,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -21474,13 +21414,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -21526,13 +21460,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR47.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR47.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -21575,13 +21503,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR48"/>
       <short value="Code defined by a terminology system"/>
@@ -21589,7 +21511,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -21641,7 +21563,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -21664,7 +21586,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -21721,13 +21643,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme de l'Etat français"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -21771,13 +21687,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -21819,13 +21729,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -21868,13 +21772,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -21920,13 +21818,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR48.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR48.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -21969,13 +21861,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR49"/>
       <short value="Code defined by a terminology system"/>
@@ -21983,7 +21869,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -22035,7 +21921,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -22058,7 +21944,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -22115,13 +22001,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme d'Etudes Spécialisées"/>
       <definition value="Diplôme d'Etudes Spécialisées"/>
@@ -22165,13 +22045,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -22213,13 +22087,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -22262,13 +22130,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -22314,13 +22176,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR49.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR49.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -22363,13 +22219,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR50"/>
       <short value="Code defined by a terminology system"/>
@@ -22377,7 +22227,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -22429,7 +22279,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -22452,7 +22302,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -22509,13 +22359,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="DESC Groupe 1 (diplôme)"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -22559,13 +22403,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -22607,13 +22445,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -22656,13 +22488,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -22708,13 +22534,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR50.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR50.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -22757,13 +22577,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR51"/>
       <short value="Code defined by a terminology system"/>
@@ -22771,7 +22585,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -22823,7 +22637,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -22846,7 +22660,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -22903,13 +22717,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="DESC Groupe 2 (diplôme)"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -22953,13 +22761,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -23001,13 +22803,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -23050,13 +22846,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -23102,13 +22892,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR51.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR51.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -23151,13 +22935,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR52"/>
       <short value="Code defined by a terminology system"/>
@@ -23165,7 +22943,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -23217,7 +22995,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -23240,7 +23018,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -23297,13 +23075,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Capacité (diplôme)"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -23347,13 +23119,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -23395,13 +23161,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -23444,13 +23204,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -23496,13 +23250,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR52.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR52.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -23545,13 +23293,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR53"/>
       <short value="Code defined by a terminology system"/>
@@ -23559,7 +23301,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -23611,7 +23353,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -23634,7 +23376,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -23691,13 +23433,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme d'un pays de l'EEE"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -23741,13 +23477,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -23789,13 +23519,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -23838,13 +23562,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -23890,13 +23608,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR53.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR53.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -23939,13 +23651,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR54"/>
       <short value="Code defined by a terminology system"/>
@@ -23953,7 +23659,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -24005,7 +23711,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -24028,7 +23734,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -24085,13 +23791,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme d'Université ou Inter-Universitaire"/>
       <definition value="Diplôme d'Université ou Inter-Universitaire"/>
@@ -24135,13 +23835,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -24183,13 +23877,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -24232,13 +23920,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -24284,13 +23966,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR54.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR54.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -24333,13 +24009,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR55"/>
       <short value="Code defined by a terminology system"/>
@@ -24347,7 +24017,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -24399,7 +24069,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -24422,7 +24092,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -24479,13 +24149,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Certificat d'Etude Spéciale"/>
       <definition value="Certificat d'Etude Spéciale"/>
@@ -24529,13 +24193,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -24577,13 +24235,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -24626,13 +24278,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -24678,13 +24324,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR55.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR55.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -24727,13 +24367,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR56"/>
       <short value="Code defined by a terminology system"/>
@@ -24741,7 +24375,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -24793,7 +24427,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -24816,7 +24450,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -24873,13 +24507,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Attestation"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -24923,13 +24551,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -24971,13 +24593,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -25020,13 +24636,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -25072,13 +24682,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR56.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR56.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -25121,13 +24725,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR57"/>
       <short value="Code defined by a terminology system"/>
@@ -25135,7 +24733,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -25187,7 +24785,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -25210,7 +24808,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -25267,13 +24865,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme Européen d'Etudes Spécialisées"/>
       <definition value="Diplôme Européen d'Etudes Spécialisées"/>
@@ -25317,13 +24909,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -25365,13 +24951,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -25414,13 +24994,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -25466,13 +25040,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR57.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR57.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -25515,13 +25083,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR58"/>
       <short value="Code defined by a terminology system"/>
@@ -25529,7 +25091,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -25581,7 +25143,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -25604,7 +25166,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -25661,13 +25223,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Autre type de diplôme"/>
       <definition value="Autre type de diplôme"/>
@@ -25711,13 +25267,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -25759,13 +25309,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -25808,13 +25352,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -25860,13 +25398,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR58.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR58.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -25909,13 +25441,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR226"/>
       <short value="Code defined by a terminology system"/>
@@ -25923,7 +25449,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -25975,7 +25501,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226.id">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226.id">
       <path value="Practitioner.qualification.code.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -25998,7 +25524,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226.extension">
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -26055,13 +25581,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226.system">
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme de 2ième cycle non qualifiant"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -26105,13 +25625,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226.version">
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -26153,13 +25667,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226.code">
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -26202,13 +25710,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -26254,13 +25756,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:degreeR226.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
+    <element id="Practitioner.qualification:exercicePro.code.coding:degreeR226.userSelected">
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -26303,10 +25799,10 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:categorieProfession">
+    <element id="Practitioner.qualification:exercicePro.code.coding:categorieProfession">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="categorieProfession"/>
-      <short value="Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."/>
+      <short value="Catégorie professionnelle indiquant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."/>
       <definition value="A reference to a code defined by a terminology system."/>
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
@@ -26364,7 +25860,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.coding:profession">
+    <element id="Practitioner.qualification:exercicePro.code.coding:profession">
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="profession"/>
       <short value="Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"/>
@@ -26425,7 +25921,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.code.text">
+    <element id="Practitioner.qualification:exercicePro.code.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -26471,7 +25967,7 @@
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.period">
+    <element id="Practitioner.qualification:exercicePro.period">
       <path value="Practitioner.qualification.period"/>
       <short value="Period during which the qualification is valid"/>
       <definition value="Period during which the qualification is valid."/>
@@ -26526,7 +26022,7 @@
         <map value="./Qualifications.StartDate and ./Qualifications.EndDate"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.period.id">
+    <element id="Practitioner.qualification:exercicePro.period.id">
       <path value="Practitioner.qualification.period.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -26549,7 +26045,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.period.extension">
+    <element id="Practitioner.qualification:exercicePro.period.extension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative"/>
       </extension>
@@ -26606,7 +26102,7 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.period.start">
+    <element id="Practitioner.qualification:exercicePro.period.start">
       <path value="Practitioner.qualification.period.start"/>
       <short value="[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."/>
       <definition value="The start of the period. The boundary is inclusive."/>
@@ -26645,7 +26141,7 @@
         <map value="./low"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.period.end">
+    <element id="Practitioner.qualification:exercicePro.period.end">
       <path value="Practitioner.qualification.period.end"/>
       <short value="End time with inclusive boundary, if not ongoing"/>
       <definition value="The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time."/>
@@ -26685,7 +26181,7 @@
         <map value="./high"/>
       </mapping>
     </element>
-    <element id="Practitioner.qualification:profession.issuer">
+    <element id="Practitioner.qualification:exercicePro.issuer">
       <path value="Practitioner.qualification.issuer"/>
       <short value="Organization that regulates and issues the qualification"/>
       <definition value="Organization that regulates and issues the qualification."/>
@@ -27151,12 +26647,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR36">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR36"/>
       <short value="Code defined by a terminology system"/>
@@ -27164,7 +26654,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -27297,12 +26787,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR36.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Autre diplôme obtenu"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -27347,12 +26831,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR36.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -27395,12 +26873,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR36.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -27444,12 +26916,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR36.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -27496,12 +26962,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR36.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -27545,12 +27005,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR47">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR47"/>
       <short value="Code defined by a terminology system"/>
@@ -27558,7 +27012,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -27691,12 +27145,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR47.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Commission de qualification"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -27741,12 +27189,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR47.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -27789,12 +27231,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR47.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -27838,12 +27274,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR47.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -27890,12 +27320,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR47.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -27939,12 +27363,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR48">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR48"/>
       <short value="Code defined by a terminology system"/>
@@ -27952,7 +27370,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -28085,12 +27503,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR48.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme de l'Etat français"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -28135,12 +27547,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR48.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -28183,12 +27589,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR48.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -28232,12 +27632,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR48.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -28284,12 +27678,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR48.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -28333,12 +27721,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR49">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR49"/>
       <short value="Code defined by a terminology system"/>
@@ -28346,7 +27728,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -28479,12 +27861,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR49.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme d'Etudes Spécialisées"/>
       <definition value="Diplôme d'Etudes Spécialisées"/>
@@ -28529,12 +27905,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR49.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -28577,12 +27947,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR49.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -28626,12 +27990,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR49.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -28678,12 +28036,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR49.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -28727,12 +28079,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR50">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR50"/>
       <short value="Code defined by a terminology system"/>
@@ -28740,7 +28086,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -28873,12 +28219,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR50.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="DESC Groupe 1 (diplôme)"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -28923,12 +28263,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR50.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -28971,12 +28305,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR50.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -29020,12 +28348,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR50.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -29072,12 +28394,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR50.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -29121,12 +28437,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR51">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR51"/>
       <short value="Code defined by a terminology system"/>
@@ -29134,7 +28444,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -29267,12 +28577,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR51.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="DESC Groupe 2 (diplôme)"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -29317,12 +28621,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR51.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -29365,12 +28663,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR51.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -29414,12 +28706,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR51.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -29466,12 +28752,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR51.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -29515,12 +28795,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR52">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR52"/>
       <short value="Code defined by a terminology system"/>
@@ -29528,7 +28802,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -29661,12 +28935,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR52.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Capacité (diplôme)"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -29711,12 +28979,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR52.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -29759,12 +29021,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR52.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -29808,12 +29064,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR52.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -29860,12 +29110,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR52.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -29909,12 +29153,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR53">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR53"/>
       <short value="Code defined by a terminology system"/>
@@ -29922,7 +29160,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -30055,12 +29293,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR53.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme d'un pays de l'EEE"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -30105,12 +29337,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR53.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -30153,12 +29379,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR53.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -30202,12 +29422,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR53.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -30254,12 +29468,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR53.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -30303,12 +29511,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR54">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR54"/>
       <short value="Code defined by a terminology system"/>
@@ -30316,7 +29518,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -30449,12 +29651,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR54.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme d'Université ou Inter-Universitaire"/>
       <definition value="Diplôme d'Université ou Inter-Universitaire"/>
@@ -30499,12 +29695,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR54.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -30547,12 +29737,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR54.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -30596,12 +29780,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR54.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -30648,12 +29826,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR54.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -30697,12 +29869,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR55">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR55"/>
       <short value="Code defined by a terminology system"/>
@@ -30710,7 +29876,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -30843,12 +30009,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR55.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Certificat d'Etude Spéciale"/>
       <definition value="Certificat d'Etude Spéciale"/>
@@ -30893,12 +30053,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR55.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -30941,12 +30095,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR55.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -30990,12 +30138,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR55.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -31042,12 +30184,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR55.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -31091,12 +30227,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR56">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR56"/>
       <short value="Code defined by a terminology system"/>
@@ -31104,7 +30234,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -31237,12 +30367,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR56.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Attestation"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -31287,12 +30411,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR56.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -31335,12 +30453,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR56.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -31384,12 +30496,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR56.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -31436,12 +30542,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR56.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -31485,12 +30585,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR57">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR57"/>
       <short value="Code defined by a terminology system"/>
@@ -31498,7 +30592,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -31631,12 +30725,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR57.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme Européen d'Etudes Spécialisées"/>
       <definition value="Diplôme Européen d'Etudes Spécialisées"/>
@@ -31681,12 +30769,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR57.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -31729,12 +30811,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR57.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -31778,12 +30854,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR57.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -31830,12 +30900,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR57.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -31879,12 +30943,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR58">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR58"/>
       <short value="Code defined by a terminology system"/>
@@ -31892,7 +30950,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -32025,12 +31083,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR58.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Autre type de diplôme"/>
       <definition value="Autre type de diplôme"/>
@@ -32075,12 +31127,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR58.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -32123,12 +31169,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR58.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -32172,12 +31212,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR58.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -32224,12 +31258,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR58.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -32273,12 +31301,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR226">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding"/>
       <sliceName value="degreeR226"/>
       <short value="Code defined by a terminology system"/>
@@ -32286,7 +31308,7 @@
       <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
       <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="CodeableConcept.coding"/>
         <min value="0"/>
@@ -32419,12 +31441,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR226.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.system"/>
       <short value="Diplôme de 2ième cycle non qualifiant"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -32469,12 +31485,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR226.version">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -32517,12 +31527,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR226.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -32566,12 +31570,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR226.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -32618,12 +31616,6 @@
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding:degreeR226.userSelected">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Practitioner.qualification.code.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>

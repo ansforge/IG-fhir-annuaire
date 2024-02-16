@@ -10,7 +10,7 @@
   "name" : "AsDrPractitionerProfile",
   "title" : "AS Donnée Restreinte Practitioner Profile",
   "status" : "active",
-  "date" : "2024-02-16T10:57:00+00:00",
+  "date" : "2024-02-16T18:38:53+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -21383,10 +21383,10 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession",
+      "id" : "Practitioner.qualification:exercicePro",
       "path" : "Practitioner.qualification",
-      "sliceName" : "profession",
-      "short" : "profession : Profession exercée ou future profession de l'étudiant.\r\ncategorieProfessionnelle : Indique si le professionnel exerce sa profession en tant que :\r\nM: Militaire\r\nC: Civil\r\nF: Fonctionnaire\r\nE: Etudiant",
+      "sliceName" : "exercicePro",
+      "short" : "exercicePro : exercice professionnel décrivant la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.).",
       "definition" : "Qualifications obtained by training and certification/Diplômes obtenus",
       "min" : 0,
       "max" : "1",
@@ -21425,7 +21425,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.id",
+      "id" : "Practitioner.qualification:exercicePro.id",
       "path" : "Practitioner.qualification.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -21450,7 +21450,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.extension",
+      "id" : "Practitioner.qualification:exercicePro.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -21510,7 +21510,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.modifierExtension",
+      "id" : "Practitioner.qualification:exercicePro.modifierExtension",
       "path" : "Practitioner.qualification.modifierExtension",
       "short" : "Extensions that cannot be ignored even if unrecognized",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
@@ -21559,7 +21559,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.identifier",
+      "id" : "Practitioner.qualification:exercicePro.identifier",
       "path" : "Practitioner.qualification.identifier",
       "short" : "An identifier for this qualification for the practitioner",
       "definition" : "An identifier that applies to this person's qualification in this role.",
@@ -21605,7 +21605,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code",
+      "id" : "Practitioner.qualification:exercicePro.code",
       "path" : "Practitioner.qualification.code",
       "short" : "Coded representation of the qualification",
       "definition" : "Coded representation of the qualification.",
@@ -21664,7 +21664,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.id",
+      "id" : "Practitioner.qualification:exercicePro.code.id",
       "path" : "Practitioner.qualification.code.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -21689,7 +21689,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -21749,7 +21749,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding",
+      "id" : "Practitioner.qualification:exercicePro.code.coding",
       "path" : "Practitioner.qualification.code.coding",
       "slicing" : {
         "discriminator" : [{
@@ -21812,15 +21812,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR36",
       "short" : "Code defined by a terminology system",
@@ -21828,7 +21820,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -21881,7 +21873,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -21906,7 +21898,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -21966,15 +21958,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Autre diplôme obtenu",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -22019,15 +22003,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -22070,15 +22046,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -22122,16 +22090,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -22178,15 +22138,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR36.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR36.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -22230,15 +22182,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR47",
       "short" : "Code defined by a terminology system",
@@ -22246,7 +22190,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -22299,7 +22243,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -22324,7 +22268,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -22384,15 +22328,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Commission de qualification",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -22437,15 +22373,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -22488,15 +22416,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -22540,16 +22460,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -22596,15 +22508,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR47.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR47.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -22648,15 +22552,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR48",
       "short" : "Code defined by a terminology system",
@@ -22664,7 +22560,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -22717,7 +22613,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -22742,7 +22638,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -22802,15 +22698,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme de l'Etat français",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -22855,15 +22743,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -22906,15 +22786,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -22958,16 +22830,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -23014,15 +22878,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR48.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR48.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -23066,15 +22922,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR49",
       "short" : "Code defined by a terminology system",
@@ -23082,7 +22930,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -23135,7 +22983,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -23160,7 +23008,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -23220,15 +23068,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme d'Etudes Spécialisées",
       "definition" : "Diplôme d'Etudes Spécialisées",
@@ -23273,15 +23113,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -23324,15 +23156,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -23376,16 +23200,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -23432,15 +23248,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR49.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR49.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -23484,15 +23292,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR50",
       "short" : "Code defined by a terminology system",
@@ -23500,7 +23300,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -23553,7 +23353,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -23578,7 +23378,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -23638,15 +23438,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "DESC Groupe 1 (diplôme)",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -23691,15 +23483,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -23742,15 +23526,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -23794,16 +23570,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -23850,15 +23618,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR50.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR50.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -23902,15 +23662,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR51",
       "short" : "Code defined by a terminology system",
@@ -23918,7 +23670,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -23971,7 +23723,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -23996,7 +23748,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -24056,15 +23808,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "DESC Groupe 2 (diplôme)",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -24109,15 +23853,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -24160,15 +23896,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -24212,16 +23940,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -24268,15 +23988,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR51.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR51.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -24320,15 +24032,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR52",
       "short" : "Code defined by a terminology system",
@@ -24336,7 +24040,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -24389,7 +24093,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -24414,7 +24118,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -24474,15 +24178,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Capacité (diplôme)",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -24527,15 +24223,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -24578,15 +24266,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -24630,16 +24310,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -24686,15 +24358,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR52.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR52.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -24738,15 +24402,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR53",
       "short" : "Code defined by a terminology system",
@@ -24754,7 +24410,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -24807,7 +24463,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -24832,7 +24488,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -24892,15 +24548,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme d'un pays de l'EEE",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -24945,15 +24593,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -24996,15 +24636,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -25048,16 +24680,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -25104,15 +24728,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR53.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR53.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -25156,15 +24772,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR54",
       "short" : "Code defined by a terminology system",
@@ -25172,7 +24780,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -25225,7 +24833,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -25250,7 +24858,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -25310,15 +24918,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme d'Université ou Inter-Universitaire",
       "definition" : "Diplôme d'Université ou Inter-Universitaire",
@@ -25363,15 +24963,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -25414,15 +25006,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -25466,16 +25050,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -25522,15 +25098,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR54.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR54.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -25574,15 +25142,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR55",
       "short" : "Code defined by a terminology system",
@@ -25590,7 +25150,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -25643,7 +25203,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -25668,7 +25228,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -25728,15 +25288,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Certificat d'Etude Spéciale",
       "definition" : "Certificat d'Etude Spéciale",
@@ -25781,15 +25333,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -25832,15 +25376,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -25884,16 +25420,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -25940,15 +25468,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR55.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR55.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -25992,15 +25512,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR56",
       "short" : "Code defined by a terminology system",
@@ -26008,7 +25520,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -26061,7 +25573,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -26086,7 +25598,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -26146,15 +25658,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Attestation",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -26199,15 +25703,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -26250,15 +25746,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -26302,16 +25790,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -26358,15 +25838,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR56.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR56.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -26410,15 +25882,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR57",
       "short" : "Code defined by a terminology system",
@@ -26426,7 +25890,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -26479,7 +25943,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -26504,7 +25968,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -26564,15 +26028,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme Européen d'Etudes Spécialisées",
       "definition" : "Diplôme Européen d'Etudes Spécialisées",
@@ -26617,15 +26073,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -26668,15 +26116,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -26720,16 +26160,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -26776,15 +26208,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR57.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR57.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -26828,15 +26252,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR58",
       "short" : "Code defined by a terminology system",
@@ -26844,7 +26260,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -26897,7 +26313,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -26922,7 +26338,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -26982,15 +26398,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Autre type de diplôme",
       "definition" : "Autre type de diplôme",
@@ -27035,15 +26443,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -27086,15 +26486,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -27138,16 +26530,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -27194,15 +26578,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR58.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR58.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -27246,15 +26622,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR226",
       "short" : "Code defined by a terminology system",
@@ -27262,7 +26630,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -27315,7 +26683,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226.id",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226.id",
       "path" : "Practitioner.qualification.code.coding.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -27340,7 +26708,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226.extension",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -27400,15 +26768,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226.system",
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme de 2ième cycle non qualifiant",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -27453,15 +26813,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226.version",
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -27504,15 +26856,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226.code",
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -27556,16 +26900,8 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226.display",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -27612,15 +26948,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:degreeR226.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
+      "id" : "Practitioner.qualification:exercicePro.code.coding:degreeR226.userSelected",
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -27664,10 +26992,10 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:categorieProfession",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:categorieProfession",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "categorieProfession",
-      "short" : "Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle).",
+      "short" : "Catégorie professionnelle indiquant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle).",
       "definition" : "A reference to a code defined by a terminology system.",
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
@@ -27726,7 +27054,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.coding:profession",
+      "id" : "Practitioner.qualification:exercicePro.code.coding:profession",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "profession",
       "short" : "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291",
@@ -27788,7 +27116,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.code.text",
+      "id" : "Practitioner.qualification:exercicePro.code.text",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
@@ -27836,7 +27164,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.period",
+      "id" : "Practitioner.qualification:exercicePro.period",
       "path" : "Practitioner.qualification.period",
       "short" : "Period during which the qualification is valid",
       "definition" : "Period during which the qualification is valid.",
@@ -27892,7 +27220,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.period.id",
+      "id" : "Practitioner.qualification:exercicePro.period.id",
       "path" : "Practitioner.qualification.period.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -27917,7 +27245,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.period.extension",
+      "id" : "Practitioner.qualification:exercicePro.period.extension",
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
         "valueCode" : "normative"
@@ -27977,7 +27305,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.period.start",
+      "id" : "Practitioner.qualification:exercicePro.period.start",
       "path" : "Practitioner.qualification.period.start",
       "short" : "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice).",
       "definition" : "The start of the period. The boundary is inclusive.",
@@ -28017,7 +27345,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.period.end",
+      "id" : "Practitioner.qualification:exercicePro.period.end",
       "path" : "Practitioner.qualification.period.end",
       "short" : "End time with inclusive boundary, if not ongoing",
       "definition" : "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
@@ -28058,7 +27386,7 @@
       }]
     },
     {
-      "id" : "Practitioner.qualification:profession.issuer",
+      "id" : "Practitioner.qualification:exercicePro.issuer",
       "path" : "Practitioner.qualification.issuer",
       "short" : "Organization that regulates and issues the qualification",
       "definition" : "Organization that regulates and issues the qualification.",
@@ -28543,14 +27871,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR36",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR36",
       "short" : "Code defined by a terminology system",
@@ -28558,7 +27878,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -28697,14 +28017,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR36.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Autre diplôme obtenu",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -28750,14 +28062,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR36.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -28801,14 +28105,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR36.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -28854,14 +28150,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR36.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -28909,14 +28197,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR36.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -28961,14 +28241,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR47",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR47",
       "short" : "Code defined by a terminology system",
@@ -28976,7 +28248,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -29115,14 +28387,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR47.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Commission de qualification",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -29168,14 +28432,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR47.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -29219,14 +28475,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR47.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -29272,14 +28520,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR47.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -29327,14 +28567,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR47.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -29379,14 +28611,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR48",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR48",
       "short" : "Code defined by a terminology system",
@@ -29394,7 +28618,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -29533,14 +28757,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR48.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme de l'Etat français",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -29586,14 +28802,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR48.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -29637,14 +28845,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR48.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -29690,14 +28890,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR48.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -29745,14 +28937,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR48.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -29797,14 +28981,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR49",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR49",
       "short" : "Code defined by a terminology system",
@@ -29812,7 +28988,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -29951,14 +29127,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR49.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme d'Etudes Spécialisées",
       "definition" : "Diplôme d'Etudes Spécialisées",
@@ -30004,14 +29172,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR49.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -30055,14 +29215,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR49.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -30108,14 +29260,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR49.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -30163,14 +29307,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR49.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -30215,14 +29351,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR50",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR50",
       "short" : "Code defined by a terminology system",
@@ -30230,7 +29358,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -30369,14 +29497,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR50.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "DESC Groupe 1 (diplôme)",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -30422,14 +29542,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR50.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -30473,14 +29585,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR50.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -30526,14 +29630,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR50.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -30581,14 +29677,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR50.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -30633,14 +29721,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR51",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR51",
       "short" : "Code defined by a terminology system",
@@ -30648,7 +29728,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -30787,14 +29867,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR51.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "DESC Groupe 2 (diplôme)",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -30840,14 +29912,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR51.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -30891,14 +29955,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR51.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -30944,14 +30000,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR51.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -30999,14 +30047,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR51.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -31051,14 +30091,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR52",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR52",
       "short" : "Code defined by a terminology system",
@@ -31066,7 +30098,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -31205,14 +30237,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR52.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Capacité (diplôme)",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -31258,14 +30282,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR52.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -31309,14 +30325,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR52.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -31362,14 +30370,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR52.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -31417,14 +30417,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR52.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -31469,14 +30461,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR53",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR53",
       "short" : "Code defined by a terminology system",
@@ -31484,7 +30468,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -31623,14 +30607,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR53.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme d'un pays de l'EEE",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -31676,14 +30652,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR53.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -31727,14 +30695,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR53.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -31780,14 +30740,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR53.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -31835,14 +30787,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR53.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -31887,14 +30831,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR54",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR54",
       "short" : "Code defined by a terminology system",
@@ -31902,7 +30838,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -32041,14 +30977,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR54.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme d'Université ou Inter-Universitaire",
       "definition" : "Diplôme d'Université ou Inter-Universitaire",
@@ -32094,14 +31022,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR54.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -32145,14 +31065,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR54.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -32198,14 +31110,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR54.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -32253,14 +31157,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR54.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -32305,14 +31201,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR55",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR55",
       "short" : "Code defined by a terminology system",
@@ -32320,7 +31208,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -32459,14 +31347,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR55.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Certificat d'Etude Spéciale",
       "definition" : "Certificat d'Etude Spéciale",
@@ -32512,14 +31392,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR55.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -32563,14 +31435,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR55.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -32616,14 +31480,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR55.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -32671,14 +31527,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR55.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -32723,14 +31571,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR56",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR56",
       "short" : "Code defined by a terminology system",
@@ -32738,7 +31578,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -32877,14 +31717,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR56.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Attestation",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -32930,14 +31762,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR56.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -32981,14 +31805,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR56.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -33034,14 +31850,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR56.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -33089,14 +31897,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR56.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -33141,14 +31941,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR57",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR57",
       "short" : "Code defined by a terminology system",
@@ -33156,7 +31948,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -33295,14 +32087,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR57.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme Européen d'Etudes Spécialisées",
       "definition" : "Diplôme Européen d'Etudes Spécialisées",
@@ -33348,14 +32132,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR57.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -33399,14 +32175,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR57.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -33452,14 +32220,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR57.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -33507,14 +32267,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR57.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -33559,14 +32311,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR58",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR58",
       "short" : "Code defined by a terminology system",
@@ -33574,7 +32318,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -33713,14 +32457,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR58.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Autre type de diplôme",
       "definition" : "Autre type de diplôme",
@@ -33766,14 +32502,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR58.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -33817,14 +32545,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR58.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -33870,14 +32590,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR58.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -33925,14 +32637,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR58.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
@@ -33977,14 +32681,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR226",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeR226",
       "short" : "Code defined by a terminology system",
@@ -33992,7 +32688,7 @@
       "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
       "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "CodeableConcept.coding",
         "min" : 0,
@@ -34131,14 +32827,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR226.system",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.system",
       "short" : "Diplôme de 2ième cycle non qualifiant",
       "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -34184,14 +32872,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR226.version",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.version",
       "short" : "Version of the system - if relevant",
       "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
@@ -34235,14 +32915,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR226.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.code",
       "short" : "Symbol in syntax defined by the system",
       "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
@@ -34288,14 +32960,6 @@
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR226.display",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       }],
@@ -34343,14 +33007,6 @@
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.code.coding:degreeR226.userSelected",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Practitioner.qualification.code.coding.userSelected",
       "short" : "If this coding was chosen directly by the user",
       "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
