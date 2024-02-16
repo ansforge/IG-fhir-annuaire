@@ -163,6 +163,25 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 * qualification contains exercicePro 0..1
 
+
+* qualification[exercicePro] ^short = "exercicePro : exercice professionnel décrivant la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.)." 
+* qualification[exercicePro].code.coding ^slicing.discriminator.type = #value
+* qualification[exercicePro].code.coding ^slicing.discriminator.path = "system"
+* qualification[exercicePro].code.coding ^slicing.rules = #closed
+
+* qualification[exercicePro].code.coding contains 
+    categorieProfession 0..1 MS and
+	profession 0..1 MS
+
+// Slice 1 : Catégorie professionnelle
+* qualification[exercicePro].code.coding[categorieProfession] ^short = "Catégorie professionnelle indiquant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
+* qualification[exercicePro].code.coding[categorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
+
+// Slice 2 : profession de sante
+* qualification[exercicePro].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
+* qualification[exercicePro].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
+
+
 * qualification[exercicePro].code.coding[degreeR36] 0..0
 * qualification[exercicePro].code.coding[degreeR47] 0..0
 * qualification[exercicePro].code.coding[degreeR48] 0..0
@@ -179,22 +198,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * qualification[exercicePro].code.coding[degreeR226] 0..0
 
 
-* qualification[exercicePro] ^short = "profession : exercice professionnel ou future profession de l'étudiant et la catégorie de profession." 
-* qualification[exercicePro].code.coding ^slicing.discriminator.type = #value
-* qualification[exercicePro].code.coding ^slicing.discriminator.path = "system"
-* qualification[exercicePro].code.coding ^slicing.rules = #closed
 
-* qualification[exercicePro].code.coding contains 
-    categorieProfession 0..1 MS and
-	profession 0..1 MS
-
-// Slice 1 : Catégorie professionnelle
-* qualification[exercicePro].code.coding[categorieProfession] ^short = "Catégorie professionnelle indiquant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
-* qualification[exercicePro].code.coding[categorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
-
-// Slice 2 : profession de sante
-* qualification[exercicePro].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
-* qualification[exercicePro].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
 * qualification[exercicePro].period MS
 * qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
 * qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
