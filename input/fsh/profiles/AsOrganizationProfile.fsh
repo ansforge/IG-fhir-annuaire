@@ -58,6 +58,11 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * alias MS
 * alias ^short = "Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."
 
+
+
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "extension(https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types)"
+
 /* champ d'activite de la structure */
 // Slice deja defini dans FrOrganization
 * type MS
@@ -68,23 +73,32 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 	typeEtablissement 0..1
 
 // organizationType - slice deja existant 
-* type[organizationType] ^sliceName = "organizationType"
 * type[organizationType] ^short = "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
+* type[organizationType].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[organizationType].extension[as-ext-organization-types].valueCode = #organizationType
 
 // activiteINSEE
 * type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
 * type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN)."
+* type[activiteINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[activiteINSEE].extension[as-ext-organization-types].valueCode = #activiteINSEE
 
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
 * type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caractérise la situation juridique de la personne morale (Synonyme : statutJuridiqueINSEE)."
+* type[statutJuridiqueINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[statutJuridiqueINSEE].extension[as-ext-organization-types].valueCode = #statutJuridiqueINSEE
 
 // modaliteParticipationSPH
 * type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
 * type[sphParticipation] ^short = "Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH)."
+* type[sphParticipation].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[sphParticipation].extension[as-ext-organization-types].valueCode = #sphParticipation
 
 // typeEtablissement
 * type[typeEtablissement] ^short = "Le type d’établissement détermine si c'est un établissement principal ou secondaire."
+* type[typeEtablissement].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[typeEtablissement].extension[as-ext-organization-types].valueCode = #typeEtablissement
 
 
 // adresse
