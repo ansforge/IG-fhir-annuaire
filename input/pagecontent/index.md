@@ -38,8 +38,8 @@ La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci 
 
 #### Liens utiles
 
-* *[Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
-* *[Démonstration](https://portail.openfhir.annuaire.sante.fr/)
+* [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
+* [Démonstration](https://portail.openfhir.annuaire.sante.fr/)
 
 ### Dépendances
 

@@ -19,6 +19,7 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
     AsPersonNationalityExtension named as-ext-person-nationality 0..* MS and
     AsPersonBirthPlaceExtension named as-ext-person-birth-place 0..1 MS and
     AsPersonDeceasedDateTimeExtension named as-ext-person-deceased-date-time 0..1 MS
+// L'extension nationality n'existe pas pour la ressource Person.
 
 // Person.active
 * active MS
