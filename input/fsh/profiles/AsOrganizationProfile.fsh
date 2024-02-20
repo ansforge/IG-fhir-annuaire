@@ -70,7 +70,7 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
     activiteINSEE 0..1 and
     statutJuridiqueINSEE 0..1 and 
     sphParticipation 0..1 and
-	typeEtablissement 0..1
+    typeEtablissement 0..1
 
 // organizationType - slice deja existant 
 * type[organizationType] ^short = "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
