@@ -37,7 +37,7 @@ Les workflows associés à ce repository (.github/workflows) permettent :
 
 * D'exécuter Sushi pour vérifier la grammaire
 * De faire les tests avec le validator_cli
-* De publier les pages : https://ansforge.github.io/IG-fhir-annuaire/ig/main/ (ou https://ansforge.github.io/IG-fhir-annuaire/ig/[nom_de_la_branche] pour prévisualiser l'IG d'une branche)
+* De publier les pages : https://ansforge.github.io/IG-fhir-annuaire/main/ig/ (ou https://ansforge.github.io/IG-fhir-annuaire/[nom_de_la_branche]/ig/ pour prévisualiser l'IG d'une branche)
 
 ![image](https://user-images.githubusercontent.com/101335975/215342980-61686171-e3f8-40c5-865c-efdfc3dd52b4.png)
 
