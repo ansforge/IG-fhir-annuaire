@@ -1,0 +1,80 @@
+{
+  "id": "Package-Organization-Search_by-Lastupdated",
+  "url": "https://github.com/fhir-crucible/testscript-generator",
+  "version": "0.0",
+  "name": "Package_Organization_Search_by_Lastupdated",
+  "title": "package organization search_by lastupdated",
+  "status": "draft",
+  "experimental": true,
+  "date": "2024-02-29T08:32:43+00:00",
+  "publisher": "The MITRE Corporation",
+  "fixture": [
+    {
+      "id": "example_organization",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "fixtures/example_organization.json"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "name": "b4EHB93QZRpPULSH",
+      "expression": "Organization.meta.lastUpdated",
+      "sourceId": "rVDQ0H1CgkzjabEu"
+    }
+  ],
+  "setup": {
+    "action": [
+      {
+        "operation": {
+          "type": {
+            "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+            "code": "create"
+          },
+          "label": "Operation_1",
+          "encodeRequestUrl": false,
+          "responseId": "rVDQ0H1CgkzjabEu",
+          "sourceId": "example_organization"
+        }
+      }
+    ]
+  },
+  "test": [
+    {
+      "name": "Test_1",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "search"
+            },
+            "resource": "Organization",
+            "label": "Operation_2",
+            "encodeRequestUrl": false,
+            "params": "?_lastUpdated=${b4EHB93QZRpPULSH}"
+          }
+        }
+      ]
+    }
+  ],
+  "teardown": {
+    "action": [
+      {
+        "operation": {
+          "type": {
+            "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+            "code": "delete"
+          },
+          "resource": "Organization",
+          "label": "Operation_3",
+          "encodeRequestUrl": false,
+          "params": "/${b4EHB93QZRpPULSH}"
+        }
+      }
+    ]
+  },
+  "resourceType": "TestScript"
+}
