@@ -201,7 +201,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 * qualification[exercicePro].period MS
 * qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
-* qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
+* qualification[exercicePro].period.end ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
 
 // ################
 // # SAVOIR FAIRE #

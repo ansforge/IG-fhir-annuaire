@@ -34,8 +34,8 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * providedBy only Reference(FrOrganization or AsOrganizationProfile)
 
 // disciplineEquipementSociale
-* category 0..* MS
-* category ^short = "La discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
+* type 0..* MS
+* type ^short = "La discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
 * type from $JDV-J136-DisciplineEquipementSocial-RASS (required)
 
 // clientele
