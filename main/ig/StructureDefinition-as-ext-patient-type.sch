@@ -12,8 +12,8 @@
   <sch:pattern>
     <sch:title>f:Extension</sch:title>
     <sch:rule context="f:Extension">
-      <sch:assert test="count(f:extension[@url = 'AuthorizedAgeRange']) &lt;= 1">extension with URL = 'AuthorizedAgeRange': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'InstalledAgeRange']) &lt;= 1">extension with URL = 'InstalledAgeRange': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'authorizedAgeRange']) &lt;= 1">extension with URL = 'authorizedAgeRange': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'installedAgeRange']) &lt;= 1">extension with URL = 'installedAgeRange': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:value[x]) &lt;= 0">value[x]: maximum cardinality of 'value[x]' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>

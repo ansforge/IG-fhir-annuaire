@@ -10,7 +10,7 @@
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "active",
-  "date" : "2024-02-19T13:42:29+00:00",
+  "date" : "2024-03-04T16:55:03+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -64,7 +64,7 @@
     "id" : "ans_fr_nos",
     "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
     "packageId" : "ans.fr.nos",
-    "version" : "1.1.0"
+    "version" : "1.2.0"
   }],
   "definition" : {
     "extension" : [{
@@ -682,6 +682,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/as-cs-organization-types"
+      },
+      "name" : "AS CodeSystem OrganizationTypes",
+      "description" : "CodeSystem définissant les types d'organisation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1045,6 +1057,18 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/as-ext-organization-types"
+      },
+      "name" : "AS Organization Types",
+      "description" : "Extension pour discriminer les organization types.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/as-ext-patient-type"
       },
       "name" : "AS Patient Type Extension",
@@ -1225,6 +1249,18 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/as-vs-organization-types"
+      },
+      "name" : "AS ValueSet OrganizationTypes",
+      "description" : "ValueSet définissant les types d'organisation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/as-vs-source-information-installation"
       },
       "name" : "AS ValueSet Source Information Installation",
@@ -1265,6 +1301,18 @@
       },
       "name" : "as-sp-data-registration-authority",
       "description" : "Paramètre de recherche pour récupérer une ressource par autorité d'enregistrement des données.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/as-sp-insee-code"
+      },
+      "name" : "as-sp-insee-code",
+      "description" : "Paramètre de recherche pour récupérer une organisation, par code Insee. Cf http://www.sirius-upvm.net/doc/usuels/codes_postaux.html",
       "exampleBoolean" : false
     },
     {

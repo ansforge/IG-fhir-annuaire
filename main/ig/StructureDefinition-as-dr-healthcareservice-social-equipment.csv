@@ -106,13 +106,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ref-1:SHALL have a contained resource if a local reference is provided {reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))}","n/a","The target of a resource reference is a RIM entry point (Act, Role, or Entity)",".scopingRole.Organization"
 "HealthcareService.category","HealthcareService.category","","service category
-","",0,0,"Y","","Y","CodeableConcept {[]} {[]}
-","La discipline déterminant la nature de l’activité (disciplineEquipementSociale).","Identifies the broad category of service being performed or delivered.","Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.","","","","","","","","",,"example","A category of the service(s) that could be provided.","http://hl7.org/fhir/ValueSet/service-category","",,,,"HealthcareService.category",0,*,"ele-1
+","",0,0,"","","Y","CodeableConcept {[]} {[]}
+","Broad category of service being performed or delivered","Identifies the broad category of service being performed or delivered.","Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.","","","","","","","","",,"example","A category of the service(s) that could be provided.","http://hl7.org/fhir/ValueSet/service-category","",,,,"HealthcareService.category",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".code","FiveWs.class"
 "HealthcareService.type","HealthcareService.type","","service type
-","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Type of service that may be delivered or performed","The specific type of service that may be delivered or performed.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J136-DisciplineEquipementSocial-RASS/FHIR/JDV-J136-DisciplineEquipementSocial-RASS","",,,,"HealthcareService.type",0,*,"ele-1
+","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+","La discipline déterminant la nature de l’activité (disciplineEquipementSociale).","The specific type of service that may be delivered or performed.","Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.","","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J136-DisciplineEquipementSocial-RASS/FHIR/JDV-J136-DisciplineEquipementSocial-RASS","",,,,"HealthcareService.type",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","CD",".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"
 "HealthcareService.specialty","HealthcareService.specialty","","","",0,0,"","","Y","CodeableConcept {[]} {[]}

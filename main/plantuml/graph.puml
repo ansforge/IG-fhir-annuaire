@@ -352,7 +352,6 @@ package IG #DDDDDD{
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
              HealthcareService.providedBy => [None..None]
-             HealthcareService.category => [None..None]
              HealthcareService.type => [None..None]
              HealthcareService.eligibility => [None..None]
              HealthcareService.eligibility.code => [None..None]
@@ -407,10 +406,26 @@ package IG #DDDDDD{
              Organization.active => [None..None]
              Organization.type => [None..None]
              Organization.type:organizationType => [None..None]
+             Organization.type:organizationType.extension => [1..None]
+             Organization.type:organizationType.extension:as-ext-organization-types => <&plus>[1..1]
+             Organization.type:organizationType.extension:as-ext-organization-types.value[x] => <&plus>[None..None]
              Organization.type:activiteINSEE => [0..1]
+             Organization.type:activiteINSEE.extension => [1..None]
+             Organization.type:activiteINSEE.extension:as-ext-organization-types => <&plus>[1..1]
+             Organization.type:activiteINSEE.extension:as-ext-organization-types.value[x] => <&plus>[None..None]
              Organization.type:statutJuridiqueINSEE => [0..1]
+             Organization.type:statutJuridiqueINSEE.extension => [1..None]
+             Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types => <&plus>[1..1]
+             Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types.value[x] => <&plus>[None..None]
              Organization.type:sphParticipation => [0..1]
+             Organization.type:sphParticipation.extension => [1..None]
+             Organization.type:sphParticipation.extension:as-ext-organization-types => <&plus>[1..1]
+             Organization.type:sphParticipation.extension:as-ext-organization-types.value[x] => <&plus>[None..None]
              Organization.type:typeEtablissement => [0..1]
+             Organization.type:typeEtablissement.extension => [1..None]
+             Organization.type:typeEtablissement.extension:as-ext-organization-types => <&plus>[1..1]
+             Organization.type:typeEtablissement.extension:as-ext-organization-types.value[x] => <&plus>[None..None]
+             Organization.type:typeEtablissement.text => [None..None]
              Organization.name => [None..None]
              Organization.alias => [None..None]
              Organization.telecom => [None..None]
@@ -505,6 +520,7 @@ package IG #DDDDDD{
              Practitioner.qualification:exercicePro.code.coding:profession => [0..1]
              Practitioner.qualification:exercicePro.period => [None..None]
              Practitioner.qualification:exercicePro.period.start => [None..None]
+             Practitioner.qualification:exercicePro.period.end => [None..None]
              Practitioner.qualification:savoirFaire => [0..*]
              Practitioner.qualification:savoirFaire.code.coding:degreeR36 => [None..0]
              Practitioner.qualification:savoirFaire.code.coding:degreeR47 => [None..0]
@@ -583,6 +599,11 @@ package IG #DDDDDD{
      AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationClosingTypeExtension
      AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationBudgetTypeExtension
      AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationAuthorizationDeadlineExtension
+     AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationTypes
+     AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationTypes
+     AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationTypes
+     AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationTypes
+     AsOrganizationProfile -[#black,dashed,thickness=2]-> AsOrganizationTypes
      AsPersonProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
      AsPersonProfile -[#black,dashed,thickness=2]-> AsPersonNationalityExtension
      AsPersonProfile -[#black,dashed,thickness=2]-> AsPersonBirthPlaceExtension
@@ -782,16 +803,22 @@ package IG #DDDDDD{
           Extension.url => [None..None]
           Extension.value[x] => [None..None]
         } 
+        class AsOrganizationTypes{
+
+          Extension.extension => [None..0]
+          Extension.url => [None..None]
+          Extension.value[x] => [None..None]
+        } 
         class AsPatientTypeExtension{
 
-          Extension.extension:AuthorizedAgeRange => [0..1]
-          Extension.extension:AuthorizedAgeRange.extension => [None..0]
-          Extension.extension:AuthorizedAgeRange.url => [None..None]
-          Extension.extension:AuthorizedAgeRange.value[x] => [None..None]
-          Extension.extension:InstalledAgeRange => [0..1]
-          Extension.extension:InstalledAgeRange.extension => [None..0]
-          Extension.extension:InstalledAgeRange.url => [None..None]
-          Extension.extension:InstalledAgeRange.value[x] => [None..None]
+          Extension.extension:authorizedAgeRange => [0..1]
+          Extension.extension:authorizedAgeRange.extension => [None..0]
+          Extension.extension:authorizedAgeRange.url => [None..None]
+          Extension.extension:authorizedAgeRange.value[x] => [None..None]
+          Extension.extension:installedAgeRange => [0..1]
+          Extension.extension:installedAgeRange.extension => [None..0]
+          Extension.extension:installedAgeRange.url => [None..None]
+          Extension.extension:installedAgeRange.value[x] => [None..None]
           Extension.url => [None..None]
           Extension.value[x] => [None..0]
         } 
@@ -978,6 +1005,10 @@ package IG #DDDDDD{
         class ModeFixationTarifaireValueSet  
 
      AsOrganizationPricingModelExtension -[#black,dotted,thickness=2]-> ModeFixationTarifaireValueSet
+
+        class AsVsOrganizationTypes  
+
+     AsOrganizationTypes -[#black,dotted,thickness=2]-> AsVsOrganizationTypes
        }
 
 package "Ressources de base" #palegreen {

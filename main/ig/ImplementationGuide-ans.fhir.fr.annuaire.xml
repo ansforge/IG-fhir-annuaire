@@ -11,7 +11,7 @@
   <name value="AnnuaireSante"/>
   <title value="Annuaire Santé"/>
   <status value="active"/>
-  <date value="2024-02-19T13:42:29+00:00"/>
+  <date value="2024-03-04T16:55:03+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -59,7 +59,7 @@
   <dependsOn id="ans_fr_nos">
     <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
     <packageId value="ans.fr.nos"/>
-    <version value="1.1.0"/>
+    <version value="1.2.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -516,6 +516,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/as-cs-organization-types"/>
+      </reference>
+      <name value="AS CodeSystem OrganizationTypes"/>
+      <description value="CodeSystem définissant les types d'organisation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -849,6 +860,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/as-ext-organization-types"/>
+      </reference>
+      <name value="AS Organization Types"/>
+      <description value="Extension pour discriminer les organization types."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/as-ext-patient-type"/>
       </reference>
       <name value="AS Patient Type Extension"/>
@@ -1014,6 +1036,17 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/as-vs-organization-types"/>
+      </reference>
+      <name value="AS ValueSet OrganizationTypes"/>
+      <description value="ValueSet définissant les types d'organisation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/as-vs-source-information-installation"/>
       </reference>
       <name value="AS ValueSet Source Information Installation"/>
@@ -1051,6 +1084,17 @@
       </reference>
       <name value="as-sp-data-registration-authority"/>
       <description value="Paramètre de recherche pour récupérer une ressource par autorité d'enregistrement des données."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/as-sp-insee-code"/>
+      </reference>
+      <name value="as-sp-insee-code"/>
+      <description value="Paramètre de recherche pour récupérer une organisation, par code Insee. Cf http://www.sirius-upvm.net/doc/usuels/codes_postaux.html"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
