@@ -1,4 +1,4 @@
-Instance: AsClientCapabilityStatement
+Instance: AsServerCapabilityStatement
 InstanceOf: CapabilityStatement
 Usage: #definition
 * name = "AsRestServer"
@@ -18,6 +18,12 @@ Usage: #definition
 * format[+] = #json
 
 * rest.mode = #server
+
+
+// ##############
+// ### PERSON ### 
+// ##############
+
 
 // ##############
 // ### DEVICE ###
@@ -53,13 +59,19 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "_total"
 * rest.resource[=].searchParam[=].type = #string
 
+// SP Custom
+
 * rest.resource[=].searchParam[+].name = "data-information-system"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-information-system)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
 * rest.resource[=].searchParam[+].name = "data-registration-authority"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-registration-authority)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
+
+// SP natifs
 
 * rest.resource[=].searchParam[+].name = "device-name"
 * rest.resource[=].searchParam[=].type = #string
@@ -72,6 +84,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "location"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "The location of the device"
+
 * rest.resource[=].searchParam[+].name = "manufacturer"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "Recherche sur la marque des équipements matériels lourds"
@@ -130,14 +143,19 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "_total"
 * rest.resource[=].searchParam[=].type = #string
 
+// SP Custom
+
 * rest.resource[=].searchParam[+].name = "data-information-system"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-information-system)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
 * rest.resource[=].searchParam[+].name = "data-registration-authority"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-registration-authority)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
+// SP natifs
 
 * rest.resource[=].searchParam[+].name = "active"
 * rest.resource[=].searchParam[=].type = #token
@@ -198,14 +216,34 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "_total"
 * rest.resource[=].searchParam[=].type = #string
 
+// SP custom
+
 * rest.resource[=].searchParam[+].name = "data-information-system"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-information-system)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
 * rest.resource[=].searchParam[+].name = "data-registration-authority"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-registration-authority)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
+* rest.resource[=].searchParam[+].name = "address-insee"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-insee-code)
+* rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une organisation, par code Insee."
+
+* rest.resource[=].searchParam[+].name = "mailbox-mss"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-mailbox-mss)
+* rest.resource[=].searchParam[=].documentation = "Recherche sur les messageries sécurisées de santé rattachées aux Organization"
+
+* rest.resource[=].searchParam[+].name = "pharmacy-licence"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-pharmacy-licence)
+* rest.resource[=].searchParam[=].documentation = "Recherche sur le numéro de licence des officines"
+
+// SP Natifs
 
 * rest.resource[=].searchParam[+].name = "active"
 * rest.resource[=].searchParam[=].type = #token
@@ -243,9 +281,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Recherche sur tous les identifiants des structures"
 
-* rest.resource[=].searchParam[+].name = "mailbox-mss"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[=].documentation = "Recherche sur les messageries sécurisées de santé rattachées aux Organization"
 
 * rest.resource[=].searchParam[+].name = "name"
 * rest.resource[=].searchParam[=].type = #string
@@ -254,10 +289,6 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "partof"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "Recherche tous les établissements géographiques rattachés à une même entité juridique"
-
-* rest.resource[=].searchParam[+].name = "pharmacy-licence"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[=].documentation = "Recherche sur le numéro de licence des officines"
 
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
@@ -295,14 +326,24 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "_total"
 * rest.resource[=].searchParam[=].type = #string
 
+// SP custom
+
 * rest.resource[=].searchParam[+].name = "data-information-system"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-information-system)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
 * rest.resource[=].searchParam[+].name = "data-registration-authority"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-registration-authority)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
+* rest.resource[=].searchParam[+].name = "mailbox-mss"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-mailbox-mss)
+* rest.resource[=].searchParam[=].documentation = "Recherche sur les messageries sécurisées de santé rattachées à la situation d'exercice des Professionnel de santé"
+
+// SP Natifs
 
 * rest.resource[=].searchParam[+].name = "active"
 * rest.resource[=].searchParam[=].type = #token
@@ -311,9 +352,6 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "identifier"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Recherche sur tous les identifiants des professionnels de santé"
-
-* rest.resource[=].searchParam[+].name = "mailbox-mss"
-* rest.resource[=].searchParam[=].type = #string
 
 * rest.resource[=].searchParam[+].name = "name"
 * rest.resource[=].searchParam[=].type = #string
@@ -354,14 +392,35 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "_total"
 * rest.resource[=].searchParam[=].type = #string
 
+// SP custom
+
 * rest.resource[=].searchParam[+].name = "data-information-system"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-information-system)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
 * rest.resource[=].searchParam[+].name = "data-registration-authority"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-data-registration-authority)
 * rest.resource[=].searchParam[=].documentation = "Paramètre de recherche pour récupérer une ressource par système d'information de provenance des données"
 
+
+* rest.resource[=].searchParam[+].name = "mailbox-mss"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-mailbox-mss)
+* rest.resource[=].searchParam[=].documentation = "Recherche sur les messageries sécurisées de santé rattachées à la situation d'exercice des Professionnel de santé"
+
+* rest.resource[=].searchParam[+].name = "number-smartcard"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-number-smartcard)
+* rest.resource[=].searchParam[=].documentation = "Recherche sur le numéro de carte des professionnels de santé"
+
+* rest.resource[=].searchParam[+].name = "type-smartcard"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = Canonical(as-sp-type-smartcard)
+* rest.resource[=].searchParam[=].documentation = "Recherche sur le type de carte du professionnels de santé"
+
+// SP Natifs
 
 * rest.resource[=].searchParam[+].name = "active"
 * rest.resource[=].searchParam[=].type = #token
@@ -379,17 +438,9 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Any identifier for the practitioner role"
 
-* rest.resource[=].searchParam[+].name = "mailbox-mss"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[=].documentation = "Recherche sur les messageries sécurisées de santé rattachées à la situation d'exercice des Professionnel de santé"
-
 * rest.resource[=].searchParam[+].name = "name"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de l'élément name : Code civilité d’exercice, le nom ou prénom d'exercice des professionnel de santé."
-
-* rest.resource[=].searchParam[+].name = "number-smartcard"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[=].documentation = "Recherche sur le numéro de carte des professionnels de santé"
 
 * rest.resource[=].searchParam[+].name = "organization"
 * rest.resource[=].searchParam[=].type = #reference
@@ -407,12 +458,10 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Recherche sur le savoir-faire ou le Type de savoir-faire"
 
-* rest.resource[=].searchParam[+].name = "type-smartcard"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "Recherche sur le type de carte du professionnels de santé"
+
 
 // ####################
-// ### SUBSCRIPTION ### --- COMMENTE CAR NON IMPLEMENTE ---
+// ### SUBSCRIPTION ###
 // ####################
 // * rest.resource[+].type = #Subscription
 // * rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Subscription"
@@ -450,3 +499,18 @@ Usage: #definition
 // * rest.resource[=].operation[+].name = "activate-all"
 // * rest.resource[=].operation[=].definition = "https://gateway.api.esante.gouv.fr/fhir/v1/OperationDefinition/Subscription-t-activate-all"
 // * rest.interaction.code = #transaction
+
+// ###########################
+// ### OPERATIONDEFINITION ###
+// ###########################
+// * rest.resource[+].type = #OperationDefinition
+// * rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/OperationDefinition"
+// * rest.resource[=].interaction.code = #read
+// * rest.resource[=].searchInclude = "*"
+// * rest.resource[=].searchRevInclude[0] = "Device:location"
+// * rest.resource[=].searchRevInclude[+] = "Device:organization"
+// * rest.resource[=].searchRevInclude[+] = "HealthcareService:organization"
+// * rest.resource[=].searchRevInclude[+] = "Organization:endpoint"
+// * rest.resource[=].searchRevInclude[+] = "Organization:partof"
+// * rest.resource[=].searchRevInclude[+] = "PractitionerRole:organization"
+// * rest.resource[=].searchRevInclude[+] = "PractitionerRole:practitioner"
