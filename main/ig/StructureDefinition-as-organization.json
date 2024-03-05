@@ -10,7 +10,7 @@
   "name" : "AsOrganizationProfile",
   "title" : "AS Organization Profile",
   "status" : "active",
-  "date" : "2024-03-04T16:55:03+00:00",
+  "date" : "2024-03-05T15:34:40+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -9734,21 +9734,10 @@
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:emailType",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Organization.telecom.extension",
       "sliceName" : "emailType",
       "short" : "Type of email | type de messagerie électronique",
       "definition" : "Optional Extension Element - found in all resources.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -9777,6 +9766,140 @@
         "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "Organization.telecom:mailbox-mss.extension:emailType.id",
+      "path" : "Organization.telecom.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "Organization.telecom:mailbox-mss.extension:emailType.extension",
+      "path" : "Organization.telecom.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }]
+    },
+    {
+      "id" : "Organization.telecom:mailbox-mss.extension:emailType.url",
+      "path" : "Organization.telecom.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType",
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "Organization.telecom:mailbox-mss.extension:emailType.value[x]",
+      "path" : "Organization.telecom.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Coding"
+      }],
+      "patternCoding" : {
+        "system" : "https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie",
+        "code" : "MSSANTE"
+      },
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://interopsante.org/fhir/ValueSet/fr-email-type"
+      },
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
