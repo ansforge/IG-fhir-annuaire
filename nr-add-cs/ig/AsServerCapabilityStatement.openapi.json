@@ -20,7 +20,7 @@
     }
   ],
   "externalDocs": {
-    "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsClientCapabilityStatement",
+    "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerCapabilityStatement",
     "description": "FHIR CapabilityStatement"
   },
   "paths": {
@@ -164,7 +164,7 @@
           {
             "name": "data-information-system",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données.",
             "schema": {
               "type": "string"
             }
@@ -172,7 +172,7 @@
           {
             "name": "data-registration-authority",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par autorité d\u0027enregistrement des données.",
             "schema": {
               "type": "string"
             }
@@ -554,7 +554,7 @@
           {
             "name": "data-information-system",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données.",
             "schema": {
               "type": "string"
             }
@@ -562,7 +562,7 @@
           {
             "name": "data-registration-authority",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par autorité d\u0027enregistrement des données.",
             "schema": {
               "type": "string"
             }
@@ -920,7 +920,7 @@
           {
             "name": "data-information-system",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données.",
             "schema": {
               "type": "string"
             }
@@ -928,7 +928,31 @@
           {
             "name": "data-registration-authority",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par autorité d\u0027enregistrement des données.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address-insee",
+            "in": "query",
+            "description": "Paramètre de recherche pour récupérer une organisation, par code Insee. Cf http://www.sirius-upvm.net/doc/usuels/codes_postaux.html",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mailbox-mss",
+            "in": "query",
+            "description": "Paramètre de recherche pour récupérer une organisation, un praticien ou une situation d\u0027exercice par adresse MSSanté.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pharmacy-licence",
+            "in": "query",
+            "description": "Paramètre de recherche pour récupérer une pharmacie par son numéro de licence.",
             "schema": {
               "type": "string"
             }
@@ -1006,14 +1030,6 @@
             }
           },
           {
-            "name": "mailbox-mss",
-            "in": "query",
-            "description": "Recherche sur les messageries sécurisées de santé rattachées aux Organization",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "name",
             "in": "query",
             "description": "Recherche sur la raison sociale des structures",
@@ -1025,14 +1041,6 @@
             "name": "partof",
             "in": "query",
             "description": "Recherche tous les établissements géographiques rattachés à une même entité juridique",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "pharmacy-licence",
-            "in": "query",
-            "description": "Recherche sur le numéro de licence des officines",
             "schema": {
               "type": "string"
             }
@@ -1350,7 +1358,7 @@
           {
             "name": "data-information-system",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données.",
             "schema": {
               "type": "string"
             }
@@ -1358,7 +1366,15 @@
           {
             "name": "data-registration-authority",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par autorité d\u0027enregistrement des données.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mailbox-mss",
+            "in": "query",
+            "description": "Paramètre de recherche pour récupérer une organisation, un praticien ou une situation d\u0027exercice par adresse MSSanté.",
             "schema": {
               "type": "string"
             }
@@ -1375,13 +1391,6 @@
             "name": "identifier",
             "in": "query",
             "description": "Recherche sur tous les identifiants des professionnels de santé",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "mailbox-mss",
-            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -1699,7 +1708,7 @@
           {
             "name": "data-information-system",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données.",
             "schema": {
               "type": "string"
             }
@@ -1707,7 +1716,31 @@
           {
             "name": "data-registration-authority",
             "in": "query",
-            "description": "Paramètre de recherche pour récupérer une ressource par système d\u0027information de provenance des données",
+            "description": "Paramètre de recherche pour récupérer une ressource par autorité d\u0027enregistrement des données.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mailbox-mss",
+            "in": "query",
+            "description": "Paramètre de recherche pour récupérer une organisation, un praticien ou une situation d\u0027exercice par adresse MSSanté.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "number-smartcard",
+            "in": "query",
+            "description": "Paramètre de recherche pour récupérer les situations d\u0027exercice d\u0027un professionnel par son numéro de carte CPx.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type-smartcard",
+            "in": "query",
+            "description": "Paramètre de recherche pour récupérer les situations d\u0027exercice d\u0027un professionnel par type de carte CPx.",
             "schema": {
               "type": "string"
             }
@@ -1745,25 +1778,9 @@
             }
           },
           {
-            "name": "mailbox-mss",
-            "in": "query",
-            "description": "Recherche sur les messageries sécurisées de santé rattachées à la situation d\u0027exercice des Professionnel de santé",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "name",
             "in": "query",
             "description": "Une recherche définie par le serveur qui peut correspondre à n\u0027importe quel champ de l\u0027élément name : Code civilité d’exercice, le nom ou prénom d\u0027exercice des professionnel de santé.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "number-smartcard",
-            "in": "query",
-            "description": "Recherche sur le numéro de carte des professionnels de santé",
             "schema": {
               "type": "string"
             }
@@ -1796,14 +1813,6 @@
             "name": "specialty",
             "in": "query",
             "description": "Recherche sur le savoir-faire ou le Type de savoir-faire",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "type-smartcard",
-            "in": "query",
-            "description": "Recherche sur le type de carte du professionnels de santé",
             "schema": {
               "type": "string"
             }
