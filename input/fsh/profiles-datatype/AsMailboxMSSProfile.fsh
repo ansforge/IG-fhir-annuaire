@@ -13,3 +13,4 @@ Description: 	"Datatype profile créé à partir ContactPoint dans le cadre de l
 * extension ^slicing.rules = #open
 
 * extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1
+* extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
