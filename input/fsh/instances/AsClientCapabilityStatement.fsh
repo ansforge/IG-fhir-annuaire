@@ -11,13 +11,20 @@ Usage: #definition
 * implementation.description = "Afas data"
 * implementation.url = "https://gateway.api.esante.gouv.fr/fhir/v1"
 * fhirVersion = #4.0.1
+
 * format[0] = #application/fhir+xml
 * format[+] = #xml
 * format[+] = #application/fhir+json
 * format[+] = #json
+
 * rest.mode = #server
+
+// ##############
+// ### DEVICE ###
+// ##############
 * rest.resource[0].type = #Device
-* rest.resource[=].profile = "http://interop.esante.gouv.fr/ig/fhir/annuaire-donnee-publique/StructureDefinition/as-device"
+* rest.resource[=].profile = Canonical(as-device)
+
 * rest.resource[=].interaction[0].code = #update
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #read
@@ -31,43 +38,60 @@ Usage: #definition
 * rest.resource[=].searchRevInclude[+] = "Organization:partof"
 * rest.resource[=].searchRevInclude[+] = "PractitionerRole:organization"
 * rest.resource[=].searchRevInclude[+] = "PractitionerRole:practitioner"
+
 * rest.resource[=].searchParam[0].name = "_id"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Recherche sur l'id de la ressource Device"
+
 * rest.resource[=].searchParam[+].name = "_lastUpdated"
 * rest.resource[=].searchParam[=].type = #date
 * rest.resource[=].searchParam[=].documentation = "Renvoie uniquement les ressources qui ont été mises à jour pour la dernière fois comme spécifié par la periode donnée"
+
 * rest.resource[=].searchParam[+].name = "_since"
 * rest.resource[=].searchParam[=].type = #date
+
 * rest.resource[=].searchParam[+].name = "_total"
 * rest.resource[=].searchParam[=].type = #string
+
 * rest.resource[=].searchParam[+].name = "device-name"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The device name"
+
 * rest.resource[=].searchParam[+].name = "identifier"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Recherche sur l'identifiant de l'équipement matériel lourd"
+
 * rest.resource[=].searchParam[+].name = "location"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "The location of the device"
 * rest.resource[=].searchParam[+].name = "manufacturer"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "Recherche sur la marque des équipements matériels lourds"
+
 * rest.resource[=].searchParam[+].name = "model"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The model of the device"
+
 * rest.resource[=].searchParam[+].name = "number-authorization-arhgos"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "Recherche sur le numéro d'autorisation ARHGOS"
+
 * rest.resource[=].searchParam[+].name = "organization"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "Recherche les équipements matériels lourds rattachés à la structure sélectionnée"
+
 * rest.resource[=].searchParam[+].name = "status"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "active | inactive | entered-in-error | unknown"
+
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Recherche sur le type de l'équipement matériel lourd"
+
+// #########################
+// ### HEALTHCARESERVICE ###
+// #########################
+
 * rest.resource[+].type = #HealthcareService
 * rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/HealthcareService"
 * rest.resource[=].interaction[0].code = #update
