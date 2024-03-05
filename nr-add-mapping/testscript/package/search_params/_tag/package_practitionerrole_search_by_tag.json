@@ -1,0 +1,80 @@
+{
+  "id": "Package-Practitionerrole-Search_by-Tag",
+  "url": "https://github.com/fhir-crucible/testscript-generator",
+  "version": "0.0",
+  "name": "Package_Practitionerrole_Search_by_Tag",
+  "title": "package practitionerrole search_by tag",
+  "status": "draft",
+  "experimental": true,
+  "date": "2024-03-05T10:08:06+00:00",
+  "publisher": "The MITRE Corporation",
+  "fixture": [
+    {
+      "id": "example_practitionerrole",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "fixtures/example_practitionerrole.json"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "name": "Fr6K9tixBLLNOBgA",
+      "expression": "PractitionerRole.meta.tag",
+      "sourceId": "Qi0RPPD98aI4M95a"
+    }
+  ],
+  "setup": {
+    "action": [
+      {
+        "operation": {
+          "type": {
+            "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+            "code": "create"
+          },
+          "label": "Operation_1",
+          "encodeRequestUrl": false,
+          "responseId": "Qi0RPPD98aI4M95a",
+          "sourceId": "example_practitionerrole"
+        }
+      }
+    ]
+  },
+  "test": [
+    {
+      "name": "Test_1",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "search"
+            },
+            "resource": "PractitionerRole",
+            "label": "Operation_2",
+            "encodeRequestUrl": false,
+            "params": "?_tag=${Fr6K9tixBLLNOBgA}"
+          }
+        }
+      ]
+    }
+  ],
+  "teardown": {
+    "action": [
+      {
+        "operation": {
+          "type": {
+            "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+            "code": "delete"
+          },
+          "resource": "PractitionerRole",
+          "label": "Operation_3",
+          "encodeRequestUrl": false,
+          "params": "/${Fr6K9tixBLLNOBgA}"
+        }
+      }
+    ]
+  },
+  "resourceType": "TestScript"
+}
