@@ -5,19 +5,20 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour indique
 
 * ^context.type = #element
 * ^context.expression = "HealthcareService"
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains
 
-    capacityAvailable 0..1 and //capaciteAutorisee
-    femaleCapacityAvailable 0..1 and // capaciteAutoriseeFemme
-    maleCapacityAvailable 0..1 and //capaciteAutoriseeHomme
-    socialAssistanceCapacityAvailable 0..1 and //capaciteAutoriseeHabiliteeAideSociale
-    installedCapacity 0..1 and // capaciteInstallee
-    femaleInstalledCapacity 0..1 and // capaciteInstalleeFemme
-    maleInstalledCapacity 0..1 and // capaciteInstalleeHomme
-    socialAssistanceInstalledCapacity 0..1 // capaciteInstalleeHabiliteeAideSociale 	
+* extension contains
+    capacityAvailable 0..1 and                   // capaciteAutorisee
+    femaleCapacityAvailable 0..1 and             // capaciteAutoriseeFemme
+    maleCapacityAvailable 0..1 and               // capaciteAutoriseeHomme
+    socialAssistanceCapacityAvailable 0..1 and   // capaciteAutoriseeHabiliteeAideSociale
+    installedCapacity 0..1 and                   // capaciteInstallee
+    femaleInstalledCapacity 0..1 and             // capaciteInstalleeFemme
+    maleInstalledCapacity 0..1 and               // capaciteInstalleeHomme
+    socialAssistanceInstalledCapacity 0..1       // capaciteInstalleeHabiliteeAideSociale 	
 
 * extension[capacityAvailable].value[x] only integer
 * extension[capacityAvailable] ^short = "Capacité autorisée totale en nombre de places, lits ou logements (capaciteAutorisee)."

@@ -5,6 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
+
 * . ^short = "Nature du budget alloué à la structure (natureEtablissement)."
 
 * value[x] only string

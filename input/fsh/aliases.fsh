@@ -11,27 +11,9 @@ Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/i
 Alias: $iso21090-ADXP-postBox = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox
 Alias: $fr-practioner-identifier-type = http://interopsante.org/fhir/ValueSet/fr-practioner-identifier-type
 
-Alias: $Device-PeriodImplentation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/Device-PeriodImplentation
-Alias: $HealthcareService-DeleteAutorisationImplantation = https://annuaire.sante.gouv.fr/fhir/StructureDefinition/HealthcareService-DeleteAutorisationImplantation
-Alias: $codeableConcept-timed = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/codeableConcept-timed
-Alias: $Device-authorizationDateDevice = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-authorizationDateDevice
-Alias: $Device-numberAuthorizationARHGOS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/Device-numberAuthorizationARHGOS
-Alias: $HealthcareService-activityType = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-activityType
-Alias: $HealthcareService-authorizationDate = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationDate
-Alias: $HealthcareService-authorizationNumberARHGOS = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-authorizationNumberARHGOS
-Alias: $HealthcareService-implementationPeriod = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-implementationPeriod
-Alias: $HealthcareService-deleteAutorisationImplantation = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-deleteAutorisationImplantation
-Alias: $HealthcareService-dateUpdateActivity = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/HealthcareService-dateUpdateActivity
-Alias: $digitalCertificate = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/digitalCertificate
-Alias: $organization-pharmacyLicence = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/organization-pharmacyLicence
-Alias: $practitioner-nationality = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-nationality
-Alias: $practitioner-authorization = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-authorization
-Alias: $practitioner-birthPlace = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-birthPlace
-Alias: $practitioner-deceasedDateTime = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitioner-deceasedDateTime
-Alias: $practitionerRole-name = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-name
-Alias: $practitionerRole-educationLevel = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-educationLevel
-Alias: $practitionerRole-smartCard = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-smartCard
-Alias: $practitionerRole-registration = https://apifhir.annuaire.sante.fr/ws-sync/exposed/structuredefinition/practitionerRole-registration
+// ###########
+// # JDV NOS #
+// ###########
 
 Alias: $JDV-J135-EquipementMaterielLourd-RASS = https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS
 Alias: $JDV-J132-ModaliteActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS
@@ -78,7 +60,6 @@ Alias: $JDV-J90-AttributionParticuliere-RASS = https://mos.esante.gouv.fr/NOS/JD
 Alias: $JDV-J96-TypeActiviteLiberale-RASS = https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS
 Alias: $JDV-J97-StatutProfessionnelSSA-RASS = https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS
 Alias: $JDV_J82-Langue-RASS = https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS/FHIR/JDV-J82-Langue-RASS
-Alias: $TRE-R249-Sexe = https://mos.esante.gouv.fr/NOS/TRE_R249-Sexe/FHIR/TRE-R249-Sexe
 Alias: $JDV-J83-AutoriteEnregistrement-RASS = https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS
 Alias: $JDV-J103-TypeVoie-RASS = https://mos.esante.gouv.fr/NOS/JDV_J103-TypeVoie-RASS/FHIR/JDV-J103-TypeVoie-RASS
 Alias: $JDV_J131-CategorieActiviteSanitaireRegulee-RASS = https://mos.esante.gouv.fr/NOS/JDV_J131-CategorieActiviteSanitaireRegulee-RASS/FHIR/JDV-J131-CategorieActiviteSanitaireRegulee-RASS
