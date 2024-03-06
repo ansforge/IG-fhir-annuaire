@@ -38,5 +38,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 * extension[deleteInstallation] ^short = "Indicateur de suppression de l’installation."
 
 * extension[sourceReportInstallation].value[x] only CodeableConcept
-* extension[sourceReportInstallation].valueCodeableConcept from as-vs-source-information-installation (required)    
+* extension[sourceReportInstallation].valueCodeableConcept from JDV-SourceInformationInstallation (required)    
 * extension[sourceReportInstallation] ^short = "Source ayant permis le constat d'installation."
