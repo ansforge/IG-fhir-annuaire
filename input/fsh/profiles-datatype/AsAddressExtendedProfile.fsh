@@ -30,7 +30,6 @@ Description: "Datatype profile créé à partir de FrAddress dans le contexte de
     iso21090-ADXP-streetNameBase named streetNameBase 0..1 and
 	as-ext-lieu-dit named lieuDit 0..1 
 
-	
 * line.extension[careOf] ^short = "pointRemise (Adresse)"
 * line.extension[additionalLocator] ^short = "complementPointGeographique (Adresse)"
 * line.extension[houseNumber] ^short = "numeroVoie(Adresse)"
