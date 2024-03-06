@@ -1,14 +1,12 @@
+// ################
+// # InteropSanté #
+// ################
+
+
 Alias: $FrPractitioner = http://interopsante.org/fhir/StructureDefinition/FrPractitioner
 Alias: $FrOrganization = http://interopsante.org/fhir/StructureDefinition/FrOrganization
 Alias: $FrHumanName = http://interopsante.org/fhir/StructureDefinition/FrHumanName
 Alias: $FrContactPoint = http://interopsante.org/fhir/StructureDefinition/FrContactPoint
-Alias: $iso21090-ADXP-careOf = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-careOf
-Alias: $iso21090-ADXP-additionalLocator = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
-Alias: $iso21090-ADXP-houseNumber = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber
-Alias: $iso21090-ADXP-buildingNumberSuffix = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix
-Alias: $iso21090-ADXP-streetNameType = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType
-Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase
-Alias: $iso21090-ADXP-postBox = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox
 Alias: $fr-practioner-identifier-type = http://interopsante.org/fhir/ValueSet/fr-practioner-identifier-type
 
 // ###########
@@ -63,3 +61,16 @@ Alias: $JDV_J82-Langue-RASS = https://mos.esante.gouv.fr/NOS/JDV_J82-Langue-RASS
 Alias: $JDV-J83-AutoriteEnregistrement-RASS = https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS
 Alias: $JDV-J103-TypeVoie-RASS = https://mos.esante.gouv.fr/NOS/JDV_J103-TypeVoie-RASS/FHIR/JDV-J103-TypeVoie-RASS
 Alias: $JDV_J131-CategorieActiviteSanitaireRegulee-RASS = https://mos.esante.gouv.fr/NOS/JDV_J131-CategorieActiviteSanitaireRegulee-RASS/FHIR/JDV-J131-CategorieActiviteSanitaireRegulee-RASS
+
+
+// ##########
+// # AUTRES #
+// ##########
+
+Alias: $iso21090-ADXP-careOf = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-careOf
+Alias: $iso21090-ADXP-additionalLocator = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
+Alias: $iso21090-ADXP-houseNumber = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber
+Alias: $iso21090-ADXP-buildingNumberSuffix = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix
+Alias: $iso21090-ADXP-streetNameType = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType
+Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase
+Alias: $iso21090-ADXP-postBox = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox
