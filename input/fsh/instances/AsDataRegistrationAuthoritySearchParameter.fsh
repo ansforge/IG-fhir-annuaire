@@ -4,7 +4,7 @@ Usage: #definition
 * status = #active
 * name = "AsDataRegistrationAuthoritySearchParameter"
 * description = "Paramètre de recherche pour récupérer une ressource par autorité d'enregistrement des données."
-* code = #data-information-system
+* code = #data-registration-authority
 * base[0] = #Organization
 * base[+] = #Practitioner
 * base[+] = #PractitionerRole
