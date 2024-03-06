@@ -1,10 +1,11 @@
 // ValueSets ajoutés car manquants dans le NOS
 
 ValueSet: ModeFixationTarifaireValueSet
-Id: as-vs-mode-fixation-tarifaire
-Title: "AS ValueSet Mode Fixation Tarifaire"
+Id: JDV-ModeFixationTarifaire
+Title: "Jeu de valeurs Mode Fixation Tarifaire"
 Description: "ValueSet contenant tous les codes de la TRE R74 indiquant les modes de fixation tarifaire"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^url = https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire?vs
 * include codes from system https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire
 
 // SVS profile
@@ -12,10 +13,11 @@ Description: "ValueSet contenant tous les codes de la TRE R74 indiquant les mode
 
 
 ValueSet: TypeFermetureValueSet
-Id: as-vs-type-fermeture
-Title: "AS ValueSet TypeFermeture"
+Id: JDV-TypeFermeture
+Title: "Jeu de valeurs Type Fermeture"
 Description: "ValueSet contenant tous les codes de la TRE R286 indiquant les types de fermeture"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^url = https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture?vs
 * include codes from system https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture
 
 // SVS profile
@@ -23,10 +25,11 @@ Description: "ValueSet contenant tous les codes de la TRE R286 indiquant les typ
 
 
 ValueSet: SourceInformationInstallationValueSet
-Id: as-vs-source-information-installation
-Title: "AS ValueSet Source Information Installation"
+Id: JDV-SourceInformationInstallation
+Title: "Jeu de valeurs Source Information Installation"
 Description: "ValueSet contenant tous les codes de la TRE R301 indiquant les sources d'information d'installation"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^url = https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation?vs
 * include codes from system https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation
 
 // SVS profile
