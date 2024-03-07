@@ -34,6 +34,7 @@ package IG #DDDDDD{
              Device.extension:as-ext-healthcareservice-authorization => <&plus>[0..1]
              Device.identifier => [None..None]
              Device.identifier:numAutorisationArhgos => [0..1]
+             Device.identifier:numAutorisationArhgos.system => [1..None]
              Device.status => [None..None]
              Device.manufacturer => [None..None]
              Device.serialNumber => [None..None]
@@ -336,6 +337,7 @@ package IG #DDDDDD{
              HealthcareService.extension:as-ext-healthcareservice-authorization => <&plus>[0..*]
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
+             HealthcareService.identifier:numAutorisationArhgos.system => [1..None]
              HealthcareService.providedBy => [None..None]
              HealthcareService.category => [None..None]
              HealthcareService.type => [None..None]
@@ -351,6 +353,7 @@ package IG #DDDDDD{
              HealthcareService.extension:as-ext-supported-capacity => <&plus>[0..*]
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
+             HealthcareService.identifier:numAutorisationArhgos.system => [1..None]
              HealthcareService.providedBy => [None..None]
              HealthcareService.type => [None..None]
              HealthcareService.eligibility => [None..None]
@@ -434,7 +437,6 @@ package IG #DDDDDD{
              Organization.telecom => [None..None]
              Organization.telecom.use => [None..None]
              Organization.telecom:mailbox-mss => [0..*]
-             Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata => <&plus>[None..None]
              Organization.address => [None..None]
              Organization.partOf => [None..None]
              Organization.endpoint => [None..None]
@@ -491,7 +493,6 @@ package IG #DDDDDD{
              Practitioner.telecom.system => [None..None]
              Practitioner.telecom.use => [None..None]
              Practitioner.telecom:mailbox-mss => [0..*]
-             Practitioner.telecom:mailbox-mss.extension:as-mailbox-mss-metadata => <&plus>[None..None]
              Practitioner.address => [None..None]
              Practitioner.qualification => [None..None]
              Practitioner.qualification:degree => [0..*]
@@ -573,7 +574,6 @@ package IG #DDDDDD{
              PractitionerRole.healthcareService => [None..None]
              PractitionerRole.telecom => [None..None]
              PractitionerRole.telecom:mailbox-mss => [0..*]
-             PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata => <&plus>[None..None]
              PractitionerRole.availableTime => [None..None]
              PractitionerRole.notAvailable => [None..None]
              PractitionerRole.availabilityExceptions => [None..None]
@@ -993,9 +993,9 @@ package IG #DDDDDD{
 
      AsDpPractitionerProfile -[#black,dotted,thickness=2]-> AsVSInterneIdSystems
 
-        class TypeSystemeInformationVS  
+        class AsVsTypeSystemeInformationVS  
 
-     AsDataTraceExtension -[#black,dotted,thickness=2]-> TypeSystemeInformationVS
+     AsDataTraceExtension -[#black,dotted,thickness=2]-> AsVsTypeSystemeInformationVS
 
         class SourceInformationInstallationValueSet  
 

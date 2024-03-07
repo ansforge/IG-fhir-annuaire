@@ -32,7 +32,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
   <name value="AsDpPractitionerRoleProfile"/>
   <title value="AS Donnée Publique PractitionerRole Profile"/>
   <status value="active"/>
-  <date value="2024-03-06T10:45:14+00:00"/>
+  <date value="2024-03-07T10:27:01+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -276,7 +276,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -318,7 +318,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -729,7 +729,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -743,9 +743,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
     <element id="PractitionerRole.extension:as-ext-practitionerrole-contracted">
       <path value="PractitionerRole.extension"/>
       <sliceName value="as-ext-practitionerrole-contracted"/>
-      <short value="Secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie."/>
+      <short value="Secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie (Synonyme : secteurConventionnement)."/>
       <definition value="Extension créée dans le cadre de l'Annuaire Santé pour décrire le secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie."/>
-      <comment value="Synonyme : secteurConventionnement"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -772,7 +771,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -807,7 +806,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -842,7 +841,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -893,7 +892,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them"/>
@@ -1101,7 +1100,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -1344,7 +1343,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -1403,7 +1402,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -1555,7 +1554,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -1798,7 +1797,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -1857,7 +1856,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -1957,7 +1956,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <mustSupport value="true"/>
       <isSummary value="true"/>
@@ -2059,7 +2058,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -2181,7 +2180,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <mustSupport value="true"/>
       <isSummary value="true"/>
@@ -2230,7 +2229,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <mustSupport value="true"/>
       <isSummary value="true"/>
@@ -2837,7 +2836,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <mustSupport value="true"/>
       <isSummary value="true"/>
@@ -2893,7 +2892,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
@@ -2951,7 +2950,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="A system is required if a value is provided."/>
         <expression value="value.empty() or system.exists()"/>
         <xpath value="not(exists(f:value)) or exists(f:system)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/ContactDetail"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
       </constraint>
       <mustSupport value="true"/>
       <isSummary value="true"/>
@@ -3008,7 +3007,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="A system is required if a value is provided."/>
         <expression value="value.empty() or system.exists()"/>
         <xpath value="not(exists(f:value)) or exists(f:system)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -3310,7 +3309,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mustSupport value="true"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.id">
       <path value="PractitionerRole.telecom.extension.id"/>
@@ -3381,7 +3379,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -3422,7 +3420,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.id">
@@ -3485,7 +3483,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.url">
@@ -3579,7 +3577,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id">
@@ -3642,7 +3640,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.url">
@@ -3732,7 +3730,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.id">
@@ -3795,7 +3793,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.url">
@@ -3885,7 +3883,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id">
@@ -3948,7 +3946,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.url">
@@ -4038,7 +4036,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.id">
@@ -4101,7 +4099,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.url">
@@ -4191,7 +4189,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id">
@@ -4254,7 +4252,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.url">
@@ -4344,7 +4342,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id">
@@ -4407,7 +4405,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.url">
@@ -4884,7 +4882,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -5015,7 +5013,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -5060,7 +5058,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
@@ -5315,7 +5313,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -5360,7 +5358,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
@@ -5433,7 +5431,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -5518,7 +5516,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/EffectEvidenceSynthesis"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
