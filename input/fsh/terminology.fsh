@@ -36,8 +36,6 @@ Description: "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec
 * ^experimental = false
 
 
-
-
 // AS data trace
 CodeSystem:  AsCsTypeSystemeInformation
 Id: as-cs-type-systeme-information

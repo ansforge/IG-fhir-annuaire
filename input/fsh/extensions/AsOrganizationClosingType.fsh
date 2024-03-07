@@ -5,6 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
+
 * . ^short = "Type de fermeture de la structure (typeFermeture)."
 
 * value[x] only CodeableConcept

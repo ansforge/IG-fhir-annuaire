@@ -7,5 +7,4 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour prise en
 * ^context.expression = "Person"
 
 * valueAddress only AsAddressExtendedProfile
-* valueAddress ^comment = "Synonyme MOS : lieuNaissance"
-* valueAddress ^short = "Lieu de naissance de la personne."
+* valueAddress ^short = "Lieu de naissance de la personne (Synonyme MOS : lieuNaissance)."
