@@ -14,7 +14,7 @@
   <name value="AsDrPractitionerProfile"/>
   <title value="AS Donnée Restreinte Practitioner Profile"/>
   <status value="active"/>
-  <date value="2024-03-06T16:49:12+00:00"/>
+  <date value="2024-03-07T12:17:43+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -7245,7 +7245,7 @@
     <element id="Practitioner.telecom:mailbox-mss">
       <path value="Practitioner.telecom"/>
       <sliceName value="mailbox-mss"/>
-      <short value="Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS)."/>
+      <short value="Details of a Technology mediated contact point (phone, fax, email, etc.)"/>
       <definition value="Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc."/>
       <comment value="Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific."/>
       <requirements value="Need to know how to reach a practitioner independent to any roles the practitioner may have."/>
@@ -7424,40 +7424,6 @@
         <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
-    </element>
-    <element id="Practitioner.telecom:mailbox-mss.extension:as-mailbox-mss-metadata">
-      <path value="Practitioner.telecom.extension"/>
-      <sliceName value="as-mailbox-mss-metadata"/>
-      <short value="Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <condition value="ele-1"/>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <mustSupport value="true"/>
     </element>
     <element id="Practitioner.telecom:mailbox-mss.system">
       <path value="Practitioner.telecom.system"/>

@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-03-06T16:49:12+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-03-07T12:17:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -596,6 +596,18 @@
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems> ;
+         fhir:reference [ fhir:v "CodeSystem/as-cs-intern-id-systems" ]
+       ] ;
+       fhir:name [ fhir:v "AS CodeSystem Internal Identifier Systems" ] ;
+       fhir:description [ fhir:v "CodeSystem contenant les identifiants locaux" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-organization-types> ;
          fhir:reference [ fhir:v "CodeSystem/as-cs-organization-types" ]
        ] ;
@@ -876,7 +888,7 @@
          fhir:reference [ fhir:v "StructureDefinition/as-location" ]
        ] ;
        fhir:name [ fhir:v "AS Location Profile" ] ;
-       fhir:description [ fhir:v "Profil cgénérique réé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile." ] ;
+       fhir:description [ fhir:v "Profil générique créé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1160,6 +1172,18 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-intern-id-systems> ;
+         fhir:reference [ fhir:v "ValueSet/as-vs-intern-id-systems" ]
+       ] ;
+       fhir:name [ fhir:v "AS ValueSet Internal Identifier Systems" ] ;
+       fhir:description [ fhir:v "ValueSet contenant les identifiants internes" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types> ;
          fhir:reference [ fhir:v "ValueSet/as-vs-organization-types" ]
        ] ;
@@ -1272,54 +1296,6 @@
          fhir:reference [ fhir:v "CapabilityStatement/AsServerCapabilityStatement" ]
        ] ;
        fhir:name [ fhir:v "AsServerCapabilityStatement" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems> ;
-         fhir:reference [ fhir:v "CodeSystem/as-cs-intern-id-systems" ]
-       ] ;
-       fhir:name [ fhir:v "Internal Id Systems" ] ;
-       fhir:description [ fhir:v "Systèmes des identifiants locaux" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-intern-id-systems> ;
-         fhir:reference [ fhir:v "ValueSet/as-vs-intern-id-systems" ]
-       ] ;
-       fhir:name [ fhir:v "Internal Id Systems VS" ] ;
-       fhir:description [ fhir:v "Systèmes des identifiants internes" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/type-systeme-information-vs> ;
-         fhir:reference [ fhir:v "ValueSet/type-systeme-information-vs" ]
-       ] ;
-       fhir:name [ fhir:v "Type de système d'information" ] ;
-       fhir:description [ fhir:v "Type de système d'information pouvant alimenter l'annuaire santé." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/type-systeme-information-cs> ;
-         fhir:reference [ fhir:v "CodeSystem/type-systeme-information-cs" ]
-       ] ;
-       fhir:name [ fhir:v "Type de système d'information" ] ;
-       fhir:description [ fhir:v "Type de système d'information pouvant alimenter l'annuaire santé." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

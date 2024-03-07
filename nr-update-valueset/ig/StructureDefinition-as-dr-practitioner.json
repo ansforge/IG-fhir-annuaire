@@ -10,7 +10,7 @@
   "name" : "AsDrPractitionerProfile",
   "title" : "AS Donnée Restreinte Practitioner Profile",
   "status" : "active",
-  "date" : "2024-03-06T16:49:12+00:00",
+  "date" : "2024-03-07T12:17:43+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -7508,7 +7508,7 @@
       "id" : "Practitioner.telecom:mailbox-mss",
       "path" : "Practitioner.telecom",
       "sliceName" : "mailbox-mss",
-      "short" : "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS).",
+      "short" : "Details of a Technology mediated contact point (phone, fax, email, etc.)",
       "definition" : "Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.",
       "comment" : "Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.",
       "requirements" : "Need to know how to reach a practitioner independent to any roles the practitioner may have.",
@@ -7695,41 +7695,6 @@
         "identity" : "rim",
         "map" : "N/A"
       }]
-    },
-    {
-      "id" : "Practitioner.telecom:mailbox-mss.extension:as-mailbox-mss-metadata",
-      "path" : "Practitioner.telecom.extension",
-      "sliceName" : "as-mailbox-mss-metadata",
-      "short" : "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre.",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mustSupport" : true
     },
     {
       "id" : "Practitioner.telecom:mailbox-mss.system",
