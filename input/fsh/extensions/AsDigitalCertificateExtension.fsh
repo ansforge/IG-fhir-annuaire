@@ -5,6 +5,7 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 
 * ^context[0].type = #element
 * ^context[=].expression = "PractitionerRole"
+
 * ^context[+].type = #element
 * ^context[=].expression = "Organization"
 
@@ -19,7 +20,8 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
     validity 0..1 and
     domain 0..1 and
     keyUsage 0..1 and
-    value 0..1 
+    value 0..1
+
 // numeroSerie
 * extension[serialNumber].value[x] only string
 * extension[serialNumber] ^short = "numeroSerie : Numéro de série du certificat.\r\n format de codage des caractères en binaire codé en ASCII."

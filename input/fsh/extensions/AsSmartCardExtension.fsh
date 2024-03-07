@@ -5,6 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 
 * ^context.type = #element
 * ^context.expression = "Practitioner"
+
 * . ^short = "CarteProfessionnel : Données descriptives du moyen d’identification des personnes physiques via une carte de professionnel.\r\n La carte est rattachée à l’exercice d’une profession donnée et non au professionnel lui-même, un professionnel exerçant simultanément deux professions a deux cartes."
 
 * extension ^slicing.discriminator.type = #value

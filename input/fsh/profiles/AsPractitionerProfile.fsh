@@ -10,7 +10,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
-
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -20,6 +19,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
     AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS and
     AsSmartCardExtension named as-ext-smartcard 0..* MS and // carte cpx
     AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS //  certificat
+
 /* Practitioner.identifier */
 * identifier MS
 * identifier ^slicing.discriminator.type = #pattern
@@ -100,10 +100,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
-* telecom[mailbox-mss].extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1 MS
-* telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS)."
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
-
 
 // langueParlee
 * communication MS

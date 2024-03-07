@@ -5,6 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
+
 * . ^short = "Mode de tarification de la structure (modeFixationTarif)."
 
 * value[x] only CodeableConcept

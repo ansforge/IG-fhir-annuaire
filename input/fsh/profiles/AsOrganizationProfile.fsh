@@ -10,8 +10,8 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
-
 /* donnees metiers */
+
 // Organization.identifier
 * identifier MS 
 * identifier ^slicing.discriminator.type = #pattern
@@ -117,9 +117,7 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
-* telecom[mailbox-mss].extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1 MS
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type ORG ou APP rattachées à une personne morale responsable de l’accès et de l’usage de la BAL (boiteLettreMSS)."
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
 
 // lien EG/EJ
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ). Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
