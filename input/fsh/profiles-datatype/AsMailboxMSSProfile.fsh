@@ -12,4 +12,8 @@ Description: 	"Datatype profile créé à partir ContactPoint dans le cadre de l
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 
+// Extension emailType définie dans FrContactPoint
+* extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
+
 * extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1
+* extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."

@@ -5,6 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
+
 * . ^short = "Numéro de la licence d'exploitation d’une officine (numeroLicence)."
 
 * value[x] only string

@@ -10,7 +10,6 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
-
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

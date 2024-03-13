@@ -5,9 +5,9 @@ Description: 	"Extension pour discriminer les organization types."
 
 * ^context.type = #element
 * ^context.expression = "Organization.type"
+
 * value[x] only code
 * valueCode from AsVsOrganizationTypes
-
 
 
 ValueSet: AsVsOrganizationTypes
