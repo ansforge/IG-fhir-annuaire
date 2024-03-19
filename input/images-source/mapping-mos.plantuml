@@ -1,0 +1,60 @@
+@startuml
+
+skinparam linetype ortho
+
+
+' Practitioner
+artifact "Professionnel" as pro #FEF0C6
+artifact "PersonnePhysique" as pp #FEF0C6
+artifact "Diplome" as di #FEF0C6
+
+' PractitionerRole
+artifact "ExerciceProfessionnel" as expro #F2C6C3
+artifact "SituationExercice" as sitex #F2C6C3
+artifact "SavoirFaire" as sf #F2C6C3
+artifact "ReferencementAE" as rae #F2C6C3
+
+
+' Organization
+artifact "EntiteJuridique" as ej #D6E4FB
+artifact "EntiteGeographique" as eg #D6E4FB
+
+'HealthcareService
+artifact "DisciplineSocialeAutorisee" as dsa #DDCFE2
+artifact "ActiviteSanitaireAutorisee" as asa #DDCFE2
+artifact "ImplantationActiviteSanitaireAutorisee" as iasa #DDCFE2
+
+'Device
+artifact "EquipementMaterielLourd" as eml #D0E6CD
+
+legend top right
+  **Ressources FHIR**
+  <back:#F2C6C3><color:black> PractitionerRole </color></back>
+  <back:#FEF0C6><color:black> Practitioner </color></back>
+  <back:#D6E4FB><color:black> Organization </color></back>
+  <back:#DDCFE2><color:black> HealthcareService </color></back>
+  <back:#D0E6CD><color:black> Device </color></back>
+end legend
+
+
+di "0..*" -- "1" pro
+pro --> pp
+
+pro "1" -- "0..*" expro
+expro "1" -- "0..*" sitex
+sf "0..*" -- "1" expro
+rae "0..*" -- "1" expro
+
+eg "0..*" -- "0..*" sitex
+eg "1..*" -- "1" ej
+
+eg "1" -- "0..*" dsa
+eg "1" -- "0..*" asa
+eg "1" -- "0..*" iasa
+eg "1" -- "0..*" eml
+
+
+asa "1" -- "0..*" iasa
+
+
+@enduml
