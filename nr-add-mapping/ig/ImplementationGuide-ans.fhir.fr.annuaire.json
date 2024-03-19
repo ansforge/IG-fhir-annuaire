@@ -10,7 +10,7 @@
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "active",
-  "date" : "2024-03-05T10:02:39+00:00",
+  "date" : "2024-03-19T08:59:55+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -685,10 +685,34 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
+        "reference" : "CodeSystem/as-cs-intern-id-systems"
+      },
+      "name" : "AS CodeSystem Internal Identifier Systems",
+      "description" : "CodeSystem contenant les identifiants locaux",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
         "reference" : "CodeSystem/as-cs-organization-types"
       },
       "name" : "AS CodeSystem OrganizationTypes",
       "description" : "CodeSystem définissant les types d'organisation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/as-cs-type-systeme-information"
+      },
+      "name" : "AS CodeSystem type de système d'information",
+      "description" : "CodeSystem définissant les types de systèmes d'information pouvant alimenter l'annuaire santé.",
       "exampleBoolean" : false
     },
     {
@@ -952,7 +976,7 @@
         "reference" : "StructureDefinition/as-location"
       },
       "name" : "AS Location Profile",
-      "description" : "Profil cgénérique réé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile.",
+      "description" : "Profil générique créé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile.",
       "exampleBoolean" : false
     },
     {
@@ -1237,6 +1261,18 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/as-vs-intern-id-systems"
+      },
+      "name" : "AS ValueSet Internal Identifier Systems",
+      "description" : "ValueSet contenant les identifiants internes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/as-vs-mode-fixation-tarifaire"
       },
       "name" : "AS ValueSet Mode Fixation Tarifaire",
@@ -1265,6 +1301,18 @@
       },
       "name" : "AS ValueSet Source Information Installation",
       "description" : "ValueSet contenant tous les codes de la TRE R301 indiquant les sources d'information d'installation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/as-vs-type-systeme-information"
+      },
+      "name" : "AS ValueSet type de système d'information",
+      "description" : "ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé.",
       "exampleBoolean" : false
     },
     {
@@ -1369,57 +1417,9 @@
         "valueString" : "CapabilityStatement"
       }],
       "reference" : {
-        "reference" : "CapabilityStatement/AsClientCapabilityStatement"
+        "reference" : "CapabilityStatement/AsServerCapabilityStatement"
       },
-      "name" : "AsClientCapabilityStatement",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/as-cs-intern-id-systems"
-      },
-      "name" : "Internal Id Systems",
-      "description" : "Systèmes des identifiants locaux",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/as-vs-intern-id-systems"
-      },
-      "name" : "Internal Id Systems VS",
-      "description" : "Systèmes des identifiants internes",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/type-systeme-information-vs"
-      },
-      "name" : "Type de système d'information",
-      "description" : "Type de système d'information pouvant alimenter l'annuaire santé.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/type-systeme-information-cs"
-      },
-      "name" : "Type de système d'information",
-      "description" : "Type de système d'information pouvant alimenter l'annuaire santé.",
+      "name" : "AsServerCapabilityStatement",
       "exampleBoolean" : false
     }],
     "page" : {

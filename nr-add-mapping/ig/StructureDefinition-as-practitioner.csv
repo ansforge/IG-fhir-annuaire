@@ -546,7 +546,7 @@ Period is not used for a duration (a measure of elapsed time). See [Duration](ht
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 per-1:If present, start SHALL have a lower value than end {start.hasValue().not() or end.hasValue().not() or (start <= end)}"
 "Practitioner.telecom:mailbox-mss","Practitioner.telecom","mailbox-mss","","",0,*,"","","","ContactPoint {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss]]} {[]}
-","Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS).","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
+","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}"
 "Practitioner.telecom:mailbox-mss.id","Practitioner.telecom.id","","","",0,1,"","","","string {[]} {[]}
@@ -560,10 +560,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.telecom:mailbox-mss.extension:emailType","Practitioner.telecom.extension","emailType","extensions
 user content","",0,1,"","","","Extension {[CanonicalType[http://interopsante.org/fhir/StructureDefinition/FrContactPointEmailType]]} {[]}
 ","Type of email | type de messagerie électronique","Optional Extension Element - found in all resources.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Practitioner.telecom:mailbox-mss.extension:as-mailbox-mss-metadata","Practitioner.telecom.extension","as-mailbox-mss-metadata","","",0,*,"Y","","","Extension {[]} {[]}
-","Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.telecom:mailbox-mss.system","Practitioner.telecom.system","","","",1,1,"","","Y","code {[]} {[]}
