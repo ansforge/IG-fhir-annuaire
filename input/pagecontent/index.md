@@ -32,7 +32,7 @@ La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci 
 
 Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4. Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est JSON.
 
-Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Modèle des Objets de Santé [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) gérés par l’ANS est disponible ci-dessous.
+Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Modèle des Objets de Santé [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) gérés par l’ANS est disponible dans le schéma ci-dessous.
 
 <div class="figure" style="width:100%;">
     <img style="height: auto; width: 100%;" src="mappingFHIRAnnuaireSante.png" alt="mapping fhir annuaire" title="mapping fhir annuaire">
