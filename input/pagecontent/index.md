@@ -36,6 +36,14 @@ La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci 
     <p>{% include document-overview.svg %}</p>
 </div>
 
+
+##### Correspondance des objets MOS avec les ressources FHIR
+
+<div class="figure" style="width:100%;">
+    <img style="height: auto; width: 100%;" src="mappingFHIRAnnuaireSante.png" alt="mapping fhir annuaire" title="mapping fhir annuaire">
+</div>
+
+
 #### Liens utiles
 
 * [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
