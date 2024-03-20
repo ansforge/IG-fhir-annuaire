@@ -58,11 +58,6 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * alias MS
 * alias ^short = "Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."
 
-
-
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "extension(https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types)"
-
 /* champ d'activite de la structure */
 // Slice deja defini dans FrOrganization
 * type MS
@@ -123,7 +118,7 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ). Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
 * partOf only Reference(FrOrganization or AsOrganizationProfile)
 
-// periode d'activite
+// periode d'activite, extension définie dans FrCore
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure."
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure."
 
