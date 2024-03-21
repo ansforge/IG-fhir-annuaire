@@ -89,11 +89,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * telecom.system ^short = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 
-// adresseCorrespondance
-* address MS
-* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."
-* address only AsAddressExtendedProfile
-
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #profile
@@ -101,29 +96,31 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 
+// adresseCorrespondance
+* address MS
+* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."
+* address only AsAddressExtendedProfile
+
 // langueParlee
 * communication MS
 * communication ^short = "Langue parlée (langueParlee)."
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
 
-// Slicing qualification
-// ajout dates de validite de l'exercice prof
 
-* qualification MS
-
-* qualification ^slicing.discriminator.type = #value
-* qualification ^slicing.discriminator.path = "code"
-* qualification ^slicing.rules = #open
 
 
 
 // ###########
 // # DIPLOME #
 // ###########
+
+* qualification MS
+
+* qualification ^slicing.discriminator.type = #value
+* qualification ^slicing.discriminator.path = "code"
+* qualification ^slicing.rules = #open
 * qualification contains degree 0..*
-
-
 
 
 * qualification[degree] MS
