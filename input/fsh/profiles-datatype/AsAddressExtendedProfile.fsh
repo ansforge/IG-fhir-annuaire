@@ -1,5 +1,5 @@
 Profile: AsAddressExtendedProfile
-Parent: FrAddress
+Parent: fr-core-address
 Title: "AS Address Extended Datatype Profile"
 Id: as-address-extended
 Description: "Datatype profile créé à partir de FrAddress dans le contexte de l'Annuaire Santé pour slicer  Address.line."
