@@ -4,8 +4,9 @@ Id: as-dp-healthcareservice-social-equipment
 Title: "AS Donnée Publique HealthcareService Social Equipment Profile"
 Description: "Profil public applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé."
 
-* active 1..1 // true par défaut; false pour  flaguer les EML supprimés entre deux dates pour permettre aux utilisateurs du delta d'identifier les ressources supprimées. 
-* identifier 0..0
+* active 1..1
+* identifier[numAutorisationArhgos] 0..0
+* identifier ..0
 * category 0..0
 * specialty 0..0
 * location 0..0
