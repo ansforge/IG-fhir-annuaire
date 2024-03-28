@@ -3,11 +3,9 @@
 // ################
 
 
-Alias: $FrPractitioner = http://interopsante.org/fhir/StructureDefinition/FrPractitioner
-Alias: $FrOrganization = http://interopsante.org/fhir/StructureDefinition/FrOrganization
-Alias: $FrHumanName = http://interopsante.org/fhir/StructureDefinition/FrHumanName
-Alias: $FrContactPoint = http://interopsante.org/fhir/StructureDefinition/FrContactPoint
-Alias: $fr-practioner-identifier-type = http://interopsante.org/fhir/ValueSet/fr-practioner-identifier-type
+Alias: $FrPractitioner = https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner
+Alias: $FrHumanName = https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name
+Alias: $FrContactPoint = https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point
 
 // ###########
 // # JDV NOS #
