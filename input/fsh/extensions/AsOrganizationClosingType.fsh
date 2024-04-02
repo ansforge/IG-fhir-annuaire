@@ -5,7 +5,8 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
+
 * . ^short = "Type de fermeture de la structure (typeFermeture)."
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from as-vs-type-fermeture (required)
+* valueCodeableConcept from VS-TRE-R286-TypeFermeture (required)

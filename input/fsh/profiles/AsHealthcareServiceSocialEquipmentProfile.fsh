@@ -25,17 +25,19 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
-// Contains rule
-* identifier contains numAutorisationArhgos 0..1 // Slice numeroAutorisationARHGOS
+
+
+* identifier contains numAutorisationArhgos 0..1
 * identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)."
+* identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr/"
 
 // idStructure
 * providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (idNat_Struct, identifiantEJ, identifiantEG)."
 * providedBy only Reference(FrOrganization or AsOrganizationProfile)
 
 // disciplineEquipementSociale
-* category 0..* MS
-* category ^short = "La discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
+* type 0..* MS
+* type ^short = "La discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
 * type from $JDV-J136-DisciplineEquipementSocial-RASS (required)
 
 // clientele

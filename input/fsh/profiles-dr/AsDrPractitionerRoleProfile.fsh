@@ -7,6 +7,7 @@ Description: 	"Profil restreint créé à partir de as-practitionerrole dans le 
 * practitioner 1..1 
 * organization 0..1
 * location 0..*
+* specialty 0..0
 * healthcareService 0..0
 * identifier[idSituationExercice] 0..1
 * identifier[numeroAm] 0..1

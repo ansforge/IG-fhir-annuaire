@@ -4,10 +4,6 @@ Title: "AS Address Extended Datatype Profile"
 Id: as-address-extended
 Description: "Datatype profile créé à partir de FrAddress dans le contexte de l'Annuaire Santé pour slicer  Address.line."
 
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-
 // departement
 * district from https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS
 * district MS // remplace FrenchDepartment from https://mos.esante.gouv.fr/NOS/JDV_J84-DepartementOM-RASS/FHIR/JDV-J84-DepartementOM-RASS
@@ -30,7 +26,6 @@ Description: "Datatype profile créé à partir de FrAddress dans le contexte de
     iso21090-ADXP-streetNameBase named streetNameBase 0..1 and
 	as-ext-lieu-dit named lieuDit 0..1 
 
-	
 * line.extension[careOf] ^short = "pointRemise (Adresse)"
 * line.extension[additionalLocator] ^short = "complementPointGeographique (Adresse)"
 * line.extension[houseNumber] ^short = "numeroVoie(Adresse)"

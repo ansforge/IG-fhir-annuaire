@@ -10,8 +10,8 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
-
 /* donnees metiers */
+
 // Organization.identifier
 * identifier MS 
 * identifier ^slicing.discriminator.type = #pattern
@@ -65,27 +65,36 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
     activiteINSEE 0..1 and
     statutJuridiqueINSEE 0..1 and 
     sphParticipation 0..1 and
-	typeEtablissement 0..1
+    typeEtablissement 0..1
 
 // organizationType - slice deja existant 
-* type[organizationType] ^sliceName = "organizationType"
 * type[organizationType] ^short = "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
+* type[organizationType].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[organizationType].extension[as-ext-organization-types].valueCode = #organizationType
 
 // activiteINSEE
 * type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
 * type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN)."
+* type[activiteINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[activiteINSEE].extension[as-ext-organization-types].valueCode = #activiteINSEE
 
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
 * type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caractérise la situation juridique de la personne morale (Synonyme : statutJuridiqueINSEE)."
+* type[statutJuridiqueINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[statutJuridiqueINSEE].extension[as-ext-organization-types].valueCode = #statutJuridiqueINSEE
 
 // modaliteParticipationSPH
 * type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
 * type[sphParticipation] ^short = "Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH)."
+* type[sphParticipation].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[sphParticipation].extension[as-ext-organization-types].valueCode = #sphParticipation
 
 // typeEtablissement
 * type[typeEtablissement] ^short = "Le type d’établissement détermine si c'est un établissement principal ou secondaire."
-
+* type[typeEtablissement].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[typeEtablissement].extension[as-ext-organization-types].valueCode = #typeEtablissement
+* type[typeEtablissement].text MS // TypeEtablissement est de type string dans le MOS, il faut donc mettre dans le champs text. Pourquoi est-ce que le type d'établissement est un text et non un code dans le MOS ?
 
 // adresse
 * address MS
@@ -103,15 +112,13 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
-* telecom[mailbox-mss].extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1 MS
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type ORG ou APP rattachées à une personne morale responsable de l’accès et de l’usage de la BAL (boiteLettreMSS)."
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
 
 // lien EG/EJ
 * partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ). Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
 * partOf only Reference(FrOrganization or AsOrganizationProfile)
 
-// periode d'activite
+// periode d'activite, extension définie dans FrCore
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure."
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure."
 

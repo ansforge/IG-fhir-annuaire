@@ -8,12 +8,12 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains
 
+* extension contains
     dateAuthorization 0..1 and 			// dateDecision
 	periodAuthorization 0..1 and 		// datePremiereMEO +  dateFin 
-	dateUpdateAuthorization 0..1 and 	//dateMajAutorisation
-	deleteAuthorization 0..1 and 		//suppressionAutorisation
+	dateUpdateAuthorization 0..1 and 	// dateMajAutorisation
+	deleteAuthorization 0..1 and 		// suppressionAutorisation
 	dateLastInstallation 0..1 and 		// dateDerniereInstallation
 	deleteInstallation 0..1 and 		// suppressionImplantation ou suppressionInstallation
 	sourceReportInstallation 0..1 		// sourceInformationInstallation
@@ -38,5 +38,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 * extension[deleteInstallation] ^short = "Indicateur de suppression de l’installation."
 
 * extension[sourceReportInstallation].value[x] only CodeableConcept
-* extension[sourceReportInstallation].valueCodeableConcept from as-vs-source-information-installation (required)    
+* extension[sourceReportInstallation].valueCodeableConcept from VS-TRE-R301-SourceInformationInstallation (required)    
 * extension[sourceReportInstallation] ^short = "Source ayant permis le constat d'installation."

@@ -16,15 +16,16 @@ Description: "Profil générique créé à partir de Device dans le contexte de 
 * extension ^slicing.rules = #open
 * extension contains AsHealthcareServiceAuthorizationExtension named as-ext-healthcareservice-authorization 0..1 MS
 
-/* !device.identifier */
+/* device.identifier */
 * identifier MS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
+
 // Contains rule
 * identifier contains numAutorisationArhgos 0..1 // Slice numeroAutorisationARHGOS
-* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS). Le system est mis à titre indicatif et pourra être changé."
+* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS). Le system est mis à titre indicatif et pourra évoluer."
 * identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr"
 
 // actif

@@ -10,7 +10,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
-
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -20,6 +19,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
     AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS and
     AsSmartCardExtension named as-ext-smartcard 0..* MS and // carte cpx
     AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS //  certificat
+
 /* Practitioner.identifier */
 * identifier MS
 * identifier ^slicing.discriminator.type = #pattern
@@ -31,13 +31,14 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * identifier contains idNatPs 0..1 and rpps 0..* and adeli 0..* 
 // and identifiantInterne 0..*
 
+* identifier.type ^short = "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 
 * identifier[idNatPs] ^short = "Identifiant national des PS. Cet identifiant est notamment utilisé dans le cadre du DMP et de la CPS. Cet identifiant est préfixé selon source de provenance de l'identifiant (cf Annexe Transverse – Source des données métier pour les professionnels et les structures du CI-SIS.)"
 
 // Practitioner.identifier.type
 
 // Identifiant national des professionels de santé
-* identifier[idNatPs].type ^short = "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
+
 * identifier[idNatPs].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#IDNPS
 * identifier[idNatPs].system = "urn:oid:1.2.250.1.71.4.2.1"
 * identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPSidPP,\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
@@ -88,21 +89,17 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * telecom.system ^short = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 
-// adresseCorrespondance
-* address MS
-* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."
-* address only AsAddressExtendedProfile
-
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #profile
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
-* telecom[mailbox-mss].extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1 MS
-* telecom[mailbox-mss] ^short = "Les BALs MSS de type PER rattachées seulement à l'identifiant du professionnel de Santé (boiteLettreMSS)."
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
 
+// adresseCorrespondance
+* address MS
+* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."
+* address only AsAddressExtendedProfile
 
 // langueParlee
 * communication MS
@@ -110,19 +107,22 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
 
-// Slicing qualification
-// ajout dates de validite de l'exercice prof
+
+
+
+
+// ###########
+// # DIPLOME #
+// ###########
 
 * qualification MS
 
 * qualification ^slicing.discriminator.type = #value
 * qualification ^slicing.discriminator.path = "code"
 * qualification ^slicing.rules = #open
-
-// ###########
-// # DIPLOME #
-// ###########
 * qualification contains degree 0..*
+
+
 * qualification[degree] MS
 * qualification[degree] ^short = "Diplôme et type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
 
@@ -154,33 +154,69 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // # PROFESSION #
 // ##############
 
-* qualification contains profession 0..1
+* qualification contains exercicePro 0..1
 
-* qualification[profession] ^short = "profession : Profession exercée ou future profession de l'étudiant.\r\ncategorieProfessionnelle : Indique si le professionnel exerce sa profession en tant que :\r\nM: Militaire\r\nC: Civil\r\nF: Fonctionnaire\r\nE: Etudiant" 
-* qualification[profession].code.coding ^slicing.discriminator.type = #value
-* qualification[profession].code.coding ^slicing.discriminator.path = "system"
-* qualification[profession].code.coding ^slicing.rules = #closed
 
-* qualification[profession].code.coding contains 
+* qualification[exercicePro] ^short = "exercicePro : exercice professionnel décrivant la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.)." 
+* qualification[exercicePro].code.coding ^slicing.discriminator.type = #value
+* qualification[exercicePro].code.coding ^slicing.discriminator.path = "system"
+* qualification[exercicePro].code.coding ^slicing.rules = #closed
+
+* qualification[exercicePro].code.coding contains 
     categorieProfession 0..1 MS and
 	profession 0..1 MS
 
 // Slice 1 : Catégorie professionnelle
-* qualification[profession].code.coding[categorieProfession] ^short = "Catégorie professionnelle indiqant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
-* qualification[profession].code.coding[categorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
+* qualification[exercicePro].code.coding[categorieProfession] ^short = "Catégorie professionnelle indiquant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle)."
+* qualification[exercicePro].code.coding[categorieProfession] from $JDV-J89-CategorieProfessionnelle-RASS (required)
 
 // Slice 2 : profession de sante
-* qualification[profession].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
-* qualification[profession].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
-* qualification[profession].period MS
-* qualification[profession].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
-* qualification[profession].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
+* qualification[exercicePro].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
+* qualification[exercicePro].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
+
+
+* qualification[exercicePro].code.coding[degreeR36] 0..0
+* qualification[exercicePro].code.coding[degreeR47] 0..0
+* qualification[exercicePro].code.coding[degreeR48] 0..0
+* qualification[exercicePro].code.coding[degreeR49] 0..0
+* qualification[exercicePro].code.coding[degreeR50] 0..0
+* qualification[exercicePro].code.coding[degreeR51] 0..0
+* qualification[exercicePro].code.coding[degreeR52] 0..0
+* qualification[exercicePro].code.coding[degreeR53] 0..0
+* qualification[exercicePro].code.coding[degreeR54] 0..0
+* qualification[exercicePro].code.coding[degreeR55] 0..0
+* qualification[exercicePro].code.coding[degreeR56] 0..0
+* qualification[exercicePro].code.coding[degreeR57] 0..0
+* qualification[exercicePro].code.coding[degreeR58] 0..0
+* qualification[exercicePro].code.coding[degreeR226] 0..0
+
+
+
+* qualification[exercicePro].period MS
+* qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
+* qualification[exercicePro].period.end ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
 
 // ################
 // # SAVOIR FAIRE #
 // ################
 
 * qualification contains savoirFaire 0..*
+
+* qualification[savoirFaire].code.coding[degreeR36] 0..0
+* qualification[savoirFaire].code.coding[degreeR47] 0..0
+* qualification[savoirFaire].code.coding[degreeR48] 0..0
+* qualification[savoirFaire].code.coding[degreeR49] 0..0
+* qualification[savoirFaire].code.coding[degreeR50] 0..0
+* qualification[savoirFaire].code.coding[degreeR51] 0..0
+* qualification[savoirFaire].code.coding[degreeR52] 0..0
+* qualification[savoirFaire].code.coding[degreeR53] 0..0
+* qualification[savoirFaire].code.coding[degreeR54] 0..0
+* qualification[savoirFaire].code.coding[degreeR55] 0..0
+* qualification[savoirFaire].code.coding[degreeR56] 0..0
+* qualification[savoirFaire].code.coding[degreeR57] 0..0
+* qualification[savoirFaire].code.coding[degreeR58] 0..0
+* qualification[savoirFaire].code.coding[degreeR226] 0..0
+
 
 * qualification[savoirFaire] ^short = "savoirFAire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc."
 

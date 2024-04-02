@@ -16,6 +16,7 @@ Description: 	"Profil public applicatif créé à partir du profil générique a
 * identifier[numeroAm] 0..0
 * active 1..1
 * period 0..0
+* specialty 0..0
 * telecom ^slicing.rules = #closed // only boiteLettreMSS is an open data
 // mailbox-mss - Donnees privees
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] 0..0
