@@ -112,3 +112,18 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 
 // Organization.endpoint
 * endpoint MS
+
+
+
+// Mapping:  AsOrganizationToMOS
+// Source:   AsOrganizationProfile
+// Target:   "http://unknown.org/Argonaut-DQ-DSTU2"
+// Id:       as-organization-to-mos
+// Title:    "AsOrganization to MOS"
+// * -> "Patient"
+// * extension[USCoreRaceExtension] -> "Patient.extension[http://fhir.org/guides/argonaut/StructureDefinition/argo-race]"
+// * extension[USCoreEthnicityExtension] -> "Patient.extension[http://fhir.org/guides/argonaut/StructureDefinition/argo-ethnicity]"
+// * extension[USCoreBirthSexExtension] -> "Patient.extension[http://fhir.org/guides/argonaut/StructureDefinition/argo-birthsex]"
+// * identifier -> "Patient.identifier"
+// * identifier.system -> "Patient.identifier.system"
+// * identifier.value -> "Patient.identifier.value"
