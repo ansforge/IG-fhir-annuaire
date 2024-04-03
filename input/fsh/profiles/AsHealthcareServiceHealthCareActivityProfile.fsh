@@ -25,8 +25,9 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 
 * identifier contains numAutorisationArhgos 0..1
-* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)."
-* identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr/"
+* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS). Le system est mis à titre indicatif et pourra évoluer."
+* identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr"
+
 
 // idStructure
 * providedBy 0..1 MS
