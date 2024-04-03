@@ -48,7 +48,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
   <name value="AsDpOrganizationProfile"/>
   <title value="AS Donnée Publique Organization Profile"/>
   <status value="active"/>
-  <date value="2024-04-03T14:18:25+00:00"/>
+  <date value="2024-04-03T14:35:17+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -187,6 +187,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mapping>
         <identity value="as-organization-to-mos"/>
         <map value="EntiteJuridique"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="EntiteGeographique"/>
       </mapping>
     </element>
     <element id="Organization.id">
@@ -1085,6 +1089,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <identity value="rim"/>
         <map value="./low"/>
       </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="dateCreation"/>
+      </mapping>
     </element>
     <element id="Organization.extension:usePeriod.value[x].end">
       <path value="Organization.extension.value[x].end"/>
@@ -1124,6 +1132,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mapping>
         <identity value="rim"/>
         <map value="./high"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="dateFermeture"/>
       </mapping>
     </element>
     <element id="Organization.extension:as-ext-digital-certificate">
@@ -1197,6 +1209,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="numeroLicenceOfficine"/>
+      </mapping>
     </element>
     <element id="Organization.extension:as-ext-organization-pricing-model">
       <path value="Organization.extension"/>
@@ -1269,6 +1285,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="typeFermeture"/>
+      </mapping>
     </element>
     <element id="Organization.extension:as-ext-organization-budget-type">
       <path value="Organization.extension"/>
@@ -1873,6 +1893,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <identity value="servd"/>
         <map value="./Identifiers"/>
       </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="idNat_struct"/>
+      </mapping>
     </element>
     <element id="Organization.identifier:idNatSt.id">
       <path value="Organization.identifier.id"/>
@@ -2245,6 +2269,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mapping>
         <identity value="servd"/>
         <map value="./Identifiers"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="numSiren"/>
       </mapping>
     </element>
     <element id="Organization.identifier:sirene.id">
@@ -6690,6 +6718,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <identity value="servd"/>
         <map value="n/a"/>
       </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="codeAPEN"/>
+      </mapping>
     </element>
     <element id="Organization.type:activiteINSEE.id">
       <path value="Organization.type.id"/>
@@ -7060,6 +7092,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mapping>
         <identity value="servd"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="statutJuridique"/>
       </mapping>
     </element>
     <element id="Organization.type:statutJuridiqueINSEE.id">
@@ -8172,6 +8208,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <identity value="servd"/>
         <map value=".PreferredName/Name"/>
       </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="raisonSociale"/>
+      </mapping>
     </element>
     <element id="Organization.alias">
       <path value="Organization.alias"/>
@@ -8203,6 +8243,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mapping>
         <identity value="rim"/>
         <map value=".name"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="raisonSocialeLongue"/>
       </mapping>
     </element>
     <element id="Organization.telecom">
@@ -8271,6 +8315,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mapping>
         <identity value="servd"/>
         <map value="ContactPoint"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="telecommunication"/>
       </mapping>
     </element>
     <element id="Organization.telecom.id">
@@ -10535,6 +10583,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <mapping>
         <identity value="servd"/>
         <map value="Address"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos"/>
+        <map value="adresseEJ"/>
       </mapping>
     </element>
     <element id="Organization.partOf">
