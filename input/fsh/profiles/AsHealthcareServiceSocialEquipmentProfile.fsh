@@ -33,7 +33,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 
 // idStructure
 * providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (idNat_Struct, identifiantEJ, identifiantEG)."
-* providedBy only Reference(FrOrganization or AsOrganizationProfile)
+* providedBy only Reference(fr-core-organization or AsOrganizationProfile)
 
 // disciplineEquipementSociale
 * type 0..* MS

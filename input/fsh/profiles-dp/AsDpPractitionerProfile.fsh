@@ -9,7 +9,9 @@ Description: 	"Profil public applicatif créé à partir du profil générique a
 * identifier.period 0..0
 * identifier.assigner 0..0 
 //// Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
-* identifier contains identifiantInterne 0..1
+
+* identifier contains identifiantInterne 0..1 MS 
+
 * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 * identifier[identifiantInterne].system 1..1
 * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
@@ -17,6 +19,7 @@ Description: 	"Profil public applicatif créé à partir du profil générique a
 * identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps/adeli et yyyyy l'identifiant local."
 * identifier[identifiantInterne].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#INTRN
 // active
+
 * active 1..1 // 'true' par défaut, 'false' pour notifier aux clients du mode delta les practitioner supprimées entre 2 dates, dans ce cas seuls l'id et le champs active sont renseignés.
 // name
 * name 0..1

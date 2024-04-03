@@ -18,20 +18,20 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * extension contains AsHealthcareServiceAuthorizationExtension named as-ext-healthcareservice-authorization 0..* MS
 
 /* HealthcareService.identifier */
-* identifier MS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on the identifier.system pattern"
 
 * identifier contains numAutorisationArhgos 0..1
+* identifier[numAutorisationArhgos] MS
 * identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS). Le system est mis à titre indicatif et pourra évoluer."
 * identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr"
 
 
 // idStructure
 * providedBy 0..1 MS
-* providedBy only Reference(FrOrganization or AsOrganizationProfile)
+* providedBy only Reference(fr-core-organization or AsOrganizationProfile)
 * providedBy ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattachée cette activité sanitaire (idNat_Struct)."
 
 // modalite - HealthcareService.category

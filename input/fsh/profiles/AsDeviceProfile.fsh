@@ -47,5 +47,5 @@ Description: "Profil générique créé à partir de Device dans le contexte de 
 
 // Lien Equipement/Structure
 * owner 0..1 MS
-* owner only Reference(FrOrganization or AsOrganizationProfile)
+* owner only Reference(fr-core-organization or AsOrganizationProfile)
 * owner ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd (idStructure)."
