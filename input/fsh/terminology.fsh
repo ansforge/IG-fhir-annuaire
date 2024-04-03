@@ -1,32 +1,35 @@
 // ValueSets ajoutés car manquants dans le NOS
 
-ValueSet: ModeFixationTarifaireValueSet
-Id: as-vs-mode-fixation-tarifaire
-Title: "AS ValueSet Mode Fixation Tarifaire"
-Description: "ValueSet contenant tous les codes de la TRE R74 indiquant les modes de fixation tarifaire"
+ValueSet: VS_TRE_R74_ModeFixationTarifaire
+Id: VS-TRE-R74-ModeFixationTarifaire
+Title: "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"
+Description: "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^version = "20240306173000"
 * include codes from system https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire
 
 // SVS profile
 * ^experimental = false
 
 
-ValueSet: TypeFermetureValueSet
-Id: as-vs-type-fermeture
-Title: "AS ValueSet TypeFermeture"
-Description: "ValueSet contenant tous les codes de la TRE R286 indiquant les types de fermeture"
+ValueSet: VS_TRE_R286_TypeFermeture
+Id: VS-TRE-R286-TypeFermeture
+Title: "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"
+Description: "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^version = "20240306173000"
 * include codes from system https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture
 
 // SVS profile
 * ^experimental = false
 
 
-ValueSet: SourceInformationInstallationValueSet
-Id: as-vs-source-information-installation
-Title: "AS ValueSet Source Information Installation"
-Description: "ValueSet contenant tous les codes de la TRE R301 indiquant les sources d'information d'installation"
+ValueSet: VS_TRE_R301_SourceInformationInstallation
+Id: VS-TRE-R301-SourceInformationInstallation
+Title: "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"
+Description: "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^version = "20240306173000"
 * include codes from system https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation
 
 // SVS profile
@@ -39,6 +42,7 @@ Id: as-cs-type-systeme-information
 Title: "AS CodeSystem type de système d'information"
 Description:  "CodeSystem définissant les types de systèmes d'information pouvant alimenter l'annuaire santé."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+* ^version = "20240306173000"
 * #RPPS "Répertoire partagé des professionnels de santé" "Répertoire partagé des professionnels de santé"
 * #ADELI "Numéro ADELI" "Adeli est un répertoire national qui recense les professionnels de santé réglementés, qu'ils exercent en libéral ou salarial."
 * #FINESS "Fichier national des établissements sanitaires et sociaux" "FINESS (Fichier National des Etablissements Sanitaires et Sociaux) est le répertoire national de référence des personnes morales intervenant dans les domaines sanitaire, médico-social et social et de l’enseignement des professions sanitaires et sociales."
@@ -52,7 +56,9 @@ Id: as-vs-type-systeme-information
 Title: "AS ValueSet type de système d'information"
 Description:  "ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^version = "20240306173000"
 * include codes from system as-cs-type-systeme-information
 
 // SVS profile
 * ^experimental = false
+

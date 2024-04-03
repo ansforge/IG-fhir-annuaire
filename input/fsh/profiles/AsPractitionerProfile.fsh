@@ -1,5 +1,5 @@
 Profile: 		AsPractitionerProfile
-Parent: 		FrPractitioner
+Parent: 		fr-core-practitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
 Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
@@ -21,37 +21,11 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
     AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS //  certificat
 
 /* Practitioner.identifier */
-* identifier MS
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the identifier.system pattern"
-// Contains rule
-
-* identifier contains idNatPs 0..1 and rpps 0..* and adeli 0..* 
-// and identifiantInterne 0..*
+// Defined in FrCore
 
 * identifier.type ^short = "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  http://interopsante.org/fhir/CodeSystem/fr-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 
-* identifier[idNatPs] ^short = "Identifiant national des PS. Cet identifiant est notamment utilisé dans le cadre du DMP et de la CPS. Cet identifiant est préfixé selon source de provenance de l'identifiant (cf Annexe Transverse – Source des données métier pour les professionnels et les structures du CI-SIS.)"
-
-// Practitioner.identifier.type
-
-// Identifiant national des professionels de santé
-
-* identifier[idNatPs].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#IDNPS
-* identifier[idNatPs].system = "urn:oid:1.2.250.1.71.4.2.1"
-* identifier[idNatPs].value ^short = "Identifiant national de la personne physique. 0 + ADELI ou 8 + RPPSidPP,\r\n Personne/Identifiant PP si l’instance correspond à un identifiant RPPS ou ADELI, sinon Personne/identification nationale PP."
-
-// Identifiant du Répertoire Partagé des Professionnels intervenant dans le système de Santé (RPPS). Celui-ci peut aussi être inclus dans l'idNatPs.
-* identifier[rpps] ^short = "Numéro RPPS (11 chiffres)"
-* identifier[rpps].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#RPPS
-* identifier[rpps].system = "http://rpps.esante.gouv.fr"
-
-// Identifiant ADELI. Celui-ci peut aussi être inclus dans l'idNatPs.
-* identifier[adeli] ^short = "Numéro ADELI (9 chiffres)"
-* identifier[adeli].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#ADELI
-* identifier[adeli].system = "http://adeli.esante.gouv.fr"
+* identifier[idNatPs] MS
 
 // // Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
 // * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
@@ -66,8 +40,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 /* Practitioner.name */
 * name MS
-* name only $FrHumanName
-
 * name ^short = "Nom sous lequel exerce le professionnel."
 
 // nomExercice
@@ -89,11 +61,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * telecom.system ^short = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
 
-// adresseCorrespondance
-* address MS
-* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."
-* address only AsAddressExtendedProfile
-
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator.type = #profile
@@ -101,29 +68,31 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 
+// adresseCorrespondance
+* address MS
+* address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."
+* address only AsAddressExtendedProfile
+
 // langueParlee
 * communication MS
 * communication ^short = "Langue parlée (langueParlee)."
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
 
-// Slicing qualification
-// ajout dates de validite de l'exercice prof
 
-* qualification MS
-
-* qualification ^slicing.discriminator.type = #value
-* qualification ^slicing.discriminator.path = "code"
-* qualification ^slicing.rules = #open
 
 
 
 // ###########
 // # DIPLOME #
 // ###########
+
+* qualification MS
+
+* qualification ^slicing.discriminator.type = #value
+* qualification ^slicing.discriminator.path = "code"
+* qualification ^slicing.rules = #open
 * qualification contains degree 0..*
-
-
 
 
 * qualification[degree] MS
@@ -148,7 +117,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 // lieuFormation
 * qualification[degree].issuer ^short = "[Donnée restreinte] : Lieu de formation pour l'obtention du diplôme (lieuFormation)."
-* qualification[degree].issuer only Reference(AsOrganizationProfile or FrOrganization)
+* qualification[degree].issuer only Reference(AsOrganizationProfile or fr-core-organization)
 
 //
 * qualification[degree].extension contains AsEducationLevelExtension named as-ext-education-level 0..* MS
@@ -177,24 +146,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * qualification[exercicePro].code.coding[profession] ^short = "Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291"
 * qualification[exercicePro].code.coding[profession] from $JDV-J106-EnsembleProfession-RASS (required)
 
-
-* qualification[exercicePro].code.coding[degreeR36] 0..0
-* qualification[exercicePro].code.coding[degreeR47] 0..0
-* qualification[exercicePro].code.coding[degreeR48] 0..0
-* qualification[exercicePro].code.coding[degreeR49] 0..0
-* qualification[exercicePro].code.coding[degreeR50] 0..0
-* qualification[exercicePro].code.coding[degreeR51] 0..0
-* qualification[exercicePro].code.coding[degreeR52] 0..0
-* qualification[exercicePro].code.coding[degreeR53] 0..0
-* qualification[exercicePro].code.coding[degreeR54] 0..0
-* qualification[exercicePro].code.coding[degreeR55] 0..0
-* qualification[exercicePro].code.coding[degreeR56] 0..0
-* qualification[exercicePro].code.coding[degreeR57] 0..0
-* qualification[exercicePro].code.coding[degreeR58] 0..0
-* qualification[exercicePro].code.coding[degreeR226] 0..0
-
-
-
 * qualification[exercicePro].period MS
 * qualification[exercicePro].period.start ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."
 * qualification[exercicePro].period.end ^short = "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."
@@ -205,28 +156,12 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 * qualification contains savoirFaire 0..*
 
-* qualification[savoirFaire].code.coding[degreeR36] 0..0
-* qualification[savoirFaire].code.coding[degreeR47] 0..0
-* qualification[savoirFaire].code.coding[degreeR48] 0..0
-* qualification[savoirFaire].code.coding[degreeR49] 0..0
-* qualification[savoirFaire].code.coding[degreeR50] 0..0
-* qualification[savoirFaire].code.coding[degreeR51] 0..0
-* qualification[savoirFaire].code.coding[degreeR52] 0..0
-* qualification[savoirFaire].code.coding[degreeR53] 0..0
-* qualification[savoirFaire].code.coding[degreeR54] 0..0
-* qualification[savoirFaire].code.coding[degreeR55] 0..0
-* qualification[savoirFaire].code.coding[degreeR56] 0..0
-* qualification[savoirFaire].code.coding[degreeR57] 0..0
-* qualification[savoirFaire].code.coding[degreeR58] 0..0
-* qualification[savoirFaire].code.coding[degreeR226] 0..0
-
 
 * qualification[savoirFaire] ^short = "savoirFAire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc."
 
 * qualification[savoirFaire].code.coding ^slicing.discriminator.type = #value
 * qualification[savoirFaire].code.coding ^slicing.discriminator.path = "system"
 * qualification[savoirFaire].code.coding ^slicing.rules = #open
-
 
 * qualification[savoirFaire].code.coding contains
     typeSavoirFaire 0..1 MS and
