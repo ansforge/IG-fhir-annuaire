@@ -17,10 +17,10 @@
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-04-03T13:36:19+00:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:date [ fhir:v "2024-04-03T13:59:51+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
-     fhir:name [ fhir:v "ANS" ] ;
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "https://esante.gouv.fr" ]
@@ -67,11 +67,11 @@
   ] [
      fhir:id [ fhir:v "hl7_fhir_fr_core" ] ;
      fhir:uri [
-       fhir:v "http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core"^^xsd:anyURI ;
-       fhir:link <http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core>
+       fhir:v "https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core"^^xsd:anyURI ;
+       fhir:link <https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.fr.core" ] ;
-     fhir:version [ fhir:v "1.1.0" ]
+     fhir:version [ fhir:v "2.0.0" ]
   ] [
      fhir:id [ fhir:v "ans_fr_nos" ] ;
      fhir:uri [
@@ -1184,18 +1184,6 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-mode-fixation-tarifaire> ;
-         fhir:reference [ fhir:v "ValueSet/as-vs-mode-fixation-tarifaire" ]
-       ] ;
-       fhir:name [ fhir:v "AS ValueSet Mode Fixation Tarifaire" ] ;
-       fhir:description [ fhir:v "ValueSet contenant tous les codes de la TRE R74 indiquant les modes de fixation tarifaire" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types> ;
          fhir:reference [ fhir:v "ValueSet/as-vs-organization-types" ]
        ] ;
@@ -1208,35 +1196,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-source-information-installation> ;
-         fhir:reference [ fhir:v "ValueSet/as-vs-source-information-installation" ]
-       ] ;
-       fhir:name [ fhir:v "AS ValueSet Source Information Installation" ] ;
-       fhir:description [ fhir:v "ValueSet contenant tous les codes de la TRE R301 indiquant les sources d'information d'installation" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-systeme-information> ;
          fhir:reference [ fhir:v "ValueSet/as-vs-type-systeme-information" ]
        ] ;
        fhir:name [ fhir:v "AS ValueSet type de système d'information" ] ;
        fhir:description [ fhir:v "ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-fermeture> ;
-         fhir:reference [ fhir:v "ValueSet/as-vs-type-fermeture" ]
-       ] ;
-       fhir:name [ fhir:v "AS ValueSet TypeFermeture" ] ;
-       fhir:description [ fhir:v "ValueSet contenant tous les codes de la TRE R286 indiquant les types de fermeture" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1333,6 +1297,42 @@
        ] ;
        fhir:name [ fhir:v "AsServerCapabilityStatement" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R286-TypeFermeture> ;
+         fhir:reference [ fhir:v "ValueSet/VS-TRE-R286-TypeFermeture" ]
+       ] ;
+       fhir:name [ fhir:v "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture" ] ;
+       fhir:description [ fhir:v "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R301-SourceInformationInstallation> ;
+         fhir:reference [ fhir:v "ValueSet/VS-TRE-R301-SourceInformationInstallation" ]
+       ] ;
+       fhir:name [ fhir:v "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation" ] ;
+       fhir:description [ fhir:v "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R74-ModeFixationTarifaire> ;
+         fhir:reference [ fhir:v "ValueSet/VS-TRE-R74-ModeFixationTarifaire" ]
+       ] ;
+       fhir:name [ fhir:v "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire" ] ;
+       fhir:description [ fhir:v "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
        fhir:extension ( [
@@ -1361,10 +1361,10 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "mapping.html"^^xsd:anyURI ]
+           fhir:value [ fhir:v "downloads.html"^^xsd:anyURI ]
          ] ) ;
-         fhir:name [ fhir:v "mapping.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Mappings MOS" ] ;
+         fhir:name [ fhir:v "downloads.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Téléchargement du guide" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;

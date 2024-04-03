@@ -144,8 +144,6 @@ package IG #DDDDDD{
              Organization.identifier:identifiantInterne => [0..1]
              Organization.identifier:identifiantInterne.type => [None..None]
              Organization.identifier:identifiantInterne.system => [None..None]
-             Organization.identifier:identifiantInterne.period => [None..0]
-             Organization.identifier:identifiantInterne.assigner => [None..0]
              Organization.active => [1..None]
              Organization.telecom => [None..None]
              Organization.telecom.period => [None..0]
@@ -363,6 +361,7 @@ package IG #DDDDDD{
 
         class AsLocationProfile{
 
+             Location => [None..None]
              Location.meta.extension:as-ext-data-trace => <&plus>[0..1]
              Location.address => [None..None]
         } 
@@ -370,7 +369,6 @@ package IG #DDDDDD{
         class AsMailboxMSSProfile{
 
              ContactPoint.extension:emailType => <&plus>[None..None]
-             ContactPoint.extension:emailType.extension => <&plus>[None..0]
              ContactPoint.extension:emailType.value[x] => <&plus>[None..None]
              ContactPoint.extension:as-mailbox-mss-metadata => <&plus>[0..1]
              ContactPoint.system => [None..None]
@@ -389,26 +387,7 @@ package IG #DDDDDD{
              Organization.extension:as-ext-organization-closing-type => <&plus>[0..1]
              Organization.extension:as-ext-organization-budget-type => <&plus>[0..1]
              Organization.extension:as-ext-organization-authorization-deadline => <&plus>[0..1]
-             Organization.identifier => [None..None]
-             Organization.identifier:idNatSt => [0..1]
-             Organization.identifier:idNatSt.use => [None..None]
-             Organization.identifier:idNatSt.type => [None..None]
-             Organization.identifier:idNatSt.system => [None..None]
-             Organization.identifier:idNatSt.value => [None..None]
-             Organization.identifier:sirene => [0..*]
-             Organization.identifier:sirene.type.coding.system => [None..None]
-             Organization.identifier:sirene.type.coding.code => [None..None]
-             Organization.identifier:sirene.system => [None..None]
-             Organization.identifier:finess => [0..*]
-             Organization.identifier:finess.type.coding.system => [None..None]
-             Organization.identifier:finess.type.coding.code => [None..None]
-             Organization.identifier:finess.system => [None..None]
-             Organization.identifier:adeliRang => [0..*]
-             Organization.identifier:adeliRang.type => [None..None]
-             Organization.identifier:adeliRang.system => [None..None]
-             Organization.identifier:rppsRang => [0..*]
-             Organization.identifier:rppsRang.type => [None..None]
-             Organization.identifier:rppsRang.system => [None..None]
+             Organization.identifier:idNatSt => [None..None]
              Organization.active => [None..None]
              Organization.type => [None..None]
              Organization.type:organizationType => [None..None]
@@ -474,16 +453,7 @@ package IG #DDDDDD{
              Practitioner.extension:as-ext-digital-certificate => <&plus>[0..*]
              Practitioner.identifier => [None..None]
              Practitioner.identifier.type => [None..None]
-             Practitioner.identifier:idNatPs => [0..1]
-             Practitioner.identifier:idNatPs.type => [None..None]
-             Practitioner.identifier:idNatPs.system => [None..None]
-             Practitioner.identifier:idNatPs.value => [None..None]
-             Practitioner.identifier:rpps => [0..*]
-             Practitioner.identifier:rpps.type => [None..None]
-             Practitioner.identifier:rpps.system => [None..None]
-             Practitioner.identifier:adeli => [0..*]
-             Practitioner.identifier:adeli.type => [None..None]
-             Practitioner.identifier:adeli.system => [None..None]
+             Practitioner.identifier:idNatPs => [None..None]
              Practitioner.active => [None..None]
              Practitioner.name => [None..None]
              Practitioner.name.family => [None..None]
@@ -496,6 +466,7 @@ package IG #DDDDDD{
              Practitioner.address => [None..None]
              Practitioner.qualification => [None..None]
              Practitioner.qualification:degree => [0..*]
+             Practitioner.qualification:degree.extension => [None..None]
              Practitioner.qualification:degree.extension:as-ext-education-level => <&plus>[0..*]
              Practitioner.qualification:degree.code.coding => [None..None]
              Practitioner.qualification:degree.code.coding:degreeType => [0..1]
@@ -506,40 +477,13 @@ package IG #DDDDDD{
              Practitioner.qualification:degree.issuer => [None..None]
              Practitioner.qualification:exercicePro => [0..1]
              Practitioner.qualification:exercicePro.code.coding => [None..None]
-             Practitioner.qualification:exercicePro.code.coding:degreeR36 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR47 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR48 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR49 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR50 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR51 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR52 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR53 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR54 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR55 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR56 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR57 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR58 => [None..0]
-             Practitioner.qualification:exercicePro.code.coding:degreeR226 => [None..0]
              Practitioner.qualification:exercicePro.code.coding:categorieProfession => [0..1]
              Practitioner.qualification:exercicePro.code.coding:profession => [0..1]
              Practitioner.qualification:exercicePro.period => [None..None]
              Practitioner.qualification:exercicePro.period.start => [None..None]
              Practitioner.qualification:exercicePro.period.end => [None..None]
              Practitioner.qualification:savoirFaire => [0..*]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR36 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR47 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR48 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR49 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR50 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR51 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR52 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR53 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR54 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR55 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR56 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR57 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR58 => [None..0]
-             Practitioner.qualification:savoirFaire.code.coding:degreeR226 => [None..0]
+             Practitioner.qualification:savoirFaire.code.coding => [None..None]
              Practitioner.qualification:savoirFaire.code.coding:typeSavoirFaire => [0..1]
              Practitioner.qualification:savoirFaire.code.coding:savoirFaire => [0..1]
              Practitioner.communication => [None..None]
@@ -997,17 +941,17 @@ package IG #DDDDDD{
 
      AsDataTraceExtension -[#black,dotted,thickness=2]-> AsVsTypeSystemeInformationVS
 
-        class SourceInformationInstallationValueSet  
+        class VS_TRE_R301_SourceInformationInstallation  
 
-     AsHealthcareServiceAuthorizationExtension -[#black,dotted,thickness=2]-> SourceInformationInstallationValueSet
+     AsHealthcareServiceAuthorizationExtension -[#black,dotted,thickness=2]-> VS_TRE_R301_SourceInformationInstallation
 
-        class TypeFermetureValueSet  
+        class VS_TRE_R286_TypeFermeture  
 
-     AsOrganizationClosingTypeExtension -[#black,dotted,thickness=2]-> TypeFermetureValueSet
+     AsOrganizationClosingTypeExtension -[#black,dotted,thickness=2]-> VS_TRE_R286_TypeFermeture
 
-        class ModeFixationTarifaireValueSet  
+        class VS_TRE_R74_ModeFixationTarifaire  
 
-     AsOrganizationPricingModelExtension -[#black,dotted,thickness=2]-> ModeFixationTarifaireValueSet
+     AsOrganizationPricingModelExtension -[#black,dotted,thickness=2]-> VS_TRE_R74_ModeFixationTarifaire
 
         class AsVsOrganizationTypes  
 
@@ -1016,9 +960,9 @@ package IG #DDDDDD{
 
 package "Ressources de base" #palegreen {
 
- class "http://interopsante.org/fhir/StructureDefinition/FrAddress" as  class0d73821dac3cf431b6498dd18f9e7245 
+ class "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address" as  class02bd19ba761f85d7bc96fe05a09e62dc 
 
-    class0d73821dac3cf431b6498dd18f9e7245 --> AsAddressExtendedProfile
+    class02bd19ba761f85d7bc96fe05a09e62dc --> AsAddressExtendedProfile
 
  class "CodeableConcept" as  class3521d6f1ff87d9b962b1c77766470bb9 
 
@@ -1088,25 +1032,25 @@ package "Ressources de base" #palegreen {
 
     classccfbac0a7f2dd501f3a20274066b28a3 --> AsHealthcareServiceSocialEquipmentProfile
 
- class "Location" as  classce5bf551379459c1c61d2a204061c455 
+ class "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-location" as  class505b865d93b3b02ed3aff95e782d498a 
 
-    classce5bf551379459c1c61d2a204061c455 --> AsLocationProfile
+    class505b865d93b3b02ed3aff95e782d498a --> AsLocationProfile
 
- class "http://interopsante.org/fhir/StructureDefinition/FrContactPoint" as  classd6e43a686e165adc1a14fca6c277f3a6 
+ class "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point" as  classf60483b0623e1893e0fa6d23ce4ea871 
 
-    classd6e43a686e165adc1a14fca6c277f3a6 --> AsMailboxMSSProfile
+    classf60483b0623e1893e0fa6d23ce4ea871 --> AsMailboxMSSProfile
 
- class "http://interopsante.org/fhir/StructureDefinition/FrOrganization" as  class8851530b55b5391f2e88430de6209c3c 
+ class "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization" as  class7273115ddeceb35c4c7044f07f832f67 
 
-    class8851530b55b5391f2e88430de6209c3c --> AsOrganizationProfile
+    class7273115ddeceb35c4c7044f07f832f67 --> AsOrganizationProfile
 
  class "Person" as  class40bed7cf9b3d4bb3a3d7a7e3eb18c5eb 
 
     class40bed7cf9b3d4bb3a3d7a7e3eb18c5eb --> AsPersonProfile
 
- class "http://interopsante.org/fhir/StructureDefinition/FrPractitioner" as  class9c7338635efde0683609aa872d6f0df2 
+ class "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner" as  class722d091912544e694771fe1d2c6739cb 
 
-    class9c7338635efde0683609aa872d6f0df2 --> AsPractitionerProfile
+    class722d091912544e694771fe1d2c6739cb --> AsPractitionerProfile
 
  class "PractitionerRole" as  classa6482460b0b027d14fe848816788acb6 
 

@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "8a32b878-1932-45b8-b97b-79dfe5717c5b-158",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/8a32b878-1932-45b8-b97b-79dfe5717c5b-158",
+  "id" : "c5021462-6a48-4834-a3a9-246c59056a38-176",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/c5021462-6a48-4834-a3a9-246c59056a38-176",
   "name" : "UnionAsOrganizationProfileAndAsOrganizationProfile",
   "title" : "Union of AS Organization Profile And AS Organization Profile",
   "status" : "active",
-  "date" : "2024-04-03T13:36:41+00:00",
+  "date" : "2024-04-03T14:00:11+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -572,8 +572,8 @@
     },
     {
       "path" : "Organization.extension",
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "short" : "left: Additional content defined by implementations; right: Extension",
+      "definition" : "left: May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.; right: An Extension",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
       "alias" : ["extensions",
       "user content"],
@@ -721,12 +721,18 @@
       }]
     },
     {
+      "id" : "Organization.identifier.id",
       "path" : "Organization.identifier.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
       "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
       "min" : 0,
       "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
       "type" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
@@ -734,16 +740,30 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
-      "mustSupport" : false,
-      "isModifier" : false,
-      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
       }]
     },
     {
+      "id" : "Organization.identifier.extension",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+        "valueCode" : "normative"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+        "valueCode" : "4.0.0"
+      }],
       "path" : "Organization.identifier.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
       "short" : "Additional content defined by implementations",
       "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -751,9 +771,15 @@
       "user content"],
       "min" : 0,
       "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
       "type" : [{
         "code" : "Extension"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/4.0/StructureDefinition/extension-ElementDefinition.constraint.xpath",
@@ -776,9 +802,6 @@
         "expression" : "extension.exists() != value.exists()",
         "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
       }],
-      "mustSupport" : false,
-      "isModifier" : false,
-      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -789,6 +812,7 @@
       }]
     },
     {
+      "id" : "Organization.identifier.use",
       "path" : "Organization.identifier.use",
       "short" : "usual | official | temp | secondary | old (If known)",
       "definition" : "The purpose of this identifier.",
@@ -796,9 +820,15 @@
       "requirements" : "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
       "min" : 0,
       "max" : "1",
+      "base" : {
+        "path" : "Identifier.use",
+        "min" : 0,
+        "max" : "1"
+      },
       "type" : [{
         "code" : "code"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/4.0/StructureDefinition/extension-ElementDefinition.constraint.xpath",
@@ -810,10 +840,14 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : false,
       "isModifier" : true,
+      "isModifierReason" : "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one.",
       "isSummary" : true,
       "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "IdentifierUse"
+        }],
         "strength" : "required",
         "description" : "Identifies the purpose for this identifier, if known .",
         "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-use"
@@ -832,6 +866,7 @@
       }]
     },
     {
+      "id" : "Organization.identifier.type",
       "path" : "Organization.identifier.type",
       "short" : "Description of identifier",
       "definition" : "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
@@ -839,9 +874,15 @@
       "requirements" : "Allows users to make use of identifiers when the identifier system is not known.",
       "min" : 1,
       "max" : "1",
+      "base" : {
+        "path" : "Identifier.type",
+        "min" : 0,
+        "max" : "1"
+      },
       "type" : [{
         "code" : "CodeableConcept"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/4.0/StructureDefinition/extension-ElementDefinition.constraint.xpath",
@@ -853,10 +894,12 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : false,
-      "isModifier" : false,
       "isSummary" : true,
       "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "IdentifierType"
+        }],
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
         "valueSet" : "http://interopsante.org/fhir/ValueSet/fr-organization-identifier-type"
@@ -887,6 +930,7 @@
       }]
     },
     {
+      "id" : "Organization.identifier.system",
       "path" : "Organization.identifier.system",
       "short" : "The namespace for the identifier value",
       "definition" : "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
@@ -894,6 +938,11 @@
       "requirements" : "There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers.",
       "min" : 1,
       "max" : "1",
+      "base" : {
+        "path" : "Identifier.system",
+        "min" : 0,
+        "max" : "1"
+      },
       "type" : [{
         "code" : "uri"
       }],
@@ -901,6 +950,7 @@
         "label" : "General",
         "valueUri" : "http://www.acme.com/identifiers/patient"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/4.0/StructureDefinition/extension-ElementDefinition.constraint.xpath",
@@ -912,8 +962,6 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : false,
-      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
         "identity" : "rim",
@@ -933,12 +981,18 @@
       }]
     },
     {
+      "id" : "Organization.identifier.value",
       "path" : "Organization.identifier.value",
       "short" : "The value that is unique",
       "definition" : "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
-      "comment" : "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension]. Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.",
+      "comment" : "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.",
       "min" : 1,
       "max" : "1",
+      "base" : {
+        "path" : "Identifier.value",
+        "min" : 0,
+        "max" : "1"
+      },
       "type" : [{
         "code" : "string"
       }],
@@ -946,6 +1000,7 @@
         "label" : "General",
         "valueString" : "123456"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/4.0/StructureDefinition/extension-ElementDefinition.constraint.xpath",
@@ -957,8 +1012,6 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : false,
-      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
         "identity" : "rim",
@@ -978,15 +1031,22 @@
       }]
     },
     {
+      "id" : "Organization.identifier.period",
       "path" : "Organization.identifier.period",
       "short" : "Time period when id is/was valid for use",
       "definition" : "Time period during which identifier is/was valid for use.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration].",
+      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "1",
+      "base" : {
+        "path" : "Identifier.period",
+        "min" : 0,
+        "max" : "1"
+      },
       "type" : [{
         "code" : "Period"
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/4.0/StructureDefinition/extension-ElementDefinition.constraint.xpath",
@@ -1009,8 +1069,6 @@
         "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
         "source" : "http://hl7.org/fhir/StructureDefinition/Practitioner"
       }],
-      "mustSupport" : false,
-      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
         "identity" : "rim",
@@ -1038,16 +1096,23 @@
       }]
     },
     {
+      "id" : "Organization.identifier.assigner",
       "path" : "Organization.identifier.assigner",
       "short" : "Organization that issued id (may be just text)",
       "definition" : "Organization that issued/manages the identifier.",
       "comment" : "The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.",
       "min" : 0,
       "max" : "1",
+      "base" : {
+        "path" : "Identifier.assigner",
+        "min" : 0,
+        "max" : "1"
+      },
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization"]
       }],
+      "condition" : ["ele-1"],
       "constraint" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/4.0/StructureDefinition/extension-ElementDefinition.constraint.xpath",
@@ -1070,8 +1135,6 @@
         "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
         "source" : "http://hl7.org/fhir/StructureDefinition/Practitioner"
       }],
-      "mustSupport" : false,
-      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
         "identity" : "rim",
@@ -1290,7 +1353,8 @@
       "max" : "*",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrContactPoint"]
+        "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrContactPoint",
+        "#sd-fr-contact-point-fr-core-contact-point"]
       }],
       "constraint" : [{
         "extension" : [{
@@ -1597,7 +1661,7 @@
       "path" : "Organization.telecom.period",
       "short" : "Time period when the contact point was/is in use",
       "definition" : "Time period when the contact point was/is in use.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration].",
+      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -1722,7 +1786,8 @@
         }],
         "code" : "Reference",
         "targetProfile" : ["http://interopsante.org/fhir/StructureDefinition/FrOrganization",
-        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"]
+        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization",
+        "#sd-fr-organization-fr-core-organization"]
       }],
       "constraint" : [{
         "extension" : [{
@@ -1898,7 +1963,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "Aa resource (or, for logical models, the URI of the logical model).",
-        "valueSet" : "http://interopsante.org/fhir/ValueSet/fr-organization-type"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/c5021462-6a48-4834-a3a9-246c59056a38-32"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -2247,7 +2312,8 @@
       "max" : "*",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrContactPoint"]
+        "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrContactPoint",
+        "#sd-fr-contact-point-fr-core-contact-point"]
       }],
       "constraint" : [{
         "extension" : [{
@@ -2309,7 +2375,8 @@
       "max" : "1",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrAddress"]
+        "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrAddress",
+        "#sd-fr-address-fr-core-address"]
       }],
       "constraint" : [{
         "extension" : [{

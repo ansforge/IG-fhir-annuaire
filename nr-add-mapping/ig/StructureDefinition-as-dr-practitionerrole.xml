@@ -20,10 +20,10 @@
   <name value="AsDrPractitionerRoleProfile"/>
   <title value="AS Donnée Restreinte PractitionerRole Profile"/>
   <status value="active"/>
-  <date value="2024-04-03T13:36:19+00:00"/>
-  <publisher value="ANS"/>
+  <date value="2024-04-03T13:59:51+00:00"/>
+  <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
-    <name value="ANS"/>
+    <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
     <telecom>
       <system value="url"/>
       <value value="https://esante.gouv.fr"/>
@@ -2921,7 +2921,7 @@
       </base>
       <type>
         <code value="ContactPoint"/>
-        <profile value="http://interopsante.org/fhir/StructureDefinition/FrContactPoint"/>
+        <profile value="https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -2982,6 +2982,14 @@
       </type>
       <condition value="ele-1"/>
       <constraint>
+        <key value="cpt-2"/>
+        <severity value="error"/>
+        <human value="A system is required if a value is provided."/>
+        <expression value="value.empty() or system.exists()"/>
+        <xpath value="not(exists(f:value)) or exists(f:system)"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/ContactPoint"/>
+      </constraint>
+      <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
         <human value="All FHIR elements must have a @value or children"/>
@@ -2989,14 +2997,7 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="cpt-2"/>
-        <severity value="error"/>
-        <human value="A system is required if a value is provided."/>
-        <expression value="value.empty() or system.exists()"/>
-        <xpath value="not(exists(f:value)) or exists(f:system)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
-      </constraint>
+      <isModifier value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>

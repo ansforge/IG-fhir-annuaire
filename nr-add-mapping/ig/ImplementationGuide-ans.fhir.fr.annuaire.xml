@@ -11,10 +11,10 @@
   <name value="AnnuaireSante"/>
   <title value="Annuaire Santé"/>
   <status value="active"/>
-  <date value="2024-04-03T13:36:19+00:00"/>
-  <publisher value="ANS"/>
+  <date value="2024-04-03T13:59:51+00:00"/>
+  <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
-    <name value="ANS"/>
+    <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
     <telecom>
       <system value="url"/>
       <value value="https://esante.gouv.fr"/>
@@ -52,9 +52,9 @@
     <version value="1.0.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
-    <uri value="http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core"/>
+    <uri value="https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core"/>
     <packageId value="hl7.fhir.fr.core"/>
-    <version value="1.1.0"/>
+    <version value="2.0.0"/>
   </dependsOn>
   <dependsOn id="ans_fr_nos">
     <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
@@ -1058,17 +1058,6 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/as-vs-mode-fixation-tarifaire"/>
-      </reference>
-      <name value="AS ValueSet Mode Fixation Tarifaire"/>
-      <description value="ValueSet contenant tous les codes de la TRE R74 indiquant les modes de fixation tarifaire"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
         <reference value="ValueSet/as-vs-organization-types"/>
       </reference>
       <name value="AS ValueSet OrganizationTypes"/>
@@ -1080,32 +1069,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/as-vs-source-information-installation"/>
-      </reference>
-      <name value="AS ValueSet Source Information Installation"/>
-      <description value="ValueSet contenant tous les codes de la TRE R301 indiquant les sources d'information d'installation"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
         <reference value="ValueSet/as-vs-type-systeme-information"/>
       </reference>
       <name value="AS ValueSet type de système d'information"/>
       <description value="ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/as-vs-type-fermeture"/>
-      </reference>
-      <name value="AS ValueSet TypeFermeture"/>
-      <description value="ValueSet contenant tous les codes de la TRE R286 indiquant les types de fermeture"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1195,6 +1162,39 @@
       <name value="AsServerCapabilityStatement"/>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VS-TRE-R286-TypeFermeture"/>
+      </reference>
+      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"/>
+      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VS-TRE-R301-SourceInformationInstallation"/>
+      </reference>
+      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"/>
+      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VS-TRE-R74-ModeFixationTarifaire"/>
+      </reference>
+      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"/>
+      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"/>
+      <exampleBoolean value="false"/>
+    </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
         <valueUrl value="toc.html"/>
@@ -1220,10 +1220,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="mapping.html"/>
+          <valueUrl value="downloads.html"/>
         </extension>
-        <nameUrl value="mapping.html"/>
-        <title value="Mappings MOS"/>
+        <nameUrl value="downloads.html"/>
+        <title value="Téléchargement du guide"/>
         <generation value="markdown"/>
       </page>
     </page>

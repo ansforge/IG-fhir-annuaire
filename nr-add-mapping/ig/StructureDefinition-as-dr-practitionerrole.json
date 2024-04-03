@@ -10,10 +10,10 @@
   "name" : "AsDrPractitionerRoleProfile",
   "title" : "AS Donnée Restreinte PractitionerRole Profile",
   "status" : "active",
-  "date" : "2024-04-03T13:36:19+00:00",
-  "publisher" : "ANS",
+  "date" : "2024-04-03T13:59:51+00:00",
+  "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
-    "name" : "ANS",
+    "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
     "telecom" : [{
       "system" : "url",
       "value" : "https://esante.gouv.fr"
@@ -3000,7 +3000,7 @@
       },
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrContactPoint"]
+        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point"]
       }],
       "condition" : ["ele-1"],
       "constraint" : [{
@@ -3062,21 +3062,22 @@
       }],
       "condition" : ["ele-1"],
       "constraint" : [{
+        "key" : "cpt-2",
+        "severity" : "error",
+        "human" : "A system is required if a value is provided.",
+        "expression" : "value.empty() or system.exists()",
+        "xpath" : "not(exists(f:value)) or exists(f:system)",
+        "source" : "http://hl7.org/fhir/StructureDefinition/ContactPoint"
+      },
+      {
         "key" : "ele-1",
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "cpt-2",
-        "severity" : "error",
-        "human" : "A system is required if a value is provided.",
-        "expression" : "value.empty() or system.exists()",
-        "xpath" : "not(exists(f:value)) or exists(f:system)",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Practitioner"
       }],
+      "isModifier" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"

@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "8a32b878-1932-45b8-b97b-79dfe5717c5b-30",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/8a32b878-1932-45b8-b97b-79dfe5717c5b-30",
+  "id" : "c5021462-6a48-4834-a3a9-246c59056a38-45",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/c5021462-6a48-4834-a3a9-246c59056a38-45",
   "name" : "IntersectionAsDpOrganizationProfileAndAsDpOrganizationProfile",
   "title" : "Intersection of AS Donnée Publique Organization Profile And AS Donnée Publique Organization Profile",
   "status" : "active",
-  "date" : "2024-04-03T13:36:41+00:00",
+  "date" : "2024-04-03T14:00:11+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -584,8 +584,8 @@
     },
     {
       "path" : "Organization.extension",
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "short" : "left: Additional content defined by implementations; right: Extension",
+      "definition" : "left: May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.; right: An Extension",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
       "alias" : ["extensions",
       "user content"],
@@ -871,7 +871,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-        "valueSet" : "http://interopsante.org/fhir/ValueSet/fr-organization-identifier-type"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/c5021462-6a48-4834-a3a9-246c59056a38-48"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -1307,7 +1307,7 @@
       "type" : [{
         "code" : "ContactPoint",
         "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrContactPoint",
-        "#sd-fr-contact-point-fr-contact-point"]
+        "#sd-fr-contact-point-fr-core-contact-point"]
       }],
       "constraint" : [{
         "extension" : [{
@@ -1614,7 +1614,7 @@
       "path" : "Organization.telecom.period",
       "short" : "Time period when the contact point was/is in use",
       "definition" : "Time period when the contact point was/is in use.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration].",
+      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -1740,7 +1740,8 @@
         }],
         "code" : "Reference",
         "targetProfile" : ["http://interopsante.org/fhir/StructureDefinition/FrOrganization",
-        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"]
+        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization",
+        "#sd-fr-organization-fr-core-organization"]
       }],
       "constraint" : [{
         "extension" : [{
@@ -1916,7 +1917,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "Aa resource (or, for logical models, the URI of the logical model).",
-        "valueSet" : "http://interopsante.org/fhir/ValueSet/fr-organization-type"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/c5021462-6a48-4834-a3a9-246c59056a38-33"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -2266,7 +2267,7 @@
       "type" : [{
         "code" : "ContactPoint",
         "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrContactPoint",
-        "#sd-fr-contact-point-fr-contact-point"]
+        "#sd-fr-contact-point-fr-core-contact-point"]
       }],
       "constraint" : [{
         "extension" : [{
@@ -2329,7 +2330,7 @@
       "type" : [{
         "code" : "Address",
         "profile" : ["http://interopsante.org/fhir/StructureDefinition/FrAddress",
-        "#sd-fr-address-fr-address"]
+        "#sd-fr-address-fr-core-address"]
       }],
       "constraint" : [{
         "extension" : [{
