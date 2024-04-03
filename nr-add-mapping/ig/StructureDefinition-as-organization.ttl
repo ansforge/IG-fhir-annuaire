@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsOrganizationProfile"] ; # 
   fhir:title [ fhir:v "AS Organization Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-04-03T14:35:17+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-04-03T14:54:13+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -39,9 +39,13 @@
   ] ) ; # 
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:mapping ( [
-     fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+     fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
      fhir:uri [ fhir:v "EntiteJuridique"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "AsOrganization to MOS" ]
+     fhir:name [ fhir:v "AsOrganization to MOS - EJ" ]
+  ] [
+     fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+     fhir:uri [ fhir:v "EntiteGeographique"^^xsd:anyURI ] ;
+     fhir:name [ fhir:v "AsOrganization to MOS - EG" ]
   ] [
      fhir:identity [ fhir:v "v2" ] ;
      fhir:uri [ fhir:v "http://hl7.org/v2"^^xsd:anyURI ] ;
@@ -163,10 +167,10 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "Organization" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "EntiteJuridique" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "EntiteGeographique" ]
        ] )
      ] [
@@ -1173,8 +1177,11 @@
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "./low" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "dateCreation" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "dateOuverture" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.extension:usePeriod.value[x].end" ] ;
@@ -1216,7 +1223,10 @@
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "./high" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "dateFermeture" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "dateFermeture" ]
        ] )
      ] [
@@ -1308,7 +1318,7 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "numeroLicenceOfficine" ]
        ] )
      ] [
@@ -1354,7 +1364,11 @@
        ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "modeFixationTarifaire" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Organization.extension:as-ext-organization-closing-type" ] ;
        fhir:path [ fhir:v "Organization.extension" ] ;
@@ -1400,7 +1414,10 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "typeFermeture" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "typeFermeture" ]
        ] )
      ] [
@@ -1446,7 +1463,11 @@
        ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "natureEtablissement" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Organization.extension:as-ext-organization-authorization-deadline" ] ;
        fhir:path [ fhir:v "Organization.extension" ] ;
@@ -1633,7 +1654,10 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Identifiers" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "idNat_struct" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "idNat_struct" ]
        ] )
      ] [
@@ -2034,7 +2058,10 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Identifiers" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "numSiren" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "numSiren" ]
        ] )
      ] [
@@ -2869,7 +2896,10 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Identifiers" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "numFiness" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "numFiness" ]
        ] )
      ] [
@@ -4499,6 +4529,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date." ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "actif" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.type" ] ;
@@ -6264,8 +6297,11 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "codeAPEN" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "codeAPET" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.type:activiteINSEE.id" ] ;
@@ -6665,7 +6701,7 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "statutJuridique" ]
        ] )
      ] [
@@ -7065,6 +7101,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "n/a" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "codeAPET" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.type:sphParticipation.id" ] ;
@@ -7859,8 +7898,11 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v ".PreferredName/Name" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "raisonSociale" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "denominationEG" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.alias" ] ;
@@ -7897,8 +7939,11 @@
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v ".name" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "raisonSocialeLongue" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "denominationEGLongue" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.telecom" ] ;
@@ -7975,7 +8020,10 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "ContactPoint" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "telecommunication" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "telecommunication" ]
        ] )
      ] [
@@ -8385,7 +8433,10 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "ContactPoint" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "boiteLettreMSS" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "boiteLettreMSS" ]
        ] )
      ] [
@@ -8446,8 +8497,11 @@
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "Address" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "adresseEJ" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "adresseEG" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.partOf" ] ;
@@ -9100,10 +9154,10 @@
        fhir:id [ fhir:v "Organization" ] ;
        fhir:path [ fhir:v "Organization" ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "EntiteJuridique" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "EntiteGeographique" ]
        ] )
      ] [
@@ -9129,15 +9183,21 @@
        fhir:path [ fhir:v "Organization.extension.value[x].start" ] ;
        fhir:short [ fhir:v "Date d'ouverture de la structure." ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "dateCreation" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "dateOuverture" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.extension:usePeriod.value[x].end" ] ;
        fhir:path [ fhir:v "Organization.extension.value[x].end" ] ;
        fhir:short [ fhir:v "Date de fermeture de la structure." ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "dateFermeture" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "dateFermeture" ]
        ] )
      ] [
@@ -9171,7 +9231,7 @@
        ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "numeroLicenceOfficine" ]
        ] )
      ] [
@@ -9187,7 +9247,11 @@
            fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model>
          ] )
        ] ) ;
-       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ]
+       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "modeFixationTarifaire" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Organization.extension:as-ext-organization-closing-type" ] ;
        fhir:path [ fhir:v "Organization.extension" ] ;
@@ -9203,7 +9267,10 @@
        ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "typeFermeture" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "typeFermeture" ]
        ] )
      ] [
@@ -9219,7 +9286,11 @@
            fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type>
          ] )
        ] ) ;
-       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ]
+       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "natureEtablissement" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Organization.extension:as-ext-organization-authorization-deadline" ] ;
        fhir:path [ fhir:v "Organization.extension" ] ;
@@ -9240,10 +9311,10 @@
        fhir:sliceName [ fhir:v "idNatSt" ] ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "idNat_struct" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "idNat_struct" ]
        ] )
      ] [
@@ -9251,10 +9322,10 @@
        fhir:path [ fhir:v "Organization.identifier" ] ;
        fhir:sliceName [ fhir:v "sirene" ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "numSiren" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "numSiren" ]
        ] )
      ] [
@@ -9262,17 +9333,21 @@
        fhir:path [ fhir:v "Organization.identifier" ] ;
        fhir:sliceName [ fhir:v "finess" ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "numFiness" ]
        ] [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "numFiness" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.active" ] ;
        fhir:path [ fhir:v "Organization.active" ] ;
        fhir:short [ fhir:v "La ressource est-elle active? (active | inactive). true par défaut; false pour les structures supprimées." ] ;
-       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ]
+       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "actif" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Organization.type" ] ;
        fhir:path [ fhir:v "Organization.type" ] ;
@@ -9318,8 +9393,11 @@
          ]
        ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "codeAPEN" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "codeAPET" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.type:activiteINSEE.extension" ] ;
@@ -9357,7 +9435,7 @@
          ]
        ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "statutJuridique" ]
        ] )
      ] [
@@ -9394,7 +9472,11 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "codeAPET" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Organization.type:sphParticipation.extension" ] ;
        fhir:path [ fhir:v "Organization.type.extension" ] ;
@@ -9454,8 +9536,11 @@
        fhir:short [ fhir:v "Raison sociale de la structure (Synonyme : raisonSociale, dénomination)." ] ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "raisonSociale" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "denominationEG" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.alias" ] ;
@@ -9463,8 +9548,11 @@
        fhir:short [ fhir:v "Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)." ] ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "raisonSocialeLongue" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "denominationEGLongue" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.telecom" ] ;
@@ -9479,7 +9567,10 @@
        fhir:short [ fhir:v "Différentes instances pour les téléphones, la télécopie et l’adresse mail." ] ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "telecommunication" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "telecommunication" ]
        ] )
      ] [
@@ -9501,7 +9592,10 @@
          ] )
        ] ) ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
+         fhir:map [ fhir:v "boiteLettreMSS" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
          fhir:map [ fhir:v "boiteLettreMSS" ]
        ] )
      ] [
@@ -9517,8 +9611,11 @@
        ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "as-organization-to-mos" ] ;
+         fhir:identity [ fhir:v "as-organization-to-mos-ej" ] ;
          fhir:map [ fhir:v "adresseEJ" ]
+       ] [
+         fhir:identity [ fhir:v "as-organization-to-mos-eg" ] ;
+         fhir:map [ fhir:v "adresseEG" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.partOf" ] ;

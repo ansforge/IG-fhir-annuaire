@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "a556f2c8-7deb-4be9-9bcf-b9f495abfea4-44",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/a556f2c8-7deb-4be9-9bcf-b9f495abfea4-44",
+  "id" : "8eaa22a3-1972-463d-ae41-ac176ea02046-44",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/8eaa22a3-1972-463d-ae41-ac176ea02046-44",
   "name" : "UnionAsDpOrganizationProfileAndAsDpOrganizationProfile",
   "title" : "Union of AS Donnée Publique Organization Profile And AS Donnée Publique Organization Profile",
   "status" : "active",
-  "date" : "2024-04-03T14:35:37+00:00",
+  "date" : "2024-04-03T14:54:33+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -114,11 +114,11 @@
         "map" : "Organization"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "EntiteJuridique"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-eg",
         "map" : "EntiteGeographique"
       }]
     },
@@ -867,7 +867,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/a556f2c8-7deb-4be9-9bcf-b9f495abfea4-47"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/8eaa22a3-1972-463d-ae41-ac176ea02046-47"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -1147,6 +1147,10 @@
       {
         "identity" : "servd",
         "map" : "./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date."
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "actif"
       }]
     },
     {
@@ -1254,8 +1258,12 @@
         "map" : ".PreferredName/Name"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "raisonSociale"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEG"
       }]
     },
     {
@@ -1292,8 +1300,12 @@
         "map" : ".name"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "raisonSocialeLongue"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEGLongue"
       }]
     },
     {
@@ -1374,7 +1386,11 @@
         "map" : "./ContactPoints"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "telecommunication"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
         "map" : "telecommunication"
       }]
     },
@@ -1728,8 +1744,12 @@
         "map" : "Address"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "adresseEJ"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "adresseEG"
       }]
     },
     {
@@ -1924,7 +1944,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "Aa resource (or, for logical models, the URI of the logical model).",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/a556f2c8-7deb-4be9-9bcf-b9f495abfea4-32"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/8eaa22a3-1972-463d-ae41-ac176ea02046-32"
       },
       "mapping" : [{
         "identity" : "rim",

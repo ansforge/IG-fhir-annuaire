@@ -10,7 +10,7 @@
   "name" : "AsDpOrganizationProfile",
   "title" : "AS Donnée Publique Organization Profile",
   "status" : "active",
-  "date" : "2024-04-03T14:35:17+00:00",
+  "date" : "2024-04-03T14:54:13+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -33,9 +33,14 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "as-organization-to-mos",
+    "identity" : "as-organization-to-mos-ej",
     "uri" : "EntiteJuridique",
-    "name" : "AsOrganization to MOS"
+    "name" : "AsOrganization to MOS - EJ"
+  },
+  {
+    "identity" : "as-organization-to-mos-eg",
+    "uri" : "EntiteGeographique",
+    "name" : "AsOrganization to MOS - EG"
   },
   {
     "identity" : "v2",
@@ -150,11 +155,11 @@
         "map" : "Organization"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "EntiteJuridique"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-eg",
         "map" : "EntiteGeographique"
       }]
     },
@@ -1095,8 +1100,12 @@
         "map" : "./low"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "dateCreation"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "dateOuverture"
       }]
     },
     {
@@ -1140,7 +1149,11 @@
         "map" : "./high"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "dateFermeture"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
         "map" : "dateFermeture"
       }]
     },
@@ -1218,7 +1231,7 @@
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "numeroLicenceOfficine"
       }]
     },
@@ -1257,7 +1270,11 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "modeFixationTarifaire"
+      }]
     },
     {
       "id" : "Organization.extension:as-ext-organization-closing-type",
@@ -1296,7 +1313,11 @@
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "typeFermeture"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
         "map" : "typeFermeture"
       }]
     },
@@ -1335,7 +1356,11 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "natureEtablissement"
+      }]
     },
     {
       "id" : "Organization.extension:as-ext-organization-authorization-deadline",
@@ -1922,7 +1947,11 @@
         "map" : "./Identifiers"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "idNat_struct"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
         "map" : "idNat_struct"
       }]
     },
@@ -2311,7 +2340,11 @@
         "map" : "./Identifiers"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "numSiren"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
         "map" : "numSiren"
       }]
     },
@@ -3131,7 +3164,11 @@
         "map" : "./Identifiers"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "numFiness"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
         "map" : "numFiness"
       }]
     },
@@ -5179,6 +5216,10 @@
       {
         "identity" : "servd",
         "map" : "./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date."
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "actif"
       }]
     },
     {
@@ -6909,8 +6950,12 @@
         "map" : "n/a"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "codeAPEN"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "codeAPET"
       }]
     },
     {
@@ -7298,7 +7343,7 @@
         "map" : "n/a"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "statutJuridique"
       }]
     },
@@ -7685,6 +7730,10 @@
       {
         "identity" : "servd",
         "map" : "n/a"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "codeAPET"
       }]
     },
     {
@@ -8456,8 +8505,12 @@
         "map" : ".PreferredName/Name"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "raisonSociale"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEG"
       }]
     },
     {
@@ -8493,8 +8546,12 @@
         "map" : ".name"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "raisonSocialeLongue"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEGLongue"
       }]
     },
     {
@@ -8566,7 +8623,11 @@
         "map" : "ContactPoint"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "telecommunication"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
         "map" : "telecommunication"
       }]
     },
@@ -10922,8 +10983,12 @@
         "map" : "Address"
       },
       {
-        "identity" : "as-organization-to-mos",
+        "identity" : "as-organization-to-mos-ej",
         "map" : "adresseEJ"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "adresseEG"
       }]
     },
     {

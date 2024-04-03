@@ -61,7 +61,7 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
   <name value="AsOrganizationProfile"/>
   <title value="AS Organization Profile"/>
   <status value="active"/>
-  <date value="2024-04-03T14:35:17+00:00"/>
+  <date value="2024-04-03T14:54:13+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -84,9 +84,14 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
   <mapping>
-    <identity value="as-organization-to-mos"/>
+    <identity value="as-organization-to-mos-ej"/>
     <uri value="EntiteJuridique"/>
-    <name value="AsOrganization to MOS"/>
+    <name value="AsOrganization to MOS - EJ"/>
+  </mapping>
+  <mapping>
+    <identity value="as-organization-to-mos-eg"/>
+    <uri value="EntiteGeographique"/>
+    <name value="AsOrganization to MOS - EG"/>
   </mapping>
   <mapping>
     <identity value="v2"/>
@@ -198,11 +203,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="Organization"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="EntiteJuridique"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="EntiteGeographique"/>
       </mapping>
     </element>
@@ -1103,8 +1108,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="./low"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="dateCreation"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="dateOuverture"/>
       </mapping>
     </element>
     <element id="Organization.extension:usePeriod.value[x].end">
@@ -1147,7 +1156,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="./high"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="dateFermeture"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="dateFermeture"/>
       </mapping>
     </element>
@@ -1223,7 +1236,7 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="numeroLicenceOfficine"/>
       </mapping>
     </element>
@@ -1262,6 +1275,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="modeFixationTarifaire"/>
+      </mapping>
     </element>
     <element id="Organization.extension:as-ext-organization-closing-type">
       <path value="Organization.extension"/>
@@ -1299,7 +1316,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="typeFermeture"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="typeFermeture"/>
       </mapping>
     </element>
@@ -1338,6 +1359,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="natureEtablissement"/>
+      </mapping>
     </element>
     <element id="Organization.extension:as-ext-organization-authorization-deadline">
       <path value="Organization.extension"/>
@@ -1513,7 +1538,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="./Identifiers"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="idNat_struct"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="idNat_struct"/>
       </mapping>
     </element>
@@ -1890,7 +1919,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="./Identifiers"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="numSiren"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="numSiren"/>
       </mapping>
     </element>
@@ -2683,7 +2716,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="./Identifiers"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="numFiness"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="numFiness"/>
       </mapping>
     </element>
@@ -4220,6 +4257,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <mapping>
         <identity value="servd"/>
         <map value="./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date."/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="actif"/>
       </mapping>
     </element>
     <element id="Organization.type">
@@ -5892,8 +5933,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="n/a"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="codeAPEN"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="codeAPET"/>
       </mapping>
     </element>
     <element id="Organization.type:activiteINSEE.id">
@@ -6267,7 +6312,7 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="n/a"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="statutJuridique"/>
       </mapping>
     </element>
@@ -6640,6 +6685,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <mapping>
         <identity value="servd"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="codeAPET"/>
       </mapping>
     </element>
     <element id="Organization.type:sphParticipation.id">
@@ -7382,8 +7431,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value=".PreferredName/Name"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="raisonSociale"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="denominationEG"/>
       </mapping>
     </element>
     <element id="Organization.alias">
@@ -7418,8 +7471,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value=".name"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="raisonSocialeLongue"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="denominationEGLongue"/>
       </mapping>
     </element>
     <element id="Organization.telecom">
@@ -7490,7 +7547,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="ContactPoint"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="telecommunication"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="telecommunication"/>
       </mapping>
     </element>
@@ -7867,7 +7928,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="ContactPoint"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="boiteLettreMSS"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="boiteLettreMSS"/>
       </mapping>
     </element>
@@ -7924,8 +7989,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <map value="Address"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="adresseEJ"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="adresseEG"/>
       </mapping>
     </element>
     <element id="Organization.partOf">
@@ -8515,11 +8584,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
     <element id="Organization">
       <path value="Organization"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="EntiteJuridique"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="EntiteGeographique"/>
       </mapping>
     </element>
@@ -8542,15 +8611,23 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <path value="Organization.extension.value[x].start"/>
       <short value="Date d'ouverture de la structure."/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="dateCreation"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="dateOuverture"/>
       </mapping>
     </element>
     <element id="Organization.extension:usePeriod.value[x].end">
       <path value="Organization.extension.value[x].end"/>
       <short value="Date de fermeture de la structure."/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="dateFermeture"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="dateFermeture"/>
       </mapping>
     </element>
@@ -8578,7 +8655,7 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       </type>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="numeroLicenceOfficine"/>
       </mapping>
     </element>
@@ -8592,6 +8669,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model"/>
       </type>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="modeFixationTarifaire"/>
+      </mapping>
     </element>
     <element id="Organization.extension:as-ext-organization-closing-type">
       <path value="Organization.extension"/>
@@ -8604,7 +8685,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       </type>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="typeFermeture"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="typeFermeture"/>
       </mapping>
     </element>
@@ -8618,6 +8703,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type"/>
       </type>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="natureEtablissement"/>
+      </mapping>
     </element>
     <element id="Organization.extension:as-ext-organization-authorization-deadline">
       <path value="Organization.extension"/>
@@ -8635,11 +8724,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <sliceName value="idNatSt"/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="idNat_struct"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="idNat_struct"/>
       </mapping>
     </element>
@@ -8647,11 +8736,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <path value="Organization.identifier"/>
       <sliceName value="sirene"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="numSiren"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="numSiren"/>
       </mapping>
     </element>
@@ -8659,11 +8748,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <path value="Organization.identifier"/>
       <sliceName value="finess"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="numFiness"/>
       </mapping>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="numFiness"/>
       </mapping>
     </element>
@@ -8671,6 +8760,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <path value="Organization.active"/>
       <short value="La ressource est-elle active? (active | inactive). true par défaut; false pour les structures supprimées."/>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="actif"/>
+      </mapping>
     </element>
     <element id="Organization.type">
       <path value="Organization.type"/>
@@ -8710,8 +8803,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J99-InseeNAFrav2Niveau5-RASS/FHIR/JDV-J99-InseeNAFrav2Niveau5-RASS"/>
       </binding>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="codeAPEN"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="codeAPET"/>
       </mapping>
     </element>
     <element id="Organization.type:activiteINSEE.extension">
@@ -8743,7 +8840,7 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J100-FinessStatutJuridique-RASS/FHIR/JDV-J100-FinessStatutJuridique-RASS"/>
       </binding>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="statutJuridique"/>
       </mapping>
     </element>
@@ -8775,6 +8872,10 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J162-ESPIC-RASS/FHIR/JDV-J162-ESPIC-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="codeAPET"/>
+      </mapping>
     </element>
     <element id="Organization.type:sphParticipation.extension">
       <path value="Organization.type.extension"/>
@@ -8828,8 +8929,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <short value="Raison sociale de la structure (Synonyme : raisonSociale, dénomination)."/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="raisonSociale"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="denominationEG"/>
       </mapping>
     </element>
     <element id="Organization.alias">
@@ -8837,8 +8942,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <short value="Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="raisonSocialeLongue"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="denominationEGLongue"/>
       </mapping>
     </element>
     <element id="Organization.telecom">
@@ -8853,7 +8962,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       <short value="Différentes instances pour les téléphones, la télécopie et l’adresse mail."/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="telecommunication"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="telecommunication"/>
       </mapping>
     </element>
@@ -8872,7 +8985,11 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss"/>
       </type>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
+        <map value="boiteLettreMSS"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
         <map value="boiteLettreMSS"/>
       </mapping>
     </element>
@@ -8885,8 +9002,12 @@ Plus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN).
       </type>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="as-organization-to-mos"/>
+        <identity value="as-organization-to-mos-ej"/>
         <map value="adresseEJ"/>
+      </mapping>
+      <mapping>
+        <identity value="as-organization-to-mos-eg"/>
+        <map value="adresseEG"/>
       </mapping>
     </element>
     <element id="Organization.partOf">
