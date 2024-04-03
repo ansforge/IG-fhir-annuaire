@@ -115,11 +115,11 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 
 
 
-Mapping:  AsOrganizationToMOS
+Mapping:  AsOrganizationToMOSEJ
 Source:   AsOrganizationProfile
 Target:   "EntiteJuridique"
-Id:       as-organization-to-mos
-Title:    "AsOrganization to MOS"
+Id:       as-organization-to-mos-ej
+Title:    "AsOrganization to MOS - EJ"
 * -> "EntiteJuridique"
 * identifier[finess] -> "numFiness"
 * identifier[sirene] -> "numSiren"
@@ -135,7 +135,26 @@ Title:    "AsOrganization to MOS"
 * address -> "adresseEJ"
 * telecom -> "telecommunication"
 * telecom[mailbox-mss] -> "boiteLettreMSS"
+
+Mapping:  AsOrganizationToMOSEG
+Source:   AsOrganizationProfile
+Target:   "EntiteGeographique"
+Id:       as-organization-to-mos-eg
+Title:    "AsOrganization to MOS - EG"
 * -> "EntiteGeographique"
 * identifier[finess] -> "numFiness"
 * identifier[sirene] -> "numSiren"
 * identifier[idNatSt] -> "idNat_struct"
+* name -> "denominationEG"
+* alias -> "denominationEGLongue"
+* type[activiteINSEE] -> "codeAPET"
+* extension[as-ext-organization-pricing-model] -> "modeFixationTarifaire"
+* extension[as-ext-organization-budget-type] -> "natureEtablissement"
+* extension[as-ext-organization-closing-type] -> "typeFermeture"
+* extension[usePeriod].valuePeriod.start -> "dateOuverture"
+* extension[usePeriod].valuePeriod.end -> "dateFermeture"
+* type[sphParticipation] -> "codeAPET"
+* active -> "actif"
+* address -> "adresseEG"
+* telecom -> "telecommunication"
+* telecom[mailbox-mss] -> "boiteLettreMSS"
