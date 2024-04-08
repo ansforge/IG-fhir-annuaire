@@ -136,3 +136,25 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // PractitionerRole.endpoint
 * endpoint MS
+
+
+Mapping:  AsPractitionerRoleToMOSSituationExercice
+Source:   AsPractitionerRoleProfile
+Target:   "SituationExercice"
+Id:       as-practitioner-role-to-mos-situation-exercice
+Title:    "AsPractitionerRoleProfile to MOS - SituationExercice"
+* -> "SituationExercice"
+* identifier[numeroAm] -> "numeroAM"
+* code[fonction] -> "role"
+* code[modeExercice] -> "modeExercice"
+* code[genreActivite] -> "genreActivite"
+* code[statutHospitalier] -> "statutHospitalier"
+* code[metierPharmacien] -> "metierPharmacien"
+* code[metierPharmacien] -> "metierPharmacien"
+* code[typeActiviteLiberale] -> "typeActiviteLiberale"
+* code[statutProfessionnelSSA] -> "statutPS_SSA"
+* period.start -> "dateDebutActivite"
+* period.end -> "dateFinActivite"
+* telecom -> "telecommunication"
+* address -> "adresseSE"
+* telecom[mailbox-mss] -> "boiteLettresMSS"

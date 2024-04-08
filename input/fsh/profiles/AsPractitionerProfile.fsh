@@ -191,3 +191,43 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // * #siret.interne.esante.gouv.fr "Système de l'identifiant interne SIRET"
 // * #rpps.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet RPPS"
 // * #adeli.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet ADELI"
+
+Mapping:  AsPractitionerProfileToMOSSavoirFaire
+Source:   AsPractitionerProfile
+Target:   "SavoirFaire"
+Id:       as-practitioner-role-to-mos-savoir-faire
+Title:    "AsPractitionerProfile to MOS - SavoirFaire"
+* -> "SavoirFaire"
+* qualification[savoirFaire].code -> "typeSavoirFaire"
+* qualification[savoirFaire].period.start -> "dateReconnaissance"
+* qualification[savoirFaire].period.end -> "dateAbandon"
+
+Mapping:  AsPractitionerProfileToMOSExerciceProfessionnel
+Source:   AsPractitionerProfile
+Target:   "ExerciceProfessionnel"
+Id:       as-practitioner-role-to-mos-exercice-professionnel
+Title:    "AsPractitionerProfile to MOS - ExerciceProfessionnel"
+* -> "ExerciceProfessionnel"
+* Practitioner.name.suffix -> "civiliteExercice"
+* Practitioner.name.family -> "nomExercice"
+* Practitioner.name.given -> "prenomExercice"
+
+* qualification[exercicePro].code.coding[profession] -> "profession"
+* qualification[exercicePro].code.coding[categorieProfession] -> "categorieProfession"
+* qualification[exercicePro].period.start -> "dateEffetExercice"
+* qualification[exercicePro].period.end -> "dateFinEffetExercice"
+
+* telecom[mailbox-mss] -> "boiteLettresMSS"
+
+
+Mapping:  AsPractitionerProfileToMOSInscriptionOrdre
+Source:   AsPractitionerProfile
+Target:   "InscriptionOrdre"
+Id:       as-practitioner-role-to-mos-inscription-ordre
+Title:    "AsPractitionerProfile to MOS - InscriptionOrdre"
+* -> "InscriptionOrdre"
+extension[as-ext-registration].extension[registeringOrganization] -> "ordre"
+extension[as-ext-registration].extension[period].start -> "dateDebutInscription"
+extension[as-ext-registration].extension[period].end -> "dateRadiation"
+extension[as-ext-registration].extension[status] -> "statutInscription"
+extension[as-ext-registration].extension[hostingDepartment] -> "conseilDepartemental"
