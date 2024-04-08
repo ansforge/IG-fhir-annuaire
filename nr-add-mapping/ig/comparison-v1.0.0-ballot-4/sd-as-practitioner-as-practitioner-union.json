@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "9250c70c-e789-4121-9513-0a78c7297925-188",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/9250c70c-e789-4121-9513-0a78c7297925-188",
+  "id" : "5e8c404c-6af1-48c7-b34c-c694dd357bfa-188",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/5e8c404c-6af1-48c7-b34c-c694dd357bfa-188",
   "name" : "UnionAsPractitionerProfileAndAsPractitionerProfile",
   "title" : "Union of AS Practitioner Profile And AS Practitioner Profile",
   "status" : "active",
-  "date" : "2024-04-08T14:07:56+00:00",
+  "date" : "2024-04-08T14:45:56+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -113,6 +113,18 @@
       {
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
         "map" : "InscriptionOrdre"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-diplome",
+        "map" : "Diplome"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-professionnel",
+        "map" : "Professionnel"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
+        "map" : "AutorisationExercice"
       }]
     },
     {
@@ -860,7 +872,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/9250c70c-e789-4121-9513-0a78c7297925-53"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/5e8c404c-6af1-48c7-b34c-c694dd357bfa-53"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -2111,6 +2123,10 @@
       {
         "identity" : "servd",
         "map" : "./ContactPoints"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-professionnel",
+        "map" : "telecommunication"
       }]
     },
     {
@@ -2454,6 +2470,10 @@
       {
         "identity" : "servd",
         "map" : "Address"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-professionnel",
+        "map" : "adresseCorrespondance"
       }]
     },
     {
@@ -2800,6 +2820,10 @@
       {
         "identity" : "rim",
         "map" : ".playingEntity.playingRole[classCode=QUAL].id"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-diplome",
+        "map" : "numeroDiplome"
       }]
     },
     {
@@ -2829,7 +2853,7 @@
       "binding" : {
         "strength" : "preferred",
         "description" : "Specific qualification the practitioner has to provide a service.",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/9250c70c-e789-4121-9513-0a78c7297925-59"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/5e8c404c-6af1-48c7-b34c-c694dd357bfa-59"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -2854,6 +2878,10 @@
       {
         "identity" : "servd",
         "map" : "./Qualifications.Value"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-diplome",
+        "map" : "codeDiplome"
       }]
     },
     {
