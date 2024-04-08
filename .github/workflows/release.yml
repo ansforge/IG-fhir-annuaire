@@ -1,6 +1,9 @@
-name: Workflow Release
+name: Workflow Release to IG-website-release
 on:
   workflow_call:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 jobs:
   run-release:
     runs-on: ubuntu-latest
@@ -8,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
         with:      
           path: igSource
-      - uses: ansforge/IG-workflows@main
+      - uses: ansforge/IG-workflows@v0.2.0
         with:      
           repo_ig: "./igSource"   
           github_page: "true"

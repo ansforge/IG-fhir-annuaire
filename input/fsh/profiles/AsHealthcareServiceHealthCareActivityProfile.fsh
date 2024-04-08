@@ -25,8 +25,8 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 
 * identifier contains numAutorisationArhgos 0..1
 * identifier[numAutorisationArhgos] MS
-* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)."
-* identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr/"
+* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)." //Le system pourra être amené à évoluer."
+* identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr"
 
 // idStructure
 * providedBy 0..1 MS
