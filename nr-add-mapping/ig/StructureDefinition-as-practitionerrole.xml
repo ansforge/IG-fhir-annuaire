@@ -44,7 +44,7 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
   <name value="AsPractitionerRoleProfile"/>
   <title value="AS PractitionerRole Profile"/>
   <status value="active"/>
-  <date value="2024-04-08T13:35:38+00:00"/>
+  <date value="2024-04-08T14:07:36+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -66,6 +66,11 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
     </coding>
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+    <uri value="SituationExercice"/>
+    <name value="AsPractitionerRoleProfile to MOS - SituationExercice"/>
+  </mapping>
   <mapping>
     <identity value="v2"/>
     <uri value="http://hl7.org/v2"/>
@@ -166,6 +171,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <mapping>
         <identity value="servd"/>
         <map value="ServiceSiteProvider"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="SituationExercice"/>
       </mapping>
     </element>
     <element id="PractitionerRole.id">
@@ -1660,6 +1669,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <identity value="servd"/>
         <map value="./Identifiers"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="numeroAM"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.identifier:numeroAm.id">
       <path value="PractitionerRole.identifier.id"/>
@@ -2085,18 +2098,14 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="PractitionerRole.period.extension"/>
       <slicing>
         <discriminator>
@@ -2121,7 +2130,6 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2135,16 +2143,14 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.start">
@@ -2162,7 +2168,6 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <type>
         <code value="dateTime"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -2172,11 +2177,8 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.1"/>
@@ -2184,6 +2186,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <mapping>
         <identity value="rim"/>
         <map value="./low"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="dateDebutActivite"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.end">
@@ -2202,7 +2208,6 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <code value="dateTime"/>
       </type>
       <meaningWhenMissing value="If the end of the period is missing, it means that the period is ongoing"/>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -2212,11 +2217,8 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.2"/>
@@ -2224,6 +2226,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <mapping>
         <identity value="rim"/>
         <map value="./high"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="dateFinActivite"/>
       </mapping>
     </element>
     <element id="PractitionerRole.practitioner">
@@ -2382,6 +2388,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="genreActivite"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:modeExercice">
       <path value="PractitionerRole.code"/>
@@ -2426,6 +2436,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <mapping>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="modeExercice"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:typeActiviteLiberale">
@@ -2472,6 +2486,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="typeActiviteLiberale"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:statutProfessionnelSSA">
       <path value="PractitionerRole.code"/>
@@ -2516,6 +2534,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <mapping>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="statutPS_SSA"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:statutHospitalier">
@@ -2562,6 +2584,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="statutHospitalier"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:fonction">
       <path value="PractitionerRole.code"/>
@@ -2607,6 +2633,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="role"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:metierPharmacien">
       <path value="PractitionerRole.code"/>
@@ -2651,6 +2681,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <mapping>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="metierPharmacien"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty">
@@ -2826,6 +2860,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <identity value="servd"/>
         <map value="ContactPoint"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="telecommunication"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss">
       <path value="PractitionerRole.telecom"/>
@@ -2877,6 +2915,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <mapping>
         <identity value="servd"/>
         <map value="ContactPoint"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="boiteLettresMSS"/>
       </mapping>
     </element>
     <element id="PractitionerRole.availableTime">
@@ -3406,6 +3448,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
   <differential>
     <element id="PractitionerRole">
       <path value="PractitionerRole"/>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="SituationExercice"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.meta.extension:as-ext-data-trace">
       <path value="PractitionerRole.meta.extension"/>
@@ -3481,6 +3527,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
       <short value="[Donnée restreinte] : Identifiant d’activité propre à l’Assurance Maladie. format: 9 digits. synonyme: numeroAM"/>
       <min value="0"/>
       <max value="*"/>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="numeroAM"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.identifier:numeroAm.system">
       <path value="PractitionerRole.identifier.system"/>
@@ -3500,10 +3550,18 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
     <element id="PractitionerRole.period.start">
       <path value="PractitionerRole.period.start"/>
       <short value="[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié (dateDebutActivite)."/>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="dateDebutActivite"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.period.end">
       <path value="PractitionerRole.period.end"/>
       <short value="[Donnée restreinte] : Date de fin de l’activité (dateFinActivite)."/>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="dateFinActivite"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.practitioner">
       <path value="PractitionerRole.practitioner"/>
@@ -3544,6 +3602,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J94-GenreActivite-RASS/FHIR/JDV-J94-GenreActivite-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="genreActivite"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:modeExercice">
       <path value="PractitionerRole.code"/>
@@ -3556,6 +3618,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J95-ModeExercice-RASS/FHIR/JDV-J95-ModeExercice-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="modeExercice"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:typeActiviteLiberale">
       <path value="PractitionerRole.code"/>
@@ -3568,6 +3634,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="typeActiviteLiberale"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:statutProfessionnelSSA">
       <path value="PractitionerRole.code"/>
@@ -3580,6 +3650,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="statutPS_SSA"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:statutHospitalier">
       <path value="PractitionerRole.code"/>
@@ -3592,6 +3666,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="statutHospitalier"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:fonction">
       <path value="PractitionerRole.code"/>
@@ -3604,6 +3682,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="role"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:metierPharmacien">
       <path value="PractitionerRole.code"/>
@@ -3616,6 +3698,14 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS"/>
       </binding>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="metierPharmacien"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="metierPharmacien"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.location">
       <path value="PractitionerRole.location"/>
@@ -3636,6 +3726,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <rules value="open"/>
       </slicing>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="telecommunication"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss">
       <path value="PractitionerRole.telecom"/>
@@ -3647,6 +3741,10 @@ true par défaut; false pour les situations d’exercices supprimées</td></tr>
         <code value="ContactPoint"/>
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss"/>
       </type>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="boiteLettresMSS"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.availableTime">
       <path value="PractitionerRole.availableTime"/>

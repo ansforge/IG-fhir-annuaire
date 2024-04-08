@@ -249,7 +249,24 @@
 
 
 
-  <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+  <a name="as-practitioner-role-to-mos-situation-exercice"> </a><h3>Mappings for AsPractitionerRoleProfile to MOS - SituationExercice (SituationExercice)</h3><table class="grid">
+ <tr><td colspan="3"><b>AsPractitionerRoleProfile</b></td></tr>
+ <tr><td>PractitionerRole</td><td>SituationExercice</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (numeroAm)</td><td>numeroAM</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>dateDebutActivite</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>dateFinActivite</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (genreActivite)</td><td>genreActivite</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (modeExercice)</td><td>modeExercice</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (typeActiviteLiberale)</td><td>typeActiviteLiberale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutProfessionnelSSA)</td><td>statutPS_SSA</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutHospitalier)</td><td>statutHospitalier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (fonction)</td><td>role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (metierPharmacien)</td><td>metierPharmacien</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>telecommunication</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom (mailbox-mss)</td><td>boiteLettresMSS</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>AsPractitionerRoleProfile</b></td></tr>
  <tr><td>PractitionerRole</td><td>PRD (as one example)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>PRD-7 (or XCN.1)</td> </tr>
@@ -329,9 +346,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>.statusCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>.performance[@typeCode &lt;= 'PPRF'].ActDefinitionOrEvent.effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>n/a, ./low</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>n/a, ./high</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>./low</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>./high</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;practitioner</td><td>.player</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;organization</td><td>.scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td> </tr>
@@ -481,7 +498,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.fhir.fr.annuaire#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 8, 2024 13:35+0000">2024-04-08</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.fhir.fr.annuaire#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 8, 2024 14:07+0000">2024-04-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

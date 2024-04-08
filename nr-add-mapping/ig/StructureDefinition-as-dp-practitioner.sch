@@ -30,6 +30,17 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:Practitioner/f:extension</sch:title>
+    <sch:rule context="f:Practitioner/f:extension">
+      <sch:assert test="count(f:extension[@url = 'registeringOrganization']) &lt;= 1">extension with URL = 'registeringOrganization': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'registeringOrganizationDetail']) &lt;= 1">extension with URL = 'registeringOrganizationDetail': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'period']) &lt;= 1">extension with URL = 'period': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'status']) &lt;= 1">extension with URL = 'status': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'hostingDepartment']) &lt;= 1">extension with URL = 'hostingDepartment': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'isFirst']) &lt;= 1">extension with URL = 'isFirst': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:Practitioner/f:identifier</sch:title>
     <sch:rule context="f:Practitioner/f:identifier">
       <sch:assert test="count(f:period) &lt;= 0">period: maximum cardinality of 'period' is 0</sch:assert>

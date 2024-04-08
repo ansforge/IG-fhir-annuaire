@@ -20,7 +20,7 @@
   <name value="AsDrPractitionerRoleProfile"/>
   <title value="AS Donnée Restreinte PractitionerRole Profile"/>
   <status value="active"/>
-  <date value="2024-04-08T13:35:38+00:00"/>
+  <date value="2024-04-08T14:07:36+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -42,6 +42,11 @@
     </coding>
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+    <uri value="SituationExercice"/>
+    <name value="AsPractitionerRoleProfile to MOS - SituationExercice"/>
+  </mapping>
   <mapping>
     <identity value="v2"/>
     <uri value="http://hl7.org/v2"/>
@@ -142,6 +147,10 @@
       <mapping>
         <identity value="servd"/>
         <map value="ServiceSiteProvider"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="SituationExercice"/>
       </mapping>
     </element>
     <element id="PractitionerRole.id">
@@ -1315,6 +1324,10 @@
         <identity value="servd"/>
         <map value="./Identifiers"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="numeroAM"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.identifier:numeroAm.id">
       <path value="PractitionerRole.identifier.id"/>
@@ -1740,18 +1753,14 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="PractitionerRole.period.extension"/>
       <slicing>
         <discriminator>
@@ -1776,7 +1785,6 @@
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1790,16 +1798,14 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.start">
@@ -1817,7 +1823,6 @@
       <type>
         <code value="dateTime"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1827,11 +1832,8 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.1"/>
@@ -1839,6 +1841,10 @@
       <mapping>
         <identity value="rim"/>
         <map value="./low"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="dateDebutActivite"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.end">
@@ -1857,7 +1863,6 @@
         <code value="dateTime"/>
       </type>
       <meaningWhenMissing value="If the end of the period is missing, it means that the period is ongoing"/>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1867,11 +1872,8 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.2"/>
@@ -1879,6 +1881,10 @@
       <mapping>
         <identity value="rim"/>
         <map value="./high"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="dateFinActivite"/>
       </mapping>
     </element>
     <element id="PractitionerRole.practitioner">
@@ -2037,6 +2043,10 @@
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="genreActivite"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:modeExercice">
       <path value="PractitionerRole.code"/>
@@ -2081,6 +2091,10 @@
       <mapping>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="modeExercice"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:typeActiviteLiberale">
@@ -2127,6 +2141,10 @@
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="typeActiviteLiberale"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:statutProfessionnelSSA">
       <path value="PractitionerRole.code"/>
@@ -2171,6 +2189,10 @@
       <mapping>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="statutPS_SSA"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:statutHospitalier">
@@ -2217,6 +2239,10 @@
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="statutHospitalier"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:fonction">
       <path value="PractitionerRole.code"/>
@@ -2262,6 +2288,10 @@
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="role"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.code:metierPharmacien">
       <path value="PractitionerRole.code"/>
@@ -2306,6 +2336,10 @@
       <mapping>
         <identity value="servd"/>
         <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="metierPharmacien"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty">
@@ -2481,6 +2515,10 @@
         <identity value="servd"/>
         <map value="ContactPoint"/>
       </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="telecommunication"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss">
       <path value="PractitionerRole.telecom"/>
@@ -2532,6 +2570,10 @@
       <mapping>
         <identity value="servd"/>
         <map value="ContactPoint"/>
+      </mapping>
+      <mapping>
+        <identity value="as-practitioner-role-to-mos-situation-exercice"/>
+        <map value="boiteLettresMSS"/>
       </mapping>
     </element>
     <element id="PractitionerRole.availableTime">

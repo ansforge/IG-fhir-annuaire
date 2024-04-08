@@ -10,7 +10,7 @@
   "name" : "AsDpPractitionerRoleProfile",
   "title" : "AS Donnée Publique PractitionerRole Profile",
   "status" : "active",
-  "date" : "2024-04-08T13:35:38+00:00",
+  "date" : "2024-04-08T14:07:36+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -33,6 +33,11 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "as-practitioner-role-to-mos-situation-exercice",
+    "uri" : "SituationExercice",
+    "name" : "AsPractitionerRoleProfile to MOS - SituationExercice"
+  },
+  {
     "identity" : "v2",
     "uri" : "http://hl7.org/v2",
     "name" : "HL7 v2 Mapping"
@@ -135,6 +140,10 @@
       {
         "identity" : "servd",
         "map" : "ServiceSiteProvider"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "SituationExercice"
       }]
     },
     {
@@ -1349,6 +1358,10 @@
       {
         "identity" : "servd",
         "map" : "./Identifiers"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "numeroAM"
       }]
     },
     {
@@ -1790,6 +1803,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -1797,14 +1812,6 @@
     },
     {
       "id" : "PractitionerRole.period.extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "PractitionerRole.period.extension",
       "slicing" : {
         "discriminator" : [{
@@ -1829,7 +1836,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1843,16 +1849,14 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
       }]
     },
     {
@@ -1871,8 +1875,7 @@
       "type" : [{
         "code" : "dateTime"
       }],
-      "condition" : ["ele-1",
-      "per-1"],
+      "condition" : ["per-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1881,18 +1884,19 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "DR.1"
       },
       {
         "identity" : "rim",
         "map" : "./low"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "dateDebutActivite"
       }]
     },
     {
@@ -1912,8 +1916,7 @@
         "code" : "dateTime"
       }],
       "meaningWhenMissing" : "If the end of the period is missing, it means that the period is ongoing",
-      "condition" : ["ele-1",
-      "per-1"],
+      "condition" : ["per-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1922,18 +1925,19 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "DR.2"
       },
       {
         "identity" : "rim",
         "map" : "./high"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "dateFinActivite"
       }]
     },
     {
@@ -2095,6 +2099,10 @@
       {
         "identity" : "servd",
         "map" : "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "genreActivite"
       }]
     },
     {
@@ -2141,6 +2149,10 @@
       {
         "identity" : "servd",
         "map" : "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "modeExercice"
       }]
     },
     {
@@ -2187,6 +2199,10 @@
       {
         "identity" : "servd",
         "map" : "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "typeActiviteLiberale"
       }]
     },
     {
@@ -2233,6 +2249,10 @@
       {
         "identity" : "servd",
         "map" : "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "statutPS_SSA"
       }]
     },
     {
@@ -2279,6 +2299,10 @@
       {
         "identity" : "servd",
         "map" : "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "statutHospitalier"
       }]
     },
     {
@@ -2325,6 +2349,10 @@
       {
         "identity" : "servd",
         "map" : "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "role"
       }]
     },
     {
@@ -2371,6 +2399,10 @@
       {
         "identity" : "servd",
         "map" : "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "metierPharmacien"
       }]
     },
     {
@@ -2549,6 +2581,10 @@
       {
         "identity" : "servd",
         "map" : "ContactPoint"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "telecommunication"
       }]
     },
     {
@@ -2908,6 +2944,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -2915,14 +2953,6 @@
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "PractitionerRole.telecom.extension.extension",
       "slicing" : {
         "discriminator" : [{
@@ -2947,7 +2977,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2961,16 +2990,14 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
       }]
     },
     {
@@ -2989,7 +3016,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3003,9 +3029,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.id",
@@ -3027,6 +3055,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -3055,7 +3085,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3069,9 +3098,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.url",
@@ -3095,6 +3126,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "type",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -3115,7 +3148,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3124,15 +3156,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -3153,7 +3183,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3167,9 +3196,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id",
@@ -3191,6 +3222,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -3219,7 +3252,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3233,9 +3265,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.url",
@@ -3259,6 +3293,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "description",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -3279,7 +3315,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3288,11 +3323,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -3313,7 +3346,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3327,9 +3359,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.id",
@@ -3351,6 +3385,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -3379,7 +3415,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3393,9 +3428,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.url",
@@ -3419,6 +3456,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "responsible",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -3439,7 +3478,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3448,11 +3486,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -3473,7 +3509,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3487,9 +3522,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id",
@@ -3511,6 +3548,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -3539,7 +3578,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3553,9 +3591,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.url",
@@ -3579,6 +3619,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "service",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -3599,7 +3641,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3608,11 +3649,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -3633,7 +3672,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3647,9 +3685,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.id",
@@ -3671,6 +3711,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -3699,7 +3741,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3713,9 +3754,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.url",
@@ -3739,6 +3782,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "phone",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -3759,7 +3804,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3768,11 +3812,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -3793,7 +3835,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3807,9 +3848,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id",
@@ -3831,6 +3874,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -3859,7 +3904,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3873,9 +3917,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.url",
@@ -3899,6 +3945,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "digitization",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -3919,7 +3967,6 @@
       "type" : [{
         "code" : "boolean"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3928,11 +3975,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -3953,7 +3998,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3967,9 +4011,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id",
@@ -3991,6 +4037,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -4019,7 +4067,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4033,9 +4080,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.url",
@@ -4059,6 +4108,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "publication",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -4079,7 +4130,6 @@
       "type" : [{
         "code" : "boolean"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4088,11 +4138,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -4119,6 +4167,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -4286,7 +4336,6 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4295,11 +4344,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]

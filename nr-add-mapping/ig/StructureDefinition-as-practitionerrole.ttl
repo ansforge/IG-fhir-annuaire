@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsPractitionerRoleProfile"] ; # 
   fhir:title [ fhir:v "AS PractitionerRole Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-04-08T13:35:38+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-04-08T14:07:36+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -39,6 +39,10 @@
   ] ) ; # 
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:mapping ( [
+     fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+     fhir:uri [ fhir:v "SituationExercice"^^xsd:anyURI ] ;
+     fhir:name [ fhir:v "AsPractitionerRoleProfile to MOS - SituationExercice" ]
+  ] [
      fhir:identity [ fhir:v "v2" ] ;
      fhir:uri [ fhir:v "http://hl7.org/v2"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "HL7 v2 Mapping" ]
@@ -148,6 +152,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "ServiceSiteProvider" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "SituationExercice" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.id" ] ;
@@ -1796,6 +1803,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Identifiers" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "numeroAM" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.identifier:numeroAm.id" ] ;
@@ -2248,19 +2258,14 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.extension" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "normative" ]
-       ] [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "4.0.0" ]
-       ] ) ;
        fhir:path [ fhir:v "PractitionerRole.period.extension" ] ;
        fhir:slicing [
          fhir:discriminator ( [
@@ -2284,7 +2289,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -2300,18 +2304,17 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.start" ] ;
@@ -2329,7 +2332,7 @@
        fhir:type ( [
          fhir:code [ fhir:v "dateTime"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "per-1" ] ) ;
+       fhir:condition ( [ fhir:v "per-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -2341,16 +2344,17 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.1" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "./low" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "dateDebutActivite" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.end" ] ;
@@ -2369,7 +2373,7 @@
          fhir:code [ fhir:v "dateTime"^^xsd:anyURI ]
        ] ) ;
        fhir:meaningWhenMissing [ fhir:v "If the end of the period is missing, it means that the period is ongoing" ] ;
-       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "per-1" ] ) ;
+       fhir:condition ( [ fhir:v "per-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -2381,16 +2385,17 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.2" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "./high" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "dateFinActivite" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.practitioner" ] ;
@@ -2568,6 +2573,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "genreActivite" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:modeExercice" ] ;
@@ -2617,6 +2625,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "modeExercice" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:typeActiviteLiberale" ] ;
@@ -2666,6 +2677,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "typeActiviteLiberale" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:statutProfessionnelSSA" ] ;
@@ -2715,6 +2729,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "statutPS_SSA" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:statutHospitalier" ] ;
@@ -2764,6 +2781,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "statutHospitalier" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:fonction" ] ;
@@ -2813,6 +2833,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "role" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:metierPharmacien" ] ;
@@ -2862,6 +2885,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "metierPharmacien" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.specialty" ] ;
@@ -3054,6 +3080,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "ContactPoint" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "telecommunication" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.telecom:mailbox-mss" ] ;
@@ -3111,6 +3140,9 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "ContactPoint" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "boiteLettresMSS" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.availableTime" ] ;
@@ -3693,7 +3725,11 @@
   fhir:differential [
      fhir:element ( [
        fhir:id [ fhir:v "PractitionerRole" ] ;
-       fhir:path [ fhir:v "PractitionerRole" ]
+       fhir:path [ fhir:v "PractitionerRole" ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "SituationExercice" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.meta.extension:as-ext-data-trace" ] ;
        fhir:path [ fhir:v "PractitionerRole.meta.extension" ] ;
@@ -3780,7 +3816,11 @@
        fhir:sliceName [ fhir:v "numeroAm" ] ;
        fhir:short [ fhir:v "[Donnée restreinte] : Identifiant d’activité propre à l’Assurance Maladie. format: 9 digits. synonyme: numeroAM" ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "*" ]
+       fhir:max [ fhir:v "*" ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "numeroAM" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.identifier:numeroAm.system" ] ;
        fhir:path [ fhir:v "PractitionerRole.identifier.system" ] ;
@@ -3799,11 +3839,19 @@
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.start" ] ;
        fhir:path [ fhir:v "PractitionerRole.period.start" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié (dateDebutActivite)." ]
+       fhir:short [ fhir:v "[Donnée restreinte] : Date de début de l’activité correspondant à la date d’installation en cabinet ou à la date d’embauche du salarié (dateDebutActivite)." ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "dateDebutActivite" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.end" ] ;
        fhir:path [ fhir:v "PractitionerRole.period.end" ] ;
-       fhir:short [ fhir:v "[Donnée restreinte] : Date de fin de l’activité (dateFinActivite)." ]
+       fhir:short [ fhir:v "[Donnée restreinte] : Date de fin de l’activité (dateFinActivite)." ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "dateFinActivite" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.practitioner" ] ;
        fhir:path [ fhir:v "PractitionerRole.practitioner" ] ;
@@ -3852,7 +3900,11 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J94-GenreActivite-RASS/FHIR/JDV-J94-GenreActivite-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J94-GenreActivite-RASS/FHIR/JDV-J94-GenreActivite-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "genreActivite" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:modeExercice" ] ;
        fhir:path [ fhir:v "PractitionerRole.code" ] ;
@@ -3867,7 +3919,11 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J95-ModeExercice-RASS/FHIR/JDV-J95-ModeExercice-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J95-ModeExercice-RASS/FHIR/JDV-J95-ModeExercice-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "modeExercice" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:typeActiviteLiberale" ] ;
        fhir:path [ fhir:v "PractitionerRole.code" ] ;
@@ -3882,7 +3938,11 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J96-TypeActiviteLiberale-RASS/FHIR/JDV-J96-TypeActiviteLiberale-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "typeActiviteLiberale" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:statutProfessionnelSSA" ] ;
        fhir:path [ fhir:v "PractitionerRole.code" ] ;
@@ -3897,7 +3957,11 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J97-StatutProfessionnelSSA-RASS/FHIR/JDV-J97-StatutProfessionnelSSA-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "statutPS_SSA" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:statutHospitalier" ] ;
        fhir:path [ fhir:v "PractitionerRole.code" ] ;
@@ -3912,7 +3976,11 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J98-StatutHospitalier-RASS/FHIR/JDV-J98-StatutHospitalier-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "statutHospitalier" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:fonction" ] ;
        fhir:path [ fhir:v "PractitionerRole.code" ] ;
@@ -3927,7 +3995,11 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J108-EnsembleFonction-RASS/FHIR/JDV-J108-EnsembleFonction-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "role" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code:metierPharmacien" ] ;
        fhir:path [ fhir:v "PractitionerRole.code" ] ;
@@ -3942,7 +4014,14 @@
            fhir:v "https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS"^^xsd:anyURI ;
            fhir:link <https://mos.esante.gouv.fr/NOS/JDV_J73-MetierPharmacien-RASS/FHIR/JDV-J73-MetierPharmacien-RASS>
          ]
-       ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "metierPharmacien" ]
+       ] [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "metierPharmacien" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.location" ] ;
        fhir:path [ fhir:v "PractitionerRole.location" ] ;
@@ -3962,7 +4041,11 @@
          ] ) ;
          fhir:rules [ fhir:v "open" ]
        ] ;
-       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ]
+       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "telecommunication" ]
+       ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.telecom:mailbox-mss" ] ;
        fhir:path [ fhir:v "PractitionerRole.telecom" ] ;
@@ -3976,6 +4059,10 @@
            fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss"^^xsd:anyURI ;
            fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss>
          ] )
+       ] ) ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "as-practitioner-role-to-mos-situation-exercice" ] ;
+         fhir:map [ fhir:v "boiteLettresMSS" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.availableTime" ] ;

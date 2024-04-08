@@ -51,7 +51,7 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
   <name value="AsDigitalCertificateExtension"/>
   <title value="AS Digital Certificate Extension"/>
   <status value="active"/>
-  <date value="2024-04-08T13:35:38+00:00"/>
+  <date value="2024-04-08T14:07:36+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -120,6 +120,7 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
     </element>
     <element id="Extension.id">
       <path value="Extension.id"/>
@@ -139,18 +140,14 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="Extension.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Extension.extension"/>
       <slicing>
         <discriminator>
@@ -175,7 +172,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -189,16 +185,14 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Extension.extension:serialNumber">
@@ -216,7 +210,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -230,9 +223,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:serialNumber.id">
       <path value="Extension.extension.id"/>
@@ -252,6 +247,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -279,7 +276,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -293,9 +289,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:serialNumber.url">
       <path value="Extension.extension.url"/>
@@ -317,6 +315,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="serialNumber"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -336,7 +336,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -345,10 +344,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -369,7 +366,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -383,9 +379,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:issuer.id">
       <path value="Extension.extension.id"/>
@@ -405,6 +403,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -432,7 +432,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -446,9 +445,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:issuer.url">
       <path value="Extension.extension.url"/>
@@ -470,6 +471,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="issuer"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -489,7 +492,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -498,10 +500,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -522,7 +522,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -536,9 +535,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:subject.id">
       <path value="Extension.extension.id"/>
@@ -558,6 +559,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -585,7 +588,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -599,9 +601,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:subject.url">
       <path value="Extension.extension.url"/>
@@ -623,6 +627,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="subject"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -642,7 +648,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -651,10 +656,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -675,7 +678,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -689,9 +691,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:validity.id">
       <path value="Extension.extension.id"/>
@@ -711,6 +715,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -738,7 +744,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -752,9 +757,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:validity.url">
       <path value="Extension.extension.url"/>
@@ -776,6 +783,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="validity"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -795,7 +804,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Period"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -804,10 +812,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -831,18 +837,14 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="Extension.extension:validity.value[x].extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Extension.extension.value[x].extension"/>
       <slicing>
         <discriminator>
@@ -867,7 +869,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -881,16 +882,14 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Extension.extension:validity.value[x].start">
@@ -908,7 +907,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="dateTime"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -918,11 +916,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.1"/>
@@ -948,7 +943,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="dateTime"/>
       </type>
       <meaningWhenMissing value="If the end of the period is missing, it means that the period is ongoing"/>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -958,11 +952,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.2"/>
@@ -987,7 +978,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1001,9 +991,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:domain.id">
       <path value="Extension.extension.id"/>
@@ -1023,6 +1015,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -1050,7 +1044,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1064,9 +1057,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:domain.url">
       <path value="Extension.extension.url"/>
@@ -1088,6 +1083,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="domain"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1107,7 +1104,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1116,10 +1112,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1140,7 +1134,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1154,9 +1147,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:keyUsage.id">
       <path value="Extension.extension.id"/>
@@ -1176,6 +1171,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -1203,7 +1200,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1217,9 +1213,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:keyUsage.url">
       <path value="Extension.extension.url"/>
@@ -1241,6 +1239,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="keyUsage"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1260,7 +1260,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1269,10 +1268,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1293,7 +1290,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1307,9 +1303,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:value.id">
       <path value="Extension.extension.id"/>
@@ -1329,6 +1327,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -1356,7 +1356,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1370,9 +1369,11 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.extension:value.url">
       <path value="Extension.extension.url"/>
@@ -1394,6 +1395,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="value"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1413,7 +1416,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Attachment"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1422,10 +1424,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1451,6 +1451,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1617,7 +1619,6 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1626,10 +1627,8 @@ La date est en UTC (avec translation de l'heure locale en heure UTC par ajout du
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>

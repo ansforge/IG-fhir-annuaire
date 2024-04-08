@@ -48,7 +48,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
   <name value="AsDpOrganizationProfile"/>
   <title value="AS Donnée Publique Organization Profile"/>
   <status value="active"/>
-  <date value="2024-04-08T13:35:38+00:00"/>
+  <date value="2024-04-08T14:07:36+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -799,7 +799,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
     <element id="Organization.extension:usePeriod">
       <path value="Organization.extension"/>
       <sliceName value="usePeriod"/>
-      <short value="Optional Extensions Element"/>
+      <short value="Extension"/>
       <definition value="The date range that this organization should be considered available."/>
       <min value="0"/>
       <max value="1"/>
@@ -830,14 +830,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="Organization.extension:usePeriod.id">
       <path value="Organization.extension.id"/>
@@ -857,18 +849,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="Organization.extension:usePeriod.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Organization.extension.extension"/>
       <slicing>
         <discriminator>
@@ -878,11 +866,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <description value="Extensions are always sliced by (at least) url"/>
         <rules value="open"/>
       </slicing>
-      <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
+      <short value="Extension"/>
+      <definition value="An Extension"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -893,7 +878,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -907,17 +891,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.extension:usePeriod.url">
       <path value="Organization.extension.url"/>
@@ -939,6 +917,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="http://hl7.org/fhir/StructureDefinition/organization-period"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -947,7 +927,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
     <element id="Organization.extension:usePeriod.value[x]">
       <path value="Organization.extension.value[x]"/>
       <short value="Value of extension"/>
-      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list)."/>
+      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -958,7 +938,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Period"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -967,10 +946,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -994,18 +971,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="Organization.extension:usePeriod.value[x].extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Organization.extension.value[x].extension"/>
       <slicing>
         <discriminator>
@@ -1030,7 +1003,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1044,16 +1016,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Organization.extension:usePeriod.value[x].start">
@@ -1071,7 +1041,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="dateTime"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1081,11 +1050,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.1"/>
@@ -1119,7 +1085,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="dateTime"/>
       </type>
       <meaningWhenMissing value="If the end of the period is missing, it means that the period is ongoing"/>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1129,11 +1094,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.2"/>
@@ -1498,18 +1460,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="Organization.identifier.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Organization.identifier.extension"/>
       <slicing>
         <discriminator>
@@ -1534,7 +1492,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1548,16 +1505,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Organization.identifier.use">
@@ -1576,7 +1531,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="code"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1596,10 +1550,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <description value="Identifies the purpose for this identifier, if known ."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="N/A"/>
@@ -1625,7 +1575,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="CodeableConcept"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1634,6 +1583,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -1643,22 +1593,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CD"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.5"/>
@@ -1688,7 +1622,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <label value="General"/>
         <valueUri value="http://www.acme.com/identifiers/patient"/>
       </example>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1697,11 +1630,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
@@ -1734,7 +1664,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <label value="General"/>
         <valueString value="123456"/>
       </example>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1743,11 +1672,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
@@ -1765,7 +1691,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <path value="Organization.identifier.period"/>
       <short value="Time period when id is/was valid for use"/>
       <definition value="Time period during which identifier is/was valid for use."/>
-      <comment value="A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. &quot;the patient was an inpatient of the hospital for this time range&quot;) or one value from the range applies (e.g. &quot;give to the patient between these two times&quot;).&#xA;&#xA;Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration)."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1776,7 +1701,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Period"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1785,27 +1709,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="per-1"/>
-        <severity value="error"/>
-        <human value="If present, start SHALL have a lower value than end"/>
-        <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
-        <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Appointment"/>
-      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="DR"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.7 + CX.8"/>
@@ -1835,7 +1740,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1844,23 +1748,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="ref-1"/>
-        <severity value="error"/>
-        <human value="SHALL have a contained resource if a local reference is provided"/>
-        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
-        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Appointment"/>
-      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
@@ -4657,18 +4546,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="Organization.identifier:identifiantInterne.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Organization.identifier.extension"/>
       <slicing>
         <discriminator>
@@ -4693,7 +4578,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4707,16 +4591,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Organization.identifier:identifiantInterne.use">
@@ -4735,7 +4617,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="code"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4755,10 +4636,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <description value="Identifies the purpose for this identifier, if known ."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="N/A"/>
@@ -4790,7 +4667,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
           <code value="INTRN"/>
         </coding>
       </patternCodeableConcept>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4799,6 +4675,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -4808,22 +4685,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CD"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.5"/>
@@ -4854,7 +4715,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <label value="General"/>
         <valueUri value="http://www.acme.com/identifiers/patient"/>
       </example>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4863,11 +4723,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
@@ -4900,7 +4757,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <label value="General"/>
         <valueString value="123456"/>
       </example>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4909,11 +4765,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
@@ -4931,7 +4784,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <path value="Organization.identifier.period"/>
       <short value="Time period when id is/was valid for use"/>
       <definition value="Time period during which identifier is/was valid for use."/>
-      <comment value="A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. &quot;the patient was an inpatient of the hospital for this time range&quot;) or one value from the range applies (e.g. &quot;give to the patient between these two times&quot;).&#xA;&#xA;Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -4942,7 +4794,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Period"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4951,27 +4802,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="per-1"/>
-        <severity value="error"/>
-        <human value="If present, start SHALL have a lower value than end"/>
-        <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
-        <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Appointment"/>
-      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="DR"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.7 + CX.8"/>
@@ -5001,7 +4833,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -5010,23 +4841,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="ref-1"/>
-        <severity value="error"/>
-        <human value="SHALL have a contained resource if a local reference is provided"/>
-        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
-        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Appointment"/>
-      </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
@@ -5316,6 +5132,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -5343,7 +5161,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -5357,9 +5174,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:organizationType.extension:as-ext-organization-types.url">
       <path value="Organization.type.extension.url"/>
@@ -5381,6 +5200,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -5401,7 +5222,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="code"/>
       </type>
       <patternCode value="organizationType"/>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -5410,14 +5230,12 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <valueSet value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -6786,6 +6604,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -6813,7 +6633,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -6827,9 +6646,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:activiteINSEE.extension:as-ext-organization-types">
       <path value="Organization.type.extension"/>
@@ -6847,7 +6668,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="Extension"/>
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -6861,9 +6681,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:activiteINSEE.extension:as-ext-organization-types.id">
       <path value="Organization.type.extension.id"/>
@@ -6883,6 +6705,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -6910,7 +6734,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -6924,9 +6747,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:activiteINSEE.extension:as-ext-organization-types.url">
       <path value="Organization.type.extension.url"/>
@@ -6948,6 +6773,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -6968,7 +6795,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="code"/>
       </type>
       <patternCode value="activiteINSEE"/>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -6977,14 +6803,12 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <valueSet value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -7006,7 +6830,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7015,23 +6838,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
@@ -7064,7 +6872,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7073,11 +6880,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
@@ -7161,6 +6965,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -7188,7 +6994,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7202,9 +7007,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types">
       <path value="Organization.type.extension"/>
@@ -7222,7 +7029,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="Extension"/>
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7236,9 +7042,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types.id">
       <path value="Organization.type.extension.id"/>
@@ -7258,6 +7066,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -7285,7 +7095,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7299,9 +7108,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types.url">
       <path value="Organization.type.extension.url"/>
@@ -7323,6 +7134,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -7343,7 +7156,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="code"/>
       </type>
       <patternCode value="statutJuridiqueINSEE"/>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7352,14 +7164,12 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <valueSet value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -7381,7 +7191,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7390,23 +7199,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
@@ -7439,7 +7233,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7448,11 +7241,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
@@ -7536,6 +7326,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -7563,7 +7355,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7577,9 +7368,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:sphParticipation.extension:as-ext-organization-types">
       <path value="Organization.type.extension"/>
@@ -7597,7 +7390,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="Extension"/>
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7611,9 +7403,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:sphParticipation.extension:as-ext-organization-types.id">
       <path value="Organization.type.extension.id"/>
@@ -7633,6 +7427,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -7660,7 +7456,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7674,9 +7469,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:sphParticipation.extension:as-ext-organization-types.url">
       <path value="Organization.type.extension.url"/>
@@ -7698,6 +7495,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -7718,7 +7517,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="code"/>
       </type>
       <patternCode value="sphParticipation"/>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7727,14 +7525,12 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <valueSet value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -7756,7 +7552,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7765,23 +7560,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
@@ -7814,7 +7594,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7823,11 +7602,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
@@ -7911,6 +7687,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -7938,7 +7716,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7952,9 +7729,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:typeEtablissement.extension:as-ext-organization-types">
       <path value="Organization.type.extension"/>
@@ -7972,7 +7751,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="Extension"/>
         <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -7986,9 +7764,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:typeEtablissement.extension:as-ext-organization-types.id">
       <path value="Organization.type.extension.id"/>
@@ -8008,6 +7788,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -8035,7 +7817,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -8049,9 +7830,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.type:typeEtablissement.extension:as-ext-organization-types.url">
       <path value="Organization.type.extension.url"/>
@@ -8073,6 +7856,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -8093,7 +7878,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="code"/>
       </type>
       <patternCode value="typeEtablissement"/>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -8102,14 +7886,12 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <valueSet value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -8131,7 +7913,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Coding"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -8140,23 +7921,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
@@ -8189,7 +7955,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -8199,11 +7964,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
@@ -9046,18 +8808,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="Organization.telecom.extension.extension"/>
       <slicing>
         <discriminator>
@@ -9082,7 +8840,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9096,16 +8853,14 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type">
@@ -9123,7 +8878,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9137,9 +8891,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.id">
       <path value="Organization.telecom.extension.extension.id"/>
@@ -9159,6 +8915,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -9186,7 +8944,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9200,9 +8957,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.url">
       <path value="Organization.telecom.extension.extension.url"/>
@@ -9224,6 +8983,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="type"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9243,7 +9004,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="CodeableConcept"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9252,14 +9012,12 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9280,7 +9038,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9294,9 +9051,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id">
       <path value="Organization.telecom.extension.extension.id"/>
@@ -9316,6 +9075,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -9343,7 +9104,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9357,9 +9117,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.url">
       <path value="Organization.telecom.extension.extension.url"/>
@@ -9381,6 +9143,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="description"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9400,7 +9164,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9409,10 +9172,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9433,7 +9194,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9447,9 +9207,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.id">
       <path value="Organization.telecom.extension.extension.id"/>
@@ -9469,6 +9231,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -9496,7 +9260,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9510,9 +9273,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.url">
       <path value="Organization.telecom.extension.extension.url"/>
@@ -9534,6 +9299,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="responsible"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9553,7 +9320,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9562,10 +9328,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9586,7 +9350,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9600,9 +9363,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id">
       <path value="Organization.telecom.extension.extension.id"/>
@@ -9622,6 +9387,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -9649,7 +9416,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9663,9 +9429,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.url">
       <path value="Organization.telecom.extension.extension.url"/>
@@ -9687,6 +9455,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="service"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9706,7 +9476,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9715,10 +9484,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9739,7 +9506,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9753,9 +9519,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.id">
       <path value="Organization.telecom.extension.extension.id"/>
@@ -9775,6 +9543,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -9802,7 +9572,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9816,9 +9585,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.url">
       <path value="Organization.telecom.extension.extension.url"/>
@@ -9840,6 +9611,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="phone"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9859,7 +9632,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9868,10 +9640,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -9892,7 +9662,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9906,9 +9675,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id">
       <path value="Organization.telecom.extension.extension.id"/>
@@ -9928,6 +9699,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -9955,7 +9728,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -9969,9 +9741,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.url">
       <path value="Organization.telecom.extension.extension.url"/>
@@ -9993,6 +9767,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="digitization"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -10012,7 +9788,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="boolean"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -10021,10 +9796,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -10045,7 +9818,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -10059,9 +9831,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id">
       <path value="Organization.telecom.extension.extension.id"/>
@@ -10081,6 +9855,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -10108,7 +9884,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -10122,9 +9897,11 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.url">
       <path value="Organization.telecom.extension.extension.url"/>
@@ -10146,6 +9923,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="publication"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -10165,7 +9944,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="boolean"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -10174,10 +9952,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -10203,6 +9979,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -10369,7 +10147,6 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -10378,10 +10155,8 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>

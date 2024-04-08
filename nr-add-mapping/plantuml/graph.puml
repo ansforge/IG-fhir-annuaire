@@ -10,6 +10,7 @@ package IG #DDDDDD{
         class AsAddressExtendedProfile{
 
              Address => [None..None]
+             Address.line.extension => [None..None]
              Address.line.extension:careOf => <&plus>[0..1]
              Address.line.extension:additionalLocator => <&plus>[0..1]
              Address.line.extension:houseNumber => <&plus>[0..1]
@@ -31,6 +32,7 @@ package IG #DDDDDD{
         class AsDeviceProfile{
 
              Device.meta.extension:as-ext-data-trace => <&plus>[0..1]
+             Device.extension => [None..None]
              Device.extension:as-ext-healthcareservice-authorization => <&plus>[0..1]
              Device.identifier => [None..None]
              Device.identifier:numAutorisationArhgos => [0..1]
@@ -332,6 +334,7 @@ package IG #DDDDDD{
         class AsHealthcareServiceHealthcareActivityProfile{
 
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
+             HealthcareService.extension => [None..None]
              HealthcareService.extension:as-ext-healthcareservice-authorization => <&plus>[0..*]
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
@@ -346,6 +349,7 @@ package IG #DDDDDD{
         class AsHealthcareServiceSocialEquipmentProfile{
 
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
+             HealthcareService.extension => [None..None]
              HealthcareService.extension:as-ext-healthcareservice-authorization => <&plus>[0..*]
              HealthcareService.extension:as-ext-healthcareservice-authorization.extension:dateAuthorization => <&plus>[None..None]
              HealthcareService.extension:as-ext-healthcareservice-authorization.extension:periodAuthorization => <&plus>[None..None]
@@ -447,6 +451,7 @@ package IG #DDDDDD{
 
              Person.meta.extension:as-ext-data-trace => <&plus>[0..1]
              Person.language => [None..None]
+             Person.extension => [None..None]
              Person.extension:as-ext-person-nationality => <&plus>[0..*]
              Person.extension:as-ext-person-birth-place => <&plus>[0..1]
              Person.extension:as-ext-person-deceased-date-time => <&plus>[0..1]
@@ -471,6 +476,12 @@ package IG #DDDDDD{
              Practitioner => [None..None]
              Practitioner.meta.extension:as-ext-data-trace => <&plus>[0..1]
              Practitioner.extension:as-ext-registration => <&plus>[0..*]
+             Practitioner.extension:as-ext-registration.extension:registeringOrganization => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:period => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:period.value[x].start => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:period.value[x].end => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:status => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:hostingDepartment => <&plus>[None..None]
              Practitioner.extension:as-ext-frpractitioner-authorization => <&plus>[0..*]
              Practitioner.extension:as-ext-smartcard => <&plus>[0..*]
              Practitioner.extension:as-ext-digital-certificate => <&plus>[0..*]
@@ -506,9 +517,12 @@ package IG #DDDDDD{
              Practitioner.qualification:exercicePro.period.start => [None..None]
              Practitioner.qualification:exercicePro.period.end => [None..None]
              Practitioner.qualification:savoirFaire => [0..*]
+             Practitioner.qualification:savoirFaire.code => [None..None]
              Practitioner.qualification:savoirFaire.code.coding => [None..None]
              Practitioner.qualification:savoirFaire.code.coding:typeSavoirFaire => [0..1]
              Practitioner.qualification:savoirFaire.code.coding:savoirFaire => [0..1]
+             Practitioner.qualification:savoirFaire.period.start => [None..None]
+             Practitioner.qualification:savoirFaire.period.end => [None..None]
              Practitioner.communication => [None..None]
         } 
 
