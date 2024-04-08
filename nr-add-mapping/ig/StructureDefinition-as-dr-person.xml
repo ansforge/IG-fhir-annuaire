@@ -13,7 +13,7 @@
   <name value="AsDrPersonProfile"/>
   <title value="AS Donnée Restreinte Person Profile"/>
   <status value="active"/>
-  <date value="2024-04-08T13:14:28+00:00"/>
+  <date value="2024-04-08T13:35:38+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -35,6 +35,11 @@
     </coding>
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="as-person-to-mos-personne-physique"/>
+    <uri value="PersonnePhysique"/>
+    <name value="AsPersonProfile to MOS - PersonnePhysique"/>
+  </mapping>
   <mapping>
     <identity value="rim"/>
     <uri value="http://hl7.org/v3"/>
@@ -121,6 +126,10 @@
       <mapping>
         <identity value="rim"/>
         <map value="Person(classCode=&quot;PSN&quot; and determinerCode=&quot;INST&quot; and quantity=&quot;1&quot;)"/>
+      </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="PersonnePhysique"/>
       </mapping>
     </element>
     <element id="Person.id">
@@ -583,6 +592,10 @@
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="langueParlee"/>
+      </mapping>
     </element>
     <element id="Person.text">
       <path value="Person.text"/>
@@ -743,6 +756,10 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="paysNationalite"/>
+      </mapping>
     </element>
     <element id="Person.extension:as-ext-person-birth-place">
       <path value="Person.extension"/>
@@ -778,6 +795,10 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="lieuNaissance"/>
+      </mapping>
     </element>
     <element id="Person.extension:as-ext-person-deceased-date-time">
       <path value="Person.extension"/>
@@ -813,6 +834,10 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="dateDeces"/>
+      </mapping>
     </element>
     <element id="Person.modifierExtension">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1197,6 +1222,14 @@
         <identity value="servd"/>
         <map value="./FamilyName"/>
       </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="nomFamille"/>
+      </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="nomUsage"/>
+      </mapping>
     </element>
     <element id="Person.name.given">
       <path value="Person.name.given"/>
@@ -1237,6 +1270,14 @@
       <mapping>
         <identity value="servd"/>
         <map value="./GivenNames"/>
+      </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="prenom"/>
+      </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="prenomUsuel"/>
       </mapping>
     </element>
     <element id="Person.name.prefix">
@@ -1280,6 +1321,10 @@
       <mapping>
         <identity value="servd"/>
         <map value="./TitleCode"/>
+      </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="civilite"/>
       </mapping>
     </element>
     <element id="Person.name.suffix">
@@ -1771,6 +1816,10 @@
         <identity value="rim"/>
         <map value="player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender"/>
       </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="sexeAdministratif"/>
+      </mapping>
     </element>
     <element id="Person.birthDate">
       <path value="Person.birthDate"/>
@@ -1810,6 +1859,10 @@
       <mapping>
         <identity value="rim"/>
         <map value="./birthTime"/>
+      </mapping>
+      <mapping>
+        <identity value="as-person-to-mos-personne-physique"/>
+        <map value="dateNaissance"/>
       </mapping>
     </element>
     <element id="Person.address">

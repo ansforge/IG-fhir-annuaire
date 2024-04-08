@@ -10,7 +10,7 @@
   "name" : "AsDrPersonProfile",
   "title" : "AS Donnée Restreinte Person Profile",
   "status" : "active",
-  "date" : "2024-04-08T13:14:28+00:00",
+  "date" : "2024-04-08T13:35:38+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -33,6 +33,11 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "as-person-to-mos-personne-physique",
+    "uri" : "PersonnePhysique",
+    "name" : "AsPersonProfile to MOS - PersonnePhysique"
+  },
+  {
     "identity" : "rim",
     "uri" : "http://hl7.org/v3",
     "name" : "RIM Mapping"
@@ -121,6 +126,10 @@
       {
         "identity" : "rim",
         "map" : "Person(classCode=\"PSN\" and determinerCode=\"INST\" and quantity=\"1\")"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "PersonnePhysique"
       }]
     },
     {
@@ -603,6 +612,10 @@
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "langueParlee"
       }]
     },
     {
@@ -769,7 +782,11 @@
         "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "paysNationalite"
+      }]
     },
     {
       "id" : "Person.extension:as-ext-person-birth-place",
@@ -805,7 +822,11 @@
         "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "lieuNaissance"
+      }]
     },
     {
       "id" : "Person.extension:as-ext-person-deceased-date-time",
@@ -841,7 +862,11 @@
         "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "dateDeces"
+      }]
     },
     {
       "id" : "Person.modifierExtension",
@@ -1237,6 +1262,14 @@
       {
         "identity" : "servd",
         "map" : "./FamilyName"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "nomFamille"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "nomUsage"
       }]
     },
     {
@@ -1279,6 +1312,14 @@
       {
         "identity" : "servd",
         "map" : "./GivenNames"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "prenom"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "prenomUsuel"
       }]
     },
     {
@@ -1323,6 +1364,10 @@
       {
         "identity" : "servd",
         "map" : "./TitleCode"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "civilite"
       }]
     },
     {
@@ -1829,6 +1874,10 @@
       {
         "identity" : "rim",
         "map" : "player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "sexeAdministratif"
       }]
     },
     {
@@ -1870,6 +1919,10 @@
       {
         "identity" : "rim",
         "map" : "./birthTime"
+      },
+      {
+        "identity" : "as-person-to-mos-personne-physique",
+        "map" : "dateNaissance"
       }]
     },
     {

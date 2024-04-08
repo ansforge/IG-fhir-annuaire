@@ -34,6 +34,13 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:PractitionerRole/f:identifier</sch:title>
+    <sch:rule context="f:PractitionerRole/f:identifier">
+      <sch:assert test="count(f:system) &gt;= 1">system: minimum cardinality of 'system' is 1</sch:assert>
+      <sch:assert test="count(f:system) &gt;= 1">system: minimum cardinality of 'system' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:PractitionerRole/f:telecom</sch:title>
     <sch:rule context="f:PractitionerRole/f:telecom">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
