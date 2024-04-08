@@ -60,3 +60,22 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 * link ^slicing.rules = #open
 * link contains as-practitioner-exercice-professionnel 0..* MS
 * link[as-practitioner-exercice-professionnel].target only Reference(as-practitioner)
+
+
+Mapping:  AsPersonToMOSPersonnePhysique
+Source:   AsPersonProfile
+Target:   "PersonnePhysique"
+Id:       as-person-to-mos-personne-physique
+Title:    "AsPersonProfile to MOS - PersonnePhysique"
+* -> "PersonnePhysique"
+* extension[as-ext-person-deceased-date-time] -> "dateDeces"
+* extension[as-ext-person-birth-place] -> "lieuNaissance"
+* extension[as-ext-person-nationality] -> "paysNationalite"
+* name.prefix -> "civilite"
+* name.family -> "nomFamille"
+* name.family -> "nomUsage"
+* name.given -> "prenom"
+* name.given -> "prenomUsuel"
+* gender -> "sexeAdministratif"
+* language -> "langueParlee"
+* birthDate -> "dateNaissance"

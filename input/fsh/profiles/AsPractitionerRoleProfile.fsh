@@ -1,5 +1,5 @@
 Profile: 		AsPractitionerRoleProfile
-Parent: 		PractitionerRole // remplacement de FrPractitionerRoleExercice par PractitionerRole en raison des contraintes trop fortes sur les bindings, exemple : PractitionerRole.code
+Parent: 		fr-core-practitioner-role-exercice
 Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
 Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel."
