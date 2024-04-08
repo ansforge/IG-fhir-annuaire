@@ -52,28 +52,3 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * characteristic ^short = "La forme d'activité étant un type d’organisation de prise en charge (forme)."
 * characteristic from $JDV-J134-FormeActivite-RASS (required)
 
-Mapping:  AsHSActivityToMOSActiviteSociale
-Source:   AsHealthcareServiceHealthcareActivityProfile
-Target:   "ActiviteSociale"
-Id:       as-healthcare-activity-to-mos-activite-sociale
-Title:    "AsHealthcareServiceHealthcareActivityProfile to MOS - ActiviteSociale"
-* -> "ActiviteSociale"
-* extension[as-ext-healthcareservice-authorization].extension[dateAuthorization] -> "dateAutorisation"
-* extension[as-ext-healthcareservice-authorization].extension[periodAuthorization].start -> "datePremiereInstallation"
-* extension[as-ext-supported-capacity].extension[capacityavailable] -> "capaciteAutorisee"
-* extension[as-ext-supported-capacity].extension[femaleCapacityAvailable] -> "capaciteAutoriseeFemme"
-* extension[as-ext-supported-capacity].extension[maleCapacityAvailable] -> "capaciteAutoriseeHomme"
-* extension[as-ext-supported-capacity].extension[socialAssitanceCapacityAvailable] -> "capaciteAutoriseeHabiliteAideSociale"
-* extension[as-ext-supported-capacity].extension[installedCapacity] -> "capaciteInstallee"
-* extension[as-ext-supported-capacity].extension[femaleInstalledCapacity] -> "capaciteInstalleeFemme"
-* extension[as-ext-supported-capacity].extension[maleInstalledCapacity] -> "capaciteInstalleeHomme"
-* extension[as-ext-supported-capacity].extension[socialAssistanceInstalledCapacity] -> "capaciteInstalleeHabiliteAideSociale"
-* extension[as-ext-patient-type].extension[authorizedAgeRange].valueRange.min -> "ageMinAutorisee"
-* extension[as-ext-patient-type].extension[authorizedAgeRange].valueRange.max -> "ageMaxAutorisee"
-* extension[as-ext-patient-type].extension[installedAgeRange].valueRange.min -> "ageMaxInstallee"
-* extension[as-ext-patient-type].extension[installedAgeRange].valueRange.max -> "ageMaxInstallee"
-* extension[as-ext-healthcareservice-authorization].extension[deleteAuthorization] -> "suppressionAutorisation"
-* extension[as-ext-healthcareservice-authorization].extension[deleteInstallation] -> "suppressionInstallation"
-* type -> "discipineEquipementSociale"
-* eligibility.code -> "clientele"
-* status -> "active"

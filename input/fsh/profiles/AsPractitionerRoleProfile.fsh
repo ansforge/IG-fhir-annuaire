@@ -58,11 +58,11 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // PractitionerRole.practitioner
 * practitioner ^short = "Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner)."
-* practitioner only Reference(Practitioner or as-practitioner)
+* practitioner only Reference(as-practitioner)
 
 // PractitionerRole.organization
 * organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)"
-* organization only Reference(Organization or as-organization)
+* organization only Reference(as-organization)
 
 
 // PractitionerRole.location
