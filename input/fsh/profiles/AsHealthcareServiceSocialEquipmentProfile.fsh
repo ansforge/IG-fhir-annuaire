@@ -52,7 +52,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 
 Mapping:  AsHSSocialEquipmentToMOSSocialEquipment
 Source:   AsHealthcareServiceSocialEquipmentProfile
-Target:   "ActiviteSociale"
+Target:   "https://mos.esante.gouv.fr"
 Id:       as-healthcare-social-equipment-to-mos-activite-sociale
 Title:    "AsHealthcareServiceSocialEquipmentProfile to MOS - ActiviteSociale"
 * -> "ActiviteSociale"

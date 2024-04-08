@@ -64,7 +64,7 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 
 Mapping:  AsPersonToMOSPersonnePhysique
 Source:   AsPersonProfile
-Target:   "PersonnePhysique"
+Target:   "https://mos.esante.gouv.fr"
 Id:       as-person-to-mos-personne-physique
 Title:    "AsPersonProfile to MOS - PersonnePhysique"
 * -> "PersonnePhysique"

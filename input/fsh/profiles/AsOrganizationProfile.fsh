@@ -117,7 +117,7 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 
 Mapping:  AsOrganizationToMOSEJ
 Source:   AsOrganizationProfile
-Target:   "EntiteJuridique"
+Target:   "https://mos.esante.gouv.fr"
 Id:       as-organization-to-mos-ej
 Title:    "AsOrganization to MOS - EJ"
 * -> "EntiteJuridique"
@@ -138,7 +138,7 @@ Title:    "AsOrganization to MOS - EJ"
 
 Mapping:  AsOrganizationToMOSEG
 Source:   AsOrganizationProfile
-Target:   "EntiteGeographique"
+Target:   "https://mos.esante.gouv.fr"
 Id:       as-organization-to-mos-eg
 Title:    "AsOrganization to MOS - EG"
 * -> "EntiteGeographique"

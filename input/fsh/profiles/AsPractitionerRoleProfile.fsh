@@ -140,7 +140,7 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 Mapping:  AsPractitionerRoleToMOSSituationExercice
 Source:   AsPractitionerRoleProfile
-Target:   "SituationExercice"
+Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-situation-exercice
 Title:    "AsPractitionerRoleProfile to MOS - SituationExercice"
 * -> "SituationExercice"
