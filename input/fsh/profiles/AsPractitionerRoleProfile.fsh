@@ -1,5 +1,5 @@
 Profile: 		AsPractitionerRoleProfile
-Parent: 		PractitionerRole // remplacement de FrPractitionerRoleExercice par PractitionerRole en raison des contraintes trop fortes sur les bindings, exemple : PractitionerRole.code
+Parent: 		fr-core-practitioner-role-exercice
 Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
 Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel."
@@ -58,11 +58,11 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // PractitionerRole.practitioner
 * practitioner ^short = "Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner)."
-* practitioner only Reference(Practitioner or as-practitioner)
+* practitioner only Reference(as-practitioner)
 
 // PractitionerRole.organization
 * organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)"
-* organization only Reference(Organization or as-organization)
+* organization only Reference(as-organization)
 
 
 // PractitionerRole.location
@@ -136,3 +136,24 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // PractitionerRole.endpoint
 * endpoint MS
+
+
+Mapping:  AsPractitionerRoleToMOSSituationExercice
+Source:   AsPractitionerRoleProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-situation-exercice
+Title:    "AsPractitionerRoleProfile to MOS - SituationExercice"
+* -> "SituationExercice"
+* identifier[numeroAm] -> "numeroAM"
+* code[fonction] -> "role"
+* code[modeExercice] -> "modeExercice"
+* code[genreActivite] -> "genreActivite"
+* code[statutHospitalier] -> "statutHospitalier"
+* code[metierPharmacien] -> "metierPharmacien"
+* code[metierPharmacien] -> "metierPharmacien"
+* code[typeActiviteLiberale] -> "typeActiviteLiberale"
+* code[statutProfessionnelSSA] -> "statutPS_SSA"
+* period.start -> "dateDebutActivite"
+* period.end -> "dateFinActivite"
+* telecom -> "telecommunication"
+* telecom[mailbox-mss] -> "boiteLettresMSS"

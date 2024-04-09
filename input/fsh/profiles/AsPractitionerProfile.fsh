@@ -191,3 +191,81 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // * #siret.interne.esante.gouv.fr "Système de l'identifiant interne SIRET"
 // * #rpps.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet RPPS"
 // * #adeli.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet ADELI"
+
+Mapping:  AsPractitionerProfileToMOSSavoirFaire
+Source:   AsPractitionerProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-savoir-faire
+Title:    "AsPractitionerProfile to MOS - SavoirFaire"
+* -> "SavoirFaire"
+* qualification[savoirFaire].code -> "typeSavoirFaire"
+* qualification[savoirFaire].period.start -> "dateReconnaissance"
+* qualification[savoirFaire].period.end -> "dateAbandon"
+
+Mapping:  AsPractitionerProfileToMOSExerciceProfessionnel
+Source:   AsPractitionerProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-exercice-professionnel
+Title:    "AsPractitionerProfile to MOS - ExerciceProfessionnel"
+* -> "ExerciceProfessionnel"
+* name.suffix -> "civiliteExercice"
+* name.family -> "nomExercice"
+* name.given -> "prenomExercice"
+
+* qualification[exercicePro].code.coding[profession] -> "profession"
+* qualification[exercicePro].code.coding[categorieProfession] -> "categorieProfession"
+* qualification[exercicePro].period.start -> "dateEffetExercice"
+* qualification[exercicePro].period.end -> "dateFinEffetExercice"
+
+* telecom[mailbox-mss] -> "boiteLettresMSS"
+
+
+Mapping:  AsPractitionerProfileToMOSInscriptionOrdre
+Source:   AsPractitionerProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-inscription-ordre
+Title:    "AsPractitionerProfile to MOS - InscriptionOrdre"
+* -> "InscriptionOrdre"
+* extension[as-ext-registration].extension[registeringOrganization] -> "ordre"
+* extension[as-ext-registration].extension[period].valuePeriod.start -> "dateDebutInscription"
+* extension[as-ext-registration].extension[period].valuePeriod.end -> "dateRadiation"
+* extension[as-ext-registration].extension[status] -> "statutInscription"
+* extension[as-ext-registration].extension[hostingDepartment] -> "conseilDepartemental"
+
+Mapping:  AsPractitionerProfileToMOSDiplome
+Source:   AsPractitionerProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-diplome
+Title:    "AsPractitionerProfile to MOS - Diplome"
+* -> "Diplome"
+* qualification.identifier -> "numeroDiplome"
+* qualification.code -> "codeDiplome"
+* qualification[degree] -> "typeDiplome"
+* qualification[degree].issuer -> "lieuFormation"
+* qualification[degree].period.start -> "dateDebut"
+* qualification[degree].period.end -> "dateFin"
+* qualification[degree].extension[as-ext-education-level].extension[academicDegree] -> "natureCycleFormation"
+* qualification[degree].extension[as-ext-education-level].extension[achievedLevel] -> "anneeUniversitaire"
+* qualification[degree].extension[as-ext-education-level].extension[academicYear] -> "niveauFormationAcquis"
+
+Mapping:  AsPractitionerProfileToMOSProfessionnel
+Source:   AsPractitionerProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-professionnel
+Title:    "AsPractitionerProfile to MOS - Professionnel"
+* -> "Professionnel"
+* identifier[idNatPs] -> "IdNat_PS"
+* address -> "adresseCorrespondance"
+* telecom -> "telecommunication"
+
+Mapping:  AsPractitionerProfileToMOSAutorisationExercice
+Source:   AsPractitionerProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-autorisation-exercice
+Title:    "AsPractitionerProfile to MOS - AutorisationExercice"
+* -> "AutorisationExercice"
+* extension[as-ext-frpractitioner-authorization].extension[type] -> "typeAutorisation"
+* extension[as-ext-frpractitioner-authorization].extension[field] -> "disciplineAutorisee"
+* extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.start -> "dateDebutAutorisation"
+* extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.end -> "dateFinAutorisation"
+* extension[as-ext-frpractitioner-authorization].extension[profession] -> "profession"

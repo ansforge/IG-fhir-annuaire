@@ -112,3 +112,49 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 
 // Organization.endpoint
 * endpoint MS
+
+
+
+Mapping:  AsOrganizationToMOSEJ
+Source:   AsOrganizationProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-organization-to-mos-ej
+Title:    "AsOrganization to MOS - EJ"
+* -> "EntiteJuridique"
+* identifier[finess] -> "numFiness"
+* identifier[sirene] -> "numSiren"
+* identifier[idNatSt] -> "idNat_struct"
+* extension[as-ext-organization-pharmacy-licence] -> "numeroLicenceOfficine"
+* name  -> "raisonSociale"
+* alias -> "raisonSocialeLongue"
+* type[statutJuridiqueINSEE] -> "statutJuridique"
+* type[activiteINSEE] -> "codeAPEN"
+* extension[usePeriod].valuePeriod.start -> "dateCreation"
+* extension[usePeriod].valuePeriod.end -> "dateFermeture"
+* extension[as-ext-organization-closing-type] -> "typeFermeture"
+* address -> "adresseEJ"
+* telecom -> "telecommunication"
+* telecom[mailbox-mss] -> "boiteLettreMSS"
+
+Mapping:  AsOrganizationToMOSEG
+Source:   AsOrganizationProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-organization-to-mos-eg
+Title:    "AsOrganization to MOS - EG"
+* -> "EntiteGeographique"
+* identifier[finess] -> "numFiness"
+* identifier[sirene] -> "numSiren"
+* identifier[idNatSt] -> "idNat_struct"
+* name -> "denominationEG"
+* alias -> "denominationEGLongue"
+* type[activiteINSEE] -> "codeAPET"
+* extension[as-ext-organization-pricing-model] -> "modeFixationTarifaire"
+* extension[as-ext-organization-budget-type] -> "natureEtablissement"
+* extension[as-ext-organization-closing-type] -> "typeFermeture"
+* extension[usePeriod].valuePeriod.start -> "dateOuverture"
+* extension[usePeriod].valuePeriod.end -> "dateFermeture"
+* type[sphParticipation] -> "codeAPET"
+* active -> "actif"
+* address -> "adresseEG"
+* telecom -> "telecommunication"
+* telecom[mailbox-mss] -> "boiteLettreMSS"

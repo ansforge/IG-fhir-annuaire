@@ -25,9 +25,8 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 
 * identifier contains numAutorisationArhgos 0..1
 * identifier[numAutorisationArhgos] MS
-* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS). Le system est mis à titre indicatif et pourra évoluer."
+* identifier[numAutorisationArhgos] ^short = "Identifiant fonctionnel, numéro d'autorisation ARHGOS (numeroAutorisationARHGOS)." //Le system pourra être amené à évoluer."
 * identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr"
-
 
 // idStructure
 * providedBy 0..1 MS
@@ -52,3 +51,4 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * characteristic 0..* MS
 * characteristic ^short = "La forme d'activité étant un type d’organisation de prise en charge (forme)."
 * characteristic from $JDV-J134-FormeActivite-RASS (required)
+

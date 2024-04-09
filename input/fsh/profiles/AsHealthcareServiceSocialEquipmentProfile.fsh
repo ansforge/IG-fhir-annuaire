@@ -49,3 +49,30 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * characteristic 0..* MS
 * characteristic ^short = "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l'activité associée à la discipline (modeFonctionnement, typeActivite)."
 * characteristic from $JDV-J138-TypeActivite-RASS (extensible)
+
+Mapping:  AsHSSocialEquipmentToMOSSocialEquipment
+Source:   AsHealthcareServiceSocialEquipmentProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-healthcare-social-equipment-to-mos-activite-sociale
+Title:    "AsHealthcareServiceSocialEquipmentProfile to MOS - ActiviteSociale"
+* -> "ActiviteSociale"
+* extension[as-ext-healthcareservice-authorization].extension[dateAuthorization] -> "dateAutorisation"
+* extension[as-ext-healthcareservice-authorization].extension[periodAuthorization].valuePeriod.start -> "datePremiereInstallation"
+* extension[as-ext-healthcareservice-authorization].extension[deleteAuthorization] -> "suppressionAutorisation"
+* extension[as-ext-healthcareservice-authorization].extension[deleteInstallation] -> "suppressionInstallation"
+
+* extension[as-ext-supported-capacity].extension[capacityAvailable] -> "capaciteAutorisee"
+* extension[as-ext-supported-capacity].extension[femaleCapacityAvailable] -> "capaciteAutoriseeFemme"
+* extension[as-ext-supported-capacity].extension[maleCapacityAvailable] -> "capaciteAutoriseeHomme"
+* extension[as-ext-supported-capacity].extension[socialAssistanceCapacityAvailable] -> "capaciteAutoriseeHabiliteAideSociale"
+* extension[as-ext-supported-capacity].extension[installedCapacity] -> "capaciteInstallee"
+* extension[as-ext-supported-capacity].extension[femaleInstalledCapacity] -> "capaciteInstalleeFemme"
+* extension[as-ext-supported-capacity].extension[maleInstalledCapacity] -> "capaciteInstalleeHomme"
+* extension[as-ext-supported-capacity].extension[socialAssistanceInstalledCapacity] -> "capaciteInstalleeHabiliteAideSociale"
+
+* extension[as-ext-patient-type].extension[authorizedAgeRange].valueRange.low -> "ageMinAutorisee"
+* extension[as-ext-patient-type].extension[authorizedAgeRange].valueRange.high -> "ageMaxAutorisee"
+* extension[as-ext-patient-type].extension[installedAgeRange].valueRange.low -> "ageMaxInstallee"
+* extension[as-ext-patient-type].extension[installedAgeRange].valueRange.high -> "ageMaxInstallee"
+* type -> "discipineEquipementSociale"
+* eligibility.code -> "clientele"
