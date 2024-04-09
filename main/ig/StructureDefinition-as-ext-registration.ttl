@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsRegistrationExtension"] ; # 
   fhir:title [ fhir:v "AS Registration Extension"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-04-08T12:53:48+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-04-09T07:46:55+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -89,7 +89,8 @@
            fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.id" ] ;
        fhir:path [ fhir:v "Extension.id" ] ;
@@ -110,19 +111,14 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
        fhir:id [ fhir:v "Extension.extension" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "normative" ]
-       ] [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "4.0.0" ]
-       ] ) ;
        fhir:path [ fhir:v "Extension.extension" ] ;
        fhir:slicing [
          fhir:discriminator ( [
@@ -146,7 +142,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -162,18 +157,17 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
        ] )
      ] [
        fhir:id [ fhir:v "Extension.extension:registeringOrganization" ] ;
@@ -191,7 +185,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -207,12 +200,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:registeringOrganization.id" ] ;
        fhir:path [ fhir:v "Extension.extension.id" ] ;
@@ -233,6 +228,8 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
@@ -260,7 +257,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -276,12 +272,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:registeringOrganization.url" ] ;
        fhir:path [ fhir:v "Extension.extension.url" ] ;
@@ -304,6 +302,8 @@
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [ fhir:v "registeringOrganization"^^xsd:anyURI ] ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -323,7 +323,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "CodeableConcept"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -335,6 +334,8 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
@@ -343,9 +344,6 @@
          ]
        ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -365,7 +363,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -381,12 +378,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:registeringOrganizationDetail.id" ] ;
        fhir:path [ fhir:v "Extension.extension.id" ] ;
@@ -407,6 +406,8 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
@@ -434,7 +435,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -450,12 +450,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:registeringOrganizationDetail.url" ] ;
        fhir:path [ fhir:v "Extension.extension.url" ] ;
@@ -478,6 +480,8 @@
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [ fhir:v "registeringOrganizationDetail"^^xsd:anyURI ] ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -497,7 +501,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "CodeableConcept"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -509,6 +512,8 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
@@ -517,9 +522,6 @@
          ]
        ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -539,7 +541,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -555,12 +556,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:period.id" ] ;
        fhir:path [ fhir:v "Extension.extension.id" ] ;
@@ -581,6 +584,8 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
@@ -608,7 +613,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -624,12 +628,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:period.url" ] ;
        fhir:path [ fhir:v "Extension.extension.url" ] ;
@@ -652,6 +658,8 @@
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -671,7 +679,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Period"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -683,10 +690,9 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -710,19 +716,14 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
        fhir:id [ fhir:v "Extension.extension:period.value[x].extension" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "normative" ]
-       ] [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "4.0.0" ]
-       ] ) ;
        fhir:path [ fhir:v "Extension.extension.value[x].extension" ] ;
        fhir:slicing [
          fhir:discriminator ( [
@@ -746,7 +747,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -762,18 +762,17 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
        ] )
      ] [
        fhir:id [ fhir:v "Extension.extension:period.value[x].start" ] ;
@@ -791,7 +790,7 @@
        fhir:type ( [
          fhir:code [ fhir:v "dateTime"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "per-1" ] ) ;
+       fhir:condition ( [ fhir:v "per-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -803,11 +802,9 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.1" ]
        ] [
@@ -831,7 +828,7 @@
          fhir:code [ fhir:v "dateTime"^^xsd:anyURI ]
        ] ) ;
        fhir:meaningWhenMissing [ fhir:v "If the end of the period is missing, it means that the period is ongoing" ] ;
-       fhir:condition ( [ fhir:v "ele-1" ] [ fhir:v "per-1" ] ) ;
+       fhir:condition ( [ fhir:v "per-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -843,11 +840,9 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.2" ]
        ] [
@@ -870,7 +865,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -886,12 +880,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:status.id" ] ;
        fhir:path [ fhir:v "Extension.extension.id" ] ;
@@ -912,6 +908,8 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
@@ -939,7 +937,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -955,12 +952,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:status.url" ] ;
        fhir:path [ fhir:v "Extension.extension.url" ] ;
@@ -983,6 +982,8 @@
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [ fhir:v "status"^^xsd:anyURI ] ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -1002,7 +1003,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "CodeableConcept"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1014,6 +1014,8 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
@@ -1022,9 +1024,6 @@
          ]
        ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -1044,7 +1043,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1060,12 +1058,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:hostingDepartment.id" ] ;
        fhir:path [ fhir:v "Extension.extension.id" ] ;
@@ -1086,6 +1086,8 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
@@ -1113,7 +1115,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1129,12 +1130,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:hostingDepartment.url" ] ;
        fhir:path [ fhir:v "Extension.extension.url" ] ;
@@ -1157,6 +1160,8 @@
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [ fhir:v "hostingDepartment"^^xsd:anyURI ] ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -1176,7 +1181,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "CodeableConcept"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1188,6 +1192,8 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
@@ -1196,9 +1202,6 @@
          ]
        ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -1218,7 +1221,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1234,12 +1236,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:isFirst.id" ] ;
        fhir:path [ fhir:v "Extension.extension.id" ] ;
@@ -1260,6 +1264,8 @@
          ] ) ;
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "n/a" ]
@@ -1287,7 +1293,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1303,12 +1308,14 @@
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
          fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
          fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ] )
+       ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "Extension.extension:isFirst.url" ] ;
        fhir:path [ fhir:v "Extension.extension.url" ] ;
@@ -1331,6 +1338,8 @@
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [ fhir:v "isFirst"^^xsd:anyURI ] ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -1350,7 +1359,6 @@
        fhir:type ( [
          fhir:code [ fhir:v "boolean"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1362,10 +1370,9 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -1391,6 +1398,8 @@
          fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
        ] ) ;
        fhir:fixed [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration"^^xsd:anyURI ] ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -1508,7 +1517,6 @@
        ] [
          fhir:code [ fhir:v "Meta"^^xsd:anyURI ]
        ] ) ;
-       fhir:condition ( [ fhir:v "ele-1" ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -1520,10 +1528,9 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
+       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )

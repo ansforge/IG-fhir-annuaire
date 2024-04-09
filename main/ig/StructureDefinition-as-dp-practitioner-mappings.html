@@ -233,7 +233,7 @@
         
           Active
           
-            as of 2024-04-08
+            as of 2024-04-09
           
         
       </td>
@@ -249,9 +249,24 @@
 
 
 
-  <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+  <a name="as-practitioner-role-to-mos-savoir-faire"> </a><h3>Mappings for AsPractitionerProfile to MOS - SavoirFaire (https://mos.esante.gouv.fr)</h3><table class="grid">
+ <tr><td colspan="3"><b>AsDpPractitionerProfile</b></td></tr>
+ <tr><td>Practitioner</td><td>SavoirFaire</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;qualification</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;qualification (degree)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;qualification (exercicePro)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;qualification (savoirFaire)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>typeSavoirFaire</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>dateReconnaissance</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>dateAbandon</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>AsDpPractitionerProfile</b></td></tr>
  <tr><td>Practitioner</td><td>PRD (as one example)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (specialty)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>PRD-7 (or XCN.1)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CX.5</td> </tr>
@@ -281,10 +296,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (identifiantInterne)</td><td>PRD-7 (or XCN.1)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE, CX.5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CX.5</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>DR, CX.7 + CX.8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>CX.7 + CX.8</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>XPN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>XPN.7, but often indicated by which field contains the name</td> </tr>
@@ -308,22 +323,25 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;qualification (degree)</td><td>CER?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degreeType)</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degree)</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degreeType)</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degree)</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;qualification (exercicePro)</td><td>CER?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (categorieProfession)</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (profession)</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (categorieProfession)</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (profession)</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;qualification (savoirFaire)</td><td>CER?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (typeSavoirFaire)</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (savoirFaire)</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6, C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (typeSavoirFaire)</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (savoirFaire)</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>DR.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>DR.2</td> </tr>
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>AsDpPractitionerProfile</b></td></tr>
@@ -333,6 +351,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (specialty)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>./id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -375,13 +395,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (identifiantInterne)</td><td>./id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>n/a, Role.code or implied by context</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, Role.code or implied by context</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>n/a, II.root or Role.id.root</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>n/a, II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], Role.effectiveTime or implied by context</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>./statusCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>n/a, EN (actually, PN)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -403,27 +423,27 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (as-mailbox-mss-metadata)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (type)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (description)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (service)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (digitization)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (publication)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./scheme</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./url</td> </tr>
@@ -443,15 +463,16 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;issuer</td><td>.playingEntity.playingRole[classCode=QUAL].scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;qualification (degree)</td><td>.playingEntity.playingRole[classCode=QUAL].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.playingEntity.playingRole[classCode=QUAL].id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>.playingEntity.playingRole[classCode=QUAL].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degreeType)</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degree)</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>n/a, ./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degreeType)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (degree)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;qualification (exercicePro)</td><td>.playingEntity.playingRole[classCode=QUAL].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -459,11 +480,11 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.playingEntity.playingRole[classCode=QUAL].id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>.playingEntity.playingRole[classCode=QUAL].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (categorieProfession)</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (profession)</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>n/a, ./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (categorieProfession)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (profession)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;issuer</td><td>.playingEntity.playingRole[classCode=QUAL].scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;qualification (savoirFaire)</td><td>.playingEntity.playingRole[classCode=QUAL].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -472,12 +493,16 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.playingEntity.playingRole[classCode=QUAL].id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>.playingEntity.playingRole[classCode=QUAL].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (typeSavoirFaire)</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (savoirFaire)</td><td>n/a, CV, union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>n/a, ./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (typeSavoirFaire)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (savoirFaire)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>.playingEntity.playingRole[classCode=QUAL].effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>./low</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>./high</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;issuer</td><td>.playingEntity.playingRole[classCode=QUAL].scoper</td> </tr>
 </table>
 <a name="servd"> </a><h3>Mappings for ServD (<a href="http://www.omg.org/spec/ServD/1.0/">http://www.omg.org/spec/ServD/1.0/</a>)</h3><table class="grid">
@@ -611,7 +636,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.fhir.fr.annuaire#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 8, 2024 12:53+0000">2024-04-08</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.fhir.fr.annuaire#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 9, 2024 07:46+0000">2024-04-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-62",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-62",
+  "id" : "7d15d517-859b-4a3c-9442-5709ae3f8331-62",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/7d15d517-859b-4a3c-9442-5709ae3f8331-62",
   "name" : "UnionAsDpPractitionerRoleProfileAndAsDpPractitionerRoleProfile",
   "title" : "Union of AS Donnée Publique PractitionerRole Profile And AS Donnée Publique PractitionerRole Profile",
   "status" : "active",
-  "date" : "2024-04-08T12:54:08+00:00",
+  "date" : "2024-04-09T07:47:16+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -101,6 +101,10 @@
       {
         "identity" : "servd",
         "map" : "ServiceSiteProvider"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "SituationExercice"
       }]
     },
     {
@@ -561,8 +565,8 @@
     },
     {
       "path" : "PractitionerRole.extension",
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "short" : "left: Additional content defined by implementations; right: Extension",
+      "definition" : "left: May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.; right: An Extension",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
       "alias" : ["extensions",
       "user content"],
@@ -756,7 +760,7 @@
       "path" : "PractitionerRole.period",
       "short" : "Période d'activité de la situation d'exercice.",
       "definition" : "The period during which the person is authorized to act as a practitioner in these role(s) for the organization.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration].",
+      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "requirements" : "Even after the agencies is revoked, the fact that it existed must still be recorded.",
       "min" : 0,
       "max" : "0",
@@ -920,6 +924,10 @@
       {
         "identity" : "rim",
         "map" : "./low"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "dateDebutActivite"
       }]
     },
     {
@@ -958,6 +966,10 @@
       {
         "identity" : "rim",
         "map" : "./high"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "dateFinActivite"
       }]
     },
     {
@@ -1062,7 +1074,7 @@
     },
     {
       "path" : "PractitionerRole.code",
-      "short" : "Roles which this practitioner may perform",
+      "short" : "left: Roles which this practitioner may perform; right: The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation",
       "definition" : "Roles which this practitioner is authorized to perform for the organization.",
       "comment" : "A person may have more than one role.",
       "requirements" : "Need to know what authority the practitioner has - what can they do?",
@@ -1086,9 +1098,9 @@
       "isModifier" : false,
       "isSummary" : true,
       "binding" : {
-        "strength" : "example",
+        "strength" : "preferred",
         "description" : "The role a person plays representing an organization.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/practitioner-role"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/7d15d517-859b-4a3c-9442-5709ae3f8331-65"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -1121,7 +1133,7 @@
     },
     {
       "path" : "PractitionerRole.specialty",
-      "short" : "Specific specialty of the practitioner",
+      "short" : "left: Specific specialty of the practitioner; right: Specific specialty associated with the organization | spécialité ordinale du professionnel de santé au sein de l'organisation",
       "definition" : "Specific specialty of the practitioner.",
       "comment" : "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
       "min" : 0,
@@ -1144,9 +1156,9 @@
       "isModifier" : false,
       "isSummary" : true,
       "binding" : {
-        "strength" : "preferred",
+        "strength" : "required",
         "description" : "Specific specialty associated with the agency.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/7d15d517-859b-4a3c-9442-5709ae3f8331-68"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -1289,8 +1301,8 @@
     },
     {
       "path" : "PractitionerRole.telecom",
-      "short" : "Contact details that are specific to the role/location/service",
-      "definition" : "Contact details that are specific to the role/location/service.",
+      "short" : "left: Contact details that are specific to the role/location/service; right: Details of a Technology mediated contact point | Coordonnées électroniques détaillées",
+      "definition" : "left: Contact details that are specific to the role/location/service.; right: Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.",
       "requirements" : "Often practitioners have a dedicated line for each location (or service) that they work at, and need to be able to define separate contact details for each of these.",
       "min" : 0,
       "max" : "*",
@@ -1343,6 +1355,10 @@
       {
         "identity" : "rim",
         "map" : ".telecom"
+      },
+      {
+        "identity" : "as-practitioner-role-to-mos-situation-exercice",
+        "map" : "telecommunication"
       }]
     },
     {
@@ -1811,7 +1827,7 @@
       "path" : "PractitionerRole.notAvailable.during",
       "short" : "Service not available from this date",
       "definition" : "Service is not available (seasonally or for a public holiday) from this date.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration].",
+      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "1",
       "type" : [{

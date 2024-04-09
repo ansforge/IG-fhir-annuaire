@@ -10,7 +10,7 @@
   "name" : "AsSupportedCapacityExtension",
   "title" : "AS Supported Capacity Extension",
   "status" : "active",
-  "date" : "2024-04-08T12:53:48+00:00",
+  "date" : "2024-04-09T07:46:55+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -75,7 +75,8 @@
         "expression" : "extension.exists() != value.exists()",
         "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }]
+      }],
+      "isModifier" : false
     },
     {
       "id" : "Extension.id",
@@ -97,6 +98,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -104,14 +107,6 @@
     },
     {
       "id" : "Extension.extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Extension.extension",
       "slicing" : {
         "discriminator" : [{
@@ -136,7 +131,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -150,16 +144,14 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
       }]
     },
     {
@@ -178,7 +170,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -192,9 +183,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:capacityAvailable.id",
@@ -216,6 +209,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -244,7 +239,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -258,9 +252,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:capacityAvailable.url",
@@ -284,6 +280,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "capacityAvailable",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -304,7 +302,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -313,11 +310,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -338,7 +333,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -352,9 +346,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:femaleCapacityAvailable.id",
@@ -376,6 +372,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -404,7 +402,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -418,9 +415,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:femaleCapacityAvailable.url",
@@ -444,6 +443,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "femaleCapacityAvailable",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -464,7 +465,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -473,11 +473,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -498,7 +496,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -512,9 +509,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:maleCapacityAvailable.id",
@@ -536,6 +535,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -564,7 +565,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -578,9 +578,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:maleCapacityAvailable.url",
@@ -604,6 +606,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "maleCapacityAvailable",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -624,7 +628,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -633,11 +636,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -658,7 +659,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -672,9 +672,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:socialAssistanceCapacityAvailable.id",
@@ -696,6 +698,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -724,7 +728,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -738,9 +741,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:socialAssistanceCapacityAvailable.url",
@@ -764,6 +769,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "socialAssistanceCapacityAvailable",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -784,7 +791,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -793,11 +799,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -818,7 +822,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -832,9 +835,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:installedCapacity.id",
@@ -856,6 +861,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -884,7 +891,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -898,9 +904,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:installedCapacity.url",
@@ -924,6 +932,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "installedCapacity",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -944,7 +954,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -953,11 +962,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -978,7 +985,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -992,9 +998,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:femaleInstalledCapacity.id",
@@ -1016,6 +1024,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -1044,7 +1054,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1058,9 +1067,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:femaleInstalledCapacity.url",
@@ -1084,6 +1095,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "femaleInstalledCapacity",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -1104,7 +1117,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1113,11 +1125,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -1138,7 +1148,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1152,9 +1161,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:maleInstalledCapacity.id",
@@ -1176,6 +1187,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -1204,7 +1217,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1218,9 +1230,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:maleInstalledCapacity.url",
@@ -1244,6 +1258,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "maleInstalledCapacity",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -1264,7 +1280,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1273,11 +1288,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -1298,7 +1311,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1312,9 +1324,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:socialAssistanceInstalledCapacity.id",
@@ -1336,6 +1350,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -1364,7 +1380,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1378,9 +1393,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.extension:socialAssistanceInstalledCapacity.url",
@@ -1404,6 +1421,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "socialAssistanceInstalledCapacity",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -1424,7 +1443,6 @@
       "type" : [{
         "code" : "integer"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1433,11 +1451,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -1464,6 +1480,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-supported-capacity",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -1631,7 +1649,6 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1640,11 +1657,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]

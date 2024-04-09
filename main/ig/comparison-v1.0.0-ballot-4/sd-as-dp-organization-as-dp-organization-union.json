@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-44",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-44",
+  "id" : "7d15d517-859b-4a3c-9442-5709ae3f8331-44",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/7d15d517-859b-4a3c-9442-5709ae3f8331-44",
   "name" : "UnionAsDpOrganizationProfileAndAsDpOrganizationProfile",
   "title" : "Union of AS Donnée Publique Organization Profile And AS Donnée Publique Organization Profile",
   "status" : "active",
-  "date" : "2024-04-08T12:54:08+00:00",
+  "date" : "2024-04-09T07:47:16+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -112,6 +112,14 @@
       {
         "identity" : "servd",
         "map" : "Organization"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "EntiteJuridique"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "EntiteGeographique"
       }]
     },
     {
@@ -859,7 +867,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-47"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/7d15d517-859b-4a3c-9442-5709ae3f8331-47"
       },
       "mapping" : [{
         "identity" : "rim",
@@ -981,7 +989,7 @@
       "path" : "Organization.identifier.period",
       "short" : "Time period when id is/was valid for use",
       "definition" : "Time period during which identifier is/was valid for use.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration].",
+      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -1139,6 +1147,10 @@
       {
         "identity" : "servd",
         "map" : "./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date."
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "actif"
       }]
     },
     {
@@ -1244,6 +1256,14 @@
       {
         "identity" : "servd",
         "map" : ".PreferredName/Name"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "raisonSociale"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEG"
       }]
     },
     {
@@ -1278,6 +1298,14 @@
       {
         "identity" : "rim",
         "map" : ".name"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "raisonSocialeLongue"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEGLongue"
       }]
     },
     {
@@ -1356,6 +1384,14 @@
       {
         "identity" : "servd",
         "map" : "./ContactPoints"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "telecommunication"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "telecommunication"
       }]
     },
     {
@@ -1706,6 +1742,14 @@
       {
         "identity" : "servd",
         "map" : "Address"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "adresseEJ"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "adresseEG"
       }]
     },
     {
@@ -1900,7 +1944,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "Aa resource (or, for logical models, the URI of the logical model).",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-32"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/7d15d517-859b-4a3c-9442-5709ae3f8331-32"
       },
       "mapping" : [{
         "identity" : "rim",

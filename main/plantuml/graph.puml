@@ -10,6 +10,7 @@ package IG #DDDDDD{
         class AsAddressExtendedProfile{
 
              Address => [None..None]
+             Address.line.extension => [None..None]
              Address.line.extension:careOf => <&plus>[0..1]
              Address.line.extension:additionalLocator => <&plus>[0..1]
              Address.line.extension:houseNumber => <&plus>[0..1]
@@ -31,6 +32,7 @@ package IG #DDDDDD{
         class AsDeviceProfile{
 
              Device.meta.extension:as-ext-data-trace => <&plus>[0..1]
+             Device.extension => [None..None]
              Device.extension:as-ext-healthcareservice-authorization => <&plus>[0..1]
              Device.identifier => [None..None]
              Device.identifier:numAutorisationArhgos => [0..1]
@@ -332,6 +334,7 @@ package IG #DDDDDD{
         class AsHealthcareServiceHealthcareActivityProfile{
 
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
+             HealthcareService.extension => [None..None]
              HealthcareService.extension:as-ext-healthcareservice-authorization => <&plus>[0..*]
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
@@ -346,9 +349,29 @@ package IG #DDDDDD{
         class AsHealthcareServiceSocialEquipmentProfile{
 
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
+             HealthcareService.extension => [None..None]
              HealthcareService.extension:as-ext-healthcareservice-authorization => <&plus>[0..*]
+             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:dateAuthorization => <&plus>[None..None]
+             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:periodAuthorization => <&plus>[None..None]
+             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:periodAuthorization.value[x].start => <&plus>[None..None]
+             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:deleteAuthorization => <&plus>[None..None]
+             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:deleteInstallation => <&plus>[None..None]
              HealthcareService.extension:as-ext-patient-type => <&plus>[0..*]
+             HealthcareService.extension:as-ext-patient-type.extension:authorizedAgeRange => <&plus>[None..None]
+             HealthcareService.extension:as-ext-patient-type.extension:authorizedAgeRange.value[x].low => <&plus>[None..None]
+             HealthcareService.extension:as-ext-patient-type.extension:authorizedAgeRange.value[x].high => <&plus>[None..None]
+             HealthcareService.extension:as-ext-patient-type.extension:installedAgeRange => <&plus>[None..None]
+             HealthcareService.extension:as-ext-patient-type.extension:installedAgeRange.value[x].low => <&plus>[None..None]
+             HealthcareService.extension:as-ext-patient-type.extension:installedAgeRange.value[x].high => <&plus>[None..None]
              HealthcareService.extension:as-ext-supported-capacity => <&plus>[0..*]
+             HealthcareService.extension:as-ext-supported-capacity.extension:capacityAvailable => <&plus>[None..None]
+             HealthcareService.extension:as-ext-supported-capacity.extension:femaleCapacityAvailable => <&plus>[None..None]
+             HealthcareService.extension:as-ext-supported-capacity.extension:maleCapacityAvailable => <&plus>[None..None]
+             HealthcareService.extension:as-ext-supported-capacity.extension:socialAssistanceCapacityAvailable => <&plus>[None..None]
+             HealthcareService.extension:as-ext-supported-capacity.extension:installedCapacity => <&plus>[None..None]
+             HealthcareService.extension:as-ext-supported-capacity.extension:femaleInstalledCapacity => <&plus>[None..None]
+             HealthcareService.extension:as-ext-supported-capacity.extension:maleInstalledCapacity => <&plus>[None..None]
+             HealthcareService.extension:as-ext-supported-capacity.extension:socialAssistanceInstalledCapacity => <&plus>[None..None]
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
              HealthcareService.identifier:numAutorisationArhgos.system => [1..None]
@@ -377,6 +400,7 @@ package IG #DDDDDD{
 
         class AsOrganizationProfile{
 
+             Organization => [None..None]
              Organization.meta.extension:as-ext-data-trace => <&plus>[0..1]
              Organization.extension:usePeriod => <&plus>[None..None]
              Organization.extension:usePeriod.value[x].start => <&plus>[None..None]
@@ -388,6 +412,8 @@ package IG #DDDDDD{
              Organization.extension:as-ext-organization-budget-type => <&plus>[0..1]
              Organization.extension:as-ext-organization-authorization-deadline => <&plus>[0..1]
              Organization.identifier:idNatSt => [None..None]
+             Organization.identifier:sirene => [None..None]
+             Organization.identifier:finess => [None..None]
              Organization.active => [None..None]
              Organization.type => [None..None]
              Organization.type:organizationType => [None..None]
@@ -424,6 +450,8 @@ package IG #DDDDDD{
         class AsPersonProfile{
 
              Person.meta.extension:as-ext-data-trace => <&plus>[0..1]
+             Person.language => [None..None]
+             Person.extension => [None..None]
              Person.extension:as-ext-person-nationality => <&plus>[0..*]
              Person.extension:as-ext-person-birth-place => <&plus>[0..1]
              Person.extension:as-ext-person-deceased-date-time => <&plus>[0..1]
@@ -448,7 +476,19 @@ package IG #DDDDDD{
              Practitioner => [None..None]
              Practitioner.meta.extension:as-ext-data-trace => <&plus>[0..1]
              Practitioner.extension:as-ext-registration => <&plus>[0..*]
+             Practitioner.extension:as-ext-registration.extension:registeringOrganization => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:period => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:period.value[x].start => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:period.value[x].end => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:status => <&plus>[None..None]
+             Practitioner.extension:as-ext-registration.extension:hostingDepartment => <&plus>[None..None]
              Practitioner.extension:as-ext-frpractitioner-authorization => <&plus>[0..*]
+             Practitioner.extension:as-ext-frpractitioner-authorization.extension:type => <&plus>[None..None]
+             Practitioner.extension:as-ext-frpractitioner-authorization.extension:period => <&plus>[None..None]
+             Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].start => <&plus>[None..None]
+             Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].end => <&plus>[None..None]
+             Practitioner.extension:as-ext-frpractitioner-authorization.extension:field => <&plus>[None..None]
+             Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession => <&plus>[None..None]
              Practitioner.extension:as-ext-smartcard => <&plus>[0..*]
              Practitioner.extension:as-ext-digital-certificate => <&plus>[0..*]
              Practitioner.identifier => [None..None]
@@ -465,9 +505,14 @@ package IG #DDDDDD{
              Practitioner.telecom:mailbox-mss => [0..*]
              Practitioner.address => [None..None]
              Practitioner.qualification => [None..None]
+             Practitioner.qualification.identifier => [None..None]
+             Practitioner.qualification.code => [None..None]
              Practitioner.qualification:degree => [0..*]
              Practitioner.qualification:degree.extension => [None..None]
              Practitioner.qualification:degree.extension:as-ext-education-level => <&plus>[0..*]
+             Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicDegree => <&plus>[None..None]
+             Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel => <&plus>[None..None]
+             Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear => <&plus>[None..None]
              Practitioner.qualification:degree.code.coding => [None..None]
              Practitioner.qualification:degree.code.coding:degreeType => [0..1]
              Practitioner.qualification:degree.code.coding:degree => [0..1]
@@ -483,14 +528,18 @@ package IG #DDDDDD{
              Practitioner.qualification:exercicePro.period.start => [None..None]
              Practitioner.qualification:exercicePro.period.end => [None..None]
              Practitioner.qualification:savoirFaire => [0..*]
+             Practitioner.qualification:savoirFaire.code => [None..None]
              Practitioner.qualification:savoirFaire.code.coding => [None..None]
              Practitioner.qualification:savoirFaire.code.coding:typeSavoirFaire => [0..1]
              Practitioner.qualification:savoirFaire.code.coding:savoirFaire => [0..1]
+             Practitioner.qualification:savoirFaire.period.start => [None..None]
+             Practitioner.qualification:savoirFaire.period.end => [None..None]
              Practitioner.communication => [None..None]
         } 
 
         class AsPractitionerRoleProfile{
 
+             PractitionerRole => [None..None]
              PractitionerRole.meta.extension:as-ext-data-trace => <&plus>[0..1]
              PractitionerRole.extension:as-ext-practitionerrole-contracted => <&plus>[0..1]
              PractitionerRole.extension:as-ext-practitionerrole-hascas => <&plus>[0..1]
@@ -1052,8 +1101,8 @@ package "Ressources de base" #palegreen {
 
     class722d091912544e694771fe1d2c6739cb --> AsPractitionerProfile
 
- class "PractitionerRole" as  classa6482460b0b027d14fe848816788acb6 
+ class "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-role-exercice" as  classe4daf2be5b13378c745927d0e7da5203 
 
-    classa6482460b0b027d14fe848816788acb6 --> AsPractitionerRoleProfile
+    classe4daf2be5b13378c745927d0e7da5203 --> AsPractitionerRoleProfile
 }
 @enduml

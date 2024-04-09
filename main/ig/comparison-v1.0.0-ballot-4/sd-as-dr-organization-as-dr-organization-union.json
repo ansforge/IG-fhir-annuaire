@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-74",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-74",
+  "id" : "7d15d517-859b-4a3c-9442-5709ae3f8331-80",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/7d15d517-859b-4a3c-9442-5709ae3f8331-80",
   "name" : "UnionAsDrOrganizationProfileAndAsDrOrganizationProfile",
   "title" : "Union of AS Donnée Restreinte Organization Profile And AS Donnée Restreinte Organization Profile",
   "status" : "active",
-  "date" : "2024-04-08T12:54:08+00:00",
+  "date" : "2024-04-09T07:47:16+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -112,6 +112,14 @@
       {
         "identity" : "servd",
         "map" : "Organization"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "EntiteJuridique"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "EntiteGeographique"
       }]
     },
     {
@@ -1202,6 +1210,10 @@
       {
         "identity" : "servd",
         "map" : "./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date."
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "actif"
       }]
     },
     {
@@ -1307,6 +1319,14 @@
       {
         "identity" : "servd",
         "map" : ".PreferredName/Name"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "raisonSociale"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEG"
       }]
     },
     {
@@ -1341,6 +1361,14 @@
       {
         "identity" : "rim",
         "map" : ".name"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "raisonSocialeLongue"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEGLongue"
       }]
     },
     {
@@ -1419,6 +1447,14 @@
       {
         "identity" : "servd",
         "map" : "./ContactPoints"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "telecommunication"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "telecommunication"
       }]
     },
     {
@@ -1769,6 +1805,14 @@
       {
         "identity" : "servd",
         "map" : "Address"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "adresseEJ"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "adresseEG"
       }]
     },
     {
@@ -1963,7 +2007,7 @@
       "binding" : {
         "strength" : "extensible",
         "description" : "Aa resource (or, for logical models, the URI of the logical model).",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-32"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/7d15d517-859b-4a3c-9442-5709ae3f8331-32"
       },
       "mapping" : [{
         "identity" : "rim",

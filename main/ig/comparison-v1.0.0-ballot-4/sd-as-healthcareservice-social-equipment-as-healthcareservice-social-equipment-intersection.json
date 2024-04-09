@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-162",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/d25f26b9-3d68-4dd2-b8b4-9809dc29d4e6-162",
+  "id" : "7d15d517-859b-4a3c-9442-5709ae3f8331-168",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/7d15d517-859b-4a3c-9442-5709ae3f8331-168",
   "name" : "IntersectionAsHealthcareServiceSocialEquipmentProfileAndAsHealthcareServiceSocialEquipmentProfile",
   "title" : "Intersection of AS HealthcareService Social Equipment Profile And AS HealthcareService Social Equipment Profile",
   "status" : "active",
-  "date" : "2024-04-08T12:54:08+00:00",
+  "date" : "2024-04-09T07:47:16+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -93,6 +93,10 @@
       {
         "identity" : "rim",
         "map" : "act[classCode=ACT][moodCode=DEF]"
+      },
+      {
+        "identity" : "as-healthcare-social-equipment-to-mos-activite-sociale",
+        "map" : "ActiviteSociale"
       }]
     },
     {
@@ -565,8 +569,8 @@
     },
     {
       "path" : "HealthcareService.extension",
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "short" : "left: Additional content defined by implementations; right: Extension",
+      "definition" : "left: May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.; right: An Extension",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
       "alias" : ["extensions",
       "user content"],
@@ -900,6 +904,10 @@
       {
         "identity" : "rim",
         "map" : ".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"
+      },
+      {
+        "identity" : "as-healthcare-social-equipment-to-mos-activite-sociale",
+        "map" : "discipineEquipementSociale"
       }]
     },
     {
@@ -1510,6 +1518,10 @@
       {
         "identity" : "rim",
         "map" : ".actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]"
+      },
+      {
+        "identity" : "as-healthcare-social-equipment-to-mos-activite-sociale",
+        "map" : "clientele"
       }]
     },
     {
@@ -2254,7 +2266,7 @@
       "path" : "HealthcareService.notAvailable.during",
       "short" : "Service not available from this date",
       "definition" : "Service is not available (seasonally or for a public holiday) from this date.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration].",
+      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "1",
       "type" : [{

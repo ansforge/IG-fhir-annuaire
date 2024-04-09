@@ -10,7 +10,7 @@
   "name" : "AsDpOrganizationProfile",
   "title" : "AS Donnée Publique Organization Profile",
   "status" : "active",
-  "date" : "2024-04-08T12:53:48+00:00",
+  "date" : "2024-04-09T07:46:55+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -33,6 +33,11 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "as-organization-to-mos-ej",
+    "uri" : "https://mos.esante.gouv.fr",
+    "name" : "AsOrganization to MOS - EJ"
+  },
+  {
     "identity" : "v2",
     "uri" : "http://hl7.org/v2",
     "name" : "HL7 v2 Mapping"
@@ -143,6 +148,14 @@
       {
         "identity" : "servd",
         "map" : "Organization"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "EntiteJuridique"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "EntiteGeographique"
       }]
     },
     {
@@ -772,7 +785,7 @@
       "id" : "Organization.extension:usePeriod",
       "path" : "Organization.extension",
       "sliceName" : "usePeriod",
-      "short" : "Optional Extensions Element",
+      "short" : "Extension",
       "definition" : "The date range that this organization should be considered available.",
       "min" : 0,
       "max" : "1",
@@ -802,15 +815,7 @@
         "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
-      "isModifier" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
+      "isModifier" : false
     },
     {
       "id" : "Organization.extension:usePeriod.id",
@@ -832,6 +837,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -839,14 +846,6 @@
     },
     {
       "id" : "Organization.extension:usePeriod.extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Organization.extension.extension",
       "slicing" : {
         "discriminator" : [{
@@ -856,11 +855,8 @@
         "description" : "Extensions are always sliced by (at least) url",
         "rules" : "open"
       },
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
+      "short" : "Extension",
+      "definition" : "An Extension",
       "min" : 0,
       "max" : "0",
       "base" : {
@@ -871,7 +867,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -885,17 +880,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.extension:usePeriod.url",
@@ -919,6 +908,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "http://hl7.org/fhir/StructureDefinition/organization-period",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -928,7 +919,7 @@
       "id" : "Organization.extension:usePeriod.value[x]",
       "path" : "Organization.extension.value[x]",
       "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -939,7 +930,6 @@
       "type" : [{
         "code" : "Period"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -948,11 +938,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -977,6 +965,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -984,14 +974,6 @@
     },
     {
       "id" : "Organization.extension:usePeriod.value[x].extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Organization.extension.value[x].extension",
       "slicing" : {
         "discriminator" : [{
@@ -1016,7 +998,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1030,16 +1011,14 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
       }]
     },
     {
@@ -1058,8 +1037,7 @@
       "type" : [{
         "code" : "dateTime"
       }],
-      "condition" : ["ele-1",
-      "per-1"],
+      "condition" : ["per-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1068,18 +1046,23 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "DR.1"
       },
       {
         "identity" : "rim",
         "map" : "./low"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "dateCreation"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "dateOuverture"
       }]
     },
     {
@@ -1099,8 +1082,7 @@
         "code" : "dateTime"
       }],
       "meaningWhenMissing" : "If the end of the period is missing, it means that the period is ongoing",
-      "condition" : ["ele-1",
-      "per-1"],
+      "condition" : ["per-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1109,18 +1091,23 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "DR.2"
       },
       {
         "identity" : "rim",
         "map" : "./high"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "dateFermeture"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "dateFermeture"
       }]
     },
     {
@@ -1195,7 +1182,11 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "numeroLicenceOfficine"
+      }]
     },
     {
       "id" : "Organization.extension:as-ext-organization-pricing-model",
@@ -1232,7 +1223,11 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "modeFixationTarifaire"
+      }]
     },
     {
       "id" : "Organization.extension:as-ext-organization-closing-type",
@@ -1269,7 +1264,15 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "typeFermeture"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "typeFermeture"
+      }]
     },
     {
       "id" : "Organization.extension:as-ext-organization-budget-type",
@@ -1306,7 +1309,11 @@
       }],
       "mustSupport" : true,
       "isModifier" : false,
-      "isSummary" : false
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "natureEtablissement"
+      }]
     },
     {
       "id" : "Organization.extension:as-ext-organization-authorization-deadline",
@@ -1460,6 +1467,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -1467,14 +1476,6 @@
     },
     {
       "id" : "Organization.identifier.extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Organization.identifier.extension",
       "slicing" : {
         "discriminator" : [{
@@ -1499,7 +1500,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1513,16 +1513,14 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
       }]
     },
     {
@@ -1542,7 +1540,6 @@
       "type" : [{
         "code" : "code"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1564,10 +1561,6 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-use|4.0.1"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "N/A"
       },
@@ -1593,7 +1586,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1602,6 +1594,7 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "binding" : {
         "extension" : [{
@@ -1613,22 +1606,6 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-type"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.5"
       },
@@ -1658,7 +1635,6 @@
         "label" : "General",
         "valueUri" : "http://www.acme.com/identifiers/patient"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1667,12 +1643,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.4 / EI-2-4"
       },
@@ -1705,7 +1678,6 @@
         "label" : "General",
         "valueString" : "123456"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1714,12 +1686,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.1 / EI.1"
       },
@@ -1737,7 +1706,6 @@
       "path" : "Organization.identifier.period",
       "short" : "Time period when id is/was valid for use",
       "definition" : "Time period during which identifier is/was valid for use.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "0",
       "base" : {
@@ -1748,7 +1716,6 @@
       "type" : [{
         "code" : "Period"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1756,29 +1723,10 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "per-1",
-        "severity" : "error",
-        "human" : "If present, start SHALL have a lower value than end",
-        "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
-        "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Appointment"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "DR"
-      },
-      {
-        "identity" : "rim",
-        "map" : "IVL<TS>[lowClosed=\"true\" and highClosed=\"true\"] or URG<TS>[lowClosed=\"true\" and highClosed=\"true\"]"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.7 + CX.8"
       },
@@ -1808,7 +1756,6 @@
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1816,25 +1763,10 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Appointment"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.4 / (CX.4,CX.9,CX.10)"
       },
@@ -1891,6 +1823,14 @@
       {
         "identity" : "servd",
         "map" : "./Identifiers"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "idNat_struct"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "idNat_struct"
       }]
     },
     {
@@ -2276,6 +2216,14 @@
       {
         "identity" : "servd",
         "map" : "./Identifiers"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "numSiren"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "numSiren"
       }]
     },
     {
@@ -3092,6 +3040,14 @@
       {
         "identity" : "servd",
         "map" : "./Identifiers"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "numFiness"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "numFiness"
       }]
     },
     {
@@ -4699,6 +4655,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -4706,14 +4664,6 @@
     },
     {
       "id" : "Organization.identifier:identifiantInterne.extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Organization.identifier.extension",
       "slicing" : {
         "discriminator" : [{
@@ -4738,7 +4688,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4752,16 +4701,14 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
       }]
     },
     {
@@ -4781,7 +4728,6 @@
       "type" : [{
         "code" : "code"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4803,10 +4749,6 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-use|4.0.1"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "N/A"
       },
@@ -4838,7 +4780,6 @@
           "code" : "INTRN"
         }]
       },
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4847,6 +4788,7 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "binding" : {
         "extension" : [{
@@ -4858,22 +4800,6 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-type"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept rdfs:subClassOf dt:CD"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.5"
       },
@@ -4904,7 +4830,6 @@
         "label" : "General",
         "valueUri" : "http://www.acme.com/identifiers/patient"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4913,12 +4838,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.4 / EI-2-4"
       },
@@ -4951,7 +4873,6 @@
         "label" : "General",
         "valueString" : "123456"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -4960,12 +4881,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.1 / EI.1"
       },
@@ -4983,7 +4901,6 @@
       "path" : "Organization.identifier.period",
       "short" : "Time period when id is/was valid for use",
       "definition" : "Time period during which identifier is/was valid for use.",
-      "comment" : "A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. \"the patient was an inpatient of the hospital for this time range\") or one value from the range applies (e.g. \"give to the patient between these two times\").\n\nPeriod is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration).",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -4994,7 +4911,6 @@
       "type" : [{
         "code" : "Period"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5002,29 +4918,10 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "per-1",
-        "severity" : "error",
-        "human" : "If present, start SHALL have a lower value than end",
-        "expression" : "start.hasValue().not() or end.hasValue().not() or (start <= end)",
-        "xpath" : "not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) <= xs:dateTime(f:end/@value))",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Appointment"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "DR"
-      },
-      {
-        "identity" : "rim",
-        "map" : "IVL<TS>[lowClosed=\"true\" and highClosed=\"true\"] or URG<TS>[lowClosed=\"true\" and highClosed=\"true\"]"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.7 + CX.8"
       },
@@ -5054,7 +4951,6 @@
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5062,25 +4958,10 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ref-1",
-        "severity" : "error",
-        "human" : "SHALL have a contained resource if a local reference is provided",
-        "expression" : "reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))",
-        "xpath" : "not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Appointment"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.4 / (CX.4,CX.9,CX.10)"
       },
@@ -5138,6 +5019,10 @@
       {
         "identity" : "servd",
         "map" : "./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date."
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "actif"
       }]
     },
     {
@@ -5375,6 +5260,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -5403,7 +5290,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5417,9 +5303,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:organizationType.extension:as-ext-organization-types.url",
@@ -5443,6 +5331,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -5464,7 +5354,6 @@
         "code" : "code"
       }],
       "patternCode" : "organizationType",
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -5473,15 +5362,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -6866,6 +6753,14 @@
       {
         "identity" : "servd",
         "map" : "n/a"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "codeAPEN"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "codeAPET"
       }]
     },
     {
@@ -6888,6 +6783,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -6916,7 +6813,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -6930,9 +6826,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:activiteINSEE.extension:as-ext-organization-types",
@@ -6951,7 +6849,6 @@
         "code" : "Extension",
         "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -6965,9 +6862,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:activiteINSEE.extension:as-ext-organization-types.id",
@@ -6989,6 +6888,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -7017,7 +6918,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7031,9 +6931,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:activiteINSEE.extension:as-ext-organization-types.url",
@@ -7057,6 +6959,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -7078,7 +6982,6 @@
         "code" : "code"
       }],
       "patternCode" : "activiteINSEE",
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7087,15 +6990,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -7117,7 +7018,6 @@
       "type" : [{
         "code" : "Coding"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7126,24 +7026,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.1-8, C*E.10-22"
       },
@@ -7177,7 +7062,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7186,12 +7070,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.9. But note many systems use C*E.2 for this"
       },
@@ -7251,6 +7132,10 @@
       {
         "identity" : "servd",
         "map" : "n/a"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "statutJuridique"
       }]
     },
     {
@@ -7273,6 +7158,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -7301,7 +7188,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7315,9 +7201,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types",
@@ -7336,7 +7224,6 @@
         "code" : "Extension",
         "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7350,9 +7237,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types.id",
@@ -7374,6 +7263,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -7402,7 +7293,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7416,9 +7306,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:statutJuridiqueINSEE.extension:as-ext-organization-types.url",
@@ -7442,6 +7334,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -7463,7 +7357,6 @@
         "code" : "code"
       }],
       "patternCode" : "statutJuridiqueINSEE",
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7472,15 +7365,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -7502,7 +7393,6 @@
       "type" : [{
         "code" : "Coding"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7511,24 +7401,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.1-8, C*E.10-22"
       },
@@ -7562,7 +7437,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7571,12 +7445,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.9. But note many systems use C*E.2 for this"
       },
@@ -7636,6 +7507,10 @@
       {
         "identity" : "servd",
         "map" : "n/a"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "codeAPET"
       }]
     },
     {
@@ -7658,6 +7533,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -7686,7 +7563,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7700,9 +7576,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:sphParticipation.extension:as-ext-organization-types",
@@ -7721,7 +7599,6 @@
         "code" : "Extension",
         "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7735,9 +7612,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:sphParticipation.extension:as-ext-organization-types.id",
@@ -7759,6 +7638,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -7787,7 +7668,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7801,9 +7681,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:sphParticipation.extension:as-ext-organization-types.url",
@@ -7827,6 +7709,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -7848,7 +7732,6 @@
         "code" : "code"
       }],
       "patternCode" : "sphParticipation",
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7857,15 +7740,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -7887,7 +7768,6 @@
       "type" : [{
         "code" : "Coding"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7896,24 +7776,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.1-8, C*E.10-22"
       },
@@ -7947,7 +7812,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -7956,12 +7820,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.9. But note many systems use C*E.2 for this"
       },
@@ -8048,6 +7909,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -8076,7 +7939,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -8090,9 +7952,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:typeEtablissement.extension:as-ext-organization-types",
@@ -8111,7 +7975,6 @@
         "code" : "Extension",
         "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"]
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -8125,9 +7988,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:typeEtablissement.extension:as-ext-organization-types.id",
@@ -8149,6 +8014,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -8177,7 +8044,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -8191,9 +8057,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.type:typeEtablissement.extension:as-ext-organization-types.url",
@@ -8217,6 +8085,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -8238,7 +8108,6 @@
         "code" : "code"
       }],
       "patternCode" : "typeEtablissement",
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -8247,15 +8116,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -8277,7 +8144,6 @@
       "type" : [{
         "code" : "Coding"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -8286,24 +8152,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "v2",
-        "map" : "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding rdfs:subClassOf dt:CDCoding"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.1-8, C*E.10-22"
       },
@@ -8337,7 +8188,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -8347,12 +8197,9 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "mustSupport" : true,
+      "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.9. But note many systems use C*E.2 for this"
       },
@@ -8405,6 +8252,14 @@
       {
         "identity" : "servd",
         "map" : ".PreferredName/Name"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "raisonSociale"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEG"
       }]
     },
     {
@@ -8438,6 +8293,14 @@
       "mapping" : [{
         "identity" : "rim",
         "map" : ".name"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "raisonSocialeLongue"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "denominationEGLongue"
       }]
     },
     {
@@ -8507,6 +8370,14 @@
       {
         "identity" : "servd",
         "map" : "ContactPoint"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "telecommunication"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "telecommunication"
       }]
     },
     {
@@ -9198,6 +9069,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -9205,14 +9078,6 @@
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "normative"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
-        "valueCode" : "4.0.0"
-      }],
       "path" : "Organization.telecom.extension.extension",
       "slicing" : {
         "discriminator" : [{
@@ -9237,7 +9102,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9251,16 +9115,14 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
       }]
     },
     {
@@ -9279,7 +9141,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9293,9 +9154,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.id",
@@ -9317,6 +9180,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -9345,7 +9210,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9359,9 +9223,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.url",
@@ -9385,6 +9251,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "type",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -9405,7 +9273,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9414,15 +9281,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -9443,7 +9308,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9457,9 +9321,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id",
@@ -9481,6 +9347,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -9509,7 +9377,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9523,9 +9390,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.url",
@@ -9549,6 +9418,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "description",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -9569,7 +9440,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9578,11 +9448,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -9603,7 +9471,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9617,9 +9484,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.id",
@@ -9641,6 +9510,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -9669,7 +9540,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9683,9 +9553,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.url",
@@ -9709,6 +9581,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "responsible",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -9729,7 +9603,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9738,11 +9611,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -9763,7 +9634,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9777,9 +9647,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id",
@@ -9801,6 +9673,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -9829,7 +9703,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9843,9 +9716,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.url",
@@ -9869,6 +9744,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "service",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -9889,7 +9766,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9898,11 +9774,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -9923,7 +9797,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -9937,9 +9810,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.id",
@@ -9961,6 +9836,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -9989,7 +9866,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10003,9 +9879,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.url",
@@ -10029,6 +9907,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "phone",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -10049,7 +9929,6 @@
       "type" : [{
         "code" : "string"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10058,11 +9937,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -10083,7 +9960,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10097,9 +9973,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id",
@@ -10121,6 +9999,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -10149,7 +10029,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10163,9 +10042,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.url",
@@ -10189,6 +10070,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "digitization",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -10209,7 +10092,6 @@
       "type" : [{
         "code" : "boolean"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10218,11 +10100,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -10243,7 +10123,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10257,9 +10136,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id",
@@ -10281,6 +10162,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -10309,7 +10192,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10323,9 +10205,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Organization.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.url",
@@ -10349,6 +10233,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "publication",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -10369,7 +10255,6 @@
       "type" : [{
         "code" : "boolean"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10378,11 +10263,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -10409,6 +10292,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -10576,7 +10461,6 @@
       {
         "code" : "Meta"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -10585,11 +10469,9 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -10859,6 +10741,14 @@
       {
         "identity" : "servd",
         "map" : "Address"
+      },
+      {
+        "identity" : "as-organization-to-mos-ej",
+        "map" : "adresseEJ"
+      },
+      {
+        "identity" : "as-organization-to-mos-eg",
+        "map" : "adresseEG"
       }]
     },
     {

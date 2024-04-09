@@ -10,7 +10,7 @@
   "name" : "AsPractitionerRoleContracted",
   "title" : "AS PractitionerRole Contracted",
   "status" : "active",
-  "date" : "2024-04-08T12:53:48+00:00",
+  "date" : "2024-04-09T07:46:55+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -75,7 +75,8 @@
         "expression" : "extension.exists() != value.exists()",
         "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }]
+      }],
+      "isModifier" : false
     },
     {
       "id" : "Extension.id",
@@ -97,6 +98,8 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -125,7 +128,6 @@
       "type" : [{
         "code" : "Extension"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -139,9 +141,11 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }]
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Extension.url",
@@ -165,6 +169,8 @@
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
       "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted",
+      "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
@@ -185,7 +191,6 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
-      "condition" : ["ele-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -194,15 +199,13 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
+      "isModifier" : false,
+      "isSummary" : false,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J130-CNAMAmeliSecteurConventionnement-RASS/FHIR/JDV-J130-CNAMAmeliSecteurConventionnement-RASS"
       },
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
         "identity" : "rim",
         "map" : "N/A"
       }]

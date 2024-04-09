@@ -30,6 +30,21 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:Practitioner/f:extension</sch:title>
+    <sch:rule context="f:Practitioner/f:extension">
+      <sch:assert test="count(f:extension[@url = 'registeringOrganization']) &lt;= 1">extension with URL = 'registeringOrganization': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'registeringOrganizationDetail']) &lt;= 1">extension with URL = 'registeringOrganizationDetail': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'period']) &lt;= 1">extension with URL = 'period': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'status']) &lt;= 1">extension with URL = 'status': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'hostingDepartment']) &lt;= 1">extension with URL = 'hostingDepartment': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'isFirst']) &lt;= 1">extension with URL = 'isFirst': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'type']) &lt;= 1">extension with URL = 'type': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'period']) &lt;= 1">extension with URL = 'period': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'field']) &lt;= 1">extension with URL = 'field': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'profession']) &lt;= 1">extension with URL = 'profession': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:Practitioner/f:identifier</sch:title>
     <sch:rule context="f:Practitioner/f:identifier">
       <sch:assert test="count(f:period) &lt;= 0">period: maximum cardinality of 'period' is 0</sch:assert>
@@ -115,6 +130,14 @@
       <sch:assert test="count(f:period) &lt;= 0">period: maximum cardinality of 'period' is 0</sch:assert>
       <sch:assert test="count(f:issuer) &lt;= 0">issuer: maximum cardinality of 'issuer' is 0</sch:assert>
       <sch:assert test="count(f:period) &lt;= 0">period: maximum cardinality of 'period' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Practitioner/f:qualification/f:extension</sch:title>
+    <sch:rule context="f:Practitioner/f:qualification/f:extension">
+      <sch:assert test="count(f:extension[@url = 'academicDegree']) &lt;= 1">extension with URL = 'academicDegree': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'achievedLevel']) &lt;= 1">extension with URL = 'achievedLevel': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'academicYear']) &lt;= 1">extension with URL = 'academicYear': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

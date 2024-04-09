@@ -40,6 +40,28 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:HealthcareService/f:extension</sch:title>
+    <sch:rule context="f:HealthcareService/f:extension">
+      <sch:assert test="count(f:extension[@url = 'dateAuthorization']) &lt;= 1">extension with URL = 'dateAuthorization': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'periodAuthorization']) &lt;= 1">extension with URL = 'periodAuthorization': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'dateUpdateAuthorization']) &lt;= 1">extension with URL = 'dateUpdateAuthorization': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'deleteAuthorization']) &lt;= 1">extension with URL = 'deleteAuthorization': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'dateLastInstallation']) &lt;= 1">extension with URL = 'dateLastInstallation': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'deleteInstallation']) &lt;= 1">extension with URL = 'deleteInstallation': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'sourceReportInstallation']) &lt;= 1">extension with URL = 'sourceReportInstallation': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'authorizedAgeRange']) &lt;= 1">extension with URL = 'authorizedAgeRange': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'installedAgeRange']) &lt;= 1">extension with URL = 'installedAgeRange': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'capacityAvailable']) &lt;= 1">extension with URL = 'capacityAvailable': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'femaleCapacityAvailable']) &lt;= 1">extension with URL = 'femaleCapacityAvailable': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'maleCapacityAvailable']) &lt;= 1">extension with URL = 'maleCapacityAvailable': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'socialAssistanceCapacityAvailable']) &lt;= 1">extension with URL = 'socialAssistanceCapacityAvailable': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'installedCapacity']) &lt;= 1">extension with URL = 'installedCapacity': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'femaleInstalledCapacity']) &lt;= 1">extension with URL = 'femaleInstalledCapacity': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'maleInstalledCapacity']) &lt;= 1">extension with URL = 'maleInstalledCapacity': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'socialAssistanceInstalledCapacity']) &lt;= 1">extension with URL = 'socialAssistanceInstalledCapacity': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:HealthcareService/f:eligibility</sch:title>
     <sch:rule context="f:HealthcareService/f:eligibility">
       <sch:assert test="count(f:comment) &lt;= 0">comment: maximum cardinality of 'comment' is 0</sch:assert>
