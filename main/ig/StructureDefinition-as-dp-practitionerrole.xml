@@ -32,7 +32,7 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
   <name value="AsDpPractitionerRoleProfile"/>
   <title value="AS Donnée Publique PractitionerRole Profile"/>
   <status value="active"/>
-  <date value="2024-04-10T12:18:24+00:00"/>
+  <date value="2024-04-10T12:37:13+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -1765,18 +1765,14 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="PractitionerRole.period.extension"/>
       <slicing>
         <discriminator>
@@ -1801,7 +1797,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1815,16 +1810,14 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.start">
@@ -1842,7 +1835,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="dateTime"/>
       </type>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1852,11 +1844,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.1"/>
@@ -1886,7 +1875,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="dateTime"/>
       </type>
       <meaningWhenMissing value="If the end of the period is missing, it means that the period is ongoing"/>
-      <condition value="ele-1"/>
       <condition value="per-1"/>
       <constraint>
         <key value="ele-1"/>
@@ -1896,11 +1884,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="DR.2"/>
@@ -2890,18 +2875,14 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0"/>
-      </extension>
       <path value="PractitionerRole.telecom.extension.extension"/>
       <slicing>
         <discriminator>
@@ -2926,7 +2907,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2940,16 +2920,14 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
       </mapping>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type">
@@ -2967,7 +2945,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2981,9 +2958,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.id">
       <path value="PractitionerRole.telecom.extension.extension.id"/>
@@ -3003,6 +2982,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -3030,7 +3011,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3044,9 +3024,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:type.url">
       <path value="PractitionerRole.telecom.extension.extension.url"/>
@@ -3068,6 +3050,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="type"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3087,7 +3071,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="CodeableConcept"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3096,14 +3079,12 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <binding>
         <strength value="required"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS"/>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3124,7 +3105,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3138,9 +3118,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.id">
       <path value="PractitionerRole.telecom.extension.extension.id"/>
@@ -3160,6 +3142,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -3187,7 +3171,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3201,9 +3184,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:description.url">
       <path value="PractitionerRole.telecom.extension.extension.url"/>
@@ -3225,6 +3210,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="description"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3244,7 +3231,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3253,10 +3239,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3277,7 +3261,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3291,9 +3274,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.id">
       <path value="PractitionerRole.telecom.extension.extension.id"/>
@@ -3313,6 +3298,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -3340,7 +3327,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3354,9 +3340,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:responsible.url">
       <path value="PractitionerRole.telecom.extension.extension.url"/>
@@ -3378,6 +3366,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="responsible"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3397,7 +3387,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3406,10 +3395,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3430,7 +3417,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3444,9 +3430,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.id">
       <path value="PractitionerRole.telecom.extension.extension.id"/>
@@ -3466,6 +3454,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -3493,7 +3483,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3507,9 +3496,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:service.url">
       <path value="PractitionerRole.telecom.extension.extension.url"/>
@@ -3531,6 +3522,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="service"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3550,7 +3543,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3559,10 +3551,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3583,7 +3573,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3597,9 +3586,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.id">
       <path value="PractitionerRole.telecom.extension.extension.id"/>
@@ -3619,6 +3610,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -3646,7 +3639,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3660,9 +3652,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:phone.url">
       <path value="PractitionerRole.telecom.extension.extension.url"/>
@@ -3684,6 +3678,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="phone"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3703,7 +3699,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3712,10 +3707,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3736,7 +3729,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3750,9 +3742,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.id">
       <path value="PractitionerRole.telecom.extension.extension.id"/>
@@ -3772,6 +3766,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -3799,7 +3795,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3813,9 +3808,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:digitization.url">
       <path value="PractitionerRole.telecom.extension.extension.url"/>
@@ -3837,6 +3834,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="digitization"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3856,7 +3855,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="boolean"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3865,10 +3863,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -3889,7 +3885,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3903,9 +3898,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.id">
       <path value="PractitionerRole.telecom.extension.extension.id"/>
@@ -3925,6 +3922,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -3952,7 +3951,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3966,9 +3964,11 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss.extension:as-mailbox-mss-metadata.extension:publication.url">
       <path value="PractitionerRole.telecom.extension.extension.url"/>
@@ -3990,6 +3990,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="publication"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -4009,7 +4011,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="boolean"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4018,10 +4019,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -4047,6 +4046,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -4213,7 +4214,6 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
       <type>
         <code value="Meta"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4222,10 +4222,8 @@ true par défaut; false pour les situations d’exercices supprimées</span></td
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
