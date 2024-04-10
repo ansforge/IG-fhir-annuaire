@@ -1,4 +1,4 @@
-Instance: organization-1
+Instance: example-organization-nancy
 InstanceOf: AsOrganizationProfile
 * meta.profile = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"
 
