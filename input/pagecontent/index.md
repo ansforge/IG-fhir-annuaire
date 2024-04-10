@@ -5,6 +5,15 @@
 This implementation guide contains the FHIR profiles of French health professionals and document how the data are exposed in the national API.
 </p>
 
+<blockquote class="stu-note">
+<p>
+  <b>Attention !</b>
+  <br>
+ La version de l'Implementation Guide que vous êtes en train de consulter est en intégration continue et n'est pas à utiliser car soumise à des changements réguliers. La version à utiliser est accessible ici : https://interop.esante.gouv.fr/ig/fhir/annuaire.
+</p>
+</blockquote>
+
+
 Ce guide indique la modélisation FHIR les données des professionnels intervenant dans le système de santé en France. Celui-ci a deux objectifs : 1/ décrire les données exposées par l'API nationale Annuaire Santé et 2/ Servir de base à la modélisation FHIR des professionnels en France (cf profils génériques) dans le cadre du CI-SIS par exemple.
 Il est important de noter qu'il se concentre uniquement sur le modèle de données et non sur la solution technique API nationale. Pour en savoir davantage sur le fonctionnement de l'API nationale, il est nécessaire de consulter [la page dédiée](https://ansforge.github.io/annuaire-sante-fhir-documentation)
 
