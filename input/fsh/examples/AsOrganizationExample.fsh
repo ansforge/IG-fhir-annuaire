@@ -28,12 +28,12 @@ InstanceOf: AsOrganizationProfile
 * address.line.extension[1].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase"
 * address.line.extension[1]..valueString = "DU MORVAN"
 
-* telecom[0].system = "phone"
+* telecom[0].system = #phone
 * telecom[0].value = "0383153030"
 * telecom[0].rank = 1
 
-* telecom[1].system = "fax"
+* telecom[1].system = #fax
 * telecom[1].value = "0383153522"
 
-* telecom[2].system = "email"
+* telecom[2].system = #email
 * telecom[2].value = "direction.generale@chu-nancy.fr"
