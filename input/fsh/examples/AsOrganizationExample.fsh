@@ -22,6 +22,8 @@ InstanceOf: AsOrganizationProfile
 * address.extension[0].url = "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code"
 * address.extension[0].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune#54547
 
+
+* address.line = "R DU MORVAN, 54511 VANDOEUVRE LES NANCY CEDEX"
 * address.line.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType"
 * address.line.extension[0].valueString = "R"
 
