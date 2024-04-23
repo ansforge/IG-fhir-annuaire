@@ -9,7 +9,7 @@ InstanceOf: AsOrganizationProfile
 
 * identifier[finess].type = http://interopsante.org/CodeSystem/fr-v2-0203#FINEG
 * identifier[finess].system = "http://finess.esante.gouv.fr"
-* identifier[finess].value = "5458174839"
+* identifier[finess].value = "458174839"
 
 
 * active = true

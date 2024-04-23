@@ -13,6 +13,40 @@ Usage: #example
   * lastUpdated = "2019-08-31T01:00:00.000+01:00"
   * profile[+] = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner"
 
+
+* extension[+]
+  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration"
+  * extension[+]
+    * url = "isFirst"
+    * valueBoolean = true
+  * extension[+]
+    * url = "registeringOrganization"
+    * valueCodeableConcept
+      * coding[+]
+        * system = "https://mos.esante.gouv.fr/NOS/TRE_R60-AutoriteEnregistrement/FHIR/TRE-R60-AutoriteEnregistrement"
+        * code = #CNOP
+  * extension[+]
+    * url = "period"
+    * valuePeriod
+      * start = "2019-01-15"
+* extension[+]
+  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration"
+  * extension[+]
+    * url = "isFirst"
+    * valueBoolean = false
+  * extension[+]
+    * url = "status"
+    * valueCodeableConcept
+      * coding[+]
+        * system = "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription/"
+        * code = #D
+  * extension[+]
+    * url = "period"
+    * valuePeriod
+      * start = "2019-01-15"
+      
+
+
 // Actif
 * active = true
 
@@ -23,27 +57,23 @@ Usage: #example
   * value = "810102727017"
   * type
     * coding[+]
-      * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #IDNPS
 * identifier[rpps][+]
-  * system = "http://rpps.fr"
+  * system = "https://rpps.esante.gouv.fr"
   * use = #official
   * value = "10102727017"
   * type
     * coding[+]
-      * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #RPPS
 
-// Nom 
+// Nom d'usage (exercice pro)
 * name[+]
   * prefix = "M"
   * use = #usual 
-* name[+]
-  * prefix = "M"
-  * use = #official 
   * family = "CHATELIER"
   * given[+] = "David"
-
 // Genre
 * gender = #male
 
@@ -59,7 +89,7 @@ Usage: #example
     * system = "https://mos.esante.gouv.fr/NOS/TRE_G00-Langue/FHIR/TRE-G00-Langue"
     * code = #fr
 
-// Adresse
+// Adresse de correspondance
 * address[+]
   * city = "58400 LA-CHARITE-SUR-LOIRE"
   * postalCode = "58400"
@@ -88,11 +118,12 @@ Usage: #example
 * telecom[+]
   * system = #email
   * value = "davidchatelier@orange.fr"
+  // TODO : Ajouter telecom[maiboxmss]
 
 // Qualification
-* qualification[+]
+* qualification[degree][0]
   * code
-    * coding[+][degreeR48]
+    * coding[+][degree]
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R48-DiplomeEtatFrancais/FHIR/TRE-R48-DiplomeEtatFrancais"
       * code = #DE01
     * coding[+][degreeType]
@@ -102,24 +133,5 @@ Usage: #example
     * start = "2019-01-08"
   * issuer = Reference(Organization/u63)
 
-// Nationalité
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-nationality"
-  * extension[+]
-    * url = "code"
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
-        * code = #99100
 
-// Lieu de naissance
-* extension[+] 
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-birth-place"
-  * valueAddress
-    * text = "COSNE-COURS-SUR-LOIRE"
-    * country = "99100"
-    * extension[+]
-      * url = "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"
-      * valueCoding 
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
-        * code = #58086
+

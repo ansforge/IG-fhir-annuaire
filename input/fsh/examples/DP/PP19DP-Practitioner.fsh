@@ -51,9 +51,9 @@ Usage: #example
   * value = "jeromebonnet@hotmail.fr"
 
 // Qualification
-* qualification[+]
+* qualification[degree][+]
   * code
-    * coding[degreeR48]
+    * coding[degree]
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R48-DiplomeEtatFrancais/FHIR/TRE-R48-DiplomeEtatFrancais"
       * code = #DE05
     * coding[degreeType]

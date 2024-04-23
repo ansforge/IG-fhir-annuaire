@@ -23,23 +23,23 @@ Usage: #example
   * value = "1754567860"
   * type
     * coding[+]
-      * system = "http://interopsante.org/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #IDNST
 * identifier[+][finess]
-  * system = "http://finess.esante.gouv.fr"
+  * system = "https://finess.esante.gouv.fr"
   * use = #official
   * value = "754567860"
   * type
     * coding[+]
-      * system = "http://interopsante.org/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #FINEG
-* identifier[adeliRpps][+]
-  * system = "https://annuaire.sante.fr"
+* identifier[rppsRang][+]
+  * system = "https://rppsrang.esante.gouv.fr"
   * use = #official
   * value = "F754567860"
   * type
     * coding[+]
-      * system = "http://interopsante.org/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #INTRN
 
 // Nom

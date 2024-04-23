@@ -23,15 +23,15 @@ Usage: #example
   * value = "810102727017"
   * type
     * coding[+]
-      * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #IDNPS
 * identifier[rpps][+]
-  * system = "http://rpps.fr"
+  * system = "https://rpps.esante.gouv.fr"
   * use = #official
   * value = "10102727017"
   * type
     * coding[+]
-      * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #RPPS
 
 // Nom 
@@ -51,9 +51,9 @@ Usage: #example
   * value = "davidchatelier@orange.fr"
 
 // Qualification
-* qualification[+]
+* qualification[degree][+]
   * code
-    * coding[+][degreeR48]
+    * coding[+][degree]
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R48-DiplomeEtatFrancais/FHIR/TRE-R48-DiplomeEtatFrancais"
       * code = #DE01
     * coding[+][degreeType]

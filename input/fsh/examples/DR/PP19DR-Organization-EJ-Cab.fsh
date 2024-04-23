@@ -23,15 +23,15 @@ Usage: #example
   * value = "410005531586003"
   * type
     * coding[+]
-      * system = "https://simplifier.net/FrenchProfiledFHIRAr/fr-organization-identifier-type"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #IDNST
-* identifier[adeliRpps][+]
-  * system = "https://annuaire.sante.fr"
+* identifier[rppsRang][+]
+  * system = "https://rppsrang.esante.gouv.fr"
   * use = #official
   * value = "REJ10000000800887"
   * type
     * coding[+]
-      * system = "https://simplifier.net/FrenchProfiledFHIRAr/fr-organization-identifier-type"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #INTRN
 
 // Nom

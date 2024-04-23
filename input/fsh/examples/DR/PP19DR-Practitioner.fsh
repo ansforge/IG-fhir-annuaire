@@ -34,13 +34,10 @@ Usage: #example
       * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-0203"
       * code = #RPPS
 
-// Nom 
+// Nom d'usage (officiel dans Person)
 * name[+]
   * prefix = "M"
   * use = #usual 
-* name[+]
-  * prefix = "M"
-  * use = #official 
   * family = "BONNET"
   * given[+] = "Jerome"
 
@@ -90,9 +87,9 @@ Usage: #example
   * value = "jeromebonnet@hotmail.fr"
 
 // Qualification
-* qualification[+]
+* qualification[degree][+]
   * code
-    * coding[degreeR48]
+    * coding[degree]
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R48-DiplomeEtatFrancais/FHIR/TRE-R48-DiplomeEtatFrancais"
       * code = #DE05
     * coding[degreeType]
