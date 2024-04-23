@@ -5,8 +5,8 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
-* . ^comment = "Synonyme : modeFixationTarif"
-* . ^short = "Mode de tarification de la structure."
+
+* . ^short = "Mode de tarification de la structure (modeFixationTarif)."
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from $TRE_R74-ModeFixationTarifaire (required)
+* valueCodeableConcept from VS-TRE-R74-ModeFixationTarifaire (required)

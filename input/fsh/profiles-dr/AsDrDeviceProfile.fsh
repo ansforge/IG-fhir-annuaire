@@ -2,7 +2,7 @@ Profile: AsDrDeviceProfile
 Parent: as-device
 Id: as-dr-device
 Title: "AS Donnée Restreinte Device Profile"
-Description: "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé."
+Description: "Profil restreint applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé."
 
 * definition 0..0
 * udiCarrier 0..0

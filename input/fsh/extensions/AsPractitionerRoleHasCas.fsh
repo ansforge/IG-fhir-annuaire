@@ -5,7 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
-* . ^comment = "Synonyme : optionContratAccesSoins, optionPratiqueTarifaireMaîtrisée"
-* . ^short = "OPTAM est un dispositif proposé par l’Assurance Maladie aux médecins conventionnés, ayant pour objectif principal de faciliter l’accès aux soins."
+
+* . ^short = "optionContratAccesSoins, optionPratiqueTarifaireMaîtrisée : OPTAM est un dispositif proposé par l’Assurance Maladie aux médecins conventionnés, ayant pour objectif principal de faciliter l’accès aux soins."
 
 * value[x] only boolean

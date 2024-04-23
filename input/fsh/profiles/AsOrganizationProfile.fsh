@@ -1,11 +1,8 @@
 Profile: AsOrganizationProfile
-Parent: FrOrganization
+Parent: fr-core-organization
 Id: as-organization
 Title: "AS Organization Profile"
-Description: "Profil créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public."
-
-/* profils references */
-* partOf only Reference(FrOrganization or AsOrganizationProfile)
+Description: "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
@@ -13,39 +10,15 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
-
 /* donnees metiers */
+
 // Organization.identifier
-* identifier MS 
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the identifier.system pattern"
-
-// Contains rule
-* identifier contains idNatSt 0..* and sirene 0..* and finess 0..* and adeliRpps 0..*
-
-* identifier[idNatSt] ^short = "Identifiant idNat_Struct qui doit correspondre à l'idnat struct tel que défini dans l'Annexe Transverse – Source des données métier pour les professionnels et les structures : https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_anx_sources-donnees-professionnels-structures_v1.5_0.pdf"
-* identifier[idNatSt].use = #official
-* identifier[idNatSt].type ^short = "Les codes FINEJ, FINEG, SIREN, SIRET, IDNST, INTRN proviennent de la terminologie  http://interopsante.org/CodeSystem/fr-v2-0203 \r\n Les codes 0,4 proviennent de la terminologie TRE-G07-TypeIdentifiantStructure."
-* identifier[idNatSt].type obeys constr-bind-type
-* identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
-* identifier[idNatSt].value ^short = "Identification nationale de la structure préfixé : 3 + Numéro SIRET, 2 + Numéro SIREN, 1 + Numéro FINESS Etablissement, 1 + Numéro FINESS EJ, 4 + RPPS rang, 0 + ADELI rang, Identifiant technique de la structure."
-
-* identifier[sirene] ^short = "Identifiant SIREN (9 chiffres) ou SIRET (14 chiffres)"
-* identifier[sirene].system = "http://sirene.fr"
-
-* identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
-* identifier[finess].system = "http://finess.esante.gouv.fr"
-
-* identifier[adeliRpps] ^short = "Identifiant ADELI rang (9 caractères) ou RPPS rang (11 chiffres)"
-* identifier[adeliRpps].system = "https://annuaire.sante.fr"
-
+// Slices définies dans FrCore
+* identifier[idNatSt] MS
 
 // Organization.active
 * active MS
-* active ^short = "La ressource est-elle active? (active | inactive)"
-* active ^comment = "true par défaut; false pour les structures supprimées."
+* active ^short = "La ressource est-elle active? (active | inactive). true par défaut; false pour les structures supprimées."
 
 // Organization.name
 * name MS
@@ -56,33 +29,42 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * alias ^short = "Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."
 
 /* champ d'activite de la structure */
-// Slice deja defini dans FrOrganization
+// Slice de FrCoreOrganization
 * type MS
 * type contains
     activiteINSEE 0..1 and
     statutJuridiqueINSEE 0..1 and 
     sphParticipation 0..1 and
-	typeEtablissement 0..1
+    typeEtablissement 0..1
 
-// organizationType - slice deja existant 
-* type[organizationType] ^sliceName = "organizationType"
+// organizationType - slice de FrCoreOrganization
 * type[organizationType] ^short = "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
+* type[organizationType].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[organizationType].extension[as-ext-organization-types].valueCode = #organizationType
 
 // activiteINSEE
 * type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
 * type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN)."
+* type[activiteINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[activiteINSEE].extension[as-ext-organization-types].valueCode = #activiteINSEE
 
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
 * type[statutJuridiqueINSEE] ^short = "Statut juridique FINESS qui caractérise la situation juridique de la personne morale (Synonyme : statutJuridiqueINSEE)."
+* type[statutJuridiqueINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[statutJuridiqueINSEE].extension[as-ext-organization-types].valueCode = #statutJuridiqueINSEE
 
 // modaliteParticipationSPH
 * type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
 * type[sphParticipation] ^short = "Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH)."
+* type[sphParticipation].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[sphParticipation].extension[as-ext-organization-types].valueCode = #sphParticipation
 
 // typeEtablissement
 * type[typeEtablissement] ^short = "Le type d’établissement détermine si c'est un établissement principal ou secondaire."
-
+* type[typeEtablissement].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[typeEtablissement].extension[as-ext-organization-types].valueCode = #typeEtablissement
+* type[typeEtablissement].text MS // TypeEtablissement est de type string dans le MOS, il faut donc mettre dans le champs text. Pourquoi est-ce que le type d'établissement est un text et non un code dans le MOS ?
 
 // adresse
 * address MS
@@ -92,7 +74,6 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 // telecommunication
 * telecom MS
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
-* telecom.system ^comment = "https://www.hl7.org/fhir/valueset-contact-point-system.html"
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
 
 // boiteLettreMSS
@@ -100,15 +81,14 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * telecom ^slicing.discriminator.type = #profile
 * telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
-
-* telecom[mailbox-mss] MS
 * telecom[mailbox-mss] only as-mailbox-mss
+* telecom[mailbox-mss] ^short = "Les BALs MSS de type ORG ou APP rattachées à une personne morale responsable de l’accès et de l’usage de la BAL (boiteLettreMSS)."
 
 // lien EG/EJ
-* partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ)."
-* partOf ^comment = "Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
+* partOf ^short = "Référence vers la structure de rattachement (lien EG/ EJ). Chaque entité geographique et ratachée à une entité juridique. C'est l'id de la ressource de l'entité juridique à laquelle est ratachée la structure qui est remontée dans l'element de référence partOf de l'entité géographique."
+* partOf only Reference(fr-core-organization or AsOrganizationProfile)
 
-// periode d'activite
+// periode d'activite, extension définie dans FrCore
 * extension[usePeriod].valuePeriod.start ^short = "Date d'ouverture de la structure."
 * extension[usePeriod].valuePeriod.end ^short = "Date de fermeture de la structure."
 
@@ -134,12 +114,47 @@ Description: "Profil créé à partir de FrOrganization dans le contexte de l'An
 * endpoint MS
 
 
-Invariant:   constr-bind-type
-Description: "Les valeurs possibles pour cet élément doivent provenir d’une des terminologies de référence suivantes :
-\r\n fr-organization-identifier-type , URL : http://interopsante.org/CodeSystem/fr-v2-0203
-\r\n TRE_G07-TypeIdentifiantStructure , OID : 1.2.250.1.71.1.2.14 
-\r\n JDV_J104-TypeIdentifiantStructure-RASS , OID : 1.2.250.1.213.1.6.1.172
-\r\nLes valeurs possibles peuvent être restreintes en fonction du jeu de valeurs correspondant mis à disposition par le projet (exemple : fr-organization-identifier-type ).\r\nEn l’absence de spécifications complémentaires, le jeu de valeurs JDV_J104-TypeIdentifiantStructure-RASS peut être utilisé."
-Expression:       "f:type"
-Severity:    #error
 
+Mapping:  AsOrganizationToMOSEJ
+Source:   AsOrganizationProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-organization-to-mos-ej
+Title:    "AsOrganization to MOS - EJ"
+* -> "EntiteJuridique"
+* identifier[finess] -> "numFiness"
+* identifier[sirene] -> "numSiren"
+* identifier[idNatSt] -> "idNat_struct"
+* extension[as-ext-organization-pharmacy-licence] -> "numeroLicenceOfficine"
+* name  -> "raisonSociale"
+* alias -> "raisonSocialeLongue"
+* type[statutJuridiqueINSEE] -> "statutJuridique"
+* type[activiteINSEE] -> "codeAPEN"
+* extension[usePeriod].valuePeriod.start -> "dateCreation"
+* extension[usePeriod].valuePeriod.end -> "dateFermeture"
+* extension[as-ext-organization-closing-type] -> "typeFermeture"
+* address -> "adresseEJ"
+* telecom -> "telecommunication"
+* telecom[mailbox-mss] -> "boiteLettreMSS"
+
+Mapping:  AsOrganizationToMOSEG
+Source:   AsOrganizationProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-organization-to-mos-eg
+Title:    "AsOrganization to MOS - EG"
+* -> "EntiteGeographique"
+* identifier[finess] -> "numFiness"
+* identifier[sirene] -> "numSiren"
+* identifier[idNatSt] -> "idNat_struct"
+* name -> "denominationEG"
+* alias -> "denominationEGLongue"
+* type[activiteINSEE] -> "codeAPET"
+* extension[as-ext-organization-pricing-model] -> "modeFixationTarifaire"
+* extension[as-ext-organization-budget-type] -> "natureEtablissement"
+* extension[as-ext-organization-closing-type] -> "typeFermeture"
+* extension[usePeriod].valuePeriod.start -> "dateOuverture"
+* extension[usePeriod].valuePeriod.end -> "dateFermeture"
+* type[sphParticipation] -> "codeAPET"
+* active -> "actif"
+* address -> "adresseEG"
+* telecom -> "telecommunication"
+* telecom[mailbox-mss] -> "boiteLettreMSS"

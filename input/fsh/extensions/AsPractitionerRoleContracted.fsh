@@ -5,9 +5,8 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
-* . ^comment = "Synonyme : secteurConventionnement"
-* . ^short = "Secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie."
+* . ^short = "Secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie (Synonyme : secteurConventionnement)."
 
 * value[x] only CodeableConcept
 * valueCodeableConcept from $JDV-J130-CNAMAmeliSecteurConventionnement-RASS (required)
-* valueCodeableConcept ^binding.description = "Liste des conventionnement CNAM."
+* valueCodeableConcept ^short = "Liste des conventionnements CNAM."

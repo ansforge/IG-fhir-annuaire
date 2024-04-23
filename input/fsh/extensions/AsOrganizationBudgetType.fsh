@@ -5,7 +5,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 
 * ^context.type = #element
 * ^context.expression = "Organization"
-* . ^comment = "Synonyme : natureEtablissement"
-* . ^short = "Nature du budget alloué à la structure."
+
+* . ^short = "Nature du budget alloué à la structure (natureEtablissement)."
 
 * value[x] only string

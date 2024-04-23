@@ -2,7 +2,7 @@ Profile: AsDpDeviceProfile
 Parent: as-device
 Id: as-dp-device
 Title: "AS Donnée Publique Device Profile"
-Description: "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé."
+Description: "Profil public applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé."
 
 * status 1..1
 * definition 0..0
