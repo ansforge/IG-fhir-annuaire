@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Person/pp16dr-person> a fhir:Person ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "pp16dr-person"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Person</b><a name=\"pp16dr-person\"> </a><a name=\"hcpp16dr-person\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Person &quot;pp16dr-person&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-dr-person.html\">AS Donnée Restreinte Person Profile</a></p></div><blockquote><p><b>AS Person Nationality Extension</b></p><blockquote><p><b>url</b></p><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></blockquote><p><b>value</b>: RÉPUBLIQUE FRANÇAISE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://interop.esante.gouv.fr/ig/nos/1.2.0/CodeSystem-TRE-R20-Pays.html\">TRE_R20-Pays</a>#99100)</span></p></blockquote><p><b>AS Person Birth Place Extension</b>: COSNE-COURS-SUR-LOIRE</p><p><b>name</b>: David CHATELIER (Official)</p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "99100" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Address ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "58086" ]
+         ]
+       ] ) ;
+       fhir:text [ fhir:v "COSNE-COURS-SUR-LOIRE" ] ;
+       fhir:country [ fhir:v "99100" ]
+     ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "CHATELIER" ] ;
+     fhir:given ( [ fhir:v "David" ] ) ;
+     fhir:prefix ( [ fhir:v "M" ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
