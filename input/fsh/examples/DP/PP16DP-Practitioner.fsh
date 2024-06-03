@@ -42,6 +42,10 @@ Usage: #example
 * language = #fr
 
 // Télécommunication
+* telecom[mailbox-mss][+]
+  * system = #email
+  * value = "davidchatelier@xxx.mssante.fr"
+  * rank = 1
 * telecom[+]
   * system = #phone
   * value = "0612122216"
