@@ -1,5 +1,11 @@
 [![FHIR workflow](https://github.com/ansforge/IG-fhir-annuaire/actions/workflows/fhir-worklows.yml/badge.svg)](https://github.com/ansforge/IG-fhir-annuaire/actions/workflows/fhir-worklows.yml)
 
+Lien vers la dernière release : https://interop.esante.gouv.fr/ig/fhir/annuaire
+
+Lien vers la version intégration continue (soumise à des changements réguliers) : https://ansforge.github.io/IG-fhir-annuaire/main/ig/ (ou https://ansforge.github.io/IG-fhir-annuaire/[nom_de_la_branche]/ig/ pour prévisualiser l'IG d'une branche)
+
+
+
 # Contexte
 
 ## Contexte métier du projet
@@ -31,15 +37,6 @@ Les ressources FHIR utilisées sont les suivantes :
 
 La dépendance à hl7.fhir.fr.core (1.1.0) est utilsée dans le cadre de ce volet, avec les profils : « [FrPractitioner](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitioner) », « [FrPractitionerRoleExercice](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrPractitionerRoleExercice) », « [FrOrganization](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrOrganization) », « [FrHumanName](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrHumanName) », « [FrContactPoint](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrContactPoint) » et « [FrAddress](https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&canonical=http://interopsante.org/fhir/StructureDefinition/FrAddress) »
 
-# CI/CD
-
-Les workflows associés à ce repository (.github/workflows) permettent :
-
-* D'exécuter Sushi pour vérifier la grammaire
-* De faire les tests avec le validator_cli
-* De publier les pages : https://ansforge.github.io/IG-fhir-annuaire/main/ig/ (ou https://ansforge.github.io/IG-fhir-annuaire/[nom_de_la_branche]/ig/ pour prévisualiser l'IG d'une branche)
-
-![image](https://user-images.githubusercontent.com/101335975/215342980-61686171-e3f8-40c5-865c-efdfc3dd52b4.png)
 
 # Notes
 
