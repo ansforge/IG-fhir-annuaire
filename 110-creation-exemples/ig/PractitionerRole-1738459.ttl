@@ -1,0 +1,111 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/PractitionerRole/1738459> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "1738459"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "0.1" ] ;
+     fhir:lastUpdated [ fhir:v "2019-09-05T01:00:00.000+01:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "https://annuaire.sante.fr"^^xsd:anyURI ] ;
+     fhir:profile ( [
+       fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "fr"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\" lang=\"fr\"><p><b>Generated Narrative: PractitionerRole </b><a name=\"1738459\"> </a><a name=\"hc1738459\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">ResourcePractitionerRole &quot;1738459&quot; Version&quot;0.1&quot; Updated&quot;2019-09-05 01:00:00+0100&quot;  (Language&quot;fr&quot;) </p><p style=\"margin-bottom: 0px\">Information Source: https://annuaire.sante.fr!</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-dr-practitionerrole.html\">AS Donnée Restreinte PractitionerRole Profile</a></p></div><p><b>identifier</b>: <code>https://annuaire.sante.fr</code>/1010399870</p><p><b>active</b>: true</p><p><b>period</b>: 2019-09-03 --&gt; (ongoing)</p><p><b>practitioner</b>: <a href=\"Practitioner-334081.html\">Practitioner/334081</a> &quot; BONNET&quot;</p><p><b>organization</b>: <a href=\"Organization-548812.html\">Organization/548812</a> &quot;CABINET SAINT ANTOINE&quot;</p><p><b>code</b>: Médecin <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://interop.esante.gouv.fr/ig/nos/1.2.0/CodeSystem-TRE-G15-ProfessionSante.html\">TRE_G15-ProfessionSante</a>#10; <a href=\"https://interop.esante.gouv.fr/ig/nos/1.2.0/CodeSystem-TRE-R09-CategorieProfessionnelle.html\">TRE_R09-CategorieProfessionnelle</a>#C; <a href=\"https://interop.esante.gouv.fr/ig/nos/1.2.0/CodeSystem-TRE-R22-GenreActivite.html\">TRE_R22-GenreActivite</a>#GENR01; <a href=\"https://interop.esante.gouv.fr/ig/nos/1.2.0/CodeSystem-TRE-R23-ModeExercice.html\">TRE_R23-ModeExercice</a>#L; <a href=\"https://interop.esante.gouv.fr/ig/nos/1.2.0/CodeSystem-TRE-R21-Fonction.html\">TRE_R21-Fonction</a>#FON-AU)</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:HumanName ;
+       fhir:family [ fhir:v "BONNET" ] ;
+       fhir:given ( [ fhir:v "Jerome" ] )
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "isFirst"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:url [ fhir:v "registeringOrganization"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R60-AutoriteEnregistrement/FHIR/TRE-R60-AutoriteEnregistrement"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "CNOM" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2019-03-10"^^xsd:date ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "isFirst"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:url [ fhir:v "status"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription/"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "D" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2019-03-30"^^xsd:date ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "https://annuaire.sante.fr"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1010399870" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2019-09-03"^^xsd:date ]
+  ] ; # 
+  fhir:practitioner [
+     fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/Practitioner/334081> ;
+     fhir:reference [ fhir:v "Practitioner/334081" ]
+  ] ; # 
+  fhir:organization [
+     fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/548812> ;
+     fhir:reference [ fhir:v "Organization/548812" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "10" ]
+     ] [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R09-CategorieProfessionnelle/FHIR/TRE-R09-CategorieProfessionnelle"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "C" ]
+     ] [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R22-GenreActivite/FHIR/TRE-R22-GenreActivite"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "GENR01" ]
+     ] [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R23-ModeExercice/FHIR/TRE-R23-ModeExercice"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "L" ]
+     ] [
+       fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R21-Fonction/FHIR/TRE-R21-Fonction"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "FON-AU" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
