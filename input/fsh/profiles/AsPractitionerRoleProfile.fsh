@@ -37,10 +37,10 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // PractitionerRole.identifier.system
 * identifier[idSituationExercice] ^short = "Identifiant d'activité propre au RPPS"
-* identifier[idSituationExercice].system = "https://rpps.esante.gouv.fr"
+* identifier[idSituationExercice].system = "http://rpps.fr"
 
 * identifier[numeroAm] ^short = "[Donnée restreinte] : Identifiant d’activité propre à l’Assurance Maladie. format: 9 digits. synonyme: numeroAM"
-* identifier[numeroAm].system = "https://adeli.esante.gouv.fr"
+* identifier[numeroAm].system = "http://ameli.fr"
 
 // PractitionerRole.active
 * active MS
