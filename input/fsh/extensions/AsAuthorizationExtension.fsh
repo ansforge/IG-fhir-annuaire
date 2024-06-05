@@ -1,6 +1,6 @@
 Extension: 		AsAuthorizationExtension
 Id: 			as-ext-authorization
-Title:			"AS Autorization Extension"
+Title:			"AS Authorization Extension"
 Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés."
 
 * ^context[0].type = #element
