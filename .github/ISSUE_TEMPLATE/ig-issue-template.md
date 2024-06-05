@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 <!---
-Issues in this repo should only be about FHIR modeling of the french healthcare professionnal directory.
+Issues in this repo should only be about FHIR modeling of the french healthcare professional directory.
 Please report issues related to the national API implementation in https://github.com/ansforge/annuaire-sante-fhir-documentation
 -->
 
