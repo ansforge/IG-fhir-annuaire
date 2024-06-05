@@ -14,7 +14,7 @@ Description: "Profil générique créé à partir de Device dans le contexte de 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains AsHealthcareServiceAuthorizationExtension named as-ext-healthcareservice-authorization 0..1 MS
+* extension contains AsAuthorizationExtension named as-ext-authorization 0..1 MS
 
 /* device.identifier */
 * identifier MS

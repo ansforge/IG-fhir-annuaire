@@ -1,10 +1,14 @@
-Extension: 		AsHealthcareServiceAuthorizationExtension
-Id: 			as-ext-healthcareservice-authorization
-Title:			"AS HealthcareService Autorization Extension"
-Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations  des activités sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels lourds autorisés."
+Extension: 		AsAuthorizationExtension
+Id: 			as-ext-authorization
+Title:			"AS Autorization Extension"
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés."
 
-* ^context.type = #element
-* ^context.expression = "HealthcareService"
+* ^context[0].type = #element
+* ^context[0].expression = "HealthcareService"
+
+* ^context[1].type = #element
+* ^context[1].expression = "Device"
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
