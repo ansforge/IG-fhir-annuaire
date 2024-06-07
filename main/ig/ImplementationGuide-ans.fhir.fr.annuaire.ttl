@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-06-05T12:07:44+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-06-07T15:57:22+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -569,6 +569,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-ext-authorization" ]
+       ] ;
+       fhir:name [ fhir:v "AS Authorization Extension" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:complex-type" ]
        ] ) ;
        fhir:reference [
@@ -829,18 +841,6 @@
        ] ;
        fhir:name [ fhir:v "AS Education Level Extension" ] ;
        fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour décrire le niveau de formation acquis d'un étudiant." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-authorization> ;
-         fhir:reference [ fhir:v "StructureDefinition/as-ext-healthcareservice-authorization" ]
-       ] ;
-       fhir:name [ fhir:v "AS HealthcareService Autorization Extension" ] ;
-       fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations  des activités sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels lourds autorisés." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
