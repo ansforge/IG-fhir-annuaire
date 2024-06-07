@@ -15,7 +15,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsHealthcareServiceAuthorizationExtension named as-ext-healthcareservice-authorization 0..* MS and
+    AsAuthorizationExtension named as-ext-authorization 0..* MS and
     AsPatientTypeExtension named as-ext-patient-type 0..* MS and		// ageMinAutorise + ageMaxAutorise + ageMinInstalle + ageMaxInstalle
 	AsSupportedCapacityExtension named as-ext-supported-capacity 0..* MS
 	
@@ -56,10 +56,10 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-healthcare-social-equipment-to-mos-activite-sociale
 Title:    "AsHealthcareServiceSocialEquipmentProfile to MOS - ActiviteSociale"
 * -> "ActiviteSociale"
-* extension[as-ext-healthcareservice-authorization].extension[dateAuthorization] -> "dateAutorisation"
-* extension[as-ext-healthcareservice-authorization].extension[periodAuthorization].valuePeriod.start -> "datePremiereInstallation"
-* extension[as-ext-healthcareservice-authorization].extension[deleteAuthorization] -> "suppressionAutorisation"
-* extension[as-ext-healthcareservice-authorization].extension[deleteInstallation] -> "suppressionInstallation"
+* extension[as-ext-authorization].extension[dateAuthorization] -> "dateAutorisation"
+* extension[as-ext-authorization].extension[periodAuthorization].valuePeriod.start -> "datePremiereInstallation"
+* extension[as-ext-authorization].extension[deleteAuthorization] -> "suppressionAutorisation"
+* extension[as-ext-authorization].extension[deleteInstallation] -> "suppressionInstallation"
 
 * extension[as-ext-supported-capacity].extension[capacityAvailable] -> "capaciteAutorisee"
 * extension[as-ext-supported-capacity].extension[femaleCapacityAvailable] -> "capaciteAutoriseeFemme"
