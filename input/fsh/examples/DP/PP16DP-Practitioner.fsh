@@ -81,7 +81,7 @@ Usage: #example
     * text = "COSNE-COURS-SUR-LOIRE"
     * country = "99100"
     * extension[+]
-      * url = "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"
+      * url = "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code"
       * valueCoding 
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
         * code = #58086

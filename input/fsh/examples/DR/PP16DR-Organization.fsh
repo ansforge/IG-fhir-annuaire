@@ -51,7 +51,7 @@ Usage: #example
 // Type
 * type[organizationType][+]
   * coding
-    * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-3307"
+    * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-3307"
     * code = #LEGAL-ENTITY
 * type[secteurActiviteRASS][+]
   * coding
