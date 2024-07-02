@@ -10,7 +10,7 @@
   "name" : "AsPractitionerProfile",
   "title" : "AS Practitioner Profile",
   "status" : "active",
-  "date" : "2024-07-02T09:45:37+00:00",
+  "date" : "2024-07-02T11:34:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -783,7 +783,7 @@
       "path" : "Practitioner.extension",
       "sliceName" : "as-ext-registration",
       "short" : "InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.",
-      "definition" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\".",
+      "definition" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\". Ces données sont uniquement accessibles en accès restreint.",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -935,7 +935,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "ordre"
+        "map" : "InscriptionOrdre.ordre"
       }]
     },
     {
@@ -1518,7 +1518,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "dateDebutInscription"
+        "map" : "InscriptionOrdre.dateDebutInscription"
       }]
     },
     {
@@ -1563,7 +1563,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "dateRadiation"
+        "map" : "InscriptionOrdre.dateRadiation"
       }]
     },
     {
@@ -1601,7 +1601,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "statutInscription"
+        "map" : "InscriptionOrdre.statutInscription"
       }]
     },
     {
@@ -1769,7 +1769,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "conseilDepartemental"
+        "map" : "InscriptionOrdre.conseilDepartemental"
       }]
     },
     {
@@ -2426,7 +2426,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "typeAutorisation"
+        "map" : "AutorisationExercice.typeAutorisation"
       }]
     },
     {
@@ -2845,7 +2845,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "dateDebutAutorisation"
+        "map" : "AutorisationExercice.dateDebutAutorisation"
       }]
     },
     {
@@ -2890,7 +2890,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "dateFinAutorisation"
+        "map" : "AutorisationExercice.dateFinAutorisation"
       }]
     },
     {
@@ -2928,7 +2928,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "disciplineAutorisee"
+        "map" : "AutorisationExercice.disciplineAutorisee"
       }]
     },
     {
@@ -3096,7 +3096,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "profession"
+        "map" : "AutorisationExercice.profession"
       }]
     },
     {
@@ -5849,7 +5849,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "nomExercice"
+        "map" : "ExerciceProfessionnel.nomExercice"
       }]
     },
     {
@@ -5896,7 +5896,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "prenomExercice"
+        "map" : "ExerciceProfessionnel.prenomExercice"
       }]
     },
     {
@@ -5985,7 +5985,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "civiliteExercice"
+        "map" : "ExerciceProfessionnel.civiliteExercice"
       }]
     },
     {
@@ -6470,7 +6470,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "boiteLettresMSS"
+        "map" : "ExerciceProfessionnel.boiteLettresMSS"
       }]
     },
     {
@@ -6835,7 +6835,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "numeroDiplome"
+        "map" : "Diplome.numeroDiplome"
       }]
     },
     {
@@ -6877,7 +6877,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "codeDiplome"
+        "map" : "Diplome.codeDiplome"
       }]
     },
     {
@@ -6987,7 +6987,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "typeDiplome"
+        "map" : "Diplome.typeDiplome"
       }]
     },
     {
@@ -7215,7 +7215,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "natureCycleFormation"
+        "map" : "Diplome.natureCycleFormation"
       }]
     },
     {
@@ -7383,7 +7383,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "anneeUniversitaire"
+        "map" : "Diplome.anneeUniversitaire"
       }]
     },
     {
@@ -7551,7 +7551,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "niveauFormationAcquis"
+        "map" : "Diplome.niveauFormationAcquis"
       }]
     },
     {
@@ -8485,7 +8485,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "dateDebut"
+        "map" : "Diplome.dateDebut"
       }]
     },
     {
@@ -8530,7 +8530,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "dateFin"
+        "map" : "Diplome.dateFin"
       }]
     },
     {
@@ -8566,7 +8566,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "lieuFormation"
+        "map" : "Diplome.lieuFormation"
       }]
     },
     {
@@ -9000,7 +9000,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "categorieProfession"
+        "map" : "ExerciceProfessionnel.categorieProfession"
       }]
     },
     {
@@ -9066,7 +9066,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "profession"
+        "map" : "ExerciceProfessionnel.profession"
       }]
     },
     {
@@ -9279,7 +9279,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "dateEffetExercice"
+        "map" : "ExerciceProfessionnel.dateEffetExercice"
       }]
     },
     {
@@ -9324,7 +9324,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "dateFinEffetExercice"
+        "map" : "ExerciceProfessionnel.dateFinEffetExercice"
       }]
     },
     {
@@ -9579,7 +9579,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-savoir-faire",
-        "map" : "typeSavoirFaire"
+        "map" : "SavoirFaire.typeSavoirFaire"
       }]
     },
     {
@@ -10063,7 +10063,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-savoir-faire",
-        "map" : "dateReconnaissance"
+        "map" : "SavoirFaire.dateReconnaissance"
       }]
     },
     {
@@ -10108,7 +10108,7 @@
       },
       {
         "identity" : "as-practitioner-role-to-mos-savoir-faire",
-        "map" : "dateAbandon"
+        "map" : "SavoirFaire.dateAbandon"
       }]
     },
     {
@@ -10251,7 +10251,7 @@
       "sliceName" : "registeringOrganization",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "ordre"
+        "map" : "InscriptionOrdre.ordre"
       }]
     },
     {
@@ -10264,7 +10264,7 @@
       "path" : "Practitioner.extension.extension.value[x].start",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "dateDebutInscription"
+        "map" : "InscriptionOrdre.dateDebutInscription"
       }]
     },
     {
@@ -10272,7 +10272,7 @@
       "path" : "Practitioner.extension.extension.value[x].end",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "dateRadiation"
+        "map" : "InscriptionOrdre.dateRadiation"
       }]
     },
     {
@@ -10281,7 +10281,7 @@
       "sliceName" : "status",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "statutInscription"
+        "map" : "InscriptionOrdre.statutInscription"
       }]
     },
     {
@@ -10290,7 +10290,7 @@
       "sliceName" : "hostingDepartment",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-inscription-ordre",
-        "map" : "conseilDepartemental"
+        "map" : "InscriptionOrdre.conseilDepartemental"
       }]
     },
     {
@@ -10311,7 +10311,7 @@
       "sliceName" : "type",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "typeAutorisation"
+        "map" : "AutorisationExercice.typeAutorisation"
       }]
     },
     {
@@ -10324,7 +10324,7 @@
       "path" : "Practitioner.extension.extension.value[x].start",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "dateDebutAutorisation"
+        "map" : "AutorisationExercice.dateDebutAutorisation"
       }]
     },
     {
@@ -10332,7 +10332,7 @@
       "path" : "Practitioner.extension.extension.value[x].end",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "dateFinAutorisation"
+        "map" : "AutorisationExercice.dateFinAutorisation"
       }]
     },
     {
@@ -10341,7 +10341,7 @@
       "sliceName" : "field",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "disciplineAutorisee"
+        "map" : "AutorisationExercice.disciplineAutorisee"
       }]
     },
     {
@@ -10350,7 +10350,7 @@
       "sliceName" : "profession",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-autorisation-exercice",
-        "map" : "profession"
+        "map" : "AutorisationExercice.profession"
       }]
     },
     {
@@ -10415,7 +10415,7 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "nomExercice"
+        "map" : "ExerciceProfessionnel.nomExercice"
       }]
     },
     {
@@ -10425,7 +10425,7 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "prenomExercice"
+        "map" : "ExerciceProfessionnel.prenomExercice"
       }]
     },
     {
@@ -10435,7 +10435,7 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "civiliteExercice"
+        "map" : "ExerciceProfessionnel.civiliteExercice"
       }]
     },
     {
@@ -10477,7 +10477,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "boiteLettresMSS"
+        "map" : "ExerciceProfessionnel.boiteLettresMSS"
       }]
     },
     {
@@ -10511,7 +10511,7 @@
       "path" : "Practitioner.qualification.identifier",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "numeroDiplome"
+        "map" : "Diplome.numeroDiplome"
       }]
     },
     {
@@ -10519,7 +10519,7 @@
       "path" : "Practitioner.qualification.code",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "codeDiplome"
+        "map" : "Diplome.codeDiplome"
       }]
     },
     {
@@ -10532,7 +10532,7 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "typeDiplome"
+        "map" : "Diplome.typeDiplome"
       }]
     },
     {
@@ -10565,7 +10565,7 @@
       "sliceName" : "academicDegree",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "natureCycleFormation"
+        "map" : "Diplome.natureCycleFormation"
       }]
     },
     {
@@ -10574,7 +10574,7 @@
       "sliceName" : "achievedLevel",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "anneeUniversitaire"
+        "map" : "Diplome.anneeUniversitaire"
       }]
     },
     {
@@ -10583,7 +10583,7 @@
       "sliceName" : "academicYear",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "niveauFormationAcquis"
+        "map" : "Diplome.niveauFormationAcquis"
       }]
     },
     {
@@ -10632,7 +10632,7 @@
       "short" : "dateDebut : Date d’obtention du diplôme (dateDiplome)\ncette date est renseignée par l’ordre à la clôture de l’exercice professionnel.",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "dateDebut"
+        "map" : "Diplome.dateDebut"
       }]
     },
     {
@@ -10641,7 +10641,7 @@
       "short" : "dateFin : Date à laquelle le niveau de formation n’est plus actif (non visible hormis dans les données historisées).",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "dateFin"
+        "map" : "Diplome.dateFin"
       }]
     },
     {
@@ -10655,7 +10655,7 @@
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "lieuFormation"
+        "map" : "Diplome.lieuFormation"
       }]
     },
     {
@@ -10691,7 +10691,7 @@
       },
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "categorieProfession"
+        "map" : "ExerciceProfessionnel.categorieProfession"
       }]
     },
     {
@@ -10708,7 +10708,7 @@
       },
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "profession"
+        "map" : "ExerciceProfessionnel.profession"
       }]
     },
     {
@@ -10722,7 +10722,7 @@
       "short" : "[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice).",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "dateEffetExercice"
+        "map" : "ExerciceProfessionnel.dateEffetExercice"
       }]
     },
     {
@@ -10731,7 +10731,7 @@
       "short" : "[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice).",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
-        "map" : "dateFinEffetExercice"
+        "map" : "ExerciceProfessionnel.dateFinEffetExercice"
       }]
     },
     {
@@ -10747,7 +10747,7 @@
       "path" : "Practitioner.qualification.code",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-savoir-faire",
-        "map" : "typeSavoirFaire"
+        "map" : "SavoirFaire.typeSavoirFaire"
       }]
     },
     {
@@ -10792,7 +10792,7 @@
       "path" : "Practitioner.qualification.period.start",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-savoir-faire",
-        "map" : "dateReconnaissance"
+        "map" : "SavoirFaire.dateReconnaissance"
       }]
     },
     {
@@ -10800,7 +10800,7 @@
       "path" : "Practitioner.qualification.period.end",
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-savoir-faire",
-        "map" : "dateAbandon"
+        "map" : "SavoirFaire.dateAbandon"
       }]
     },
     {

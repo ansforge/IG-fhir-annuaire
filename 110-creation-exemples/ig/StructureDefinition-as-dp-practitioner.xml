@@ -57,7 +57,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
   <name value="AsDpPractitionerProfile"/>
   <title value="AS Donnée Publique Practitioner Profile"/>
   <status value="active"/>
-  <date value="2024-07-02T09:45:37+00:00"/>
+  <date value="2024-07-02T11:34:04+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -777,7 +777,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       <path value="Practitioner.extension"/>
       <sliceName value="as-ext-registration"/>
       <short value="InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné."/>
-      <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si &quot;isFirst = true&quot;."/>
+      <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si &quot;isFirst = true&quot;. Ces données sont uniquement accessibles en accès restreint."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -923,7 +923,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="ordre"/>
+        <map value="InscriptionOrdre.ordre"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:registeringOrganization.id">
@@ -1480,7 +1480,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="dateDebutInscription"/>
+        <map value="InscriptionOrdre.dateDebutInscription"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:period.value[x].end">
@@ -1524,7 +1524,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="dateRadiation"/>
+        <map value="InscriptionOrdre.dateRadiation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:status">
@@ -1561,7 +1561,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="statutInscription"/>
+        <map value="InscriptionOrdre.statutInscription"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:status.id">
@@ -1722,7 +1722,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="conseilDepartemental"/>
+        <map value="InscriptionOrdre.conseilDepartemental"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:hostingDepartment.id">
@@ -2356,7 +2356,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="typeAutorisation"/>
+        <map value="AutorisationExercice.typeAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:type.id">
@@ -2756,7 +2756,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="dateDebutAutorisation"/>
+        <map value="AutorisationExercice.dateDebutAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].end">
@@ -2800,7 +2800,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="dateFinAutorisation"/>
+        <map value="AutorisationExercice.dateFinAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:field">
@@ -2837,7 +2837,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="disciplineAutorisee"/>
+        <map value="AutorisationExercice.disciplineAutorisee"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:field.id">
@@ -2998,7 +2998,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="profession"/>
+        <map value="AutorisationExercice.profession"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession.id">
@@ -6116,7 +6116,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="nomExercice"/>
+        <map value="ExerciceProfessionnel.nomExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.given">
@@ -6162,7 +6162,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="prenomExercice"/>
+        <map value="ExerciceProfessionnel.prenomExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.prefix">
@@ -6249,7 +6249,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="civiliteExercice"/>
+        <map value="ExerciceProfessionnel.civiliteExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.period">
@@ -8596,7 +8596,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="numeroDiplome"/>
+        <map value="Diplome.numeroDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification.code">
@@ -8637,7 +8637,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="codeDiplome"/>
+        <map value="Diplome.codeDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification.period">
@@ -8744,7 +8744,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="typeDiplome"/>
+        <map value="Diplome.typeDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.id">
@@ -8962,7 +8962,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="natureCycleFormation"/>
+        <map value="Diplome.natureCycleFormation"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicDegree.id">
@@ -9123,7 +9123,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="anneeUniversitaire"/>
+        <map value="Diplome.anneeUniversitaire"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel.id">
@@ -9284,7 +9284,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="niveauFormationAcquis"/>
+        <map value="Diplome.niveauFormationAcquis"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear.id">
@@ -10189,7 +10189,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="dateDebut"/>
+        <map value="Diplome.dateDebut"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.period.end">
@@ -10233,7 +10233,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="dateFin"/>
+        <map value="Diplome.dateFin"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.issuer">
@@ -10268,7 +10268,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="lieuFormation"/>
+        <map value="Diplome.lieuFormation"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro">
@@ -10688,7 +10688,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="categorieProfession"/>
+        <map value="ExerciceProfessionnel.categorieProfession"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.code.coding:profession">
@@ -10753,7 +10753,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="profession"/>
+        <map value="ExerciceProfessionnel.profession"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.code.text">
@@ -10957,7 +10957,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="dateEffetExercice"/>
+        <map value="ExerciceProfessionnel.dateEffetExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.period.end">
@@ -11001,7 +11001,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="dateFinEffetExercice"/>
+        <map value="ExerciceProfessionnel.dateFinEffetExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.issuer">
@@ -11248,7 +11248,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="typeSavoirFaire"/>
+        <map value="SavoirFaire.typeSavoirFaire"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.id">
@@ -11715,7 +11715,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="dateReconnaissance"/>
+        <map value="SavoirFaire.dateReconnaissance"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.period.end">
@@ -11759,7 +11759,7 @@ true  par défaut; false pour  indiquer que la ressource a été supprimés</spa
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="dateAbandon"/>
+        <map value="SavoirFaire.dateAbandon"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.issuer">

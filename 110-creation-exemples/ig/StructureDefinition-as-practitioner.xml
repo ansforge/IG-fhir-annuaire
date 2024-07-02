@@ -91,7 +91,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
   <name value="AsPractitionerProfile"/>
   <title value="AS Practitioner Profile"/>
   <status value="active"/>
-  <date value="2024-07-02T09:45:37+00:00"/>
+  <date value="2024-07-02T11:34:04+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -836,7 +836,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <path value="Practitioner.extension"/>
       <sliceName value="as-ext-registration"/>
       <short value="InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné."/>
-      <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si &quot;isFirst = true&quot;."/>
+      <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si &quot;isFirst = true&quot;. Ces données sont uniquement accessibles en accès restreint."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -982,7 +982,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="ordre"/>
+        <map value="InscriptionOrdre.ordre"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:registeringOrganization.id">
@@ -1539,7 +1539,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="dateDebutInscription"/>
+        <map value="InscriptionOrdre.dateDebutInscription"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:period.value[x].end">
@@ -1583,7 +1583,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="dateRadiation"/>
+        <map value="InscriptionOrdre.dateRadiation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:status">
@@ -1620,7 +1620,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="statutInscription"/>
+        <map value="InscriptionOrdre.statutInscription"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:status.id">
@@ -1781,7 +1781,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="conseilDepartemental"/>
+        <map value="InscriptionOrdre.conseilDepartemental"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:hostingDepartment.id">
@@ -2415,7 +2415,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="typeAutorisation"/>
+        <map value="AutorisationExercice.typeAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:type.id">
@@ -2815,7 +2815,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="dateDebutAutorisation"/>
+        <map value="AutorisationExercice.dateDebutAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].end">
@@ -2859,7 +2859,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="dateFinAutorisation"/>
+        <map value="AutorisationExercice.dateFinAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:field">
@@ -2896,7 +2896,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="disciplineAutorisee"/>
+        <map value="AutorisationExercice.disciplineAutorisee"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:field.id">
@@ -3057,7 +3057,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="profession"/>
+        <map value="AutorisationExercice.profession"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession.id">
@@ -5727,7 +5727,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="nomExercice"/>
+        <map value="ExerciceProfessionnel.nomExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.given">
@@ -5773,7 +5773,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="prenomExercice"/>
+        <map value="ExerciceProfessionnel.prenomExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.prefix">
@@ -5860,7 +5860,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="civiliteExercice"/>
+        <map value="ExerciceProfessionnel.civiliteExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.period">
@@ -6331,7 +6331,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="boiteLettresMSS"/>
+        <map value="ExerciceProfessionnel.boiteLettresMSS"/>
       </mapping>
     </element>
     <element id="Practitioner.address">
@@ -6685,7 +6685,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="numeroDiplome"/>
+        <map value="Diplome.numeroDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification.code">
@@ -6726,7 +6726,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="codeDiplome"/>
+        <map value="Diplome.codeDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification.period">
@@ -6833,7 +6833,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="typeDiplome"/>
+        <map value="Diplome.typeDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.id">
@@ -7051,7 +7051,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="natureCycleFormation"/>
+        <map value="Diplome.natureCycleFormation"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicDegree.id">
@@ -7212,7 +7212,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="anneeUniversitaire"/>
+        <map value="Diplome.anneeUniversitaire"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel.id">
@@ -7373,7 +7373,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </constraint>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="niveauFormationAcquis"/>
+        <map value="Diplome.niveauFormationAcquis"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear.id">
@@ -8278,7 +8278,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="dateDebut"/>
+        <map value="Diplome.dateDebut"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.period.end">
@@ -8322,7 +8322,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="dateFin"/>
+        <map value="Diplome.dateFin"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.issuer">
@@ -8357,7 +8357,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="lieuFormation"/>
+        <map value="Diplome.lieuFormation"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro">
@@ -8777,7 +8777,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="categorieProfession"/>
+        <map value="ExerciceProfessionnel.categorieProfession"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.code.coding:profession">
@@ -8842,7 +8842,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="profession"/>
+        <map value="ExerciceProfessionnel.profession"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.code.text">
@@ -9046,7 +9046,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="dateEffetExercice"/>
+        <map value="ExerciceProfessionnel.dateEffetExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.period.end">
@@ -9090,7 +9090,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="dateFinEffetExercice"/>
+        <map value="ExerciceProfessionnel.dateFinEffetExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.issuer">
@@ -9337,7 +9337,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="typeSavoirFaire"/>
+        <map value="SavoirFaire.typeSavoirFaire"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.id">
@@ -9804,7 +9804,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="dateReconnaissance"/>
+        <map value="SavoirFaire.dateReconnaissance"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.period.end">
@@ -9848,7 +9848,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="dateAbandon"/>
+        <map value="SavoirFaire.dateAbandon"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.issuer">
@@ -9985,7 +9985,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="registeringOrganization"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="ordre"/>
+        <map value="InscriptionOrdre.ordre"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:period">
@@ -9996,14 +9996,14 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <path value="Practitioner.extension.extension.value[x].start"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="dateDebutInscription"/>
+        <map value="InscriptionOrdre.dateDebutInscription"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:period.value[x].end">
       <path value="Practitioner.extension.extension.value[x].end"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="dateRadiation"/>
+        <map value="InscriptionOrdre.dateRadiation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:status">
@@ -10011,7 +10011,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="status"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="statutInscription"/>
+        <map value="InscriptionOrdre.statutInscription"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-registration.extension:hostingDepartment">
@@ -10019,7 +10019,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="hostingDepartment"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-inscription-ordre"/>
-        <map value="conseilDepartemental"/>
+        <map value="InscriptionOrdre.conseilDepartemental"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization">
@@ -10038,7 +10038,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="type"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="typeAutorisation"/>
+        <map value="AutorisationExercice.typeAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:period">
@@ -10049,14 +10049,14 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <path value="Practitioner.extension.extension.value[x].start"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="dateDebutAutorisation"/>
+        <map value="AutorisationExercice.dateDebutAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].end">
       <path value="Practitioner.extension.extension.value[x].end"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="dateFinAutorisation"/>
+        <map value="AutorisationExercice.dateFinAutorisation"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:field">
@@ -10064,7 +10064,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="field"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="disciplineAutorisee"/>
+        <map value="AutorisationExercice.disciplineAutorisee"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession">
@@ -10072,7 +10072,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="profession"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-autorisation-exercice"/>
-        <map value="profession"/>
+        <map value="AutorisationExercice.profession"/>
       </mapping>
     </element>
     <element id="Practitioner.extension:as-ext-smartcard">
@@ -10129,7 +10129,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <mustSupport value="true"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="nomExercice"/>
+        <map value="ExerciceProfessionnel.nomExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.given">
@@ -10138,7 +10138,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <mustSupport value="true"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="prenomExercice"/>
+        <map value="ExerciceProfessionnel.prenomExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.name.suffix">
@@ -10147,7 +10147,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <mustSupport value="true"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="civiliteExercice"/>
+        <map value="ExerciceProfessionnel.civiliteExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.telecom">
@@ -10185,7 +10185,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </type>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="boiteLettresMSS"/>
+        <map value="ExerciceProfessionnel.boiteLettresMSS"/>
       </mapping>
     </element>
     <element id="Practitioner.address">
@@ -10216,14 +10216,14 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <path value="Practitioner.qualification.identifier"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="numeroDiplome"/>
+        <map value="Diplome.numeroDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification.code">
       <path value="Practitioner.qualification.code"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="codeDiplome"/>
+        <map value="Diplome.codeDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree">
@@ -10235,7 +10235,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <mustSupport value="true"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="typeDiplome"/>
+        <map value="Diplome.typeDiplome"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension">
@@ -10265,7 +10265,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="academicDegree"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="natureCycleFormation"/>
+        <map value="Diplome.natureCycleFormation"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel">
@@ -10273,7 +10273,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="achievedLevel"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="anneeUniversitaire"/>
+        <map value="Diplome.anneeUniversitaire"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear">
@@ -10281,7 +10281,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <sliceName value="academicYear"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="niveauFormationAcquis"/>
+        <map value="Diplome.niveauFormationAcquis"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.code.coding">
@@ -10325,7 +10325,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <short value="dateDebut : Date d’obtention du diplôme (dateDiplome)&#xA;cette date est renseignée par l’ordre à la clôture de l’exercice professionnel."/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="dateDebut"/>
+        <map value="Diplome.dateDebut"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.period.end">
@@ -10333,7 +10333,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <short value="dateFin : Date à laquelle le niveau de formation n’est plus actif (non visible hormis dans les données historisées)."/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="dateFin"/>
+        <map value="Diplome.dateFin"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:degree.issuer">
@@ -10346,7 +10346,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </type>
       <mapping>
         <identity value="as-practitioner-role-to-mos-diplome"/>
-        <map value="lieuFormation"/>
+        <map value="Diplome.lieuFormation"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro">
@@ -10379,7 +10379,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </binding>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="categorieProfession"/>
+        <map value="ExerciceProfessionnel.categorieProfession"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.code.coding:profession">
@@ -10395,7 +10395,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       </binding>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="profession"/>
+        <map value="ExerciceProfessionnel.profession"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.period">
@@ -10407,7 +10407,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <short value="[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice)."/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="dateEffetExercice"/>
+        <map value="ExerciceProfessionnel.dateEffetExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:exercicePro.period.end">
@@ -10415,7 +10415,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <short value="[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice)."/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-exercice-professionnel"/>
-        <map value="dateFinEffetExercice"/>
+        <map value="ExerciceProfessionnel.dateFinEffetExercice"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire">
@@ -10429,7 +10429,7 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <path value="Practitioner.qualification.code"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="typeSavoirFaire"/>
+        <map value="SavoirFaire.typeSavoirFaire"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.code.coding">
@@ -10470,14 +10470,14 @@ typeSavoirFaire<br/><span style="font-weight:bold">Binding: </span><a href="http
       <path value="Practitioner.qualification.period.start"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="dateReconnaissance"/>
+        <map value="SavoirFaire.dateReconnaissance"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification:savoirFaire.period.end">
       <path value="Practitioner.qualification.period.end"/>
       <mapping>
         <identity value="as-practitioner-role-to-mos-savoir-faire"/>
-        <map value="dateAbandon"/>
+        <map value="SavoirFaire.dateAbandon"/>
       </mapping>
     </element>
     <element id="Practitioner.communication">

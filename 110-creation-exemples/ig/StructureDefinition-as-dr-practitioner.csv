@@ -64,7 +64,7 @@ http://esante.gouv.fr/sites/NOS/TABS/TRE_R38-SpecialiteOrdinale.tabs","","","","
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.extension:as-ext-registration","Practitioner.extension","as-ext-registration","","",0,*,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration]]} {[]}
-","InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"".","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"". Ces données sont uniquement accessibles en accès restreint.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.extension:as-ext-registration.id","Practitioner.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -982,7 +982,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".playingEntity.playingRole[classCode=QUAL].id"
 "Practitioner.qualification:savoirFaire.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","Coded representation of the qualification","Coded representation of the qualification.","","","","","","","","","",,"preferred","","https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS","",,,,"Practitioner.qualification.code",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","typeSavoirFaire",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications.Value"
+","SavoirFaire.typeSavoirFaire",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications.Value"
 "Practitioner.qualification:savoirFaire.code.id","Practitioner.qualification.code.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.qualification:savoirFaire.code.extension","Practitioner.qualification.code.extension","","extensions
@@ -1023,11 +1023,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.qualification:savoirFaire.period.start","Practitioner.qualification.period.start","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","Starting time with inclusive boundary","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateReconnaissance","DR.1","n/a","./low"
+","SavoirFaire.dateReconnaissance","DR.1","n/a","./low"
 "Practitioner.qualification:savoirFaire.period.end","Practitioner.qualification.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","End time with inclusive boundary, if not ongoing","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateAbandon","DR.2","n/a","./high"
+","SavoirFaire.dateAbandon","DR.2","n/a","./high"
 "Practitioner.qualification:savoirFaire.issuer","Practitioner.qualification.issuer","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that regulates and issues the qualification","Organization that regulates and issues the qualification.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification.issuer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playingEntity.playingRole[classCode=QUAL].scoper"

@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsDrPractitionerProfile"] ; # 
   fhir:title [ fhir:v "AS Donnée Restreinte Practitioner Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-07-02T09:45:37+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-07-02T11:34:04+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -818,7 +818,7 @@
        fhir:path [ fhir:v "Practitioner.extension" ] ;
        fhir:sliceName [ fhir:v "as-ext-registration" ] ;
        fhir:short [ fhir:v "InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné." ] ;
-       fhir:definition [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\"." ] ;
+       fhir:definition [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\". Ces données sont uniquement accessibles en accès restreint." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -982,7 +982,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-inscription-ordre" ] ;
-         fhir:map [ fhir:v "ordre" ]
+         fhir:map [ fhir:v "InscriptionOrdre.ordre" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-registration.extension:registeringOrganization.id" ] ;
@@ -1586,7 +1586,7 @@
          fhir:map [ fhir:v "./low" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-inscription-ordre" ] ;
-         fhir:map [ fhir:v "dateDebutInscription" ]
+         fhir:map [ fhir:v "InscriptionOrdre.dateDebutInscription" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-registration.extension:period.value[x].end" ] ;
@@ -1629,7 +1629,7 @@
          fhir:map [ fhir:v "./high" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-inscription-ordre" ] ;
-         fhir:map [ fhir:v "dateRadiation" ]
+         fhir:map [ fhir:v "InscriptionOrdre.dateRadiation" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-registration.extension:status" ] ;
@@ -1671,7 +1671,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-inscription-ordre" ] ;
-         fhir:map [ fhir:v "statutInscription" ]
+         fhir:map [ fhir:v "InscriptionOrdre.statutInscription" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-registration.extension:status.id" ] ;
@@ -1849,7 +1849,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-inscription-ordre" ] ;
-         fhir:map [ fhir:v "conseilDepartemental" ]
+         fhir:map [ fhir:v "InscriptionOrdre.conseilDepartemental" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-registration.extension:hostingDepartment.id" ] ;
@@ -2481,7 +2481,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-autorisation-exercice" ] ;
-         fhir:map [ fhir:v "typeAutorisation" ]
+         fhir:map [ fhir:v "AutorisationExercice.typeAutorisation" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-frpractitioner-authorization.extension:type.id" ] ;
@@ -2911,7 +2911,7 @@
          fhir:map [ fhir:v "./low" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-autorisation-exercice" ] ;
-         fhir:map [ fhir:v "dateDebutAutorisation" ]
+         fhir:map [ fhir:v "AutorisationExercice.dateDebutAutorisation" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].end" ] ;
@@ -2954,7 +2954,7 @@
          fhir:map [ fhir:v "./high" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-autorisation-exercice" ] ;
-         fhir:map [ fhir:v "dateFinAutorisation" ]
+         fhir:map [ fhir:v "AutorisationExercice.dateFinAutorisation" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-frpractitioner-authorization.extension:field" ] ;
@@ -2996,7 +2996,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-autorisation-exercice" ] ;
-         fhir:map [ fhir:v "disciplineAutorisee" ]
+         fhir:map [ fhir:v "AutorisationExercice.disciplineAutorisee" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-frpractitioner-authorization.extension:field.id" ] ;
@@ -3174,7 +3174,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-autorisation-exercice" ] ;
-         fhir:map [ fhir:v "profession" ]
+         fhir:map [ fhir:v "AutorisationExercice.profession" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession.id" ] ;
@@ -7545,7 +7545,7 @@
          fhir:map [ fhir:v "./FamilyName" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "nomExercice" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.nomExercice" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.name.given" ] ;
@@ -7590,7 +7590,7 @@
          fhir:map [ fhir:v "./GivenNames" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "prenomExercice" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.prenomExercice" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.name.prefix" ] ;
@@ -7685,7 +7685,7 @@
          fhir:map [ fhir:v "./part[partType = SFX]" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "civiliteExercice" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.civiliteExercice" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.name.period" ] ;
@@ -8192,7 +8192,7 @@
          fhir:map [ fhir:v "ContactPoint" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "boiteLettresMSS" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.boiteLettresMSS" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.address" ] ;
@@ -8567,7 +8567,7 @@
          fhir:map [ fhir:v ".playingEntity.playingRole[classCode=QUAL].id" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "numeroDiplome" ]
+         fhir:map [ fhir:v "Diplome.numeroDiplome" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification.code" ] ;
@@ -8612,7 +8612,7 @@
          fhir:map [ fhir:v "./Qualifications.Value" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "codeDiplome" ]
+         fhir:map [ fhir:v "Diplome.codeDiplome" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification.period" ] ;
@@ -8727,7 +8727,7 @@
          fhir:map [ fhir:v "./Qualifications" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "typeDiplome" ]
+         fhir:map [ fhir:v "Diplome.typeDiplome" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:degree.id" ] ;
@@ -8969,7 +8969,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "natureCycleFormation" ]
+         fhir:map [ fhir:v "Diplome.natureCycleFormation" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicDegree.id" ] ;
@@ -9147,7 +9147,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "anneeUniversitaire" ]
+         fhir:map [ fhir:v "Diplome.anneeUniversitaire" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel.id" ] ;
@@ -9325,7 +9325,7 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "niveauFormationAcquis" ]
+         fhir:map [ fhir:v "Diplome.niveauFormationAcquis" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear.id" ] ;
@@ -10216,7 +10216,7 @@
          fhir:map [ fhir:v "./low" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "dateDebut" ]
+         fhir:map [ fhir:v "Diplome.dateDebut" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:degree.period.end" ] ;
@@ -10259,7 +10259,7 @@
          fhir:map [ fhir:v "./high" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "dateFin" ]
+         fhir:map [ fhir:v "Diplome.dateFin" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:degree.issuer" ] ;
@@ -10301,7 +10301,7 @@
          fhir:map [ fhir:v ".playingEntity.playingRole[classCode=QUAL].scoper" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-diplome" ] ;
-         fhir:map [ fhir:v "lieuFormation" ]
+         fhir:map [ fhir:v "Diplome.lieuFormation" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:exercicePro" ] ;
@@ -10739,7 +10739,7 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "categorieProfession" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.categorieProfession" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:exercicePro.code.coding:profession" ] ;
@@ -10803,7 +10803,7 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "profession" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.profession" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:exercicePro.code.text" ] ;
@@ -11014,7 +11014,7 @@
          fhir:map [ fhir:v "./low" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "dateEffetExercice" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.dateEffetExercice" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:exercicePro.period.end" ] ;
@@ -11057,7 +11057,7 @@
          fhir:map [ fhir:v "./high" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-exercice-professionnel" ] ;
-         fhir:map [ fhir:v "dateFinEffetExercice" ]
+         fhir:map [ fhir:v "ExerciceProfessionnel.dateFinEffetExercice" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:exercicePro.issuer" ] ;
@@ -11326,7 +11326,7 @@
          fhir:map [ fhir:v "./Qualifications.Value" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-savoir-faire" ] ;
-         fhir:map [ fhir:v "typeSavoirFaire" ]
+         fhir:map [ fhir:v "SavoirFaire.typeSavoirFaire" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:savoirFaire.code.id" ] ;
@@ -11802,7 +11802,7 @@
          fhir:map [ fhir:v "./low" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-savoir-faire" ] ;
-         fhir:map [ fhir:v "dateReconnaissance" ]
+         fhir:map [ fhir:v "SavoirFaire.dateReconnaissance" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:savoirFaire.period.end" ] ;
@@ -11845,7 +11845,7 @@
          fhir:map [ fhir:v "./high" ]
        ] [
          fhir:identity [ fhir:v "as-practitioner-role-to-mos-savoir-faire" ] ;
-         fhir:map [ fhir:v "dateAbandon" ]
+         fhir:map [ fhir:v "SavoirFaire.dateAbandon" ]
        ] )
      ] [
        fhir:id [ fhir:v "Practitioner.qualification:savoirFaire.issuer" ] ;
