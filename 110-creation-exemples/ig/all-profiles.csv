@@ -2392,11 +2392,26 @@ We expect that some jurisdictions will profile this optionality to be a single c
 "
 "as-dp-organization","Organization.type:secteurActiviteRASS.id","Organization.type.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-dp-organization","Organization.type:secteurActiviteRASS.extension","Organization.type.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+"as-dp-organization","Organization.type:secteurActiviteRASS.extension","Organization.type.extension","","","",1,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-dp-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types","Organization.type.extension","as-ext-organization-types","","",1,1,"","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types]]} {[]}
+","AS Organization Types","Extension pour discriminer les organization types.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-dp-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.id","Organization.type.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"as-dp-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.extension","Organization.type.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-dp-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.url","Organization.type.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"as-dp-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.value[x]","Organization.type.extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""secteurActiviteRASS""/>","","","",,"required","","https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types","",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "as-dp-organization","Organization.type:secteurActiviteRASS.coding","Organization.type.coding","","","",1,1,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -3815,7 +3830,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-dp-practitioner","Practitioner.qualification:degree.code.coding","Practitioner.qualification.code.coding","","","",0,*,"","","Y","Coding {[]} {[]}
-","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","value:system}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","pattern:$this}
 ","",,"closed","CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -4165,7 +4180,7 @@ per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 ","Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)","The organization where the Practitioner performs the roles associated.","","","","","","","","","",,,,,"",,,,"PractitionerRole.organization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-dp-practitionerrole","PractitionerRole.code","PractitionerRole.code","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation","Roles which this practitioner is authorized to perform for the organization.","A person may have more than one role.","Need to know what authority the practitioner has - what can they do?","","","","","","","",,"preferred","","https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-practitioner-role-exercice","","value:coding.system}
+","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation","Roles which this practitioner is authorized to perform for the organization.","A person may have more than one role.","Need to know what authority the practitioner has - what can they do?","","","","","","","",,"preferred","","https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-practitioner-role-exercice","","pattern:$this}
 ","",,"open","PractitionerRole.code",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-dp-practitionerrole","PractitionerRole.code:genreActivite","PractitionerRole.code","genreActivite","","",0,1,"Y","","Y","CodeableConcept {[]} {[]}
@@ -6247,11 +6262,26 @@ We expect that some jurisdictions will profile this optionality to be a single c
 "
 "as-dr-organization","Organization.type:secteurActiviteRASS.id","Organization.type.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-dr-organization","Organization.type:secteurActiviteRASS.extension","Organization.type.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+"as-dr-organization","Organization.type:secteurActiviteRASS.extension","Organization.type.extension","","","",1,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-dr-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types","Organization.type.extension","as-ext-organization-types","","",1,1,"","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types]]} {[]}
+","AS Organization Types","Extension pour discriminer les organization types.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-dr-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.id","Organization.type.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"as-dr-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.extension","Organization.type.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-dr-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.url","Organization.type.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"as-dr-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.value[x]","Organization.type.extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""secteurActiviteRASS""/>","","","",,"required","","https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types","",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "as-dr-organization","Organization.type:secteurActiviteRASS.coding","Organization.type.coding","","","",1,1,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -7685,7 +7715,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-dr-practitioner","Practitioner.qualification:degree.code.coding","Practitioner.qualification.code.coding","","","",0,*,"","","Y","Coding {[]} {[]}
-","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","value:system}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","pattern:$this}
 ","",,"closed","CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -8035,7 +8065,7 @@ per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 ","Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)","The organization where the Practitioner performs the roles associated.","","","","","","","","","",,,,,"",,,,"PractitionerRole.organization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-dr-practitionerrole","PractitionerRole.code","PractitionerRole.code","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation","Roles which this practitioner is authorized to perform for the organization.","A person may have more than one role.","Need to know what authority the practitioner has - what can they do?","","","","","","","",,"preferred","","https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-practitioner-role-exercice","","value:coding.system}
+","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation","Roles which this practitioner is authorized to perform for the organization.","A person may have more than one role.","Need to know what authority the practitioner has - what can they do?","","","","","","","",,"preferred","","https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-practitioner-role-exercice","","pattern:$this}
 ","",,"open","PractitionerRole.code",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-dr-practitionerrole","PractitionerRole.code:genreActivite","PractitionerRole.code","genreActivite","","",0,1,"Y","","Y","CodeableConcept {[]} {[]}
@@ -11312,11 +11342,26 @@ We expect that some jurisdictions will profile this optionality to be a single c
 "
 "as-organization","Organization.type:secteurActiviteRASS.id","Organization.type.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"as-organization","Organization.type:secteurActiviteRASS.extension","Organization.type.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+"as-organization","Organization.type:secteurActiviteRASS.extension","Organization.type.extension","","","",1,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types","Organization.type.extension","as-ext-organization-types","","",1,1,"","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types]]} {[]}
+","AS Organization Types","Extension pour discriminer les organization types.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.id","Organization.type.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"as-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.extension","Organization.type.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"as-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.url","Organization.type.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"as-organization","Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.value[x]","Organization.type.extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""secteurActiviteRASS""/>","","","",,"required","","https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types","",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "as-organization","Organization.type:secteurActiviteRASS.coding","Organization.type.coding","","","",1,1,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -12594,7 +12639,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "as-practitioner","Practitioner.qualification:degree.code.coding","Practitioner.qualification.code.coding","","","",0,*,"","","Y","Coding {[]} {[]}
-","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","value:system}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","pattern:$this}
 ","",,"closed","CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -12970,7 +13015,7 @@ per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 ","Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)","The organization where the Practitioner performs the roles associated.","","","","","","","","","",,,,,"",,,,"PractitionerRole.organization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-practitionerrole","PractitionerRole.code","PractitionerRole.code","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation","Roles which this practitioner is authorized to perform for the organization.","A person may have more than one role.","Need to know what authority the practitioner has - what can they do?","","","","","","","",,"preferred","","https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-practitioner-role-exercice","","value:coding.system}
+","The role a person plays representing an organization | Rôle (situation d'exercice) du professionnel de santé au sein de l'organisation","Roles which this practitioner is authorized to perform for the organization.","A person may have more than one role.","Need to know what authority the practitioner has - what can they do?","","","","","","","",,"preferred","","https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-practitioner-role-exercice","","pattern:$this}
 ","",,"open","PractitionerRole.code",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "as-practitionerrole","PractitionerRole.code:genreActivite","PractitionerRole.code","genreActivite","","",0,1,"Y","","Y","CodeableConcept {[]} {[]}
