@@ -70,8 +70,8 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 
 // Slicing au niveau de PractitionerRole.code
-* code ^slicing.discriminator.type = #value
-* code ^slicing.discriminator.path = "coding.system"
+* code ^slicing.discriminator.type = #pattern
+* code ^slicing.discriminator.path = "$this"
 * code ^slicing.rules = #open
 * code contains
     genreActivite 0..1 MS  and
