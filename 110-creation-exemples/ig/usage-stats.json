@@ -1,6 +1,6 @@
 {
   "package": "ans.fhir.fr.annuaire",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "fhirVersion": "4.0.1",
   "jurisdiction": "FR",
   "extensions": [
@@ -59,6 +59,73 @@
         "Dosage",
         "Meta",
         "dateTime"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization",
+      "title": "AS Authorization Extension",
+      "types": [
+        "date",
+        "Period",
+        "string",
+        "Extension",
+        "dateTime",
+        "dateTime",
+        "date",
+        "boolean",
+        "date",
+        "boolean",
+        "CodeableConcept",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
       ]
     },
     {
@@ -203,73 +270,6 @@
       "types": [
         "CodeableConcept",
         "CodeableConcept",
-        "CodeableConcept",
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "Contributor",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Dosage",
-        "Meta"
-      ]
-    },
-    {
-      "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-authorization",
-      "title": "AS HealthcareService Autorization Extension",
-      "types": [
-        "date",
-        "Period",
-        "string",
-        "Extension",
-        "dateTime",
-        "dateTime",
-        "date",
-        "boolean",
-        "date",
-        "boolean",
         "CodeableConcept",
         "base64Binary",
         "boolean",
@@ -1100,6 +1100,12 @@
       "StructureDefinition.differential.element.type",
       "StructureDefinition.snapshot.element.type"
     ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "StructureDefinition.snapshot.element"
+    ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
     ],
@@ -1116,13 +1122,10 @@
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
     ],
-    "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode": [
-      "Organization.address",
-      "Practitioner.address"
-    ],
     "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code": [
       "Address",
-      "Organization.address"
+      "Organization.address",
+      "Practitioner.address"
     ],
     "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type": [
       "ContactPoint",
@@ -1149,6 +1152,10 @@
     "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-use-period": [
       "Location"
     ],
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization": [
+      "Device",
+      "HealthcareService"
+    ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata": [
       "CodeableConcept"
     ],
@@ -1167,10 +1174,6 @@
     ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level": [
       "Practitioner.qualification"
-    ],
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-healthcareservice-authorization": [
-      "Device",
-      "HealthcareService"
     ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit": [
       "Address.line"
@@ -1221,9 +1224,6 @@
       "PractitionerRole"
     ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas": [
-      "PractitionerRole"
-    ],
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name": [
       "PractitionerRole"
     ],
     "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration": [

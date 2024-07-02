@@ -10,7 +10,6 @@ package IG #DDDDDD{
         class AsAddressExtendedProfile{
 
              Address => [None..None]
-             Address.line.extension => [None..None]
              Address.line.extension:careOf => <&plus>[0..1]
              Address.line.extension:additionalLocator => <&plus>[0..1]
              Address.line.extension:houseNumber => <&plus>[0..1]
@@ -32,8 +31,7 @@ package IG #DDDDDD{
         class AsDeviceProfile{
 
              Device.meta.extension:as-ext-data-trace => <&plus>[0..1]
-             Device.extension => [None..None]
-             Device.extension:as-ext-healthcareservice-authorization => <&plus>[0..1]
+             Device.extension:as-ext-authorization => <&plus>[0..1]
              Device.identifier => [None..None]
              Device.identifier:numAutorisationArhgos => [0..1]
              Device.identifier:numAutorisationArhgos.system => [1..None]
@@ -334,8 +332,7 @@ package IG #DDDDDD{
         class AsHealthcareServiceHealthcareActivityProfile{
 
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
-             HealthcareService.extension => [None..None]
-             HealthcareService.extension:as-ext-healthcareservice-authorization => <&plus>[0..*]
+             HealthcareService.extension:as-ext-authorization => <&plus>[0..*]
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
              HealthcareService.identifier:numAutorisationArhgos.system => [1..None]
@@ -349,13 +346,12 @@ package IG #DDDDDD{
         class AsHealthcareServiceSocialEquipmentProfile{
 
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
-             HealthcareService.extension => [None..None]
-             HealthcareService.extension:as-ext-healthcareservice-authorization => <&plus>[0..*]
-             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:dateAuthorization => <&plus>[None..None]
-             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:periodAuthorization => <&plus>[None..None]
-             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:periodAuthorization.value[x].start => <&plus>[None..None]
-             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:deleteAuthorization => <&plus>[None..None]
-             HealthcareService.extension:as-ext-healthcareservice-authorization.extension:deleteInstallation => <&plus>[None..None]
+             HealthcareService.extension:as-ext-authorization => <&plus>[0..*]
+             HealthcareService.extension:as-ext-authorization.extension:dateAuthorization => <&plus>[None..None]
+             HealthcareService.extension:as-ext-authorization.extension:periodAuthorization => <&plus>[None..None]
+             HealthcareService.extension:as-ext-authorization.extension:periodAuthorization.value[x].start => <&plus>[None..None]
+             HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization => <&plus>[None..None]
+             HealthcareService.extension:as-ext-authorization.extension:deleteInstallation => <&plus>[None..None]
              HealthcareService.extension:as-ext-patient-type => <&plus>[0..*]
              HealthcareService.extension:as-ext-patient-type.extension:authorizedAgeRange => <&plus>[None..None]
              HealthcareService.extension:as-ext-patient-type.extension:authorizedAgeRange.value[x].low => <&plus>[None..None]
@@ -451,7 +447,6 @@ package IG #DDDDDD{
 
              Person.meta.extension:as-ext-data-trace => <&plus>[0..1]
              Person.language => [None..None]
-             Person.extension => [None..None]
              Person.extension:as-ext-person-nationality => <&plus>[0..*]
              Person.extension:as-ext-person-birth-place => <&plus>[0..1]
              Person.extension:as-ext-person-deceased-date-time => <&plus>[0..1]
@@ -579,11 +574,11 @@ package IG #DDDDDD{
      AsAddressExtendedProfile -[#black,dashed,thickness=2]-> AsLieuDit
      AsCodeableConceptTimedProfile -[#black,dashed,thickness=2]-> AsCodeableConceptPeriodMetadataExtension
      AsDeviceProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
-     AsDeviceProfile -[#black,dashed,thickness=2]-> AsHealthcareServiceAuthorizationExtension
+     AsDeviceProfile -[#black,dashed,thickness=2]-> AsAuthorizationExtension
      AsHealthcareServiceHealthcareActivityProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
-     AsHealthcareServiceHealthcareActivityProfile -[#black,dashed,thickness=2]-> AsHealthcareServiceAuthorizationExtension
+     AsHealthcareServiceHealthcareActivityProfile -[#black,dashed,thickness=2]-> AsAuthorizationExtension
      AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
-     AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsHealthcareServiceAuthorizationExtension
+     AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsAuthorizationExtension
      AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsPatientTypeExtension
      AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsSupportedCapacityExtension
      AsLocationProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
@@ -615,6 +610,41 @@ package IG #DDDDDD{
      AsPractitionerRoleProfile -[#black,dashed,thickness=2]-> AsPractitionerRoleHasCas
      AsPractitionerRoleProfile -[#black,dashed,thickness=2]-> AsPractitionerRoleVitaleAccepted
 
+        class AsAuthorizationExtension{
+
+          Extension.extension:dateAuthorization => [0..1]
+          Extension.extension:dateAuthorization.extension => [None..0]
+          Extension.extension:dateAuthorization.url => [None..None]
+          Extension.extension:dateAuthorization.value[x] => [None..None]
+          Extension.extension:periodAuthorization => [0..1]
+          Extension.extension:periodAuthorization.extension => [None..0]
+          Extension.extension:periodAuthorization.url => [None..None]
+          Extension.extension:periodAuthorization.value[x] => [None..None]
+          Extension.extension:periodAuthorization.value[x].start => [None..None]
+          Extension.extension:periodAuthorization.value[x].end => [None..None]
+          Extension.extension:dateUpdateAuthorization => [0..1]
+          Extension.extension:dateUpdateAuthorization.extension => [None..0]
+          Extension.extension:dateUpdateAuthorization.url => [None..None]
+          Extension.extension:dateUpdateAuthorization.value[x] => [None..None]
+          Extension.extension:deleteAuthorization => [0..1]
+          Extension.extension:deleteAuthorization.extension => [None..0]
+          Extension.extension:deleteAuthorization.url => [None..None]
+          Extension.extension:deleteAuthorization.value[x] => [None..None]
+          Extension.extension:dateLastInstallation => [0..1]
+          Extension.extension:dateLastInstallation.extension => [None..0]
+          Extension.extension:dateLastInstallation.url => [None..None]
+          Extension.extension:dateLastInstallation.value[x] => [None..None]
+          Extension.extension:deleteInstallation => [0..1]
+          Extension.extension:deleteInstallation.extension => [None..0]
+          Extension.extension:deleteInstallation.url => [None..None]
+          Extension.extension:deleteInstallation.value[x] => [None..None]
+          Extension.extension:sourceReportInstallation => [0..1]
+          Extension.extension:sourceReportInstallation.extension => [None..0]
+          Extension.extension:sourceReportInstallation.url => [None..None]
+          Extension.extension:sourceReportInstallation.value[x] => [None..None]
+          Extension.url => [None..None]
+          Extension.value[x] => [None..0]
+        } 
         class AsCodeableConceptPeriodMetadataExtension{
 
           Extension.extension => [None..0]
@@ -685,41 +715,6 @@ package IG #DDDDDD{
           Extension.extension:academicYear.extension => [None..0]
           Extension.extension:academicYear.url => [None..None]
           Extension.extension:academicYear.value[x] => [None..None]
-          Extension.url => [None..None]
-          Extension.value[x] => [None..0]
-        } 
-        class AsHealthcareServiceAuthorizationExtension{
-
-          Extension.extension:dateAuthorization => [0..1]
-          Extension.extension:dateAuthorization.extension => [None..0]
-          Extension.extension:dateAuthorization.url => [None..None]
-          Extension.extension:dateAuthorization.value[x] => [None..None]
-          Extension.extension:periodAuthorization => [0..1]
-          Extension.extension:periodAuthorization.extension => [None..0]
-          Extension.extension:periodAuthorization.url => [None..None]
-          Extension.extension:periodAuthorization.value[x] => [None..None]
-          Extension.extension:periodAuthorization.value[x].start => [None..None]
-          Extension.extension:periodAuthorization.value[x].end => [None..None]
-          Extension.extension:dateUpdateAuthorization => [0..1]
-          Extension.extension:dateUpdateAuthorization.extension => [None..0]
-          Extension.extension:dateUpdateAuthorization.url => [None..None]
-          Extension.extension:dateUpdateAuthorization.value[x] => [None..None]
-          Extension.extension:deleteAuthorization => [0..1]
-          Extension.extension:deleteAuthorization.extension => [None..0]
-          Extension.extension:deleteAuthorization.url => [None..None]
-          Extension.extension:deleteAuthorization.value[x] => [None..None]
-          Extension.extension:dateLastInstallation => [0..1]
-          Extension.extension:dateLastInstallation.extension => [None..0]
-          Extension.extension:dateLastInstallation.url => [None..None]
-          Extension.extension:dateLastInstallation.value[x] => [None..None]
-          Extension.extension:deleteInstallation => [0..1]
-          Extension.extension:deleteInstallation.extension => [None..0]
-          Extension.extension:deleteInstallation.url => [None..None]
-          Extension.extension:deleteInstallation.value[x] => [None..None]
-          Extension.extension:sourceReportInstallation => [0..1]
-          Extension.extension:sourceReportInstallation.extension => [None..0]
-          Extension.extension:sourceReportInstallation.url => [None..None]
-          Extension.extension:sourceReportInstallation.value[x] => [None..None]
           Extension.url => [None..None]
           Extension.value[x] => [None..0]
         } 
@@ -986,13 +981,13 @@ package IG #DDDDDD{
 
      AsDpPractitionerProfile -[#black,dotted,thickness=2]-> AsVSInterneIdSystems
 
+        class VS_TRE_R301_SourceInformationInstallation  
+
+     AsAuthorizationExtension -[#black,dotted,thickness=2]-> VS_TRE_R301_SourceInformationInstallation
+
         class AsVsTypeSystemeInformationVS  
 
      AsDataTraceExtension -[#black,dotted,thickness=2]-> AsVsTypeSystemeInformationVS
-
-        class VS_TRE_R301_SourceInformationInstallation  
-
-     AsHealthcareServiceAuthorizationExtension -[#black,dotted,thickness=2]-> VS_TRE_R301_SourceInformationInstallation
 
         class VS_TRE_R286_TypeFermeture  
 

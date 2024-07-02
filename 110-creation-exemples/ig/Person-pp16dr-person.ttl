@@ -16,7 +16,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Person pp16dr-person</b></p><a name=\"pp16dr-person\"> </a><a name=\"hcpp16dr-person\"> </a><a name=\"hcpp16dr-person-fr-FR\"> </a><p><b>name</b>: David CHATELIER (Official)</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Person pp16dr-person</b></p><a name=\"pp16dr-person\"> </a><a name=\"hcpp16dr-person\"> </a><a name=\"hcpp16dr-person-fr-FR\"> </a><p><b>name</b>: David CHATELIER (Official)</p><h3>Links</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Target</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-3719500DP.html\">Practitioner David CHATELIER </a></td></tr></table></div>"
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
@@ -29,13 +29,11 @@
          ] )
        ]
      ] ) ;
-     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality"^^xsd:anyURI ]
-  ] [
-     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place"^^xsd:anyURI ] ;
+     fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality"^^xsd:anyURI ] ;
      fhir:value [
        a fhir:Address ;
        fhir:extension ( [
-         fhir:url [ fhir:v "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"^^xsd:anyURI ] ;
+         fhir:url [ fhir:v "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:Coding ;
            fhir:system [ fhir:v "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"^^xsd:anyURI ] ;
@@ -51,6 +49,12 @@
      fhir:family [ fhir:v "CHATELIER" ] ;
      fhir:given ( [ fhir:v "David" ] ) ;
      fhir:prefix ( [ fhir:v "M" ] )
+  ] ) ; # 
+  fhir:link ( [
+     fhir:target [
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/Practitioner/3719500DP> ;
+       fhir:reference [ fhir:v "Practitioner/3719500DP" ]
+     ]
   ] ) . # 
 
 # -------------------------------------------------------------------------------------
