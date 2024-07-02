@@ -198,9 +198,9 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-savoir-faire
 Title:    "AsPractitionerProfile to MOS - SavoirFaire"
 * -> "SavoirFaire"
-* qualification[savoirFaire].code -> "typeSavoirFaire"
-* qualification[savoirFaire].period.start -> "dateReconnaissance"
-* qualification[savoirFaire].period.end -> "dateAbandon"
+* qualification[savoirFaire].code -> "SavoirFaire.typeSavoirFaire"
+* qualification[savoirFaire].period.start -> "SavoirFaire.dateReconnaissance"
+* qualification[savoirFaire].period.end -> "SavoirFaire.dateAbandon"
 
 Mapping:  AsPractitionerProfileToMOSExerciceProfessionnel
 Source:   AsPractitionerProfile
@@ -208,16 +208,16 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-exercice-professionnel
 Title:    "AsPractitionerProfile to MOS - ExerciceProfessionnel"
 * -> "ExerciceProfessionnel"
-* name.suffix -> "civiliteExercice"
-* name.family -> "nomExercice"
-* name.given -> "prenomExercice"
+* name.suffix -> "ExerciceProfessionnel.civiliteExercice"
+* name.family -> "ExerciceProfessionnel.nomExercice"
+* name.given -> "ExerciceProfessionnel.prenomExercice"
 
-* qualification[exercicePro].code.coding[profession] -> "profession"
-* qualification[exercicePro].code.coding[categorieProfession] -> "categorieProfession"
-* qualification[exercicePro].period.start -> "dateEffetExercice"
-* qualification[exercicePro].period.end -> "dateFinEffetExercice"
+* qualification[exercicePro].code.coding[profession] -> "ExerciceProfessionnel.profession"
+* qualification[exercicePro].code.coding[categorieProfession] -> "ExerciceProfessionnel.categorieProfession"
+* qualification[exercicePro].period.start -> "ExerciceProfessionnel.dateEffetExercice"
+* qualification[exercicePro].period.end -> "ExerciceProfessionnel.dateFinEffetExercice"
 
-* telecom[mailbox-mss] -> "boiteLettresMSS"
+* telecom[mailbox-mss] -> "ExerciceProfessionnel.boiteLettresMSS"
 
 
 Mapping:  AsPractitionerProfileToMOSInscriptionOrdre
@@ -226,11 +226,11 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-inscription-ordre
 Title:    "AsPractitionerProfile to MOS - InscriptionOrdre"
 * -> "InscriptionOrdre"
-* extension[as-ext-registration].extension[registeringOrganization] -> "ordre"
-* extension[as-ext-registration].extension[period].valuePeriod.start -> "dateDebutInscription"
-* extension[as-ext-registration].extension[period].valuePeriod.end -> "dateRadiation"
-* extension[as-ext-registration].extension[status] -> "statutInscription"
-* extension[as-ext-registration].extension[hostingDepartment] -> "conseilDepartemental"
+* extension[as-ext-registration].extension[registeringOrganization] -> "InscriptionOrdre.ordre"
+* extension[as-ext-registration].extension[period].valuePeriod.start -> "InscriptionOrdre.dateDebutInscription"
+* extension[as-ext-registration].extension[period].valuePeriod.end -> "InscriptionOrdre.dateRadiation"
+* extension[as-ext-registration].extension[status] -> "InscriptionOrdre.statutInscription"
+* extension[as-ext-registration].extension[hostingDepartment] -> "InscriptionOrdre.conseilDepartemental"
 
 Mapping:  AsPractitionerProfileToMOSDiplome
 Source:   AsPractitionerProfile
@@ -238,15 +238,15 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-diplome
 Title:    "AsPractitionerProfile to MOS - Diplome"
 * -> "Diplome"
-* qualification.identifier -> "numeroDiplome"
-* qualification.code -> "codeDiplome"
-* qualification[degree] -> "typeDiplome"
-* qualification[degree].issuer -> "lieuFormation"
-* qualification[degree].period.start -> "dateDebut"
-* qualification[degree].period.end -> "dateFin"
-* qualification[degree].extension[as-ext-education-level].extension[academicDegree] -> "natureCycleFormation"
-* qualification[degree].extension[as-ext-education-level].extension[achievedLevel] -> "anneeUniversitaire"
-* qualification[degree].extension[as-ext-education-level].extension[academicYear] -> "niveauFormationAcquis"
+* qualification.identifier -> "Diplome.numeroDiplome"
+* qualification.code -> "Diplome.codeDiplome"
+* qualification[degree] -> "Diplome.typeDiplome"
+* qualification[degree].issuer -> "Diplome.lieuFormation"
+* qualification[degree].period.start -> "Diplome.dateDebut"
+* qualification[degree].period.end -> "Diplome.dateFin"
+* qualification[degree].extension[as-ext-education-level].extension[academicDegree] -> "Diplome.natureCycleFormation"
+* qualification[degree].extension[as-ext-education-level].extension[achievedLevel] -> "Diplome.anneeUniversitaire"
+* qualification[degree].extension[as-ext-education-level].extension[academicYear] -> "Diplome.niveauFormationAcquis"
 
 Mapping:  AsPractitionerProfileToMOSProfessionnel
 Source:   AsPractitionerProfile
@@ -264,8 +264,8 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-autorisation-exercice
 Title:    "AsPractitionerProfile to MOS - AutorisationExercice"
 * -> "AutorisationExercice"
-* extension[as-ext-frpractitioner-authorization].extension[type] -> "typeAutorisation"
-* extension[as-ext-frpractitioner-authorization].extension[field] -> "disciplineAutorisee"
-* extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.start -> "dateDebutAutorisation"
-* extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.end -> "dateFinAutorisation"
-* extension[as-ext-frpractitioner-authorization].extension[profession] -> "profession"
+* extension[as-ext-frpractitioner-authorization].extension[type] -> "AutorisationExercice.typeAutorisation"
+* extension[as-ext-frpractitioner-authorization].extension[field] -> "AutorisationExercice.disciplineAutorisee"
+* extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.start -> "AutorisationExercice.dateDebutAutorisation"
+* extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.end -> "AutorisationExercice.dateFinAutorisation"
+* extension[as-ext-frpractitioner-authorization].extension[profession] -> "AutorisationExercice.profession"

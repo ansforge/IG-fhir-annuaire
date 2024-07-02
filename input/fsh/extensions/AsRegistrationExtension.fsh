@@ -1,7 +1,7 @@
 Extension: 		AsRegistrationExtension
 Id: 			as-ext-registration
 Title:			"AS Registration Extension"
-Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\"."
+Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\". Ces données sont uniquement accessibles en accès restreint."
 
 * ^context.type = #element
 * ^context.expression = "Practitioner"
