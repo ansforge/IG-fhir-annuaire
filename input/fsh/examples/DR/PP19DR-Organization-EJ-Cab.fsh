@@ -45,12 +45,12 @@ Usage: #example
 
 // Type
 * type[organizationType][+]
-  * extension[as-ext-organization-types] = #organizationType
+  * extension[as-ext-organization-types].valueCode = #organizationType
   * coding
     * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-3307"
     * code = #LEGAL-ENTITY
 * type[secteurActiviteRASS][+]
-  * extension[as-ext-organization-types] = #secteurActiviteRASS
+  * extension[as-ext-organization-types].valueCode = #secteurActiviteRASS
   * coding
     * system = "https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite"
     * code = #SA08
