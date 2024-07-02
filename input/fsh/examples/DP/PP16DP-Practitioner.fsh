@@ -37,6 +37,10 @@ Usage: #example
 // Nom 
 * name[+]
   * prefix = "M"
+  * use = #usual
+  * family = "CHATELIER"
+  * given[+] = "David"
+
 
 // Langage
 * language = #fr

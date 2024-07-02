@@ -50,12 +50,6 @@ Usage: #example
 // Langage
 * language = #fr
 
-// Nom
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-name"
-  * valueHumanName
-    * family = "CHATELIER"
-    * given[+] = "David"
 
 // Enregistrement
 * extension[+]

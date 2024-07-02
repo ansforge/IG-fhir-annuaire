@@ -1,11 +1,11 @@
-Instance: pp16dr-person
+Instance: pp19dr-person
 InstanceOf: as-dr-person
 Usage: #example
 * name[+]
   * prefix = "M"
   * use = #official 
-  * family = "CHATELIER"
-  * given[+] = "David"
+  * family = "Saucier"
+  * given[+] = "Artus"
 
   // Nationalité
 * extension[+]
@@ -17,15 +17,26 @@ Usage: #example
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
         * code = #99100
 
+
 // Lieu de naissance
 * extension[as-ext-person-birth-place]
   * valueAddress
-    * text = "COSNE-COURS-SUR-LOIRE"
+    * text = "NANTES"
     * country = "99100"
     * extension[inseeCode]
       * valueCoding 
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
-        * code = #58086
+        * code = #44109
 
 
-* link[as-practitioner-exercice-professionnel].target = Reference(pp16dp-practitioner)
+
+// Nationalité 
+* extension[as-ext-person-nationality]
+  * extension[+]
+    * url = "code"
+    * valueCodeableConcept
+      * coding[+]
+        * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
+        * code = #99100
+        
+* link[as-practitioner-exercice-professionnel].target = Reference(pp19dp-practitioner)

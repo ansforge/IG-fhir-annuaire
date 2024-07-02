@@ -17,7 +17,7 @@ Usage: #example
 * active = true
 
 // Identifiant fonctionnel 
-* identifier[+]
+* identifier[idNatPs]
   * system = "urn:oid:1.2.250.1.71.4.2.1"
   * use = #official
   * value = "810003461033"
@@ -25,8 +25,8 @@ Usage: #example
     * coding[+]
       * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #IDNPS
-* identifier[+]
-  * system = "http://rpps.fr"
+* identifier[rpps]
+  * system = "https://rpps.esante.gouv.fr"
   * use = #official
   * value = "10003461033"
   * type
@@ -37,6 +37,9 @@ Usage: #example
 // Nom 
 * name[+]
   * prefix = "M"
+  * use = #usual 
+  * family = "Saucier"
+  * given[+] = "Arthur"
 
 // Langage
 * language = #fr
@@ -70,13 +73,3 @@ Usage: #example
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
         * code = #99100
 
-// Lieu de naissance
-* extension[+] 
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-birth-place"
-  * valueAddress
-    * text = "NANTES"
-    * country = "99100"
-    * extension[inseeCode]
-      * valueCoding 
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
-        * code = #44109
