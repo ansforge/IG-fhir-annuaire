@@ -35,19 +35,13 @@ Usage: #example
 
 // Code
 * code[+]
-  * coding[+]
-    * system = "https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante"
-    * code = #10
-  * coding[+]
-    * system = "https://mos.esante.gouv.fr/NOS/TRE_R09-CategorieProfessionnelle/FHIR/TRE-R09-CategorieProfessionnelle"
-    * code = #C
-  * coding[+]
+  * coding[genreActivite]
     * system = "https://mos.esante.gouv.fr/NOS/TRE_R22-GenreActivite/FHIR/TRE-R22-GenreActivite"
     * code = #GENR01
-  * coding[+]
+  * coding[modeExercice]
     * system = "https://mos.esante.gouv.fr/NOS/TRE_R23-ModeExercice/FHIR/TRE-R23-ModeExercice"
     * code = #S
-  * coding[+]
+  * coding[fonction]
     * system = "https://mos.esante.gouv.fr/NOS/TRE_R21-Fonction/FHIR/TRE-R21-Fonction"
     * code = #FON-AU
 
