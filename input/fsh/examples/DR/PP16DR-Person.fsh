@@ -8,8 +8,7 @@ Usage: #example
   * given[+] = "David"
 
   // Nationalité
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality"
+* extension[as-ext-person-nationality]
   * extension[+]
     * url = "code"
     * valueCodeableConcept

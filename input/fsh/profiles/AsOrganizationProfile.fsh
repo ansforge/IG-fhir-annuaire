@@ -66,6 +66,9 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * type[typeEtablissement].extension[as-ext-organization-types].valueCode = #typeEtablissement
 * type[typeEtablissement].text MS // TypeEtablissement est de type string dans le MOS, il faut donc mettre dans le champs text. Pourquoi est-ce que le type d'établissement est un text et non un code dans le MOS ?
 
+* type[secteurActiviteRASS].extension contains as-ext-organization-types named as-ext-organization-types 1..1
+* type[secteurActiviteRASS].extension[as-ext-organization-types].valueCode = #secteurActiviteRASS
+
 // adresse
 * address MS
 * address ^short = "adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique."

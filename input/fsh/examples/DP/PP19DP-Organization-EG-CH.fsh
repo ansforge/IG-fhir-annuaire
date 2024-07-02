@@ -50,14 +50,17 @@ Usage: #example
 
 // Type
 * type[organizationType][+]
+  * extension[as-ext-organization-types] = #organizationType
   * coding
     * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-3307"
     * code = #GEOGRAPHICAL-ENTITY
 * type[secteurActiviteRASS][+]
+  * extension[as-ext-organization-types] = #secteurActiviteRASS
   * coding
     * system = "https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite"
     * code = #SA01
 * type[activiteINSEE][+]
+  * extension[as-ext-organization-types] = #activiteINSEE
   * coding
     * system = "https://mos.esante.gouv.fr/NOS/TRE_R75-InseeNAFrev2Niveau5/FHIR/TRE-R75-InseeNAFrev2Niveau5/"
     * code = #86.10Z
