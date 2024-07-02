@@ -75,19 +75,18 @@ Usage: #example
 * address
   * city = "75014 PARIS"
   * postalCode = "75014"
-  * extension[+]
-    * url = "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"
+  * extension[inseeCode]
     * valueCoding
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
       * code = #75114
   * line
-    * extension[+]
+    * extension[houseNumber]
       * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
       * valueString = "96"
-    * extension[+]
+    * extension[streetNameType]
       * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType"
       * valueString = "R"
-    * extension[+]
+    * extension[streetNameBase]
       * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase"
       * valueString = "DIDOT"
 

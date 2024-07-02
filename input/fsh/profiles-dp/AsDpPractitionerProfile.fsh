@@ -17,7 +17,7 @@ Description: 	"Profil public applicatif créé à partir du profil générique a
 * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
 * identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
 * identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps/adeli et yyyyy l'identifiant local."
-* identifier[identifiantInterne].type = http://interopsante.org/fhir/CodeSystem/fr-v2-0203#INTRN
+* identifier[identifiantInterne].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#INTRN
 // active
 
 * active 1..1 // 'true' par défaut, 'false' pour notifier aux clients du mode delta les practitioner supprimées entre 2 dates, dans ce cas seuls l'id et le champs active sont renseignés.

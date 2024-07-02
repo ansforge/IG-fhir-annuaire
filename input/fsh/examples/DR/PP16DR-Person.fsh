@@ -23,8 +23,7 @@ Usage: #example
   * valueAddress
     * text = "COSNE-COURS-SUR-LOIRE"
     * country = "99100"
-    * extension[+]
-      * url = "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"
+    * extension[inseeCode]
       * valueCoding 
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
         * code = #58086

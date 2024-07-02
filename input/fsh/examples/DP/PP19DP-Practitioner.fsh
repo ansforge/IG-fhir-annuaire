@@ -23,7 +23,7 @@ Usage: #example
   * value = "810003461033"
   * type
     * coding[+]
-      * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #IDNPS
 * identifier[+]
   * system = "http://rpps.fr"
@@ -31,7 +31,7 @@ Usage: #example
   * value = "10003461033"
   * type
     * coding[+]
-      * system = "http://interopsante.org/fhir/CodeSystem/fr-v2-0203"
+      * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #RPPS
 
 // Nom 
@@ -76,8 +76,7 @@ Usage: #example
   * valueAddress
     * text = "NANTES"
     * country = "99100"
-    * extension[+]
-      * url = "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"
+    * extension[inseeCode]
       * valueCoding 
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
         * code = #44109

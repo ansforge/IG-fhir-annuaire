@@ -94,19 +94,18 @@ Usage: #example
   * city = "58400 LA-CHARITE-SUR-LOIRE"
   * postalCode = "58400"
   * country = "99100"
-  * extension[+]
-    * url = "http://interopsante.org/fhir/StructureDefinition/FrAddressInseeCode"
+  * extension[inseeCode]
     * valueCoding
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
       * code = #58059
   * line[+]
-    * extension[+]
+    * extension[houseNumber]
       * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
       * valueString = "10"
-    * extension[+]
+    * extension[streetNameType]
       * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType"
       * valueString = "PL"
-    * extension[+]
+    * extension[streetNameBase]
       * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase"
       * valueString = "DES PECHEURS"
 
