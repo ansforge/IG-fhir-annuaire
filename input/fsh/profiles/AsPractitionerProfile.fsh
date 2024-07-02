@@ -98,8 +98,8 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * qualification[degree] MS
 * qualification[degree] ^short = "Diplôme et type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)"
 
-* qualification[degree].code.coding ^slicing.discriminator.type = #value
-* qualification[degree].code.coding ^slicing.discriminator.path = "system"
+* qualification[degree].code.coding ^slicing.discriminator.type = #pattern
+* qualification[degree].code.coding ^slicing.discriminator.path = "$this"
 * qualification[degree].code.coding ^slicing.rules = #closed
 
 * qualification[degree].code.coding contains degreeType 0..1 and degree 0..1 

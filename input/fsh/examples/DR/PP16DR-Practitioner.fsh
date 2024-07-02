@@ -31,7 +31,7 @@ Usage: #example
   * extension[status]
     * valueCodeableConcept
       * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription/"
+        * system = "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription"
         * code = #D
   * extension[period]
     * valuePeriod
