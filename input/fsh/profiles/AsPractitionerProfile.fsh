@@ -89,8 +89,8 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 * qualification MS
 
-* qualification ^slicing.discriminator.type = #value
-* qualification ^slicing.discriminator.path = "code"
+* qualification ^slicing.discriminator.type = #pattern
+* qualification ^slicing.discriminator.path = "$this"
 * qualification ^slicing.rules = #open
 * qualification contains degree 0..*
 
