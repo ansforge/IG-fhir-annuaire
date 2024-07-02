@@ -88,12 +88,8 @@ Usage: #example
 // Qualification
 * qualification[degree][+]
   * code
-    * coding[degree]
-      * system = "https://mos.esante.gouv.fr/NOS/TRE_R48-DiplomeEtatFrancais/FHIR/TRE-R48-DiplomeEtatFrancais"
-      * code = #DE05
-    * coding[degreeType]
-      * system = "https://mos.esante.gouv.fr/NOS/TRE_R14-TypeDiplome/FHIR/TRE-R14-TypeDiplome"
-      * code = #DE
+    * coding[degree] = https://mos.esante.gouv.fr/NOS/TRE_R48-DiplomeEtatFrancais/FHIR/TRE-R48-DiplomeEtatFrancais#DE05
+    * coding[degreeType] = https://mos.esante.gouv.fr/NOS/TRE_R14-TypeDiplome/FHIR/TRE-R14-TypeDiplome#DE
   * period.start = "2019-03-10"
   * issuer = Reference(Organization/u33)
 

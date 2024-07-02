@@ -81,18 +81,19 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 
 
+// Qualifications
+
+* qualification MS
+* qualification ^slicing.discriminator.type = #pattern
+* qualification ^slicing.discriminator.path = "$this"
+* qualification ^slicing.rules = #open
+
+* qualification contains degree 0..* and exercicePro 0..1 and savoirFaire 0..*
 
 
 // ###########
 // # DIPLOME #
 // ###########
-
-* qualification MS
-
-* qualification ^slicing.discriminator.type = #pattern
-* qualification ^slicing.discriminator.path = "$this"
-* qualification ^slicing.rules = #open
-* qualification contains degree 0..*
 
 
 * qualification[degree] MS
@@ -126,8 +127,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // # PROFESSION #
 // ##############
 
-* qualification contains exercicePro 0..1
-
 
 * qualification[exercicePro] ^short = "exercicePro : exercice professionnel décrivant la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.)." 
 * qualification[exercicePro].code.coding ^slicing.discriminator.type = #value
@@ -154,10 +153,8 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // # SAVOIR FAIRE #
 // ################
 
-* qualification contains savoirFaire 0..*
 
-
-* qualification[savoirFaire] ^short = "savoirFAire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc."
+* qualification[savoirFaire] ^short = "savoirFaire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc."
 
 * qualification[savoirFaire].code.coding ^slicing.discriminator.type = #value
 * qualification[savoirFaire].code.coding ^slicing.discriminator.path = "system"

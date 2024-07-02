@@ -109,7 +109,11 @@ Usage: #example
 * telecom[+]
   * system = #email
   * value = "davidchatelier@orange.fr"
-  // TODO : Ajouter telecom[maiboxmss]
+* telecom[mailbox-mss]
+  * system = #email
+  * value = "davidchatelier@pro.mssante.fr"
+  * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
+  * extension[as-mailbox-mss-metadata].extension[type] =  https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#PER
 
 // Qualification
 * qualification[degree][0]
