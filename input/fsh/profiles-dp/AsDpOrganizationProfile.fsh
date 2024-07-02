@@ -17,7 +17,7 @@ Description: "Profil public applicatif créé à partir du profil générique as
 // * identifier[idNatSt] 0..1 ^sliceName = "idNatSt"
 
 * identifier[identifiantInterne] ^short = "Identifiant interne à porté nationale des structures enregistrées au RPPS sans aucun identifiant métier.\nIl est composé de 14 chiffres.\nIl s’agit généralement de structures enregistrées temporairement par les ordres, en attente de vérification ou de changement d’identifiant."
-* identifier[identifiantInterne].type = http://interopsante.org/CodeSystem/fr-v2-0203#INTRN
+* identifier[identifiantInterne].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#INTRN
 * identifier[identifiantInterne].system = "http://rpps.interne.esante.gouv.fr"
 
 * active 1..1
