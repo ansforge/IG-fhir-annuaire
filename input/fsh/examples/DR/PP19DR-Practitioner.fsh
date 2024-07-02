@@ -100,8 +100,6 @@ Usage: #example
 
 
 
-
-
 // Enregistrement
 * extension[as-ext-registration][+]
   * extension[isFirst]

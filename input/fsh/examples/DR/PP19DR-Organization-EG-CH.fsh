@@ -81,17 +81,13 @@ Usage: #example
       * code = #75114
   * line
     * extension[houseNumber]
-      * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
       * valueString = "96"
     * extension[streetNameType]
-      * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType"
       * valueString = "R"
     * extension[streetNameBase]
-      * url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase"
       * valueString = "DIDOT"
 
 // Période
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/organization-period"
+* extension[usePeriod]
   * valuePeriod
     * start = "2019-06-01"

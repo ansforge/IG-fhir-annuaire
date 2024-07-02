@@ -17,7 +17,7 @@ Usage: #example
 * active = true
 
 // Identifiant fonctionnel 
-* identifier[+][idNatSt]
+* identifier[idNatSt]
   * system = "urn:oid:1.2.250.1.71.4.2.2"
   * use = #official
   * value = "1580008803"
@@ -25,7 +25,7 @@ Usage: #example
     * coding[+]
       * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #IDNST
-* identifier[+][finess]
+* identifier[finess]
   * system = "https://finess.esante.gouv.fr"
   * use = #official
   * value = "580008803"
@@ -33,7 +33,7 @@ Usage: #example
     * coding[+]
       * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
       * code = #FINEJ
-* identifier[+][rppsRang]
+* identifier[rppsRang]
   * system = "https://rppsrang.esante.gouv.fr"
   * use = #official
   * value = "F58000880311022013"

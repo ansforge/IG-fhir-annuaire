@@ -68,24 +68,27 @@ Usage: #example
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R14-TypeDiplome/FHIR/TRE-R14-TypeDiplome"
       * code = #DE
 
-// Nationalité
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-nationality"
-  * extension[+]
-    * url = "code"
+
+// Enregistrement
+* extension[as-ext-registration]
+  * extension[isFirst]
+    * valueBoolean = true
+  * extension[registeringOrganization]
     * valueCodeableConcept
       * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
-        * code = #99100
-
-// Lieu de naissance
-* extension[+] 
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-birth-place"
-  * valueAddress
-    * text = "COSNE-COURS-SUR-LOIRE"
-    * country = "99100"
-    * extension[+]
-      * url = "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code"
-      * valueCoding 
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune"
-        * code = #58086
+        * system = "https://mos.esante.gouv.fr/NOS/TRE_R60-AutoriteEnregistrement/FHIR/TRE-R60-AutoriteEnregistrement"
+        * code = #CNOP
+  * extension[period]
+    * valuePeriod
+      * start = "2019-01-15"
+* extension[as-ext-registration]
+  * extension[isFirst]
+    * valueBoolean = false
+  * extension[status]
+    * valueCodeableConcept
+      * coding[+]
+        * system = "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription/"
+        * code = #D
+  * extension[period]
+    * valuePeriod
+      * start = "2019-01-15"

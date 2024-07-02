@@ -51,34 +51,3 @@ Usage: #example
 * language = #fr
 
 
-// Enregistrement
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration"
-  * extension[+]
-    * url = "isFirst"
-    * valueBoolean = true
-  * extension[+]
-    * url = "registeringOrganization"
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R60-AutoriteEnregistrement/FHIR/TRE-R60-AutoriteEnregistrement"
-        * code = #CNOP
-  * extension[+]
-    * url = "period"
-    * valuePeriod
-      * start = "2019-01-15"
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-registration"
-  * extension[+]
-    * url = "isFirst"
-    * valueBoolean = false
-  * extension[+]
-    * url = "status"
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription/"
-        * code = #D
-  * extension[+]
-    * url = "period"
-    * valuePeriod
-      * start = "2019-01-15"

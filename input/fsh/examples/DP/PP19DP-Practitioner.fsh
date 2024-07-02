@@ -62,14 +62,3 @@ Usage: #example
     * coding[degreeType]
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R14-TypeDiplome/FHIR/TRE-R14-TypeDiplome"
       * code = #DE
-
-// Nationalité 
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-nationality"
-  * extension[+]
-    * url = "code"
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
-        * code = #99100
-

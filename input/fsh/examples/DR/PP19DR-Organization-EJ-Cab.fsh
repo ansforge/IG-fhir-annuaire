@@ -54,7 +54,6 @@ Usage: #example
     * code = #SA08
 
 // Période
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/organization-period"
+* extension[usePeriod]
   * valuePeriod
     * start = "2019-04-01"

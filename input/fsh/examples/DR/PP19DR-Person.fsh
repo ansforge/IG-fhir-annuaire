@@ -8,10 +8,8 @@ Usage: #example
   * given[+] = "Artus"
 
   // Nationalité
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality"
-  * extension[+]
-    * url = "code"
+* extension[as-ext-person-nationality]
+  * extension[code]
     * valueCodeableConcept
       * coding[+]
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
@@ -29,14 +27,4 @@ Usage: #example
         * code = #44109
 
 
-
-// Nationalité 
-* extension[as-ext-person-nationality]
-  * extension[+]
-    * url = "code"
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
-        * code = #99100
-        
 * link[as-practitioner-exercice-professionnel].target = Reference(pp19dp-practitioner)
