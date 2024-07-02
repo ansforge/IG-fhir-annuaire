@@ -67,28 +67,3 @@ Usage: #example
     * coding[+][degreeType]
       * system = "https://mos.esante.gouv.fr/NOS/TRE_R14-TypeDiplome/FHIR/TRE-R14-TypeDiplome"
       * code = #DE
-
-
-// Enregistrement
-* extension[as-ext-registration]
-  * extension[isFirst]
-    * valueBoolean = true
-  * extension[registeringOrganization]
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R60-AutoriteEnregistrement/FHIR/TRE-R60-AutoriteEnregistrement"
-        * code = #CNOP
-  * extension[period]
-    * valuePeriod
-      * start = "2019-01-15"
-* extension[as-ext-registration]
-  * extension[isFirst]
-    * valueBoolean = false
-  * extension[status]
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription/"
-        * code = #D
-  * extension[period]
-    * valuePeriod
-      * start = "2019-01-15"

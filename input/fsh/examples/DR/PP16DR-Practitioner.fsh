@@ -14,34 +14,26 @@ Usage: #example
   * profile[+] = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner"
 
 
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration"
-  * extension[+]
-    * url = "isFirst"
+* extension[as-ext-registration]
+  * extension[isFirst]
     * valueBoolean = true
-  * extension[+]
-    * url = "registeringOrganization"
+  * extension[registeringOrganization]
     * valueCodeableConcept
       * coding[+]
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R60-AutoriteEnregistrement/FHIR/TRE-R60-AutoriteEnregistrement"
         * code = #CNOP
-  * extension[+]
-    * url = "period"
+  * extension[period]
     * valuePeriod
       * start = "2019-01-15"
-* extension[+]
-  * url = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration"
-  * extension[+]
-    * url = "isFirst"
+* extension[as-ext-registration]
+  * extension[isFirst]
     * valueBoolean = false
-  * extension[+]
-    * url = "status"
+  * extension[status]
     * valueCodeableConcept
       * coding[+]
         * system = "https://mos.esante.gouv.fr/NOS/TRE_R33-StatutInscription/FHIR/TRE-R33-StatutInscription/"
         * code = #D
-  * extension[+]
-    * url = "period"
+  * extension[period]
     * valuePeriod
       * start = "2019-01-15"
       
