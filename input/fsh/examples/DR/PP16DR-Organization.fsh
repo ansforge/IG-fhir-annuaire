@@ -47,7 +47,7 @@ Usage: #example
   * system = #email
   * value = "xxxx@xxxxx.mssante.fr"
   * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
-  * extension[as-mailbox-mss-metadata].extension[type] =  https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#ORG
+  * extension[as-mailbox-mss-metadata].extension[type].valueCodeableConcept =  https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#ORG
 
 
 // Nom
