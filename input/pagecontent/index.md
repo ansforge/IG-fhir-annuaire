@@ -52,6 +52,10 @@ Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Mod
 * [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
 * [Démonstration](https://portail.openfhir.annuaire.sante.fr/)
 
+### Note
+
+Les exemples associés aux profils au sein de ce guide sont donnés à titre indicatifs et pourront évoluer dans le temps, ils n'ont pas valeur de référence.
+
 ### Dépendances
 
 {% include dependency-table.xhtml %}
