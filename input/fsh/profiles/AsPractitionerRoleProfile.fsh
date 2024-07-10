@@ -70,8 +70,8 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 
 // Slicing au niveau de PractitionerRole.code
-* code ^slicing.discriminator.type = #value
-* code ^slicing.discriminator.path = "coding.system"
+* code ^slicing.discriminator.type = #pattern
+* code ^slicing.discriminator.path = "$this"
 * code ^slicing.rules = #open
 * code contains
     genreActivite 0..1 MS  and
@@ -144,16 +144,16 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-situation-exercice
 Title:    "AsPractitionerRoleProfile to MOS - SituationExercice"
 * -> "SituationExercice"
-* identifier[numeroAm] -> "numeroAM"
-* code[fonction] -> "role"
-* code[modeExercice] -> "modeExercice"
-* code[genreActivite] -> "genreActivite"
-* code[statutHospitalier] -> "statutHospitalier"
-* code[metierPharmacien] -> "metierPharmacien"
-* code[metierPharmacien] -> "metierPharmacien"
-* code[typeActiviteLiberale] -> "typeActiviteLiberale"
-* code[statutProfessionnelSSA] -> "statutPS_SSA"
-* period.start -> "dateDebutActivite"
-* period.end -> "dateFinActivite"
-* telecom -> "telecommunication"
-* telecom[mailbox-mss] -> "boiteLettresMSS"
+* identifier[numeroAm] -> "SituationExercice.numeroAM"
+* code[fonction] -> "SituationExercice.role"
+* code[modeExercice] -> "SituationExercice.modeExercice"
+* code[genreActivite] -> "SituationExercice.genreActivite"
+* code[statutHospitalier] -> "SituationExercice.statutHospitalier"
+* code[metierPharmacien] -> "SituationExercice.metierPharmacien"
+* code[metierPharmacien] -> "SituationExercice.metierPharmacien"
+* code[typeActiviteLiberale] -> "SituationExercice.typeActiviteLiberale"
+* code[statutProfessionnelSSA] -> "SituationExercice.statutPS_SSA"
+* period.start -> "SituationExercice.dateDebutActivite"
+* period.end -> "SituationExercice.dateFinActivite"
+* telecom -> "SituationExercice.telecommunication"
+* telecom[mailbox-mss] -> "SituationExercice.boiteLettresMSS"
