@@ -5,3 +5,4 @@
 * Mise à jour des system des identifiants RPPS & ADELI des PractitionerRole [209](https://github.com/ansforge/IG-fhir-annuaire/pull/209)
 * Suppression de relicats d'url en interopsante.org [214](https://github.com/ansforge/IG-fhir-annuaire/pull/214)
 * Mise à jour de l'extension AsAuthorizationExtension (changement de nom et de contexte) [211](https://github.com/ansforge/IG-fhir-annuaire/pull/211)
+* Ajout d'une première version des exemples [142](https://github.com/ansforge/IG-fhir-annuaire/pull/142)
