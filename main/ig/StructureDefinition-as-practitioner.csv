@@ -64,7 +64,7 @@ http://esante.gouv.fr/sites/NOS/TABS/TRE_R38-SpecialiteOrdinale.tabs","","","","
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.extension:as-ext-registration","Practitioner.extension","as-ext-registration","","",0,*,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration]]} {[]}
-","InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"".","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","InscriptionOrdre : Eléments permettant de retrouver les informations d'inscription à un ordre par rapport à la profession de la personne physique sur une période et un département donné.","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si ""isFirst = true"". Ces données sont uniquement accessibles en accès restreint.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Practitioner.extension:as-ext-registration.id","Practitioner.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -77,7 +77,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.extension:as-ext-registration.extension:registeringOrganization","Practitioner.extension.extension","registeringOrganization","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","ordre"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","InscriptionOrdre.ordre"
 "Practitioner.extension:as-ext-registration.extension:registeringOrganization.id","Practitioner.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.extension:as-ext-registration.extension:registeringOrganization.extension","Practitioner.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -136,15 +136,15 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.extension:as-ext-registration.extension:period.value[x].start","Practitioner.extension.extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","dateDebutInscription : Date d’inscription de la personne au tableau de l’ordre.","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateDebutInscription","DR.1","n/a","./low"
+","InscriptionOrdre.dateDebutInscription","DR.1","n/a","./low"
 "Practitioner.extension:as-ext-registration.extension:period.value[x].end","Practitioner.extension.extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","dateRadiation : Date à partir de laquelle la personne n’est plus autorisée à exercer la profession pour laquelle elle a été inscrite.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateRadiation","DR.2","n/a","./high"
+","InscriptionOrdre.dateRadiation","DR.2","n/a","./high"
 "Practitioner.extension:as-ext-registration.extension:status","Practitioner.extension.extension","status","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","statutInscription"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","InscriptionOrdre.statutInscription"
 "Practitioner.extension:as-ext-registration.extension:status.id","Practitioner.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.extension:as-ext-registration.extension:status.extension","Practitioner.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -161,7 +161,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.extension:as-ext-registration.extension:hostingDepartment","Practitioner.extension.extension","hostingDepartment","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","conseilDepartemental"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","InscriptionOrdre.conseilDepartemental"
 "Practitioner.extension:as-ext-registration.extension:hostingDepartment.id","Practitioner.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.extension:as-ext-registration.extension:hostingDepartment.extension","Practitioner.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -214,7 +214,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:type","Practitioner.extension.extension","type","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","typeAutorisation"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","AutorisationExercice.typeAutorisation"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:type.id","Practitioner.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:type.extension","Practitioner.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -256,15 +256,15 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].start","Practitioner.extension.extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","dateDebutAutorisation : Date à partir de laquelle l’autorisation s’applique.","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateDebutAutorisation","DR.1","n/a","./low"
+","AutorisationExercice.dateDebutAutorisation","DR.1","n/a","./low"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:period.value[x].end","Practitioner.extension.extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","dateFinAutorisation : Date de fin de validité de l'autorisation.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateFinAutorisation","DR.2","n/a","./high"
+","AutorisationExercice.dateFinAutorisation","DR.2","n/a","./high"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:field","Practitioner.extension.extension","field","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","disciplineAutorisee"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","AutorisationExercice.disciplineAutorisee"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:field.id","Practitioner.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:field.extension","Practitioner.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -281,7 +281,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession","Practitioner.extension.extension","profession","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","profession"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","AutorisationExercice.profession"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession.id","Practitioner.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.extension:as-ext-frpractitioner-authorization.extension:profession.extension","Practitioner.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -510,17 +510,17 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.name.family","Practitioner.name.family","","surname
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Nom sous lequel exerce le professionnel (nomExercice).","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","nomExercice","XPN.1/FN.1","./part[partType = FAM]","./FamilyName"
+","ExerciceProfessionnel.nomExercice","XPN.1/FN.1","./part[partType = FAM]","./FamilyName"
 "Practitioner.name.given","Practitioner.name.given","","first name
 middle name","",0,*,"Y","","Y","string {[]} {[]}
 ","Prénom sous lequel exerce le professionnel (prenom).","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","prenomExercice","XPN.2 + XPN.3","./part[partType = GIV]","./GivenNames"
+","ExerciceProfessionnel.prenomExercice","XPN.2 + XPN.3","./part[partType = GIV]","./GivenNames"
 "Practitioner.name.prefix","Practitioner.name.prefix","","","",0,1,"","","Y","string {[]} {[]}
 ","Parts that come before the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","","","","","","","","","",,"extensible","Civilités des personnes physiques du RASS","https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS","",,,,"HumanName.prefix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XPN.5","./part[partType = PFX]","./TitleCode"
 "Practitioner.name.suffix","Practitioner.name.suffix","","","",0,*,"Y","","Y","string {[]} {[]}
 ","Civilité d’exercice du professionnel (civilite).","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.","","","","","","","","","",,"extensible","Civilités d'exercice d'un professionnel du RASS","https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS","",,,,"HumanName.suffix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","civiliteExercice","XPN/4","./part[partType = SFX]"
+","ExerciceProfessionnel.civiliteExercice","XPN/4","./part[partType = SFX]"
 "Practitioner.name.period","Practitioner.name.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when name was/is in use","Indicates the period of time when this name was valid for the named person.","","Allows names to be placed in historical context.","","","","","","","",,,,,"",,,,"HumanName.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XPN.13 + XPN.14","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
@@ -558,7 +558,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.telecom:mailbox-mss","Practitioner.telecom","mailbox-mss","","",0,*,"","","","ContactPoint {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss]]} {[]}
 ","Details of a Technology mediated contact point (phone, fax, email, etc.)","Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.","Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.","Need to know how to reach a practitioner independent to any roles the practitioner may have.","","","","","","","",,,,,"",,,,"Practitioner.telecom",0,*,"ele-1
 ","cpt-2:A system is required if a value is provided. {value.empty() or system.exists()}
-ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}","boiteLettresMSS","XTN","n/a","TEL","ContactPoint"
+ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}","ExerciceProfessionnel.boiteLettresMSS","XTN","n/a","TEL","ContactPoint"
 "Practitioner.address","Practitioner.address","","","",0,*,"Y","","","Address {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended]]} {[]}
 ","[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance).","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","The home/mailing address of the practitioner is often required for employee administration purposes, and also for some rostering services where the start point (practitioners home) can be used in calculations.","","","","","","","",,,,,"",,,,"Practitioner.address",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -573,7 +573,7 @@ ele-1:All FHIR elements must have a @value or children {hasValue() or (children(
 ","Image of the person","Image of the person.","","Many EHR systems have the capability to capture an image of patients and personnel. Fits with newer social media usage too.","","","","","","","",,,,,"",,,,"Practitioner.photo",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./subjectOf/ObservationEvent[code=""photo""]/value","./ImageURI (only supports the URI reference)"
 "Practitioner.qualification","Practitioner.qualification","","","",0,*,"Y","","","BackboneElement {[]} {[]}
-","Qualifications obtained by training and certification | Diplômes. Les différents diplômes sont : les diplômes d'état français, les commissions de qualification, les diplômes d'études spécialisées, les DESC groupe 1 et 2, les capacités, les diplômes d'un pays de l'EEE, les diplômes d'université (DU) ou Inter-Universitaire, les certificats d'étude spéciale, les attestations, les diplômes européens d'études spécialisées, les diplômes de 2ème cycle non qualifiant et les autres types de diplômes. Pour plus d'informations, consulter le jeu de valeurs associé.","The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.","","","","","","","","","",,,,,"","value:code}
+","Qualifications obtained by training and certification | Diplômes. Les différents diplômes sont : les diplômes d'état français, les commissions de qualification, les diplômes d'études spécialisées, les DESC groupe 1 et 2, les capacités, les diplômes d'un pays de l'EEE, les diplômes d'université (DU) ou Inter-Universitaire, les certificats d'étude spéciale, les attestations, les diplômes européens d'études spécialisées, les diplômes de 2ème cycle non qualifiant et les autres types de diplômes. Pour plus d'informations, consulter le jeu de valeurs associé.","The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.","","","","","","","","","",,,,,"","pattern:$this}
 ","",,"open","Practitioner.qualification",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CER?",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications"
 "Practitioner.qualification.id","Practitioner.qualification.id","","","",0,1,"","","","string {[]} {[]}
@@ -590,10 +590,10 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Practitioner.qualification.identifier","Practitioner.qualification.identifier","","","",0,*,"","","","Identifier {[]} {[]}
 ","An identifier for this qualification for the practitioner","An identifier that applies to this person's qualification in this role.","","Often, specific identities are assigned for the qualification.","","","","","","","",,,,,"",,,,"Practitioner.qualification.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","numeroDiplome",".playingEntity.playingRole[classCode=QUAL].id"
+","Diplome.numeroDiplome",".playingEntity.playingRole[classCode=QUAL].id"
 "Practitioner.qualification.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","Coded representation of the qualification","Coded representation of the qualification.","","","","","","","","","",,"preferred","","https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS","",,,,"Practitioner.qualification.code",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","codeDiplome",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications.Value"
+","Diplome.codeDiplome",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications.Value"
 "Practitioner.qualification.period","Practitioner.qualification.period","","","",0,1,"","","","Period {[]} {[]}
 ","Period during which the qualification is valid","Period during which the qualification is valid.","","Qualifications are often for a limited period of time, and can be revoked.","","","","","","","",,,,,"",,,,"Practitioner.qualification.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playingEntity.playingRole[classCode=QUAL].effectiveTime","./Qualifications.StartDate and ./Qualifications.EndDate"
@@ -602,7 +602,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".playingEntity.playingRole[classCode=QUAL].scoper"
 "Practitioner.qualification:degree","Practitioner.qualification","degree","","",0,*,"Y","","","BackboneElement {[]} {[]}
 ","Diplôme et type de diplôme, par exemple : DE, DES, CES, etc. (typeDiplome)","The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","typeDiplome","CER?",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications"
+","Diplome.typeDiplome","CER?",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications"
 "Practitioner.qualification:degree.id","Practitioner.qualification.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.qualification:degree.extension","Practitioner.qualification.extension","","","",0,*,"","","","Extension {[]} {[]}
@@ -624,7 +624,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicDegree","Practitioner.qualification.extension.extension","academicDegree","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","natureCycleFormation"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","Diplome.natureCycleFormation"
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicDegree.id","Practitioner.qualification.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicDegree.extension","Practitioner.qualification.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -641,7 +641,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel","Practitioner.qualification.extension.extension","achievedLevel","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","anneeUniversitaire"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","Diplome.anneeUniversitaire"
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel.id","Practitioner.qualification.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:achievedLevel.extension","Practitioner.qualification.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -658,7 +658,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear","Practitioner.qualification.extension.extension","academicYear","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","niveauFormationAcquis"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","Diplome.niveauFormationAcquis"
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear.id","Practitioner.qualification.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.qualification:degree.extension:as-ext-education-level.extension:academicYear.extension","Practitioner.qualification.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
@@ -699,7 +699,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
 "Practitioner.qualification:degree.code.coding","Practitioner.qualification.code.coding","","","",0,*,"","","Y","Coding {[]} {[]}
-","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","value:system}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"","pattern:$this}
 ","",,"closed","CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CE/CNE/CWE subset one of the sets of component 1-3 or 4-6","C*E.1-8, C*E.10-22","n/a","CV","union(., ./translation)"
@@ -730,14 +730,14 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","dateDebut : Date d’obtention du diplôme (dateDiplome)
 cette date est renseignée par l’ordre à la clôture de l’exercice professionnel.","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateDebut","DR.1","n/a","./low"
+","Diplome.dateDebut","DR.1","n/a","./low"
 "Practitioner.qualification:degree.period.end","Practitioner.qualification.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","dateFin : Date à laquelle le niveau de formation n’est plus actif (non visible hormis dans les données historisées).","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateFin","DR.2","n/a","./high"
+","Diplome.dateFin","DR.2","n/a","./high"
 "Practitioner.qualification:degree.issuer","Practitioner.qualification.issuer","","","",0,1,"","","","Reference {[]} {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization], CanonicalType[https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization]]}
 ","[Donnée restreinte] : Lieu de formation pour l'obtention du diplôme (lieuFormation).","Organization that regulates and issues the qualification.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification.issuer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","lieuFormation",".playingEntity.playingRole[classCode=QUAL].scoper"
+","Diplome.lieuFormation",".playingEntity.playingRole[classCode=QUAL].scoper"
 "Practitioner.qualification:exercicePro","Practitioner.qualification","exercicePro","","",0,1,"","","","BackboneElement {[]} {[]}
 ","exercicePro : exercice professionnel décrivant la profession exercée, l'identité d'exercice d'un professionnel et le cadre de son exercice (civil, militaire, etc.).","The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CER?",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications"
@@ -775,11 +775,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.qualification:exercicePro.code.coding:categorieProfession","Practitioner.qualification.code.coding","categorieProfession","","",0,1,"Y","","Y","Coding {[]} {[]}
 ","Catégorie professionnelle indiquant si le professionnel exerce sa profession en tant que Militaire, Civil, Fonctionnaire ou Etudiant (categorieProfessionnelle).","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J89-CategorieProfessionnelle-RASS/FHIR/JDV-J89-CategorieProfessionnelle-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","categorieProfession","CE/CNE/CWE subset one of the sets of component 1-3 or 4-6","C*E.1-8, C*E.10-22","n/a","CV","union(., ./translation)"
+","ExerciceProfessionnel.categorieProfession","CE/CNE/CWE subset one of the sets of component 1-3 or 4-6","C*E.1-8, C*E.10-22","n/a","CV","union(., ./translation)"
 "Practitioner.qualification:exercicePro.code.coding:profession","Practitioner.qualification.code.coding","profession","","",0,1,"Y","","Y","Coding {[]} {[]}
 ","Profession exercée : de santé (professionSante) TRE G15, du social (professionSocial) TRE R94, à usage de titre professionnel (usagerTitre) TRE R95, ou autre profession (autreProfession) TRE R291","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J106-EnsembleProfession-RASS/FHIR/JDV-J106-EnsembleProfession-RASS","",,,,"CodeableConcept.coding",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","profession","CE/CNE/CWE subset one of the sets of component 1-3 or 4-6","C*E.1-8, C*E.10-22","n/a","CV","union(., ./translation)"
+","ExerciceProfessionnel.profession","CE/CNE/CWE subset one of the sets of component 1-3 or 4-6","C*E.1-8, C*E.10-22","n/a","CV","union(., ./translation)"
 "Practitioner.qualification:exercicePro.code.text","Practitioner.qualification.code.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -798,16 +798,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.qualification:exercicePro.period.start","Practitioner.qualification.period.start","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","[Donnée restreinte] : Date à partir de laquelle le professionnel exerce cette profession (dateEffetExercice).","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateEffetExercice","DR.1","n/a","./low"
+","ExerciceProfessionnel.dateEffetExercice","DR.1","n/a","./low"
 "Practitioner.qualification:exercicePro.period.end","Practitioner.qualification.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","[Donnée restreinte] : Date à partir de laquelle le professionnel n’exerce plus cette profession (dateFinEffetExercice).","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateFinEffetExercice","DR.2","n/a","./high"
+","ExerciceProfessionnel.dateFinEffetExercice","DR.2","n/a","./high"
 "Practitioner.qualification:exercicePro.issuer","Practitioner.qualification.issuer","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that regulates and issues the qualification","Organization that regulates and issues the qualification.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification.issuer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playingEntity.playingRole[classCode=QUAL].scoper"
 "Practitioner.qualification:savoirFaire","Practitioner.qualification","savoirFaire","","",0,*,"","","","BackboneElement {[]} {[]}
-","savoirFAire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc.","The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","savoirFaire : Prérogatives d'exercice d'un professionnel reconnues par une autorité d'enregistrement sur une période donnée de son exercice professionnel, par exemple les spécialités ordinales, etc.","The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CER?",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications"
 "Practitioner.qualification:savoirFaire.id","Practitioner.qualification.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -826,7 +826,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".playingEntity.playingRole[classCode=QUAL].id"
 "Practitioner.qualification:savoirFaire.code","Practitioner.qualification.code","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","Coded representation of the qualification","Coded representation of the qualification.","","","","","","","","","",,"preferred","","https://mos.esante.gouv.fr/NOS/JDV_J105-EnsembleDiplome-RASS/FHIR/JDV-J105-EnsembleDiplome-RASS","",,,,"Practitioner.qualification.code",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","typeSavoirFaire",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications.Value"
+","SavoirFaire.typeSavoirFaire",".playingEntity.playingRole[classCode=QUAL].code","./Qualifications.Value"
 "Practitioner.qualification:savoirFaire.code.id","Practitioner.qualification.code.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Practitioner.qualification:savoirFaire.code.extension","Practitioner.qualification.code.extension","","extensions
@@ -867,11 +867,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Practitioner.qualification:savoirFaire.period.start","Practitioner.qualification.period.start","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","Starting time with inclusive boundary","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateReconnaissance","DR.1","n/a","./low"
+","SavoirFaire.dateReconnaissance","DR.1","n/a","./low"
 "Practitioner.qualification:savoirFaire.period.end","Practitioner.qualification.period.end","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","End time with inclusive boundary, if not ongoing","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","dateAbandon","DR.2","n/a","./high"
+","SavoirFaire.dateAbandon","DR.2","n/a","./high"
 "Practitioner.qualification:savoirFaire.issuer","Practitioner.qualification.issuer","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that regulates and issues the qualification","Organization that regulates and issues the qualification.","","","","","","","","","",,,,,"",,,,"Practitioner.qualification.issuer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playingEntity.playingRole[classCode=QUAL].scoper"

@@ -21,7 +21,7 @@
   <name value="AsDrPractitionerRoleProfile"/>
   <title value="AS Donnée Restreinte PractitionerRole Profile"/>
   <status value="active"/>
-  <date value="2024-07-09T08:44:23+00:00"/>
+  <date value="2024-07-10T09:54:14+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -1327,7 +1327,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="numeroAM"/>
+        <map value="SituationExercice.numeroAM"/>
       </mapping>
     </element>
     <element id="PractitionerRole.identifier:numeroAm.id">
@@ -1856,7 +1856,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="dateDebutActivite"/>
+        <map value="SituationExercice.dateDebutActivite"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.end">
@@ -1900,7 +1900,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="dateFinActivite"/>
+        <map value="SituationExercice.dateFinActivite"/>
       </mapping>
     </element>
     <element id="PractitionerRole.practitioner">
@@ -1969,8 +1969,8 @@
       <path value="PractitionerRole.code"/>
       <slicing>
         <discriminator>
-          <type value="value"/>
-          <path value="coding.system"/>
+          <type value="pattern"/>
+          <path value="$this"/>
         </discriminator>
         <rules value="open"/>
       </slicing>
@@ -2061,7 +2061,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="genreActivite"/>
+        <map value="SituationExercice.genreActivite"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:modeExercice">
@@ -2110,7 +2110,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="modeExercice"/>
+        <map value="SituationExercice.modeExercice"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:typeActiviteLiberale">
@@ -2159,7 +2159,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="typeActiviteLiberale"/>
+        <map value="SituationExercice.typeActiviteLiberale"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:statutProfessionnelSSA">
@@ -2208,7 +2208,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="statutPS_SSA"/>
+        <map value="SituationExercice.statutPS_SSA"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:statutHospitalier">
@@ -2257,7 +2257,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="statutHospitalier"/>
+        <map value="SituationExercice.statutHospitalier"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:fonction">
@@ -2306,7 +2306,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="role"/>
+        <map value="SituationExercice.role"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code:metierPharmacien">
@@ -2355,7 +2355,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="metierPharmacien"/>
+        <map value="SituationExercice.metierPharmacien"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty">
@@ -2533,7 +2533,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="telecommunication"/>
+        <map value="SituationExercice.telecommunication"/>
       </mapping>
     </element>
     <element id="PractitionerRole.telecom:mailbox-mss">
@@ -2589,7 +2589,7 @@
       </mapping>
       <mapping>
         <identity value="as-practitioner-role-to-mos-situation-exercice"/>
-        <map value="boiteLettresMSS"/>
+        <map value="SituationExercice.boiteLettresMSS"/>
       </mapping>
     </element>
     <element id="PractitionerRole.availableTime">

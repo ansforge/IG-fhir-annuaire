@@ -10,7 +10,7 @@
   "name" : "AsDrOrganizationProfile",
   "title" : "AS Donnée Restreinte Organization Profile",
   "status" : "active",
-  "date" : "2024-07-09T08:44:23+00:00",
+  "date" : "2024-07-10T09:54:14+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -1078,11 +1078,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "dateCreation"
+        "map" : "EntiteJuridique.dateCreation"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "dateOuverture"
+        "map" : "EntiteGeographique.dateOuverture"
       }]
     },
     {
@@ -1127,11 +1127,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "dateFermeture"
+        "map" : "EntiteJuridique.dateFermeture"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "dateFermeture"
+        "map" : "EntiteGeographique.dateFermeture"
       }]
     },
     {
@@ -1209,7 +1209,7 @@
       "isSummary" : false,
       "mapping" : [{
         "identity" : "as-organization-to-mos-ej",
-        "map" : "numeroLicenceOfficine"
+        "map" : "EntiteJuridique.numeroLicenceOfficine"
       }]
     },
     {
@@ -1250,7 +1250,7 @@
       "isSummary" : false,
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
-        "map" : "modeFixationTarifaire"
+        "map" : "EntiteGeographique.modeFixationTarifaire"
       }]
     },
     {
@@ -1291,11 +1291,11 @@
       "isSummary" : false,
       "mapping" : [{
         "identity" : "as-organization-to-mos-ej",
-        "map" : "typeFermeture"
+        "map" : "EntiteJuridique.typeFermeture"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "typeFermeture"
+        "map" : "EntiteGeographique.typeFermeture"
       }]
     },
     {
@@ -1336,7 +1336,7 @@
       "isSummary" : false,
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
-        "map" : "natureEtablissement"
+        "map" : "EntiteGeographique.natureEtablissement"
       }]
     },
     {
@@ -1518,11 +1518,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "idNat_struct"
+        "map" : "EntiteJuridique.idNat_struct"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "idNat_struct"
+        "map" : "EntiteGeographique.idNat_struct"
       }]
     },
     {
@@ -1911,11 +1911,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "numSiren"
+        "map" : "EntiteJuridique.numSiren"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "numSiren"
+        "map" : "EntiteGeographique.numSiren"
       }]
     },
     {
@@ -2735,11 +2735,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "numFiness"
+        "map" : "EntiteJuridique.numFiness"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "numFiness"
+        "map" : "EntiteGeographique.numFiness"
       }]
     },
     {
@@ -4329,7 +4329,7 @@
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "actif"
+        "map" : "EntiteGeographique.actif"
       }]
     },
     {
@@ -5126,12 +5126,9 @@
         "description" : "Extensions are always sliced by (at least) url",
         "rules" : "open"
       },
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
-      "min" : 0,
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 1,
       "max" : "*",
       "base" : {
         "path" : "Element.extension",
@@ -5158,10 +5155,173 @@
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
-      "isSummary" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "Organization.type:secteurActiviteRASS.extension:as-ext-organization-types",
+      "path" : "Organization.type.extension",
+      "sliceName" : "as-ext-organization-types",
+      "short" : "AS Organization Types",
+      "definition" : "Extension pour discriminer les organization types.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types"]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.id",
+      "path" : "Organization.type.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.extension",
+      "path" : "Organization.type.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }]
+    },
+    {
+      "id" : "Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.url",
+      "path" : "Organization.type.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types",
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "Organization.type:secteurActiviteRASS.extension:as-ext-organization-types.value[x]",
+      "path" : "Organization.type.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "patternCode" : "secteurActiviteRASS",
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types"
+      },
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
       }]
     },
     {
@@ -6061,11 +6221,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "codeAPEN"
+        "map" : "EntiteJuridique.codeAPEN"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "codeAPET"
+        "map" : "EntiteGeographique.codeAPET"
       }]
     },
     {
@@ -6454,7 +6614,7 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "statutJuridique"
+        "map" : "EntiteJuridique.statutJuridique"
       }]
     },
     {
@@ -6843,7 +7003,7 @@
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "codeAPET"
+        "map" : "EntiteGeographique.codeAPET"
       }]
     },
     {
@@ -7616,11 +7776,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "raisonSociale"
+        "map" : "EntiteJuridique.raisonSociale"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "denominationEG"
+        "map" : "EntiteGeographique.denominationEG"
       }]
     },
     {
@@ -7657,11 +7817,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "raisonSocialeLongue"
+        "map" : "EntiteJuridique.raisonSocialeLongue"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "denominationEGLongue"
+        "map" : "EntiteGeographique.denominationEGLongue"
       }]
     },
     {
@@ -7734,11 +7894,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "telecommunication"
+        "map" : "EntiteJuridique.telecommunication"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "telecommunication"
+        "map" : "EntiteGeographique.telecommunication"
       }]
     },
     {
@@ -8127,11 +8287,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "boiteLettreMSS"
+        "map" : "EntiteJuridique.boiteLettreMSS"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "boiteLettreMSS"
+        "map" : "EntiteGeographique.boiteLettreMSS"
       }]
     },
     {
@@ -8189,11 +8349,11 @@
       },
       {
         "identity" : "as-organization-to-mos-ej",
-        "map" : "adresseEJ"
+        "map" : "EntiteJuridique.adresseEJ"
       },
       {
         "identity" : "as-organization-to-mos-eg",
-        "map" : "adresseEG"
+        "map" : "EntiteGeographique.adresseEG"
       }]
     },
     {
