@@ -14,9 +14,9 @@ ValueSet: AsVsOrganizationTypes
 Id: as-vs-organization-types
 Title: "AS ValueSet OrganizationTypes"
 Description: "ValueSet définissant les types d'organisation"
-* include codes from system https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire
+* include codes from system as-cs-organization-types
 
-CodeSystem: AsCsorganizationTypes
+CodeSystem: AsCsOrganizationTypes
 Id: as-cs-organization-types
 Title: "AS CodeSystem OrganizationTypes"
 Description: "CodeSystem définissant les types d'organisation"
