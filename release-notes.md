@@ -6,3 +6,5 @@
 * Suppression de relicats d'url en interopsante.org [214](https://github.com/ansforge/IG-fhir-annuaire/pull/214)
 * Mise à jour de l'extension AsAuthorizationExtension (changement de nom et de contexte) [211](https://github.com/ansforge/IG-fhir-annuaire/pull/211)
 * Ajout d'une première version des exemples [142](https://github.com/ansforge/IG-fhir-annuaire/pull/142)
+* Correction OrganizationType ValueSet [218](https://github.com/ansforge/IG-fhir-annuaire/pull/218)
+* Mise à jour de FrCore en version courante [219](https://github.com/ansforge/IG-fhir-annuaire/pull/219)
