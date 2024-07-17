@@ -36,9 +36,21 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * providedBy only Reference(fr-core-organization or AsOrganizationProfile)
 
 // disciplineEquipementSociale
-* type 0..* MS
-* type ^short = "La discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
-* type from $JDV-J136-DisciplineEquipementSocial-RASS (required)
+* type MS
+
+* type ^slicing.discriminator.type = #pattern
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
+
+* type contains
+    category 0..1 and
+    activity 
+
+* type[category] ^short = "La catégorie de la discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
+* type[category] from $JDV-J136-DisciplineEquipementSocial-RASS (required)
+
+* type[activity] ^short = "La discipline déterminant la nature de l’activité (CODE_ACT_SOIN)."
+* type[activity] from https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS (required)
 
 // clientele
 * eligibility 0..* MS
