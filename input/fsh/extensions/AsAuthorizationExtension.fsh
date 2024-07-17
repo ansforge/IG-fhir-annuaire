@@ -17,11 +17,8 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
     dateAuthorization 0..1 and 			// dateDecision
 	periodAuthorization 0..1 and 		// datePremiereMEO +  dateFin 
 	dateUpdateAuthorization 0..1 and 	// dateMajAutorisation
-	deleteAuthorization 0..1 and 		// suppressionAutorisation
-	dateLastInstallation 0..1 and 		// dateDerniereInstallation
-	deleteInstallation 0..1 and 		// suppressionImplantation ou suppressionInstallation
-	sourceReportInstallation 0..1 		// sourceInformationInstallation
-        
+	deletedAuthorization 0..1 		// suppressionAutorisation
+
 * extension[dateAuthorization].value[x] only date    
 * extension[dateAuthorization] ^short = "Date de délivrance de l’autorisation."
 
