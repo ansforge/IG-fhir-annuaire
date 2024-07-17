@@ -38,4 +38,12 @@
       <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace']) &lt;= 1">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:HealthcareService/f:meta/f:extension</sch:title>
+    <sch:rule context="f:HealthcareService/f:meta/f:extension">
+      <sch:assert test="count(f:extension[@url = 'autorite-enregistrement']) &lt;= 1">extension with URL = 'autorite-enregistrement': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'systeme-information']) &lt;= 1">extension with URL = 'systeme-information': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'date-maj-ae']) &lt;= 1">extension with URL = 'date-maj-ae': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>
