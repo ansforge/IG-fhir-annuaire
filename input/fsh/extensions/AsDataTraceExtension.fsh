@@ -11,7 +11,7 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour tracer l
 * extension contains
     autorite-enregistrement 0..1 and
     systeme-information 0..1 and
-    date-maj-ae
+    date-maj-ae 0..1
 
 // typeAutorisation
 * extension[autorite-enregistrement] ^short = "Autorité d'enregistrement de la ressource."
