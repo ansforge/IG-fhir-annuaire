@@ -15,7 +15,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains AsAuthorizationExtension named as-ext-authorization 0..* MS
+* extension contains AsAuthorizationExtension named as-ext-authorization 0..* MS and AsInstallationExtension named as-ext-installation 0..* MS
 
 /* HealthcareService.identifier */
 * identifier ^slicing.discriminator.type = #pattern

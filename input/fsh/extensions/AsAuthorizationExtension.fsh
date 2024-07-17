@@ -34,13 +34,3 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 
 * extension[deleteAuthorization].value[x] only boolean    
 * extension[deleteAuthorization] ^short = "Indicateur de suppression de l'autorisation."
-
-* extension[dateLastInstallation].value[x] only date    
-* extension[dateLastInstallation] ^short = "Date à laquelle le dernier constat d’installation des places est réalisé."
-
-* extension[deleteInstallation].value[x] only boolean    
-* extension[deleteInstallation] ^short = "Indicateur de suppression de l’installation."
-
-* extension[sourceReportInstallation].value[x] only CodeableConcept
-* extension[sourceReportInstallation].valueCodeableConcept from VS-TRE-R301-SourceInformationInstallation (required)    
-* extension[sourceReportInstallation] ^short = "Source ayant permis le constat d'installation."

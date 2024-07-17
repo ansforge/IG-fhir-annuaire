@@ -16,6 +16,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * extension ^slicing.rules = #open
 * extension contains
     AsAuthorizationExtension named as-ext-authorization 0..* MS and
+    AsInstallationExtension named as-ext-installation 0..* MS ans
     AsPatientTypeExtension named as-ext-patient-type 0..* MS and		// ageMinAutorise + ageMaxAutorise + ageMinInstalle + ageMaxInstalle
 	AsSupportedCapacityExtension named as-ext-supported-capacity 0..* MS
 	
