@@ -10,7 +10,7 @@
   "name" : "AsDrHealthcareServiceHealthcareActivityProfile",
   "title" : "AS Donnée Restreinte HealthcareService Healthcare Activity Profile",
   "status" : "active",
-  "date" : "2024-07-17T07:52:36+00:00",
+  "date" : "2024-07-17T09:13:15+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -745,6 +745,42 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation",
+      "path" : "HealthcareService.extension",
+      "sliceName" : "as-ext-installation",
+      "short" : "AS Installation Extension",
+      "definition" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les dates d'installation des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation"]
       }],
       "condition" : ["ele-1"],
       "constraint" : [{

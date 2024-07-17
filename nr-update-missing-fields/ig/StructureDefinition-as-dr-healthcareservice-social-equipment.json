@@ -10,7 +10,7 @@
   "name" : "AsDrHealthcareServiceSocialEquipmentProfile",
   "title" : "AS Donnée Restreinte HealthcareService Social Equipment Profile",
   "status" : "active",
-  "date" : "2024-07-17T07:52:36+00:00",
+  "date" : "2024-07-17T09:13:15+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -1306,10 +1306,6 @@
       {
         "identity" : "rim",
         "map" : "./low"
-      },
-      {
-        "identity" : "as-healthcare-social-equipment-to-mos-activite-sociale",
-        "map" : "ActiviteSociale.datePremiereInstallation"
       }]
     },
     {
@@ -1514,9 +1510,9 @@
       }]
     },
     {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization",
+      "id" : "HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization",
       "path" : "HealthcareService.extension.extension",
-      "sliceName" : "deleteAuthorization",
+      "sliceName" : "deletedAuthorization",
       "short" : "Extension",
       "definition" : "An Extension",
       "min" : 0,
@@ -1552,7 +1548,7 @@
       }]
     },
     {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.id",
+      "id" : "HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.id",
       "path" : "HealthcareService.extension.extension.id",
       "representation" : ["xmlAttr"],
       "short" : "Unique id for inter-element referencing",
@@ -1577,7 +1573,7 @@
       }]
     },
     {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.extension",
+      "id" : "HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.extension",
       "path" : "HealthcareService.extension.extension.extension",
       "slicing" : {
         "discriminator" : [{
@@ -1618,7 +1614,7 @@
       }]
     },
     {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.url",
+      "id" : "HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.url",
       "path" : "HealthcareService.extension.extension.url",
       "representation" : ["xmlAttr"],
       "short" : "identifies the meaning of the extension",
@@ -1638,14 +1634,14 @@
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
-      "fixedUri" : "deleteAuthorization",
+      "fixedUri" : "deletedAuthorization",
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
       }]
     },
     {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.value[x]",
+      "id" : "HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.value[x]",
       "path" : "HealthcareService.extension.extension.value[x]",
       "short" : "Value of extension",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
@@ -1668,494 +1664,6 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation",
-      "path" : "HealthcareService.extension.extension",
-      "sliceName" : "dateLastInstallation",
-      "short" : "Date à laquelle le dernier constat d’installation des places est réalisé.",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.id",
-      "path" : "HealthcareService.extension.extension.id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.extension",
-      "path" : "HealthcareService.extension.extension.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "0",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.url",
-      "path" : "HealthcareService.extension.extension.url",
-      "representation" : ["xmlAttr"],
-      "short" : "identifies the meaning of the extension",
-      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
-      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
-      "min" : 1,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.url",
-        "min" : 1,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "fixedUri" : "dateLastInstallation",
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.value[x]",
-      "path" : "HealthcareService.extension.extension.value[x]",
-      "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "date"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteInstallation",
-      "path" : "HealthcareService.extension.extension",
-      "sliceName" : "deleteInstallation",
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      }],
-      "mapping" : [{
-        "identity" : "as-healthcare-social-equipment-to-mos-activite-sociale",
-        "map" : "ActiviteSociale.suppressionInstallation"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.id",
-      "path" : "HealthcareService.extension.extension.id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.extension",
-      "path" : "HealthcareService.extension.extension.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "0",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.url",
-      "path" : "HealthcareService.extension.extension.url",
-      "representation" : ["xmlAttr"],
-      "short" : "identifies the meaning of the extension",
-      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
-      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
-      "min" : 1,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.url",
-        "min" : 1,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "fixedUri" : "deleteInstallation",
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.value[x]",
-      "path" : "HealthcareService.extension.extension.value[x]",
-      "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "boolean"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      },
-      {
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation",
-      "path" : "HealthcareService.extension.extension",
-      "sliceName" : "sourceReportInstallation",
-      "short" : "Source ayant permis le constat d'installation.",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.id",
-      "path" : "HealthcareService.extension.extension.id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.extension",
-      "path" : "HealthcareService.extension.extension.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "0",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.url",
-      "path" : "HealthcareService.extension.extension.url",
-      "representation" : ["xmlAttr"],
-      "short" : "identifies the meaning of the extension",
-      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
-      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
-      "min" : 1,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.url",
-        "min" : 1,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "fixedUri" : "sourceReportInstallation",
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.value[x]",
-      "path" : "HealthcareService.extension.extension.value[x]",
-      "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R301-SourceInformationInstallation"
-      },
       "mapping" : [{
         "identity" : "rim",
         "map" : "n/a"
@@ -2194,6 +1702,986 @@
     },
     {
       "id" : "HealthcareService.extension:as-ext-authorization.value[x]",
+      "path" : "HealthcareService.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "base64Binary"
+      },
+      {
+        "code" : "boolean"
+      },
+      {
+        "code" : "canonical"
+      },
+      {
+        "code" : "code"
+      },
+      {
+        "code" : "date"
+      },
+      {
+        "code" : "dateTime"
+      },
+      {
+        "code" : "decimal"
+      },
+      {
+        "code" : "id"
+      },
+      {
+        "code" : "instant"
+      },
+      {
+        "code" : "integer"
+      },
+      {
+        "code" : "markdown"
+      },
+      {
+        "code" : "oid"
+      },
+      {
+        "code" : "positiveInt"
+      },
+      {
+        "code" : "string"
+      },
+      {
+        "code" : "time"
+      },
+      {
+        "code" : "unsignedInt"
+      },
+      {
+        "code" : "uri"
+      },
+      {
+        "code" : "url"
+      },
+      {
+        "code" : "uuid"
+      },
+      {
+        "code" : "Address"
+      },
+      {
+        "code" : "Age"
+      },
+      {
+        "code" : "Annotation"
+      },
+      {
+        "code" : "Attachment"
+      },
+      {
+        "code" : "CodeableConcept"
+      },
+      {
+        "code" : "Coding"
+      },
+      {
+        "code" : "ContactPoint"
+      },
+      {
+        "code" : "Count"
+      },
+      {
+        "code" : "Distance"
+      },
+      {
+        "code" : "Duration"
+      },
+      {
+        "code" : "HumanName"
+      },
+      {
+        "code" : "Identifier"
+      },
+      {
+        "code" : "Money"
+      },
+      {
+        "code" : "Period"
+      },
+      {
+        "code" : "Quantity"
+      },
+      {
+        "code" : "Range"
+      },
+      {
+        "code" : "Ratio"
+      },
+      {
+        "code" : "Reference"
+      },
+      {
+        "code" : "SampledData"
+      },
+      {
+        "code" : "Signature"
+      },
+      {
+        "code" : "Timing"
+      },
+      {
+        "code" : "ContactDetail"
+      },
+      {
+        "code" : "Contributor"
+      },
+      {
+        "code" : "DataRequirement"
+      },
+      {
+        "code" : "Expression"
+      },
+      {
+        "code" : "ParameterDefinition"
+      },
+      {
+        "code" : "RelatedArtifact"
+      },
+      {
+        "code" : "TriggerDefinition"
+      },
+      {
+        "code" : "UsageContext"
+      },
+      {
+        "code" : "Dosage"
+      },
+      {
+        "code" : "Meta"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation",
+      "path" : "HealthcareService.extension",
+      "sliceName" : "as-ext-installation",
+      "short" : "AS Installation Extension",
+      "definition" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les dates d'installation des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "DomainResource.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.id",
+      "path" : "HealthcareService.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+        "valueCode" : "normative"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+        "valueCode" : "4.0.0"
+      }],
+      "path" : "HealthcareService.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Additional content defined by implementations",
+      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation",
+      "path" : "HealthcareService.extension.extension",
+      "sliceName" : "dateFirstInstallation",
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }],
+      "mapping" : [{
+        "identity" : "as-healthcare-social-equipment-to-mos-activite-sociale",
+        "map" : "ActiviteSociale.datePremiereInstallation"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.id",
+      "path" : "HealthcareService.extension.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.extension",
+      "path" : "HealthcareService.extension.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.url",
+      "path" : "HealthcareService.extension.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "dateFirstInstallation",
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.value[x]",
+      "path" : "HealthcareService.extension.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "date"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateLastInstallation",
+      "path" : "HealthcareService.extension.extension",
+      "sliceName" : "dateLastInstallation",
+      "short" : "dateDerniereInstallation : Date à laquelle le dernier constat d’installation des places est réalisé.",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.id",
+      "path" : "HealthcareService.extension.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.extension",
+      "path" : "HealthcareService.extension.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.url",
+      "path" : "HealthcareService.extension.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "dateLastInstallation",
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.value[x]",
+      "path" : "HealthcareService.extension.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "date"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:deletedInstallation",
+      "path" : "HealthcareService.extension.extension",
+      "sliceName" : "deletedInstallation",
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }],
+      "mapping" : [{
+        "identity" : "as-healthcare-social-equipment-to-mos-activite-sociale",
+        "map" : "ActiviteSociale.suppressionInstallation"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:deletedInstallation.id",
+      "path" : "HealthcareService.extension.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:deletedInstallation.extension",
+      "path" : "HealthcareService.extension.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:deletedInstallation.url",
+      "path" : "HealthcareService.extension.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "deletedInstallation",
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:deletedInstallation.value[x]",
+      "path" : "HealthcareService.extension.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "boolean"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation",
+      "path" : "HealthcareService.extension.extension",
+      "sliceName" : "sourceReportInstallation",
+      "short" : "sourceInformationInstallation : Source ayant permis le constat d'installation.",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.id",
+      "path" : "HealthcareService.extension.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.extension",
+      "path" : "HealthcareService.extension.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.url",
+      "path" : "HealthcareService.extension.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "sourceReportInstallation",
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.value[x]",
+      "path" : "HealthcareService.extension.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R301-SourceInformationInstallation"
+      },
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      },
+      {
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.url",
+      "path" : "HealthcareService.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation",
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "HealthcareService.extension:as-ext-installation.value[x]",
       "path" : "HealthcareService.extension.value[x]",
       "short" : "Value of extension",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",

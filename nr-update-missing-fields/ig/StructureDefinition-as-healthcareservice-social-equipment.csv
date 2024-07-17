@@ -125,7 +125,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "HealthcareService.extension:as-ext-authorization.extension:periodAuthorization.value[x].start","HealthcareService.extension.extension.value[x].start","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","Date de première mise en œuvre.","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","ActiviteSociale.datePremiereInstallation","n/a","./low"
+","n/a","./low"
 "HealthcareService.extension:as-ext-authorization.extension:periodAuthorization.value[x].end","HealthcareService.extension.extension.value[x].end","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","Date de fin de mise en œuvre.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"ele-1
 per-1","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -147,77 +147,112 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization","HealthcareService.extension.extension","deleteAuthorization","","",0,1,"","","","Extension {[]} {[]}
+"HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization","HealthcareService.extension.extension","deletedAuthorization","","",0,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","ActiviteSociale.suppressionAutorisation"
-"HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+"HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""deleteAuthorization""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+"HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""deletedAuthorization""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","n/a","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation","HealthcareService.extension.extension","dateLastInstallation","","",0,1,"","","","Extension {[]} {[]}
-","Date à laquelle le dernier constat d’installation des places est réalisé.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""dateLastInstallation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:dateLastInstallation.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","date {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","n/a","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:deleteInstallation","HealthcareService.extension.extension","deleteInstallation","","",0,1,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","ActiviteSociale.suppressionInstallation"
-"HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""deleteInstallation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:deleteInstallation.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","n/a","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation","HealthcareService.extension.extension","sourceReportInstallation","","",0,1,"","","","Extension {[]} {[]}
-","Source ayant permis le constat d'installation.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""sourceReportInstallation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"HealthcareService.extension:as-ext-authorization.extension:sourceReportInstallation.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R301-SourceInformationInstallation","",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"
 "HealthcareService.extension:as-ext-authorization.url","HealthcareService.extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
 "HealthcareService.extension:as-ext-authorization.value[x]","HealthcareService.extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","n/a","N/A"
+"HealthcareService.extension:as-ext-installation","HealthcareService.extension","as-ext-installation","","",0,*,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation]]} {[]}
+","AS Installation Extension","Extension créée dans le cadre de l'Annuaire Santé pour décrire les dates d'installation des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"HealthcareService.extension:as-ext-installation.id","HealthcareService.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"HealthcareService.extension:as-ext-installation.extension","HealthcareService.extension.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
+"HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation","HealthcareService.extension.extension","dateFirstInstallation","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","ActiviteSociale.datePremiereInstallation"
+"HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""dateFirstInstallation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","date {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","n/a","N/A"
+"HealthcareService.extension:as-ext-installation.extension:dateLastInstallation","HealthcareService.extension.extension","dateLastInstallation","","",0,1,"","","","Extension {[]} {[]}
+","dateDerniereInstallation : Date à laquelle le dernier constat d’installation des places est réalisé.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""dateLastInstallation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"HealthcareService.extension:as-ext-installation.extension:dateLastInstallation.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","date {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","n/a","N/A"
+"HealthcareService.extension:as-ext-installation.extension:deletedInstallation","HealthcareService.extension.extension","deletedInstallation","","",0,1,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","ActiviteSociale.suppressionInstallation"
+"HealthcareService.extension:as-ext-installation.extension:deletedInstallation.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"HealthcareService.extension:as-ext-installation.extension:deletedInstallation.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"HealthcareService.extension:as-ext-installation.extension:deletedInstallation.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""deletedInstallation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"HealthcareService.extension:as-ext-installation.extension:deletedInstallation.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","n/a","N/A"
+"HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation","HealthcareService.extension.extension","sourceReportInstallation","","",0,1,"","","","Extension {[]} {[]}
+","sourceInformationInstallation : Source ayant permis le constat d'installation.","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.id","HealthcareService.extension.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.extension","HealthcareService.extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.url","HealthcareService.extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""sourceReportInstallation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"HealthcareService.extension:as-ext-installation.extension:sourceReportInstallation.value[x]","HealthcareService.extension.extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R301-SourceInformationInstallation","",,,,"Extension.value[x]",0,1,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","n/a","N/A"
+"HealthcareService.extension:as-ext-installation.url","HealthcareService.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"HealthcareService.extension:as-ext-installation.value[x]","HealthcareService.extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}Contributor {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","N/A"

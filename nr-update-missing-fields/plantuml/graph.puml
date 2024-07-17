@@ -336,6 +336,7 @@ package IG #DDDDDD{
 
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
              HealthcareService.extension:as-ext-authorization => <&plus>[0..*]
+             HealthcareService.extension:as-ext-installation => <&plus>[0..*]
              HealthcareService.identifier => [None..None]
              HealthcareService.identifier:numAutorisationArhgos => [0..1]
              HealthcareService.identifier:numAutorisationArhgos.system => [1..None]
@@ -351,10 +352,10 @@ package IG #DDDDDD{
              HealthcareService.meta.extension:as-ext-data-trace => <&plus>[0..1]
              HealthcareService.extension:as-ext-authorization => <&plus>[0..*]
              HealthcareService.extension:as-ext-authorization.extension:dateAuthorization => <&plus>[None..None]
-             HealthcareService.extension:as-ext-authorization.extension:periodAuthorization => <&plus>[None..None]
-             HealthcareService.extension:as-ext-authorization.extension:periodAuthorization.value[x].start => <&plus>[None..None]
-             HealthcareService.extension:as-ext-authorization.extension:deleteAuthorization => <&plus>[None..None]
-             HealthcareService.extension:as-ext-authorization.extension:deleteInstallation => <&plus>[None..None]
+             HealthcareService.extension:as-ext-authorization.extension:deletedAuthorization => <&plus>[None..None]
+             HealthcareService.extension:as-ext-installation => <&plus>[0..*]
+             HealthcareService.extension:as-ext-installation.extension:dateFirstInstallation => <&plus>[None..None]
+             HealthcareService.extension:as-ext-installation.extension:deletedInstallation => <&plus>[None..None]
              HealthcareService.extension:as-ext-patient-type => <&plus>[0..*]
              HealthcareService.extension:as-ext-patient-type.extension:authorizedAgeRange => <&plus>[None..None]
              HealthcareService.extension:as-ext-patient-type.extension:authorizedAgeRange.value[x].low => <&plus>[None..None]
@@ -586,8 +587,10 @@ package IG #DDDDDD{
      AsDeviceProfile -[#black,dashed,thickness=2]-> AsAuthorizationExtension
      AsHealthcareServiceHealthcareActivityProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
      AsHealthcareServiceHealthcareActivityProfile -[#black,dashed,thickness=2]-> AsAuthorizationExtension
+     AsHealthcareServiceHealthcareActivityProfile -[#black,dashed,thickness=2]-> AsInstallationExtension
      AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
      AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsAuthorizationExtension
+     AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsInstallationExtension
      AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsPatientTypeExtension
      AsHealthcareServiceSocialEquipmentProfile -[#black,dashed,thickness=2]-> AsSupportedCapacityExtension
      AsLocationProfile -[#black,dashed,thickness=2]-> AsDataTraceExtension
@@ -636,22 +639,10 @@ package IG #DDDDDD{
           Extension.extension:dateUpdateAuthorization.extension => [None..0]
           Extension.extension:dateUpdateAuthorization.url => [None..None]
           Extension.extension:dateUpdateAuthorization.value[x] => [None..None]
-          Extension.extension:deleteAuthorization => [0..1]
-          Extension.extension:deleteAuthorization.extension => [None..0]
-          Extension.extension:deleteAuthorization.url => [None..None]
-          Extension.extension:deleteAuthorization.value[x] => [None..None]
-          Extension.extension:dateLastInstallation => [0..1]
-          Extension.extension:dateLastInstallation.extension => [None..0]
-          Extension.extension:dateLastInstallation.url => [None..None]
-          Extension.extension:dateLastInstallation.value[x] => [None..None]
-          Extension.extension:deleteInstallation => [0..1]
-          Extension.extension:deleteInstallation.extension => [None..0]
-          Extension.extension:deleteInstallation.url => [None..None]
-          Extension.extension:deleteInstallation.value[x] => [None..None]
-          Extension.extension:sourceReportInstallation => [0..1]
-          Extension.extension:sourceReportInstallation.extension => [None..0]
-          Extension.extension:sourceReportInstallation.url => [None..None]
-          Extension.extension:sourceReportInstallation.value[x] => [None..None]
+          Extension.extension:deletedAuthorization => [0..1]
+          Extension.extension:deletedAuthorization.extension => [None..0]
+          Extension.extension:deletedAuthorization.url => [None..None]
+          Extension.extension:deletedAuthorization.value[x] => [None..None]
           Extension.url => [None..None]
           Extension.value[x] => [None..0]
         } 
@@ -725,6 +716,27 @@ package IG #DDDDDD{
           Extension.extension:academicYear.extension => [None..0]
           Extension.extension:academicYear.url => [None..None]
           Extension.extension:academicYear.value[x] => [None..None]
+          Extension.url => [None..None]
+          Extension.value[x] => [None..0]
+        } 
+        class AsInstallationExtension{
+
+          Extension.extension:dateFirstInstallation => [0..1]
+          Extension.extension:dateFirstInstallation.extension => [None..0]
+          Extension.extension:dateFirstInstallation.url => [None..None]
+          Extension.extension:dateFirstInstallation.value[x] => [None..None]
+          Extension.extension:dateLastInstallation => [0..1]
+          Extension.extension:dateLastInstallation.extension => [None..0]
+          Extension.extension:dateLastInstallation.url => [None..None]
+          Extension.extension:dateLastInstallation.value[x] => [None..None]
+          Extension.extension:deletedInstallation => [0..1]
+          Extension.extension:deletedInstallation.extension => [None..0]
+          Extension.extension:deletedInstallation.url => [None..None]
+          Extension.extension:deletedInstallation.value[x] => [None..None]
+          Extension.extension:sourceReportInstallation => [0..1]
+          Extension.extension:sourceReportInstallation.extension => [None..0]
+          Extension.extension:sourceReportInstallation.url => [None..None]
+          Extension.extension:sourceReportInstallation.value[x] => [None..None]
           Extension.url => [None..None]
           Extension.value[x] => [None..0]
         } 
@@ -991,13 +1003,13 @@ package IG #DDDDDD{
 
      AsDpPractitionerProfile -[#black,dotted,thickness=2]-> AsVSInterneIdSystems
 
-        class VS_TRE_R301_SourceInformationInstallation  
-
-     AsAuthorizationExtension -[#black,dotted,thickness=2]-> VS_TRE_R301_SourceInformationInstallation
-
         class AsVsTypeSystemeInformationVS  
 
      AsDataTraceExtension -[#black,dotted,thickness=2]-> AsVsTypeSystemeInformationVS
+
+        class VS_TRE_R301_SourceInformationInstallation  
+
+     AsInstallationExtension -[#black,dotted,thickness=2]-> VS_TRE_R301_SourceInformationInstallation
 
         class VS_TRE_R286_TypeFermeture  
 

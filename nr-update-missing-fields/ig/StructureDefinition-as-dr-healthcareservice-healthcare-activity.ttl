@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AsDrHealthcareServiceHealthcareActivityProfile"] ; # 
   fhir:title [ fhir:v "AS Donnée Restreinte HealthcareService Healthcare Activity Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-07-17T07:52:36+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-07-17T09:13:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -788,6 +788,49 @@
          fhir:profile ( [
            fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization"^^xsd:anyURI ;
            fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization>
+         ] )
+       ] ) ;
+       fhir:condition ( [ fhir:v "ele-1" ] ) ;
+       fhir:constraint ( [
+         fhir:key [ fhir:v "ele-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
+         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
+         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
+         ]
+       ] [
+         fhir:key [ fhir:v "ext-1" ] ;
+         fhir:severity [ fhir:v "error" ] ;
+         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
+         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
+         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ] ;
+         fhir:source [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/DomainResource"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/DomainResource>
+         ]
+       ] ) ;
+       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:id [ fhir:v "HealthcareService.extension:as-ext-installation" ] ;
+       fhir:path [ fhir:v "HealthcareService.extension" ] ;
+       fhir:sliceName [ fhir:v "as-ext-installation" ] ;
+       fhir:short [ fhir:v "AS Installation Extension" ] ;
+       fhir:definition [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour décrire les dates d'installation des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "DomainResource.extension" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [ fhir:v "Extension"^^xsd:anyURI ] ;
+         fhir:profile ( [
+           fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation"^^xsd:anyURI ;
+           fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation>
          ] )
        ] ) ;
        fhir:condition ( [ fhir:v "ele-1" ] ) ;
