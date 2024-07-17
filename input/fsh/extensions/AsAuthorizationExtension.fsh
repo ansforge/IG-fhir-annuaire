@@ -32,5 +32,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 * extension[dateUpdateAuthorization].value[x] only date    
 * extension[dateUpdateAuthorization] ^short = "Date de dernière mise à jour de l’autorisation."
 
-* extension[deleteAuthorization].value[x] only boolean    
-* extension[deleteAuthorization] ^short = "Indicateur de suppression de l'autorisation."
+* extension[deletedAuthorization].value[x] only boolean    
+* extension[deletedAuthorization] ^short = "Indicateur de suppression de l'autorisation."
