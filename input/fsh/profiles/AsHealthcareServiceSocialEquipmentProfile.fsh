@@ -44,7 +44,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 
 * type contains
     category 0..1 and
-    activity 
+    activity 0..1
 
 * type[category] ^short = "La catégorie de la discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
 * type[category] from $JDV-J136-DisciplineEquipementSocial-RASS (required)
