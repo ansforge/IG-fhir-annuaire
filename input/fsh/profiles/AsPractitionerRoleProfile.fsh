@@ -1,5 +1,5 @@
 Profile: 		AsPractitionerRoleProfile
-Parent: 		fr-core-practitioner-role-exercice
+Parent: 		fr-core-practitioner-role
 Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
 Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel."

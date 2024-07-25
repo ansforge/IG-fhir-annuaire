@@ -10,12 +10,17 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * meta.extension ^slicing.rules = #open
 * meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
 
+* meta.extension[as-ext-data-trace].extension[date-maj-ae] MS
+* meta.extension[as-ext-data-trace].extension[date-maj-ae] ^short = "Date maj de l'activité selon l'autorité d'enregistrement"
+
 
 // extensions
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains AsAuthorizationExtension named as-ext-authorization 0..* MS
+* extension contains 
+    AsAuthorizationExtension named as-ext-authorization 0..* MS and 
+    AsInstallationExtension named as-ext-installation 0..* MS
 
 /* HealthcareService.identifier */
 * identifier ^slicing.discriminator.type = #pattern
@@ -51,4 +56,3 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * characteristic 0..* MS
 * characteristic ^short = "La forme d'activité étant un type d’organisation de prise en charge (forme)."
 * characteristic from $JDV-J134-FormeActivite-RASS (required)
-
