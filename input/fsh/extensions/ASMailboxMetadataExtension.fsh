@@ -4,11 +4,7 @@ Title:			"AS Mailbox Metadata"
 Description: 	"Extension contenant les métadonnées de la mailbox mss."
 
 * ^context[0].type = #element
-* ^context[=].expression = "Practitioner"
-* ^context[+].type = #element
-* ^context[=].expression = "PractitionerRole"
-* ^context[+].type = #element
-* ^context[=].expression = "Organization"
+* ^context[=].expression = "ContactPoint"
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
