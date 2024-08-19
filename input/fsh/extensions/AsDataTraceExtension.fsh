@@ -26,5 +26,5 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour tracer l
 
 
 // date-maj-ae
-* extension[date-maj-ae] ^short = "Date de mise à jour de la ressource de l'autorité d'enregistrement. Cette date est différente de l'atttribut lastUpdated dû au délai entre la mise à jour de la donnée au niveau de l'autorité d'enregistrement et la publication de la ressource technique au niveau de l'API FHIR."
+* extension[date-maj-ae] ^short = "Date de mise à jour de la ressource de l'autorité d'enregistrement. Cette date est différente de l'attribut lastUpdated dû au délai entre la mise à jour de la donnée au niveau de l'autorité d'enregistrement et la publication de la ressource technique au niveau de l'API FHIR."
 * extension[date-maj-ae].value[x] only date
