@@ -16,6 +16,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * extension ^slicing.rules = #open
 * extension contains
     AsAuthorizationExtension named as-ext-authorization 0..* MS and
+    AsInstallationExtension named as-ext-installation 0..* MS and
     AsPatientTypeExtension named as-ext-patient-type 0..* MS and		// ageMinAutorise + ageMaxAutorise + ageMinInstalle + ageMaxInstalle
 	AsSupportedCapacityExtension named as-ext-supported-capacity 0..* MS
 	
@@ -36,9 +37,21 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * providedBy only Reference(fr-core-organization or AsOrganizationProfile)
 
 // disciplineEquipementSociale
-* type 0..* MS
-* type ^short = "La discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
-* type from $JDV-J136-DisciplineEquipementSocial-RASS (required)
+* type MS
+
+* type ^slicing.discriminator.type = #pattern
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
+
+* type contains
+    category 0..1 and
+    activity 0..1
+
+* type[category] ^short = "La catégorie de la discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
+* type[category] from $JDV-J136-DisciplineEquipementSocial-RASS (required)
+
+* type[activity] ^short = "La discipline déterminant la nature de l’activité (CODE_ACT_SOIN)."
+* type[activity] from https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS (required)
 
 // clientele
 * eligibility 0..* MS
@@ -57,9 +70,10 @@ Id:       as-healthcare-social-equipment-to-mos-activite-sociale
 Title:    "AsHealthcareServiceSocialEquipmentProfile to MOS - ActiviteSociale"
 * -> "ActiviteSociale"
 * extension[as-ext-authorization].extension[dateAuthorization] -> "ActiviteSociale.dateAutorisation"
-* extension[as-ext-authorization].extension[periodAuthorization].valuePeriod.start -> "ActiviteSociale.datePremiereInstallation"
-* extension[as-ext-authorization].extension[deleteAuthorization] -> "ActiviteSociale.suppressionAutorisation"
-* extension[as-ext-authorization].extension[deleteInstallation] -> "ActiviteSociale.suppressionInstallation"
+* extension[as-ext-authorization].extension[deletedAuthorization] -> "ActiviteSociale.suppressionAutorisation"
+
+* extension[as-ext-installation].extension[deletedInstallation] -> "ActiviteSociale.suppressionInstallation"
+* extension[as-ext-installation].extension[dateFirstInstallation] -> "ActiviteSociale.datePremiereInstallation"
 
 * extension[as-ext-supported-capacity].extension[capacityAvailable] -> "ActiviteSociale.capaciteAutorisee"
 * extension[as-ext-supported-capacity].extension[femaleCapacityAvailable] -> "ActiviteSociale.capaciteAutoriseeFemme"
