@@ -13,7 +13,6 @@ Usage: #example
   * versionId = "0.1"
   * source = "https://annuaire.sante.fr"
   * lastUpdated = "2019-08-31T01:00:00.000+01:00"
-  * profile[+] = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole"
 
 // Actif
 * active = true

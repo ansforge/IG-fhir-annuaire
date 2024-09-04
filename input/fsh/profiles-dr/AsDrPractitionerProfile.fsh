@@ -4,6 +4,10 @@ Id: 			as-dr-practitioner
 Title:			"AS Donnée Restreinte Practitioner Profile"
 Description: 	"Profil restreint créé à partir de as-practitioner dans le contexte des données en accès restreint de l’Annuaire Santé."
 
+* meta.profile contains as-dr-canonical 1..1
+* meta.profile[as-dr-canonical] = Canonical(as-dr-practitioner)
+* meta.profile[fr-canonical] 1..1
+
 // name
 * name 0..1
 // certificat

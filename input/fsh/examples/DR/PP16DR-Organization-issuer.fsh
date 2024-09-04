@@ -1,5 +1,5 @@
 Instance: pp16dr-organization-issuer
-InstanceOf: AsDpOrganizationProfile
+InstanceOf: AsDrOrganizationProfile
 Usage: #example
 
 // Identifiant technique

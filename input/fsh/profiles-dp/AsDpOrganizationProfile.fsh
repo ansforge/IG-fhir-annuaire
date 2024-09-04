@@ -4,6 +4,9 @@ Id: as-dp-organization
 Title: "AS Donnée Publique Organization Profile"
 Description: "Profil public applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé."
 
+* meta.profile contains as-dp-canonical 1..1
+* meta.profile[as-dp-canonical] = Canonical(as-dp-organization)
+* meta.profile[fr-canonical] 1..1
 
 * extension[as-ext-digital-certificate] 0..0
 

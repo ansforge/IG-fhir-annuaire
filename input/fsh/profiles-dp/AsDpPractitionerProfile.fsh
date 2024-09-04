@@ -3,6 +3,12 @@ Parent: 		as-practitioner
 Id: 			as-dp-practitioner
 Title:			"AS Donnée Publique Practitioner Profile"
 Description: 	"Profil public applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé."
+
+* meta.profile contains as-dp-canonical 1..1
+* meta.profile[as-dp-canonical] = Canonical(as-dp-practitioner)
+* meta.profile[fr-canonical] 1..1
+
+
 // identifier
 //// cardinalty 
 * identifier 1..*
