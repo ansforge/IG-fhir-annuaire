@@ -63,6 +63,8 @@ Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Mod
 
 Les exemples associés aux profils au sein de ce guide sont donnés à titre indicatifs et pourront évoluer dans le temps, ils n'ont pas valeur de référence.
 
+Les attributs marqués du tag MustSupport sont utilisés par l'API Annuaire santé. Ces tags sont uniquement utilisés dans le cadre des profils applicatifs.
+
 ### Dépendances
 
 {% include dependency-table.xhtml %}
