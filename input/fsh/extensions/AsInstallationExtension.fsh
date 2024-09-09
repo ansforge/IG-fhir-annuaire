@@ -30,5 +30,6 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 * extension[deletedInstallation] ^short = "suppressionImplantation ou suppressionInstallation : Indicateur de suppression de l’installation."
 
 * extension[sourceReportInstallation].value[x] only CodeableConcept
-* extension[sourceReportInstallation].valueCodeableConcept from VS-TRE-R301-SourceInformationInstallation (required)    
+* extension[sourceReportInstallation].valueCodeableConcept from VS-TRE-R301-SourceInformationInstallation (required) // TODO - A remplacer par le jdv J261 une fois publié dans le NOS (23/08/2024)
+
 * extension[sourceReportInstallation] ^short = "sourceInformationInstallation : Source ayant permis le constat d'installation."

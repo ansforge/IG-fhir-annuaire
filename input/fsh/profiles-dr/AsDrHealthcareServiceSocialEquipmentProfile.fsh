@@ -4,6 +4,14 @@ Id: as-dr-healthcareservice-social-equipment
 Title: "AS Donnée Restreinte HealthcareService Social Equipment Profile"
 Description: "Profil restreint applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé."
 
+* meta.profile ^slicing.discriminator.type = #value
+* meta.profile ^slicing.discriminator.path = "$this"
+* meta.profile ^slicing.rules = #open
+* meta.profile ^slicing.description = "Slice based on the canonical url value"
+* meta.profile contains as-dr-canonical 1..1
+* meta.profile[as-dr-canonical] = Canonical(as-dr-healthcareservice-social-equipment)
+
+
 * identifier[numAutorisationArhgos] 0..0
 * identifier ..0
 * category 0..0

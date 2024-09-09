@@ -4,6 +4,15 @@ Id: as-dp-healthcareservice-healthcare-activity
 Title: "AS Donnée Publique HealthcareService Healthcare Activity Profile"
 Description: """Profil public applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."""
 
+
+* meta.profile ^slicing.discriminator.type = #value
+* meta.profile ^slicing.discriminator.path = "$this"
+* meta.profile ^slicing.rules = #open
+* meta.profile ^slicing.description = "Slice based on the canonical url value"
+* meta.profile contains as-dp-canonical 1..1
+* meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-healthcare-activity)
+
+
 * active 1..1 // true par défaut; false pour  flaguer les activités de soins supprimées entre deux dates pour permettre aux utilisateurs du delta d'identifier les ressources supprimées. 
 * specialty 0..0
 * location 0..0

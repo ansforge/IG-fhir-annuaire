@@ -1,6 +1,5 @@
 Instance: example-organization-nancy
 InstanceOf: AsOrganizationProfile
-* meta.profile = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"
 
 * identifier[idNatSt].use = #official
 * identifier[idNatSt].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#IDNST 

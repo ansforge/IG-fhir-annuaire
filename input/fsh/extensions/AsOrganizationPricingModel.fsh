@@ -9,4 +9,4 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 * . ^short = "Mode de tarification de la structure (modeFixationTarif)."
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from VS-TRE-R74-ModeFixationTarifaire (required)
+* valueCodeableConcept from VS-TRE-R74-ModeFixationTarifaire (required) // TODO - A remplacer par le jdv J259 une fois publié dans le NOS (23/08/2024)
