@@ -2,7 +2,7 @@ Profile: 		AsDpPractitionerProfile
 Parent: 		as-practitioner
 Id: 			as-dp-practitioner
 Title:			"AS Donnée Publique Practitioner Profile"
-Description: 	"Profil public applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé."
+Description: 	"""Profil public applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."""
 // identifier
 //// cardinalty 
 * identifier 1..*
