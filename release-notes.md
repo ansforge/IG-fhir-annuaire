@@ -1,4 +1,4 @@
-**Release 1.1.0-snapshot de l'Implementation Guide Annuaire.**
+**Release 1.1.0-snapshot-3 de l'Implementation Guide Annuaire.**
 
 [Modifications apportées dans cette release](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
 
