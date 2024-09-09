@@ -17,7 +17,7 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
     service 0..1 and
     phone 0..1 and
     digitization 0..1 and
-    publication 0..1
+    listeRouge 0..1
 
 // typeBAL
 * extension[type] ^short = "typeBAL : Type de boîte aux lettres.\r\nValeurs possibles :\r\nORG pour une BAL organisationnelle;\r\nAPP pour une BAL applicative;\r\nPER pour une BAL personnelle, rattachée à une personne physique"
@@ -42,8 +42,8 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
 
 // dematerialisation
 * extension[digitization].value[x] only boolean
-* extension[digitization] ^short = "dematerialisation : Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - O : Dématérialisation acceptée \r\n- N : Dématérialisation refusée."
+* extension[digitization] ^short = "dematerialisation : Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - \"true\" : Dématérialisation acceptée \r\n- \"false\" : Dématérialisation refusée."
 
 // listeRouge
-* extension[publication].value[x] only boolean
-* extension[publication] ^short = "listeRouge : Indicateur liste rouge. O: Boîte aux lettres en liste rouge;\r\nN: La boîte aux lettres peut être publiée"
+* extension[listeRouge].value[x] only boolean
+* extension[listeRouge] ^short = "listeRouge : Indicateur liste rouge. \"true\": Boîte aux lettres en liste rouge;\r\n\"false\": La boîte aux lettres peut être publiée"
