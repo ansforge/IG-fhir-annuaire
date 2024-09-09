@@ -4,6 +4,10 @@ Id: 			as-dp-practitionerrole
 Title:			"AS Donnée Publique PractitionerRole Profile"
 Description: 	"Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé."
 
+* meta.profile contains as-dp-canonical 1..1
+* meta.profile[as-dp-canonical] = Canonical(as-dp-practitionerrole)
+* meta.profile[fr-canonical] 1..1
+
 * practitioner 1..1 
 * organization 0..1
 * location 0..0
