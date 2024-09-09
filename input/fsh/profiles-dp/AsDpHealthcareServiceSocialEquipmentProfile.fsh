@@ -2,7 +2,7 @@ Profile: AsDpHealthcareServiceSocialEquipmentProfile
 Parent: as-healthcareservice-social-equipment
 Id: as-dp-healthcareservice-social-equipment
 Title: "AS Donnée Publique HealthcareService Social Equipment Profile"
-Description: "Profil public applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé."
+Description: """Profil public applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."""
 
 * meta.profile ^slicing.discriminator.type = #value
 * meta.profile ^slicing.discriminator.path = "$this"

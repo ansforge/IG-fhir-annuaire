@@ -2,7 +2,7 @@ Profile: 		AsDpPractitionerRoleProfile
 Parent: 		as-practitionerrole
 Id: 			as-dp-practitionerrole
 Title:			"AS Donnée Publique PractitionerRole Profile"
-Description: 	"Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé."
+Description: 	"""Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."""
 
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-practitionerrole)

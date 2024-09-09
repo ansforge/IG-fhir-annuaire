@@ -2,7 +2,7 @@ Profile: AsDpHealthcareServiceHealthcareActivityProfile
 Parent: as-healthcareservice-healthcare-activity
 Id: as-dp-healthcareservice-healthcare-activity
 Title: "AS Donnée Publique HealthcareService Healthcare Activity Profile"
-Description: "Profil public applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé."
+Description: """Profil public applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."""
 
 
 * meta.profile ^slicing.discriminator.type = #value
