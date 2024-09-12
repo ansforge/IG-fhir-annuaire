@@ -19,8 +19,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains 
-    AsAuthorizationExtension named as-ext-authorization 0..* MS and 
-    AsInstallationExtension named as-ext-installation 0..* MS
+    AsAuthorizationExtension named as-ext-authorization 0..* MS 
 
 /* HealthcareService.identifier */
 * identifier ^slicing.discriminator.type = #pattern
@@ -43,9 +42,20 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * category ^short = "La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins (modalite)."
 * category from $JDV-J132-ModaliteActivite-RASS (required)
 
-// categorie - HealthcareService.type
-* type ^short = "Catégorie d'activité de soin autorisée. \r\nExemple : Activités de soins Soumises à Reconnaissance contractuelle"
-* type from $JDV_J131-CategorieActiviteSanitaireRegulee-RASS (required)
+* type ^slicing.discriminator.type = #pattern
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
+
+* type contains
+    category 0..1 and
+    activity 0..1
+
+* type[category] ^short = "Catégorie d'activité de soin autorisée. \r\nExemple : Activités de soins Soumises à Reconnaissance contractuelle"
+* type[category] from $JDV_J131-CategorieActiviteSanitaireRegulee-RASS (required)
+
+* type[activity] ^short = "La discipline déterminant la nature de l’activité (CODE_ACT_SOIN)."
+* type[activity] from https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS (required)
+
 
 // activite - HealthcareService.specialty
 * specialty 0..* MS
