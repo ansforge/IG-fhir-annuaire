@@ -62,3 +62,54 @@ Description:  "ValueSet définissant les types de systèmes d'information pouvan
 // SVS profile
 * ^experimental = false
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CodeSystem:  AsCsTypeEtablissement
+Id: as-cs-type-etablissement
+Title: "AS CodeSystem Type Etablissement"
+Description:  "CodeSystem définissant les types d'établissement."
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+* ^version = "20240306173000"
+* #P "Principal" "Etablissement principal"
+* #S "Secondaire" "Etablissement secondaire"
+// SVS profile
+* ^experimental = false
+
+ValueSet: AsVsTypeEtablissement
+Id: as-vs-type-etablissement
+Title: "AS ValueSet type Etablissement"
+Description:  "ValueSet définissant les types d'établissement."
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^version = "20240306173000"
+* include codes from system as-cs-type-etablissement
+
+// SVS profile
+* ^experimental = false
+
