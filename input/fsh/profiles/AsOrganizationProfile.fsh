@@ -55,16 +55,17 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * type[statutJuridiqueINSEE].extension[as-ext-organization-types].valueCode = #statutJuridiqueINSEE
 
 // modaliteParticipationSPH
-* type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
 * type[sphParticipation] ^short = "Modalités de participation au service public hospitalier (Synonyme : modaliteParticipationSPH)."
+* type[sphParticipation] from $JDV-J162-ESPIC-RASS (required)
 * type[sphParticipation].extension contains as-ext-organization-types named as-ext-organization-types 1..1
 * type[sphParticipation].extension[as-ext-organization-types].valueCode = #sphParticipation
 
 // typeEtablissement
 * type[typeEtablissement] ^short = "Le type d’établissement détermine si c'est un établissement principal ou secondaire."
+* type[typeEtablissement] from as-vs-type-etablissement (required)
 * type[typeEtablissement].extension contains as-ext-organization-types named as-ext-organization-types 1..1
 * type[typeEtablissement].extension[as-ext-organization-types].valueCode = #typeEtablissement
-* type[typeEtablissement].text MS // TypeEtablissement est de type string dans le MOS, il faut donc mettre dans le champs text. Pourquoi est-ce que le type d'établissement est un text et non un code dans le MOS ?
+// typeEtablissement est au format text dans le MOS. Un ValueSet a été créé pour vérifier la conformité au profil FHIR
 
 * type[secteurActiviteRASS].extension contains as-ext-organization-types named as-ext-organization-types 1..1
 * type[secteurActiviteRASS].extension[as-ext-organization-types].valueCode = #secteurActiviteRASS
