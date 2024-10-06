@@ -2,7 +2,7 @@ Profile: 		AsPractitionerProfile
 Parent: 		fr-core-practitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
-Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
+Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
@@ -23,7 +23,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 /* Practitioner.identifier */
 // Defined in FrCore
 
-* identifier.type ^short = "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes ADELI, RPPS et IDNPS proviennent du system  https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
+* identifier.type ^short = "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes RPPS et IDNPS proviennent du system  https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 
 * identifier[idNatPs] MS
 
@@ -31,8 +31,8 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 // * identifier[identifiantInterne].system 1..1
 // * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
-// * identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
-// * identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps/adeli et yyyyy l'identifiant local."
+// * identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr "
+// * identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps et yyyyy l'identifiant local."
 
 // Practitioner.active
 * active MS
@@ -145,7 +145,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // * #siren.interne.esante.gouv.fr "Système de l'identifiant interne SIREN"
 // * #siret.interne.esante.gouv.fr "Système de l'identifiant interne SIRET"
 // * #rpps.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet RPPS"
-// * #adeli.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet ADELI"
 
 Mapping:  AsPractitionerProfileToMOSSavoirFaire
 Source:   AsPractitionerProfile

@@ -21,7 +21,7 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour tracer l
 // periodValidite
 * extension[systeme-information] ^short = "Système d'information de la ressource."
 * extension[systeme-information].value[x] only code
-* extension[systeme-information].valueCode ^short = "RPPS | ADELI | FINESS | MSS | CG"
+* extension[systeme-information].valueCode ^short = "RPPS | FINESS | MSS | CG"
 * extension[systeme-information].valueCode from as-vs-type-systeme-information (extensible)
 
 
