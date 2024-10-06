@@ -21,8 +21,8 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 * identifier[identifiantInterne].system 1..1
 * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
-* identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr | adeli.local.esante.gouv.fr"
-* identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps/adeli et yyyyy l'identifiant local."
+* identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr"
+* identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps et yyyyy l'identifiant local."
 * identifier[identifiantInterne].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#INTRN
 // active
 
@@ -71,4 +71,3 @@ Description: "CodeSystem contenant les identifiants locaux"
 * #siren.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure SIREN"
 * #siret.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure SIRET"
 * #rpps.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant du cabinet RPPS"
-* #adeli.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant du cabinet ADELI"
