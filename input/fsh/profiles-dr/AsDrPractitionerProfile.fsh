@@ -8,8 +8,8 @@ Description: 	"Profil restreint créé à partir de as-practitioner dans le cont
 * meta.profile[as-dr-canonical] = Canonical(as-dr-practitioner)
 * meta.profile[fr-canonical] 1..1
 
-
 * identifier[idNatPs] 1..1
+* identifier[rpps] 1..1
 
 // name
 * name 0..1
