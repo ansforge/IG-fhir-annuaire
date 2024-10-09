@@ -11,12 +11,13 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 
 // identifier
 //// cardinalty 
-* identifier 1..*
 * identifier.period 0..0
 * identifier.assigner 0..0 
 //// Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
 
 * identifier contains identifiantInterne 0..1 MS 
+
+* identifier[idNatPs] 1..1
 
 * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 * identifier[identifiantInterne].system 1..1
