@@ -18,6 +18,7 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * identifier contains identifiantInterne 0..1 MS 
 
 * identifier[idNatPs] 1..1
+* identifier[rpps] 1..1
 
 * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 * identifier[identifiantInterne].system 1..1
