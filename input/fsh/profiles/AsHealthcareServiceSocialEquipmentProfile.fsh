@@ -2,7 +2,7 @@ Profile: AsHealthcareServiceSocialEquipmentProfile
 Parent: HealthcareService
 Id: as-healthcareservice-social-equipment
 Title: "AS HealthcareService Social Equipment Profile"
-Description: "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS."
+Description: "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS (ex : Hébergement de personnes handicapées, hébergement de personnes âgées, services médico-sociaux à domicile, ...)."
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
 * meta.extension ^slicing.discriminator.path = "url"
@@ -44,14 +44,10 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * type ^slicing.rules = #open
 
 * type contains
-    category 0..1 and
-    activity 0..1
+    category 0..1
 
 * type[category] ^short = "La catégorie de la discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
 * type[category] from $JDV-J136-DisciplineEquipementSocial-RASS (required)
-
-* type[activity] ^short = "La discipline déterminant la nature de l’activité (CODE_ACT_SOIN)."
-* type[activity] from https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS (required)
 
 // clientele
 * eligibility 0..* MS

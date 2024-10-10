@@ -1,7 +1,7 @@
 Extension: 		AsInstallationExtension
 Id: 			as-ext-installation
 Title:			"AS Installation Extension"
-Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire les dates d'installation des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés."
+Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire les dates d'installation des équipements (HealthcareService) sanitaires, sociaux, médico-sociaux et d'enseignements"
 
 * ^context[0].type = #element
 * ^context[0].expression = "HealthcareService"
