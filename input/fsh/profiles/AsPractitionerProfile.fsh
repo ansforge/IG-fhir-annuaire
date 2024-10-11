@@ -63,8 +63,8 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
-* telecom ^slicing.discriminator.type = #profile
-* telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
+* telecom ^slicing.discriminator.type = #pattern
+* telecom ^slicing.discriminator.path = "$this" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 
