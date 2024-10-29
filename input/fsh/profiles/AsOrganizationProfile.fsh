@@ -84,8 +84,9 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * telecom ^slicing.rules = #open
 * telecom ^slicing.discriminator[0].type = #pattern
 * telecom ^slicing.discriminator[0].path = "system" 
-* telecom ^slicing.discriminator[1].type = #pattern
-* telecom ^slicing.discriminator[1].path = "extension('https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type').value"
+* telecom ^slicing.discriminator[1].type = #exists
+* telecom ^slicing.discriminator[1].path = "extension('https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type')"
+
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 * telecom[mailbox-mss] ^short = "Les BALs MSS de type ORG ou APP rattachées à une personne morale responsable de l’accès et de l’usage de la BAL (boiteLettreMSS)."
