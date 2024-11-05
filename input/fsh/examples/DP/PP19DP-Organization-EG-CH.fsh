@@ -61,7 +61,7 @@ Usage: #example
 * type[activiteINSEE][+]
   * extension[as-ext-organization-types].valueCode = #activiteINSEE
   * coding
-    * system = "https://mos.esante.gouv.fr/NOS/TRE_R75-InseeNAFrev2Niveau5/FHIR/TRE-R75-InseeNAFrev2Niveau5/"
+    * system = "https://mos.esante.gouv.fr/NOS/TRE_R75-InseeNAFrev2Niveau5/FHIR/TRE-R75-InseeNAFrev2Niveau5"
     * code = #86.10Z
 
 // Télécommunication
