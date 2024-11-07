@@ -34,11 +34,6 @@ L'objectif de ce projet est de définir les profils Annuaire Santé exposés par
 Ce guide d'implémentation remplace l'ancien package ANS.annuaire.fhir.r4 0.2.0.
 
 ##### Ressources profilées
-
-<div class="figure" style="width:100%;">
-    <p>{% include document-overview.svg %}</p>
-</div>
-
 La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci ont été re-profilés pour rajouter les contraintes applicatives dans l'onglet "liste des profils".
 
 {% sql SELECT '[' || Title ||'](StructureDefinition-' || id || '.html)' as "Titre du profil", Description, json_extract(Json, '$.baseDefinition') as "URL canonique du profil parent" FROM Resources WHERE Type = 'StructureDefinition' and Description like "Profil générique%" %}
@@ -49,10 +44,6 @@ La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci 
 Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4. Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est JSON.
 
 Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Modèle des Objets de Santé [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) gérés par l’ANS est disponible dans le schéma ci-dessous.
-
-<div class="figure" style="width:100%;">
-    <img style="height: auto; width: 100%;" src="mappingFHIRAnnuaireSante.png" alt="mapping fhir annuaire" title="mapping fhir annuaire">
-</div>
 
 #### Liens utiles
 
