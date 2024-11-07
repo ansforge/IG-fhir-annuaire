@@ -1,4 +1,4 @@
-Instance: example-organization-fictive
+Instance: example-organization-fictive-without-emailtype
 InstanceOf: AsOrganizationProfile
 * meta.profile = "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"
 
