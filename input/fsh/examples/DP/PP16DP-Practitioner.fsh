@@ -46,16 +46,10 @@ Usage: #example
 
 // Télécommunication
 * telecom[mailbox-mss][+]
+  * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
   * system = #email
   * value = "davidchatelier@xxx.mssante.fr"
   * rank = 1
-* telecom[+]
-  * system = #phone
-  * value = "0612122216"
-  * rank = 1
-* telecom[+]
-  * system = #email
-  * value = "davidchatelier@orange.fr"
 
 // Qualification
 * qualification[degree][+]
