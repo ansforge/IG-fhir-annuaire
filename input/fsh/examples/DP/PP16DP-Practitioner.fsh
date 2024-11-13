@@ -50,13 +50,6 @@ Usage: #example
   * system = #email
   * value = "davidchatelier@xxx.mssante.fr"
   * rank = 1
-* telecom[+]
-  * system = #phone
-  * value = "0612122216"
-  * rank = 1
-* telecom[+]
-  * system = #email
-  * value = "davidchatelier@orange.fr"
 
 // Qualification
 * qualification[degree][+]
