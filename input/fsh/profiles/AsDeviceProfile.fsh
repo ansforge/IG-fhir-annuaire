@@ -18,10 +18,10 @@ Description: "Profil générique créé à partir de Device dans le contexte de 
 
 /* device.identifier */
 * identifier MS
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+* identifier ^slicing.description = "Slice based on the identifier.system value"
 
 // Contains rule
 * identifier contains numAutorisationArhgos 0..1 // Slice numeroAutorisationARHGOS
