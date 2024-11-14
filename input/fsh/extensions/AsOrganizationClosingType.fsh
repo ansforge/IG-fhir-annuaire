@@ -9,4 +9,4 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour prise e
 * . ^short = "Type de fermeture de la structure (typeFermeture)."
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from VS-TRE-R286-TypeFermeture (required) // TODO - A remplacer par le jdv J260 une fois publié dans le NOS (23/08/2024)
+* valueCodeableConcept from https://mos.esante.gouv.fr/NOS/JDV_J260-TypeFermeture-RASS/FHIR/JDV-J260-TypeFermeture-RASS (required) 
