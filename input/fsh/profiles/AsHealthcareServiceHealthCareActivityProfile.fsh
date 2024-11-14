@@ -22,10 +22,10 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
     AsAuthorizationExtension named as-ext-authorization 0..* MS 
 
 /* HealthcareService.identifier */
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+* identifier ^slicing.description = "Slice based on the identifier.system value"
 
 * identifier contains numAutorisationArhgos 0..1
 * identifier[numAutorisationArhgos] MS
@@ -42,7 +42,7 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * category ^short = "La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins (modalite)."
 * category from $JDV-J132-ModaliteActivite-RASS (required)
 
-* type ^slicing.discriminator.type = #pattern
+* type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "$this"
 * type ^slicing.rules = #open
 

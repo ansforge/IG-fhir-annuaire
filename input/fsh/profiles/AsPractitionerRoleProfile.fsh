@@ -27,10 +27,10 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 	
 /* PractitionerRole.identifier */
 * identifier MS
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+* identifier ^slicing.description = "Slice based on the identifier.system value"
 
 // Contains rule
 * identifier contains idSituationExercice 0..* and numeroAm 0..*
@@ -70,7 +70,7 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 
 // Slicing au niveau de PractitionerRole.code
-* code ^slicing.discriminator.type = #pattern
+* code ^slicing.discriminator.type = #value
 * code ^slicing.discriminator.path = "$this"
 * code ^slicing.rules = #open
 * code contains
