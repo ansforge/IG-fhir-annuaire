@@ -27,10 +27,10 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 	
 /* PractitionerRole.identifier */
 * identifier MS
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the identifier.system pattern"
+* identifier ^slicing.description = "Slice based on the identifier.system value"
 
 // Contains rule
 * identifier contains idSituationExercice 0..* and numeroAm 0..*
@@ -70,7 +70,7 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 
 // Slicing au niveau de PractitionerRole.code
-* code ^slicing.discriminator.type = #pattern
+* code ^slicing.discriminator.type = #value
 * code ^slicing.discriminator.path = "$this"
 * code ^slicing.rules = #open
 * code contains
@@ -119,8 +119,11 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
-* telecom ^slicing.discriminator.type = #profile
-* telecom ^slicing.discriminator.path = "$this.resolve()" // Le discriminator de cet élément est la conformité au profil mailbox-mss.
+* telecom ^slicing.discriminator[0].type = #pattern
+* telecom ^slicing.discriminator[0].path = "system" 
+* telecom ^slicing.discriminator[1].type = #exists
+* telecom ^slicing.discriminator[1].path = "extension('https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type')"
+
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 * telecom[mailbox-mss] ^short = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice (BoiteLettreMSS)."

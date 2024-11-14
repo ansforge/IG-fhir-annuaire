@@ -44,13 +44,11 @@ Usage: #example
 * language = #fr
 
 // Télécommunication
-* telecom[+]
-  * system = #phone
-  * value = "0603590791"
-  * rank = 1
-* telecom[+]
+* telecom[mailbox-mss]
   * system = #email
-  * value = "jeromebonnet@hotmail.fr"
+  * value = "jeromebonnet@pro.mssante.fr"
+  * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
+
 
 // Qualification
 * qualification[degree][+]

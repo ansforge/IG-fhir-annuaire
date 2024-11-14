@@ -1,7 +1,6 @@
-**Release 1.1.0-snapshot-4 de l'Implementation Guide Annuaire.**
+**Release 1.1.0 de l'Implementation Guide Annuaire.**
 
 [Modifications apportées dans cette release](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
 
-* Ajout du CS et VS typeEtablissement ainsi que du binding (PRIMAIRE / SECONDAIRE) [235](https://github.com/ansforge/IG-fhir-annuaire/pull/235)
-* Mise à jour profils HealthcareService (CODE ACT SOIN, date installation) [233](https://github.com/ansforge/IG-fhir-annuaire/pull/233)
-* Suppression numéro ADELI suite au décommissionement national [240](https://github.com/ansforge/IG-fhir-annuaire/pull/240)
+* Correction slicing telecom:mailbox-mss sur les profils Practitioner, Organization, PractitionerRole [244](https://github.com/ansforge/IG-fhir-annuaire/pull/244)
+* Ajout tags MS sur identifier PractitionerDP [243](https://github.com/ansforge/IG-fhir-annuaire/pull/243)

@@ -125,7 +125,6 @@ Usage: #example
       * code = #DE
   * period
     * start = "2019-01-08"
-  * issuer = Reference(Organization/u63)
 
 
 
