@@ -65,7 +65,7 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-healthcare-social-equipment-to-mos-activite-sociale
 Title:    "AsHealthcareServiceSocialEquipmentProfile to MOS - ActiviteSociale"
 * -> "ActiviteSociale"
-// * extension[as-ext-authorization].extension[dateAuthorization] -> "ActiviteSociale.dateAutorisation"
+* extension[as-ext-authorization].extension[dateAuthorization] -> "ActiviteSociale.dateAutorisation"
 * extension[as-ext-authorization].extension[deletedAuthorization] -> "ActiviteSociale.suppressionAutorisation"
 
 * extension[as-ext-installation].extension[deletedInstallation] -> "ActiviteSociale.suppressionInstallation"
