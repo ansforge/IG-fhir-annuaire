@@ -176,13 +176,6 @@ Title:    "AsPractitionerProfile to MOS - ExerciceProfessionnel"
 * qualification[exercicePro].period.end -> "ExerciceProfessionnel.dateFinEffetExercice"
 
 * telecom[mailbox-mss] -> "ExerciceProfessionnel.boiteLettresMSS"
-* telecom[mailbox-mss].extension[emailType] -> "ExerciceProfessionnel.boiteLettresMSS.typeBAL"
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[description] -> "ExerciceProfessionnel.boiteLettresMSS.description"
-* telecom[mailbox-mss].value -> "ExerciceProfessionnel.boiteLettresMSS.adresseMSS"
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[service] -> "ExerciceProfessionnel.BoiteLettreMSS.serviceRattachement"
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[digitization] -> "ExerciceProfessionnel.BoiteLettreMSS.dematerialisation"
-* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[listeRouge] -> "ExerciceProfessionnel.BoiteLettreMSS.listeRouge"
-
 
 Mapping:  AsPractitionerProfileToMOSInscriptionOrdre
 Source:   AsPractitionerProfile

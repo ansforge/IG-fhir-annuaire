@@ -35,3 +35,22 @@ Description: "Datatype profile créé à partir de FrAddress dans le contexte de
 * line.extension[postBox] ^short = "mentionDistribution (Adresse)"
 * line.extension[streetNameBase] ^short = "libelleVoie (Adresse)"
 * line.extension[lieuDit] ^short = "lieuDit (Adresse) : Lieu qui porte un nom rappelant une particularité topographique ou historique."
+
+
+Mapping:  AsAddressExtendedProfileToMOSAdresse
+Source:   AsAddressExtendedProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-address-extended-to-mos-exercice-professionnel
+Title:    "AsAddressExtendedProfile to MOS - Adresse"
+* -> "Adresse"
+* extension[inseeCode] -> "Adresse.COGCommune"
+* line.extension[additionalLocator] -> "Adresse.complementPointGeographique"
+* line.extension[careOf] -> "Adresse.complementPointGeographique"
+* line.extension[houseNumber] -> "Adresse.numeroVoie"
+* line.extension[buildingNumberSuffix] -> "Adresse.extension"
+* line.extension[streetNameType] -> "Adresse.typeVoie"
+* line.extension[streetNameBase] -> "Adresse.libelleVoie"
+* line.extension[lieuDit] -> "Adresse.lieuDit"
+* line.extension[lieuDit] -> "Adresse.lieuDit"
+* city -> "Adresse.localite"
+* postalCode -> "Adresse.codePostal"
