@@ -21,7 +21,6 @@ Description:  "ValueSet définissant les types de systèmes d'information pouvan
 
 // SVS profile
 * ^experimental = false
-* ^caseSensitive = true
 
 
 
@@ -47,5 +46,4 @@ Description:  "ValueSet définissant les types d'établissement."
 
 // SVS profile
 * ^experimental = false
-* ^caseSensitive = true
 
