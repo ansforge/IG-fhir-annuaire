@@ -62,6 +62,6 @@ Title:    "AsDeviceProfile to MOS - EquipementMaterielLourd"
 * serialNumber -> "EquipementMaterielLourd.numeroSerie"
 * type -> "EquipementMaterielLourd.equipementMaterielLourd"
 * extension[as-ext-authorization].extension[dateAuthorization] -> "EquipementMaterielLourd.dateDecision"
-* extension[as-ext-authorization].extension[periodAuthorization].valueStart -> "EquipementMaterielLourd.datePremierMEO"
-* extension[as-ext-authorization].extension[periodAuthorization].valueEnd -> "EquipementMaterielLourd.datefin"
+* extension[as-ext-authorization].extension[periodAuthorization].valuePeriod.start -> "EquipementMaterielLourd.datePremierMEO"
+* extension[as-ext-authorization].extension[periodAuthorization].valuePeriod.end -> "EquipementMaterielLourd.datefin"
 // * extension[as-ext-authorization].extension[deletedAuthorization].valueEnd -> "EquipementMaterielLourd.suppressionAutorisation" // TODO à étudier
