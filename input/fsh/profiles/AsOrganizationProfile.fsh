@@ -171,7 +171,7 @@ Title:    "AsOrganization to MOS - EG"
 * extension[usePeriod].valuePeriod.end -> "EntiteGeographique.dateFermeture"
 
 * type[secteurActiviteRASS] -> "EntiteGeographique.secteurActivite"
-* type[categorieEtablissementRASS] -> "EntiteGeographique.categorieEtablissement  "
+* type[categorieEtablissementRASS] -> "EntiteGeographique.categorieEtablissement"
 * type[activiteINSEE] -> "EntiteGeographique.codeAPET"
 * type[statutJuridiqueINSEE] -> "EntiteGeographique.statutJuridique"
 * type[sphParticipation] -> "EntiteGeographique.modaliteParticipationSPH"
