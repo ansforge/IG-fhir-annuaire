@@ -119,7 +119,7 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
-* telecom ^slicing.discriminator[0].type = #pattern
+* telecom ^slicing.discriminator[0].type = #value
 * telecom ^slicing.discriminator[0].path = "system" 
 * telecom ^slicing.discriminator[1].type = #exists
 * telecom ^slicing.discriminator[1].path = "extension('https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type')"
