@@ -49,3 +49,19 @@ Description: "Profil générique créé à partir de Device dans le contexte de 
 * owner 0..1 MS
 * owner only Reference(fr-core-organization or AsOrganizationProfile)
 * owner ^short = "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd (idStructure)."
+
+
+Mapping:  AsDeviceToMOSEquipementMaterielLourd
+Source:   AsDeviceProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-device-to-mos-equipement-materiel-lourd
+Title:    "AsDeviceProfile to MOS - EquipementMaterielLourd"
+* -> "EquipementMaterielLourd"
+* identifier[numAutorisationArhgos].value -> "EquipementMaterielLourd.numeroAutorisationARHGOS"
+* manufacturer -> "EquipementMaterielLourd.marque"
+* serialNumber -> "EquipementMaterielLourd.numeroSerie"
+* type -> "EquipementMaterielLourd.equipementMaterielLourd"
+* extension[as-ext-authorization].extension[dateAuthorization] -> "EquipementMaterielLourd.dateDecision"
+* extension[as-ext-authorization].extension[periodAuthorization].valuePeriod.start -> "EquipementMaterielLourd.datePremierMEO"
+* extension[as-ext-authorization].extension[periodAuthorization].valuePeriod.end -> "EquipementMaterielLourd.datefin"
+// * extension[as-ext-authorization].extension[deletedAuthorization].valueEnd -> "EquipementMaterielLourd.suppressionAutorisation" // TODO à étudier

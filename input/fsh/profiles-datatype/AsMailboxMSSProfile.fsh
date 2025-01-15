@@ -19,3 +19,18 @@ Description: 	"Datatype profile créé à partir ContactPoint dans le cadre de l
 
 * extension contains as-ext-mailbox-mss-metadata named as-mailbox-mss-metadata 0..1
 * extension[as-mailbox-mss-metadata] ^short = "Les attributs 'responsible' et 'phone' ne sont pas disponibles en accès libre."
+
+
+Mapping:  AsMailboxMSSProfileToMOSBoiteLettreMSS
+Source:   AsMailboxMSSProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-mailbox-mss-to-mos-exercice-professionnel
+Title:    "AsMailboxMSSProfile to MOS - boiteLettresMSS"
+* -> "boiteLettresMSS"
+* extension[emailType] -> "boiteLettresMSS.typeBAL"
+* extension[as-mailbox-mss-metadata].extension[description] -> "boiteLettresMSS.description"
+* extension[as-mailbox-mss-metadata].extension[service] -> "BoiteLettreMSS.serviceRattachement"
+* extension[as-mailbox-mss-metadata].extension[digitization] -> "BoiteLettreMSS.dematerialisation"
+* extension[as-mailbox-mss-metadata].extension[listeRouge] -> "BoiteLettreMSS.listeRouge"
+
+

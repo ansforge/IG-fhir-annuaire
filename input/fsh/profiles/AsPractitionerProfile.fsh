@@ -63,7 +63,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
-* telecom ^slicing.discriminator[0].type = #pattern
+* telecom ^slicing.discriminator[0].type = #value
 * telecom ^slicing.discriminator[0].path = "system" 
 * telecom ^slicing.discriminator[1].type = #exists
 * telecom ^slicing.discriminator[1].path = "extension('https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type')"
@@ -155,7 +155,8 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-savoir-faire
 Title:    "AsPractitionerProfile to MOS - SavoirFaire"
 * -> "SavoirFaire"
-* qualification[savoirFaire].code -> "SavoirFaire.typeSavoirFaire"
+* qualification[savoirFaire].code.coding[typeSavoirFaire] -> "SavoirFaire.typeSavoirFaire"
+* qualification[savoirFaire].code -> "specialite"
 * qualification[savoirFaire].period.start -> "SavoirFaire.dateReconnaissance"
 * qualification[savoirFaire].period.end -> "SavoirFaire.dateAbandon"
 
@@ -175,7 +176,6 @@ Title:    "AsPractitionerProfile to MOS - ExerciceProfessionnel"
 * qualification[exercicePro].period.end -> "ExerciceProfessionnel.dateFinEffetExercice"
 
 * telecom[mailbox-mss] -> "ExerciceProfessionnel.boiteLettresMSS"
-
 
 Mapping:  AsPractitionerProfileToMOSInscriptionOrdre
 Source:   AsPractitionerProfile
@@ -211,9 +211,10 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-professionnel
 Title:    "AsPractitionerProfile to MOS - Professionnel"
 * -> "Professionnel"
-* identifier[idNatPs] -> "IdNat_PS"
-* address -> "adresseCorrespondance"
-* telecom -> "telecommunication"
+* identifier[idNatPs] -> "Professionnel.idNat_PS"
+* identifier[rpps] -> "Professionnel.idPP"
+* address -> "Professionnel.adresseCorrespondance"
+* telecom -> "Professionnel.telecommunication"
 
 Mapping:  AsPractitionerProfileToMOSAutorisationExercice
 Source:   AsPractitionerProfile
@@ -226,3 +227,15 @@ Title:    "AsPractitionerProfile to MOS - AutorisationExercice"
 * extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.start -> "AutorisationExercice.dateDebutAutorisation"
 * extension[as-ext-frpractitioner-authorization].extension[period].valuePeriod.end -> "AutorisationExercice.dateFinAutorisation"
 * extension[as-ext-frpractitioner-authorization].extension[profession] -> "AutorisationExercice.profession"
+
+Mapping:  AsPractitionerProfileToMOSCarteProfessionnel
+Source:   AsPractitionerProfile
+Target:   "https://mos.esante.gouv.fr"
+Id:       as-practitioner-role-to-mos-carte-professionnel
+Title:    "AsPractitionerProfile to MOS - CarteProfessionnel"
+* -> "CarteProfessionnel"
+* extension[as-ext-smartcard].extension[type] -> "CarteProfessionnel.typeCarte"
+* extension[as-ext-smartcard].extension[number] -> "CarteProfessionnel.numeroCarte"
+* extension[as-ext-smartcard].extension[period].valuePeriod.start -> "CarteProfessionnel.dateDebutValidite"
+* extension[as-ext-smartcard].extension[period].valuePeriod.end -> "CarteProfessionnel.dateFinValidite"
+* extension[as-ext-smartcard].extension[cancellationDate] -> "CarteProfessionnel.dateOpposition"

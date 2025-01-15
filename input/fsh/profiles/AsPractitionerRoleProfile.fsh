@@ -119,7 +119,7 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 // boiteLettreMSS
 * telecom ^slicing.rules = #open
-* telecom ^slicing.discriminator[0].type = #pattern
+* telecom ^slicing.discriminator[0].type = #value
 * telecom ^slicing.discriminator[0].path = "system" 
 * telecom ^slicing.discriminator[1].type = #exists
 * telecom ^slicing.discriminator[1].path = "extension('https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type')"
@@ -153,10 +153,14 @@ Title:    "AsPractitionerRoleProfile to MOS - SituationExercice"
 * code[genreActivite] -> "SituationExercice.genreActivite"
 * code[statutHospitalier] -> "SituationExercice.statutHospitalier"
 * code[metierPharmacien] -> "SituationExercice.metierPharmacien"
-* code[metierPharmacien] -> "SituationExercice.metierPharmacien"
 * code[typeActiviteLiberale] -> "SituationExercice.typeActiviteLiberale"
 * code[statutProfessionnelSSA] -> "SituationExercice.statutPS_SSA"
 * period.start -> "SituationExercice.dateDebutActivite"
 * period.end -> "SituationExercice.dateFinActivite"
+
 * telecom -> "SituationExercice.telecommunication"
+* telecom.system -> "SituationExercice.telecommunication.canal"
+* telecom.value -> "SituationExercice.telecommunication.adresseTelecom"
+* telecom.use -> "SituationExercice.telecommunication.utilisation"
+
 * telecom[mailbox-mss] -> "SituationExercice.boiteLettresMSS"
