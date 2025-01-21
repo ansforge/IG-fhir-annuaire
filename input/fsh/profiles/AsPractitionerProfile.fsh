@@ -28,6 +28,12 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * identifier[idNatPs] MS
 * identifier[idNatPs].type 1..1
 
+* identifier[rpps] MS
+* identifier[rpps].type 1..1
+
+* identifier[adeli] MS
+* identifier[adeli].type 1..1
+
 // // Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
 // * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
 // * identifier[identifiantInterne].system 1..1
