@@ -38,7 +38,7 @@ Modifications apportées dans la release [1.0.1](https://github.com/ansforge/IG-
 
 ### Release 1.0.0 de l'Implementation Guide Annuaire
 
-Modifications apportées dans la release [1.0.1](https://github.com/ansforge/IG-fhir-annuaire/milestone/7?closed=1) :
+Modifications apportées dans la release [1.0.0](https://github.com/ansforge/IG-fhir-annuaire/milestone/7?closed=1) :
 
 * Profilage de la ressource Person : Person (définition du professionnel en tant que personne physique) --> Practitioner (Exercice professionnel) --> PractitionerRole (Situation d`exercice) + déplacement des extensions [121](https://github.com/ansforge/IG-fhir-annuaire/pull/121).
 * Ajout du NOS en dépendance [149](https://github.com/ansforge/IG-fhir-annuaire/pull/149).
