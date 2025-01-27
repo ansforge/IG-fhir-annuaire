@@ -5,17 +5,38 @@ Les profils spécifient le format de données exposées par l'API Annuaire. Cert
 Ces profils génériques n'ont pas de contraintes fortes pour être héritées facilement par les autres guides tel que les volets du CI-SIS. Ces contraintes pourront être réutilisées progressivement au sein des profils d'InteropSanté.
 Ces profils héritent des ressources de base FHIR ou bien des profils InteropSanté
 
-{% sql SELECT '[' || Title ||'](StructureDefinition-' || id || '.html)' as "Titre du profil", Description FROM Resources WHERE Type = 'StructureDefinition' and Description like "Profil générique%" %}
-<!-- like "%Profil%" rajouté car induit une erreur si vide -->
+
+{% sql {
+    "query" : " select name as Name, Description, Web from Resources WHERE Type = 'StructureDefinition' and Description like 'Profil générique%' ",
+    "class" : "lines",
+    "columns" : [
+        { "title" : "Titre du profil", "type" : "link", "source" : "Name", "target" : "Web"},
+        { "title" : "Description", "type" : "markdown", "source" : "Description"}
+    ]
+} %}
 
 ### Liste des profils applicatifs - données publiques
 
 Liste des profils applicatifs héritant des profils génériques pour détailler les ressources exposées en accès libre par l'API données publiques.
 
-{% sql SELECT '[' || Title ||'](StructureDefinition-' || id || '.html)' as "Titre du profil", Description FROM Resources WHERE Type = 'StructureDefinition' and Description like "Profil public%" %}
+{% sql {
+    "query" : " select name as Name, Description, Web from Resources WHERE Type = 'StructureDefinition' and Description like 'Profil public%' ",
+    "class" : "lines",
+    "columns" : [
+        { "title" : "Titre du profil", "type" : "link", "source" : "Name", "target" : "Web"},
+        { "title" : "Description", "type" : "markdown", "source" : "Description"}
+    ]
+} %}
 
 ### Liste des profils applicatifs - données restreintes
 
 Liste des profils applicatifs héritant des profils génériques pour détailler les ressources exposées en accès restreint.
 
-{% sql SELECT '[' || Title ||'](StructureDefinition-' || id || '.html)' as "Titre du profil", Description FROM Resources WHERE Type = 'StructureDefinition' and Description like "Profil restreint%" %}
+{% sql {
+    "query" : " select name as Name, Description, Web from Resources WHERE Type = 'StructureDefinition' and Description like 'Profil restreint%' ",
+    "class" : "lines",
+    "columns" : [
+        { "title" : "Titre du profil", "type" : "link", "source" : "Name", "target" : "Web"},
+        { "title" : "Description", "type" : "markdown", "source" : "Description"}
+    ]
+} %}
