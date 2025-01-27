@@ -1,17 +1,15 @@
 ### Release 1.1.0 de l'Implementation Guide Annuaire
 
+Modifications apportées dans la release [1.1.0](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
+
 * Ajout du mapping MOS [250](https://github.com/ansforge/IG-fhir-annuaire/pull/250)
 * Correction slicing telecom:mailbox-mss sur les profils Practitioner, Organization, PractitionerRole [244](https://github.com/ansforge/IG-fhir-annuaire/pull/244)
 * Ajout tags MS sur identifier PractitionerDP [243](https://github.com/ansforge/IG-fhir-annuaire/pull/243)
 * Suppression de JDVs internes à l'IG au profit de ceux définis par le NOS [247](https://github.com/ansforge/IG-fhir-annuaire/pull/247)
 
-Modifications apportées dans la release [snapshot-4](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
-
 * (snapshot-4) Ajout du CS et VS typeEtablissement ainsi que du binding (PRIMAIRE / SECONDAIRE) [235](https://github.com/ansforge/IG-fhir-annuaire/pull/235)
 * (snapshot-4) Mise à jour profils HealthcareService (CODE ACT SOIN, date installation) [233](https://github.com/ansforge/IG-fhir-annuaire/pull/233)
 * (snapshot-4) Suppression numéro ADELI suite au décommissionement national [240](https://github.com/ansforge/IG-fhir-annuaire/pull/240)
-
-Modifications apportées dans la release [snapshot-3](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
 
 * (snapshot-3) Ajout de champs manquants [220](https://github.com/ansforge/IG-fhir-annuaire/pull/220)
 * (snapshot-3) Mise à jour du contexte de l`extension MSS [221](https://github.com/ansforge/IG-fhir-annuaire/pull/221)
@@ -20,16 +18,12 @@ Modifications apportées dans la release [snapshot-3](https://github.com/ansforg
 * (snapshot-3) Mise à jour des métadonnées MSS pour éclaircir l`usage du booléen listeRouge [231](https://github.com/ansforge/IG-fhir-annuaire/pull/231)
 * (snapshot-3) Interdiction de l`usage de Practitioner.qualification.period [232](https://github.com/ansforge/IG-fhir-annuaire/pull/232)
 
-Modifications apportées dans la release [snapshot-2](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
-
 * (snapshot-2) Mise à jour des system des identifiants RPPS & ADELI des PractitionerRole [209](https://github.com/ansforge/IG-fhir-annuaire/pull/209)
 * (snapshot-2) Suppression de relicats d`url en interopsante.org [214](https://github.com/ansforge/IG-fhir-annuaire/pull/214)
 * (snapshot-2) Mise à jour de l`extension AsAuthorizationExtension (changement de nom et de contexte) [211](https://github.com/ansforge/IG-fhir-annuaire/pull/211)
 * (snapshot-2) Ajout d`une première version des exemples [142](https://github.com/ansforge/IG-fhir-annuaire/pull/142)
 * (snapshot-2) Correction OrganizationType ValueSet [218](https://github.com/ansforge/IG-fhir-annuaire/pull/218)
 * (snapshot-2) Mise à jour de FrCore en version courante [219](https://github.com/ansforge/IG-fhir-annuaire/pull/219)
-
-Modifications apportées dans la release [snapshot](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
 
 * (snapshot) Mise à jour des system des identifiants RPPS & ADELI des PractitionerRole [209](https://github.com/ansforge/IG-fhir-annuaire/pull/209)
 * (snapshot) Suppression de relicats d`url en interopsante.org [214](https://github.com/ansforge/IG-fhir-annuaire/pull/214)
@@ -38,9 +32,13 @@ Modifications apportées dans la release [snapshot](https://github.com/ansforge/
 
 ### Release 1.0.1 de l'Implementation Guide Annuaire
 
+Modifications apportées dans la release [1.0.1](https://github.com/ansforge/IG-fhir-annuaire/milestone/6?closed=1) :
+
 * Mise à jour de la dépendance FrCore [205](https://github.com/ansforge/IG-fhir-annuaire/pull/205)
 
 ### Release 1.0.0 de l'Implementation Guide Annuaire
+
+Modifications apportées dans la release [1.0.1](https://github.com/ansforge/IG-fhir-annuaire/milestone/7?closed=1) :
 
 * Profilage de la ressource Person : Person (définition du professionnel en tant que personne physique) --> Practitioner (Exercice professionnel) --> PractitionerRole (Situation d`exercice) + déplacement des extensions [121](https://github.com/ansforge/IG-fhir-annuaire/pull/121).
 * Ajout du NOS en dépendance [149](https://github.com/ansforge/IG-fhir-annuaire/pull/149).
