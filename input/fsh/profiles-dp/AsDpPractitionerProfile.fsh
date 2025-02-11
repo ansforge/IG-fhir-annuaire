@@ -44,23 +44,3 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * extension[as-ext-registration] 0..0
 * extension[as-ext-frpractitioner-authorization] 0..0
 * extension[as-ext-digital-certificate] 0..0
-
-ValueSet: AsVSInterneIdSystems
-Id: as-vs-intern-id-systems
-Title: "AS ValueSet Internal Identifier Systems"
-Description: "ValueSet contenant les identifiants internes"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-* include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems
-
-// SVS profile
-* ^experimental = false
-
-
-CodeSystem: AsCSInterneIdSystems
-Id: as-cs-intern-id-systems
-Title: "AS CodeSystem Internal Identifier Systems"
-Description: "CodeSystem contenant les identifiants locaux"
-* #finess.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure FINESS"
-* #siren.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure SIREN"
-* #siret.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure SIRET"
-* #rpps.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant du cabinet RPPS"
