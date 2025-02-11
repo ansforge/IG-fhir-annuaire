@@ -13,19 +13,10 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 //// cardinalty 
 * identifier.period 0..0
 * identifier.assigner 0..0 
-//// Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
-
-* identifier contains identifiantInterne 0..1 MS 
 
 * identifier[idNatPs] 1..1 MS
 * identifier[rpps] 1..1 MS
 
-* identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
-* identifier[identifiantInterne].system 1..1
-* identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
-* identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr"
-* identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps et yyyyy l'identifiant local."
-* identifier[identifiantInterne].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#INTRN
 // active
 
 * active 1..1 // 'true' par défaut, 'false' pour notifier aux clients du mode delta les practitioner supprimées entre 2 dates, dans ce cas seuls l'id et le champs active sont renseignés.
@@ -53,23 +44,3 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * extension[as-ext-registration] 0..0
 * extension[as-ext-frpractitioner-authorization] 0..0
 * extension[as-ext-digital-certificate] 0..0
-
-ValueSet: AsVSInterneIdSystems
-Id: as-vs-intern-id-systems
-Title: "AS ValueSet Internal Identifier Systems"
-Description: "ValueSet contenant les identifiants internes"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-* include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems
-
-// SVS profile
-* ^experimental = false
-
-
-CodeSystem: AsCSInterneIdSystems
-Id: as-cs-intern-id-systems
-Title: "AS CodeSystem Internal Identifier Systems"
-Description: "CodeSystem contenant les identifiants locaux"
-* #finess.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure FINESS"
-* #siren.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure SIREN"
-* #siret.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant de la structure SIRET"
-* #rpps.interne.esante.gouv.fr "Système de l'identifiant interne basé sur l'identifiant du cabinet RPPS"
