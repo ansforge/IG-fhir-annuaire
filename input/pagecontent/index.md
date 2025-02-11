@@ -31,7 +31,6 @@ En publiant ces données, le service Annuaire Santé permet à ces clients de v�
 
 Les nouveaux services de publication de l'Annuaire Santé permettent d’exposer ce référentiel, via une API RESTful, au format JSON, structurés selon la norme d’interopérabilité FHIR.
 L'objectif de ce projet est de définir les profils Annuaire Santé exposés par l'API FHIR.
-Ce guide d'implémentation remplace l'ancien package ANS.annuaire.fhir.r4 0.2.0.
 
 ##### Ressources profilées
 
