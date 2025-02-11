@@ -20,7 +20,7 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
     listeRouge 0..1
 
 // typeBAL
-* extension[type] ^short = "typeBAL : Type de boîte aux lettres.\r\nValeurs possibles :\r\nORG pour une BAL organisationnelle;\r\nAPP pour une BAL applicative;\r\nPER pour une BAL personnelle, rattachée à une personne physique"
+* extension[type] ^short = "typeBAL : Type de boîte aux lettres.\r\nValeurs possibles : ORG | APP | PER | CAB"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from $JDV-J139-TypeBAL-RASS (required)
 
