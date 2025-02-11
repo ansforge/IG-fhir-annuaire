@@ -52,7 +52,6 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 // extensions
 * extension[as-ext-registration] 0..0
 * extension[as-ext-frpractitioner-authorization] 0..0
-* extension[as-ext-smartcard] 0..1
 * extension[as-ext-digital-certificate] 0..0
 
 ValueSet: AsVSInterneIdSystems
