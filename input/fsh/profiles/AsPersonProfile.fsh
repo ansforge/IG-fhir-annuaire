@@ -47,6 +47,8 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 * telecom MS
 * telecom ^short = "[DR] : telecommunication"
 * telecom only $FrContactPoint
+* telecom.extension[emailType] 0..0 // L'adresse email de la personne physique est uniquement son adresse perso
+
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom.system ^short = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
 * telecom.use ^comment = "« old » si les coordonnées de correspondance ont une date de fin"
