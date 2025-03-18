@@ -35,5 +35,5 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 * extension[period].valuePeriod.end ^short = "dateFinValidite : Date de fin de validité de la carte"
 
 // dateOpposition
-* extension[oppositionDate] ^short = "dateOpposition : Date de mise en opposition de la carte."
+* extension[oppositionDate] ^short = "dateOpposition : Date d'opposition de la carte."
 * extension[oppositionDate].value[x] only dateTime
