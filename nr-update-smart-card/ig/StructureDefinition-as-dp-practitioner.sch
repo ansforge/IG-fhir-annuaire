@@ -44,7 +44,7 @@
       <sch:assert test="count(f:extension[@url = 'type']) &lt;= 1">extension with URL = 'type': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'number']) &lt;= 1">extension with URL = 'number': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'period']) &lt;= 1">extension with URL = 'period': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'oppositionDate']) &lt;= 1">extension with URL = 'oppositionDate': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'oppositionDate']) &lt;= 0">extension with URL = 'oppositionDate': maximum cardinality of 'extension' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
