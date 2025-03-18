@@ -77,6 +77,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
 
+
 // adresseCorrespondance
 * address MS
 * address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."

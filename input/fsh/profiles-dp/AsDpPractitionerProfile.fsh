@@ -20,13 +20,19 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 // active
 
 * active 1..1 // 'true' par défaut, 'false' pour notifier aux clients du mode delta les practitioner supprimées entre 2 dates, dans ce cas seuls l'id et le champs active sont renseignés.
+
 // name
 * name 0..1
+* name.period 0..0
+
+
 // telecommunication - boiteLettreMSS
 * telecom ^slicing.rules = #closed // only boiteLettreMSS is an open data
+
 // mailbox-mss - Donnees privees
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[responsible] 0..0
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[listeRouge] 0..0
 
 // adresseCorrespondance
 * address 0..0
