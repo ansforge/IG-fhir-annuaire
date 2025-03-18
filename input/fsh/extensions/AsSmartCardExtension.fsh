@@ -16,8 +16,7 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
     type 0..1 and
     number 0..1 and
     period 0..1 and
-    cancellationDate 0..1 and
-    date 0..*
+    oppositionDate 0..1
 
 // 	typeCarte
 * extension[type] ^short = "typeCarte : Type de carte de professionnel (CPx)"
@@ -36,5 +35,5 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 * extension[period].valuePeriod.end ^short = "dateFinValidite : Date de fin de validité de la carte"
 
 // dateOpposition
-* extension[cancellationDate] ^short = "dateOpposition : Date de mise en opposition de la carte."
-* extension[cancellationDate].value[x] only dateTime
+* extension[oppositionDate] ^short = "dateOpposition : Date de mise en opposition de la carte."
+* extension[oppositionDate].value[x] only dateTime
