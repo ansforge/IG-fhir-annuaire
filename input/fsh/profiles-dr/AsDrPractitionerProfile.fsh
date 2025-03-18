@@ -15,4 +15,5 @@ Description: 	"Profil restreint créé à partir de as-practitioner dans le cont
 * name 0..1
 // certificat
 * extension[as-ext-digital-certificate].extension[domain] ..0 // Cardinalité : 0..0 pour les personnes physiques ; 0..1 pour les structures
+* extension[as-ext-smartcard].extension[oppositionDate] MS
 
