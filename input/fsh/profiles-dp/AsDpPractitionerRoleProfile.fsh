@@ -8,6 +8,8 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * meta.profile[as-dp-canonical] = Canonical(as-dp-practitionerrole)
 * meta.profile[fr-canonical] 1..1
 
+* identifier[idSituationExercice] 1..1 MS
+
 * practitioner 1..1 
 * organization 0..1
 * location 0..0

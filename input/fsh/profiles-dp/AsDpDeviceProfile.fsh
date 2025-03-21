@@ -11,6 +11,8 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-device)
 
+* identifier[numAutorisationArhgos] 1..1
+
 * status 1..1
 * definition 0..0
 * udiCarrier 0..0

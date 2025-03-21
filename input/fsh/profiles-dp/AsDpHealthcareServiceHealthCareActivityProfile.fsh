@@ -12,6 +12,8 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-healthcare-activity)
 
+* identifier[numAutorisationArhgos] 1..1
+
 
 * active 1..1 // true par défaut; false pour  flaguer les activités de soins supprimées entre deux dates pour permettre aux utilisateurs du delta d'identifier les ressources supprimées. 
 * specialty 0..0
