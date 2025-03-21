@@ -13,8 +13,10 @@ Description: """Profil public applicatif créé à partir du profil générique 
 
 
 * active 1..1
+
 * identifier[numAutorisationArhgos] 0..0
 * identifier ..0
+
 * category 0..0
 * specialty 0..0
 * location 0..0
