@@ -2,6 +2,13 @@
 
 Modifications apportées dans la release [1.1.0](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
 
+* (1.1.0-snapshot-6) MAJ cardinalités identifier Device, HealthcareService, PractitionerRole (numAutorisationArhgos et idSituationExercice) [258](https://github.com/ansforge/IG-fhir-annuaire/pull/258)
+* (1.1.0-snapshot-6) Suppression Organization.identifier[identifiantInterne], de Practitioner dp : booléen listeRouge et name.period [261](https://github.com/ansforge/IG-fhir-annuaire/pull/261)
+* (1.1.0-snapshot-6) MAJ smartcard (renommer cancellationDate en oppositionDate et suppression date)[260](https://github.com/ansforge/IG-fhir-annuaire/pull/260)
+* (1.1.0-snapshot-6) Suppression identifiant interne du Practitioner [259](https://github.com/ansforge/IG-fhir-annuaire/pull/259)
+
+* (1.1.0-snapshot-6) MAJ JDV Country (Passage de J74 à J256) [258](https://github.com/ansforge/IG-fhir-annuaire/pull/258)
+
 * (1.1.0-snapshot-5) Changement address district (département) JDV et ajout de la possibilité d'avoir deux cartes CPS pour le PractitionerDP [254](https://github.com/ansforge/IG-fhir-annuaire/pull/254)
 * (1.1.0-snapshot-5) Mise à jour JDV Country (de J74 à J256) [258](https://github.com/ansforge/IG-fhir-annuaire/pull/258)
 * (1.1.0-snapshot-5) Suppression de l'identifiant interne du Practitioner [259](https://github.com/ansforge/IG-fhir-annuaire/pull/259)
