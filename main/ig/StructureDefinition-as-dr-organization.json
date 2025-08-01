@@ -10,7 +10,7 @@
   "name" : "AsDrOrganizationProfile",
   "title" : "AS Donnée Restreinte Organization Profile",
   "status" : "active",
-  "date" : "2025-07-25T09:39:16+00:00",
+  "date" : "2025-08-01T06:15:10+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -870,11 +870,10 @@
       "type" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "id"
+          "valueUrl" : "string"
         }],
         "code" : "http://hl7.org/fhirpath/System.String"
       }],
-      "condition" : ["ele-1"],
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
@@ -910,6 +909,7 @@
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       },
       {
@@ -917,6 +917,7 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
@@ -955,7 +956,7 @@
       "id" : "Organization.extension:usePeriod.value[x]",
       "path" : "Organization.extension.value[x]",
       "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -966,12 +967,12 @@
       "type" : [{
         "code" : "Period"
       }],
-      "condition" : ["ext-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
       "isModifier" : false,

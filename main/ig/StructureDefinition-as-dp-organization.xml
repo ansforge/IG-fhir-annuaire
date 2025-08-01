@@ -61,7 +61,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
   <name value="AsDpOrganizationProfile"/>
   <title value="AS Donnée Publique Organization Profile"/>
   <status value="active"/>
-  <date value="2025-07-25T09:39:16+00:00"/>
+  <date value="2025-08-01T06:15:10+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -888,11 +888,10 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       </base>
       <type>
         <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="id"/>
+          <valueUrl value="string"/>
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
-      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -927,6 +926,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="All FHIR elements must have a @value or children"/>
         <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <constraint>
@@ -934,6 +934,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -969,7 +970,7 @@ Il s’agit généralement de structures enregistrées temporairement par les or
     <element id="Organization.extension:usePeriod.value[x]">
       <path value="Organization.extension.value[x]"/>
       <short value="Value of extension"/>
-      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list)."/>
+      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list)."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -980,12 +981,12 @@ Il s’agit généralement de structures enregistrées temporairement par les or
       <type>
         <code value="Period"/>
       </type>
-      <condition value="ext-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
         <human value="All FHIR elements must have a @value or children"/>
         <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="false"/>
