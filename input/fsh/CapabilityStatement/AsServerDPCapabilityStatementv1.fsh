@@ -1,7 +1,7 @@
-Instance: AsServerCapabilityStatement
+Instance: AsServerDPCapabilityStatementv1
 InstanceOf: CapabilityStatement
 Usage: #definition
-* name = "AsRestServer"
+* name = "AsDPRestServerv1"
 * status = #active
 * date = "2024-03-23T13:49:59.485+00:00"
 * publisher = "ANS"
