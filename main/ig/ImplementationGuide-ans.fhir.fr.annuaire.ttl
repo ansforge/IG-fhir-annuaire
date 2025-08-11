@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2025-08-11T13:13:41+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-08-11T17:10:25+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -1868,6 +1868,24 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-address-line> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-address-line" ]
+       ] ;
+       fhir:name [ fhir:v "as-sp-address-line" ] ;
+       fhir:description [ fhir:v "Recherche sur la version textuelle de l'adresse" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system> ;
          fhir:reference [ fhir:v "SearchParameter/as-sp-data-information-system" ]
        ] ;
@@ -2012,10 +2030,27 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerCapabilityStatement> ;
-         fhir:reference [ fhir:v "CapabilityStatement/AsServerCapabilityStatement" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatementv1> ;
+         fhir:reference [ fhir:v "CapabilityStatement/AsServerDPCapabilityStatementv1" ]
        ] ;
-       fhir:name [ fhir:v "AsServerCapabilityStatement" ] ;
+       fhir:name [ fhir:v "AsServerDPCapabilityStatementv1" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CapabilityStatement"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatementv2> ;
+         fhir:reference [ fhir:v "CapabilityStatement/AsServerDPCapabilityStatementv2" ]
+       ] ;
+       fhir:name [ fhir:v "AsServerDPCapabilityStatementv2" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
