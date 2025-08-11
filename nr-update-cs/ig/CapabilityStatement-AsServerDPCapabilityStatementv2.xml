@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="AsServerDPCapabilityStatementv2"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narratif généré : CapabilityStatement AsServerDPCapabilityStatementv2</b></p><a name="AsServerDPCapabilityStatementv2"> </a><a name="hcAsServerDPCapabilityStatementv2"> </a><h2 id="title"/><ul><li>Version du guide dimplémentation : {0} </li><li>Version de FHIR : 4.0.1 </li><li>Supported Formats: <code>application/fhir+json</code>, <code>json</code></li><li>Supported Patch Formats: </li><li>Publié sur : 2025-08-11 13:49:59+0000 </li><li>Publié par : Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris </li></ul><blockquote class="impl-note"><p><strong>Note aux implémenteurs : capacités FHIR</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="lead"><em>Summary of System-wide Interactions</em></div></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Résumé</h4><p>Le tableau récapitulatif liste les ressources faisant partie de cette configuration, et pour chaque ressource, il liste :</p><ul><li>The relevant profiles (if any)</li><li>Les interactions supportées par chaque ressource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>!!les types sont seulement présents si au moins une des ressources les prend en charge.</li><li><span>Les paramètres de recherche (SearchParameters) requis, recommandés, optionnels (le cas échéant). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Type de Ressource</b></th><th><b>Profil</b></th><th class="text-center"><b title="GET dune ressource (interaction read)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST dune nouvelle ressource (interaction create)">C</b></th><th><b title="Paramètres de recherche requis et recommandés">Recherches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Opérations</b></th></tr></thead><tbody><tr><td><a href="#Organization1-1">Organization</a></td><td><a href="StructureDefinition-as-dp-organization.html">https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"/><td class="text-center"/><td>_id, _lastUpdated, active, address, address-city, address-line, address-postalcode, data-information-system, data-registration-authority, identifier, identifier-type, mailbox-mss, name, partof, pharmacy-licence, type</td><td><code>*</code>, <code>Organization:partof</code></td><td><code>Device:organization</code>, <code>HealthcareService:organization</code>, <code>PractitionerRole:organization</code></td><td/></tr><tr><td><a href="#Device1-2">Device</a></td><td><a href="StructureDefinition-as-dp-device.html">https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-device</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"/><td class="text-center"/><td>_id, _lastUpdated, data-information-system, data-registration-authority, identifier, manufacturer, model, organization, status, type</td><td><code>*</code>, <code>Device:organization</code></td><td/><td/></tr><tr><td><a href="#Practitioner1-3">Practitioner</a></td><td><a href="StructureDefinition-as-dp-practitioner.html">https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"/><td class="text-center"/><td>_id, _lastUpdated, active, data-information-system, data-registration-authority, family, given, identifier, identifier-type, mailbox-mss, name, number-smartcard, qualification-code, type-smartcard</td><td/><td><code>PractitionerRole:practitioner</code></td><td/></tr><tr><td><a href="#PractitionerRole1-4">PractitionerRole</a></td><td><a href="StructureDefinition-as-dp-practitionerrole.html">https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"/><td class="text-center"/><td>_id, _lastUpdated, active, data-information-system, data-registration-authority, identifier, mailbox-mss, organization, practitioner, role</td><td><code>*</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code></td><td/><td/></tr><tr><td><a href="#HealthcareService1-5">HealthcareService</a></td><td><a href="StructureDefinition-as-dp-healthcareservice-healthcare-activity.html">https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"/><td class="text-center"/><td>_id, _lastUpdated, _profile, active, characteristic, data-information-system, data-registration-authority, identifier, organization, service-category, service-type</td><td><code>*</code>, <code>HealthcareService:organization</code></td><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="Organization1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Organization</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-as-dp-organization.html">AS Donnée Publique Organization Profile</a></div><div class="col-lg-3"><span class="lead">Conformité au Profil</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Résumé des interactions</span><br/><ul><li>Supports <code>search-type</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Paramètres de recherche</span><table class="table table-condensed table-hover"><thead><tr><th>Conformité</th><th>Paramètre</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>Recherche sur l'ID de la ressource Organization.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>Recherche que les ressources Organizations actives.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address</td><td><code>string</code></td><td><div><p>Recherche sur l'adresse de la structure.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address-city</td><td><code>string</code></td><td><div><p>Recherche sur la commune de la structure.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-address-line.html">address-line</a></td><td><code>string</code></td><td><div><p>Recherche sur l'adresse.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address-postalcode</td><td><code>string</code></td><td><div><p>Recherche sur le code postal de la structure.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-information-system.html">data-information-system</a></td><td><code>token</code></td><td><div><p>Recherche sur le système d'information.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-registration-authority.html">data-registration-authority</a></td><td><code>token</code></td><td><div><p>Recherche sur l'autorité d'enregistrement.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Recherche sur tous les identifiants de structures.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier-type</td><td><code>token</code></td><td><div><p>Recherche sur le type d'identifiant.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-mailbox-mss.html">mailbox-mss</a></td><td><code>string</code></td><td><div><p>Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux structures.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Recherche sur la raison sociale des structures.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>partof</td><td><code>reference</code></td><td><div><p>Recherche sur tous les établissements géographiques rattachés à une même entité juridique.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-pharmacy-licence.html">pharmacy-licence</a></td><td><code>string</code></td><td><div><p>Recherche sur le numéro de licence des pharmacies officines.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>Recherche sur le type de structure (entité juridique, entité géographique), le secteur d'activité, la catégorie d'établissement, le code APE/NAF, le statut juridique de la structure, les modalités de participation au service hospitalier et le type d'établissement (principal ou secondaire).</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Device1-2" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Device</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-as-dp-device.html">AS Donnée Publique Device Profile</a></div><div class="col-lg-3"><span class="lead">Conformité au Profil</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Résumé des interactions</span><br/><ul><li>Supports <code>search-type</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Paramètres de recherche</span><table class="table table-condensed table-hover"><thead><tr><th>Conformité</th><th>Paramètre</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>Recherche sur l'ID de la ressource Device.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-information-system.html">data-information-system</a></td><td><code>token</code></td><td><div><p>Recherche sur le système d'information.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-registration-authority.html">data-registration-authority</a></td><td><code>token</code></td><td><div><p>Recherche sur l'autorité d'enregistrement.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Recherche sur l'ID de la ressource Device.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>manufacturer</td><td><code>string</code></td><td><div><p>Recherche sur la marque des équipements matériels lourds.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>model</td><td><code>string</code></td><td><div><p>Recherche sur le modèle des équipements matériels lourds.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>organization</td><td><code>reference</code></td><td><div><p>Recherche sur tous les Devices liés à l'Organization indiquée.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>active | inactive | entered-in-error | unknown.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>Recherche sur le type de l'équipement matériel lourd.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Practitioner1-3" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Practitioner</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-as-dp-practitioner.html">AS Donnée Publique Practitioner Profile</a></div><div class="col-lg-3"><span class="lead">Conformité au Profil</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Résumé des interactions</span><br/><ul><li>Supports <code>search-type</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Paramètres de recherche</span><table class="table table-condensed table-hover"><thead><tr><th>Conformité</th><th>Paramètre</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>Recherche sur l'ID de la ressource Practitioner.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>Recherche que les ressources Practitioners actives.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-information-system.html">data-information-system</a></td><td><code>token</code></td><td><div><p>Recherche sur le système d'information.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-registration-authority.html">data-registration-authority</a></td><td><code>token</code></td><td><div><p>Recherche sur l'autorité d'enregistrement.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>family</td><td><code>string</code></td><td><div><p>Recherche sur le nom d'exercice des Professionnels intervenant dans le système de Santé.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>given</td><td><code>string</code></td><td><div><p>Recherche sur le prénom d'exercice des Professionnels intervenant dans le système de Santé.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Recherche sur tous les identifiants des activités intervenant dans le système de Santé.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier-type</td><td><code>token</code></td><td><div><p>Recherche sur le type d'identifiant (Identifiant National des Professionnels intervenant dans le système de Santé (INPS), RPPS, ADELI, etc.).</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-mailbox-mss.html">mailbox-mss</a></td><td><code>string</code></td><td><div><p>Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux Professionnels.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de HumanName. Ici, le préfixe correspond à la civilité des professionnels intervenant dans le système de santé.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-number-smartcard.html">number-smartcard</a></td><td><code>string</code></td><td><div><p>Recherche sur le numéro de carte des Professionnels.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-qualification-code.html">qualification-code</a></td><td><code>token</code></td><td><div><p>Recherche sur le diplôme, l'exercice professionnel et le savoir-faire.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-type-smartcard.html">type-smartcard</a></td><td><code>token</code></td><td><div><p>Recherche sur le type de carte des Professionnels.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="PractitionerRole1-4" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>PractitionerRole</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-as-dp-practitionerrole.html">AS Donnée Publique PractitionerRole Profile</a></div><div class="col-lg-3"><span class="lead">Conformité au Profil</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Résumé des interactions</span><br/><ul><li>Supports <code>search-type</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Paramètres de recherche</span><table class="table table-condensed table-hover"><thead><tr><th>Conformité</th><th>Paramètre</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>Recherche sur l'ID de la ressource PractitionerRole.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>Recherche que les ressources PractitionerRole actives.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-information-system.html">data-information-system</a></td><td><code>token</code></td><td><div><p>Recherche sur le système d'information.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-registration-authority.html">data-registration-authority</a></td><td><code>token</code></td><td><div><p>Recherche sur l'autorité d'enregistrement.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Recherche sur tous les identifiants des activités intervenant dans le système de Santé.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-mailbox-mss.html">mailbox-mss</a></td><td><code>string</code></td><td><div><p>Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux Practitioners.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>organization</td><td><code>reference</code></td><td><div><p>Recherche sur toutes les PractitionerRoles liées aux Organizations.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>practitioner</td><td><code>reference</code></td><td><div><p>Recherche sur toutes les PractitionerRoles liées aux Practitioners spécifiés.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>role</td><td><code>token</code></td><td><div><p>Recherche sur la fonction, le genre d'activité, le mode d'exercice ou la section Tableau des Pharmaciens.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="HealthcareService1-5" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>HealthcareService</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-as-dp-healthcareservice-healthcare-activity.html">AS Donnée Publique HealthcareService Healthcare Activity Profile</a></div><div class="col-lg-3"><span class="lead">Conformité au Profil</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Résumé des interactions</span><br/><ul><li>Supports <code>search-type</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Paramètres de recherche</span><table class="table table-condensed table-hover"><thead><tr><th>Conformité</th><th>Paramètre</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>Recherche sur l'ID de la ressource HealthcareService.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>string</code></td><td><div><p>Sélectionner le profil de la ressource HealthcareService.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>Recherche sur les ressources HealthcareService actives.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>characteristic</td><td><code>token</code></td><td><div><p>Recherche sur le type d'activité des équipements sociaux ou sur la forme d'activité des activités de soins.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-information-system.html">data-information-system</a></td><td><code>token</code></td><td><div><p>Recherche sur le système d'information.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-as-sp-data-registration-authority.html">data-registration-authority</a></td><td><code>token</code></td><td><div><p>Recherche sur l'autorité d'enregistrement.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Recherche sur l'identifiant des équipements sociaux ou des activités de soins.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>organization</td><td><code>reference</code></td><td><div><p>Recherche sur tous les équipements sociaux ou activités de soins rattachés à une Organization.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>service-category</td><td><code>token</code></td><td><div><p>Recherche sur la modalité des activités de soins.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>service-type</td><td><code>token</code></td><td><div><p>Recherche sur la discipline des équipements sociaux ou sur l'activité sanitaire régulée des activités de soins.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
+  </text>
+  <url value="https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatementv2"/>
+  <version value="1.1.0"/>
+  <status value="active"/>
+  <date value="2025-08-11T13:49:59.485+00:00"/>
+  <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
+  <contact>
+    <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://esante.gouv.fr"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="monserviceclient.annuaire@esante.gouv.fr"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="FR"/>
+      <display value="FRANCE"/>
+    </coding>
+  </jurisdiction>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="Organization"/>
+      <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchInclude value="Organization:partof"/>
+      <searchRevInclude value="Device:organization"/>
+      <searchRevInclude value="HealthcareService:organization"/>
+      <searchRevInclude value="PractitionerRole:organization"/>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'ID de la ressource Organization."/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée."/>
+      </searchParam>
+      <searchParam>
+        <name value="active"/>
+        <type value="token"/>
+        <documentation value="Recherche que les ressources Organizations actives."/>
+      </searchParam>
+      <searchParam>
+        <name value="address"/>
+        <type value="string"/>
+        <documentation value="Recherche sur l'adresse de la structure."/>
+      </searchParam>
+      <searchParam>
+        <name value="address-city"/>
+        <type value="string"/>
+        <documentation value="Recherche sur la commune de la structure."/>
+      </searchParam>
+      <searchParam>
+        <name value="address-line"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-address-line"/>
+        <type value="string"/>
+        <documentation value="Recherche sur l'adresse."/>
+      </searchParam>
+      <searchParam>
+        <name value="address-postalcode"/>
+        <type value="string"/>
+        <documentation value="Recherche sur le code postal de la structure."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-information-system"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le système d'information."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-registration-authority"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'autorité d'enregistrement."/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Recherche sur tous les identifiants de structures."/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier-type"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le type d'identifiant."/>
+      </searchParam>
+      <searchParam>
+        <name value="mailbox-mss"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss"/>
+        <type value="string"/>
+        <documentation value="Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux structures."/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+        <documentation value="Recherche sur la raison sociale des structures."/>
+      </searchParam>
+      <searchParam>
+        <name value="partof"/>
+        <type value="reference"/>
+        <documentation value="Recherche sur tous les établissements géographiques rattachés à une même entité juridique."/>
+      </searchParam>
+      <searchParam>
+        <name value="pharmacy-licence"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-pharmacy-licence"/>
+        <type value="string"/>
+        <documentation value="Recherche sur le numéro de licence des pharmacies officines."/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le type de structure (entité juridique, entité géographique), le secteur d'activité, la catégorie d'établissement, le code APE/NAF, le statut juridique de la structure, les modalités de participation au service hospitalier et le type d'établissement (principal ou secondaire)."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Device"/>
+      <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-device"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchInclude value="Device:organization"/>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'ID de la ressource Device."/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-information-system"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le système d'information."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-registration-authority"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'autorité d'enregistrement."/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'ID de la ressource Device."/>
+      </searchParam>
+      <searchParam>
+        <name value="manufacturer"/>
+        <type value="string"/>
+        <documentation value="Recherche sur la marque des équipements matériels lourds."/>
+      </searchParam>
+      <searchParam>
+        <name value="model"/>
+        <type value="string"/>
+        <documentation value="Recherche sur le modèle des équipements matériels lourds."/>
+      </searchParam>
+      <searchParam>
+        <name value="organization"/>
+        <type value="reference"/>
+        <documentation value="Recherche sur tous les Devices liés à l'Organization indiquée."/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="active | inactive | entered-in-error | unknown."/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le type de l'équipement matériel lourd."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Practitioner"/>
+      <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchRevInclude value="PractitionerRole:practitioner"/>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'ID de la ressource Practitioner."/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée."/>
+      </searchParam>
+      <searchParam>
+        <name value="active"/>
+        <type value="token"/>
+        <documentation value="Recherche que les ressources Practitioners actives."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-information-system"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le système d'information."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-registration-authority"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'autorité d'enregistrement."/>
+      </searchParam>
+      <searchParam>
+        <name value="family"/>
+        <type value="string"/>
+        <documentation value="Recherche sur le nom d'exercice des Professionnels intervenant dans le système de Santé."/>
+      </searchParam>
+      <searchParam>
+        <name value="given"/>
+        <type value="string"/>
+        <documentation value="Recherche sur le prénom d'exercice des Professionnels intervenant dans le système de Santé."/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Recherche sur tous les identifiants des activités intervenant dans le système de Santé."/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier-type"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le type d'identifiant (Identifiant National des Professionnels intervenant dans le système de Santé (INPS), RPPS, ADELI, etc.)."/>
+      </searchParam>
+      <searchParam>
+        <name value="mailbox-mss"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss"/>
+        <type value="string"/>
+        <documentation value="Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux Professionnels."/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+        <documentation value="Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de HumanName. Ici, le préfixe correspond à la civilité des professionnels intervenant dans le système de santé."/>
+      </searchParam>
+      <searchParam>
+        <name value="number-smartcard"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-number-smartcard"/>
+        <type value="string"/>
+        <documentation value="Recherche sur le numéro de carte des Professionnels."/>
+      </searchParam>
+      <searchParam>
+        <name value="qualification-code"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-qualification-code"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le diplôme, l'exercice professionnel et le savoir-faire."/>
+      </searchParam>
+      <searchParam>
+        <name value="type-smartcard"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-type-smartcard"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le type de carte des Professionnels."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="PractitionerRole"/>
+      <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchInclude value="PractitionerRole:organization"/>
+      <searchInclude value="PractitionerRole:practitioner"/>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'ID de la ressource PractitionerRole."/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée."/>
+      </searchParam>
+      <searchParam>
+        <name value="active"/>
+        <type value="token"/>
+        <documentation value="Recherche que les ressources PractitionerRole actives."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-information-system"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le système d'information."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-registration-authority"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'autorité d'enregistrement.&#xA;"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Recherche sur tous les identifiants des activités intervenant dans le système de Santé."/>
+      </searchParam>
+      <searchParam>
+        <name value="mailbox-mss"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss"/>
+        <type value="string"/>
+        <documentation value="Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux Practitioners."/>
+      </searchParam>
+      <searchParam>
+        <name value="organization"/>
+        <type value="reference"/>
+        <documentation value="Recherche sur toutes les PractitionerRoles liées aux Organizations."/>
+      </searchParam>
+      <searchParam>
+        <name value="practitioner"/>
+        <type value="reference"/>
+        <documentation value="Recherche sur toutes les PractitionerRoles liées aux Practitioners spécifiés."/>
+      </searchParam>
+      <searchParam>
+        <name value="role"/>
+        <type value="token"/>
+        <documentation value="Recherche sur la fonction, le genre d'activité, le mode d'exercice ou la section Tableau des Pharmaciens."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="HealthcareService"/>
+      <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchInclude value="HealthcareService:organization"/>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'ID de la ressource HealthcareService."/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée."/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="string"/>
+        <documentation value="Sélectionner le profil de la ressource HealthcareService."/>
+      </searchParam>
+      <searchParam>
+        <name value="active"/>
+        <type value="token"/>
+        <documentation value="Recherche sur les ressources HealthcareService actives."/>
+      </searchParam>
+      <searchParam>
+        <name value="characteristic"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le type d'activité des équipements sociaux ou sur la forme d'activité des activités de soins."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-information-system"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system"/>
+        <type value="token"/>
+        <documentation value="Recherche sur le système d'information."/>
+      </searchParam>
+      <searchParam>
+        <name value="data-registration-authority"/>
+        <definition value="https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'autorité d'enregistrement."/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Recherche sur l'identifiant des équipements sociaux ou des activités de soins."/>
+      </searchParam>
+      <searchParam>
+        <name value="organization"/>
+        <type value="reference"/>
+        <documentation value="Recherche sur tous les équipements sociaux ou activités de soins rattachés à une Organization."/>
+      </searchParam>
+      <searchParam>
+        <name value="service-category"/>
+        <type value="token"/>
+        <documentation value="Recherche sur la modalité des activités de soins."/>
+      </searchParam>
+      <searchParam>
+        <name value="service-type"/>
+        <type value="token"/>
+        <documentation value="Recherche sur la discipline des équipements sociaux ou sur l'activité sanitaire régulée des activités de soins."/>
+      </searchParam>
+    </resource>
+  </rest>
+</CapabilityStatement>
