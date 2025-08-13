@@ -335,6 +335,8 @@ Usage: #definition
 * rest.resource[=].searchParam[=].documentation = "Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée. Les préfixes supportés par ce paramètre de recherche sont gt, ge et eq."
 
 * rest.resource[=].searchParam[+].name = "_profile"
+// Commenté car engendre l'erreur - error Cannot find definition for Instance: "http://hl7.org/fhir/SearchParameter/Resource-profile",. Skipping rule.
+
 // * rest.resource[=].searchParam[=].definition = Canonical(Resource-profile)
 * rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[=].documentation = "Sélectionner le profil de la ressource HealthcareService."
