@@ -83,7 +83,7 @@ Usage: #definition
 
 * rest.resource[=].searchParam[+].name = "name"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[=].documentation = "Recherche sur la raison sociale des structures."
+* rest.resource[=].searchParam[=].documentation = "Recherche sur la raison sociale des structures. Les modifiers supportés par ce paramètre de recherche sont contains, exact et text."
 
 * rest.resource[=].searchParam[+].name = "partof"
 * rest.resource[=].searchParam[=].type = #reference
@@ -209,7 +209,7 @@ Usage: #definition
 
 * rest.resource[=].searchParam[+].name = "name"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[=].documentation = "Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de HumanName. Ici, le préfixe correspond à la civilité des professionnels intervenant dans le système de santé."
+* rest.resource[=].searchParam[=].documentation = "Une recherche définie par le serveur qui peut correspondre à n'importe quel champ de HumanName. Ici, le préfixe correspond à la civilité des professionnels intervenant dans le système de santé. Les modifiers supportés par ce paramètre de recherche sont contains, exact et text."
 
 * rest.resource[=].searchParam[+].name = "number-smartcard"
 * rest.resource[=].searchParam[=].definition = Canonical(as-sp-number-smartcard)
