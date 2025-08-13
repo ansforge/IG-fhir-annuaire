@@ -7,9 +7,9 @@ Usage: #definition
 
 * kind = #requirements
 
-* format[0] = #application/fhir+json
 * format[+] = #json
 
+* description = "CapabilityStatement décrivant les attendus de l'API v2 de l'annuaire santé."
 
 // ################
 // # Organization #
