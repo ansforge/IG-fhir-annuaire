@@ -335,13 +335,13 @@ Usage: #definition
 * rest.resource[=].searchParam[=].documentation = "Renvoie uniquement les ressources dont la dernière mise à jour correspond à la période spécifiée. Les préfixes supportés par ce paramètre de recherche sont gt, ge et eq."
 
 * rest.resource[=].searchParam[+].name = "_profile"
-// * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-profile",
-* rest.resource[=].searchParam[=].type = #string
+// * rest.resource[=].searchParam[=].definition = Canonical(Resource-profile)
+* rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[=].documentation = "Sélectionner le profil de la ressource HealthcareService."
 
 * rest.resource[=].searchParam[+].name = "active"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/HealtcareService-active"
+* rest.resource[=].searchParam[=].definition = Canonical(HealthcareService-active)
 * rest.resource[=].searchParam[=].documentation = "Recherche sur les ressources HealthcareService actives."
 
 * rest.resource[=].searchParam[+].name = "characteristic"
