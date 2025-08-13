@@ -10,3 +10,5 @@ Usage: #definition
 * base[+] = #PractitionerRole
 * type = #string
 * expression = "telecom.value"
+* modifier[0] = #contains
+* modifier[+] = #exact
