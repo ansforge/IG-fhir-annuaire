@@ -7,15 +7,6 @@ Usage: #example
   * family = "CHATELIER"
   * given[+] = "David"
 
-  // Nationalité
-* extension[as-ext-person-nationality]
-  * extension[+]
-    * url = "code"
-    * valueCodeableConcept
-      * coding[+]
-        * system = "https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/FHIR/TRE-R20-Pays"
-        * code = #99100
-
 // Lieu de naissance
 * extension[as-ext-person-birth-place]
   * valueAddress

@@ -15,10 +15,8 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsPersonNationalityExtension named as-ext-person-nationality 0..* MS and
     AsPersonBirthPlaceExtension named as-ext-person-birth-place 0..1 MS and
     AsPersonDeceasedDateTimeExtension named as-ext-person-deceased-date-time 0..1 MS
-// L'extension nationality n'existe pas pour la ressource Person.
 
 // Person.active
 * active MS
@@ -72,7 +70,6 @@ Title:    "AsPersonProfile to MOS - PersonnePhysique"
 * -> "PersonnePhysique"
 * extension[as-ext-person-deceased-date-time] -> "PersonnePhysique.dateDeces"
 * extension[as-ext-person-birth-place] -> "PersonnePhysique.lieuNaissance"
-* extension[as-ext-person-nationality] -> "PersonnePhysique.paysNationalite"
 * name.prefix -> "PersonnePhysique.civilite"
 * name.family -> "PersonnePhysique.nomFamille"
 * name.family -> "PersonnePhysique.nomUsage"
