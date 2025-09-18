@@ -42,7 +42,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 // Practitioner.active
 * active MS
-* active ^short = "Cette ressource est-elle active?\ntrue  par défaut; false pour  indiquer que la ressource a été supprimée"
+* active ^short = "Cette ressource est-elle active?\ntrue  par défaut; false pour indiquer que la ressource a été supprimée"
 
 /* Practitioner.name */
 * name MS
