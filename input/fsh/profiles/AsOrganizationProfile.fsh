@@ -2,7 +2,7 @@ Profile: AsOrganizationProfile
 Parent: fr-core-organization
 Id: as-organization
 Title: "AS Organization Profile"
-Description: "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les établissements sanitaires, sociaux et médico-sociaux immatriculés dans le FIchier National des Etablissements Sanitaires et Sociaux (FINESS) ou dans le Répertoire Partagé des Professionnels de Santé(RPPS).
+Description: "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les établissements sanitaires, sociaux et médico-sociaux immatriculés dans le FIchier National des Etablissements Sanitaires et Sociaux (FINESS) ou dans le Répertoire Partagé des Professionnels de Santé (RPPS)."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
