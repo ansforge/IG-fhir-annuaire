@@ -2,7 +2,7 @@ Profile: 		AsPractitionerProfile
 Parent: 		fr-core-practitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
-Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
+Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données liées à l'exercice professionnel d'un professionnel (professions à ordre, professions sans ordre, professionnels à rôle)."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
@@ -36,7 +36,7 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 // Practitioner.active
 * active MS
-* active ^short = "Cette ressource est-elle active?\ntrue  par défaut; false pour  indiquer que la ressource a été supprimés"
+* active ^short = "Cette ressource est-elle active?\ntrue  par défaut; false pour indiquer que la ressource a été supprimée"
 
 /* Practitioner.name */
 * name MS

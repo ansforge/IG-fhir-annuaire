@@ -2,7 +2,7 @@ Profile: AsDeviceProfile
 Parent: Device
 Id: as-device
 Title: "AS Device Profile"
-Description: "Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement."
+Description: "Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les Equipements Matériels Lourds (EML) mis en place au sein d'un établissement."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
