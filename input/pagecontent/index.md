@@ -37,7 +37,7 @@ Ce guide d'implémentation est une spécification qui se concentre principalemen
 
 L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) rassemble les répertoires sectoriels de référence des personnes physiques et personnes morales : le répertoire partagé des professionnels intervenant dans le système de santé (RPPS+), et le répertoire FINESS+. L'Annuaire Santé est un service à usage professionnel destiné aux acteurs des secteurs sanitaire, social et médico-social. Ce service de publication fournit également des données provenant des opérateurs MSSanté, du SI CPX et de l’Assurance Maladie. 
 
-L'API FHIR Annuaire Santé est une API RESTfull au format JSON et structurée selon le standard d'interoperabilité FHIR.
+L'API FHIR Annuaire Santé est une API RESTful au format JSON et structurée selon le standard d'interoperabilité FHIR.
 
 ##### Ressources profilées
 
