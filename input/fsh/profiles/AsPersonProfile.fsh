@@ -29,7 +29,7 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 * name only $FrHumanName
 * name ^short = "Nom issu de l’état-civil."
 // nomFamille/nomUsage
-* name.family ^short = "Le nom civil  (également nommé nom de naissance ou nom de famille)."
+* name.family ^short = "Le nom civil (également nommé nom de naissance ou nom de famille)."
 // prenom/prenomUsuel
 * name.given ^short = "Prénom(s) civil déclarés à la naissance du professionnel."
 // HumanName.prefix
