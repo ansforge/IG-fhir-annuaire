@@ -31,7 +31,7 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 // nomFamille/nomUsage
 * name.family ^short = "Le nom civil (également nommé nom de naissance ou nom de famille)."
 // prenom/prenomUsuel
-* name.given ^short = "Prénom(s) civil déclarés à la naissance du professionnel."
+* name.given ^short = "Prénom(s) civil(s) déclarés à la naissance du professionnel."
 // HumanName.prefix
 * name.prefix ^short = "Civilité du professionnel (civilite)."
 
