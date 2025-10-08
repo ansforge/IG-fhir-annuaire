@@ -18,7 +18,6 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 
 * practitioner 1..1 
 * organization 0..1
-* location 0..0
 * healthcareService 0..0
 
 * active 1..1
