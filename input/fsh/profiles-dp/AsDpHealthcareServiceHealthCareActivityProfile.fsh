@@ -14,6 +14,15 @@ Description: """Profil public applicatif créé à partir du profil générique 
 
 * identifier[numAutorisationArhgos] 1..1
 
+* meta.extension[as-ext-data-trace] MS
+* meta.extension[as-ext-data-trace].extension[date-maj-ae] MS
+* extension[as-ext-authorization] MS
+* identifier[numAutorisationArhgos] MS
+* providedBy MS
+* category MS
+* specialty MS
+* characteristic MS
+
 
 * active 1..1 // true par défaut; false pour  flaguer les activités de soins supprimées entre deux dates pour permettre aux utilisateurs du delta d'identifier les ressources supprimées. 
 * specialty 0..0

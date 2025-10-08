@@ -9,6 +9,15 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * meta.profile[fr-canonical] 1..1
 
 
+* meta.extension[as-ext-data-trace] MS
+* extension[as-ext-registration] MS
+* extension[as-ext-frpractitioner-authorization] MS
+* extension[as-ext-smartcard] MS
+* extension[as-ext-digital-certificate] MS
+* identifier[idNatPs] MS
+* identifier[rpps] MS
+
+
 // identifier
 //// cardinalty 
 * identifier.period 0..0

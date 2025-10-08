@@ -8,29 +8,20 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * meta.extension ^slicing.discriminator.type = #value
 * meta.extension ^slicing.discriminator.path = "url"
 * meta.extension ^slicing.rules = #open
-* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
+* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1
 
-/* donnees metiers */
-
-// Organization.identifier
-// Slices définies dans FrCore
-* identifier[idNatSt] MS
 
 // Organization.active
-* active MS
-* active ^short = "La ressource est-elle active? (active | inactive). true par défaut; false pour les structures supprimées."
+* active ^short = "La ressource est-elle active ? (active | inactive). true par défaut; false pour les structures supprimées."
 
 // Organization.name
-* name MS
 * name ^short = "Raison sociale de la structure (Synonyme : raisonSociale, dénomination)."
 
 // Organization.alias
-* alias MS
 * alias ^short = "Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."
 
 /* champ d'activite de la structure */
 // Slice de FrCoreOrganization
-* type MS
 * type contains
     activiteINSEE 0..1 and
     statutJuridiqueINSEE 0..1 and 
@@ -71,12 +62,10 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * type[secteurActiviteRASS].extension[as-ext-organization-types].valueCode = #secteurActiviteRASS
 
 // adresse
-* address MS
 * address ^short = "adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique."
 * address only AsAddressExtendedProfile
 
 // telecommunication
-* telecom MS
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom.use ^comment = "« old » si les coordonnées de structure ont une date de fin"
 
@@ -104,22 +93,19 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsDigitalCertificateExtension named as-ext-digital-certificate 0..1 MS and
-    AsOrganizationPharmacyLicenceExtension named as-ext-organization-pharmacy-licence 0..* MS and
- 	AsOrganizationPricingModelExtension named as-ext-organization-pricing-model 0..1 MS and
-	AsOrganizationClosingTypeExtension named as-ext-organization-closing-type 0..1 MS and
-	AsOrganizationBudgetTypeExtension named as-ext-organization-budget-type 0..1 MS and
-	AsOrganizationAuthorizationDeadlineExtension named as-ext-organization-authorization-deadline 0..1 MS
+    AsDigitalCertificateExtension named as-ext-digital-certificate 0..1 and
+    AsOrganizationPharmacyLicenceExtension named as-ext-organization-pharmacy-licence 0..* and
+ 	AsOrganizationPricingModelExtension named as-ext-organization-pricing-model 0..1 and
+	AsOrganizationClosingTypeExtension named as-ext-organization-closing-type 0..1 and
+	AsOrganizationBudgetTypeExtension named as-ext-organization-budget-type 0..1 and
+	AsOrganizationAuthorizationDeadlineExtension named as-ext-organization-authorization-deadline 0..1
 	
+
 // digitalCertificate
 * extension[as-ext-digital-certificate] ^short = "[DR] : certificat. Données descriptives du moyen d’identification par certificat."
 
 // numeroLicence pour les officines
 * extension[as-ext-organization-pharmacy-licence] ^short = "Numéro de la licence d'exploitation d’une officine (Synonyme : numeroLicence)."
-
-// Organization.endpoint
-* endpoint MS
-
 
 
 Mapping:  AsOrganizationToMOSEJ

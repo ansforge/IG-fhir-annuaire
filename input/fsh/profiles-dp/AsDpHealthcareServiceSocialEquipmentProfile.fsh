@@ -12,6 +12,17 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-social-equipment)
 
 
+* meta.extension[as-ext-data-trace] MS
+* extension[as-ext-authorization] MS
+* extension[as-ext-installation] MS
+* extension[as-ext-patient-type] MS
+* extension[as-ext-supported-capacity] MS
+* identifier MS
+* type MS
+* eligibility MS
+* characteristic MS
+
+
 * active 1..1
 
 * identifier[numAutorisationArhgos] 0..0

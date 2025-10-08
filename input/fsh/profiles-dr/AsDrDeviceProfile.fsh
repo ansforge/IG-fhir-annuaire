@@ -12,6 +12,14 @@ Description: "Profil restreint applicatif créé à partir du profil générique
 * meta.profile contains as-dr-canonical 1..1
 * meta.profile[as-dr-canonical] = Canonical(as-dr-device)
 
+* meta.extension[as-ext-data-trace] MS
+* extension[as-ext-authorization] MS
+* identifier MS
+* status MS
+* type MS
+* owner MS
+* serialNumber MS
+* manufacturer MS
 
 * definition 0..0
 * udiCarrier 0..0
