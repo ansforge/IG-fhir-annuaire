@@ -14,7 +14,7 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"Device.meta.extension:as-ext-data-trace","Device.meta.extension","as-ext-data-trace","","",0,1,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace]]} {[]}
+"Device.meta.extension:as-ext-data-trace","Device.meta.extension","as-ext-data-trace","","",0,1,"","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace]]} {[]}
 ","DataTrace : Informe sur l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI).","Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Device.meta.versionId","Device.meta.versionId","","","",0,1,"","","Y","id {[]} {[]}
@@ -54,7 +54,7 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Device.extension:as-ext-authorization","Device.extension","as-ext-authorization","","",0,1,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization]]} {[]}
+"Device.extension:as-ext-authorization","Device.extension","as-ext-authorization","","",0,1,"","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization]]} {[]}
 ","AS Authorization Extension","Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -147,7 +147,7 @@ user content","",0,*,"","Y","","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"DomainResource.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"Device.identifier","Device.identifier","","","",0,*,"Y","","","Identifier {[]} {[]}
+"Device.identifier","Device.identifier","","","",0,*,"","","","Identifier {[]} {[]}
 ","Instance identifier","Unique instance identifiers assigned to a device by manufacturers other organizations or owners.","The barcode string from a barcode present on a device label or package may identify the instance, include names given to the device in local usage, or may identify the type of device. If the identifier identifies the type of device, Device.type element should be used.","","","","","","","","",,,,,"","value:system}
 ","Slice based on the identifier.system value",,"open","Device.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".id","FiveWs.identifier","The serial number which is a component of the production identifier (PI), a conditional, variable portion of a UDI.   The identifier.type code should be set to “SNO”(Serial Number) and the system left empty."
@@ -235,7 +235,7 @@ ICCBA DIs for other devices:
 "Device.udiCarrier.entryType","Device.udiCarrier.entryType","","","",0,1,"","","","code {[]} {[]}
 ","barcode | rfid | manual +","A coded entry to indicate how the data was entered.","","Supports a way to distinguish hand entered from machine read data.","","","","","","","",,"required","Codes to identify how UDI data was entered.","http://hl7.org/fhir/ValueSet/udi-entry-type|4.0.1","",,,,"Device.udiCarrier.entryType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","NA"
-"Device.status","Device.status","","","",0,1,"Y","Y","Y","code {[]} {[]}
+"Device.status","Device.status","","","",0,1,"","Y","Y","code {[]} {[]}
 ","Le matériel est-il actif? active | inactive","Status of the Device availability.","This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.","","","","","","","","",,"required","The availability status of the device.","http://hl7.org/fhir/ValueSet/device-status|4.0.1","",,,,"Device.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".statusCode","FiveWs.status"
 "Device.statusReason","Device.statusReason","","","",0,*,"","","","CodeableConcept {[]} {[]}
@@ -245,7 +245,7 @@ ICCBA DIs for other devices:
 ","",0,1,"","","","string {[]} {[]}
 ","The distinct identification string","The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.","For example, this applies to devices in the United States regulated under *Code of Federal Regulation 21CFR§1271.290(c)*.","","","","","","","","",,,,,"",,,,"Device.distinctIdentifier",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".lotNumberText","FiveWs.what[x]","The lot or batch number within which a device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI."
-"Device.manufacturer","Device.manufacturer","","","",0,1,"Y","","","string {[]} {[]}
+"Device.manufacturer","Device.manufacturer","","","",0,1,"","","","string {[]} {[]}
 ","Marque de l'équipement matériel lourd.","A name of the manufacturer.","","","","","","","","","",,,,,"",,,,"Device.manufacturer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","EquipementMaterielLourd.marque",".playedRole[typeCode=MANU].scoper.name","FiveWs.what[x]","N/A"
 "Device.manufactureDate","Device.manufactureDate","","","",0,1,"","","","dateTime {[]} {[]}
@@ -257,7 +257,7 @@ ICCBA DIs for other devices:
 "Device.lotNumber","Device.lotNumber","","","",0,1,"","","","string {[]} {[]}
 ","Lot number of manufacture","Lot number assigned by the manufacturer.","","","","","","","","","",,,,,"",,,,"Device.lotNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".lotNumberText","FiveWs.what[x]","The lot or batch number within which a device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI."
-"Device.serialNumber","Device.serialNumber","","","",0,1,"Y","","","string {[]} {[]}
+"Device.serialNumber","Device.serialNumber","","","",0,1,"","","","string {[]} {[]}
 ","Numéro de série de l'équipement matériel lourd (numeroSerie).","The serial number assigned by the organization when the device was manufactured.","Alphanumeric Maximum 20.","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","EquipementMaterielLourd.numeroSerie",".playedRole[typeCode=MANU].id","FiveWs.what[x]"
 "Device.deviceName","Device.deviceName","","","",0,*,"","","","BackboneElement {[]} {[]}
@@ -289,7 +289,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
 "Device.partNumber","Device.partNumber","","","",0,1,"","","","string {[]} {[]}
 ","The part number of the device","The part number of the device.","Alphanumeric Maximum 20.","","","","","","","","",,,,,"",,,,"Device.partNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playedRole[typeCode=MANU].id","FiveWs.what[x]"
-"Device.type","Device.type","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
+"Device.type","Device.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Code définissant l'équipement matériel lourd (EML) soumis à autorisation.","The kind or type of device.","","","","","","","","","",,"required","","https://mos.esante.gouv.fr/NOS/JDV_J135-EquipementMaterielLourd-RASS/FHIR/JDV-J135-EquipementMaterielLourd-RASS","",,,,"Device.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","EquipementMaterielLourd.equipementMaterielLourd"
 "Device.specialization","Device.specialization","","","",0,*,"","","","BackboneElement {[]} {[]}
@@ -366,7 +366,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Device.patient","Device.patient","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient|4.0.1]]}
 ","Patient to whom Device is affixed","Patient information, If the device is affixed to a person.","","If the device is implanted in a patient, then need to associate the device to the patient.","","","","","","","",,,,,"",,,,"Device.patient",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playedRole[typeCode=USED].scoper.playedRole[typeCode=PAT]","FiveWs.subject[x]","FiveWs.subject"
-"Device.owner","Device.owner","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization], CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization]]}
+"Device.owner","Device.owner","","","",0,1,"","","","Reference {[]} {[CanonicalType[https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization], CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization]]}
 ","Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement matériel lourd (idStructure).","An organization that is responsible for the provision and ongoing maintenance of the device.","","","","","","","","","",,,,,"",,,,"Device.owner",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playedRole[typeCode=OWN].scoper","FiveWs.source"
 "Device.contact","Device.contact","","","",0,*,"","","","ContactPoint {[]} {[]}
