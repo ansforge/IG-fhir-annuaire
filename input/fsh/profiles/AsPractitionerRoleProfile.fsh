@@ -13,7 +13,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 /* profils references */
 * practitioner MS 
 * organization MS
-* location MS
 * healthcareService MS
 
 /* extensions */
@@ -65,9 +64,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * organization only Reference(as-organization)
 
 
-// PractitionerRole.location
-* location ^short = "Adresse(s) géopostale(s) rattachée(s) à la situation d'exercice (adresseSE)."
-
 
 // Slicing au niveau de PractitionerRole.code
 * code ^slicing.discriminator.type = #value
@@ -109,9 +105,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 // Slice 14 : section/sous-section tableau pharmaciens 
 * code[metierPharmacien] ^short = "Section/Sous-section du tableau de l’Ordre des pharmaciens (CNOP) (sectionOrdrePharmacien/sousSectionOrdrePharmacien)." 
 * code[metierPharmacien] from $JDV-J73-MetierPharmacien-RASS (required)
-
-// PractitionerRole.location
-* location ^short = "Référence vers la location dans PractitionerRole.contained représentant les coordonnées de l'activité (idLocation)."
 
 // telecom - PractitionerRole.telecom
 * telecom MS

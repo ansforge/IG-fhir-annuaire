@@ -1,4 +1,4 @@
-Instance: AsServerDPCapabilityStatementv2
+Instance: AsServerDPCapabilityStatement
 InstanceOf: CapabilityStatement
 Usage: #definition
 * status = #active
@@ -9,7 +9,7 @@ Usage: #definition
 
 * format[+] = #json
 
-* description = "CapabilityStatement décrivant les attendus de l'API v2 de l'annuaire santé."
+* description = "CapabilityStatement décrivant les attendus de l'API de l'annuaire santé."
 
 // ################
 // # Organization #
