@@ -16,7 +16,7 @@
   <name value="AsDrPersonProfile"/>
   <title value="AS Donnée Restreinte Person Profile"/>
   <status value="active"/>
-  <date value="2025-10-08T12:14:02+00:00"/>
+  <date value="2025-10-08T12:28:03+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -568,10 +568,6 @@
         <description value="A human language."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/languages|4.0.1"/>
       </binding>
-      <mapping>
-        <identity value="as-person-to-mos-personne-physique"/>
-        <map value="PersonnePhysique.langueParlee"/>
-      </mapping>
     </element>
     <element id="Person.text">
       <path value="Person.text"/>
@@ -671,47 +667,6 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
-    </element>
-    <element id="Person.extension:as-ext-person-nationality">
-      <path value="Person.extension"/>
-      <sliceName value="as-ext-person-nationality"/>
-      <short value="AS Person Nationality Extension"/>
-      <definition value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nationalité du professionel (Person)."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="DomainResource.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality"/>
-      </type>
-      <condition value="ele-1"/>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="as-person-to-mos-personne-physique"/>
-        <map value="PersonnePhysique.paysNationalite"/>
-      </mapping>
     </element>
     <element id="Person.extension:as-ext-person-birth-place">
       <path value="Person.extension"/>
@@ -1130,10 +1085,6 @@
         <map value="PersonnePhysique.nomFamille"/>
       </mapping>
       <mapping>
-        <identity value="as-person-to-mos-personne-physique"/>
-        <map value="PersonnePhysique.nomUsage"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="XPN.1/FN.1"/>
       </mapping>
@@ -1177,10 +1128,6 @@
       <mapping>
         <identity value="as-person-to-mos-personne-physique"/>
         <map value="PersonnePhysique.prenom"/>
-      </mapping>
-      <mapping>
-        <identity value="as-person-to-mos-personne-physique"/>
-        <map value="PersonnePhysique.prenomUsuel"/>
       </mapping>
       <mapping>
         <identity value="v2"/>

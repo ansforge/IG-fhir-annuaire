@@ -42,7 +42,7 @@ This element can be used to indicate where the current master source of a resour
 "
 "Person.language","Person.language","","","",0,1,"","","","code {[]} {[]}
 ","Language of the resource content","The base language in which the resource is written.","Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).","","","","","","","","",,"preferred","A human language.","http://hl7.org/fhir/ValueSet/languages|4.0.1","",,,,"Resource.language",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","PersonnePhysique.langueParlee"
+"
 "Person.text","Person.text","","narrative
 htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 ","Text summary of the resource, for human interpretation","A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it ""clinically safe"" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.","Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a ""text blob"" or where text is additionally entered raw or narrated and encoded information is added later.","","","","","","","","",,,,,"",,,,"DomainResource.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -54,10 +54,6 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Person.extension:as-ext-person-nationality","Person.extension","as-ext-person-nationality","","",0,*,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality]]} {[]}
-","AS Person Nationality Extension","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nationalité du professionel (Person).","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","PersonnePhysique.paysNationalite"
 "Person.extension:as-ext-person-birth-place","Person.extension","as-ext-person-birth-place","","",0,1,"Y","","","Extension {[CanonicalType[https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place]]} {[]}
 ","AS Person Birth Place Extension","Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du lieu de naissance du professionnel en tant que personne physique.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -97,11 +93,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Person.name.family","Person.name.family","","surname
 ","",0,1,"","","Y","string {[]} {[]}
 ","Le nom civil (également nommé nom de naissance ou nom de famille).","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","PersonnePhysique.nomFamille","PersonnePhysique.nomUsage","./part[partType = FAM]","XPN.1/FN.1"
+","PersonnePhysique.nomFamille","./part[partType = FAM]","XPN.1/FN.1"
 "Person.name.given","Person.name.given","","first name
 middle name","",0,*,"","","Y","string {[]} {[]}
 ","Prénom(s) civil(s) déclarés à la naissance du professionnel.","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","PersonnePhysique.prenom","PersonnePhysique.prenomUsuel","./part[partType = GIV]","XPN.2 + XPN.3"
+","PersonnePhysique.prenom","./part[partType = GIV]","XPN.2 + XPN.3"
 "Person.name.prefix","Person.name.prefix","","","",0,1,"","","Y","string {[]} {[]}
 ","Civilité du professionnel (civilite).","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","","","","","","","","","",,"extensible","Civilités des personnes physiques du RASS","https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS","",,,,"HumanName.prefix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","PersonnePhysique.civilite","./part[partType = PFX]","XPN.5"

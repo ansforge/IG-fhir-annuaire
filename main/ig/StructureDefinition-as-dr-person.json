@@ -10,7 +10,7 @@
   "name" : "AsDrPersonProfile",
   "title" : "AS Donnée Restreinte Person Profile",
   "status" : "active",
-  "date" : "2025-10-08T12:14:02+00:00",
+  "date" : "2025-10-08T12:28:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -585,11 +585,7 @@
         "strength" : "preferred",
         "description" : "A human language.",
         "valueSet" : "http://hl7.org/fhir/ValueSet/languages|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "as-person-to-mos-personne-physique",
-        "map" : "PersonnePhysique.langueParlee"
-      }]
+      }
     },
     {
       "id" : "Person.text",
@@ -692,48 +688,6 @@
       }],
       "isModifier" : false,
       "isSummary" : false
-    },
-    {
-      "id" : "Person.extension:as-ext-person-nationality",
-      "path" : "Person.extension",
-      "sliceName" : "as-ext-person-nationality",
-      "short" : "AS Person Nationality Extension",
-      "definition" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nationalité du professionel (Person).",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "DomainResource.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-nationality"]
-      }],
-      "condition" : ["ele-1"],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "mustSupport" : true,
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "as-person-to-mos-personne-physique",
-        "map" : "PersonnePhysique.paysNationalite"
-      }]
     },
     {
       "id" : "Person.extension:as-ext-person-birth-place",
@@ -1164,10 +1118,6 @@
         "map" : "PersonnePhysique.nomFamille"
       },
       {
-        "identity" : "as-person-to-mos-personne-physique",
-        "map" : "PersonnePhysique.nomUsage"
-      },
-      {
         "identity" : "v2",
         "map" : "XPN.1/FN.1"
       },
@@ -1212,10 +1162,6 @@
       "mapping" : [{
         "identity" : "as-person-to-mos-personne-physique",
         "map" : "PersonnePhysique.prenom"
-      },
-      {
-        "identity" : "as-person-to-mos-personne-physique",
-        "map" : "PersonnePhysique.prenomUsuel"
       },
       {
         "identity" : "v2",
