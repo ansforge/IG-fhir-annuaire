@@ -13,7 +13,6 @@
     <sch:title>f:HealthcareService</sch:title>
     <sch:rule context="f:HealthcareService">
       <sch:assert test="count(f:specialty) &lt;= 0">specialty: maximum cardinality of 'specialty' is 0</sch:assert>
-      <sch:assert test="count(f:location) &lt;= 0">location: maximum cardinality of 'location' is 0</sch:assert>
       <sch:assert test="count(f:name) &lt;= 0">name: maximum cardinality of 'name' is 0</sch:assert>
       <sch:assert test="count(f:comment) &lt;= 0">comment: maximum cardinality of 'comment' is 0</sch:assert>
       <sch:assert test="count(f:extraDetails) &lt;= 0">extraDetails: maximum cardinality of 'extraDetails' is 0</sch:assert>

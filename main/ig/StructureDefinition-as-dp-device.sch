@@ -29,7 +29,6 @@
       <sch:assert test="count(f:property) &lt;= 0">property: maximum cardinality of 'property' is 0</sch:assert>
       <sch:assert test="count(f:patient) &lt;= 0">patient: maximum cardinality of 'patient' is 0</sch:assert>
       <sch:assert test="count(f:contact) &lt;= 0">contact: maximum cardinality of 'contact' is 0</sch:assert>
-      <sch:assert test="count(f:location) &lt;= 0">location: maximum cardinality of 'location' is 0</sch:assert>
       <sch:assert test="count(f:url) &lt;= 0">url: maximum cardinality of 'url' is 0</sch:assert>
       <sch:assert test="count(f:note) &lt;= 0">note: maximum cardinality of 'note' is 0</sch:assert>
       <sch:assert test="count(f:safety) &lt;= 0">safety: maximum cardinality of 'safety' is 0</sch:assert>
