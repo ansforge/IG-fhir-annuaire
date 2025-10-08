@@ -181,7 +181,6 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-diplome
 Title:    "AsPractitionerProfile to MOS - Diplome"
 * -> "Diplome"
-* qualification.identifier -> "Diplome.numeroDiplome"
 * qualification.code -> "Diplome.codeDiplome"
 * qualification[degree] -> "Diplome.typeDiplome"
 * qualification[degree].issuer -> "Diplome.lieuFormation"
