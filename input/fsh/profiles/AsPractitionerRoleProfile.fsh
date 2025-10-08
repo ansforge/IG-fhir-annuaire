@@ -32,14 +32,12 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * identifier ^slicing.description = "Slice based on the identifier.system value"
 
 // Contains rule
-* identifier contains idSituationExercice 0..* and numeroAm 0..*
+* identifier contains idSituationExercice 0..*
 
 // PractitionerRole.identifier.system
 * identifier[idSituationExercice] ^short = "Identifiant d'activité propre au RPPS"
 * identifier[idSituationExercice].system = "https://rpps.esante.gouv.fr"
 
-* identifier[numeroAm] ^short = "[Donnée restreinte] : Identifiant d’activité propre à l’Assurance Maladie. format: 9 digits. synonyme: numeroAM"
-* identifier[numeroAm].system = "https://www.ameli.fr"
 
 // PractitionerRole.active
 * active MS
@@ -140,7 +138,6 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-situation-exercice
 Title:    "AsPractitionerRoleProfile to MOS - SituationExercice"
 * -> "SituationExercice"
-* identifier[numeroAm] -> "SituationExercice.numeroAM"
 * code[fonction] -> "SituationExercice.role"
 * code[modeExercice] -> "SituationExercice.modeExercice"
 * code[genreActivite] -> "SituationExercice.genreActivite"
