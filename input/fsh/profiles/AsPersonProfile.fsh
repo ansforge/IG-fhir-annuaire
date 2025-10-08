@@ -2,7 +2,7 @@ Profile: 		AsPersonProfile
 Parent: 		Person
 Id: 			as-person
 Title:			"AS Person Profile"
-Description: 	"Profil générique créé à partir de Person dans le contexte de l'Annuaire Santé pour décrire les différents concepts utilisés pour définir et caractériser un professionnel en tant que personne physique (données restreintes)."
+Description: 	"Profil générique créé à partir de Person dans le contexte de l'Annuaire Santé pour décrire les informations relatives à la Personne Physique (données restreintes)."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
@@ -27,9 +27,9 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 * name only $FrHumanName
 * name ^short = "Nom issu de l’état-civil."
 // nomFamille/nomUsage
-* name.family ^short = "Le nom de famille (également nommé nom de naissance) ou le nom d'usage du professionnel."
+* name.family ^short = "Le nom civil (également nommé nom de naissance ou nom de famille)."
 // prenom/prenomUsuel
-* name.given ^short = "Prénom(s) déclarés à sa naissance du professionnel."
+* name.given ^short = "Prénom(s) civil(s) déclarés à la naissance du professionnel."
 // HumanName.prefix
 * name.prefix ^short = "Civilité du professionnel (civilite)."
 
@@ -45,7 +45,7 @@ Description: 	"Profil générique créé à partir de Person dans le contexte de
 * telecom MS
 * telecom ^short = "[DR] : telecommunication"
 * telecom only $FrContactPoint
-* telecom.extension[emailType] 0..0 // L'adresse email de la personne physique est uniquement son adresse perso
+* telecom.extension[emailType] 0..0 // L'adresse email de la personne physique est uniquement son adresse personnelle
 
 * telecom ^short = "Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom.system ^short = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"

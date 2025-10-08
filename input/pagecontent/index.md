@@ -2,7 +2,7 @@
 
 <p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; width: 65%">
 <b>Healthcare professional Directory Implementation Guide</b><br>
-This implementation guide contains the FHIR profiles of French health professionals and document how the data are exposed in the national API.
+This implementation guide contains the FHIR profiles of French Healthcare professionals directory and documents how the data are exposed in the national API.
 </p>
 
 
@@ -10,7 +10,7 @@ This implementation guide contains the FHIR profiles of French health profession
 <div style="width: 65%">
 <blockquote class="stu-note">
 <p>
-  <b>Attention !</b> Cette version de l'Implementation Guide est en intégration continue (version de travail) et est soumise à des changements réguliers. La version officielle est accessible à l'adresse https://interop.esante.gouv.fr/ig/fhir/annuaire</b>
+  <b>Attention !</b> Cette version du guide d'implémentation est en intégration continue (version de travail) et est soumise à des changements réguliers. La version officielle est accessible à l'adresse https://interop.esante.gouv.fr/ig/fhir/annuaire</b>
 </p>
 </blockquote>
 </div>
@@ -26,16 +26,18 @@ This implementation guide contains the FHIR profiles of French health profession
 </blockquote>
 -->
 
-Ce guide indique la modélisation FHIR les données des professionnels intervenant dans le système de santé en France. Celui-ci a deux objectifs : 1/ décrire les données exposées par l'API nationale Annuaire Santé et 2/ Servir de base à la modélisation FHIR des professionnels en France (cf profils génériques) dans le cadre du CI-SIS par exemple.
-Il est important de noter qu'il se concentre uniquement sur le modèle de données et non sur la solution technique API nationale. Pour en savoir davantage sur le fonctionnement de l'API nationale, il est nécessaire de consulter [la page dédiée](https://ansforge.github.io/annuaire-sante-fhir-documentation)
+L'objectif de ce guide est de présenter la modélisation FHIR des données provenant de l'Annuaire Santé en respectant le standard d'intéroperabilité FHIR. Ce guide d'implémentation a deux objectifs :
+<div class="wysiwyg" markdown="1">
+- Présenter les données publiées par l'API FHIR nationale Annuaire Santé
+- Servir de socle dans la modélisation FHIR des professionnels en France (cf. profils génériques)  
+</div>
+Ce guide d'implémentation est une spécification qui se concentre principalement sur le modèle de données et non sur la solution technique de l'API FHIR Annuaire Santé. Pour en savoir davantage sur le fonctionnement de l'API, veuillez consulter [la documentation dédiée de l'API FHIR](https://ansforge.github.io/annuaire-sante-fhir-documentation)
 
 #### Contexte du projet
 
-L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) est un annuaire national de référence des professionnels de santé, avec les données opposables du RPPS et de FINESS, complétées par les données des CPx, des BAL MSSanté et d'Ameli.fr, pour un usage orienté professionnel. C’est le maillon central de l’identification des acteurs de santé en France.
-En publiant ces données, le service Annuaire Santé permet à ces clients de vérifier l’identité des professionnels de santé, leurs qualifications (diplômes et spécialités) et leurs activités.
+L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) rassemble les répertoires sectoriels de référence des personnes physiques et personnes morales : le répertoire partagé des professionnels intervenant dans le système de santé (RPPS+), et le répertoire FINESS+. L'Annuaire Santé est un service à usage professionnel destiné aux acteurs des secteurs sanitaire, social et médico-social. Ce service de publication fournit également des données provenant des opérateurs MSSanté, du SI CPX et de l’Assurance Maladie. 
 
-Les nouveaux services de publication de l'Annuaire Santé permettent d’exposer ce référentiel, via une API RESTful, au format JSON, structurés selon la norme d’interopérabilité FHIR.
-L'objectif de ce projet est de définir les profils Annuaire Santé exposés par l'API FHIR.
+L'API FHIR Annuaire Santé est une API RESTful au format JSON et structurée selon le standard d'interoperabilité FHIR.
 
 ##### Ressources profilées
 
@@ -43,16 +45,16 @@ L'objectif de ce projet est de définir les profils Annuaire Santé exposés par
     <p>{% include document-overview.svg %}</p>
 </div>
 
-La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci ont été re-profilés pour rajouter les contraintes applicatives dans l'onglet "liste des profils".
+La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci ont été re-profilés pour spécifier les APIs données publiques et données restreintes. Ces profils peuvent être trouvés dans l’onglet "liste des profils".
 
 {% sql SELECT '[' || Title ||'](StructureDefinition-' || id || '.html)' as "Titre du profil", Description, json_extract(Json, '$.baseDefinition') as "URL canonique du profil parent" FROM Resources WHERE Type = 'StructureDefinition' and Description like "Profil générique%" %}
 <!-- like "%Profil%" rajouté car induit une erreur si vide -->
 
 ##### Standards utilisés
 
-Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4. Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est JSON.
+Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4 (R4). Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est le format JSON.
 
-Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Modèle des Objets de Santé [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) gérés par l’ANS est disponible dans le schéma ci-dessous.
+Le schéma ci-dessous met en équivalence les deux concepts suivants : "Modèle des Objets de Santé"[(MOS)](https://esante.gouv.fr/produits-services/mos-nos) géré par l'ANS  et le concept des ressources FHIR de HL7  
 
 <div class="figure" style="width:100%;">
     <img style="height: auto; width: 100%;" src="mappingFHIRAnnuaireSante.png" alt="mapping fhir annuaire" title="mapping fhir annuaire">
@@ -61,13 +63,13 @@ Une mise en équivalence entre les ressources FHIR de HL7 et les concepts du Mod
 #### Liens utiles
 
 * [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
-* [Démonstration](https://portail.openfhir.annuaire.sante.fr/)
+* [Portail de démonstration](https://portail.openfhir.annuaire.sante.fr/)
 
 ### Note
 
-Les exemples associés aux profils au sein de ce guide sont donnés à titre indicatifs et pourront évoluer dans le temps, ils n'ont pas valeur de référence.
+Les exemples associés aux profils au sein de ce guide sont donnés à titre indicatif et pourraient évoluer dans le temps. Ils n'ont pas valeur de référence.
 
-Les attributs marqués du tag MustSupport sont utilisés par l'API Annuaire santé. Ces tags sont uniquement utilisés dans le cadre des profils applicatifs.
+Les attributs marqués du tag MustSupport sont utilisés par l'API Annuaire Santé. Ces tags sont uniquement utilisés dans le cadre des profils applicatifs.
 
 ### Dépendances
 

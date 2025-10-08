@@ -2,7 +2,7 @@ Profile: 		AsPractitionerProfile
 Parent: 		fr-core-practitioner
 Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
-Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."
+Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données liées à l'exercice professionnel d'un professionnel (professions à ordre, professions sans ordre, professionnels à rôle)."
 
 // Data trace
 * meta.extension ^slicing.discriminator.type = #value
@@ -33,16 +33,10 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 * identifier[adeli] 0..0 // Adeli décommissionné, ligne à supprimer au prochain héritage FrCore 
 
-// // Identifiant interne à portée nationale. Celui-ci peut aussi être inclus dans l'idNatPs.
-// * identifier[identifiantInterne] ^short = "Identifiant interne à partée nationale du practicien. L'identifiant interne est composé d'un identifiant local propre à une structure et d'un identifiant national."
-// * identifier[identifiantInterne].system 1..1
-// * identifier[identifiantInterne].system from as-vs-intern-id-systems (required)
-// * identifier[identifiantInterne].system ^short = "Système de l'identifiant parmi les valeurs : finess.local.esante.gouv.fr | siren.local.esante.gouv.fr | siret.local.esante.gouv.fr | rpps.local.esante.gouv.fr "
-// * identifier[identifiantInterne].value ^short = "Valeur de l'identifiant au format xxxxx/yyyyy où xxxxx est l'identifiant finess/siren/siret/rpps et yyyyy l'identifiant local."
 
 // Practitioner.active
 * active MS
-* active ^short = "Cette ressource est-elle active?\ntrue  par défaut; false pour  indiquer que la ressource a été supprimés"
+* active ^short = "Cette ressource est-elle active?\ntrue  par défaut; false pour indiquer que la ressource a été supprimée"
 
 /* Practitioner.name */
 * name MS
@@ -140,21 +134,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // Slice : savoirFaire
 * qualification[savoirFaire].code.coding[savoirFaire] MS
 
-// ValueSet: AsVSInterneIdSystems
-// Id: as-vs-intern-id-systems
-// Title: "Internal Id Systems VS"
-// Description: "Systèmes des identifiants internes"
-// * include codes from system https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems
-
-
-// CodeSystem: AsCSInterneIdSystems
-// Id: as-cs-intern-id-systems
-// Title: "Internal Id Systems"
-// Description: "Systèmes des identifiants locaux"
-// * #finess.interne.esante.gouv.fr "Système de l'identifiant interne FINESS"
-// * #siren.interne.esante.gouv.fr "Système de l'identifiant interne SIREN"
-// * #siret.interne.esante.gouv.fr "Système de l'identifiant interne SIRET"
-// * #rpps.interne.esante.gouv.fr "Système de l'identifiant interne du cabinet RPPS"
 
 Mapping:  AsPractitionerProfileToMOSSavoirFaire
 Source:   AsPractitionerProfile
