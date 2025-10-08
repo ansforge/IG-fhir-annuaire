@@ -19,7 +19,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 
 * category 0..0
 * specialty 0..0
-* location 0..0
 * name 0..0
 * comment 0..0
 * extraDetails 0..0

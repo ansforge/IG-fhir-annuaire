@@ -28,7 +28,6 @@ Description: "Profil restreint applicatif créé à partir du profil générique
 * property 0..0
 * patient 0..0
 * contact 0..0
-* location 0..0
 * url 0..0
 * note 0..0
 * safety 0..0

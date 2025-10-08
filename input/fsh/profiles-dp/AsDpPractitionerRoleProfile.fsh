@@ -14,11 +14,9 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * extension[as-ext-practitionerrole-vitale-accepted] 0..0
 
 * identifier[idSituationExercice] 1..1 MS
-* identifier[numeroAm] 0..0
 
 * practitioner 1..1 
 * organization 0..1
-* location 0..0
 * healthcareService 0..0
 
 * active 1..1

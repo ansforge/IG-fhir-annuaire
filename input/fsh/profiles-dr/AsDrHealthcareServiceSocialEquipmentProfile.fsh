@@ -16,7 +16,6 @@ Description: "Profil restreint applicatif créé à partir du profil générique
 * identifier ..0
 * category 0..0
 * specialty 0..0
-* location 0..0
 * name 0..0
 * comment 0..0
 * extraDetails 0..0

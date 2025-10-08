@@ -13,7 +13,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 /* profils references */
 * practitioner MS 
 * organization MS
-* location MS
 * healthcareService MS
 
 /* extensions */
@@ -33,14 +32,12 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * identifier ^slicing.description = "Slice based on the identifier.system value"
 
 // Contains rule
-* identifier contains idSituationExercice 0..* and numeroAm 0..*
+* identifier contains idSituationExercice 0..*
 
 // PractitionerRole.identifier.system
 * identifier[idSituationExercice] ^short = "Identifiant d'activité propre au RPPS"
 * identifier[idSituationExercice].system = "https://rpps.esante.gouv.fr"
 
-* identifier[numeroAm] ^short = "[Donnée restreinte] : Identifiant d’activité propre à l’Assurance Maladie. format: 9 digits. synonyme: numeroAM"
-* identifier[numeroAm].system = "https://www.ameli.fr"
 
 // PractitionerRole.active
 * active MS
@@ -64,9 +61,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * organization ^short = "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)"
 * organization only Reference(as-organization)
 
-
-// PractitionerRole.location
-* location ^short = "Adresse(s) géopostale(s) rattachée(s) à la situation d'exercice (adresseSE)."
 
 
 // Slicing au niveau de PractitionerRole.code
@@ -110,9 +104,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * code[metierPharmacien] ^short = "Section/Sous-section du tableau de l’Ordre des pharmaciens (CNOP) (sectionOrdrePharmacien/sousSectionOrdrePharmacien)." 
 * code[metierPharmacien] from $JDV-J73-MetierPharmacien-RASS (required)
 
-// PractitionerRole.location
-* location ^short = "Référence vers la location dans PractitionerRole.contained représentant les coordonnées de l'activité (idLocation)."
-
 // telecom - PractitionerRole.telecom
 * telecom MS
 * telecom only $FrContactPoint
@@ -147,7 +138,6 @@ Target:   "https://mos.esante.gouv.fr"
 Id:       as-practitioner-role-to-mos-situation-exercice
 Title:    "AsPractitionerRoleProfile to MOS - SituationExercice"
 * -> "SituationExercice"
-* identifier[numeroAm] -> "SituationExercice.numeroAM"
 * code[fonction] -> "SituationExercice.role"
 * code[modeExercice] -> "SituationExercice.modeExercice"
 * code[genreActivite] -> "SituationExercice.genreActivite"
