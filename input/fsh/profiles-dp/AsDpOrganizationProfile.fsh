@@ -8,7 +8,13 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile[as-dp-canonical] = Canonical(as-dp-organization)
 * meta.profile[fr-canonical] 1..1
 
-* meta.extension[as-ext-data-trace] MS
+* extension[as-ext-digital-certificate] MS
+* extension[as-ext-organization-pharmacy-licence] MS
+* extension[as-ext-organization-pricing-model] MS
+* extension[as-ext-organization-closing-type] MS
+* extension[as-ext-organization-budget-type] MS
+* extension[as-ext-organization-authorization-deadline] MS
+
 * identifier[idNatSt] MS 
 * active MS
 * name MS
@@ -18,13 +24,9 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * telecom MS
 * endpoint MS
 
-* extension[as-ext-digital-certificate] MS
-* extension[as-ext-organization-pharmacy-licence] MS
-* extension[as-ext-organization-pricing-model] MS
-* extension[as-ext-organization-closing-type] MS
-* extension[as-ext-organization-budget-type] MS
-* extension[as-ext-organization-authorization-deadline] MS
 
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
 
 * extension[as-ext-digital-certificate] 0..0
 

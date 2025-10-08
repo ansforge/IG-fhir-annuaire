@@ -4,22 +4,12 @@ Id: as-device
 Title: "AS Device Profile"
 Description: "Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les Equipements Matériels Lourds (EML) mis en place au sein d'un établissement."
 
-// Data trace
-* meta.extension ^slicing.discriminator.type = #value
-* meta.extension ^slicing.discriminator.path = "url"
-* meta.extension ^slicing.rules = #open
-* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 
-
 
 // extensions
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains AsAuthorizationExtension named as-ext-authorization 0..1
-
-
-
-
 
 /* device.identifier */
 * identifier ^slicing.discriminator.type = #value
@@ -33,7 +23,7 @@ Description: "Profil générique créé à partir de Device dans le contexte de 
 * identifier[numAutorisationArhgos].system = "https://arhgos.ars.sante.fr"
 
 // actif
-* status ^short = "Le matériel est-il actif? active | inactive"
+* status ^short = "Le matériel est-il actif ? active | inactive"
 
 // marque
 * manufacturer ^short = "Marque de l'équipement matériel lourd."

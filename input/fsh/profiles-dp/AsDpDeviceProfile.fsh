@@ -11,8 +11,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-device)
 
-
-* meta.extension[as-ext-data-trace] MS
 * extension[as-ext-authorization] MS
 * identifier MS
 * status MS
@@ -21,6 +19,8 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * serialNumber MS
 * manufacturer MS
 
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
 
 * identifier[numAutorisationArhgos] 1..1
 

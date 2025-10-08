@@ -11,8 +11,6 @@ Description: 	"Profil restreint créé à partir de as-person dans le contexte d
 * meta.profile contains as-dr-canonical 1..1
 * meta.profile[as-dr-canonical] = Canonical(as-dr-person)
 
-
-* meta.extension[as-ext-data-trace] MS
 * extension[as-ext-person-birth-place] MS
 * extension[as-ext-person-deceased-date-time] MS
 * active MS
@@ -23,6 +21,8 @@ Description: 	"Profil restreint créé à partir de as-person dans le contexte d
 * photo MS
 * link[as-practitioner-exercice-professionnel] MS
 
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
 
 * name 0..1
 * photo 0..0

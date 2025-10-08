@@ -3,13 +3,6 @@ Parent: HealthcareService
 Id: as-healthcareservice-social-equipment
 Title: "AS HealthcareService Social Equipment Profile"
 Description: "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS (ex : Hébergement de personnes handicapées, hébergement de personnes âgées, services médico-sociaux à domicile, ...)."
-// Data trace
-* meta.extension ^slicing.discriminator.type = #value
-* meta.extension ^slicing.discriminator.path = "url"
-* meta.extension ^slicing.rules = #open
-* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1
-
-
 
 /* extensions */
 * extension ^slicing.discriminator.type = #value

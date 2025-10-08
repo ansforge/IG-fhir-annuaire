@@ -11,8 +11,6 @@ Description: "Profil restreint applicatif créé à partir du profil générique
 * meta.profile contains as-dr-canonical 1..1
 * meta.profile[as-dr-canonical] = Canonical(as-dr-healthcareservice-healthcare-activity)
 
-* meta.extension[as-ext-data-trace] MS
-* meta.extension[as-ext-data-trace].extension[date-maj-ae] MS
 * extension[as-ext-authorization] MS
 * identifier[numAutorisationArhgos] MS
 * providedBy MS
@@ -20,7 +18,11 @@ Description: "Profil restreint applicatif créé à partir du profil générique
 * specialty MS
 * characteristic MS
 
-
+// Data trace
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
+* meta.extension[as-ext-data-trace].extension[date-maj-ae] MS
+* meta.extension[as-ext-data-trace].extension[date-maj-ae] ^short = "Date maj de l'activité selon l'autorité d'enregistrement"
 
 * specialty 0..0
 * name 0..0

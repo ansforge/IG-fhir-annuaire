@@ -13,7 +13,6 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * extension[as-ext-practitionerrole-hascas] 0..0
 * extension[as-ext-practitionerrole-vitale-accepted] 0..0
 
-* meta.extension[as-ext-data-trace] MS
 * practitioner MS 
 * organization MS
 * healthcareService MS
@@ -32,9 +31,9 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * notAvailable MS
 * availabilityExceptions MS
 * endpoint MS
-* extension[as-ext-practitionerrole-contracted] MS
-* extension[as-ext-practitionerrole-hascas] MS
-* extension[as-ext-practitionerrole-vitale-accepted] MS
+
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
 
 * identifier[idSituationExercice] 1..1 MS
 

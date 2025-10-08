@@ -8,7 +8,6 @@ Description: 	"Profil restreint créé à partir de as-practitionerrole dans le 
 * meta.profile[as-dr-canonical] = Canonical(as-dr-practitionerrole)
 * meta.profile[fr-canonical] 1..1
 
-* meta.extension[as-ext-data-trace] MS
 * practitioner MS 
 * organization MS
 * healthcareService MS
@@ -30,6 +29,9 @@ Description: 	"Profil restreint créé à partir de as-practitionerrole dans le 
 * extension[as-ext-practitionerrole-contracted] MS
 * extension[as-ext-practitionerrole-hascas] MS
 * extension[as-ext-practitionerrole-vitale-accepted] MS
+
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
 
 * practitioner 1..1 
 * organization 0..1

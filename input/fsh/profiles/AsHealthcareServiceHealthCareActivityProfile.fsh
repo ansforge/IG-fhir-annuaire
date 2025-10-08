@@ -4,13 +4,6 @@ Id: as-healthcareservice-healthcare-activity
 Title: "AS HealthcareService HealthCare Activity Profile"
 Description: "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS."
 
-// Data trace
-* meta.extension ^slicing.discriminator.type = #value
-* meta.extension ^slicing.discriminator.path = "url"
-* meta.extension ^slicing.rules = #open
-* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1
-* meta.extension[as-ext-data-trace].extension[date-maj-ae] ^short = "Date maj de l'activité selon l'autorité d'enregistrement"
-
 // extensions
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

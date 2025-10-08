@@ -11,8 +11,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-social-equipment)
 
-
-* meta.extension[as-ext-data-trace] MS
 * extension[as-ext-authorization] MS
 * extension[as-ext-installation] MS
 * extension[as-ext-patient-type] MS
@@ -22,6 +20,8 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * eligibility MS
 * characteristic MS
 
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
 
 * active 1..1
 
