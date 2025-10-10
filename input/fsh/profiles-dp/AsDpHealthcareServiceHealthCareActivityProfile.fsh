@@ -12,9 +12,23 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-healthcare-activity)
 
+
+* extension[as-ext-authorization] MS
+* identifier[numAutorisationArhgos] MS
+* providedBy MS
+* category MS
+* specialty MS
+* characteristic MS
+
+// Data trace
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
+* meta.extension[as-ext-data-trace].extension[date-maj-ae] MS
+* meta.extension[as-ext-data-trace].extension[date-maj-ae] ^short = "Date maj de l'activité selon l'autorité d'enregistrement"
+
+
+
 * identifier[numAutorisationArhgos] 1..1
-
-
 * active 1..1 // true par défaut; false pour  flaguer les activités de soins supprimées entre deux dates pour permettre aux utilisateurs du delta d'identifier les ressources supprimées. 
 * specialty 0..0
 * name 0..0

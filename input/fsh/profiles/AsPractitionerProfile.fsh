@@ -4,58 +4,56 @@ Id: 			as-practitioner
 Title:			"AS Practitioner Profile"
 Description: 	"Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données liées à l'exercice professionnel d'un professionnel (professions à ordre, professions sans ordre, professionnels à rôle)."
 
-// Data trace
-* meta.extension ^slicing.discriminator.type = #value
-* meta.extension ^slicing.discriminator.path = "url"
-* meta.extension ^slicing.rules = #open
-* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
-
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsRegistrationExtension named as-ext-registration 0..* MS and // inscription ordre
-    AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* MS and
-    AsSmartCardExtension named as-ext-smartcard 0..* MS and // carte cpx
-    AsDigitalCertificateExtension named as-ext-digital-certificate 0..* MS //  certificat
+    AsRegistrationExtension named as-ext-registration 0..* and // inscription ordre
+    AsPractitionerAuthorizationExtension named as-ext-frpractitioner-authorization 0..* and
+    AsSmartCardExtension named as-ext-smartcard 0..* and // carte cpx
+    AsDigitalCertificateExtension named as-ext-digital-certificate 0..* // certificat
+
 
 /* Practitioner.identifier */
 // Defined in FrCore
 
 * identifier.type ^short = "Type d’identifiant national de la personne physique (typeIdNat_PP),\r\nLes codes RPPS et IDNPS proviennent du system  https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203 ; Les codes 1, 3, 4, 5, 6 proviennent du system : https://mos.esante.gouv.fr/NOS/TRE_G08-TypeIdentifiantPersonne/FHIR/TRE-G08-TypeIdentifiantPersonne"
 
-* identifier[idNatPs] MS
 * identifier[idNatPs].type 1..1 // Contrainte ajoutée dans FrCore, ligne à supprimer à la prochaine release de FrCore 
 
-* identifier[rpps] MS
 * identifier[rpps].type 1..1 // Contrainte ajoutée dans FrCore, ligne à supprimer à la prochaine release de FrCore 
 
 * identifier[adeli] 0..0 // Adeli décommissionné, ligne à supprimer au prochain héritage FrCore 
 
 
 // Practitioner.active
-* active MS
-* active ^short = "Cette ressource est-elle active?\ntrue  par défaut; false pour indiquer que la ressource a été supprimée"
+* active ^short = "Cette ressource est-elle active ?\ntrue  par défaut; false pour indiquer que la ressource a été supprimée"
 
 /* Practitioner.name */
-* name MS
 * name ^short = "Nom sous lequel exerce le professionnel."
 
 // nomExercice
-* name.family MS
 * name.family ^short = "Nom sous lequel exerce le professionnel (nomExercice)."
 
-//
+
+* active MS
+* name MS
+* name.family MS
 * name.given MS
+* name.suffix MS
+* telecom MS
+* address MS
+* communication MS
+* qualification[degree].code.coding[degree] MS
+* qualification[degree].code.coding[degreeType] MS
+
 * name.given ^short = "Prénom sous lequel exerce le professionnel (prenom)."
 
 // civiliteExercice
-* name.suffix MS
 * name.suffix ^short = "Civilité d’exercice du professionnel (civilite)."
 
 // telecommunication 
-* telecom MS
 * telecom ^short = "[Donnée restreinte] : telecommunication. Différentes instances pour les téléphones, la télécopie et l’adresse mail."
 * telecom only $FrContactPoint
 * telecom.system ^short = "« phone » pour Téléphone et Téléphone 2 ; « fax » pour Télécopie ; « email » pour adresse e-mail"
@@ -73,12 +71,10 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 
 // adresseCorrespondance
-* address MS
 * address ^short = "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance)."
 * address only AsAddressExtendedProfile
 
 // langueParlee
-* communication MS
 * communication ^short = "Langue parlée (langueParlee)."
 * communication only AsCodeableConceptTimedProfile
 * communication from $JDV_J82-Langue-RASS (required)
@@ -93,8 +89,6 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 // ###########
 
 // Slice typeDiplome
-* qualification[degree].code.coding[degree] MS
-* qualification[degree].code.coding[degreeType] MS
 
 // periodValidite
 * qualification[degree].period ^short = "[Donnée restreinte] : Période durant laquelle le niveau de formation est actif."

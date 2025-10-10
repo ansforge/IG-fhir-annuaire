@@ -3,25 +3,20 @@ Parent: HealthcareService
 Id: as-healthcareservice-social-equipment
 Title: "AS HealthcareService Social Equipment Profile"
 Description: "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS (ex : Hébergement de personnes handicapées, hébergement de personnes âgées, services médico-sociaux à domicile, ...)."
-// Data trace
-* meta.extension ^slicing.discriminator.type = #value
-* meta.extension ^slicing.discriminator.path = "url"
-* meta.extension ^slicing.rules = #open
-* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
-
 
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    AsAuthorizationExtension named as-ext-authorization 0..* MS and
-    AsInstallationExtension named as-ext-installation 0..* MS and
-    AsPatientTypeExtension named as-ext-patient-type 0..* MS and		// ageMinAutorise + ageMaxAutorise + ageMinInstalle + ageMaxInstalle
-	AsSupportedCapacityExtension named as-ext-supported-capacity 0..* MS
+    AsAuthorizationExtension named as-ext-authorization 0..* and
+    AsInstallationExtension named as-ext-installation 0..* and
+    AsPatientTypeExtension named as-ext-patient-type 0..* and		// ageMinAutorise + ageMaxAutorise + ageMinInstalle + ageMaxInstalle
+	AsSupportedCapacityExtension named as-ext-supported-capacity 0..*
+
+
 	
 /* HealthcareService.identifier */
-* identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -37,7 +32,6 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * providedBy only Reference(fr-core-organization or AsOrganizationProfile)
 
 // disciplineEquipementSociale
-* type MS
 
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "$this"
@@ -50,12 +44,10 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
 * type[category] from $JDV-J136-DisciplineEquipementSocial-RASS (required)
 
 // clientele
-* eligibility 0..* MS
 * eligibility ^short = "Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline (clientele, public, patientele)."
 * eligibility.code from $JDV-J137-Clientele-RASS (extensible)
 
 // modeFonctionnement
-* characteristic 0..* MS
 * characteristic ^short = "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l'activité associée à la discipline (modeFonctionnement, typeActivite)."
 * characteristic from $JDV-J138-TypeActivite-RASS (extensible)
 

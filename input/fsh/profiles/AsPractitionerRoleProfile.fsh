@@ -4,28 +4,17 @@ Id: 			as-practitionerrole
 Title:			"AS PractitionerRole Profile"
 Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel."
 
-// Data trace
-* meta.extension ^slicing.discriminator.type = #value
-* meta.extension ^slicing.discriminator.path = "url"
-* meta.extension ^slicing.rules = #open
-* meta.extension contains as-ext-data-trace named as-ext-data-trace 0..1 MS
-
-/* profils references */
-* practitioner MS 
-* organization MS
-* healthcareService MS
 
 /* extensions */
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-	AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..1 MS and // secteur de conventionnement
-	AsPractitionerRoleHasCas named as-ext-practitionerrole-hascas 0..1 MS and // Option pratique tarifaire maîtrisée
-	AsPractitionerRoleVitaleAccepted named as-ext-practitionerrole-vitale-accepted 0..1 MS // Indicateur carte Vitale acceptée
-	
+	AsPractitionerRoleContracted named as-ext-practitionerrole-contracted 0..1 and // secteur de conventionnement
+	AsPractitionerRoleHasCas named as-ext-practitionerrole-hascas 0..1 and // Option pratique tarifaire maîtrisée
+	AsPractitionerRoleVitaleAccepted named as-ext-practitionerrole-vitale-accepted 0..1 // Indicateur carte Vitale acceptée
+
 /* PractitionerRole.identifier */
-* identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -40,11 +29,9 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 
 
 // PractitionerRole.active
-* active MS
 * active ^short = "La situation d'exercice est-elle active? (active | inactive)\r\ntrue par défaut; false pour les situations d’exercices supprimées"
 
 /* PractitionerRole.period */ 
-* period MS
 * period ^short = "Période d'activité de la situation d'exercice."
 
 // dateDebutActivite
@@ -68,13 +55,15 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * code ^slicing.discriminator.path = "$this"
 * code ^slicing.rules = #open
 * code contains
-    genreActivite 0..1 MS  and
-    modeExercice 0..1 MS  and
-    typeActiviteLiberale 0..1 MS and
-    statutProfessionnelSSA 0..1 MS and
-    statutHospitalier 0..1 MS and
-    fonction 0..1 MS and
-    metierPharmacien 0..* MS // ou 0..2 ?
+    genreActivite 0..1 and
+    modeExercice 0..1 and
+    typeActiviteLiberale 0..1 and
+    statutProfessionnelSSA 0..1 and
+    statutHospitalier 0..1 and
+    fonction 0..1 and
+    metierPharmacien 0..* // ou 0..2 ?
+
+
 
 // Slice 6 : genre activite
 * code[genreActivite] ^short = "Le genre identifiant une activité qui nécessite l’application de règles de gestion spécifiques (Synonyme: genreActivite)."
@@ -105,7 +94,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * code[metierPharmacien] from $JDV-J73-MetierPharmacien-RASS (required)
 
 // telecom - PractitionerRole.telecom
-* telecom MS
 * telecom only $FrContactPoint
 
 // boiteLettreMSS
@@ -119,17 +107,6 @@ Description: 	"Profil générique créé à partir de FrPractitionerRoleExercice
 * telecom[mailbox-mss] only as-mailbox-mss
 * telecom[mailbox-mss] ^short = "BALs MSS de type PER rattachés à l'identifiant du professionnel de santé  ainsi qu'au lieu de sa situation d'exercice (BoiteLettreMSS)."
 
-// PractitionerRole.availableTime
-* availableTime MS
-
-// PractitionerRole.notAvailable
-* notAvailable MS
-
-// PractitionerRole.availabilityExceptions
-* availabilityExceptions MS
-
-// PractitionerRole.endpoint
-* endpoint MS
 
 
 Mapping:  AsPractitionerRoleToMOSSituationExercice

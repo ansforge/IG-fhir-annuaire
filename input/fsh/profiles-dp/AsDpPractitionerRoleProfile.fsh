@@ -13,6 +13,28 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * extension[as-ext-practitionerrole-hascas] 0..0
 * extension[as-ext-practitionerrole-vitale-accepted] 0..0
 
+* practitioner MS 
+* organization MS
+* healthcareService MS
+* identifier MS
+* active MS
+* period MS
+* code[genreActivite] MS
+* code[modeExercice] MS
+* code[typeActiviteLiberale] MS
+* code[statutProfessionnelSSA] MS
+* code[statutHospitalier] MS
+* code[fonction] MS
+* code[metierPharmacien] MS
+* telecom MS
+* availableTime MS
+* notAvailable MS
+* availabilityExceptions MS
+* endpoint MS
+
+* insert rs-as-core
+* meta.extension[as-ext-data-trace] MS
+
 * identifier[idSituationExercice] 1..1 MS
 
 * practitioner 1..1 
