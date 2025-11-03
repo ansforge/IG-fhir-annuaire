@@ -42,6 +42,10 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[phone] 0..0
 * telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension[listeRouge] 0..0
 
+* gender 0..0
+* birthDate 0..0
+* photo 0..0
+
 // adresseCorrespondance
 * address 0..0
 
