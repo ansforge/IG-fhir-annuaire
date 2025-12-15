@@ -8,6 +8,8 @@ Description: "Profil restreint créé à partir de as-organization  dans le cont
 * meta.profile[as-dr-canonical] = Canonical(as-dr-organization)
 * meta.profile[fr-canonical] 1..1
 
+* meta.source = "https://annuaire.esante.gouv.fr/"
+
 * identifier[idNatSt] MS 
 * active MS
 * name MS

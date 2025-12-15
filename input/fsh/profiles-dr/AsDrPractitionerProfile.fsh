@@ -8,6 +8,8 @@ Description: 	"Profil restreint créé à partir de as-practitioner dans le cont
 * meta.profile[as-dr-canonical] = Canonical(as-dr-practitioner)
 * meta.profile[fr-canonical] 1..1
 
+* meta.source = "https://annuaire.esante.gouv.fr/"
+
 * extension[as-ext-registration] MS
 * extension[as-ext-frpractitioner-authorization] MS
 * extension[as-ext-smartcard] MS

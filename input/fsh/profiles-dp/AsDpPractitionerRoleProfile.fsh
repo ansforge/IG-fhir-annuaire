@@ -8,6 +8,7 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * meta.profile[as-dp-canonical] = Canonical(as-dp-practitionerrole)
 * meta.profile[fr-canonical] 1..1
 
+* meta.source = "https://annuaire.esante.gouv.fr/"
 
 * extension[as-ext-practitionerrole-contracted] 0..0
 * extension[as-ext-practitionerrole-hascas] 0..0

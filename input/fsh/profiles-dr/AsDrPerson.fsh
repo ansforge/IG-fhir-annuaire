@@ -11,6 +11,8 @@ Description: 	"Profil restreint créé à partir de as-person dans le contexte d
 * meta.profile contains as-dr-canonical 1..1
 * meta.profile[as-dr-canonical] = Canonical(as-dr-person)
 
+* meta.source = "https://annuaire.esante.gouv.fr/"
+
 * extension[as-ext-person-birth-place] MS
 * extension[as-ext-person-deceased-date-time] MS
 * active MS
