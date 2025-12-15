@@ -8,8 +8,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile[as-dp-canonical] = Canonical(as-dp-organization)
 * meta.profile[fr-canonical] 1..1
 
-* meta.source = "https://annuaire.esante.gouv.fr/"
-
 * extension[as-ext-digital-certificate] MS
 * extension[as-ext-organization-pharmacy-licence] MS
 * extension[as-ext-organization-pricing-model] MS

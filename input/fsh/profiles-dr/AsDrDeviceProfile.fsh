@@ -12,8 +12,6 @@ Description: "Profil restreint applicatif créé à partir du profil générique
 * meta.profile contains as-dr-canonical 1..1
 * meta.profile[as-dr-canonical] = Canonical(as-dr-device)
 
-* meta.source = "https://annuaire.esante.gouv.fr/"
-
 * extension[as-ext-authorization] MS
 * identifier MS
 * status MS
