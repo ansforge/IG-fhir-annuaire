@@ -13,6 +13,10 @@ Description: 	"Profil restreint créé à partir de as-person dans le contexte d
 
 * extension[as-ext-person-birth-place] MS
 * extension[as-ext-person-deceased-date-time] MS
+
+* extension contains AsPersonStatutEtatCivilExtension named as-ext-person-statut-etat-civil 0..1
+
+* extension[as-ext-person-statut-etat-civil] MS
 * active MS
 * name MS
 * gender MS
