@@ -7,6 +7,7 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-practitioner)
 * meta.profile[fr-canonical] 1..1
+
 * extension[as-ext-registration] MS
 * extension[as-ext-frpractitioner-authorization] MS
 * extension[as-ext-smartcard] MS

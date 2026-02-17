@@ -12,7 +12,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile contains as-dp-canonical 1..1
 * meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-healthcare-activity)
 
-
 * extension[as-ext-authorization] MS
 * identifier[numAutorisationArhgos] MS
 * providedBy MS
