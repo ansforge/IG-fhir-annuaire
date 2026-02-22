@@ -4,7 +4,7 @@ Id: as-organization
 Title: "AS Organization Profile"
 Description: "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les établissements sanitaires, sociaux et médico-sociaux immatriculés dans le FIchier National des Etablissements Sanitaires et Sociaux (FINESS) ou dans le Répertoire Partagé des Professionnels de Santé (RPPS)."
 
-
+* identifier.type ^short = "Type d’identifiant national de l'organisation"
 
 // Organization.active
 * active ^short = "La ressource est-elle active ? (active | inactive). true par défaut; false pour les structures supprimées."
