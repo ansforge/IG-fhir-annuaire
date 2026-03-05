@@ -29,7 +29,6 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * type[organizationType].extension[as-ext-organization-types].valueCode = #organizationType
 
 // activiteINSEE
-* type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
 * type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN)."
 * type[activiteINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
 * type[activiteINSEE].extension[as-ext-organization-types].valueCode = #activiteINSEE

@@ -41,7 +41,6 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
     activity 0..1
 
 * type[category] ^short = "Catégorie d'activité de soin autorisée. \r\nExemple : Activités de soins Soumises à Reconnaissance contractuelle"
-* type[category] from $JDV_J131-CategorieActiviteSanitaireRegulee-RASS (required)
 
 * type[activity] ^short = "La discipline déterminant la nature de l’activité (CODE_ACT_SOIN)."
 * type[activity] from https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS (required)
