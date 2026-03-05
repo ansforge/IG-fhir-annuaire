@@ -58,11 +58,7 @@ Usage: #example
   * coding
     * system = "https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite"
     * code = #SA01
-* type[activiteINSEE][+]
-  * extension[as-ext-organization-types].valueCode = #activiteINSEE
-  * coding
-    * system = "https://mos.esante.gouv.fr/NOS/TRE_R75-InseeNAFrev2Niveau5/FHIR/TRE-R75-InseeNAFrev2Niveau5"
-    * code = #86.10Z
+
 
 // Télécommunication
 * telecom[+]

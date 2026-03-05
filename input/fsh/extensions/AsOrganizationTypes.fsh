@@ -21,7 +21,6 @@ Id: as-cs-organization-types
 Title: "AS CodeSystem OrganizationTypes"
 Description: "CodeSystem définissant les types d'organisation"
 * #organizationType "Type d'organisation" "Type d'organisation"
-* #activiteINSEE "Activité INSEE" "Activité INSEE"
 * #statutJuridiqueINSEE "Statut Juridique INSEE" "Statut Juridique INSEE"
 * #sphParticipation "sph Participation" "Participation au service public hospitalier"
 * #typeEtablissement "Type d'établissement" "Type d'établissement"
