@@ -18,7 +18,6 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 /* champ d'activite de la structure */
 // Slice de FrCoreOrganization
 * type contains
-    activiteINSEE 0..1 and
     statutJuridiqueINSEE 0..1 and 
     sphParticipation 0..1 and
     typeEtablissement 0..1
@@ -28,11 +27,6 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * type[organizationType].extension contains as-ext-organization-types named as-ext-organization-types 1..1
 * type[organizationType].extension[as-ext-organization-types].valueCode = #organizationType
 
-// activiteINSEE
-* type[activiteINSEE] from $JDV-J99-InseeNAFrav2Niveau5-RASS (required)
-* type[activiteINSEE] ^short = "Toute entité juridique et chacun de ses établissements (EG) se voit attribuer par l'Insee, lors de son inscription au répertoire SIRENE, un code caractérisant son activité principale par référence à la nomenclature d'activités française (NAF rév. 2).\r\nPlus précisément, on distingue le code APET pour les EG (Synonyme : codeAPEN)."
-* type[activiteINSEE].extension contains as-ext-organization-types named as-ext-organization-types 1..1
-* type[activiteINSEE].extension[as-ext-organization-types].valueCode = #activiteINSEE
 
 // statutJuridiqueINSEE
 * type[statutJuridiqueINSEE] from $JDV-J100-FinessStatutJuridique-RASS (required)
@@ -118,7 +112,6 @@ Title:    "AsOrganization to MOS - EJ"
 * name  -> "EntiteJuridique.raisonSociale"
 * alias -> "EntiteJuridique.raisonSocialeLongue"
 * type[statutJuridiqueINSEE] -> "EntiteJuridique.statutJuridique"
-* type[activiteINSEE] -> "EntiteJuridique.codeAPEN"
 * extension[usePeriod].valuePeriod.start -> "EntiteJuridique.dateCreation"
 * extension[usePeriod].valuePeriod.end -> "EntiteJuridique.dateFermeture"
 * extension[as-ext-organization-closing-type] -> "EntiteJuridique.typeFermeture"
@@ -142,7 +135,6 @@ Title:    "AsOrganization to MOS - EG"
 * active -> "EntiteGeographique.actof"
 * name -> "EntiteGeographique.denominationEG"
 * alias -> "EntiteGeographique.denominationEGLongue"
-* type[activiteINSEE] -> "EntiteGeographique.codeAPET"
 
 * extension[as-ext-organization-pricing-model] -> "EntiteGeographique.modeFixationTarifaire"
 * extension[as-ext-organization-budget-type] -> "EntiteGeographique.natureEtablissement"
@@ -153,7 +145,6 @@ Title:    "AsOrganization to MOS - EG"
 
 * type[secteurActiviteRASS] -> "EntiteGeographique.secteurActivite"
 * type[categorieEtablissementRASS] -> "EntiteGeographique.categorieEtablissement"
-* type[activiteINSEE] -> "EntiteGeographique.codeAPET"
 * type[statutJuridiqueINSEE] -> "EntiteGeographique.statutJuridique"
 * type[sphParticipation] -> "EntiteGeographique.modaliteParticipationSPH"
 * type[typeEtablissement] -> "EntiteGeographique.typeEtablissement"

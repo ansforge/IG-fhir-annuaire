@@ -16,8 +16,7 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 * extension contains
 	dateFirstInstallation 0..1 and 		// datePremiereInstallation
 	dateLastInstallation 0..1 and 		// dateDerniereInstallation
-	deletedInstallation 0..1 and 		// suppressionImplantation ou suppressionInstallation
-	sourceReportInstallation 0..1 		// sourceInformationInstallation
+	deletedInstallation 0..1    		// suppressionImplantation ou suppressionInstallation
         
 
 * extension[dateFirstInstallation].value[x] only date    
@@ -28,8 +27,3 @@ Description:	"Extension créée dans le cadre de l'Annuaire Santé pour décrire
 
 * extension[deletedInstallation].value[x] only boolean    
 * extension[deletedInstallation] ^short = "suppressionImplantation ou suppressionInstallation : Indicateur de suppression de l’installation."
-
-* extension[sourceReportInstallation].value[x] only CodeableConcept
-* extension[sourceReportInstallation].valueCodeableConcept from https://mos.esante.gouv.fr/NOS/JDV_J261-SourceInformationInstallation-RASS/FHIR/JDV-J261-SourceInformationInstallation-RASS (required) 
-
-* extension[sourceReportInstallation] ^short = "sourceInformationInstallation : Source ayant permis le constat d'installation."

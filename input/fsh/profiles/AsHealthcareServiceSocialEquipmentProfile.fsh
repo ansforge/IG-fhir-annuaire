@@ -41,11 +41,11 @@ Description: "Profil générique créé à partir de HealthcareService dans le c
     category 0..1
 
 * type[category] ^short = "La catégorie de la discipline déterminant la nature de l’activité (disciplineEquipementSociale)."
-* type[category] from $JDV-J136-DisciplineEquipementSocial-RASS (required)
+* type[category] from $JDV-J379-ActiviteSocialeRegulee-RASS (required)
 
 // clientele
 * eligibility ^short = "Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline (clientele, public, patientele)."
-* eligibility.code from $JDV-J137-Clientele-RASS (extensible)
+* eligibility.code from $JDV-J376-PublicActiviteSmsseRegulee-RASS (extensible)
 
 // modeFonctionnement
 * characteristic ^short = "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l'activité associée à la discipline (modeFonctionnement, typeActivite)."
