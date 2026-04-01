@@ -18,6 +18,7 @@ L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléme
 - **Pas de ressource dédiée aux BAL** : une BAL n'est pas une ressource FHIR de premier niveau. Il est impossible de récupérer directement « toutes les BAL », indépendamment de leur porteur, sans interroger plusieurs types de ressources.
 - **Requêtes multiples obligatoires pour certains types** : les BAL PER sont portées à la fois par `Practitioner` et `PractitionerRole`, ce qui impose deux requêtes distinctes pour couvrir l'ensemble des BAL personnelles.
 - **API en lecture seule** : aucune opération d'écriture (`PUT`, `PATCH`) n'est déclarée dans le CapabilityStatement actuel. La mise à jour d'une BAL (ex. liste rouge, description) n'est pas possible via l'API FHIR aujourd'hui.
+- **Absence de discriminant clairement identifié pour cibler une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté dans son tableau `telecom`. Il n'existe pas aujourd'hui de discriminant officiellement défini pour identifier une BAL précise parmi d'autres au sein de cette liste. L'adresse (`telecom.value`) est le candidat naturel, mais d'autres attributs (typeBAL, opérateur, service de rattachement) pourraient également jouer ce rôle selon le contexte. Ce manque de convention explicite rend le ciblage d'une BAL spécifique ambigu lors d'une opération de mise à jour.
 </div>
 
 Ces limites motivent l'étude d'une approche alternative (voir Option 2 — CodeSystem dans la section "Transactions API").
@@ -40,27 +41,14 @@ Ces questions de permissions devront être traitées dans le cadre de la défini
 
 #### Types de BAL
 
-| Code | Libellé | Rattachement | Modèle logique |
-|------|---------|--------------|----------------|
-| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | [AS BAL MSS PER](StructureDefinition-as-bal-mss-per.html) |
-| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | [AS BAL MSS ORG](StructureDefinition-as-bal-mss-org.html) |
-| `APP` | BAL applicative | Structure (EJ ou EG) | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
-| `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
+#### Description métier
 
-#### Données associées aux BAL
-
-Les données portées par chaque type de BAL sont les suivantes :
-
-| Donnée | PER | ORG | APP | CAB |
-|--------|-----|-----|-----|-----|
-| Adresse BAL | X | X | X | X |
-| Identifiant PP (RPPS) | X | | | X (responsable + cotitulaires) |
-| Identifiant national de structure | | X | X | |
-| Service de rattachement | | X | X | |
-| Responsable | | X | X | X |
-| Description | | X | X | X |
-| Dématérialisation | X | X | X | X |
-| Liste rouge | X | X | X | X |
+| Code | Libellé | Rattachement | Données associées | Modèle logique |
+|------|---------|--------------|-------------------|----------------|
+| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | Adresse, identifiant PP, dématérialisation, liste rouge | [AS BAL MSS PER](StructureDefinition-as-bal-mss-per.html) |
+| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | Adresse, identifiant national de structure, service de rattachement, responsable, description, dématérialisation, liste rouge | [AS BAL MSS ORG](StructureDefinition-as-bal-mss-org.html) |
+| `APP` | BAL applicative | Structure (EJ ou EG) | Adresse, identifiant national de structure, service de rattachement, responsable, description, dématérialisation, liste rouge | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
+| `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | Adresse, description, responsable (RPPS), cotitulaires (RPPS), dématérialisation, liste rouge | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
 
 #### Modélisation FHIR
 
