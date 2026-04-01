@@ -182,13 +182,13 @@ L'approche retenue est le **FHIR Patch** (format `application/fhir+json`), qui u
 
 Les métadonnées portées par l'extension `as-ext-mailbox-mss-metadata` peuvent être mises à jour :
 
-| Champ | Extension | Remarque |
-|-------|-----------|----------|
-| Description | `description` | Texte libre |
-| Service de rattachement | `service` | Nom du service |
-| Responsable | `responsible` | Non applicable pour les BAL PER |
-| Dématérialisation | `digitization` | Booléen |
-| Liste rouge | `listeRouge` | Booléen |
+| Champ | Extension | PER | ORG | APP | CAB |
+|-------|-----------|-----|-----|-----|-----|
+| Dématérialisation | `digitization` | X | X | X | X |
+| Liste rouge | `listeRouge` | X | X | X | X |
+| Description | `description` | | X | X | X |
+| Service de rattachement | `service` | | X | X | |
+| Responsable | `responsible` | | X | X | X |
 
 L'adresse de la BAL (`telecom.value`) et le type (`typeBAL`) ne sont pas modifiables.
 
