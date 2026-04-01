@@ -39,7 +39,7 @@ La gestion des droits d'accès et de modification des BAL soulève plusieurs que
 
 Ces questions de permissions devront être traitées dans le cadre de la définition du modèle d'autorisation de l'API en écriture.
 
-#### Types de BAL
+> **Note** : les problématiques décrites dans cette section ne sont pas des limitations inhérentes à FHIR. Le standard offre les mécanismes nécessaires (PATCH, SearchParameter, CodeSystem, modèles logiques...). La difficulté réside dans la clarification préalable du besoin métier : qui gère quoi, selon quelles règles, et avec quel niveau de granularité.
 
 #### Description métier
 
@@ -50,7 +50,7 @@ Ces questions de permissions devront être traitées dans le cadre de la défini
 | `APP` | BAL applicative | Structure (EJ ou EG) | Adresse, identifiant national de structure, service de rattachement, responsable, description, dématérialisation, liste rouge | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
 | `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | Adresse, description, responsable (RPPS), cotitulaires (RPPS), dématérialisation, liste rouge | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
 
-#### Modélisation FHIR
+#### Modélisation FHIR actuelle (API Annuaire Santé)
 
 Les BAL sont modélisées via l'élément `telecom` (profil [AS Mailbox MSS](StructureDefinition-as-mailbox-mss.html)), enrichi de l'extension `as-ext-mailbox-mss-metadata` portant les métadonnées de la BAL. Le type de BAL est lié au jeu de valeurs [JDV-J139-TypeBAL-RASS](https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS).
 
@@ -65,7 +65,7 @@ Les BAL sont modélisées via l'élément `telecom` (profil [AS Mailbox MSS](Str
 
 ##### Récupérer toutes les BAL d'un type
 
-Deux approches sont possibles.
+Deux approches sont envisagées.
 
 ###### Option 1 — Recherche sur les ressources porteuses (approche actuelle)
 
@@ -179,7 +179,7 @@ La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`
 - Un CodeSystem est conçu pour la terminologie, pas pour des données d'instance ; ce détournement d'usage doit être documenté et assumé
 </div>
 
-##### Paramètres de recherche associés
+###### Paramètres de recherche associés
 
 | Paramètre | Type | Description |
 |-----------|------|-------------|
@@ -191,6 +191,8 @@ La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`
 <blockquote class="stu-note">
 <p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour la mise à jour des BAL, en vue d'une future ouverture en écriture.</p>
 </blockquote>
+
+###### Option 1 — PATCH sur la ressource porteuse (approche actuelle)
 
 Une BAL étant modélisée comme un élément `telecom` au sein de sa ressource porteuse, sa mise à jour s'effectue par un `PATCH` ciblé sur cette ressource. L'opération `PUT` (remplacement complet de la ressource) est déconseillée car elle expose à des écrasements non intentionnels des autres données du professionnel ou de la structure.
 
