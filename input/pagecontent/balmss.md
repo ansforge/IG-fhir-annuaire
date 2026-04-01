@@ -235,3 +235,57 @@ Content-Type: application/fhir+json
 ```
 
 La ressource porteuse et son identifiant sont à récupérer au préalable via une recherche sur `mailbox-mss` (voir section précédente).
+
+###### Option 2 — Mise à jour via `CodeSystem`
+
+Dans l'approche CodeSystem, la BAL est un concept identifié par son adresse. La mise à jour d'une property s'effectue par un `PATCH` FHIRPath ciblant le concept via son code.
+
+**Exemple — mise à jour de la liste rouge**
+
+```json
+PATCH [base]/CodeSystem/balmss
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "CodeSystem.concept.where(code = 'prenom.nom@domain.mssante.fr').property.where(code = 'listeRouge').valueBoolean" },
+        { "name": "value", "valueBoolean": true }
+      ]
+    }
+  ]
+}
+```
+
+**Exemple — ajout d'un cotitulaire sur une BAL CAB**
+
+L'ajout d'un cotitulaire est une opération `add` sur le tableau `property` du concept :
+
+```json
+PATCH [base]/CodeSystem/balmss
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "add" },
+        { "name": "path", "valueString": "CodeSystem.concept.where(code = 'cabinet@domain.mssante.fr')" },
+        { "name": "name", "valueString": "property" },
+        { "name": "value", "part": [
+          { "name": "code", "valueCode": "cotitulaire" },
+          { "name": "valueString", "valueString": "800012345679" }
+        ]}
+      ]
+    }
+  ]
+}
+```
+
+Par rapport à l'option 1, cette approche présente un avantage : toutes les mises à jour portent sur une seule ressource (`CodeSystem/balmss`), sans avoir à identifier la ressource porteuse au préalable. En revanche, le support du PATCH sur les éléments imbriqués d'un `CodeSystem` reste à valider selon l'implémentation du serveur.
