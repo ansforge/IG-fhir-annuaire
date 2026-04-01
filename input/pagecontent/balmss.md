@@ -6,68 +6,232 @@ Cette page s'adresse à tous les profils (métier et technique). Elle présente 
 
 #### Présentation
 
-Les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) sont rattachées aux professionnels et aux structures présents dans l'Annuaire Santé. Elles sont modélisées dans les ressources FHIR via l'élément `telecom` (profil [AS Mailbox MSS](StructureDefinition-as-mailbox-mss.html)), enrichi d'une extension portant les métadonnées de la BAL.
+Les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté) sont rattachées aux professionnels et aux structures présents dans l'Annuaire Santé.
 
 #### Types de BAL
 
-Le type de BAL est porté par l'extension `as-ext-mailbox-mss-metadata`, dans le sous-élément `type`, lié au jeu de valeurs [JDV-J139-TypeBAL-RASS](https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS).
+| Code | Libellé | Rattachement | Modèle logique |
+|------|---------|--------------|----------------|
+| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | [AS BAL MSS PER](StructureDefinition-as-bal-mss-per.html) |
+| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | [AS BAL MSS ORG](StructureDefinition-as-bal-mss-org.html) |
+| `APP` | BAL applicative | Structure (EJ ou EG) | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
+| `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
 
-| Code | Libellé | Rattachement | Ressource(s) porteuse(s) |
-|------|---------|--------------|--------------------------|
-| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | `Practitioner` (RPPS seul), `PractitionerRole` (RPPS + structure) |
-| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | `Organization` |
-| `APP` | BAL applicative | Structure (EJ ou EG) | `Organization` |
-| `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | `Practitioner` |
+#### Données associées aux BAL
 
-#### Récupérer toutes les BAL d'un type
+Les données portées par chaque type de BAL sont les suivantes :
 
-Le paramètre de recherche [`mailbox-mss-type`](SearchParameter-as-sp-mailbox-mss-type.html) permet de filtrer les ressources par type de BAL MSSanté. Il est de type `token` et disponible sur `Organization`, `Practitioner` et `PractitionerRole`.
+| Donnée | PER | ORG | APP | CAB |
+|--------|-----|-----|-----|-----|
+| Adresse BAL | X | X | X | X |
+| Identifiant PP (RPPS) | X | | | X (responsable + cotitulaires) |
+| Identifiant national de structure | | X | X | |
+| Service de rattachement | | X | X | |
+| Responsable | | X | X | X |
+| Description | | X | X | X |
+| Dématérialisation | X | X | X | X |
+| Liste rouge | X | X | X | X |
 
-##### BAL personnelles (PER)
+#### Modélisation FHIR
 
-Une BAL PER peut être :
-<div class="wysiwyg" markdown="1">
-- associée à un **identifiant RPPS uniquement** (BAL générale du professionnel) → portée par `Practitioner`
-- associée à un **identifiant RPPS + une structure d'exercice** (BAL spécifique à une situation d'exercice) → portée par `PractitionerRole`
-</div>
+Les BAL sont modélisées via l'élément `telecom` (profil [AS Mailbox MSS](StructureDefinition-as-mailbox-mss.html)), enrichi de l'extension `as-ext-mailbox-mss-metadata` portant les métadonnées de la BAL. Le type de BAL est lié au jeu de valeurs [JDV-J139-TypeBAL-RASS](https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS).
 
-```
+| Code | Ressource(s) porteuse(s) |
+|------|--------------------------|
+| `PER` | `Practitioner` (RPPS seul), `PractitionerRole` (RPPS + structure) |
+| `ORG` | `Organization` |
+| `APP` | `Organization` |
+| `CAB` | `Practitioner` |
+
+#### Transactions API
+
+##### Récupérer toutes les BAL d'un type
+
+Deux approches sont possibles.
+
+###### Option 1 — Recherche sur les ressources porteuses (approche actuelle)
+
+Le paramètre de recherche [`mailbox-mss-type`](SearchParameter-as-sp-mailbox-mss-type.html) filtre les ressources par type de BAL. Il est de type `token` et disponible sur `Organization`, `Practitioner` et `PractitionerRole`.
+
+L'inconvénient de cette approche est que les BAL sont portées par plusieurs types de ressources distincts. Pour les BAL PER notamment, deux requêtes sont nécessaires (sur `Practitioner` et `PractitionerRole`). Il est possible de les regrouper en un seul appel via une requête batch (voir ci-dessous).
+
+**BAL personnelles (PER)**
+
+Une BAL PER peut être associée à un identifiant RPPS uniquement (`Practitioner`) ou à un RPPS + structure d'exercice (`PractitionerRole`) :
+
+```http
 GET [base]/Practitioner?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER
 GET [base]/PractitionerRole?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER
 ```
 
-##### BAL organisationnelles (ORG)
+Ces deux requêtes peuvent être regroupées en un seul appel HTTP via un batch FHIR :
 
-Les BAL ORG sont associées à une structure (EJ ou EG) et portées par la ressource `Organization`.
+```json
+POST [base]
+Content-Type: application/fhir+json
 
+{
+  "resourceType": "Bundle",
+  "type": "batch",
+  "entry": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "Practitioner?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "PractitionerRole?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER"
+      }
+    }
+  ]
+}
 ```
+
+Le serveur répond avec un `Bundle` de type `batch-response` contenant un entry par requête, chacune portant un `Bundle` de type `searchset`.
+
+**BAL organisationnelles (ORG)**
+
+```http
 GET [base]/Organization?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|ORG
 ```
 
-##### BAL applicatives (APP)
+**BAL applicatives (APP)**
 
-Les BAL APP sont associées à une structure (EJ ou EG) et portées par la ressource `Organization`.
-
-```
+```http
 GET [base]/Organization?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|APP
-GET [base]/PractitionerRole?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|APP
 ```
 
-##### BAL de cabinet (CAB) *(en cours de travaux)*
+**BAL de cabinet (CAB)** *(en cours de travaux)*
 
 <blockquote class="stu-note">
 <p>La prise en charge des BAL CAB est en cours de travaux. Les spécifications ci-dessous sont susceptibles d'évoluer.</p>
 </blockquote>
 
-Les BAL CAB sont associées à un ou plusieurs identifiants RPPS : un responsable de la BAL et, optionnellement, des cotitulaires. Elles sont portées par la ressource `Practitioner`.
-
-```
+```http
 GET [base]/Practitioner?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|CAB
 ```
 
-#### Paramètres de recherche associés
+###### Option 2 — `CodeSystem` avec properties (proposition d'évolution)
+
+Un [`CodeSystem`](https://hl7.org/fhir/R4/codesystem.html) dédié aux BAL MSSanté permettrait de regrouper toutes les BAL dans une ressource unique et homogène. Chaque concept représente une BAL (code = adresse MSSanté), et les `property` portent les métadonnées ainsi que la référence au porteur.
+
+Exemple de structure :
+
+```json
+{
+  "resourceType": "CodeSystem",
+  "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/balmss",
+  "concept": [
+    {
+      "code": "prenom.nom@domain.mssante.fr",
+      "display": "BAL de M. Nom",
+      "property": [
+        { "code": "typeBAL", "valueCode": "PER" },
+        { "code": "porteur", "valueString": "800012345678" }
+      ]
+    }
+  ]
+}
+```
+
+Les properties à définir seraient au minimum :
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `typeBAL` | `code` | Type de BAL : `PER`, `ORG`, `APP`, `CAB` |
+| `porteur` | `string` | Identifiant du porteur (RPPS ou identifiant de structure) |
+| `typePorteur` | `code` | Nature du porteur : `Practitioner`, `PractitionerRole`, `Organization` |
+| `responsible` | `string` | Responsable de la BAL (pour les types CAB) |
+
+La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`$lookup`](https://hl7.org/fhir/R4/codesystem-operation-lookup.html) ou une opération personnalisée de filtrage par property.
+
+<div class="wysiwyg" markdown="1">
+**Avantages :**
+
+- Ressource unique pour toutes les BAL, quel que soit le porteur
+- Structure extensible via les properties (responsable, cotitulaires pour CAB, etc.)
+- Sémantique claire : le CodeSystem est un registre de référence des BAL
+
+**Points de vigilance :**
+
+- La recherche FHIR standard ne supporte pas le filtrage par `property` sur un `CodeSystem` ; une opération personnalisée ou une exposition via `ValueSet/$expand` avec filtres serait nécessaire
+- Un CodeSystem est conçu pour la terminologie, pas pour des données d'instance ; ce détournement d'usage doit être documenté et assumé
+</div>
+
+##### Paramètres de recherche associés
 
 | Paramètre | Type | Description |
 |-----------|------|-------------|
 | [`mailbox-mss-type`](SearchParameter-as-sp-mailbox-mss-type.html) | token | Filtre par type de BAL (`PER`, `ORG`, `APP`, `CAB`) |
 | [`mailbox-mss`](SearchParameter-as-sp-mailbox-mss.html) | string | Filtre par adresse MSSanté (supporte les modificateurs `:contains` et `:exact`) |
+
+##### Mettre à jour une BAL
+
+<blockquote class="stu-note">
+<p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour la mise à jour des BAL, en vue d'une future ouverture en écriture.</p>
+</blockquote>
+
+Une BAL étant modélisée comme un élément `telecom` au sein de sa ressource porteuse, sa mise à jour s'effectue par un `PATCH` ciblé sur cette ressource. L'opération `PUT` (remplacement complet de la ressource) est déconseillée car elle expose à des écrasements non intentionnels des autres données du professionnel ou de la structure.
+
+L'approche retenue est le **FHIR Patch** (format `application/fhir+json`), qui utilise une ressource `Parameters` avec des opérations FHIRPath. Il permet de cibler précisément l'élément `telecom` à modifier grâce à l'adresse de la BAL.
+
+**Champs modifiables**
+
+Les métadonnées portées par l'extension `as-ext-mailbox-mss-metadata` peuvent être mises à jour :
+
+| Champ | Extension | Remarque |
+|-------|-----------|----------|
+| Description | `description` | Texte libre |
+| Service de rattachement | `service` | Nom du service |
+| Responsable | `responsible` | Non applicable pour les BAL PER |
+| Dématérialisation | `digitization` | Booléen |
+| Liste rouge | `listeRouge` | Booléen |
+
+L'adresse de la BAL (`telecom.value`) et le type (`typeBAL`) ne sont pas modifiables.
+
+**Exemple — mise à jour de la liste rouge d'une BAL PER**
+
+```json
+PATCH [base]/Practitioner/[id]
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value" },
+        { "name": "value", "valueBoolean": true }
+      ]
+    }
+  ]
+}
+```
+
+**Exemple — mise à jour de la description d'une BAL ORG**
+
+```json
+PATCH [base]/Organization/[id]
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Organization.telecom.where(value = 'structure@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('description').value" },
+        { "name": "value", "valueString": "BAL principale de la structure" }
+      ]
+    }
+  ]
+}
+```
+
+La ressource porteuse et son identifiant sont à récupérer au préalable via une recherche sur `mailbox-mss` (voir section précédente).
