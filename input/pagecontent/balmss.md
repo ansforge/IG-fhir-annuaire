@@ -27,6 +27,10 @@ Ces limites motivent l'étude d'une approche alternative (voir Option 2 — Code
 <div class="wysiwyg" markdown="1">
 - La gestion des droits d'accès et de modification des BAL soulève plusieurs questions non résolues à ce jour
 - **Absence de discriminant clairement identifié pour cibler une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Il n'existe pas aujourd'hui de convention métier définissant quel attribut sert de discriminant pour identifier une BAL précise parmi d'autres. L'adresse est le candidat naturel, mais d'autres attributs (typeBAL, opérateur, service de rattachement) pourraient également jouer ce rôle selon le contexte.
+- Traçabilité des modifications ?
+- Cycle de vie ?
+- Source de vérité ?
+- Opérateurs multiples ?
 </div>
 
 Ces questions de permissions devront être traitées dans le cadre de la définition du modèle d'autorisation de l'API en écriture.
