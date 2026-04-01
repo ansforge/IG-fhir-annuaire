@@ -10,7 +10,7 @@ Les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté
 
 #### Contexte et problématiques
 
-##### Pourquoi l'API FHIR Annuaire Santé actuelle ne suffit-elle pas ?
+##### Limites potentielles de l'API FHIR Annuaire Santé actuelle
 
 L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Cette modélisation présente plusieurs limites :
 
@@ -18,23 +18,15 @@ L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléme
 - **Pas de ressource dédiée aux BAL** : une BAL n'est pas une ressource FHIR de premier niveau. Il est impossible de récupérer directement « toutes les BAL », indépendamment de leur porteur, sans interroger plusieurs types de ressources.
 - **Requêtes multiples obligatoires pour certains types** : les BAL PER sont portées à la fois par `Practitioner` et `PractitionerRole`, ce qui impose deux requêtes distinctes pour couvrir l'ensemble des BAL personnelles.
 - **API en lecture seule** : aucune opération d'écriture (`PUT`, `PATCH`) n'est déclarée dans le CapabilityStatement actuel. La mise à jour d'une BAL (ex. liste rouge, description) n'est pas possible via l'API FHIR aujourd'hui.
-- **Absence de discriminant clairement identifié pour cibler une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté dans son tableau `telecom`. Il n'existe pas aujourd'hui de discriminant officiellement défini pour identifier une BAL précise parmi d'autres au sein de cette liste. L'adresse (`telecom.value`) est le candidat naturel, mais d'autres attributs (typeBAL, opérateur, service de rattachement) pourraient également jouer ce rôle selon le contexte. Ce manque de convention explicite rend le ciblage d'une BAL spécifique ambigu lors d'une opération de mise à jour.
 </div>
 
 Ces limites motivent l'étude d'une approche alternative (voir Option 2 — CodeSystem dans la section "Transactions API").
 
-##### Problématique des permissions
-
-La gestion des droits d'accès et de modification des BAL soulève plusieurs questions non résolues à ce jour :
+##### Problématiques non résolues
 
 <div class="wysiwyg" markdown="1">
-- **Accès aux données restreintes** : certaines métadonnées des BAL (responsable, téléphone) ne sont pas accessibles en données publiques. Leur consultation est soumise à habilitation.
-- **Droit de modification** : qui est autorisé à modifier une BAL ?
-  - L'opérateur MSSanté qui gère la BAL ?
-  - Le professionnel de santé lui-même (pour ses BAL PER) ?
-  - Le gestionnaire de la structure (pour les BAL ORG, APP, CAB) ?
-- **BAL CAB et cotitularité** : une BAL CAB peut avoir plusieurs titulaires (un responsable et des cotitulaires). La définition des droits de modification doit préciser si tous les cotitulaires peuvent modifier la BAL ou seulement le responsable.
-- **Liste rouge** : la possibilité de passer une BAL en liste rouge (interdisant sa publication) doit être encadrée pour éviter qu'un acteur non habilité ne masque des BAL sans autorisation.
+- La gestion des droits d'accès et de modification des BAL soulève plusieurs questions non résolues à ce jour
+- **Absence de discriminant clairement identifié pour cibler une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Il n'existe pas aujourd'hui de convention métier définissant quel attribut sert de discriminant pour identifier une BAL précise parmi d'autres. L'adresse est le candidat naturel, mais d'autres attributs (typeBAL, opérateur, service de rattachement) pourraient également jouer ce rôle selon le contexte.
 </div>
 
 Ces questions de permissions devront être traitées dans le cadre de la définition du modèle d'autorisation de l'API en écriture.
@@ -172,6 +164,7 @@ La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`
 - Ressource unique pour toutes les BAL, quel que soit le porteur
 - Structure extensible via les properties (responsable, cotitulaires pour CAB, etc.)
 - Sémantique claire : le CodeSystem est un registre de référence des BAL
+- Possibilité de définir un `ValueSet` par type de BAL (ex. `ValueSet/balmss-per`, `ValueSet/balmss-org`...), permettant de récupérer en une requête l'ensemble des BAL d'un type via `ValueSet/$expand`
 
 **Points de vigilance :**
 
