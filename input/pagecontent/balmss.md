@@ -1,6 +1,6 @@
-<div class="dragon">
+<div class="dragon" style="width: 65%">
 <p><b>Fonctionnalité en cours de réflexion</b> — Les spécifications décrites dans cette page sont exploratoires et sujettes à évolution. Elles n'ont pas encore fait l'objet d'une décision d'implémentation.</p>
-<p><b>TL;DR</b> — Cette page décrit les types de BAL MSSanté (PER, ORG, APP, CAB), leurs données associées et leurs modèles logiques. Elle présente deux approches pour les requêter : la recherche sur les ressources porteuses (approche actuelle, via <code>mailbox-mss-type</code>) et une proposition d'évolution via un <code>CodeSystem</code> dédié. Elle aborde également les spécifications de mise à jour et les problématiques métier non résolues (permissions, discriminant, cycle de vie).</p>
+<p><b>TL;DR</b> — Cette page décrit les types de BAL MSSanté (PER, ORG, APP, CAB), leurs données associées et leurs modèles logiques. Elle présente deux approches pour les récupérer et les mettre à jour : <b>Option 1</b> (approche actuelle) — recherche via <code>mailbox-mss-type</code> sur les ressources porteuses (<code>Practitioner</code>, <code>PractitionerRole</code>, <code>Organization</code>), avec possibilité de regrouper les appels via <code>_type</code> ou batch, et mise à jour par <code>PATCH</code> FHIRPath sur la ressource porteuse ; <b>Option 2</b> (proposition d'évolution) — modélisation des BAL dans un <code>CodeSystem</code> dédié, offrant une ressource unique quel que soit le porteur, et mise à jour par <code>PATCH</code> sur le concept correspondant. Elle aborde également les problématiques métier non résolues (permissions, discriminant, cycle de vie).</p>
 </div>
 
 <div style="background-color: #fff9e6; border-left: 4px solid #ff9800; padding: 10px; width: 65%">
@@ -11,41 +11,69 @@ Les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté
 
 ### Contexte et problématiques
 
+#### Description du besoin
+
+Les cas d'usage autour des BAL MSSanté sont de deux natures :
+
+<div class="wysiwyg" markdown="1">
+- **Récupération** : retrouver les adresses MSSanté rattachées à un professionnel, une situation d'exercice ou une structure — par exemple pour adresser un message sécurisé au bon destinataire ou alimenter un annuaire tiers.
+- **Mise à jour** : modifier les métadonnées d'une BAL existante — par exemple passer en liste rouge, activer la dématérialisation ou mettre à jour la description d'une BAL organisationnelle.
+</div>
+
 #### Limites potentielles de l'API FHIR Annuaire Santé actuelle
 
 L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Cette modélisation présente plusieurs limites :
 
 <div class="wysiwyg" markdown="1">
-- **Pas de ressource dédiée aux BAL** : une BAL n'est pas une ressource FHIR de premier niveau. Il est impossible de récupérer directement « toutes les BAL », indépendamment de leur porteur, sans interroger plusieurs types de ressources.
-- **Requêtes multiples obligatoires pour certains types** : les BAL PER sont portées à la fois par `Practitioner` et `PractitionerRole`, ce qui impose deux requêtes distinctes pour couvrir l'ensemble des BAL personnelles.
-- **API en lecture seule** : aucune opération d'écriture (`PUT`, `PATCH`) n'est déclarée dans le CapabilityStatement actuel. La mise à jour d'une BAL (ex. liste rouge, description) n'est pas possible via l'API FHIR aujourd'hui.
+- **Pas de ressource dédiée aux BAL** : les BAL ne sont pas des ressources FHIR de premier niveau — elles sont imbriquées dans leurs ressources porteuses. Il n'est donc pas possible d'interroger « toutes les BAL » en une seule requête homogène, sans cibler un type de ressource particulier. FHIR offre cependant des mécanismes pour atténuer cette contrainte (`_type`, batch).
+- **Ressources porteuses hétérogènes selon le type de BAL** : les BAL PER peuvent être portées indifféremment par `Practitioner` (RPPS seul) ou `PractitionerRole` (RPPS + structure). Sans mécanisme d'agrégation, deux requêtes sont nécessaires pour couvrir l'ensemble des BAL PER, bien que `_type` ou un batch permettent de les regrouper en un seul appel.
+- **API en lecture seule** : nécessité de développer les opérations d'écriture (`PUT`, `PATCH`)
 </div>
 
-Ces limites motivent l'étude d'une approche alternative (voir Option 2 — CodeSystem dans la section "Transactions API").
+Ces limites motivent l'étude d'une approche alternative (voir Option 2 — CodeSystem).
 
-#### Problématiques non résolues
+#### Questions métier en suspens — indépendantes de FHIR
+
+> Les questions listées ci-dessous sont des problématiques **métier et organisationnelles**. Elles ne sont pas liées au standard FHIR, qui dispose de tous les mécanismes nécessaires pour les implémenter une fois les réponses connues (`PATCH`, `SearchParameter`, `CodeSystem`, modèles logiques...). La difficulté réside dans la clarification préalable du besoin : qui gère quoi, selon quelles règles, et avec quel niveau de granularité.
 
 <div class="wysiwyg" markdown="1">
-- La gestion des droits d'accès et de modification des BAL soulève plusieurs questions non résolues à ce jour
-- **Absence de discriminant clairement identifié pour cibler une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Il n'existe pas aujourd'hui de convention métier définissant quel attribut sert de discriminant pour identifier une BAL précise parmi d'autres. L'adresse est le candidat naturel, mais d'autres attributs (typeBAL, opérateur, service de rattachement) pourraient également jouer ce rôle selon le contexte.
-- Traçabilité des modifications ?
-- Cycle de vie ?
-- Source de vérité ?
-- Opérateurs multiples ?
+- **Cas d'usage de la recherche** : pourquoi a-t-on besoin de requêter les BAL MSSanté de façon dédiée ? L'API actuelle permet déjà de récupérer les BAL via les ressources porteuses — quel besoin spécifique justifie une recherche centrée sur les BAL elles-mêmes (ex. lister toutes les BAL d'un opérateur, alimenter un annuaire tiers, superviser les BAL sans liste rouge...) ?
+- **Cas d'usage de la mise à jour** : quels acteurs ont besoin de modifier des BAL via l'API ? Pour quels attributs et avec quelle fréquence ? L'API actuelle en lecture seule couvre-t-elle les besoins ou une ouverture en écriture est-elle nécessaire ?
+- **Discriminant d'identification d'une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Il n'existe pas aujourd'hui de convention métier connue définissant quel attribut sert de discriminant pour cibler une BAL précise. L'adresse est le candidat naturel, mais le typeBAL, l'opérateur ou le service de rattachement pourraient également jouer ce rôle selon le contexte.
+- **Gouvernance et droits de modification** : qui est autorisé à modifier une BAL ? L'opérateur MSSanté ? L'établissement ? Le professionnel lui-même ? Les règles d'habilitation ne sont pas définies.
+- **Opérateurs multiples** : plusieurs opérateurs MSSanté peuvent coexister. Comment gérer les conflits ou les modifications simultanées sur une même BAL ? Qui fait autorité ?
+- **Source de vérité** : l'Annuaire Santé est-il la source de vérité des BAL, ou un reflet d'une gestion opérée ailleurs ? La réponse conditionne le modèle d'écriture.
+- **Cycle de vie** : quelles sont les règles de création, de suspension et de suppression d'une BAL ? Ces états sont-ils à modéliser dans l'API ?
+- **Traçabilité** : les modifications doivent-elles être auditées ? Avec quel niveau de détail (qui, quand, quelle valeur avant/après) ?
 </div>
 
-Ces questions de permissions devront être traitées dans le cadre de la définition du modèle d'autorisation de l'API en écriture.
-
-> **Note** : les problématiques décrites dans cette section ne sont pas des limitations inhérentes à FHIR. Le standard offre les mécanismes nécessaires (PATCH, SearchParameter, CodeSystem, modèles logiques...). La difficulté réside dans la clarification préalable du besoin métier : qui gère quoi, selon quelles règles, et avec quel niveau de granularité.
+Ces questions devront être traitées dans le cadre de la définition du modèle d'autorisation et de gouvernance de l'API en écriture, préalablement à toute implémentation.
 
 ### Description métier
 
-| Code | Libellé | Rattachement | Données associées | Modèle logique |
-|------|---------|--------------|-------------------|----------------|
-| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | Adresse, identifiant PP, dématérialisation, liste rouge | [AS BAL MSS PER](StructureDefinition-as-bal-mss-per.html) |
-| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | Adresse, identifiant national de structure, service de rattachement, responsable, description, dématérialisation, liste rouge | [AS BAL MSS ORG](StructureDefinition-as-bal-mss-org.html) |
-| `APP` | BAL applicative | Structure (EJ ou EG) | Adresse, identifiant national de structure, service de rattachement, responsable, description, dématérialisation, liste rouge | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
-| `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | Adresse, description, responsable (RPPS), cotitulaires (RPPS), dématérialisation, liste rouge | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
+| Code | Libellé | Rattachement | Modèle logique |
+|------|---------|--------------|----------------|
+| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | [AS BAL MSS PER](StructureDefinition-as-bal-mss-per.html) |
+| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | [AS BAL MSS ORG](StructureDefinition-as-bal-mss-org.html) |
+| `APP` | BAL applicative | Structure (EJ ou EG) | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
+| `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
+
+Le tableau suivant liste les données associées à chaque type de BAL et leur correspondance dans le modèle FHIR. Les chemins sont relatifs à l'élément `telecom` (profil [AS Mailbox MSS](StructureDefinition-as-mailbox-mss.html)) ; les identifiants porteurs sont portés par la ressource elle-même.
+
+| Donnée | PER | ORG | APP | CAB | Chemin FHIR |
+|--------|:---:|:---:|:---:|:---:|-------------|
+| Adresse BAL | X | X | X | X | `telecom.value` |
+| Type de BAL | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
+| Dématérialisation | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[digitization]` |
+| Liste rouge | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
+| Description | | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
+| Service de rattachement | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[service]` |
+| Responsable | | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
+| Téléphone | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[phone]` |
+| Identifiant PP (RPPS) | X | | | | `Practitioner.identifier` / `PractitionerRole.identifier` |
+| Identifiant national de structure | | X | X | | `Organization.identifier` |
+| Responsable (RPPS) | | | | X | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
+| Cotitulaires (RPPS) | | | | X | *(en cours de modélisation)* |
 
 ### Modélisation FHIR actuelle (API Annuaire Santé)
 
@@ -58,19 +86,15 @@ Les BAL sont modélisées via l'élément `telecom` (profil [AS Mailbox MSS](Str
 | `APP` | `Organization` |
 | `CAB` | `Practitioner` |
 
-### Transactions API
+### Option 1 — Recherche sur les ressources porteuses (approche actuelle)
 
-#### Récupérer toutes les BAL d'un type
+Les BAL sont exposées comme éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Le paramètre de recherche [`mailbox-mss-type`](SearchParameter-as-sp-mailbox-mss-type.html), ajouté le 25/03/2026 dans la [PR #296](https://github.com/ansforge/IG-fhir-annuaire/pull/296) et non encore implémenté, filtre les ressources par type de BAL. Il est de type `token` et disponible sur `Organization`, `Practitioner` et `PractitionerRole`.
 
-Deux approches sont envisagées.
+#### Récupération
 
-##### Option 1 — Recherche sur les ressources porteuses (approche actuelle)
+L'inconvénient de cette approche est que les BAL sont portées par plusieurs types de ressources distincts. Pour les BAL PER notamment, deux requêtes sont nécessaires (sur `Practitioner` et `PractitionerRole`). Il est possible de les regrouper en un seul appel via `_type` ou via une requête batch.
 
-Le paramètre de recherche [`mailbox-mss-type`](SearchParameter-as-sp-mailbox-mss-type.html), ajouté le 25/03/2026 dans la [PR #296](https://github.com/ansforge/IG-fhir-annuaire/pull/296) et non encore implémenté, filtre les ressources par type de BAL. Il est de type `token` et disponible sur `Organization`, `Practitioner` et `PractitionerRole`.
-
-L'inconvénient de cette approche est que les BAL sont portées par plusieurs types de ressources distincts. Pour les BAL PER notamment, deux requêtes sont nécessaires (sur `Practitioner` et `PractitionerRole`). Il est possible de les regrouper en un seul appel via une requête batch (voir ci-dessous).
-
-**BAL personnelles (PER)**
+##### BAL personnelles (PER)
 
 Une BAL PER peut être associée à un identifiant RPPS uniquement (`Practitioner`) ou à un RPPS + structure d'exercice (`PractitionerRole`) :
 
@@ -79,7 +103,23 @@ GET [base]/Practitioner?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256
 GET [base]/PractitionerRole?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER
 ```
 
-Ces deux requêtes peuvent être regroupées en un seul appel HTTP via un batch FHIR :
+Ces deux requêtes peuvent être regroupées en un seul appel via le paramètre `_type`, qui permet d'interroger plusieurs types de ressources simultanément sur le point d'entrée de base :
+
+```http
+GET [base]?_type=Practitioner,PractitionerRole&mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER
+```
+
+Le serveur répond avec un `Bundle` de type `searchset` contenant des ressources `Practitioner` et `PractitionerRole` correspondant au filtre.
+
+Le paramètre `_elements` permet de limiter la réponse aux seuls champs utiles. Pour ne récupérer que les données MSSanté (adresse et métadonnées), on peut restreindre aux éléments `telecom` et `identifier` (pour identifier le porteur) :
+
+```http
+GET [base]?_type=Practitioner,PractitionerRole&mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER&_elements=identifier,telecom
+```
+
+Le serveur retourne uniquement les champs `identifier` et `telecom` dans chaque ressource, réduisant significativement le volume de données transférées.
+
+Il est également possible de les regrouper via un batch FHIR :
 
 ```json
 POST [base]
@@ -107,19 +147,19 @@ Content-Type: application/fhir+json
 
 Le serveur répond avec un `Bundle` de type `batch-response` contenant un entry par requête, chacune portant un `Bundle` de type `searchset`.
 
-**BAL organisationnelles (ORG)**
+##### BAL organisationnelles (ORG)
 
 ```http
 GET [base]/Organization?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|ORG
 ```
 
-**BAL applicatives (APP)**
+##### BAL applicatives (APP)
 
 ```http
 GET [base]/Organization?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|APP
 ```
 
-**BAL de cabinet (CAB)** *(en cours de travaux)*
+##### BAL de cabinet (CAB)
 
 <blockquote class="stu-note">
 <p>La prise en charge des BAL CAB est en cours de travaux. Les spécifications ci-dessous sont susceptibles d'évoluer.</p>
@@ -129,54 +169,6 @@ GET [base]/Organization?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256
 GET [base]/Practitioner?mailbox-mss-type=https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|CAB
 ```
 
-##### Option 2 — `CodeSystem` avec properties (proposition d'évolution)
-
-Un [`CodeSystem`](https://hl7.org/fhir/R4/codesystem.html) dédié aux BAL MSSanté permettrait de regrouper toutes les BAL dans une ressource unique et homogène. Chaque concept représente une BAL (code = adresse MSSanté), et les `property` portent les métadonnées ainsi que la référence au porteur.
-
-Exemple de structure :
-
-```json
-{
-  "resourceType": "CodeSystem",
-  "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/balmss",
-  "concept": [
-    {
-      "code": "prenom.nom@domain.mssante.fr",
-      "display": "BAL de M. Nom",
-      "property": [
-        { "code": "typeBAL", "valueCode": "PER" },
-        { "code": "porteur", "valueString": "800012345678" }
-      ]
-    }
-  ]
-}
-```
-
-Les properties à définir seraient au minimum :
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `typeBAL` | `code` | Type de BAL : `PER`, `ORG`, `APP`, `CAB` |
-| `porteur` | `string` | Identifiant du porteur (RPPS ou identifiant de structure) |
-| `typePorteur` | `code` | Nature du porteur : `Practitioner`, `PractitionerRole`, `Organization` |
-| `responsible` | `string` | Responsable de la BAL (pour les types CAB) |
-
-La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`$lookup`](https://hl7.org/fhir/R4/codesystem-operation-lookup.html) ou une opération personnalisée de filtrage par property.
-
-<div class="wysiwyg" markdown="1">
-**Avantages :**
-
-- Ressource unique pour toutes les BAL, quel que soit le porteur
-- Structure extensible via les properties (responsable, cotitulaires pour CAB, etc.)
-- Sémantique claire : le CodeSystem est un registre de référence des BAL
-- Possibilité de définir un `ValueSet` par type de BAL (ex. `ValueSet/balmss-per`, `ValueSet/balmss-org`...), permettant de récupérer en une requête l'ensemble des BAL d'un type via `ValueSet/$expand`
-
-**Points de vigilance :**
-
-- La recherche FHIR standard ne supporte pas le filtrage par `property` sur un `CodeSystem` ; une opération personnalisée ou une exposition via `ValueSet/$expand` avec filtres serait nécessaire
-- Un CodeSystem est conçu pour la terminologie, pas pour des données d'instance ; ce détournement d'usage doit être documenté et assumé
-</div>
-
 ##### Paramètres de recherche associés
 
 | Paramètre | Type | Description |
@@ -184,19 +176,19 @@ La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`
 | [`mailbox-mss-type`](SearchParameter-as-sp-mailbox-mss-type.html) | token | Filtre par type de BAL (`PER`, `ORG`, `APP`, `CAB`) |
 | [`mailbox-mss`](SearchParameter-as-sp-mailbox-mss.html) | string | Filtre par adresse MSSanté (supporte les modificateurs `:contains` et `:exact`) |
 
-#### Mettre à jour une BAL
+#### Mise à jour
 
 <blockquote class="stu-note">
 <p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour la mise à jour des BAL, en vue d'une future ouverture en écriture.</p>
 </blockquote>
 
-##### Option 1 — PATCH sur la ressource porteuse (approche actuelle)
-
 Une BAL étant modélisée comme un élément `telecom` au sein de sa ressource porteuse, sa mise à jour s'effectue par un `PATCH` ciblé sur cette ressource. L'opération `PUT` (remplacement complet de la ressource) est déconseillée car elle expose à des écrasements non intentionnels des autres données du professionnel ou de la structure.
 
 L'approche retenue est le **FHIR Patch** (format `application/fhir+json`), qui utilise une ressource `Parameters` avec des opérations FHIRPath. Il permet de cibler précisément l'élément `telecom` à modifier grâce à l'adresse de la BAL.
 
-**Champs modifiables**
+La ressource porteuse et son identifiant sont à récupérer au préalable via une recherche sur `mailbox-mss`.
+
+##### Champs modifiables
 
 Les métadonnées portées par l'extension `as-ext-mailbox-mss-metadata` peuvent être mises à jour :
 
@@ -210,7 +202,7 @@ Les métadonnées portées par l'extension `as-ext-mailbox-mss-metadata` peuvent
 
 L'adresse de la BAL (`telecom.value`) et le type (`typeBAL`) ne sont pas modifiables.
 
-**Exemple — mise à jour de la liste rouge d'une BAL PER**
+##### Exemple — mise à jour de la liste rouge d'une BAL PER
 
 ```json
 PATCH [base]/Practitioner/[id]
@@ -231,7 +223,7 @@ Content-Type: application/fhir+json
 }
 ```
 
-**Exemple — mise à jour de la description d'une BAL ORG**
+##### Exemple — mise à jour de la description d'une BAL ORG
 
 ```json
 PATCH [base]/Organization/[id]
@@ -252,13 +244,67 @@ Content-Type: application/fhir+json
 }
 ```
 
-La ressource porteuse et son identifiant sont à récupérer au préalable via une recherche sur `mailbox-mss` (voir section précédente).
+### Option 2 — `CodeSystem` avec properties (proposition d'évolution)
 
-##### Option 2 — Mise à jour via `CodeSystem`
+Un [`CodeSystem`](https://hl7.org/fhir/R4/codesystem.html) dédié aux BAL MSSanté permettrait de regrouper toutes les BAL dans une ressource unique et homogène. Chaque concept représente une BAL (code = adresse MSSanté), et les `property` portent les métadonnées ainsi que la référence au porteur.
 
-Dans l'approche CodeSystem, la BAL est un concept identifié par son adresse. La mise à jour d'une property s'effectue par un `PATCH` FHIRPath ciblant le concept via son code.
+Les properties à définir seraient au minimum :
 
-**Exemple — mise à jour de la liste rouge**
+| Property | Type | Description |
+|----------|------|-------------|
+| `typeBAL` | `code` | Type de BAL : `PER`, `ORG`, `APP`, `CAB` |
+| `porteur` | `string` | Identifiant du porteur (RPPS ou identifiant de structure) |
+| `typePorteur` | `code` | Nature du porteur : `Practitioner`, `PractitionerRole`, `Organization` |
+| `responsible` | `string` | Responsable de la BAL (pour les types CAB) |
+
+<div class="wysiwyg" markdown="1">
+**Avantages :**
+
+- Ressource unique pour toutes les BAL, quel que soit le porteur
+- Structure extensible via les properties (responsable, cotitulaires pour CAB, etc.)
+- Sémantique claire : le CodeSystem est un registre de référence des BAL
+- Possibilité de définir un `ValueSet` par type de BAL (ex. `ValueSet/balmss-per`, `ValueSet/balmss-org`...), permettant de récupérer en une requête l'ensemble des BAL d'un type via `ValueSet/$expand`
+
+**Points de vigilance :**
+
+- La recherche FHIR standard ne supporte pas le filtrage par `property` sur un `CodeSystem` ; une opération personnalisée ou une exposition via `ValueSet/$expand` avec filtres serait nécessaire
+- Un CodeSystem est conçu pour la terminologie, pas pour des données d'instance ; ce détournement d'usage doit être documenté et assumé
+</div>
+
+#### Récupération
+
+La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`ValueSet/$expand`](https://hl7.org/fhir/R4/valueset-operation-expand.html), en définissant un `ValueSet` par type de BAL (ex. `ValueSet/balmss-per`, `ValueSet/balmss-org`...) dont le `compose` filtre les concepts du `CodeSystem` par la property `typeBAL`. Un seul appel suffit alors pour récupérer l'ensemble des BAL d'un type donné.
+
+L'opération [`CodeSystem/$lookup`](https://hl7.org/fhir/R4/codesystem-operation-lookup.html) répond à un besoin différent : elle permet de consulter les propriétés d'une BAL dont on connaît déjà l'adresse (le code), par exemple pour vérifier son statut liste rouge ou son responsable.
+
+Exemple de structure du CodeSystem :
+
+```json
+{
+  "resourceType": "CodeSystem",
+  "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/balmss",
+  "concept": [
+    {
+      "code": "prenom.nom@domain.mssante.fr",
+      "display": "BAL de M. Nom",
+      "property": [
+        { "code": "typeBAL", "valueCode": "PER" },
+        { "code": "porteur", "valueString": "800012345678" }
+      ]
+    }
+  ]
+}
+```
+
+#### Mise à jour
+
+Dans l'approche CodeSystem, la BAL est un concept identifié par son adresse. La mise à jour d'une property s'effectue par un `PATCH` FHIRPath ciblant le concept via son code. Toutes les mises à jour portent sur une seule ressource (`CodeSystem/balmss`), sans avoir à identifier la ressource porteuse au préalable.
+
+<blockquote class="stu-note">
+<p>Le support du PATCH sur les éléments imbriqués d'un <code>CodeSystem</code> reste à valider selon l'implémentation du serveur.</p>
+</blockquote>
+
+##### Exemple — mise à jour de la liste rouge
 
 ```json
 PATCH [base]/CodeSystem/balmss
@@ -279,7 +325,7 @@ Content-Type: application/fhir+json
 }
 ```
 
-**Exemple — ajout d'un cotitulaire sur une BAL CAB**
+##### Exemple — ajout d'un cotitulaire sur une BAL CAB
 
 L'ajout d'un cotitulaire est une opération `add` sur le tableau `property` du concept :
 
@@ -306,4 +352,18 @@ Content-Type: application/fhir+json
 }
 ```
 
-Par rapport à l'option 1, cette approche présente un avantage : toutes les mises à jour portent sur une seule ressource (`CodeSystem/balmss`), sans avoir à identifier la ressource porteuse au préalable. En revanche, le support du PATCH sur les éléments imbriqués d'un `CodeSystem` reste à valider selon l'implémentation du serveur.
+### Comparaison des deux approches
+
+> Ce tableau est provisoire. Il devra être mis à jour au fur et à mesure des décisions fonctionnelles (gouvernance, droits de modification, cas d'usage confirmés).
+
+| Critère | Option 1 — Ressources porteuses | Option 2 — CodeSystem |
+|---------|----------------------------------|----------------------|
+| **Modèle de données** | BAL imbriquée dans la ressource porteuse via `telecom` — usage standard et conforme au modèle FHIR | BAL comme concept autonome dans un `CodeSystem` dédié — usage dérivé : `CodeSystem` est réservé aux terminologies ; l'utiliser pour des données d'instance sort du cadre prévu par le standard et peut poser des problèmes d'interopérabilité avec les outils terminologiques |
+| **Conformité au modèle FHIR** | Conforme et déjà modélisé — usage standard de `telecom` et d'extensions | Détournement d'usage : un `CodeSystem` est conçu pour la terminologie, pas pour des données d'instance |
+| **Récupération de toutes les BAL d'un type** | Requiert d'interroger plusieurs types de ressources ; atténué par `_type` ou batch | Un seul appel via `ValueSet/$expand` |
+| **Consultation d'une BAL par adresse** | Recherche via `mailbox-mss` sur la ou les ressource•s porteuse•s | `CodeSystem/$lookup` sur le code (adresse) |
+| **Mise à jour** | `PATCH` FHIRPath sur la ressource porteuse (nécessite d'identifier la ressource au préalable) | `PATCH` FHIRPath sur `CodeSystem/balmss` directement |
+| **Extensibilité** | Extensible via de nouvelles extensions sur les ressources porteuses | Limitée aux properties du `CodeSystem` — pas adapté pour enrichir le modèle de données (ex. ajouter des éléments structurés, des références vers d'autres ressources FHIR) |
+| **Perspective d'évolution du modèle** | Possibilité d'enrichir les profils existants sans remettre en cause l'approche | Évolution contrainte par la structure `concept / property` — tout besoin dépassant ce cadre nécessiterait de repenser l'approche |
+| **Complexité d'implémentation côté serveur** | Modérée — l'API FHIR Annuaire Santé est déjà implémentée ; le support de `_type` représente un coût marginal, mais le `PATCH` FHIRPath sur les ressources porteuses reste à développer | Élevée — nécessite la création et l'exposition de nouveaux endpoints (`CodeSystem`, `ValueSet`), une implémentation spécifique de `$expand` avec filtres sur properties, et la validation du PATCH sur éléments imbriqués |
+| **Maturité / risque** | Approche actuelle, déjà partiellement implémentée | Proposition d'évolution, non implémentée — comportement du PATCH sur `CodeSystem` imbriqué à valider |
