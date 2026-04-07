@@ -13,11 +13,12 @@ Les boîtes aux lettres du service de messagerie sécurisée de santé (MSSanté
 
 #### Description du besoin
 
-Les cas d'usage autour des BAL MSSanté sont de deux natures :
+Les cas d'usage autour des BAL MSSanté sont de trois natures :
 
 <div class="wysiwyg" markdown="1">
 - **Récupération** : retrouver les adresses MSSanté rattachées à un professionnel, une situation d'exercice ou une structure — par exemple pour adresser un message sécurisé au bon destinataire ou alimenter un annuaire tiers.
 - **Mise à jour** : modifier les métadonnées d'une BAL existante — par exemple passer en liste rouge, activer la dématérialisation ou mettre à jour la description d'une BAL organisationnelle.
+- **Gestion des BAL préférentielles** : lorsqu'un professionnel ou une structure porte plusieurs BAL, indiquer laquelle doit être utilisée en priorité — par exemple désigner une BAL principale pour la réception des documents dématérialisés.
 </div>
 
 #### Limites potentielles de l'API FHIR Annuaire Santé actuelle
@@ -28,16 +29,15 @@ L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléme
 - **Pas de ressource dédiée aux BAL** : les BAL ne sont pas des ressources FHIR de premier niveau — elles sont imbriquées dans leurs ressources porteuses. Il n'est donc pas possible d'interroger « toutes les BAL » en une seule requête homogène, sans cibler un type de ressource particulier. FHIR offre cependant des mécanismes pour atténuer cette contrainte (`_type`, batch).
 - **Ressources porteuses hétérogènes selon le type de BAL** : les BAL PER peuvent être portées indifféremment par `Practitioner` (RPPS seul) ou `PractitionerRole` (RPPS + structure). Sans mécanisme d'agrégation, deux requêtes sont nécessaires pour couvrir l'ensemble des BAL PER, bien que `_type` ou un batch permettent de les regrouper en un seul appel.
 - **API en lecture seule** : nécessité de développer les opérations d'écriture (`PUT`, `PATCH`)
+- **Absence de notion de BAL préférentielle** : un professionnel ou une structure peut porter plusieurs BAL. Il n'existe pas de mécanisme permettant d'indiquer un ordre de préférence ou de désigner une BAL comme BAL principale parmi d'autres. Cette notion ne pourrait pas non plus être couverte par les properties d'un `CodeSystem`, qui ne sont pas conçues pour exprimer des relations d'ordre ou de priorité entre concepts.
 </div>
-
-Ces limites motivent l'étude d'une approche alternative (voir Option 2 — CodeSystem).
 
 #### Questions métier en suspens — indépendantes de FHIR
 
 > Les questions listées ci-dessous sont des problématiques **métier et organisationnelles**. Elles ne sont pas liées au standard FHIR, qui dispose de tous les mécanismes nécessaires pour les implémenter une fois les réponses connues (`PATCH`, `SearchParameter`, `CodeSystem`, modèles logiques...). La difficulté réside dans la clarification préalable du besoin : qui gère quoi, selon quelles règles, et avec quel niveau de granularité.
 
 <div class="wysiwyg" markdown="1">
-- **Cas d'usage de la recherche** : pourquoi a-t-on besoin de requêter les BAL MSSanté de façon dédiée ? L'API actuelle permet déjà de récupérer les BAL via les ressources porteuses — quel besoin spécifique justifie une recherche centrée sur les BAL elles-mêmes (ex. lister toutes les BAL d'un opérateur, alimenter un annuaire tiers, superviser les BAL sans liste rouge...) ?
+- **Cas d'usage et profil des consommateurs** : quel type d'acteur souhaiterait requêter les BAL MSSanté de façon dédiée, indépendamment de leur porteur ? Pour quel cas d'usage concret (supervision, synchronisation, routage, alimentation d'un annuaire tiers...) ? Et en quoi l'API FHIR existante — qui expose déjà les BAL via les ressources porteuses — ne suffit-elle pas à couvrir ce besoin ?
 - **Cas d'usage de la mise à jour** : quels acteurs ont besoin de modifier des BAL via l'API ? Pour quels attributs et avec quelle fréquence ? L'API actuelle en lecture seule couvre-t-elle les besoins ou une ouverture en écriture est-elle nécessaire ?
 - **Discriminant d'identification d'une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Il n'existe pas aujourd'hui de convention métier connue définissant quel attribut sert de discriminant pour cibler une BAL précise. L'adresse est le candidat naturel, mais le typeBAL, l'opérateur ou le service de rattachement pourraient également jouer ce rôle selon le contexte.
 - **Gouvernance et droits de modification** : qui est autorisé à modifier une BAL ? L'opérateur MSSanté ? L'établissement ? Le professionnel lui-même ? Les règles d'habilitation ne sont pas définies.
@@ -271,7 +271,7 @@ Les properties à définir seraient au minimum :
 - Un CodeSystem est conçu pour la terminologie, pas pour des données d'instance ; ce détournement d'usage doit être documenté et assumé
 </div>
 
-#### Récupération
+#### Récupération de l'ensemble des bal MSS
 
 La récupération de toutes les BAL d'un type s'effectuerait via l'opération [`ValueSet/$expand`](https://hl7.org/fhir/R4/valueset-operation-expand.html), en définissant un `ValueSet` par type de BAL (ex. `ValueSet/balmss-per`, `ValueSet/balmss-org`...) dont le `compose` filtre les concepts du `CodeSystem` par la property `typeBAL`. Un seul appel suffit alors pour récupérer l'ensemble des BAL d'un type donné.
 
@@ -296,7 +296,7 @@ Exemple de structure du CodeSystem :
 }
 ```
 
-#### Mise à jour
+#### Mise à jour d'informations relatives à la BAL MSS
 
 Dans l'approche CodeSystem, la BAL est un concept identifié par son adresse. La mise à jour d'une property s'effectue par un `PATCH` FHIRPath ciblant le concept via son code. Toutes les mises à jour portent sur une seule ressource (`CodeSystem/balmss`), sans avoir à identifier la ressource porteuse au préalable.
 
@@ -358,12 +358,10 @@ Content-Type: application/fhir+json
 
 | Critère | Option 1 — Ressources porteuses | Option 2 — CodeSystem |
 |---------|----------------------------------|----------------------|
-| **Modèle de données** | BAL imbriquée dans la ressource porteuse via `telecom` — usage standard et conforme au modèle FHIR | BAL comme concept autonome dans un `CodeSystem` dédié — usage dérivé : `CodeSystem` est réservé aux terminologies ; l'utiliser pour des données d'instance sort du cadre prévu par le standard et peut poser des problèmes d'interopérabilité avec les outils terminologiques |
-| **Conformité au modèle FHIR** | Conforme et déjà modélisé — usage standard de `telecom` et d'extensions | Détournement d'usage : un `CodeSystem` est conçu pour la terminologie, pas pour des données d'instance |
-| **Récupération de toutes les BAL d'un type** | Requiert d'interroger plusieurs types de ressources ; atténué par `_type` ou batch | Un seul appel via `ValueSet/$expand` |
+| **Modèle de données** | BAL imbriquée dans la ressource porteuse via l'attribut `telecom` — usage standard et conforme au modèle FHIR | BAL comme concept autonome dans un `CodeSystem` dédié — usage dérivé : `CodeSystem` est réservé aux terminologies ; l'utiliser pour des données d'instance sort du cadre prévu par le standard et peut poser des problèmes d'interopérabilité avec les outils terminologiques |
+| **Récupération de toutes les BAL d'un type** | Requiert d'interroger plusieurs types de ressources ; il existe des solutions pour répondre à ce besoin via un seul appel (`_type` ou batch) | Un seul appel via `ValueSet/$expand` |
 | **Consultation d'une BAL par adresse** | Recherche via `mailbox-mss` sur la ou les ressource•s porteuse•s | `CodeSystem/$lookup` sur le code (adresse) |
 | **Mise à jour** | `PATCH` FHIRPath sur la ressource porteuse (nécessite d'identifier la ressource au préalable) | `PATCH` FHIRPath sur `CodeSystem/balmss` directement |
-| **Extensibilité** | Extensible via de nouvelles extensions sur les ressources porteuses | Limitée aux properties du `CodeSystem` — pas adapté pour enrichir le modèle de données (ex. ajouter des éléments structurés, des références vers d'autres ressources FHIR) |
-| **Perspective d'évolution du modèle** | Possibilité d'enrichir les profils existants sans remettre en cause l'approche | Évolution contrainte par la structure `concept / property` — tout besoin dépassant ce cadre nécessiterait de repenser l'approche |
+| **Évolution du modèle de données** | Les ressources porteuses disposent déjà d'un modèle riche (éléments natifs FHIR + extensions existantes) ; de nouvelles données peuvent s'appuyer sur des éléments déjà définis ou des extensions dédiées, sans remettre en cause l'approche | Limité aux properties du `CodeSystem` — pas adapté pour des données structurées ou des références vers d'autres ressources FHIR ; tout besoin dépassant ce cadre nécessiterait de repenser l'approche |
 | **Complexité d'implémentation côté serveur** | Modérée — l'API FHIR Annuaire Santé est déjà implémentée ; le support de `_type` représente un coût marginal, mais le `PATCH` FHIRPath sur les ressources porteuses reste à développer | Élevée — nécessite la création et l'exposition de nouveaux endpoints (`CodeSystem`, `ValueSet`), une implémentation spécifique de `$expand` avec filtres sur properties, et la validation du PATCH sur éléments imbriqués |
-| **Maturité / risque** | Approche actuelle, déjà partiellement implémentée | Proposition d'évolution, non implémentée — comportement du PATCH sur `CodeSystem` imbriqué à valider |
+| **Maturité / risque** | Approche actuelle, 90% des fonctionnalités déjà implémentées | Proposition d'évolution, non implémentée — nécessite de créer de nouveaux endpoints (`CodeSystem`, `ValueSet`) non évolutifs |
