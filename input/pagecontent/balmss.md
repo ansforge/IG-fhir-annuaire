@@ -21,14 +21,14 @@ Les cas d'usage autour des BAL MSSanté sont de trois natures :
 - **Gestion des BAL préférentielles** : lorsqu'un professionnel ou une structure porte plusieurs BAL, indiquer laquelle doit être utilisée en priorité — par exemple désigner une BAL principale pour la réception des documents dématérialisés.
 </div>
 
-#### Limites de l'API FHIR Annuaire Santé actuelle
+| Code | Libellé | Rattachement | Modèle logique |
+|------|---------|--------------|----------------|
+| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | [AS BAL MSS PER](StructureDefinition-as-bal-mss-per.html) |
+| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | [AS BAL MSS ORG](StructureDefinition-as-bal-mss-org.html) |
+| `APP` | BAL applicative | Structure (EJ ou EG) | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
+| `CAB` | BAL de cabinet | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
 
-L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Cette modélisation présente plusieurs limites techniques :
 
-<div class="wysiwyg" markdown="1">
-- **BAL imbriquées dans des ressources porteuses hétérogènes** : les BAL ne sont pas des ressources FHIR de premier niveau — elles sont imbriquées dans `Practitioner`, `PractitionerRole` ou `Organization` selon leur type. Les BAL PER sont en outre portées indifféremment par `Practitioner` (RPPS seul) ou `PractitionerRole` (RPPS + structure), ce qui peut nécessiter plusieurs requêtes pour couvrir l'ensemble d'un type. FHIR offre cependant des mécanismes pour atténuer cette contrainte (`_type`, batch).
-- **API en lecture seule** : nécessité de développer les opérations d'écriture (`PUT`, `PATCH`)
-</div>
 
 #### Questions métier à approfondir — indépendantes de FHIR
 
@@ -50,18 +50,29 @@ Certains besoins fonctionnels autour des BAL ne sont pas encore suffisamment dé
 
 Ces questions devront être traitées dans le cadre de la définition du modèle d'autorisation et de gouvernance de l'API en écriture, préalablement à toute implémentation.
 
-### Description métier
+#### Limites de l'API FHIR Annuaire Santé actuelle
 
-| Code | Libellé | Rattachement | Modèle logique |
-|------|---------|--------------|----------------|
-| `PER` | BAL personnelle | Identifiant RPPS (BAL générale du professionnel) ou RPPS + structure d'exercice (BAL spécifique à une situation d'exercice) | [AS BAL MSS PER](StructureDefinition-as-bal-mss-per.html) |
-| `ORG` | BAL organisationnelle | Structure (EJ ou EG) | [AS BAL MSS ORG](StructureDefinition-as-bal-mss-org.html) |
-| `APP` | BAL applicative | Structure (EJ ou EG) | [AS BAL MSS APP](StructureDefinition-as-bal-mss-app.html) |
-| `CAB` | BAL de cabinet *(en cours de travaux)* | 1..* identifiants RPPS (un responsable + 0 ou plusieurs cotitulaires) | [AS BAL MSS CAB](StructureDefinition-as-bal-mss-cab.html) |
+L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Cette modélisation présente plusieurs limites techniques :
+
+<div class="wysiwyg" markdown="1">
+- **BAL imbriquées dans des ressources porteuses hétérogènes** : les BAL ne sont pas des ressources FHIR de premier niveau — elles sont imbriquées dans `Practitioner`, `PractitionerRole` ou `Organization` selon leur type. Les BAL PER sont en outre portées indifféremment par `Practitioner` (RPPS seul) ou `PractitionerRole` (RPPS + structure), ce qui peut nécessiter plusieurs requêtes pour couvrir l'ensemble d'un type. FHIR offre cependant des mécanismes pour atténuer cette contrainte (`_type`, batch).
+- **API en lecture seule** : nécessité de développer les opérations d'écriture (`PUT`, `PATCH`)
+</div>
+
+### Modélisation FHIR actuelle (API Annuaire Santé)
+
+Les BAL sont modélisées via l'élément `telecom` (profil [AS Mailbox MSS](StructureDefinition-as-mailbox-mss.html)), enrichi de l'extension `as-ext-mailbox-mss-metadata` portant les métadonnées de la BAL. Le type de BAL est lié au jeu de valeurs [JDV-J139-TypeBAL-RASS](https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS).
+
+| Code | Ressource(s) porteuse(s) |
+|------|--------------------------|
+| `PER` | `Practitioner` (RPPS seul), `PractitionerRole` (RPPS + structure) |
+| `ORG` | `Organization` |
+| `APP` | `Organization` |
+| `CAB` | `Practitioner` |
 
 Le tableau suivant liste les données associées à chaque type de BAL et leur correspondance dans le modèle FHIR. Les chemins sont relatifs à l'élément `telecom` (profil [AS Mailbox MSS](StructureDefinition-as-mailbox-mss.html)) ; les identifiants porteurs sont portés par la ressource elle-même.
 
-| Donnée | PER | ORG | APP | CAB | Chemin FHIR |
+| Donnée | PER | ORG | APP | CAB | Chemin FHIR (modélisation actuelle de l'API Annuaire Santé) |
 |--------|:---:|:---:|:---:|:---:|-------------|
 | Adresse BAL | X | X | X | X | `telecom.value` |
 | Type de BAL | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
@@ -75,17 +86,6 @@ Le tableau suivant liste les données associées à chaque type de BAL et leur c
 | Identifiant national de structure | | X | X | | `Organization.identifier` |
 | Responsable (RPPS) | | | | X | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
 | Cotitulaires (RPPS) | | | | X | *(en cours de modélisation)* |
-
-### Modélisation FHIR actuelle (API Annuaire Santé)
-
-Les BAL sont modélisées via l'élément `telecom` (profil [AS Mailbox MSS](StructureDefinition-as-mailbox-mss.html)), enrichi de l'extension `as-ext-mailbox-mss-metadata` portant les métadonnées de la BAL. Le type de BAL est lié au jeu de valeurs [JDV-J139-TypeBAL-RASS](https://mos.esante.gouv.fr/NOS/JDV_J139-TypeBAL-RASS/FHIR/JDV-J139-TypeBAL-RASS).
-
-| Code | Ressource(s) porteuse(s) |
-|------|--------------------------|
-| `PER` | `Practitioner` (RPPS seul), `PractitionerRole` (RPPS + structure) |
-| `ORG` | `Organization` |
-| `APP` | `Organization` |
-| `CAB` | `Practitioner` |
 
 ### Option 1 — Recherche sur les ressources porteuses (approche actuelle)
 
@@ -119,6 +119,20 @@ GET [base]?_type=Practitioner,PractitionerRole&mailbox-mss-type=https://mos.esan
 ```
 
 Le serveur retourne uniquement les champs `identifier` et `telecom` dans chaque ressource, réduisant significativement le volume de données transférées.
+
+**Exemple de réponse — Bundle complet**
+
+La réponse suivante illustre un `Bundle` de type `searchset` contenant deux ressources `Practitioner` ayant une BAL PER (données fictives) :
+
+- [Bundle searchset BAL PER — réponse complète](Bundle-as-bundle-bal-per-full.html)
+- Ressources incluses : [Practitioner DUPONT](Practitioner-as-practitioner-bal-per-dupont.html), [Practitioner MARTIN](Practitioner-as-practitioner-bal-per-martin.html)
+
+**Exemple de réponse — Bundle restreint (`_elements=identifier,telecom`)**
+
+Avec le paramètre `_elements=identifier,telecom`, seuls les champs `identifier` et `telecom` sont retournés. Le serveur ajoute `meta.tag = SUBSETTED` pour signaler que la ressource est incomplète :
+
+- [Bundle searchset BAL PER — réponse restreinte](Bundle-as-bundle-bal-per-elements.html)
+- Ressources incluses : [Practitioner DUPONT (restreint)](Practitioner-as-practitioner-bal-per-dupont-elements.html), [Practitioner MARTIN (restreint)](Practitioner-as-practitioner-bal-per-martin-elements.html)
 
 Il est également possible de les regrouper via un batch FHIR :
 
