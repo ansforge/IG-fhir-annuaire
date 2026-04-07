@@ -21,24 +21,25 @@ Les cas d'usage autour des BAL MSSanté sont de trois natures :
 - **Gestion des BAL préférentielles** : lorsqu'un professionnel ou une structure porte plusieurs BAL, indiquer laquelle doit être utilisée en priorité — par exemple désigner une BAL principale pour la réception des documents dématérialisés.
 </div>
 
-#### Limites potentielles de l'API FHIR Annuaire Santé actuelle
+#### Limites de l'API FHIR Annuaire Santé actuelle
 
-L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Cette modélisation présente plusieurs limites :
+L'API FHIR Annuaire Santé expose aujourd'hui les BAL MSSanté comme des éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Cette modélisation présente plusieurs limites techniques :
 
 <div class="wysiwyg" markdown="1">
-- **Pas de ressource dédiée aux BAL** : les BAL ne sont pas des ressources FHIR de premier niveau — elles sont imbriquées dans leurs ressources porteuses. Il n'est donc pas possible d'interroger « toutes les BAL » en une seule requête homogène, sans cibler un type de ressource particulier. FHIR offre cependant des mécanismes pour atténuer cette contrainte (`_type`, batch).
-- **Ressources porteuses hétérogènes selon le type de BAL** : les BAL PER peuvent être portées indifféremment par `Practitioner` (RPPS seul) ou `PractitionerRole` (RPPS + structure). Sans mécanisme d'agrégation, deux requêtes sont nécessaires pour couvrir l'ensemble des BAL PER, bien que `_type` ou un batch permettent de les regrouper en un seul appel.
+- **BAL imbriquées dans des ressources porteuses hétérogènes** : les BAL ne sont pas des ressources FHIR de premier niveau — elles sont imbriquées dans `Practitioner`, `PractitionerRole` ou `Organization` selon leur type. Les BAL PER sont en outre portées indifféremment par `Practitioner` (RPPS seul) ou `PractitionerRole` (RPPS + structure), ce qui peut nécessiter plusieurs requêtes pour couvrir l'ensemble d'un type. FHIR offre cependant des mécanismes pour atténuer cette contrainte (`_type`, batch).
 - **API en lecture seule** : nécessité de développer les opérations d'écriture (`PUT`, `PATCH`)
-- **Absence de notion de BAL préférentielle** : un professionnel ou une structure peut porter plusieurs BAL. Il n'existe pas de mécanisme permettant d'indiquer un ordre de préférence ou de désigner une BAL comme BAL principale parmi d'autres. Cette notion ne pourrait pas non plus être couverte par les properties d'un `CodeSystem`, qui ne sont pas conçues pour exprimer des relations d'ordre ou de priorité entre concepts.
 </div>
 
-#### Questions métier en suspens — indépendantes de FHIR
+#### Questions métier à approfondir — indépendantes de FHIR
+
+Certains besoins fonctionnels autour des BAL ne sont pas encore suffisamment définis pour être modélisés, quelle que soit l'approche technique retenue
 
 > Les questions listées ci-dessous sont des problématiques **métier et organisationnelles**. Elles ne sont pas liées au standard FHIR, qui dispose de tous les mécanismes nécessaires pour les implémenter une fois les réponses connues (`PATCH`, `SearchParameter`, `CodeSystem`, modèles logiques...). La difficulté réside dans la clarification préalable du besoin : qui gère quoi, selon quelles règles, et avec quel niveau de granularité.
 
 <div class="wysiwyg" markdown="1">
 - **Cas d'usage et profil des consommateurs** : quel type d'acteur souhaiterait requêter les BAL MSSanté de façon dédiée, indépendamment de leur porteur ? Pour quel cas d'usage concret (supervision, synchronisation, routage, alimentation d'un annuaire tiers...) ? Et en quoi l'API FHIR existante — qui expose déjà les BAL via les ressources porteuses — ne suffit-elle pas à couvrir ce besoin ?
 - **Cas d'usage de la mise à jour** : quels acteurs ont besoin de modifier des BAL via l'API ? Pour quels attributs et avec quelle fréquence ? L'API actuelle en lecture seule couvre-t-elle les besoins ou une ouverture en écriture est-elle nécessaire ?
+- **BAL préférentielle** : lorsqu'un professionnel ou une structure porte plusieurs BAL, comment désigner celle à utiliser en priorité ? Il n'existe pas de convention métier ni de mécanisme FHIR actuel pour exprimer cet ordre de préférence — et cette notion ne pourrait pas non plus être couverte par les properties d'un `CodeSystem`.
 - **Discriminant d'identification d'une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Il n'existe pas aujourd'hui de convention métier connue définissant quel attribut sert de discriminant pour cibler une BAL précise. L'adresse est le candidat naturel, mais le typeBAL, l'opérateur ou le service de rattachement pourraient également jouer ce rôle selon le contexte.
 - **Gouvernance et droits de modification** : qui est autorisé à modifier une BAL ? L'opérateur MSSanté ? L'établissement ? Le professionnel lui-même ? Les règles d'habilitation ne sont pas définies.
 - **Opérateurs multiples** : plusieurs opérateurs MSSanté peuvent coexister. Comment gérer les conflits ou les modifications simultanées sur une même BAL ? Qui fait autorité ?
