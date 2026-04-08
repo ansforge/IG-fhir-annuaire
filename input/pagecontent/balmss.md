@@ -1,6 +1,6 @@
 <div class="dragon" style="width: 65%">
 <p><b>Fonctionnalité en cours de réflexion</b> — Les spécifications décrites dans cette page sont exploratoires et sujettes à évolution. Elles n'ont pas encore fait l'objet d'une décision d'implémentation.</p>
-<p><b>TL;DR</b> — Cette page décrit les types de BAL MSSanté (PER, ORG, APP, CAB), leurs données associées et leurs modèles logiques. Elle présente deux approches pour les récupérer et les mettre à jour : <b>Option 1</b> (approche actuelle) — recherche via <code>mailbox-mss-type</code> sur les ressources porteuses (<code>Practitioner</code>, <code>PractitionerRole</code>, <code>Organization</code>), avec possibilité de regrouper les appels via <code>_type</code> ou batch, et mise à jour par <code>PATCH</code> FHIRPath sur la ressource porteuse ; <b>Option 2</b> (proposition d'évolution) — modélisation des BAL dans un <code>CodeSystem</code> dédié, offrant une ressource unique quel que soit le porteur, et mise à jour par <code>PATCH</code> sur le concept correspondant. Elle aborde également les problématiques métier non résolues (permissions, discriminant, cycle de vie).</p>
+<p><b>TL;DR</b> — Cette page décrit les types de BAL MSSanté (PER, ORG, APP, CAB), leurs données associées et leurs modèles logiques. Elle présente trois approches pour les récupérer et les mettre à jour : <b>Option 1</b> (approche actuelle) — recherche via <code>mailbox-mss-type</code> sur les ressources porteuses (<code>Practitioner</code>, <code>PractitionerRole</code>, <code>Organization</code>), avec possibilité de regrouper les appels via <code>_type</code> ou batch, et mise à jour par <code>PATCH</code> FHIRPath sur la ressource porteuse ; <b>Option 2</b> (proposition d'évolution) — modélisation des BAL dans un <code>CodeSystem</code> dédié, offrant une ressource unique quel que soit le porteur, et mise à jour par <code>PATCH</code> sur le concept correspondant ; <b>Option 3</b> (approche à éviter) — exposition des BAL via une API dédiée non standard, présentée ici avec ses arguments défavorables. Elle aborde également les problématiques métier non résolues (permissions, discriminant, cycle de vie).</p>
 </div>
 
 <div style="background-color: #fff9e6; border-left: 4px solid #ff9800; padding: 10px; width: 65%">
@@ -367,16 +367,36 @@ Content-Type: application/fhir+json
 }
 ```
 
-### Comparaison des deux approches
+### Option 3 — API dédiée MSS (endpoint custom)
+
+Cette approche consiste à exposer les BAL MSSanté via une API REST dédiée, indépendante de l'API FHIR Annuaire Santé, avec des endpoints et un modèle de données propres (non normés FHIR).
+
+<div class="wysiwyg" markdown="1">
+**Arguments contre :**
+
+- **Rupture avec les standards FHIR et la stratégie ANS** : l'ensemble de l'Annuaire Santé est exposé via une API FHIR normée, alignée sur le CI-SIS et les travaux européens (EEDS). Créer une API parallèle non standard pour les seules BAL MSS fragmente l'écosystème et crée une incohérence architecturale majeure.
+
+- **Duplication de la surface de maintenance** : une API custom viendrait s'ajouter à l'API FHIR existante, sans la remplacer — les ressources porteuses (`Practitioner`, `PractitionerRole`, `Organization`) continueraient d'exposer les BAL via `telecom`. L'ANS devrait maintenir deux surfaces d'exposition parallèles pour les mêmes données.
+
+- **Aucun gain fonctionnel démontré** : les besoins identifiés (récupération par type, mise à jour ciblée, consultation par adresse) peuvent tous être couverts par les Options 1 ou 2, dans le cadre FHIR standard. Une API custom ne résout pas les problématiques métier non résolues (gouvernance, droits, discriminant) — elle les déplace simplement dans un autre système.
+
+- **Complexité d'implémentation élevée pour une valeur marginale** : la conception, la documentation, la sécurisation et le versionning d'une API custom représentent un investissement significatif, sans réutilisation des briques existantes (validation FHIR, authentification SMART on FHIR, outils de publication IG...).
+
+- **Interopérabilité dégradée pour les consommateurs** : les acteurs qui consomment déjà l'API FHIR Annuaire Santé devraient intégrer un second système hétérogène. Cela va à l'encontre de l'objectif de rationalisation des interfaces porté par l'ANS.
+
+- **Non aligné avec la réglementation européenne** : le règlement EEDS et les travaux d'interopérabilité transfrontaliers reposent sur des API FHIR standardisées. Une API custom pour les BAL MSS ne pourrait pas s'inscrire dans ces cadres réglementaires.
+</div>
+
+### Comparaison des trois approches
 
 > Ce tableau est provisoire. Il devra être mis à jour au fur et à mesure des décisions fonctionnelles (gouvernance, droits de modification, cas d'usage confirmés).
 
-| Critère | Option 1 — Ressources porteuses | Option 2 — CodeSystem |
-|---------|----------------------------------|----------------------|
-| **Modèle de données** | BAL imbriquée dans la ressource porteuse via l'attribut `telecom` — usage standard et conforme au modèle FHIR | BAL comme concept autonome dans un `CodeSystem` dédié — usage dérivé : `CodeSystem` est réservé aux terminologies ; l'utiliser pour des données d'instance sort du cadre prévu par le standard et peut poser des problèmes d'interopérabilité avec les outils terminologiques |
-| **Récupération de toutes les BAL d'un type** | Requiert d'interroger plusieurs types de ressources ; il existe des solutions pour répondre à ce besoin via un seul appel (`_type` ou batch) | Un seul appel via `ValueSet/$expand` |
-| **Consultation d'une BAL par adresse** | Recherche via `mailbox-mss` sur la ou les ressource•s porteuse•s | `CodeSystem/$lookup` sur le code (adresse) |
-| **Mise à jour** | `PATCH` FHIRPath sur la ressource porteuse (nécessite d'identifier la ressource au préalable) | `PATCH` FHIRPath sur `CodeSystem/balmss` directement |
-| **Évolution du modèle de données** | Les ressources porteuses disposent déjà d'un modèle riche (éléments natifs FHIR + extensions existantes) ; de nouvelles données peuvent s'appuyer sur des éléments déjà définis ou des extensions dédiées, sans remettre en cause l'approche | Limité aux properties du `CodeSystem` — pas adapté pour des données structurées ou des références vers d'autres ressources FHIR ; tout besoin dépassant ce cadre nécessiterait de repenser l'approche |
-| **Complexité d'implémentation côté serveur** | Modérée — l'API FHIR Annuaire Santé est déjà implémentée ; le support de `_type` représente un coût marginal, mais le `PATCH` FHIRPath sur les ressources porteuses reste à développer | Élevée — nécessite la création et l'exposition de nouveaux endpoints (`CodeSystem`, `ValueSet`), une implémentation spécifique de `$expand` avec filtres sur properties, et la validation du PATCH sur éléments imbriqués |
-| **Maturité / risque** | Approche actuelle, 90% des fonctionnalités déjà implémentées | Proposition d'évolution, non implémentée — nécessite de créer de nouveaux endpoints (`CodeSystem`, `ValueSet`) non évolutifs |
+| Critère | Option 1 — Ressources porteuses | Option 2 — CodeSystem | Option 3 — API custom |
+|---------|----------------------------------|----------------------|----------------------|
+| **Modèle de données** | BAL imbriquée dans la ressource porteuse via l'attribut `telecom` — usage standard et conforme au modèle FHIR | BAL comme concept autonome dans un `CodeSystem` dédié — usage dérivé : `CodeSystem` est réservé aux terminologies ; l'utiliser pour des données d'instance sort du cadre prévu par le standard et peut poser des problèmes d'interopérabilité avec les outils terminologiques | Modèle propriétaire défini hors standard FHIR — aucune réutilisabilité, aucune validation par les outils de l'écosystème |
+| **Récupération de toutes les BAL d'un type** | Requiert d'interroger plusieurs types de ressources ; il existe des solutions pour répondre à ce besoin via un seul appel (`_type` ou batch) | Un seul appel via `ValueSet/$expand` | Un seul appel sur l'endpoint dédié — gain obtenu au prix d'une rupture de cohérence architecturale (ROR, EEDS, MonEspaceSanté, DMP) |
+| **Consultation d'une BAL par adresse** | Recherche via `mailbox-mss` sur la ou les ressource•s porteuse•s | `CodeSystem/$lookup` sur le code (adresse) | Requête propriétaire sur l'endpoint dédié |
+| **Mise à jour** | `PATCH` FHIRPath sur la ressource porteuse (nécessite d'identifier la ressource au préalable) | `PATCH` FHIRPath sur `CodeSystem/balmss` directement | Opération propriétaire — à concevoir et documenter intégralement |
+| **Évolution du modèle de données** | Les ressources porteuses disposent déjà d'un modèle riche (éléments natifs FHIR + extensions existantes) ; de nouvelles données peuvent s'appuyer sur des éléments déjà définis ou des extensions dédiées, sans remettre en cause l'approche | Limité aux properties du `CodeSystem` — pas adapté pour des données structurées ou des références vers d'autres ressources FHIR ; tout besoin dépassant ce cadre nécessiterait de repenser l'approche | Libre mais non normé — chaque évolution est à concevoir, versioner et documenter sans filet standard |
+| **Complexité d'implémentation côté serveur** | Modérée — l'API FHIR Annuaire Santé est déjà implémentée ; le support de `_type` représente un coût marginal, mais le `PATCH` FHIRPath sur les ressources porteuses reste à développer | Élevée — nécessite la création et l'exposition de nouveaux endpoints (`CodeSystem`, `ValueSet`), une implémentation spécifique de `$expand` avec filtres sur properties, et la validation du PATCH sur éléments imbriqués | Très élevée — conception, sécurisation, documentation et versionning d'une API entièrement custom, sans réutilisation des briques FHIR existantes |
+| **Maturité / risque** | Approche actuelle, 90% des fonctionnalités déjà implémentées | Proposition d'évolution, non implémentée — nécessite de créer de nouveaux endpoints (`CodeSystem`, `ValueSet`) non évolutifs | Approche écartée — coût élevé, rupture de cohérence, aucun avantage fonctionnel démontré par rapport aux Options 1 ou 2 |
