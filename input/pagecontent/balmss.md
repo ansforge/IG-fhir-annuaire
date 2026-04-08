@@ -244,6 +244,40 @@ Content-Type: application/fhir+json
 }
 ```
 
+##### Exemple — mise à jour simultanée de plusieurs attributs d'une BAL PER
+
+Pour modifier plusieurs attributs en une seule requête, on remplace le `ContactPoint` entier via un `replace` sur l'élément `telecom` ciblé :
+
+```json
+PATCH [base]/Practitioner/[id]
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')" },
+        { "name": "value", "valueContactPoint": {
+          "system": "email",
+          "value": "prenom.nom@domain.mssante.fr",
+          "extension": [{
+            "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+            "extension": [
+              { "url": "type", "valueCode": "PER" },
+              { "url": "digitization", "valueBoolean": true },
+              { "url": "listeRouge", "valueBoolean": true }
+            ]
+          }]
+        }}
+      ]
+    }
+  ]
+}
+```
+
 ##### Exemple — mise à jour de la description d'une BAL ORG
 
 ```json
@@ -271,7 +305,7 @@ Content-Type: application/fhir+json
 <p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour la création de BAL, en vue d'une future ouverture en écriture.</p>
 </blockquote>
 
-L'ajout d'une nouvelle BAL s'effectue par un `PATCH` sur la ressource porteuse avec une opération `add` ciblant l'élément `telecom`. La ressource porteuse doit être identifiée au préalable (par son identifiant ou via une recherche).
+L'ajout d'une nouvelle BAL s'effectue par un `PATCH` sur la ressource porteuse avec une opération `insert` dans le tableau `telecom`. La ressource porteuse doit être identifiée au préalable (par son identifiant ou via une recherche).
 
 ##### Exemple — ajout d'une BAL PER sur un Practitioner
 
@@ -285,28 +319,49 @@ Content-Type: application/fhir+json
     {
       "name": "operation",
       "part": [
-        { "name": "type", "valueCode": "add" },
-        { "name": "path", "valueString": "Practitioner" },
-        { "name": "name", "valueString": "telecom" },
-        { "name": "value", "part": [
-          { "name": "system", "valueCode": "email" },
-          { "name": "value", "valueString": "prenom.nom@domain.mssante.fr" },
-          { "name": "extension", "part": [
-            { "name": "url", "valueUri": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata" },
-            { "name": "extension", "part": [
-              { "name": "url", "valueUri": "type" },
-              { "name": "valueCode", "valueCode": "PER" }
-            ]},
-            { "name": "extension", "part": [
-              { "name": "url", "valueUri": "digitization" },
-              { "name": "valueBoolean", "valueBoolean": false }
-            ]},
-            { "name": "extension", "part": [
-              { "name": "url", "valueUri": "listeRouge" },
-              { "name": "valueBoolean", "valueBoolean": false }
-            ]}
-          ]}
-        ]}
+        { "name": "type", "valueCode": "insert" },
+        { "name": "path", "valueString": "Practitioner.telecom" },
+        { "name": "index", "valueInteger": 0 },
+        { "name": "value", "valueContactPoint": {
+          "system": "email",
+          "value": "prenom.nom@domain.mssante.fr",
+          "extension": [{
+            "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+            "extension": [
+              { "url": "type", "valueCode": "PER" },
+              { "url": "digitization", "valueBoolean": false },
+              { "url": "listeRouge", "valueBoolean": false }
+            ]
+          }]
+        }}
+      ]
+    }
+  ]
+}
+```
+
+#### Suppression
+
+<blockquote class="stu-note">
+<p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour la suppression de BAL, en vue d'une future ouverture en écriture.</p>
+</blockquote>
+
+La suppression d'une BAL s'effectue par un `PATCH` sur la ressource porteuse avec une opération `delete` ciblant le `telecom` via son adresse. La ressource porteuse doit être identifiée au préalable.
+
+##### Exemple — suppression d'une BAL PER
+
+```json
+PATCH [base]/Practitioner/[id]
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "delete" },
+        { "name": "path", "valueString": "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')" }
       ]
     }
   ]
@@ -427,7 +482,7 @@ Content-Type: application/fhir+json
 <p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour la création de BAL, en vue d'une future ouverture en écriture.</p>
 </blockquote>
 
-L'ajout d'une nouvelle BAL s'effectue par un `PATCH` sur `CodeSystem/balmss` avec une opération `add` sur le tableau `concept`. Toutes les créations portent sur la même ressource, sans avoir à identifier une ressource porteuse au préalable.
+L'ajout d'une nouvelle BAL s'effectue par un `PATCH` sur `CodeSystem/balmss` avec une opération `insert` dans le tableau `concept`. Toutes les créations portent sur la même ressource, sans avoir à identifier une ressource porteuse au préalable.
 
 ##### Exemple — ajout d'une BAL PER
 
@@ -441,9 +496,9 @@ Content-Type: application/fhir+json
     {
       "name": "operation",
       "part": [
-        { "name": "type", "valueCode": "add" },
-        { "name": "path", "valueString": "CodeSystem" },
-        { "name": "name", "valueString": "concept" },
+        { "name": "type", "valueCode": "insert" },
+        { "name": "path", "valueString": "CodeSystem.concept" },
+        { "name": "index", "valueInteger": 0 },
         { "name": "value", "part": [
           { "name": "code", "valueCode": "prenom.nom@domain.mssante.fr" },
           { "name": "display", "valueString": "BAL de M. Nom" },
@@ -460,6 +515,34 @@ Content-Type: application/fhir+json
             { "name": "valueCode", "valueCode": "Practitioner" }
           ]}
         ]}
+      ]
+    }
+  ]
+}
+```
+
+#### Suppression
+
+<blockquote class="stu-note">
+<p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour la suppression de BAL, en vue d'une future ouverture en écriture.</p>
+</blockquote>
+
+La suppression d'une BAL s'effectue par un `PATCH` sur `CodeSystem/balmss` avec une opération `delete` ciblant le concept via son code (l'adresse de la BAL).
+
+##### Exemple — suppression d'une BAL PER
+
+```json
+PATCH [base]/CodeSystem/balmss
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "delete" },
+        { "name": "path", "valueString": "CodeSystem.concept.where(code = 'prenom.nom@domain.mssante.fr')" }
       ]
     }
   ]
@@ -496,7 +579,8 @@ Cette approche consiste à exposer les BAL MSSanté via une API REST dédiée, i
 | **Récupération de toutes les BAL d'un type** | Requiert d'interroger plusieurs types de ressources ; il existe des solutions pour répondre à ce besoin via un seul appel (`_type` ou batch) | Un seul appel via `ValueSet/$expand` | Un seul appel sur l'endpoint dédié — gain obtenu au prix d'une rupture de cohérence architecturale (ROR, EEDS, MonEspaceSanté, DMP) |
 | **Consultation d'une BAL par adresse** | Recherche via `mailbox-mss` sur la ou les ressource•s porteuse•s | `CodeSystem/$lookup` sur le code (adresse) | Requête propriétaire sur l'endpoint dédié |
 | **Mise à jour** | `PATCH` FHIRPath sur la ressource porteuse (nécessite d'identifier la ressource au préalable) | `PATCH` FHIRPath sur `CodeSystem/balmss` directement | Opération propriétaire — à concevoir et documenter intégralement |
-| **Création** | `PATCH` FHIRPath (`add`) sur la ressource porteuse — nécessite d'identifier la ressource porteuse et de composer un élément `telecom` complet avec ses extensions | `PATCH` FHIRPath (`add`) sur `CodeSystem/balmss` directement — ajout d'un concept dans le tableau `concept`, sans identifier de ressource porteuse | Opération propriétaire — à concevoir et documenter intégralement |
+| **Création** | `PATCH` FHIRPath (`insert`) sur `Practitioner.telecom` / `PractitionerRole.telecom` / `Organization.telecom` — nécessite d'identifier la ressource porteuse au préalable | `PATCH` FHIRPath (`insert`) sur `CodeSystem.concept` directement — sans identifier de ressource porteuse | Opération propriétaire — à concevoir et documenter intégralement |
+| **Suppression** | `PATCH` FHIRPath (`delete`) sur `telecom.where(value = '[adresse]')` de la ressource porteuse — nécessite d'identifier la ressource porteuse au préalable | `PATCH` FHIRPath (`delete`) sur `CodeSystem.concept.where(code = '[adresse]')` directement — sans identifier de ressource porteuse | Opération propriétaire — à concevoir et documenter intégralement |
 | **Évolution du modèle de données** | Les ressources porteuses disposent déjà d'un modèle riche (éléments natifs FHIR + extensions existantes) ; de nouvelles données peuvent s'appuyer sur des éléments déjà définis ou des extensions dédiées, sans remettre en cause l'approche | Limité aux properties du `CodeSystem` — pas adapté pour des données structurées ou des références vers d'autres ressources FHIR ; tout besoin dépassant ce cadre nécessiterait de repenser l'approche | Libre mais non normé — chaque évolution est à concevoir, versioner et documenter sans filet standard |
 | **Complexité d'implémentation côté serveur** | Modérée — l'API FHIR Annuaire Santé est déjà implémentée ; le support de `_type` représente un coût marginal, mais le `PATCH` FHIRPath sur les ressources porteuses reste à développer | Élevée — nécessite la création et l'exposition de nouveaux endpoints (`CodeSystem`, `ValueSet`), une implémentation spécifique de `$expand` avec filtres sur properties, et la validation du PATCH sur éléments imbriqués | Très élevée — conception, sécurisation, documentation et versionning d'une API entièrement custom, sans réutilisation des briques FHIR existantes |
 | **Maturité / risque** | Approche actuelle, 90% des fonctionnalités déjà implémentées | Proposition d'évolution, non implémentée — nécessite de créer de nouveaux endpoints (`CodeSystem`, `ValueSet`) non évolutifs | Approche écartée — coût élevé, rupture de cohérence, aucun avantage fonctionnel démontré par rapport aux Options 1 ou 2 |
