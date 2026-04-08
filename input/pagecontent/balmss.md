@@ -88,7 +88,7 @@ Le tableau suivant liste les données associées à chaque type de BAL et leur c
 | Service de rattachement | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[service]` |
 | Responsable | | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
 | Téléphone | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[phone]` |
-| Identifiant PP (RPPS) | X | | | | `Practitioner.identifier` / `PractitionerRole.identifier` |
+| Identifiant PP (RPPS) | X | | | X | `Practitioner.identifier` / `PractitionerRole.identifier` |
 | Identifiant national de structure | | X | X | | `Organization.identifier` |
 | Responsable (RPPS) | | | | X | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
 | Cotitulaires (RPPS) | | | | X | *(en cours de modélisation)* |
