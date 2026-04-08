@@ -50,7 +50,7 @@ paths:
         - $ref: '#/components/parameters/mailboxMss'
         - $ref: '#/components/parameters/elements'
         - $ref: '#/components/parameters/count'
-        - $ref: '#/components/parameters/pageToken'
+
       responses:
         '200':
           description: Bundle searchset contenant les Practitioner correspondants
@@ -99,7 +99,7 @@ paths:
         - $ref: '#/components/parameters/mailboxMss'
         - $ref: '#/components/parameters/elements'
         - $ref: '#/components/parameters/count'
-        - $ref: '#/components/parameters/pageToken'
+
       responses:
         '200':
           description: Bundle searchset contenant les PractitionerRole correspondants
@@ -124,7 +124,7 @@ paths:
         - $ref: '#/components/parameters/mailboxMss'
         - $ref: '#/components/parameters/elements'
         - $ref: '#/components/parameters/count'
-        - $ref: '#/components/parameters/pageToken'
+
       responses:
         '200':
           description: Bundle searchset contenant les Organization correspondantes
@@ -504,13 +504,6 @@ components:
         default: 50
       description: Nombre maximum de résultats par page
 
-    pageToken:
-      name: _page_token
-      in: query
-      required: false
-      schema:
-        type: string
-      description: Token de pagination fourni dans le lien `next` du Bundle de réponse
 
   schemas:
 
