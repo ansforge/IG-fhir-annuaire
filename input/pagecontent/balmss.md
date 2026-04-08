@@ -1,6 +1,12 @@
 <div class="dragon" style="width: 65%">
 <p><b>Fonctionnalité en cours de réflexion</b> — Les spécifications décrites dans cette page sont exploratoires et sujettes à évolution. Elles n'ont pas encore fait l'objet d'une décision d'implémentation.</p>
-<p><b>TL;DR</b> — Cette page décrit les types de BAL MSSanté (PER, ORG, APP, CAB), leurs données associées et leurs modèles logiques. Elle présente trois approches pour les récupérer et les mettre à jour : <b>Option 1</b> (approche actuelle) — recherche via <code>mailbox-mss-type</code> sur les ressources porteuses (<code>Practitioner</code>, <code>PractitionerRole</code>, <code>Organization</code>), avec possibilité de regrouper les appels via <code>_type</code> ou batch, et mise à jour par <code>PATCH</code> FHIRPath sur la ressource porteuse ; <b>Option 2</b> (proposition d'évolution) — modélisation des BAL dans un <code>CodeSystem</code> dédié, offrant une ressource unique quel que soit le porteur, et mise à jour par <code>PATCH</code> sur le concept correspondant ; <b>Option 3</b> (approche à éviter) — exposition des BAL via une API dédiée non standard, présentée ici avec ses arguments défavorables. Elle aborde également les problématiques métier non résolues (permissions, discriminant, cycle de vie).</p>
+<p><b>TL;DR</b> — Cette page décrit les types de BAL MSSanté (PER, ORG, APP, CAB), leurs données associées et leurs modèles logiques. Elle présente trois approches pour les récupérer et les mettre à jour :</p>
+<ul>
+<li><b>Option 1</b> (approche actuelle) — recherche via <code>mailbox-mss-type</code> sur les ressources porteuses (<code>Practitioner</code>, <code>PractitionerRole</code>, <code>Organization</code>), avec possibilité de regrouper les appels via <code>_type</code> ou batch, et mise à jour par <code>PATCH</code> FHIRPath sur la ressource porteuse.</li>
+<li><b>Option 2</b> (proposition d'évolution) — modélisation des BAL dans un <code>CodeSystem</code> dédié, offrant une ressource unique quel que soit le porteur, et mise à jour par <code>PATCH</code> sur le concept correspondant.</li>
+<li><b>Option 3</b> (approche à éviter) — exposition des BAL via une API dédiée non standard, présentée ici avec ses arguments défavorables.</li>
+</ul>
+<p>La page aborde également les problématiques métier non résolues (permissions, discriminant, cycle de vie).</p>
 </div>
 
 <div style="background-color: #fff9e6; border-left: 4px solid #ff9800; padding: 10px; width: 65%">
