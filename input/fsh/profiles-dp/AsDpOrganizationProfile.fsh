@@ -15,13 +15,18 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * extension[as-ext-organization-budget-type] MS
 * extension[as-ext-organization-authorization-deadline] MS
 
-* identifier[idNatSt] MS 
+* identifier[idNatSt] MS
+* identifier[rppsRang] MS
+* identifier[finess] MS
+* identifier[siren] MS
+* identifier[siret] MS
+* identifier[adeliRang] MS
 * active MS
 * name MS
 * alias MS
 * type MS
 * address MS
-* telecom MS
+* telecom[mailbox-mss] MS
 * endpoint MS
 
 
