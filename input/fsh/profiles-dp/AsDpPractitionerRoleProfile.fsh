@@ -15,7 +15,6 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * practitioner MS 
 * organization MS
 * healthcareService MS
-* identifier MS
 * active MS
 * period MS
 * code[genreActivite] MS
