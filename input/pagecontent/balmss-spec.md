@@ -3,7 +3,7 @@ Cette page s'adresse aux développeurs et intégrateurs. Elle décrit les opéra
 </div>
 
 <blockquote class="stu-note">
-<p>Cette page est la spécification d'implémentation de la gestion des BAL MSSanté. Elle est complémentaire à la <a href="balmss.html">page de présentation des options</a>, qui décrit le contexte, les types de BAL, les questions métier ouvertes et la comparaison des trois approches envisagées.</p>
+<p>Cette page est la spécification d'implémentation de la gestion des BAL MSSanté. Elle est complémentaire à la <a href="balmss-options.html">page de comparaison des options</a>, qui décrit le contexte, les types de BAL, les questions métier ouvertes et la comparaison des trois approches envisagées.</p>
 </blockquote>
 
 ### Approche retenue — ressources porteuses
