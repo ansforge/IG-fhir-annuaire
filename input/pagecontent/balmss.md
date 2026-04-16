@@ -557,9 +557,10 @@ Content-Type: application/fhir+json
 
 Cette approche consiste à exposer les BAL MSSanté via une API REST dédiée, indépendante de l'API FHIR Annuaire Santé, avec des endpoints et un modèle de données propres (non normés FHIR). La variante FHIR de cette architecture — avec une base MSS dédiée et une API FHIR secondaire pour les opérateurs — est illustrée ci-dessous.
 
-<p>{% include balmss-architecture-api-dediee.svg %}</p>
+<!-- Diagramme généré depuis input/images-source/balmss-architecture-api-dediee.plantuml -->
+<p style="width:100%">{% include balmss-architecture-api-dediee.svg %}</p>
 
-<p><img src="balmss-architecture-api-dediee.png" alt="Architecture avec une base MSS dédiée — API FHIR Annuaire en lecture et API FHIR MSS dédiée en écriture (PATCH) pour les opérateurs" /></p>
+<p><img src="balmss-architecture-api-dediee.png" alt="Architecture avec une base MSS dédiée — API FHIR Annuaire en lecture et API FHIR MSS dédiée en écriture (PATCH) pour les opérateurs" style="width:100%" /></p>
 
 <div class="wysiwyg" markdown="1">
 **Arguments contre :**
