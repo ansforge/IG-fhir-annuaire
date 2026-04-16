@@ -28,19 +28,6 @@ Liste des profils applicatifs héritant des profils génériques pour détailler
     ]
 } %}
 
-### Liste des profils applicatifs - endpoint MSS (écriture)
-
-Liste des profils applicatifs utilisés par l'endpoint de gestion des BAL MSSanté. Ils garantissent la présence d'au moins une BAL MSSanté (`telecom[mailbox-mss]` 1..*) sur la ressource porteuse et sont référencés par le [CapabilityStatement MSS](CapabilityStatement-AsMssServerCapabilityStatement.html).
-
-{% sql {
-    "query" : " select name as Name, Description, Web from Resources WHERE Type = 'StructureDefinition' and Description like 'Profil MSS%' ",
-    "class" : "lines",
-    "columns" : [
-        { "title" : "Titre du profil", "type" : "link", "source" : "Name", "target" : "Web"},
-        { "title" : "Description", "type" : "markdown", "source" : "Description"}
-    ]
-} %}
-
 ### Liste des profils applicatifs - données restreintes
 
 Liste des profils applicatifs héritant des profils génériques pour détailler les ressources exposées en accès restreint.

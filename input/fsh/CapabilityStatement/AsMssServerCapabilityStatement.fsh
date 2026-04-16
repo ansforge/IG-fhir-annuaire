@@ -22,7 +22,7 @@ La sémantique du PATCH suit la spécification [FHIR Patch](https://hl7.org/fhir
 // ################
 
 * rest.resource[0].type = #Organization
-* rest.resource[=].profile = Canonical(as-mss-organization)
+* rest.resource[=].profile = Canonical(as-organization)
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].documentation = "Modification d'une BAL MSSanté (ORG ou APP) rattachée à une structure via PATCH FHIRPath sur l'élément telecom ciblé par son adresse."
 
@@ -31,7 +31,7 @@ La sémantique du PATCH suit la spécification [FHIR Patch](https://hl7.org/fhir
 // ################
 
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = Canonical(as-mss-practitioner)
+* rest.resource[=].profile = Canonical(as-practitioner)
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].documentation = "Modification d'une BAL MSSanté de type PER (rattachée à l'identifiant RPPS seul) ou CAB via PATCH FHIRPath sur l'élément telecom ciblé par son adresse."
 
@@ -40,6 +40,6 @@ La sémantique du PATCH suit la spécification [FHIR Patch](https://hl7.org/fhir
 // ####################
 
 * rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = Canonical(as-mss-practitionerrole)
+* rest.resource[=].profile = Canonical(as-practitionerrole)
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].documentation = "Modification d'une BAL MSSanté de type PER (rattachée à un RPPS + structure d'exercice) via PATCH FHIRPath sur l'élément telecom ciblé par son adresse."
