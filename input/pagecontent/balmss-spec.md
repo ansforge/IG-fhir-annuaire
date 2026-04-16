@@ -15,6 +15,14 @@ Cette approche s'inscrit dans le cadre FHIR standard et repose sur deux endpoint
 - **Endpoint GET** — l'API FHIR Annuaire Santé existante (lecture seule), déjà déployée à 90 %, utilisée pour récupérer les ressources porteuses et leurs BAL.
 - **Endpoint PATCH** — un nouvel endpoint en écriture, permettant aux opérateurs MSSanté de modifier les métadonnées des BAL via `PATCH FHIRPath` sur la ressource porteuse identifiée au préalable.
 
+Les capacités de l'endpoint PATCH sont décrites dans le [CapabilityStatement AsMssServerCapabilityStatement](CapabilityStatement-AsMssServerCapabilityStatement.html). Les profils associés, qui contraignent la présence d'au moins une BAL MSSanté (`telecom[mailbox-mss]` 1..*), sont :
+
+| Ressource | Profil |
+|-----------|--------|
+| `Practitioner` | [AS MSS Practitioner Profile](StructureDefinition-as-mss-practitioner.html) |
+| `PractitionerRole` | [AS MSS PractitionerRole Profile](StructureDefinition-as-mss-practitionerrole.html) |
+| `Organization` | [AS MSS Organization Profile](StructureDefinition-as-mss-organization.html) |
+
 Un avantage clé est que les opérateurs MSSanté accèdent, dans la même réponse, à l'ensemble des données du professionnel ou de la structure porteuse (identifiants, qualification, adresse, situation d'exercice, etc.), sans requête supplémentaire. Cela permet également d'éviter tout risque d'identitovigilance lié à une réconciliation de données entre systèmes distincts.
 
 ### Modèle de données
