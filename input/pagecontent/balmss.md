@@ -47,8 +47,8 @@ Certains besoins fonctionnels autour des BAL ne sont pas encore suffisamment dé
 <div class="wysiwyg" markdown="1">
 - **Cas d'usage et profil des consommateurs** : quel type d'acteur souhaiterait requêter les BAL MSSanté de façon dédiée, indépendamment de leur porteur ? Pour quel cas d'usage concret (supervision, synchronisation, routage, alimentation d'un annuaire tiers...) ? Et en quoi l'API FHIR existante — qui expose déjà les BAL via les ressources porteuses — ne suffit-elle pas à couvrir ce besoin ?
 - **Cas d'usage de la mise à jour** : quels acteurs ont besoin de modifier des BAL via l'API ? Pour quels attributs et avec quelle fréquence ? L'API actuelle en lecture seule couvre-t-elle les besoins ou une ouverture en écriture est-elle nécessaire ?
-- **BAL préférentielle** : lorsqu'un professionnel ou une structure porte plusieurs BAL, comment désigner celle à utiliser en priorité ? Il n'existe pas de convention métier ni de mécanisme FHIR actuel pour exprimer cet ordre de préférence — et cette notion ne pourrait pas non plus être couverte par les properties d'un `CodeSystem`.
-- **Discriminant d'identification d'une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Il n'existe pas aujourd'hui de convention métier connue définissant quel attribut sert de discriminant pour cibler une BAL précise. L'adresse est le candidat naturel, mais le typeBAL, l'opérateur ou le service de rattachement pourraient également jouer ce rôle selon le contexte.
+- **BAL préférentielle** : lorsqu'un professionnel ou une structure porte plusieurs BAL, comment désigner celle à utiliser en priorité ? FHIR dispose d'un mécanisme natif pour cela : le champ `rank` du type `ContactPoint` (entier, 1 = priorité la plus haute). La question reste donc **métier** : y a-t-il une convention établie pour renseigner ce rang dans le contexte MSSanté, et qui en est responsable ?
+- **Discriminant d'identification d'une BAL** : un professionnel ou une structure peut porter plusieurs BAL MSSanté. Le discriminant retenu est l'adresse mail elle-même (`ContactPoint.value`), qui identifie une BAL de façon unique.
 - **Gouvernance et droits de modification** : qui est autorisé à modifier une BAL ? L'opérateur MSSanté ? L'établissement ? Le professionnel lui-même ? Les règles d'habilitation ne sont pas définies.
 - **Opérateurs multiples** : plusieurs opérateurs MSSanté peuvent coexister. Comment gérer les conflits ou les modifications simultanées sur une même BAL ? Qui fait autorité ?
 - **Source de vérité** : l'Annuaire Santé est-il la source de vérité des BAL, ou un reflet d'une gestion opérée ailleurs ? La réponse conditionne le modèle d'écriture.
@@ -98,6 +98,8 @@ Le tableau suivant liste les données associées à chaque type de BAL et leur c
 ### Option 1 — Recherche sur les ressources porteuses (approche actuelle)
 
 Les BAL sont exposées comme éléments `telecom` imbriqués dans les ressources `Practitioner`, `PractitionerRole` et `Organization`. Le paramètre de recherche [`mailbox-mss-type`](SearchParameter-as-sp-mailbox-mss-type.html), ajouté le 25/03/2026 dans la [PR #296](https://github.com/ansforge/IG-fhir-annuaire/pull/296) et non encore implémenté, filtre les ressources par type de BAL. Il est de type `token` et disponible sur `Organization`, `Practitioner` et `PractitionerRole`.
+
+Un avantage clé de cette approche est que les opérateurs MSSanté accèdent, dans la même réponse, à l'ensemble des données du professionnel ou de la structure porteuse (identifiants, qualification, adresse, situation d'exercice, etc.), sans requête supplémentaire. Cela permet également d'éviter tout risque d'identitovigilance lié à une réconciliation de données entre systèmes distincts.
 
 #### Récupération
 
@@ -551,9 +553,13 @@ Content-Type: application/fhir+json
 }
 ```
 
-### Option 3 — API dédiée MSS (endpoint custom)
+### Option 3 — API dédiée MSS non FHIR (endpoint custom)
 
-Cette approche consiste à exposer les BAL MSSanté via une API REST dédiée, indépendante de l'API FHIR Annuaire Santé, avec des endpoints et un modèle de données propres (non normés FHIR).
+Cette approche consiste à exposer les BAL MSSanté via une API REST dédiée, indépendante de l'API FHIR Annuaire Santé, avec des endpoints et un modèle de données propres (non normés FHIR). La variante FHIR de cette architecture — avec une base MSS dédiée et une API FHIR secondaire pour les opérateurs — est illustrée ci-dessous.
+
+<p>{% include balmss-architecture-api-dediee.svg %}</p>
+
+<p><img src="balmss-architecture-api-dediee.png" alt="Architecture avec une base MSS dédiée — API FHIR Annuaire en lecture et API FHIR MSS dédiée en écriture (PATCH) pour les opérateurs" /></p>
 
 <div class="wysiwyg" markdown="1">
 **Arguments contre :**

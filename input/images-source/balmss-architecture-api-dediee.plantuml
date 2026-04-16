@@ -1,0 +1,46 @@
+@startuml
+skinparam backgroundColor white
+skinparam defaultFontName Arial
+
+title Proposition avec une base MSS dédiée
+
+' Sources de données
+package "Sources de données" {
+    database "GIS" as GIS
+    database "FINESS" as FINESS
+    database "RPPS" as RPPS
+}
+
+' Traitement
+component "Moteur de règles\nde transformation" as Moteur
+database "Données" as DataStore
+
+GIS --> Moteur
+FINESS --> Moteur
+RPPS --> Moteur
+Moteur --> DataStore
+
+' API Annuaire Santé (lecture)
+component "**API FHIR**\nAnnuaire Santé\n(lecture seule)" as APIAnnuaire #lightblue
+
+DataStore --> APIAnnuaire
+
+' Consommateurs lecture
+actor "Portail Annuaire" as Portail
+actor "Application tierce" as AppTierce
+actor "CNAM / DMP /\nMonEspaceSanté" as CNAM
+
+APIAnnuaire -right-> Portail : HTTP GET
+APIAnnuaire -right-> AppTierce : HTTP GET
+APIAnnuaire -right-> CNAM : HTTP GET
+
+' API MSS dédiée (écriture)
+database "Base MSS" as MSS
+component "**API FHIR**\ndédiée MSS" as APIDediee #lightyellow
+
+MSS -up-> APIDediee
+
+actor "Opérateurs MSSanté" as Operateurs
+Operateurs -left-> APIDediee : HTTP PATCH
+
+@enduml
