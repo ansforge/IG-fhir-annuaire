@@ -1,3 +1,24 @@
+### Release 1.2.0 de l'Implementation Guide Annuaire
+
+Modifications apportées dans la [1.2.0](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.2.0) :
+
+* Tag MS sur les slices plutôt que sur l'attribut général pour le profil DP du PractitionerRole [#299](https://github.com/ansforge/IG-fhir-annuaire/pull/299)
+* Ajout du paramètre de recherche sur le type de BAL MSSanté [#296](https://github.com/ansforge/IG-fhir-annuaire/pull/296)
+* Obsolescence et remplacement des JDV MOS NOS [#294](https://github.com/ansforge/IG-fhir-annuaire/pull/294)
+* Ajout identifier type short au profil AsOrganization [#290](https://github.com/ansforge/IG-fhir-annuaire/pull/290)
+* Ajout du meta.source aux profils applicatifs [#286](https://github.com/ansforge/IG-fhir-annuaire/pull/286)
+* Ajout de données manquantes pour l'API Données Restreintes [#285](https://github.com/ansforge/IG-fhir-annuaire/pull/285)
+* Ajout du paramètre de recherche pour chercher par organization period [#284](https://github.com/ansforge/IG-fhir-annuaire/pull/284)
+* Suppression du numéro assurance maladie [#283](https://github.com/ansforge/IG-fhir-annuaire/pull/283)
+* Déplacement des tags MS (Must Support) [#282](https://github.com/ansforge/IG-fhir-annuaire/pull/282)
+* Suppression du profil Location [#281](https://github.com/ansforge/IG-fhir-annuaire/pull/281)
+* Ajout de la page problématiques connues [#280](https://github.com/ansforge/IG-fhir-annuaire/pull/280)
+* Suppression des identifiants internes des Organization et des Practitioner [#278](https://github.com/ansforge/IG-fhir-annuaire/pull/278)
+* Mise à jour des descriptions des profils génériques [#276](https://github.com/ansforge/IG-fhir-annuaire/pull/276)
+* Mise en conformité avec le nouvel arrêté RPPS [#271](https://github.com/ansforge/IG-fhir-annuaire/pull/271)
+* Mise à jour du CapabilityStatement avec URLs canoniques et modifiers [#269](https://github.com/ansforge/IG-fhir-annuaire/pull/269)
+* Création du CapabilityStatement pour l'API v2 [#268](https://github.com/ansforge/IG-fhir-annuaire/pull/268)
+
 ### Release 1.1.0 de l'Implementation Guide Annuaire
 
 Modifications apportées dans la release [1.1.0](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0) :
