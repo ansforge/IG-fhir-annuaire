@@ -6,18 +6,20 @@
 Cette page s'adresse aux développeurs et intégrateurs. Elle décrit les opérations FHIR à implémenter pour la gestion des BAL MSSanté.
 </div>
 
-### Approche retenue — ressources porteuses
+**MSSanté** (Messagerie Sécurisée de Santé) est le service national de messagerie chiffrée pour les professionnels de santé. Une **BAL** (Boîte Aux Lettres) MSSanté est une adresse mail sécurisée rattachée à un professionnel, une situation d'exercice ou une structure de santé.
 
-L'approche retenue repose sur les **ressources porteuses** : les BAL MSSanté restent modélisées comme éléments `telecom` au sein de leurs ressources porteuses (`Practitioner`, `PractitionerRole`, `Organization`). Les opérations de récupération s'appuient sur les paramètres de recherche existants ; les opérations d'écriture (`PATCH`) ciblent directement ces ressources porteuses.
+### Vue d'ensemble
 
-Cette approche s'inscrit dans le cadre FHIR standard et repose sur deux endpoints distincts :
+Les BAL MSSanté sont modélisées comme éléments `telecom` au sein de leurs ressources porteuses (`Practitioner`, `PractitionerRole`, `Organization`). Les opérations de récupération s'appuient sur les paramètres de recherche FHIR existants ; les opérations d'écriture (`PATCH`) ciblent directement ces ressources porteuses.
 
-- **Endpoint GET** — l'API FHIR Annuaire Santé existante (lecture seule), déjà déployée à 90 %, utilisée pour récupérer les ressources porteuses et leurs BAL.
-- **Endpoint PATCH** — un nouvel endpoint en écriture, permettant aux opérateurs MSSanté de modifier les métadonnées des BAL via `PATCH FHIRPath` sur la ressource porteuse identifiée au préalable.
+L'API repose sur deux endpoints distincts :
+
+- **Endpoint GET** — l'API FHIR Annuaire Santé existante (lecture seule), utilisée pour récupérer les ressources porteuses et leurs BAL.
+- **Endpoint PATCH** — un endpoint en écriture, permettant aux opérateurs MSSanté de modifier les métadonnées des BAL via `PATCH FHIRPath` sur la ressource porteuse identifiée au préalable.
 
 Les capacités de l'endpoint PATCH sont décrites dans le [CapabilityStatement AsMssServerCapabilityStatement](CapabilityStatement-AsMssServerCapabilityStatement.html).
 
-Un avantage clé est que les opérateurs MSSanté accèdent, dans la même réponse, à l'ensemble des données du professionnel ou de la structure porteuse (identifiants, qualification, adresse, situation d'exercice, etc.), sans requête supplémentaire. Cela permet également d'éviter tout risque d'identitovigilance lié à une réconciliation de données entre systèmes distincts.
+Les opérateurs MSSanté accèdent, dans la même réponse, à l'ensemble des données du professionnel ou de la structure porteuse (identifiants, qualification, adresse, situation d'exercice, etc.), sans requête supplémentaire. Cela évite également tout risque d'identitovigilance lié à une réconciliation de données entre systèmes distincts.
 
 ### Modèle de données
 
