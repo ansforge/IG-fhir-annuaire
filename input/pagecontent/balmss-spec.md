@@ -1,14 +1,14 @@
-<div style="background-color: #f0f0f0; border-left: 4px solid #666; padding: 10px; width: 65%">
-Cette page s'adresse aux développeurs et intégrateurs. Elle décrit les opérations FHIR à implémenter pour la gestion des BAL MSSanté selon l'approche retenue (Option 1 — ressources porteuses).
+<div class="dragon" style="width: 65%">
+<p><b>Spécification en cours de validation (trial-use)</b> — Les spécifications décrites dans cette page sont susceptibles d'évoluer avant leur publication officielle. Pour comprendre le contexte et les alternatives initialement envisagées, consulter la <a href="balmss-options.html">page de comparaison des options</a>.</p>
 </div>
 
-<blockquote class="stu-note">
-<p>Cette page est la spécification d'implémentation de la gestion des BAL MSSanté. Elle est complémentaire à la <a href="balmss-options.html">page de comparaison des options</a>, qui décrit le contexte, les types de BAL, les questions métier ouvertes et la comparaison des trois approches envisagées.</p>
-</blockquote>
+<div style="background-color: #f0f0f0; border-left: 4px solid #666; padding: 10px; width: 65%">
+Cette page s'adresse aux développeurs et intégrateurs. Elle décrit les opérations FHIR à implémenter pour la gestion des BAL MSSanté.
+</div>
 
 ### Approche retenue — ressources porteuses
 
-L'approche retenue est l'**Option 1** : les BAL MSSanté restent modélisées comme éléments `telecom` au sein de leurs ressources porteuses (`Practitioner`, `PractitionerRole`, `Organization`). Les opérations de récupération s'appuient sur les paramètres de recherche existants ; les opérations d'écriture (`PATCH`) ciblent directement ces ressources porteuses.
+L'approche retenue repose sur les **ressources porteuses** : les BAL MSSanté restent modélisées comme éléments `telecom` au sein de leurs ressources porteuses (`Practitioner`, `PractitionerRole`, `Organization`). Les opérations de récupération s'appuient sur les paramètres de recherche existants ; les opérations d'écriture (`PATCH`) ciblent directement ces ressources porteuses.
 
 Cette approche s'inscrit dans le cadre FHIR standard et repose sur deux endpoints distincts :
 
