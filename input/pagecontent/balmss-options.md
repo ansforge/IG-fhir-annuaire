@@ -2,7 +2,7 @@
 <p><b>Fonctionnalité en cours de réflexion</b> — Les spécifications décrites dans cette page sont exploratoires et sujettes à évolution. Elles n'ont pas encore fait l'objet d'une décision d'implémentation.</p>
 <p><b>TL;DR</b> — Cette page décrit les types de BAL MSSanté (PER, ORG, APP, CAB), leurs données associées et leurs modèles logiques. Elle présente trois approches pour les récupérer et les mettre à jour :</p>
 <ul>
-<li><b>Option 1</b> (approche actuelle) — recherche via <code>mailbox-mss-type</code> sur les ressources porteuses (<code>Practitioner</code>, <code>PractitionerRole</code>, <code>Organization</code>), avec possibilité de regrouper les appels via <code>_type</code> ou batch, et mise à jour par <code>PATCH</code> FHIRPath sur la ressource porteuse.</li>
+<li><b>Option 1</b> (approche actuelle) — recherche via <code>mailbox-mss-type</code> sur les ressources porteuses (<code>Practitioner</code>, <code>PractitionerRole</code>, <code>Organization</code>), avec possibilité de regrouper les appels via <code>_type</code> ou batch, et mise à jour par <code>PATCH</code> FHIRPath sur la ressource porteuse — de préférence en mode <b>PATCH conditionnel</b> (via <code>idNatPs</code>, <code>idNatStruct</code> ou <code>idSituationExercice</code>) pour éviter toute recherche préalable.</li>
 <li><b>Option 2</b> (proposition d'évolution) — modélisation des BAL dans un <code>CodeSystem</code> dédié, offrant une ressource unique quel que soit le porteur, et mise à jour par <code>PATCH</code> sur le concept correspondant.</li>
 <li><b>Option 3</b> (approche à éviter) — exposition des BAL via une API dédiée non standard, présentée ici avec ses arguments défavorables.</li>
 </ul>
@@ -211,7 +211,89 @@ Une BAL étant modélisée comme un élément `telecom` au sein de sa ressource 
 
 L'approche retenue est le **FHIR Patch** (format `application/fhir+json`), qui utilise une ressource `Parameters` avec des opérations FHIRPath. Il permet de cibler précisément l'élément `telecom` à modifier grâce à l'adresse de la BAL.
 
-La ressource porteuse et son identifiant sont à récupérer au préalable via une recherche sur `mailbox-mss`.
+Deux façons de cibler la ressource porteuse sont possibles : par identifiant logique (nécessite une recherche préalable) ou, en option recommandée, par **PATCH conditionnel**.
+
+##### PATCH conditionnel (recommandé)
+
+Le PATCH conditionnel FHIR permet de cibler la ressource porteuse directement via un critère de recherche dans l'URL, sans avoir à récupérer son identifiant logique au préalable. Le corps de la requête est identique à celui du PATCH classique.
+
+Les opérateurs MSSanté disposent déjà des identifiants métier de leurs abonnés — le PATCH conditionnel leur permet de mettre à jour une BAL en une seule requête, sans recherche intermédiaire. Les identifiants recommandés sont :
+
+| Type de BAL | Ressource porteuse | Identifiant recommandé | Paramètre de recherche |
+|-------------|-------------------|------------------------|------------------------|
+| PER (RPPS seul) | `Practitioner` | `idNatPs` | `identifier=urn:oid:1.2.250.1.71.4.2.1\|[idNatPs]` |
+| PER (RPPS + structure) | `PractitionerRole` | `idSituationExercice` | `identifier=https://rpps.esante.gouv.fr\|[idSitExerc]` |
+| ORG / APP | `Organization` | `idNatStruct` | `identifier=urn:oid:1.2.250.1.71.4.2.2\|[idNatStruct]` |
+| CAB | `Practitioner` | `idNatPs` (RPPS du responsable) | `identifier=urn:oid:1.2.250.1.71.4.2.1\|[idNatPs]` |
+
+Si le critère de recherche retourne exactement une ressource, le serveur applique le PATCH. S'il retourne zéro ou plusieurs ressources, le serveur répond respectivement par un `404` ou un `412`.
+
+**Exemple — mise à jour de la liste rouge d'une BAL PER (PATCH conditionnel par idNatPs)**
+
+```json
+PATCH [base]/Practitioner?identifier=urn:oid:1.2.250.1.71.4.2.1|810009647990
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value" },
+        { "name": "value", "valueBoolean": true }
+      ]
+    }
+  ]
+}
+```
+
+**Exemple — mise à jour d'une BAL PER sur une situation d'exercice (PATCH conditionnel par idSituationExercice)**
+
+```json
+PATCH [base]/PractitionerRole?identifier=https://rpps.esante.gouv.fr|1014196210
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('digitization').value" },
+        { "name": "value", "valueBoolean": true }
+      ]
+    }
+  ]
+}
+```
+
+**Exemple — mise à jour de la description d'une BAL ORG (PATCH conditionnel par idNatStruct)**
+
+```json
+PATCH [base]/Organization?identifier=urn:oid:1.2.250.1.71.4.2.2|410101788189003
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Organization.telecom.where(value = 'structure@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('description').value" },
+        { "name": "value", "valueString": "BAL principale de la structure" }
+      ]
+    }
+  ]
+}
+```
+
+##### PATCH par identifiant logique
+
+Lorsque l'identifiant logique de la ressource porteuse est déjà connu, il peut être utilisé directement. La ressource porteuse peut sinon être récupérée au préalable via une recherche sur `mailbox-mss`.
 
 ##### Champs modifiables
 
@@ -587,7 +669,7 @@ Cette approche consiste à exposer les BAL MSSanté via une API REST dédiée, i
 | **Modèle de données** | BAL imbriquée dans la ressource porteuse via l'attribut `telecom` — usage standard et conforme au modèle FHIR | BAL comme concept autonome dans un `CodeSystem` dédié — usage dérivé : `CodeSystem` est réservé aux terminologies ; l'utiliser pour des données d'instance sort du cadre prévu par le standard et peut poser des problèmes d'interopérabilité avec les outils terminologiques | Modèle propriétaire défini hors standard FHIR — aucune réutilisabilité, aucune validation par les outils de l'écosystème |
 | **Récupération de toutes les BAL d'un type** | Requiert d'interroger plusieurs types de ressources ; il existe des solutions pour répondre à ce besoin via un seul appel (`_type` ou batch) | Un seul appel via `ValueSet/$expand` | Un seul appel sur l'endpoint dédié — gain obtenu au prix d'une rupture de cohérence architecturale (ROR, EEDS, MonEspaceSanté, DMP) |
 | **Consultation d'une BAL par adresse** | Recherche via `mailbox-mss` sur la ou les ressource•s porteuse•s | `CodeSystem/$lookup` sur le code (adresse) | Requête propriétaire sur l'endpoint dédié |
-| **Mise à jour** | `PATCH` FHIRPath sur la ressource porteuse (nécessite d'identifier la ressource au préalable) | `PATCH` FHIRPath sur `CodeSystem/balmss` directement | Opération propriétaire — à concevoir et documenter intégralement |
+| **Mise à jour** | `PATCH` FHIRPath sur la ressource porteuse — en **PATCH conditionnel** (via `idNatPs`, `idNatStruct` ou `idSituationExercice`, recommandé) ou par identifiant logique (nécessite une recherche préalable) | `PATCH` FHIRPath sur `CodeSystem/balmss` directement | Opération propriétaire — à concevoir et documenter intégralement |
 | **Création** | `PATCH` FHIRPath (`insert`) sur `Practitioner.telecom` / `PractitionerRole.telecom` / `Organization.telecom` — nécessite d'identifier la ressource porteuse au préalable | `PATCH` FHIRPath (`insert`) sur `CodeSystem.concept` directement — sans identifier de ressource porteuse | Opération propriétaire — à concevoir et documenter intégralement |
 | **Suppression** | `PATCH` FHIRPath (`delete`) sur `telecom.where(value = '[adresse]')` de la ressource porteuse — nécessite d'identifier la ressource porteuse au préalable | `PATCH` FHIRPath (`delete`) sur `CodeSystem.concept.where(code = '[adresse]')` directement — sans identifier de ressource porteuse | Opération propriétaire — à concevoir et documenter intégralement |
 | **Évolution du modèle de données** | Les ressources porteuses disposent déjà d'un modèle riche (éléments natifs FHIR + extensions existantes) ; de nouvelles données peuvent s'appuyer sur des éléments déjà définis ou des extensions dédiées, sans remettre en cause l'approche | Limité aux properties du `CodeSystem` — pas adapté pour des données structurées ou des références vers d'autres ressources FHIR ; tout besoin dépassant ce cadre nécessiterait de repenser l'approche | Libre mais non normé — chaque évolution est à concevoir, versioner et documenter sans filet standard |
