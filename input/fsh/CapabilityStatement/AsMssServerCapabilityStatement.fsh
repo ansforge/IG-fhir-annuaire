@@ -11,7 +11,7 @@ Usage: #definition
 * description = """CapabilityStatement décrivant les capacités de l'endpoint dédié à l'écriture des BAL MSSanté (Option 1 — ressources porteuses).
 
 Cet endpoint expose uniquement des opérations d'écriture :
-- **PATCH FHIRPath** : ajout, modification ou suppression d'un élément `telecom[mailbox-mss]` sur la ressource porteuse identifiée au préalable par son ID (obtenu via un GET sur l'API FHIR Annuaire Santé).
+- **PATCH FHIRPath** : ajout, modification ou suppression d'un élément `telecom[mailbox-mss]` sur la ressource porteuse, identifiée soit par son ID logique, soit par son identifiant métier (conditional PATCH via `identifier`).
 
 La sémantique du PATCH suit la spécification [FHIR Patch](https://hl7.org/fhir/R4/http.html#patch) au format `application/fhir+json`."""
 
@@ -25,6 +25,12 @@ La sémantique du PATCH suit la spécification [FHIR Patch](https://hl7.org/fhir
 * rest.resource[=].profile = Canonical(as-organization)
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].documentation = "Modification d'une BAL MSSanté (ORG ou APP) rattachée à une structure via PATCH FHIRPath sur l'élément telecom ciblé par son adresse."
+* rest.resource[=].conditionalPatch = true
+
+* rest.resource[=].searchParam[0].name = "identifier"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Organization-identifier"
+* rest.resource[=].searchParam[=].documentation = "Identifiant national de structure (`idnatstruct`, ex. FINESS géographique). Utilisé comme critère de conditional PATCH : `PATCH [base]/Organization?identifier=<system>|<idnatstruct>`."
 
 // ################
 // # Practitioner #
@@ -34,6 +40,12 @@ La sémantique du PATCH suit la spécification [FHIR Patch](https://hl7.org/fhir
 * rest.resource[=].profile = Canonical(as-practitioner)
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].documentation = "Modification d'une BAL MSSanté de type PER (rattachée à l'identifiant RPPS seul) ou CAB via PATCH FHIRPath sur l'élément telecom ciblé par son adresse."
+* rest.resource[=].conditionalPatch = true
+
+* rest.resource[=].searchParam[0].name = "identifier"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Practitioner-identifier"
+* rest.resource[=].searchParam[=].documentation = "Identifiant national du professionnel de santé (`idnatps`, ex. RPPS). Utilisé comme critère de conditional PATCH : `PATCH [base]/Practitioner?identifier=<system>|<idnatps>`."
 
 // ####################
 // # PractitionerRole #
@@ -43,3 +55,9 @@ La sémantique du PATCH suit la spécification [FHIR Patch](https://hl7.org/fhir
 * rest.resource[=].profile = Canonical(as-practitionerrole)
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].documentation = "Modification d'une BAL MSSanté de type PER (rattachée à un RPPS + structure d'exercice) via PATCH FHIRPath sur l'élément telecom ciblé par son adresse."
+* rest.resource[=].conditionalPatch = true
+
+* rest.resource[=].searchParam[0].name = "identifier"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/PractitionerRole-identifier"
+* rest.resource[=].searchParam[=].documentation = "Identifiant de la situation d'exercice (`idSituationExercice`). Utilisé comme critère de conditional PATCH : `PATCH [base]/PractitionerRole?identifier=<system>|<idSituationExercice>`."

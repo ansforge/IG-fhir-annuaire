@@ -241,6 +241,39 @@ Content-Type: application/fhir+json
 }
 ```
 
+#### Conditional PATCH
+
+Le conditional PATCH permet de cibler la ressource porteuse directement via son identifiant métier, sans avoir à récupérer préalablement son ID logique FHIR.
+
+| Ressource | Identifiant | Exemple de requête |
+|-----------|-------------|-------------------|
+| `Practitioner` | `idnatps` (ex. RPPS) | `PATCH [base]/Practitioner?identifier=<system>\|<idnatps>` |
+| `PractitionerRole` | `idSituationExercice` | `PATCH [base]/PractitionerRole?identifier=<system>\|<idSituationExercice>` |
+| `Organization` | `idnatstruct` (ex. FINESS géographique) | `PATCH [base]/Organization?identifier=<system>\|<idnatstruct>` |
+
+Le corps de la requête est identique au PATCH par ID. Le serveur retourne `412 Precondition Failed` si le critère correspond à plusieurs ressources, et `404 Not Found` si aucune ressource ne correspond.
+
+##### Exemple — mise à jour de la liste rouge d'une BAL PER via conditional PATCH
+
+```http
+PATCH [base]/Practitioner?identifier=urn:oid:1.2.250.1.71.4.2.1|800012345678
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value" },
+        { "name": "value", "valueBoolean": true }
+      ]
+    }
+  ]
+}
+```
+
 ### Création
 
 <blockquote class="stu-note">
