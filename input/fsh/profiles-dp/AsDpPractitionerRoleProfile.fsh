@@ -15,7 +15,6 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * practitioner MS 
 * organization MS
 * healthcareService MS
-* identifier MS
 * active MS
 * period MS
 * code[genreActivite] MS
@@ -25,7 +24,7 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * code[statutHospitalier] MS
 * code[fonction] MS
 * code[metierPharmacien] MS
-* telecom MS
+* telecom[mailbox-mss] MS
 * availableTime MS
 * notAvailable MS
 * availabilityExceptions MS

@@ -15,7 +15,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * extension[as-ext-installation] MS
 * extension[as-ext-patient-type] MS
 * extension[as-ext-supported-capacity] MS
-* identifier MS
 * type MS
 * eligibility MS
 * characteristic MS
