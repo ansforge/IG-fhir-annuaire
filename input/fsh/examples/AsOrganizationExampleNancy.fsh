@@ -47,8 +47,6 @@ InstanceOf: AsOrganizationProfile
 * telecom[3].extension[=].extension[=].valueCodeableConcept = https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#ORG
 * telecom[3].extension[=].extension[+].url = "description"
 * telecom[3].extension[=].extension[=].valueString = "Description-mss"
-* telecom[3].extension[=].extension[+].url = "digitization"
-* telecom[3].extension[=].extension[=].valueBoolean = true
 * telecom[3].extension[=].extension[+].url = "listeRouge"
 * telecom[3].extension[=].extension[=].valueBoolean = false
 * telecom[3].system = #email
