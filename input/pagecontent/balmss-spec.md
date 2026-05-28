@@ -42,7 +42,6 @@ Le discriminant d'une BAL est son adresse mail (`ContactPoint.value`), qui l'ide
 | Description | | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
 | Service de rattachement | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[service]` |
 | Responsable | | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
-| Téléphone | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[phone]` |
 | BAL préférentielle | X | X | X | X | `telecom.rank` (1 = priorité la plus haute) |
 | Identifiant PP (RPPS) | X | | | X | `Practitioner.identifier` / `PractitionerRole.identifier` |
 | Identifiant national de structure | | X | X | | `Organization.identifier` |
