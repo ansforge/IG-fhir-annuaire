@@ -24,7 +24,12 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * active MS
 * name MS
 * alias MS
-* type MS
+* type[organizationType] MS
+* type[secteurActiviteRASS] MS
+* type[categorieEtablissementRASS] MS
+* type[statutJuridiqueINSEE] MS
+* type[sphParticipation] MS
+* type[typeEtablissement] MS
 * address MS
 * telecom[mailbox-mss] MS
 * endpoint MS
