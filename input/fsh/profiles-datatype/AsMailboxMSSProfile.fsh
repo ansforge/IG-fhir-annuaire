@@ -31,6 +31,3 @@ Title:    "AsMailboxMSSProfile to MOS - boiteLettresMSS"
 * extension[as-mailbox-mss-metadata].extension[description] -> "boiteLettresMSS.description"
 * extension[as-mailbox-mss-metadata].extension[service] -> "BoiteLettreMSS.serviceRattachement"
 * extension[as-mailbox-mss-metadata].extension[listeRouge] -> "BoiteLettreMSS.listeRouge"
-
-
-L
