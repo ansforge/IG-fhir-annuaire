@@ -279,7 +279,7 @@ Content-Type: application/fhir+json
 
 L'ajout d'une nouvelle BAL s'effectue par un `PATCH` sur la ressource porteuse avec une opération `insert` dans le tableau `telecom`. La ressource porteuse doit être identifiée au préalable (par son identifiant ou via une recherche).
 
-#### Exemple — ajout d'une BAL PER sur un Practitioner
+#### Exemple — ajout d'une BAL PER sur un Practitioner (par ID logique)
 
 ```json
 PATCH [base]/Practitioner/[id]
@@ -310,6 +310,43 @@ Content-Type: application/fhir+json
   ]
 }
 ```
+
+#### Exemple — ajout d'une BAL ORG sur une Organization (conditional PATCH par idnatstruct)
+
+Le conditional PATCH permet de cibler la ressource porteuse directement via son identifiant métier, sans connaître son ID logique FHIR.
+
+```http
+PATCH [base]/Organization?identifier=https://finess.esante.gouv.fr|123456789
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "insert" },
+        { "name": "path", "valueString": "Organization.telecom" },
+        { "name": "index", "valueInteger": 0 },
+        { "name": "value", "valueContactPoint": {
+          "system": "email",
+          "value": "structure@domain.mssante.fr",
+          "extension": [{
+            "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+            "extension": [
+              { "url": "type", "valueCode": "ORG" },
+              { "url": "listeRouge", "valueBoolean": false },
+              { "url": "description", "valueString": "BAL principale de la structure" }
+            ]
+          }]
+        }}
+      ]
+    }
+  ]
+}
+```
+
+Le serveur retourne `412 Precondition Failed` si le critère correspond à plusieurs ressources, et `404 Not Found` si aucune ressource ne correspond.
 
 ### Suppression
 
