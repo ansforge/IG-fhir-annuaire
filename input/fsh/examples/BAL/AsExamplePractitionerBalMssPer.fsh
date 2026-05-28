@@ -10,7 +10,7 @@ Instance: as-practitioner-bal-per-dupont
 InstanceOf: AsPractitionerProfile
 Usage: #example
 Title: "Practitioner — BAL PER (exemple complet)"
-Description: "Exemple fictif de Practitioner portant une BAL MSSanté personnelle (PER) avec dématérialisation acceptée."
+Description: "Exemple fictif de Practitioner portant une BAL MSSanté personnelle (PER)."
 
 * id = "as-practitioner-bal-per-dupont"
 
@@ -49,7 +49,7 @@ Description: "Exemple fictif de Practitioner portant une BAL MSSanté personnell
   * value = "jean-marie.dupont@infirmier.mssante.fr"
   * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
   * extension[as-mailbox-mss-metadata].extension[type].valueCodeableConcept = https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#PER
-  * extension[as-mailbox-mss-metadata].extension[digitization].valueBoolean = true
+
   * extension[as-mailbox-mss-metadata].extension[listeRouge].valueBoolean = false
 
 * qualification[degree][0]
@@ -74,7 +74,7 @@ Instance: as-practitioner-bal-per-martin
 InstanceOf: AsPractitionerProfile
 Usage: #example
 Title: "Practitioner — BAL PER (exemple complet, 2e praticien)"
-Description: "Exemple fictif de Practitioner portant une BAL MSSanté personnelle (PER) avec dématérialisation refusée."
+Description: "Exemple fictif de Practitioner portant une BAL MSSanté personnelle (PER)."
 
 * id = "as-practitioner-bal-per-martin"
 
@@ -113,7 +113,7 @@ Description: "Exemple fictif de Practitioner portant une BAL MSSanté personnell
   * value = "sophie.martin@medecin.mssante.fr"
   * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
   * extension[as-mailbox-mss-metadata].extension[type].valueCodeableConcept = https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#PER
-  * extension[as-mailbox-mss-metadata].extension[digitization].valueBoolean = false
+
   * extension[as-mailbox-mss-metadata].extension[listeRouge].valueBoolean = false
 
 * qualification[degree][0]
@@ -172,7 +172,7 @@ Description: "Exemple fictif illustrant la réponse d'un Practitioner avec _elem
   * value = "jean-marie.dupont@infirmier.mssante.fr"
   * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
   * extension[as-mailbox-mss-metadata].extension[type].valueCodeableConcept = https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#PER
-  * extension[as-mailbox-mss-metadata].extension[digitization].valueBoolean = true
+
   * extension[as-mailbox-mss-metadata].extension[listeRouge].valueBoolean = false
 
 
@@ -216,5 +216,5 @@ Description: "Exemple fictif illustrant la réponse d'un Practitioner avec _elem
   * value = "sophie.martin@medecin.mssante.fr"
   * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
   * extension[as-mailbox-mss-metadata].extension[type].valueCodeableConcept = https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#PER
-  * extension[as-mailbox-mss-metadata].extension[digitization].valueBoolean = false
+
   * extension[as-mailbox-mss-metadata].extension[listeRouge].valueBoolean = false

@@ -9,7 +9,7 @@ Description: "Modèle logique de la boîte aux lettres MSSanté personnelle (PER
 
 * adresse 1..1 string "Adresse BAL" "Adresse de messagerie MSSanté"
 * identifiantPP 1..1 string "Identifiant PP" "Identifiant national du professionnel de santé (RPPS)"
-* dematerialisation 0..1 boolean "Dématérialisation" "Indicateur d'acceptation de la dématérialisation (zéro papier). true : acceptée ; false : refusée."
+
 * listeRouge 0..1 boolean "Liste rouge" "Indicateur liste rouge. true : la BAL ne doit pas être publiée ; false : la BAL peut être publiée."
 
 
@@ -27,7 +27,7 @@ Description: "Modèle logique de la boîte aux lettres MSSanté organisationnell
 * serviceRattachement 0..1 string "Service de rattachement" "Nom et description du service de rattachement de l'utilisateur de la BAL dans l'organisation"
 * responsable 0..1 string "Responsable" "Coordonnées de la ou des personnes responsables au niveau opérationnel de la BAL"
 * description 0..1 string "Description" "Description fonctionnelle de la BAL"
-* dematerialisation 0..1 boolean "Dématérialisation" "Indicateur d'acceptation de la dématérialisation (zéro papier). true : acceptée ; false : refusée."
+
 * listeRouge 0..1 boolean "Liste rouge" "Indicateur liste rouge. true : la BAL ne doit pas être publiée ; false : la BAL peut être publiée."
 
 
@@ -45,7 +45,7 @@ Description: "Modèle logique de la boîte aux lettres MSSanté applicative (APP
 * serviceRattachement 0..1 string "Service de rattachement" "Nom et description du service de rattachement de l'utilisateur de la BAL dans l'organisation"
 * responsable 0..1 string "Responsable" "Coordonnées de la ou des personnes responsables au niveau opérationnel de la BAL"
 * description 0..1 string "Description" "Description fonctionnelle de la BAL"
-* dematerialisation 0..1 boolean "Dématérialisation" "Indicateur d'acceptation de la dématérialisation (zéro papier). true : acceptée ; false : refusée."
+
 * listeRouge 0..1 boolean "Liste rouge" "Indicateur liste rouge. true : la BAL ne doit pas être publiée ; false : la BAL peut être publiée."
 
 
@@ -60,7 +60,7 @@ Description: "Modèle logique de la boîte aux lettres MSSanté de cabinet (CAB)
 
 * adresse 1..1 string "Adresse BAL" "Adresse de messagerie MSSanté"
 * description 0..1 string "Description" "Description fonctionnelle de la BAL"
-* dematerialisation 0..1 boolean "Dématérialisation" "Indicateur d'acceptation de la dématérialisation (zéro papier). true : acceptée ; false : refusée."
+
 * listeRouge 0..1 boolean "Liste rouge" "Indicateur liste rouge. true : la BAL ne doit pas être publiée ; false : la BAL peut être publiée."
 * responsable 1..1 string "Responsable" "Identifiant PP (RPPS) du professionnel responsable de la BAL"
 * cotitulaire 0..* BackboneElement "Cotitulaire" "Professionnel cotitulaire de la BAL de cabinet"

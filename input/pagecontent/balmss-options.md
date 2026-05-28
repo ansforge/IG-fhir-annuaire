@@ -25,7 +25,7 @@ Les cas d'usage autour des BAL MSSanté sont de trois natures :
 
 <div class="wysiwyg" markdown="1">
 - **Récupération** : retrouver les adresses MSSanté rattachées à un professionnel, une situation d'exercice ou une structure — par exemple pour adresser un message sécurisé au bon destinataire ou alimenter un annuaire tiers.
-- **Mise à jour** : modifier les métadonnées d'une BAL existante — par exemple passer en liste rouge, activer la dématérialisation ou mettre à jour la description d'une BAL organisationnelle.
+- **Mise à jour** : modifier les métadonnées d'une BAL existante — par exemple passer en liste rouge ou mettre à jour la description d'une BAL organisationnelle.
 - **Gestion des BAL préférentielles** : lorsqu'un professionnel ou une structure porte plusieurs BAL, indiquer laquelle doit être utilisée en priorité — par exemple désigner une BAL principale pour la réception des documents dématérialisés.
 </div>
 
@@ -84,7 +84,6 @@ Le tableau suivant liste les données associées à chaque type de BAL et leur c
 |--------|:---:|:---:|:---:|:---:|-------------|
 | Adresse BAL | X | X | X | X | `telecom.value` |
 | Type de BAL | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
-| Dématérialisation | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[digitization]` |
 | Liste rouge | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
 | Description | | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
 | Service de rattachement | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[service]` |
@@ -262,7 +261,7 @@ Content-Type: application/fhir+json
       "name": "operation",
       "part": [
         { "name": "type", "valueCode": "replace" },
-        { "name": "path", "valueString": "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('digitization').value" },
+        { "name": "path", "valueString": "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value" },
         { "name": "value", "valueBoolean": true }
       ]
     }
@@ -301,7 +300,6 @@ Les métadonnées portées par l'extension `as-ext-mailbox-mss-metadata` peuvent
 
 | Champ | Extension | PER | ORG | APP | CAB |
 |-------|-----------|-----|-----|-----|-----|
-| Dématérialisation | `digitization` | X | X | X | X |
 | Liste rouge | `listeRouge` | X | X | X | X |
 | Description | `description` | | X | X | X |
 | Service de rattachement | `service` | | X | X | |
@@ -353,7 +351,6 @@ Content-Type: application/fhir+json
             "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
             "extension": [
               { "url": "type", "valueCode": "PER" },
-              { "url": "digitization", "valueBoolean": true },
               { "url": "listeRouge", "valueBoolean": true }
             ]
           }]
@@ -415,7 +412,6 @@ Content-Type: application/fhir+json
             "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
             "extension": [
               { "url": "type", "valueCode": "PER" },
-              { "url": "digitization", "valueBoolean": false },
               { "url": "listeRouge", "valueBoolean": false }
             ]
           }]

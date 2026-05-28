@@ -77,8 +77,6 @@ paths:
                               extension:
                                 - url: type
                                   valueCode: PER
-                                - url: digitization
-                                  valueBoolean: false
                                 - url: listeRouge
                                   valueBoolean: false
         '400':
@@ -214,8 +212,6 @@ paths:
                                 extension:
                                   - url: type
                                     valueCode: PER
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: true
               replaceAttribute:
@@ -253,8 +249,6 @@ paths:
                                 extension:
                                   - url: type
                                     valueCode: PER
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
               deleteBAL:
@@ -320,8 +314,6 @@ paths:
                                 extension:
                                   - url: type
                                     valueCode: PER
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: false
       responses:
@@ -376,8 +368,6 @@ paths:
                                 extension:
                                   - url: type
                                     valueCode: ORG
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: false
                                   - url: description
@@ -417,8 +407,6 @@ paths:
                                 extension:
                                   - url: type
                                     valueCode: ORG
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
                                   - url: description
@@ -633,14 +621,14 @@ components:
             properties:
               url:
                 type: string
-                enum: [type, digitization, listeRouge, description, service, responsible, phone]
+                enum: [type, listeRouge, description, service, responsible, phone]
               valueCode:
                 type: string
                 description: Valeur pour les extensions de type code (ex. type de BAL)
                 enum: [PER, ORG, APP, CAB]
               valueBoolean:
                 type: boolean
-                description: Valeur pour les extensions booléennes (digitization, listeRouge)
+                description: Valeur pour les extensions booléennes (listeRouge)
               valueString:
                 type: string
                 description: Valeur pour les extensions textuelles (description, service, responsible, phone)

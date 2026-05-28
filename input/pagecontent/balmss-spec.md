@@ -38,7 +38,6 @@ Le discriminant d'une BAL est son adresse mail (`ContactPoint.value`), qui l'ide
 |--------|:---:|:---:|:---:|:---:|-------------|
 | Adresse BAL | X | X | X | X | `telecom.value` |
 | Type de BAL | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
-| Dématérialisation | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[digitization]` |
 | Liste rouge | X | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
 | Description | | X | X | X | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
 | Service de rattachement | | X | X | | `telecom.extension[as-mailbox-mss-metadata].extension[service]` |
@@ -157,7 +156,6 @@ Les métadonnées portées par l'extension `as-ext-mailbox-mss-metadata` peuvent
 
 | Champ | Extension | PER | ORG | APP | CAB |
 |-------|-----------|-----|-----|-----|-----|
-| Dématérialisation | `digitization` | X | X | X | X |
 | Liste rouge | `listeRouge` | X | X | X | X |
 | Description | `description` | | X | X | X |
 | Service de rattachement | `service` | | X | X | |
@@ -209,7 +207,6 @@ Content-Type: application/fhir+json
             "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
             "extension": [
               { "url": "type", "valueCode": "PER" },
-              { "url": "digitization", "valueBoolean": true },
               { "url": "listeRouge", "valueBoolean": true }
             ]
           }]
@@ -304,7 +301,6 @@ Content-Type: application/fhir+json
             "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
             "extension": [
               { "url": "type", "valueCode": "PER" },
-              { "url": "digitization", "valueBoolean": false },
               { "url": "listeRouge", "valueBoolean": false }
             ]
           }]
@@ -371,7 +367,6 @@ Un professionnel de santé (RPPS `800012345678`) dispose de trois BAL PER. La re
         "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
         "extension": [
           { "url": "type", "valueCode": "PER" },
-          { "url": "digitization", "valueBoolean": true },
           { "url": "listeRouge", "valueBoolean": false }
         ]
       }]
@@ -383,7 +378,6 @@ Un professionnel de santé (RPPS `800012345678`) dispose de trois BAL PER. La re
         "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
         "extension": [
           { "url": "type", "valueCode": "PER" },
-          { "url": "digitization", "valueBoolean": false },
           { "url": "listeRouge", "valueBoolean": false }
         ]
       }]
@@ -395,7 +389,6 @@ Un professionnel de santé (RPPS `800012345678`) dispose de trois BAL PER. La re
         "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
         "extension": [
           { "url": "type", "valueCode": "PER" },
-          { "url": "digitization", "valueBoolean": false },
           { "url": "listeRouge", "valueBoolean": false }
         ]
       }]
