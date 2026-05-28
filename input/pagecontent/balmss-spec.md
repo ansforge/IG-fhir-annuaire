@@ -342,3 +342,101 @@ Content-Type: application/fhir+json
   ]
 }
 ```
+
+### Opérations combinées
+
+<blockquote class="stu-note">
+<p>L'API Annuaire Santé est actuellement en lecture seule. Cette section décrit le comportement attendu pour les opérations combinées sur les BAL, en vue d'une future ouverture en écriture.</p>
+</blockquote>
+
+Il est possible de regrouper plusieurs opérations dans une seule requête `PATCH`, en incluant plusieurs paramètres `operation` dans la ressource `Parameters`. Les opérations sont appliquées séquentiellement, dans l'ordre où elles apparaissent.
+
+#### Contexte — Practitioner avec 3 BAL MSSanté
+
+Un professionnel de santé (RPPS `800012345678`) dispose de trois BAL PER. La ressource ci-dessous est volontairement raccourcie (identifiants, nom, qualification omis) :
+
+```json
+{
+  "resourceType": "Practitioner",
+  "id": "pract-800012345678",
+  "identifier": [
+    { "system": "urn:oid:1.2.250.1.71.4.2.1", "value": "800012345678" }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "jean.dupont@domain.mssante.fr",
+      "rank": 1,
+      "extension": [{
+        "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+        "extension": [
+          { "url": "type", "valueCode": "PER" },
+          { "url": "digitization", "valueBoolean": true },
+          { "url": "listeRouge", "valueBoolean": false }
+        ]
+      }]
+    },
+    {
+      "system": "email",
+      "value": "jean.dupont.pro@domain.mssante.fr",
+      "extension": [{
+        "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+        "extension": [
+          { "url": "type", "valueCode": "PER" },
+          { "url": "digitization", "valueBoolean": false },
+          { "url": "listeRouge", "valueBoolean": false }
+        ]
+      }]
+    },
+    {
+      "system": "email",
+      "value": "jean.dupont.ancien@domain.mssante.fr",
+      "extension": [{
+        "url": "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata",
+        "extension": [
+          { "url": "type", "valueCode": "PER" },
+          { "url": "digitization", "valueBoolean": false },
+          { "url": "listeRouge", "valueBoolean": false }
+        ]
+      }]
+    }
+  ]
+}
+```
+
+L'opérateur souhaite, en une seule requête :
+
+1. Passer `jean.dupont.pro@domain.mssante.fr` en liste rouge (`listeRouge` : `false` → `true`)
+2. Supprimer `jean.dupont.ancien@domain.mssante.fr`
+
+La BAL préférentielle `jean.dupont@domain.mssante.fr` reste inchangée.
+
+#### Exemple — PATCH combinant mise en liste rouge et suppression
+
+```json
+PATCH [base]/Practitioner/pract-800012345678
+Content-Type: application/fhir+json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Practitioner.telecom.where(value = 'jean.dupont.pro@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value" },
+        { "name": "value", "valueBoolean": true }
+      ]
+    },
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "delete" },
+        { "name": "path", "valueString": "Practitioner.telecom.where(value = 'jean.dupont.ancien@domain.mssante.fr')" }
+      ]
+    }
+  ]
+}
+```
+
+Le serveur retourne `200 OK` avec la ressource mise à jour. Le `Practitioner` ne contient plus que deux BAL : `jean.dupont@domain.mssante.fr` (inchangée, toujours préférentielle) et `jean.dupont.pro@domain.mssante.fr` (désormais en liste rouge).
