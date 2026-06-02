@@ -15,8 +15,6 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
     description 0..1 and
     responsible 0..1 and
     service 0..1 and
-    phone 0..1 and
-    digitization 0..1 and
     listeRouge 0..1
 
 // typeBAL
@@ -35,14 +33,6 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
 // serviceRattachement
 * extension[service].value[x] only string
 * extension[service] ^short = "serviceRattachement : Nom et description du service de rattachement de l’utilisateur de la boîte aux lettres dans l’organisation."
-
-// telephone
-* extension[phone].value[x] only string
-* extension[phone] ^short = "telephone : Coordonnées téléphoniques spécifiques à l’usage de la boîte aux lettres MSSanté."
-
-// dematerialisation
-* extension[digitization].value[x] only boolean
-* extension[digitization] ^short = "dematerialisation : Indicateur d’acceptation de la dématérialisation (ou « Zéro papier »). - \"true\" : Dématérialisation acceptée \r\n- \"false\" : Dématérialisation refusée."
 
 // listeRouge
 * extension[listeRouge].value[x] only boolean
