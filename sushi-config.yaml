@@ -11,7 +11,7 @@ publisher:
   email: monserviceclient.annuaire@esante.gouv.fr
 dependencies:
   hl7.fhir.fr.core: 2.1.0
-  hl7.fhir.extensions.r5: 4.0.1
+  hl7.fhir.uv.xver-r5.r4: latest
   ans.fr.nos: latest
   hl7.terminology.r4: 5.5.0
 status: active
@@ -22,8 +22,23 @@ copyrightYear: 2020+
 releaseLabel: ci-build
 jurisdiction: urn:iso:std:iso:3166#FR "France (la)"
 
-parameters:
+parameters: #Parameters list - https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html
     shownav: 'true'
+    path-expansion-params: '../../expansion-params.json' # for using French SNOMED CT Extension
+    pin-canonicals: pin-all
+    apply-contact: true
+    logging:
+      - tx #tx: Messages describing the use of the terminology server (for debugging)
+      - html #html: Log when validating an html page (troubleshooting only - leave off)
+      - generate #generate: Log when producing an individual resource (troubleshooting only - leave off)
+      - init #init: Messages describing the start up process (for debugging)
+      - progress #progress: Overall progress messages
+    i18n-default-lang: fr # Default language
+    apply-jurisdiction: true
+    i18n-lang:
+      - en
+    translation-sources:
+      - input/translations/en
 
 pages:
     index.md:
@@ -36,6 +51,8 @@ pages:
         title: Problématiques connues
     changes.md:
         title: Historique des changements
+    translationinfo.md:
+        title: Informations sur la traduction
 menu:
     Accueil: index.html
     Liste des profils: liste_profils.html
