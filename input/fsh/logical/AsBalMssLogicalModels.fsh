@@ -56,12 +56,9 @@ Description: "Modèle logique de la boîte aux lettres MSSanté applicative (APP
 Logical: AsBalMssCabLogicalModel
 Id: as-bal-mss-cab
 Title: "AS BAL MSS CAB - Modèle logique"
-Description: "Modèle logique de la boîte aux lettres MSSanté de cabinet (CAB), associée à un ou plusieurs professionnels de santé (responsable + cotitulaires)."
+Description: "Modèle logique de la boîte aux lettres MSSanté de cabinet (CAB)."
 
 * adresse 1..1 string "Adresse BAL" "Adresse de messagerie MSSanté"
 * description 0..1 string "Description" "Description fonctionnelle de la BAL"
 
 * listeRouge 0..1 boolean "Liste rouge" "Indicateur liste rouge. true : la BAL ne doit pas être publiée ; false : la BAL peut être publiée."
-* responsable 1..1 string "Responsable" "Identifiant PP (RPPS) du professionnel responsable de la BAL"
-* cotitulaire 0..* BackboneElement "Cotitulaire" "Professionnel cotitulaire de la BAL de cabinet"
-  * identifiantPP 1..1 string "Identifiant PP" "Identifiant national du professionnel de santé cotitulaire (RPPS)"

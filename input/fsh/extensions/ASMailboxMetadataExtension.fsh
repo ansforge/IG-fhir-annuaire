@@ -24,7 +24,7 @@ Description: 	"Extension contenant les métadonnées de la mailbox mss."
 
 // responsable
 * extension[responsible].value[x] only string
-* extension[responsible] ^short = "responsable : Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres \"PER\"."
+* extension[responsible] ^short = "responsable : Texte libre donnant les coordonnées de la (ou des) personne(s) responsable(s) au niveau opérationnel de la boîte aux lettres. Non renseigné pour les types de boîte aux lettres \"PER\" ni \"CAB\"."
 
 // description
 * extension[description].value[x] only string
