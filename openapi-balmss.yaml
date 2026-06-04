@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: API FHIR Annuaire Santé — BAL MSSanté
+  title: API FHIR MSS - Boîtes aux lettres MSSanté de l'Annuaire Santé
   description: |
     Spécification des endpoints FHIR de l'Annuaire Santé relatifs aux boîtes aux lettres
     du service de messagerie sécurisée de santé (BAL MSSanté).
@@ -15,27 +15,29 @@ info:
     | APP  | `Organization` |
     | CAB  | `Practitioner` |
 
-    **Les opérations d'écriture (PATCH) sont décrites à titre prospectif — l'API est actuellement en lecture seule.**
+    **Cette API concerne uniquement les attributs `telecom` des ressources FHIR**
   version: draft
   contact:
     name: ANS — Agence du Numérique en Santé
     url: https://esante.gouv.fr
 
 servers:
-  - url: https://gateway.api.esante.gouv.fr/fhir/v2
-    description: API FHIR Annuaire Santé (production — V2)
+  - url: https://gateway.api.esante.gouv.fr/a/definir
+    description: API FHIR MSS (non encore implémenté)
 
 tags:
   - name: Récupération
-    description: Lecture des BAL MSSanté
-  - name: Écriture
-    description: Création, mise à jour et suppression des BAL MSSanté (non encore implémenté)
+    description: Lecture des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
+  - name: FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)
+    description: Création, mise à jour et suppression des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
+  - name: FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)
+    description: Création, mise à jour et suppression des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
 
 paths:
 
   /Practitioner/{id}:
     patch:
-      tags: [Écriture]
+      tags: [FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)]
       summary: Modifier, créer ou supprimer une BAL PER/CAB sur un Practitioner
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -97,8 +99,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: true
               replaceAttribute:
@@ -141,8 +141,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
               deleteBAL:
@@ -172,7 +170,7 @@ paths:
 
   /PractitionerRole/{id}:
     patch:
-      tags: [Écriture]
+      tags: [FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)]
       summary: Modifier, créer ou supprimer une BAL PER sur un PractitionerRole
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -234,8 +232,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: false
               replaceAttribute:
@@ -278,8 +274,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
               deleteBAL:
@@ -309,7 +303,7 @@ paths:
 
   /Organization/{id}:
     patch:
-      tags: [Écriture]
+      tags: [FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)]
       summary: Modifier, créer ou supprimer une BAL ORG ou APP sur une Organization
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -372,8 +366,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: ORG
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: false
                                   - url: description
@@ -418,8 +410,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: ORG
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
                                   - url: description
@@ -455,7 +445,7 @@ paths:
 
   /Practitioner:
     patch:
-      tags: [Écriture]
+      tags: [FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)]
       summary: Modifier, créer ou supprimer une BAL PER/CAB sur un Practitioner (recherche par identifiant)
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -491,7 +481,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "https://rpps.esante.gouv.fr|800012345678"
+            example: "https://rpps.esante.gouv.fr|80001234567"
           description: |
             Identifiant du praticien. Systèmes supportés :
             - `https://rpps.esante.gouv.fr|{NUM_RPPS}`
@@ -526,8 +516,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: true
               replaceAttribute:
@@ -570,8 +558,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
               deleteBAL:
@@ -598,6 +584,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
+
     get:
       tags: [Récupération]
       summary: Rechercher des BAL PER (RPPS seul) ou CAB
@@ -632,7 +619,7 @@ paths:
                       id: practitioner-dupont
                       identifier:
                         - system: urn:oid:1.2.250.1.71.4.2.1
-                          value: "800012345678"
+                          value: "80001234567"
                       telecom:
                         - system: email
                           value: jean.dupont@domain.mssante.fr
@@ -644,8 +631,6 @@ paths:
                                     coding:
                                       - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                         code: PER
-                                - url: digitization
-                                  valueBoolean: false
                                 - url: listeRouge
                                   valueBoolean: false
         '400':
@@ -655,7 +640,7 @@ paths:
 
   /PractitionerRole:
     patch:
-      tags: [Écriture]
+      tags: [FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)]
       summary: Modifier, créer ou supprimer une BAL PER sur un PractitionerRole (recherche par identifiant)
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -736,8 +721,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: false
               replaceAttribute:
@@ -780,8 +763,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: PER
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
               deleteBAL:
@@ -835,7 +816,7 @@ paths:
 
   /Organization:
     patch:
-      tags: [Écriture]
+      tags: [FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)]
       summary: Modifier, créer ou supprimer une BAL ORG ou APP sur une Organization (recherche par identifiant)
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -909,8 +890,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: ORG
-                                  - url: digitization
-                                    valueBoolean: true
                                   - url: listeRouge
                                     valueBoolean: false
                                   - url: description
@@ -955,8 +934,6 @@ paths:
                                       coding:
                                         - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
                                           code: ORG
-                                  - url: digitization
-                                    valueBoolean: false
                                   - url: listeRouge
                                     valueBoolean: false
                                   - url: description
@@ -989,6 +966,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
+
     get:
       tags: [Récupération]
       summary: Rechercher des BAL ORG ou APP
@@ -1075,10 +1053,9 @@ components:
       in: query
       required: false
       schema:
-        type: string
-        example: prenom.nom@domain.mssante.fr
+        $ref: '#/components/schemas/MailboxMssAddress'
       description: |
-        Filtre par adresse MSSanté.
+        Filtre par adresse MSSanté au format `*@*.mssante.fr`.
         Modificateurs supportés : `:contains`, `:exact`.
 
     elements:
@@ -1215,9 +1192,7 @@ components:
           type: string
           enum: [email]
         value:
-          type: string
-          description: Adresse MSSanté
-          example: prenom.nom@domain.mssante.fr
+          $ref: '#/components/schemas/MailboxMssAddress'
         extension:
           type: array
           items:
@@ -1238,17 +1213,24 @@ components:
             properties:
               url:
                 type: string
-                enum: [type, digitization, listeRouge, description, service, responsible, phone]
+                enum: [type, listeRouge, description, service, responsible]
               valueCode:
                 type: string
                 description: Valeur pour les extensions de type code (ex. type de BAL)
                 enum: [PER, ORG, APP, CAB]
               valueBoolean:
                 type: boolean
-                description: Valeur pour les extensions booléennes (digitization, listeRouge)
+                description: Valeur pour les extensions booléennes (listeRouge)
               valueString:
                 type: string
-                description: Valeur pour les extensions textuelles (description, service, responsible, phone)
+                description: Valeur pour les extensions textuelles (description, service, responsible)
+
+    MailboxMssAddress:
+      type: string
+      format: email
+      pattern: '^[^@\s]+@([^@\s]+\.mssante\.fr|interop-mssante\.apicrypt\.org)$'
+      description: Adresse MSSanté au format `*@*.mssante.fr` ou `*@interop-mssante.apicrypt.org`
+      example: prenom.nom@domain.mssante.fr ou prenom.nom@interop-mssante.apicrypt.org
 
     PatchParameters:
       type: object
