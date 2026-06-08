@@ -56,6 +56,8 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * qualification[degree].issuer 0..0
 * qualification[degree].extension[as-ext-education-level] 0..0 
 
+* qualification[savoirFaire].code.coding[savoirFaire] ^short = "Compétence acquise par le professionnel (competence) R39 ou Compétence exclusive exercée par le professionnel à titre exclusif (competenceExclusive) R40 ou Diplôme d'études spécialisées complémentaires (DESC)DESCnonQualifian R42 ou Capacité (savoir-faire)de médecine (capaciteSavoirFaire) R43 ou Qualification de praticien adjoint contractuel (qualificationPAC) R44 ou Fonction qualifiée (Synonyme: fonctionQualifiee) R45 ou Droit d'exercice complémentaire (Synonyme: droitExerciceComplementaire) R97."
+
 // langueParlee
 * communication 0..0
 
