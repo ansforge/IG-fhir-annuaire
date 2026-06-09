@@ -15,7 +15,7 @@ info:
     | APP  | `Organization` |
     | CAB  | `Practitioner` |
 
-    **Cette API concerne uniquement les attributs `telecom` des ressources FHIR**
+    **Ce swagger se concentre uniquement sur les fonctionnalités d'interaction des balmss.**
   version: draft
   contact:
     name: ANS — Agence du Numérique en Santé
@@ -28,16 +28,16 @@ servers:
 tags:
   - name: Récupération
     description: Lecture des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
-  - name: FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)
+  - name: FHIR PATCH
     description: Création, mise à jour et suppression des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
-  - name: FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)
+  - name: FHIR PATCH Conditionnel
     description: Création, mise à jour et suppression des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
 
 paths:
 
   /Practitioner/{id}:
     patch:
-      tags: [FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)]
+      tags: [ FHIR PATCH ]
       summary: Modifier, créer ou supprimer une BAL PER/CAB sur un Practitioner
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -76,8 +76,8 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchParameters'
             examples:
-              replaceContactPoint:
-                summary: Mise à jour de plusieurs attributs (ContactPoint complet)
+              replaceBALPERContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL PER
                 value:
                   resourceType: Parameters
                   parameter:
@@ -97,12 +97,12 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: true
-              replaceAttribute:
-                summary: Mise à jour d'un seul attribut (listeRouge)
+              replaceBALPERAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL PER
                 value:
                   resourceType: Parameters
                   parameter:
@@ -114,7 +114,7 @@ paths:
                           valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
-              insertBAL:
+              insertBALPER:
                 summary: Ajout d'une nouvelle BAL PER
                 value:
                   resourceType: Parameters
@@ -139,12 +139,90 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: false
-              deleteBAL:
-                summary: Suppression d'une BAL PER
+              deleteBALPER:
+                summary: Suppression d'une BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+              replaceBALCABContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: true
+              replaceBALCABAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              insertBALCAB:
+                summary: Ajout d'une nouvelle BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Practitioner.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            use: work
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBALCAB:
+                summary: Suppression d'une BAL CAB
                 value:
                   resourceType: Parameters
                   parameter:
@@ -170,7 +248,7 @@ paths:
 
   /PractitionerRole/{id}:
     patch:
-      tags: [FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)]
+      tags: [ FHIR PATCH ]
       summary: Modifier, créer ou supprimer une BAL PER sur un PractitionerRole
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -230,7 +308,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: false
@@ -272,7 +350,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: false
@@ -303,7 +381,7 @@ paths:
 
   /Organization/{id}:
     patch:
-      tags: [FHIR PATCH - Écriture via ID technique FHIR (récupéré de l'API FHIR Annuaire Santé)]
+      tags: [ FHIR PATCH ]
       summary: Modifier, créer ou supprimer une BAL ORG ou APP sur une Organization
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -364,7 +442,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: ORG
                                   - url: listeRouge
                                     valueBoolean: false
@@ -408,7 +486,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: ORG
                                   - url: listeRouge
                                     valueBoolean: false
@@ -445,7 +523,7 @@ paths:
 
   /Practitioner:
     patch:
-      tags: [FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)]
+      tags: [ FHIR PATCH Conditionnel ]
       summary: Modifier, créer ou supprimer une BAL PER/CAB sur un Practitioner (recherche par identifiant)
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -481,7 +559,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "https://rpps.esante.gouv.fr|80001234567"
+            example: "https://rpps.esante.gouv.fr|10123456789"
           description: |
             Identifiant du praticien. Systèmes supportés :
             - `https://rpps.esante.gouv.fr|{NUM_RPPS}`
@@ -493,8 +571,8 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchParameters'
             examples:
-              replaceContactPoint:
-                summary: Mise à jour de plusieurs attributs (ContactPoint complet)
+              replaceBALPERContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL PER
                 value:
                   resourceType: Parameters
                   parameter:
@@ -514,12 +592,12 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: true
-              replaceAttribute:
-                summary: Mise à jour d'un seul attribut (listeRouge)
+              replaceBALPERAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL PER
                 value:
                   resourceType: Parameters
                   parameter:
@@ -531,7 +609,7 @@ paths:
                           valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
-              insertBAL:
+              insertBALPER:
                 summary: Ajout d'une nouvelle BAL PER
                 value:
                   resourceType: Parameters
@@ -556,12 +634,90 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: false
-              deleteBAL:
-                summary: Suppression d'une BAL PER
+              deleteBALPER:
+                summary: Suppression d'une BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+              replaceBALCABContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: true
+              replaceBALCABAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              insertBALCAB:
+                summary: Ajout d'une nouvelle BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Practitioner.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            use: work
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBALCAB:
+                summary: Suppression d'une BAL CAB
                 value:
                   resourceType: Parameters
                   parameter:
@@ -584,9 +740,11 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
 
     get:
-      tags: [Récupération]
+      tags: [ Récupération ]
       summary: Rechercher des BAL PER (RPPS seul) ou CAB
       description: |
         Retourne les ressources `Practitioner` portant des BAL MSSanté de type `PER`
@@ -629,7 +787,7 @@ paths:
                                 - url: type
                                   valueCodeableConcept:
                                     coding:
-                                      - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                      - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                         code: PER
                                 - url: listeRouge
                                   valueBoolean: false
@@ -640,7 +798,7 @@ paths:
 
   /PractitionerRole:
     patch:
-      tags: [FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)]
+      tags: [ FHIR PATCH Conditionnel ]
       summary: Modifier, créer ou supprimer une BAL PER sur un PractitionerRole (recherche par identifiant)
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -719,7 +877,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: false
@@ -761,7 +919,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: PER
                                   - url: listeRouge
                                     valueBoolean: false
@@ -789,8 +947,10 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
     get:
-      tags: [Récupération]
+      tags: [ Récupération ]
       summary: Rechercher des BAL PER (RPPS + structure d'exercice)
       description: |
         Retourne les ressources `PractitionerRole` portant des BAL MSSanté de type `PER`
@@ -816,7 +976,7 @@ paths:
 
   /Organization:
     patch:
-      tags: [FHIR PATCH Conditionnel - Écriture via identifiant métier (RPPS et FINESS/SIREN)]
+      tags: [ FHIR PATCH Conditionnel ]
       summary: Modifier, créer ou supprimer une BAL ORG ou APP sur une Organization (recherche par identifiant)
       description: |
         **Non encore implémenté — comportement attendu.**
@@ -888,7 +1048,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: ORG
                                   - url: listeRouge
                                     valueBoolean: false
@@ -932,7 +1092,7 @@ paths:
                                   - url: type
                                     valueCodeableConcept:
                                       coding:
-                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R257-TypeMessagerie
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                           code: ORG
                                   - url: listeRouge
                                     valueBoolean: false
@@ -966,9 +1126,11 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
 
     get:
-      tags: [Récupération]
+      tags: [ Récupération ]
       summary: Rechercher des BAL ORG ou APP
       description: |
         Retourne les ressources `Organization` portant des BAL MSSanté de type `ORG` ou `APP`.
@@ -993,7 +1155,7 @@ paths:
 
   /:
     get:
-      tags: [Récupération]
+      tags: [ Récupération ]
       summary: Recherche multi-ressources via _type
       description: |
         Permet d'interroger plusieurs types de ressources simultanément via `_type`.
@@ -1012,6 +1174,7 @@ paths:
         - $ref: '#/components/parameters/mailboxMss'
         - $ref: '#/components/parameters/elements'
         - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/pageToken'
       responses:
         '200':
           description: Bundle searchset contenant les ressources correspondantes
@@ -1042,7 +1205,7 @@ components:
       required: false
       schema:
         type: string
-        example: "https://mos.esante.gouv.fr/NOS/TRE_R257-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER"
+        example: "https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER"
       description: |
         Filtre par type de BAL. Format `système|code`.
         Valeurs : `PER`, `ORG`, `APP`, `CAB`.
@@ -1095,10 +1258,10 @@ components:
       properties:
         resourceType:
           type: string
-          enum: [Bundle]
+          enum: [ Bundle ]
         type:
           type: string
-          enum: [searchset]
+          enum: [ searchset ]
         total:
           type: integer
         link:
@@ -1108,7 +1271,7 @@ components:
             properties:
               relation:
                 type: string
-                enum: [self, next, previous]
+                enum: [ self, next, previous ]
               url:
                 type: string
         entry:
@@ -1128,7 +1291,7 @@ components:
       properties:
         resourceType:
           type: string
-          enum: [Practitioner]
+          enum: [ Practitioner ]
         id:
           type: string
         identifier:
@@ -1146,7 +1309,7 @@ components:
       properties:
         resourceType:
           type: string
-          enum: [PractitionerRole]
+          enum: [ PractitionerRole ]
         id:
           type: string
         identifier:
@@ -1164,7 +1327,7 @@ components:
       properties:
         resourceType:
           type: string
-          enum: [Organization]
+          enum: [ Organization ]
         id:
           type: string
         identifier:
@@ -1190,7 +1353,7 @@ components:
       properties:
         system:
           type: string
-          enum: [email]
+          enum: [ email ]
         value:
           $ref: '#/components/schemas/MailboxMssAddress'
         extension:
@@ -1204,7 +1367,7 @@ components:
       properties:
         url:
           type: string
-          enum: [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata]
+          enum: [ https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata ]
         extension:
           type: array
           description: Attributs de la BAL
@@ -1213,11 +1376,11 @@ components:
             properties:
               url:
                 type: string
-                enum: [type, listeRouge, description, service, responsible]
+                enum: [ type, listeRouge, description, service, responsible ]
               valueCode:
                 type: string
-                description: Valeur pour les extensions de type code (ex. type de BAL)
-                enum: [PER, ORG, APP, CAB]
+                description: Valeur pour les extensions de type code BAL
+                enum: [ PER, ORG, APP, CAB ]
               valueBoolean:
                 type: boolean
                 description: Valeur pour les extensions booléennes (listeRouge)
@@ -1235,21 +1398,21 @@ components:
     PatchParameters:
       type: object
       description: Ressource FHIR Parameters pour une opération FHIR Patch (https://hl7.org/fhir/R4/fhirpatch.html)
-      required: [resourceType, parameter]
+      required: [ resourceType, parameter ]
       properties:
         resourceType:
           type: string
-          enum: [Parameters]
+          enum: [ Parameters ]
         parameter:
           type: array
           minItems: 1
           items:
             type: object
-            required: [name, part]
+            required: [ name, part ]
             properties:
               name:
                 type: string
-                enum: [operation]
+                enum: [ operation ]
               part:
                 type: array
                 description: Parties de l'opération FHIR Patch
@@ -1258,10 +1421,10 @@ components:
                   properties:
                     name:
                       type: string
-                      enum: [type, path, index, value]
+                      enum: [ type, path, index, value ]
                     valueCode:
                       type: string
-                      enum: [replace, insert, delete]
+                      enum: [ replace, insert, delete ]
                       description: Type d'opération (pour name=type)
                     valueString:
                       type: string
@@ -1281,7 +1444,7 @@ components:
       properties:
         resourceType:
           type: string
-          enum: [OperationOutcome]
+          enum: [ OperationOutcome ]
         issue:
           type: array
           items:
@@ -1289,7 +1452,7 @@ components:
             properties:
               severity:
                 type: string
-                enum: [error, warning, information]
+                enum: [ error, warning, information ]
               code:
                 type: string
               details:
@@ -1317,6 +1480,25 @@ components:
         application/fhir+json:
           schema:
             $ref: '#/components/schemas/OperationOutcome'
+    PreconditionFailed:
+      description: |
+        Précondition non satisfaite — le PATCH conditionnel a retourné plusieurs ressources
+        correspondant aux critères de recherche (comportement ambigu).
+        Le serveur refuse d'appliquer le patch ; l'appelant doit affiner les critères
+        ou utiliser un PATCH par identifiant logique (`/{id}`).
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+          example:
+            resourceType: OperationOutcome
+            issue:
+              - severity: error
+                code: conflict
+                details:
+                  text: >
+                    Multiple matches found for conditional PATCH — 0 or 1 match required,
+                    but the search returned more than one result.
 
   securitySchemes:
     ApiKey:
@@ -1326,4 +1508,4 @@ components:
       description: Clé d'API fournie par l'ANS pour accéder à l'API Annuaire Santé
 
 security:
-  - ApiKey: []
+  - ApiKey: [ ]
