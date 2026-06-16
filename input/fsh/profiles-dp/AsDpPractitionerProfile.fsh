@@ -8,10 +8,17 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 * meta.profile[as-dp-canonical] = Canonical(as-dp-practitioner)
 * meta.profile[fr-canonical] 1..1
 
-* extension[as-ext-registration] MS
-* extension[as-ext-frpractitioner-authorization] MS
+// extensions
+* extension[as-ext-registration] 0..0 // inscription à l'ordre
+
+* extension[as-ext-frpractitioner-authorization] MS 
+//AutorisationExercice : Il s'agit d'une autorisation délivrée par le Ministère de la Santé ou par l'Ordre au professionnel pour accès à l'exercice de la profession.
+
+* extension[as-ext-digital-certificate] 0..0
+
 * extension[as-ext-smartcard] MS
-* extension[as-ext-digital-certificate] MS
+* extension[as-ext-smartcard].extension[oppositionDate] 0..0
+
 * identifier[idNatPs] MS
 * identifier[rpps] MS
 
@@ -59,11 +66,5 @@ Description: 	"""Profil public applicatif créé à partir du profil générique
 // langueParlee
 * communication 0..0
 
-// extensions
-* extension[as-ext-registration] 0..0
-* extension[as-ext-frpractitioner-authorization] 0..0
-* extension[as-ext-digital-certificate] 0..0
 
-
-* extension[as-ext-smartcard].extension[oppositionDate] 0..0
 
