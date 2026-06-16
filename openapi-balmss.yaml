@@ -91,6 +91,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -114,6 +115,19 @@ paths:
                           valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
+              replaceRankBALPER:
+                summary: Mise à jour du rang BAL PER (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBALPER:
                 summary: Ajout d'une nouvelle BAL PER
                 value:
@@ -131,7 +145,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -169,6 +182,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -192,6 +206,19 @@ paths:
                           valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
+              replaceRankBALCAB:
+                summary: Mise à jour du rang BAL CAB (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBALCAB:
                 summary: Ajout d'une nouvelle BAL CAB
                 value:
@@ -209,7 +236,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -302,6 +328,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -325,6 +352,19 @@ paths:
                           valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBAL:
                 summary: Ajout d'une nouvelle BAL PER
                 value:
@@ -342,7 +382,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -436,6 +475,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: structure@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -461,6 +501,19 @@ paths:
                           valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('description').value"
                         - name: value
                           valueString: BAL principale de la structure
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBAL:
                 summary: Ajout d'une nouvelle BAL ORG
                 value:
@@ -478,7 +531,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: structure@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -586,6 +638,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -609,6 +662,19 @@ paths:
                           valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
+              replaceRankBALPER:
+                summary: Mise à jour du rang BAL PER (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBALPER:
                 summary: Ajout d'une nouvelle BAL PER
                 value:
@@ -626,7 +692,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -664,6 +729,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -687,6 +753,19 @@ paths:
                           valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
+              replaceRankBALCAB:
+                summary: Mise à jour du rang BAL CAB (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBALCAB:
                 summary: Ajout d'une nouvelle BAL CAB
                 value:
@@ -704,7 +783,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -871,6 +949,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -894,6 +973,19 @@ paths:
                           valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
                         - name: value
                           valueBoolean: true
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBAL:
                 summary: Ajout d'une nouvelle BAL PER
                 value:
@@ -911,7 +1003,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: prenom.nom@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -994,6 +1085,7 @@ paths:
         | `insert`   | Ajouter une nouvelle BAL |
         | `delete`   | Supprimer une BAL existante |
 
+
         _Le chemin de la donnée est porté par `parameter.part.where(name = 'path').valueString` dans le body._
 
         | Donnée | ORG | APP | Chemin FHIR |
@@ -1042,6 +1134,7 @@ paths:
                           valueContactPoint:
                             system: email
                             value: structure@domain.mssante.fr
+                            rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                 extension:
@@ -1067,6 +1160,19 @@ paths:
                           valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('description').value"
                         - name: value
                           valueString: BAL principale de la structure
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
               insertBAL:
                 summary: Ajout d'une nouvelle BAL ORG
                 value:
@@ -1084,7 +1190,6 @@ paths:
                           valueContactPoint:
                             system: email
                             value: structure@domain.mssante.fr
-                            use: work
                             rank: 1
                             extension:
                               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
@@ -1356,6 +1461,14 @@ components:
           enum: [ email ]
         value:
           $ref: '#/components/schemas/MailboxMssAddress'
+        rank:
+          type: integer
+          minimum: 1
+          description: |
+            Ordre de préférence de la BAL parmi les ContactPoints de la ressource.
+            La valeur `1` correspond à la priorité la plus haute (BAL préférentielle).
+            Conforme à l'élément `ContactPoint.rank` de FHIR R4.
+          example: 1
         extension:
           type: array
           items:
@@ -1435,7 +1548,7 @@ components:
                     valueInteger:
                       type: integer
                       minimum: 0
-                      description: Position d'insertion (pour name=index, opération insert uniquement)
+                      description: Position d'insertion (pour name=index) ou rang de priorité de la BAL (pour name=value, opération replace sur `telecom.rank`)
                     valueContactPoint:
                       $ref: '#/components/schemas/MailboxMSS'
 
