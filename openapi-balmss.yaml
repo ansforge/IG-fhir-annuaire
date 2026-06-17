@@ -1,0 +1,1624 @@
+openapi: 3.0.3
+info:
+  title: API FHIR MSS - Boîtes aux lettres MSSanté de l'Annuaire Santé
+  description: |
+    Spécification des endpoints FHIR de l'Annuaire Santé relatifs aux boîtes aux lettres
+    du service de messagerie sécurisée de santé (BAL MSSanté).
+
+    Les BAL sont modélisées via l'élément `telecom` (profil AS Mailbox MSS) des ressources
+    `Practitioner`, `PractitionerRole` et `Organization`.
+
+    | Type | Ressource(s) porteuse(s) |
+    |------|--------------------------|
+    | PER  | `Practitioner` (RPPS seul), `PractitionerRole` (RPPS + structure) |
+    | ORG  | `Organization` |
+    | APP  | `Organization` |
+    | CAB  | `Practitioner` |
+
+    **Ce swagger se concentre uniquement sur les fonctionnalités d'interaction des balmss.**
+  version: draft
+  contact:
+    name: ANS — Agence du Numérique en Santé
+    url: https://esante.gouv.fr
+
+servers:
+  - url: https://gateway.api.esante.gouv.fr/a/definir
+    description: API FHIR MSS (non encore implémenté)
+
+tags:
+  - name: Récupération
+    description: Lecture des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
+  - name: FHIR PATCH
+    description: Création, mise à jour et suppression des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
+  - name: FHIR PATCH Conditionnel
+    description: Création, mise à jour et suppression des BAL MSSanté via l'API FHIR MSS (non encore implémenté)
+
+paths:
+
+  /Practitioner/{id}:
+    patch:
+      tags: [ FHIR PATCH ]
+      summary: Modifier, créer ou supprimer une BAL PER/CAB sur un Practitioner
+      description: |
+        **Non encore implémenté — comportement attendu.**
+
+        FHIR PATCH sur un `Practitioner` pour agir sur un élément `telecom` BAL MSSanté.
+
+        **Données modifiables :**
+
+        _La valeur de l'opération est portée par `parameter.part.where(name = 'type').valueCode` dans le body._
+
+        | Opération | Description |
+        |-----------|-------------|
+        | `replace`  | Remplacer le ContactPoint entier ou un attribut de l'extension |
+        | `insert`   | Ajouter une nouvelle BAL |
+        | `delete`   | Supprimer une BAL existante |
+
+
+        _Le chemin de la donnée est porté par `parameter.part.where(name = 'path').valueString` dans le body._
+
+        | Donnée | PER | CAB | Chemin FHIR |
+        |--------|:---:|:---:|-------------|
+        | Adresse BAL | ✓ | ✓ | `telecom.value` |
+        | Type de BAL | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
+        | Liste rouge | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
+        | Description | — | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
+        | Responsable | — | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
+        | BAL préférentielle | ✓ | ✓ | `telecom.rank` (1 = priorité la plus haute) |
+        | Identifiant PP (RPPS) | ✓ | ✓ | `Practitioner.identifier` |
+      operationId: patchPractitionerBAL
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      requestBody:
+        required: true
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/PatchParameters'
+            examples:
+              replaceBALPERContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: true
+              replaceBALPERAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              replaceRankBALPER:
+                summary: Mise à jour du rang BAL PER (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBALPER:
+                summary: Ajout d'une nouvelle BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Practitioner.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBALPER:
+                summary: Suppression d'une BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+              replaceBALCABContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: true
+              replaceBALCABAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              replaceRankBALCAB:
+                summary: Mise à jour du rang BAL CAB (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBALCAB:
+                summary: Ajout d'une nouvelle BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Practitioner.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBALCAB:
+                summary: Suppression d'une BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+      responses:
+        '200':
+          description: Ressource mise à jour avec succès
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Practitioner'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /PractitionerRole/{id}:
+    patch:
+      tags: [ FHIR PATCH ]
+      summary: Modifier, créer ou supprimer une BAL PER sur un PractitionerRole
+      description: |
+        **Non encore implémenté — comportement attendu.**
+
+        FHIR PATCH sur un `PractitionerRole` pour agir sur un élément `telecom` BAL MSSanté
+        rattaché à un RPPS et une structure d'exercice.
+
+        **Données modifiables :**
+
+        _La valeur de l'opération est portée par `parameter.part.where(name = 'type').valueCode` dans le body._
+
+        | Opération | Description |
+        |-----------|-------------|
+        | `replace`  | Remplacer le ContactPoint entier ou un attribut de l'extension |
+        | `insert`   | Ajouter une nouvelle BAL |
+        | `delete`   | Supprimer une BAL existante |
+
+
+        _Le chemin de la donnée est porté par `parameter.part.where(name = 'path').valueString` dans le body._
+
+        | Donnée | PER | Chemin FHIR |
+        |--------|:---:|-------------|
+        | Adresse BAL | ✓ | `telecom.value` |
+        | Type de BAL | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
+        | Liste rouge | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
+        | BAL préférentielle | ✓ | `telecom.rank` (1 = priorité la plus haute) |
+        | Identifiant PP (RPPS) | ✓ | `PractitionerRole.practitioner` (référence) |
+        | Identifiant de structure | ✓ | `PractitionerRole.organization` (référence) |
+      operationId: patchPractitionerRoleBAL
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      requestBody:
+        required: true
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/PatchParameters'
+            examples:
+              replaceContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: false
+              replaceAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBAL:
+                summary: Ajout d'une nouvelle BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: PractitionerRole.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBAL:
+                summary: Suppression d'une BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+      responses:
+        '200':
+          description: Ressource mise à jour avec succès
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/PractitionerRole'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /Organization/{id}:
+    patch:
+      tags: [ FHIR PATCH ]
+      summary: Modifier, créer ou supprimer une BAL ORG ou APP sur une Organization
+      description: |
+        **Non encore implémenté — comportement attendu.**
+
+        FHIR PATCH sur une `Organization` pour agir sur un élément `telecom` BAL MSSanté de type `ORG` ou `APP`.
+
+        **Données modifiables :**
+
+        _La valeur de l'opération est portée par `parameter.part.where(name = 'type').valueCode` dans le body._
+
+        | Opération | Description |
+        |-----------|-------------|
+        | `replace`  | Remplacer le ContactPoint entier ou un attribut de l'extension |
+        | `insert`   | Ajouter une nouvelle BAL |
+        | `delete`   | Supprimer une BAL existante |
+
+
+        _Le chemin de la donnée est porté par `parameter.part.where(name = 'path').valueString` dans le body._
+
+        | Donnée | ORG | APP | Chemin FHIR |
+        |--------|:---:|:---:|-------------|
+        | Adresse BAL | ✓ | ✓ | `telecom.value` |
+        | Type de BAL | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
+        | Liste rouge | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
+        | Description | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
+        | Service de rattachement | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[service]` |
+        | Responsable | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
+        | BAL préférentielle | ✓ | ✓ | `telecom.rank` (1 = priorité la plus haute) |
+        | Identifiant national de structure | ✓ | ✓ | `Organization.identifier` |
+      operationId: patchOrganizationBAL
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      requestBody:
+        required: true
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/PatchParameters'
+            examples:
+              replaceContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: structure@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: ORG
+                                  - url: listeRouge
+                                    valueBoolean: false
+                                  - url: description
+                                    valueString: BAL principale de la structure
+              replaceAttribute:
+                summary: Mise à jour de la description uniquement
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('description').value"
+                        - name: value
+                          valueString: BAL principale de la structure
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBAL:
+                summary: Ajout d'une nouvelle BAL ORG
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Organization.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: structure@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: ORG
+                                  - url: listeRouge
+                                    valueBoolean: false
+                                  - url: description
+                                    valueString: BAL principale de la structure
+                                  - url: service
+                                    valueString: Service des admissions
+                                  - url: responsible
+                                    valueString: Responsable de la BAL
+              deleteBAL:
+                summary: Suppression d'une BAL ORG
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr')"
+      responses:
+        '200':
+          description: Ressource mise à jour avec succès
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /Practitioner:
+    patch:
+      tags: [ FHIR PATCH Conditionnel ]
+      summary: Modifier, créer ou supprimer une BAL PER/CAB sur un Practitioner (recherche par identifiant)
+      description: |
+        **Non encore implémenté — comportement attendu.**
+
+        FHIR PATCH conditionnel sur un `Practitioner` identifié par son numéro RPPS.
+        Le serveur résout la ressource cible via le paramètre de recherche `identifier` avant d'appliquer le patch.
+
+        **Données modifiables :**
+
+        _La valeur de l'opération est portée par `parameter.part.where(name = 'type').valueCode` dans le body._
+
+        | Opération | Description |
+        |-----------|-------------|
+        | `replace`  | Remplacer le ContactPoint entier ou un attribut de l'extension |
+        | `insert`   | Ajouter une nouvelle BAL |
+        | `delete`   | Supprimer une BAL existante |
+
+        _Le chemin de la donnée est porté par `parameter.part.where(name = 'path').valueString` dans le body._
+
+        | Donnée | PER | CAB | Chemin FHIR |
+        |--------|:---:|:---:|-------------|
+        | Adresse BAL | ✓ | ✓ | `telecom.value` |
+        | Type de BAL | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
+        | Liste rouge | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
+        | Description | — | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
+        | Responsable | — | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
+        | BAL préférentielle | ✓ | ✓ | `telecom.rank` (1 = priorité la plus haute) |
+        | Identifiant PP (RPPS) | ✓ | ✓ | `Practitioner.identifier` |
+      operationId: patchPractitionerBALByIdentifier
+      parameters:
+        - name: identifier
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "https://rpps.esante.gouv.fr|10123456789"
+          description: |
+            Identifiant du praticien. Systèmes supportés :
+            - `https://rpps.esante.gouv.fr|{NUM_RPPS}`
+            - `urn:oid:1.2.250.1.71.4.2.1|{IDNAT_PP}` (IdNatPP — identifiant national PP)
+      requestBody:
+        required: true
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/PatchParameters'
+            examples:
+              replaceBALPERContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: true
+              replaceBALPERAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              replaceRankBALPER:
+                summary: Mise à jour du rang BAL PER (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBALPER:
+                summary: Ajout d'une nouvelle BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Practitioner.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBALPER:
+                summary: Suppression d'une BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+              replaceBALCABContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: true
+              replaceBALCABAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge) BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              replaceRankBALCAB:
+                summary: Mise à jour du rang BAL CAB (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBALCAB:
+                summary: Ajout d'une nouvelle BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Practitioner.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: CAB
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBALCAB:
+                summary: Suppression d'une BAL CAB
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Practitioner.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+      responses:
+        '200':
+          description: Ressource mise à jour avec succès
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Practitioner'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+
+    get:
+      tags: [ Récupération ]
+      summary: Rechercher des BAL PER (RPPS seul) ou CAB
+      description: |
+        Retourne les ressources `Practitioner` portant des BAL MSSanté de type `PER`
+        (rattachées à un identifiant RPPS seul) ou `CAB`.
+
+        Le paramètre `mailbox-mss-type` est défini dans le SearchParameter
+        [`as-sp-mailbox-mss-type`](https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter-as-sp-mailbox-mss-type.html).
+        **Non encore implémenté sur le serveur** (PR #296, ajouté le 25/03/2026).
+      operationId: searchPractitionerBAL
+      parameters:
+        - $ref: '#/components/parameters/mailboxMssType'
+        - $ref: '#/components/parameters/mailboxMss'
+        - $ref: '#/components/parameters/elements'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Bundle searchset contenant les Practitioner correspondants
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+              example:
+                resourceType: Bundle
+                type: searchset
+                total: 2
+                entry:
+                  - resource:
+                      resourceType: Practitioner
+                      id: practitioner-dupont
+                      identifier:
+                        - system: urn:oid:1.2.250.1.71.4.2.1
+                          value: "80001234567"
+                      telecom:
+                        - system: email
+                          value: jean.dupont@domain.mssante.fr
+                          extension:
+                            - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                              extension:
+                                - url: type
+                                  valueCodeableConcept:
+                                    coding:
+                                      - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                        code: PER
+                                - url: listeRouge
+                                  valueBoolean: false
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /PractitionerRole:
+    patch:
+      tags: [ FHIR PATCH Conditionnel ]
+      summary: Modifier, créer ou supprimer une BAL PER sur un PractitionerRole (recherche par identifiant)
+      description: |
+        **Non encore implémenté — comportement attendu.**
+
+        FHIR PATCH conditionnel sur un `PractitionerRole` identifié par le RPPS du praticien
+        et l'identifiant de la structure d'exercice (FINESS ou SIREN).
+        Le serveur résout la ressource cible via les paramètres de recherche avant d'appliquer le patch.
+
+        **Données modifiables :**
+
+        _La valeur de l'opération est portée par `parameter.part.where(name = 'type').valueCode` dans le body._
+
+        | Opération | Description |
+        |-----------|-------------|
+        | `replace`  | Remplacer le ContactPoint entier ou un attribut de l'extension |
+        | `insert`   | Ajouter une nouvelle BAL |
+        | `delete`   | Supprimer une BAL existante |
+
+        _Le chemin de la donnée est porté par `parameter.part.where(name = 'path').valueString` dans le body._
+
+        | Donnée | PER | Chemin FHIR |
+        |--------|:---:|-------------|
+        | Adresse BAL | ✓ | `telecom.value` |
+        | Type de BAL | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
+        | Liste rouge | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
+        | BAL préférentielle | ✓ | `telecom.rank` (1 = priorité la plus haute) |
+        | Identifiant PP (RPPS) | ✓ | `PractitionerRole.practitioner` (référence) |
+        | Identifiant de structure | ✓ | `PractitionerRole.organization` (référence) |
+      operationId: patchPractitionerRoleBALByIdentifier
+      parameters:
+        - name: practitioner.identifier
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "urn:oid:1.2.250.1.71.4.2.1|800012345678"
+          description: |
+            Identifiant du praticien. Systèmes supportés :
+            - `https://rpps.esante.gouv.fr|{NUM_RPPS}`
+            - `urn:oid:1.2.250.1.71.4.2.1|{IDNAT_PP}` (IdNatPP — identifiant national PP)
+        - name: organization.identifier
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "http://finess.sante.gouv.fr|123456789"
+          description: |
+            Identifiant de la structure d'exercice. Systèmes supportés :
+            - `http://finess.sante.gouv.fr|{NUM_FINESS}`
+            - `http://sirene.fr|{NUM_SIREN}`
+      requestBody:
+        required: true
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/PatchParameters'
+            examples:
+              replaceContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: false
+              replaceAttribute:
+                summary: Mise à jour d'un seul attribut (listeRouge)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('listeRouge').value"
+                        - name: value
+                          valueBoolean: true
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBAL:
+                summary: Ajout d'une nouvelle BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: PractitionerRole.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: prenom.nom@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: PER
+                                  - url: listeRouge
+                                    valueBoolean: false
+              deleteBAL:
+                summary: Suppression d'une BAL PER
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "PractitionerRole.telecom.where(value = 'prenom.nom@domain.mssante.fr')"
+      responses:
+        '200':
+          description: Ressource mise à jour avec succès
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/PractitionerRole'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+    get:
+      tags: [ Récupération ]
+      summary: Rechercher des BAL PER (RPPS + structure d'exercice)
+      description: |
+        Retourne les ressources `PractitionerRole` portant des BAL MSSanté de type `PER`
+        rattachées à un RPPS et une structure d'exercice.
+      operationId: searchPractitionerRoleBAL
+      parameters:
+        - $ref: '#/components/parameters/mailboxMssType'
+        - $ref: '#/components/parameters/mailboxMss'
+        - $ref: '#/components/parameters/elements'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Bundle searchset contenant les PractitionerRole correspondants
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /Organization:
+    patch:
+      tags: [ FHIR PATCH Conditionnel ]
+      summary: Modifier, créer ou supprimer une BAL ORG ou APP sur une Organization (recherche par identifiant)
+      description: |
+        **Non encore implémenté — comportement attendu.**
+
+        FHIR PATCH conditionnel sur une `Organization` identifiée par son numéro FINESS, SIREN ou SIRET.
+        Le serveur résout la ressource cible via le paramètre de recherche `identifier` avant d'appliquer le patch.
+
+        **Données modifiables :**
+
+        _La valeur de l'opération est portée par `parameter.part.where(name = 'type').valueCode` dans le body._
+
+        | Opération | Description |
+        |-----------|-------------|
+        | `replace`  | Remplacer le ContactPoint entier ou un attribut de l'extension |
+        | `insert`   | Ajouter une nouvelle BAL |
+        | `delete`   | Supprimer une BAL existante |
+
+
+        _Le chemin de la donnée est porté par `parameter.part.where(name = 'path').valueString` dans le body._
+
+        | Donnée | ORG | APP | Chemin FHIR |
+        |--------|:---:|:---:|-------------|
+        | Adresse BAL | ✓ | ✓ | `telecom.value` |
+        | Type de BAL | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[type]` |
+        | Liste rouge | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[listeRouge]` |
+        | Description | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[description]` |
+        | Service de rattachement | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[service]` |
+        | Responsable | ✓ | ✓ | `telecom.extension[as-mailbox-mss-metadata].extension[responsible]` |
+        | BAL préférentielle | ✓ | ✓ | `telecom.rank` (1 = priorité la plus haute) |
+        | Identifiant national de structure | ✓ | ✓ | `Organization.identifier` |
+      operationId: patchOrganizationBALByIdentifier
+      parameters:
+        - name: identifier
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "http://finess.sante.gouv.fr|123456789"
+          description: |
+            Identifiant de la structure. Systèmes supportés :
+            - `http://finess.sante.gouv.fr|{NUM_FINESS}`
+            - `http://sirene.fr|{NUM_SIREN}`
+            - `http://sirene.fr|{NUM_SIRET}`
+            - `urn:oid:1.2.250.1.71.4.2.2|{IDNAT_PM}` (sNatPm — identifiant national PM)
+      requestBody:
+        required: true
+        content:
+          application/fhir+json:
+            schema:
+              $ref: '#/components/schemas/PatchParameters'
+            examples:
+              replaceContactPoint:
+                summary: Mise à jour de plusieurs attributs (ContactPoint complet)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr')"
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: structure@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: ORG
+                                  - url: listeRouge
+                                    valueBoolean: false
+                                  - url: description
+                                    valueString: BAL principale de la structure
+              replaceAttribute:
+                summary: Mise à jour de la description uniquement
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').extension('https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata').extension('description').value"
+                        - name: value
+                          valueString: BAL principale de la structure
+              replaceRank:
+                summary: Mise à jour du rang (BAL préférentielle)
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: replace
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr').rank"
+                        - name: value
+                          valueInteger: 1
+              insertBAL:
+                summary: Ajout d'une nouvelle BAL ORG
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: insert
+                        - name: path
+                          valueString: Organization.telecom
+                        - name: index
+                          valueInteger: 0
+                        - name: value
+                          valueContactPoint:
+                            system: email
+                            value: structure@domain.mssante.fr
+                            rank: 1
+                            extension:
+                              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                extension:
+                                  - url: type
+                                    valueCodeableConcept:
+                                      coding:
+                                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          code: ORG
+                                  - url: listeRouge
+                                    valueBoolean: false
+                                  - url: description
+                                    valueString: BAL principale de la structure
+                                  - url: service
+                                    valueString: Service des admissions
+                                  - url: responsible
+                                    valueString: Responsable de la BAL
+              deleteBAL:
+                summary: Suppression d'une BAL ORG
+                value:
+                  resourceType: Parameters
+                  parameter:
+                    - name: operation
+                      part:
+                        - name: type
+                          valueCode: delete
+                        - name: path
+                          valueString: "Organization.telecom.where(value = 'structure@domain.mssante.fr')"
+      responses:
+        '200':
+          description: Ressource mise à jour avec succès
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+
+    get:
+      tags: [ Récupération ]
+      summary: Rechercher des BAL ORG ou APP
+      description: |
+        Retourne les ressources `Organization` portant des BAL MSSanté de type `ORG` ou `APP`.
+      operationId: searchOrganizationBAL
+      parameters:
+        - $ref: '#/components/parameters/mailboxMssType'
+        - $ref: '#/components/parameters/mailboxMss'
+        - $ref: '#/components/parameters/elements'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Bundle searchset contenant les Organization correspondantes
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /:
+    get:
+      tags: [ Récupération ]
+      summary: Recherche multi-ressources via _type
+      description: |
+        Permet d'interroger plusieurs types de ressources simultanément via `_type`.
+        Utile pour récupérer en un seul appel les BAL PER portées par `Practitioner`
+        et `PractitionerRole`.
+      operationId: searchMultiTypeBAL
+      parameters:
+        - name: _type
+          in: query
+          required: true
+          schema:
+            type: string
+            example: Practitioner,PractitionerRole
+          description: Types de ressources à interroger, séparés par des virgules
+        - $ref: '#/components/parameters/mailboxMssType'
+        - $ref: '#/components/parameters/mailboxMss'
+        - $ref: '#/components/parameters/elements'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Bundle searchset contenant les ressources correspondantes
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+components:
+
+  parameters:
+
+    resourceId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Identifiant logique de la ressource FHIR récupéré de l'API FHIR Annuaire Santé
+
+    mailboxMssType:
+      name: mailbox-mss-type
+      in: query
+      required: false
+      schema:
+        type: string
+        example: "https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie|PER"
+      description: |
+        Filtre par type de BAL. Format `système|code`.
+        Valeurs : `PER`, `ORG`, `APP`, `CAB`.
+        **Non encore implémenté sur le serveur.**
+
+    mailboxMss:
+      name: mailbox-mss
+      in: query
+      required: false
+      schema:
+        $ref: '#/components/schemas/MailboxMssAddress'
+      description: |
+        Filtre par adresse MSSanté au format `*@*.mssante.fr`.
+        Modificateurs supportés : `:contains`, `:exact`.
+
+    elements:
+      name: _elements
+      in: query
+      required: false
+      schema:
+        type: string
+        example: identifier,telecom
+      description: |
+        Restreint la réponse aux champs listés (séparés par des virgules).
+        Le serveur ajoute `meta.tag = SUBSETTED` pour signaler que la ressource est incomplète.
+        **Déjà implémenté sur le serveur.**
+
+    count:
+      name: _count
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 50
+      description: Nombre maximum de résultats par page
+
+    pageToken:
+      name: _page_token
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Token de pagination fourni dans le lien `next` du Bundle de réponse
+
+  schemas:
+
+    Bundle:
+      type: object
+      description: Bundle FHIR de type searchset
+      properties:
+        resourceType:
+          type: string
+          enum: [ Bundle ]
+        type:
+          type: string
+          enum: [ searchset ]
+        total:
+          type: integer
+        link:
+          type: array
+          items:
+            type: object
+            properties:
+              relation:
+                type: string
+                enum: [ self, next, previous ]
+              url:
+                type: string
+        entry:
+          type: array
+          items:
+            type: object
+            properties:
+              fullUrl:
+                type: string
+              resource:
+                type: object
+                description: Ressource FHIR (Practitioner, PractitionerRole ou Organization)
+
+    Practitioner:
+      type: object
+      description: Ressource FHIR Practitioner (profil AS Practitioner)
+      properties:
+        resourceType:
+          type: string
+          enum: [ Practitioner ]
+        id:
+          type: string
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+        telecom:
+          type: array
+          items:
+            $ref: '#/components/schemas/MailboxMSS'
+
+    PractitionerRole:
+      type: object
+      description: Ressource FHIR PractitionerRole (profil AS PractitionerRole)
+      properties:
+        resourceType:
+          type: string
+          enum: [ PractitionerRole ]
+        id:
+          type: string
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+        telecom:
+          type: array
+          items:
+            $ref: '#/components/schemas/MailboxMSS'
+
+    Organization:
+      type: object
+      description: Ressource FHIR Organization (profil AS Organization)
+      properties:
+        resourceType:
+          type: string
+          enum: [ Organization ]
+        id:
+          type: string
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+        telecom:
+          type: array
+          items:
+            $ref: '#/components/schemas/MailboxMSS'
+
+    Identifier:
+      type: object
+      properties:
+        system:
+          type: string
+        value:
+          type: string
+
+    MailboxMSS:
+      type: object
+      description: ContactPoint représentant une BAL MSSanté (profil AS Mailbox MSS)
+      properties:
+        system:
+          type: string
+          enum: [ email ]
+        value:
+          $ref: '#/components/schemas/MailboxMssAddress'
+        rank:
+          type: integer
+          minimum: 1
+          description: |
+            Ordre de préférence de la BAL parmi les ContactPoints de la ressource.
+            La valeur `1` correspond à la priorité la plus haute (BAL préférentielle).
+            Conforme à l'élément `ContactPoint.rank` de FHIR R4.
+          example: 1
+        extension:
+          type: array
+          items:
+            $ref: '#/components/schemas/MailboxMSSMetadata'
+
+    MailboxMSSMetadata:
+      type: object
+      description: Extension as-ext-mailbox-mss-metadata
+      properties:
+        url:
+          type: string
+          enum: [ https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata ]
+        extension:
+          type: array
+          description: Attributs de la BAL
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+                enum: [ type, listeRouge, description, service, responsible ]
+              valueCode:
+                type: string
+                description: Valeur pour les extensions de type code BAL
+                enum: [ PER, ORG, APP, CAB ]
+              valueBoolean:
+                type: boolean
+                description: Valeur pour les extensions booléennes (listeRouge)
+              valueString:
+                type: string
+                description: Valeur pour les extensions textuelles (description, service, responsible)
+
+    MailboxMssAddress:
+      type: string
+      format: email
+      pattern: '^[^@\s]+@([^@\s]+\.mssante\.fr|interop-mssante\.apicrypt\.org)$'
+      description: Adresse MSSanté au format `*@*.mssante.fr` ou `*@interop-mssante.apicrypt.org`
+      example: prenom.nom@domain.mssante.fr ou prenom.nom@interop-mssante.apicrypt.org
+
+    PatchParameters:
+      type: object
+      description: Ressource FHIR Parameters pour une opération FHIR Patch (https://hl7.org/fhir/R4/fhirpatch.html)
+      required: [ resourceType, parameter ]
+      properties:
+        resourceType:
+          type: string
+          enum: [ Parameters ]
+        parameter:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [ name, part ]
+            properties:
+              name:
+                type: string
+                enum: [ operation ]
+              part:
+                type: array
+                description: Parties de l'opération FHIR Patch
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      enum: [ type, path, index, value ]
+                    valueCode:
+                      type: string
+                      enum: [ replace, insert, delete ]
+                      description: Type d'opération (pour name=type)
+                    valueString:
+                      type: string
+                      description: Expression FHIRPath (pour name=path) ou valeur textuelle (pour name=value)
+                    valueBoolean:
+                      type: boolean
+                      description: Valeur booléenne (pour name=value)
+                    valueInteger:
+                      type: integer
+                      minimum: 0
+                      description: Position d'insertion (pour name=index) ou rang de priorité de la BAL (pour name=value, opération replace sur `telecom.rank`)
+                    valueContactPoint:
+                      $ref: '#/components/schemas/MailboxMSS'
+
+    OperationOutcome:
+      type: object
+      properties:
+        resourceType:
+          type: string
+          enum: [ OperationOutcome ]
+        issue:
+          type: array
+          items:
+            type: object
+            properties:
+              severity:
+                type: string
+                enum: [ error, warning, information ]
+              code:
+                type: string
+              details:
+                type: object
+                properties:
+                  text:
+                    type: string
+
+  responses:
+    BadRequest:
+      description: Requête invalide (paramètre manquant ou malformé)
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+    Unauthorized:
+      description: Authentification requise
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+    NotFound:
+      description: Ressource introuvable
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+    PreconditionFailed:
+      description: |
+        Précondition non satisfaite — le PATCH conditionnel a retourné plusieurs ressources
+        correspondant aux critères de recherche (comportement ambigu).
+        Le serveur refuse d'appliquer le patch ; l'appelant doit affiner les critères
+        ou utiliser un PATCH par identifiant logique (`/{id}`).
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+          example:
+            resourceType: OperationOutcome
+            issue:
+              - severity: error
+                code: conflict
+                details:
+                  text: >
+                    Multiple matches found for conditional PATCH — 0 or 1 match required,
+                    but the search returned more than one result.
+
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: ESANTE-API-KEY
+      description: Clé d'API fournie par l'ANS pour accéder à l'API Annuaire Santé
+
+security:
+  - ApiKey: [ ]
