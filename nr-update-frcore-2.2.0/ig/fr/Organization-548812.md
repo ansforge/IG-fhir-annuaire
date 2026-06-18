@@ -12,7 +12,7 @@ version : 0.1; Dernière mise à jour : 2019-09-01 01:00:00+0100; Langue : fr;
 
 Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.gouv.fr)
 
-Profils: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html) version : 2.2.0, [AS Donnée Restreinte Organization Profile](StructureDefinition-as-dr-organization.md)
+Profils: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html) version : 2.2.0, [AS Donnée Restreinte Organization Profile](StructureDefinition-as-dr-organization.md) version : 1.2.0-snapshot-2
 
 **Organization Period**: 2019-04-01 --> (en cours)
 
@@ -39,7 +39,7 @@ Profils: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.2.0/Struct
     "lastUpdated" : "2019-09-01T01:00:00.000+01:00",
     "source" : "https://annuaire.esante.gouv.fr",
     "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0",
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization"]
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-2"]
   },
   "language" : "fr",
   "extension" : [{

@@ -12,7 +12,7 @@ version: 0.1; Last updated: 2019-09-01 01:00:00+0100; Language: fr;
 
 Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.gouv.fr)
 
-Profiles: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html) version: 2.2.0, [AS Donnée Publique Organization Profile](StructureDefinition-as-dp-organization.md)
+Profiles: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html) version: 2.2.0, [AS Donnée Publique Organization Profile](StructureDefinition-as-dp-organization.md) version: 1.2.0-snapshot-2
 
 **Organization Period**: 2019-04-01 --> (ongoing)
 
@@ -39,7 +39,7 @@ Profiles: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.2.0/Struc
     "lastUpdated" : "2019-09-01T01:00:00.000+01:00",
     "source" : "https://annuaire.esante.gouv.fr",
     "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0",
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization"]
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2"]
   },
   "language" : "fr",
   "extension" : [{
