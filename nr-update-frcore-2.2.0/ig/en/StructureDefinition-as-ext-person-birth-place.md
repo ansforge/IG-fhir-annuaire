@@ -1,4 +1,4 @@
-# AS Person Birth Place Extension - Annuaire Santé v1.2.0-snapshot-1
+# AS Person Birth Place Extension - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Person Birth Place Extension 
 
@@ -32,11 +32,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-person-bir
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-person-birth-place",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPersonBirthPlaceExtension",
   "title" : "AS Person Birth Place Extension",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -110,7 +110,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-person-bir
       "max" : "1",
       "type" : [{
         "code" : "Address",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-2"]
       }]
     }]
   }

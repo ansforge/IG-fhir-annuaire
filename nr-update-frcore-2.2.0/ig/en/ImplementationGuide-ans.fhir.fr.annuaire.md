@@ -10,11 +10,11 @@
   "id" : "ans.fhir.fr.annuaire",
   "language" : "fr",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -1676,7 +1676,7 @@
         "reference" : "Organization/example-organization-fictive"
       },
       "name" : "example-organization-fictive",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1687,7 +1687,7 @@
         "reference" : "Organization/example-organization-nancy"
       },
       "name" : "example-organization-nancy",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1698,7 +1698,7 @@
         "reference" : "Organization/481677DP"
       },
       "name" : "pp16dp-organization",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1709,7 +1709,7 @@
         "reference" : "Practitioner/3719500DP"
       },
       "name" : "pp16dp-practitioner",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1720,7 +1720,7 @@
         "reference" : "PractitionerRole/5015602DP"
       },
       "name" : "pp16dp-practitioner-role",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1731,7 +1731,7 @@
         "reference" : "Organization/481677"
       },
       "name" : "pp16dr-organization",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1742,7 +1742,7 @@
         "reference" : "Person/pp16dr-person"
       },
       "name" : "pp16dr-person",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1753,7 +1753,7 @@
         "reference" : "Practitioner/3719500"
       },
       "name" : "pp16dr-practitioner",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1764,7 +1764,7 @@
         "reference" : "PractitionerRole/5015602"
       },
       "name" : "pp16dr-practitioner-role",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1775,7 +1775,7 @@
         "reference" : "Organization/158480DP"
       },
       "name" : "pp19dp-organization-eg-cab",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1786,7 +1786,7 @@
         "reference" : "Organization/548812DP"
       },
       "name" : "pp19dp-organization-ej-cab",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1797,7 +1797,7 @@
         "reference" : "Practitioner/334081DP"
       },
       "name" : "pp19dp-practitioner",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1808,7 +1808,7 @@
         "reference" : "PractitionerRole/1738459DP"
       },
       "name" : "pp19dp-practitioner-role-lib",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1819,7 +1819,7 @@
         "reference" : "PractitionerRole/1578230DP"
       },
       "name" : "pp19dp-practitioner-role-sal",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1830,7 +1830,7 @@
         "reference" : "Organization/158480"
       },
       "name" : "pp19dr-organization-eg-cab",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1841,7 +1841,7 @@
         "reference" : "Organization/548812"
       },
       "name" : "pp19dr-organization-ej-cab",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1852,7 +1852,7 @@
         "reference" : "Person/pp19dr-person"
       },
       "name" : "pp19dr-person",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1863,7 +1863,7 @@
         "reference" : "Practitioner/334081"
       },
       "name" : "pp19dr-practitioner",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1874,7 +1874,7 @@
         "reference" : "PractitionerRole/1738459"
       },
       "name" : "pp19dr-practitioner-role-lib",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-2"
     },
     {
       "extension" : [{
@@ -1885,7 +1885,7 @@
         "reference" : "PractitionerRole/1578230"
       },
       "name" : "pp19dr-practitioner-role-sal",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-1"
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-2"
     }],
     "page" : {
       "extension" : [{

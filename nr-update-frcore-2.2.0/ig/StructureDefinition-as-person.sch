@@ -12,8 +12,8 @@
   <sch:pattern>
     <sch:title>f:Person</sch:title>
     <sch:rule context="f:Person">
-      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-1']) &lt;= 1">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-1': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-1']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-1': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-2']) &lt;= 1">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-2': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-2']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-2': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

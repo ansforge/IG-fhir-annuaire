@@ -1,4 +1,4 @@
-# AS CodeSystem type de système d'information - Annuaire Santé v1.2.0-snapshot-1
+# AS CodeSystem type de système d'information - Annuaire Santé v1.2.0-snapshot-2
 
 ## CodeSystem: AS CodeSystem type de système d'information 
 
@@ -25,12 +25,12 @@ This Code system is referenced in the definition of the following value sets:
     "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablecodesystem|4.0.1"]
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-type-systeme-information",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsCsTypeSystemeInformation",
   "title" : "AS CodeSystem type de système d'information",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

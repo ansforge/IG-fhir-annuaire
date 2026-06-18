@@ -1,4 +1,4 @@
-# AS Data Trace Extension - Annuaire Santé v1.2.0-snapshot-1
+# AS Data Trace Extension - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Data Trace Extension 
 
@@ -68,11 +68,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-data-tra
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-data-trace",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDataTraceExtension",
   "title" : "AS Data Trace Extension",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -171,7 +171,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-data-tra
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-systeme-information|1.2.0-snapshot-1"
+        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-systeme-information|1.2.0-snapshot-2"
       }
     },
     {

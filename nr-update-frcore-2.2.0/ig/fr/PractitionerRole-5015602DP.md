@@ -1,4 +1,4 @@
-# pp16dp-practitioner-role - Annuaire Santé v1.2.0-snapshot-1
+# pp16dp-practitioner-role - Annuaire Santé v1.2.0-snapshot-2
 
 ## Exemple PractitionerRole: pp16dp-practitioner-role
 
@@ -14,7 +14,7 @@ Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.go
 
 Profils: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner-role.html) version : 2.2.0, [AS Donnée Publique PractitionerRole Profile](StructureDefinition-as-dp-practitionerrole.md)
 
-**identifier**: `https://annuaire.sante.fr`/1001500032
+**identifier**: `https://rpps.esante.gouv.fr`/1001500032
 
 **active**: true
 
@@ -41,7 +41,7 @@ Profils: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.2.0/Structure
   },
   "language" : "fr",
   "identifier" : [{
-    "system" : "https://annuaire.sante.fr",
+    "system" : "https://rpps.esante.gouv.fr",
     "value" : "1001500032"
   }],
   "active" : true,

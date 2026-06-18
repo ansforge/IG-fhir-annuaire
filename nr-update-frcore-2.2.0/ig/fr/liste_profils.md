@@ -1,4 +1,4 @@
-# Liste des profils par permission - Annuaire Santé v1.2.0-snapshot-1
+# Liste des profils par permission - Annuaire Santé v1.2.0-snapshot-2
 
 ## Liste des profils par permission
 

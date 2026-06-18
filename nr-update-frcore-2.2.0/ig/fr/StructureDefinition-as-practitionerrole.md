@@ -1,4 +1,4 @@
-# AS PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS PractitionerRole Profile 
 
@@ -43,18 +43,18 @@ Obligatoire : 0 élément(1 élément obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces autres structures:
 
-* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1)](StructureDefinition-as-practitioner.md)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2)](StructureDefinition-as-practitioner.md)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 * [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html)
-* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1)](StructureDefinition-as-mailbox-mss.md)
+* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2)](StructureDefinition-as-mailbox-mss.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-1](StructureDefinition-as-ext-practitionerrole-contracted.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-1](StructureDefinition-as-ext-practitionerrole-hascas.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-1](StructureDefinition-as-ext-practitionerrole-vitale-accepted.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-2](StructureDefinition-as-ext-practitionerrole-contracted.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-2](StructureDefinition-as-ext-practitionerrole-hascas.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-2](StructureDefinition-as-ext-practitionerrole-vitale-accepted.md)
 
 **Slices**
 
@@ -91,18 +91,18 @@ Obligatoire : 0 élément(1 élément obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces autres structures:
 
-* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1)](StructureDefinition-as-practitioner.md)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2)](StructureDefinition-as-practitioner.md)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 * [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html)
-* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1)](StructureDefinition-as-mailbox-mss.md)
+* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2)](StructureDefinition-as-mailbox-mss.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-1](StructureDefinition-as-ext-practitionerrole-contracted.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-1](StructureDefinition-as-ext-practitionerrole-hascas.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-1](StructureDefinition-as-ext-practitionerrole-vitale-accepted.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-2](StructureDefinition-as-ext-practitionerrole-contracted.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-2](StructureDefinition-as-ext-practitionerrole-hascas.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-2](StructureDefinition-as-ext-practitionerrole-vitale-accepted.md)
 
 **Slices**
 
@@ -124,11 +124,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
   "resourceType" : "StructureDefinition",
   "id" : "as-practitionerrole",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPractitionerRoleProfile",
   "title" : "AS PractitionerRole Profile",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -197,7 +197,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -208,7 +208,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -219,7 +219,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -270,7 +270,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "short" : "Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -279,7 +279,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "short" : "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -461,7 +461,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "*",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-situation-exercice",

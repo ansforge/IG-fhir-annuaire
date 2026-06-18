@@ -1,4 +1,4 @@
-# AS ValueSet type Etablissement - Annuaire Santé v1.2.0-snapshot-1
+# AS ValueSet type Etablissement - Annuaire Santé v1.2.0-snapshot-2
 
 ## ValueSet: AS ValueSet type Etablissement 
 
@@ -31,12 +31,12 @@ ValueSet définissant les types d'établissement.
     "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1"]
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-etablissement",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsVsTypeEtablissement",
   "title" : "AS ValueSet type Etablissement",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -60,7 +60,7 @@ ValueSet définissant les types d'établissement.
   "compose" : {
     "include" : [{
       "system" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-type-etablissement",
-      "version" : "1.2.0-snapshot-1"
+      "version" : "1.2.0-snapshot-2"
     }]
   }
 }

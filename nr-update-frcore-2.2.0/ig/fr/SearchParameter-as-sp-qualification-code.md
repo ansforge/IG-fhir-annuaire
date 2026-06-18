@@ -1,4 +1,4 @@
-# as-sp-qualification-code - Annuaire Santé v1.2.0-snapshot-1
+# as-sp-qualification-code - Annuaire Santé v1.2.0-snapshot-2
 
 ## SearchParameter: as-sp-qualification-code 
 
@@ -14,10 +14,10 @@ Paramètre de recherche pour rechercher par code de qualification.
   "resourceType" : "SearchParameter",
   "id" : "as-sp-qualification-code",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-qualification-code",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsQualificationCodeSearchParameter",
   "status" : "active",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

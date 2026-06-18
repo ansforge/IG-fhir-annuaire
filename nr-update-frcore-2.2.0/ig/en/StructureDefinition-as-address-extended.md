@@ -1,4 +1,4 @@
-# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Data Type Profile: AS Address Extended Datatype Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-address-extend
   "resourceType" : "StructureDefinition",
   "id" : "as-address-extended",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsAddressExtendedProfile",
   "title" : "AS Address Extended Datatype Profile",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -238,7 +238,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-address-extend
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-address-extended-to-mos-exercice-professionnel",

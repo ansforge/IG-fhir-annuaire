@@ -1,4 +1,4 @@
-# AS HealthcareService HealthCare Activity Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS HealthcareService HealthCare Activity Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS HealthcareService HealthCare Activity Profile 
 
@@ -44,13 +44,13 @@ Obligatoire : 0 élément(1 élément obligatoire(s) imbriqué(s))
 Cette structure fait référence à ces autres structures:
 
 * [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-1](StructureDefinition-as-ext-authorization.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-2](StructureDefinition-as-ext-authorization.md)
 
 **Slices**
 
@@ -88,13 +88,13 @@ Obligatoire : 0 élément(1 élément obligatoire(s) imbriqué(s))
 Cette structure fait référence à ces autres structures:
 
 * [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-1](StructureDefinition-as-ext-authorization.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-2](StructureDefinition-as-ext-authorization.md)
 
 **Slices**
 
@@ -116,11 +116,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
   "resourceType" : "StructureDefinition",
   "id" : "as-healthcareservice-healthcare-activity",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-healthcare-activity",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsHealthcareServiceHealthcareActivityProfile",
   "title" : "AS HealthcareService HealthCare Activity Profile",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -181,7 +181,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -217,7 +217,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0",
-        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1"]
+        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"]
       }]
     },
     {

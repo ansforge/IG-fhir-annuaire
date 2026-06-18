@@ -1,4 +1,4 @@
-# AS Smart Card Extension - Annuaire Santé v1.2.0-snapshot-1
+# AS Smart Card Extension - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Smart Card Extension 
 
@@ -68,11 +68,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-smartcar
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-smartcard",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-smartcard",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsSmartCardExtension",
   "title" : "AS Smart Card Extension",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

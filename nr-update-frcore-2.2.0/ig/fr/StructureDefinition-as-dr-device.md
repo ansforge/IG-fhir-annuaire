@@ -1,4 +1,4 @@
-# AS Donnée Restreinte Device Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Restreinte Device Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS Donnée Restreinte Device Profile 
 
@@ -43,7 +43,7 @@ Obligatoire : 0 élément(2 éléments obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
 **Slices**
 
@@ -79,7 +79,7 @@ Obligatoire : 0 élément(2 éléments obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
 **Slices**
 
@@ -100,11 +100,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-device.cs
   "resourceType" : "StructureDefinition",
   "id" : "as-dr-device",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-device",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDrDeviceProfile",
   "title" : "AS Donnée Restreinte Device Profile",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -149,7 +149,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-device.cs
   "kind" : "resource",
   "abstract" : false,
   "type" : "Device",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -164,7 +164,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-device.cs
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -192,7 +192,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-device.cs
       "sliceName" : "as-dr-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-device|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-device|1.2.0-snapshot-2"
     },
     {
       "id" : "Device.extension:as-ext-authorization",

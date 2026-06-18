@@ -1,4 +1,4 @@
-# pp19dp-practitioner-role-lib - Annuaire Santé v1.2.0-snapshot-1
+# pp19dp-practitioner-role-lib - Annuaire Santé v1.2.0-snapshot-2
 
 ## Example PractitionerRole: pp19dp-practitioner-role-lib
 
@@ -14,7 +14,7 @@ Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.go
 
 Profiles: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner-role.html) version: 2.2.0, [AS Donnée Publique PractitionerRole Profile](StructureDefinition-as-dp-practitionerrole.md)
 
-**identifier**: `https://annuaire.sante.fr`/1010399870
+**identifier**: `https://rpps.esante.gouv.fr`/1010399870
 
 **active**: true
 
@@ -41,7 +41,7 @@ Profiles: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.2.0/Structur
   },
   "language" : "fr",
   "identifier" : [{
-    "system" : "https://annuaire.sante.fr",
+    "system" : "https://rpps.esante.gouv.fr",
     "value" : "1010399870"
   }],
   "active" : true,

@@ -12,9 +12,9 @@
   <sch:pattern>
     <sch:title>f:PractitionerRole</sch:title>
     <sch:rule context="f:PractitionerRole">
-      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-1']) &lt;= 0">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-1': maximum cardinality of 'extension' is 0</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-1']) &lt;= 0">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-1': maximum cardinality of 'extension' is 0</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-1']) &lt;= 0">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-1': maximum cardinality of 'extension' is 0</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-2']) &lt;= 0">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-2': maximum cardinality of 'extension' is 0</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-2']) &lt;= 0">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-2': maximum cardinality of 'extension' is 0</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-2']) &lt;= 0">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-2': maximum cardinality of 'extension' is 0</sch:assert>
       <sch:assert test="count(f:active) &gt;= 1">active: minimum cardinality of 'active' is 1</sch:assert>
       <sch:assert test="count(f:period) &lt;= 0">period: maximum cardinality of 'period' is 0</sch:assert>
       <sch:assert test="count(f:practitioner) &gt;= 1">practitioner: minimum cardinality of 'practitioner' is 1</sch:assert>
@@ -29,7 +29,7 @@
   <sch:pattern>
     <sch:title>f:PractitionerRole/f:meta</sch:title>
     <sch:rule context="f:PractitionerRole/f:meta">
-      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1']) &lt;= 1">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2']) &lt;= 1">extension with URL = 'https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

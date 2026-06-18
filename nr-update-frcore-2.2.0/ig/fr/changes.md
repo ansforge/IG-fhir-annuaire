@@ -1,8 +1,16 @@
-# Historique des changements - Annuaire Santé v1.2.0-snapshot-1
+# Historique des changements - Annuaire Santé v1.2.0-snapshot-2
 
 ## Historique des changements
 
 ### Release 1.2.0 de l'Implementation Guide Annuaire
+
+#### 1.2.0-snapshot-2
+
+* Mise à jour de la dépendance FRCore vers 2.2.0 (correction issue #289, héritage fr-core-organization-etablissement, suppression ADELI) [#307](https://github.com/ansforge/IG-fhir-annuaire/pull/307)
+* Suppression du profil G13 des données publiques [#304](https://github.com/ansforge/IG-fhir-annuaire/pull/304)
+* BAL MSSanté : ajout Swagger et préférence BAL [#306](https://github.com/ansforge/IG-fhir-annuaire/pull/306)
+
+#### 1.2.0-snapshot-1
 
 Modifications apportées dans la [1.2.0](https://github.com/ansforge/IG-fhir-annuaire/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.2.0) :
 

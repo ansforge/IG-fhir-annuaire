@@ -1,4 +1,4 @@
-# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil du type de données: AS Address Extended Datatype Profile 
 
@@ -50,7 +50,7 @@ Cette structure fait référence à ces extensions:
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameType.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-postBox.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameBase.html)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-1](StructureDefinition-as-ext-lieu-dit.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2](StructureDefinition-as-ext-lieu-dit.md)
 
  **Vue des éléments clés** 
 
@@ -87,7 +87,7 @@ Cette structure fait référence à ces extensions:
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameType.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-postBox.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameBase.html)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-1](StructureDefinition-as-ext-lieu-dit.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2](StructureDefinition-as-ext-lieu-dit.md)
 
  
 
@@ -102,11 +102,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-address-exte
   "resourceType" : "StructureDefinition",
   "id" : "as-address-extended",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsAddressExtendedProfile",
   "title" : "AS Address Extended Datatype Profile",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -312,7 +312,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-address-exte
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-address-extended-to-mos-exercice-professionnel",

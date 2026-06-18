@@ -1,4 +1,4 @@
-# AS Person Statut Etat Civil Extension - Annuaire Santé v1.2.0-snapshot-1
+# AS Person Statut Etat Civil Extension - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Person Statut Etat Civil Extension 
 
@@ -68,11 +68,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-person-s
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-person-statut-etat-civil",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-statut-etat-civil",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPersonStatutEtatCivilExtension",
   "title" : "AS Person Statut Etat Civil Extension",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

@@ -1,4 +1,4 @@
-# AS Person Deceased Date Time Extension - Annuaire Santé v1.2.0-snapshot-1
+# AS Person Deceased Date Time Extension - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Person Deceased Date Time Extension 
 
@@ -31,11 +31,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-person-dec
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-person-deceased-date-time",
   "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPersonDeceasedDateTimeExtension",
   "title" : "AS Person Deceased Date Time Extension",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

@@ -1,4 +1,4 @@
-# AS Registration Extension - Annuaire Santé v1.2.0-snapshot-1
+# AS Registration Extension - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Registration Extension 
 
@@ -32,11 +32,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-registrati
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-registration",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsRegistrationExtension",
   "title" : "AS Registration Extension",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

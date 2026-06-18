@@ -1,4 +1,4 @@
-# AS Donnée Restreinte PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Restreinte PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Resource Profile: AS Donnée Restreinte PractitionerRole Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
   "resourceType" : "StructureDefinition",
   "id" : "as-dr-practitionerrole",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDrPractitionerRoleProfile",
   "title" : "AS Donnée Restreinte PractitionerRole Profile",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -82,7 +82,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
   "kind" : "resource",
   "abstract" : false,
   "type" : "PractitionerRole",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -97,7 +97,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -123,7 +123,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
       "sliceName" : "as-dr-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-2"
     },
     {
       "id" : "PractitionerRole.extension:as-ext-practitionerrole-contracted",

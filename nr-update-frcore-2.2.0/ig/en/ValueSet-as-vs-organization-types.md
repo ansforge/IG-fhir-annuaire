@@ -1,4 +1,4 @@
-# AS ValueSet OrganizationTypes - Annuaire Santé v1.2.0-snapshot-1
+# AS ValueSet OrganizationTypes - Annuaire Santé v1.2.0-snapshot-2
 
 ## ValueSet: AS ValueSet OrganizationTypes 
 
@@ -28,11 +28,11 @@ ValueSet définissant les types d'organisation
   "resourceType" : "ValueSet",
   "id" : "as-vs-organization-types",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsVsOrganizationTypes",
   "title" : "AS ValueSet OrganizationTypes",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -56,7 +56,7 @@ ValueSet définissant les types d'organisation
   "compose" : {
     "include" : [{
       "system" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-organization-types",
-      "version" : "1.2.0-snapshot-1"
+      "version" : "1.2.0-snapshot-2"
     }]
   }
 }

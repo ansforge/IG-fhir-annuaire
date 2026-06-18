@@ -1,4 +1,4 @@
-# AS Device Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Device Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Resource Profile: AS Device Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-device.csv), [
   "resourceType" : "StructureDefinition",
   "id" : "as-device",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-device",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDeviceProfile",
   "title" : "AS Device Profile",
   "status" : "draft",
-  "date" : "2026-06-18T11:49:33+00:00",
+  "date" : "2026-06-18T12:07:50+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -107,7 +107,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-device.csv), [
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -217,7 +217,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-device.csv), [
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0",
-        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1"]
+        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"]
       }]
     }]
   }
