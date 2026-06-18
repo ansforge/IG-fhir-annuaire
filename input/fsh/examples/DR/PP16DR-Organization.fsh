@@ -38,7 +38,7 @@ Usage: #example
   * type
     * coding[+]
       * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
-      * code = #INTRN
+      * code = #RPPSRG
 
 
 * telecom[mailbox-mss]
