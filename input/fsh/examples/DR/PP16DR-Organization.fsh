@@ -12,7 +12,7 @@ Usage: #example
   * source = "https://annuaire.esante.gouv.fr"
   * lastUpdated = "2019-09-02T01:00:00.000+01:00"
   * profile[as-dr-canonical] = Canonical(as-dr-organization)
-  * profile[fr-canonical] = Canonical(fr-core-organization)
+  * profile[fr-canonical] = "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0"
 // Actif
 * active = true
 

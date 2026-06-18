@@ -22,7 +22,7 @@ Description: 	"Profil restreint créé à partir de as-practitioner dans le cont
 
 * qualification contains attributionParticuliere 0..*
 
-* qualification[attributionParticuliere].code from https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS (required) 
+* qualification[attributionParticuliere].code.coding from https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS (required)
 * qualification[attributionParticuliere].code MS
 
 * qualification[attributionParticuliere].period MS
