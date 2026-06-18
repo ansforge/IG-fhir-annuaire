@@ -32,7 +32,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
   "name" : "AsDrPractitionerProfile",
   "title" : "AS Donnée Restreinte Practitioner Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:31:08+00:00",
+  "date" : "2026-06-18T12:48:39+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
