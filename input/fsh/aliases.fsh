@@ -47,6 +47,7 @@ Alias: $JDV-J83-AutoriteEnregistrement-RASS = https://mos.esante.gouv.fr/NOS/JDV
 Alias: $JDV-J85-StatutInscription-RASS = https://mos.esante.gouv.fr/NOS/JDV_J85-StatutInscription-RASS/FHIR/JDV-J85-StatutInscription-RASS
 Alias: $JDV-J128-TypeCarte-RASS = https://mos.esante.gouv.fr/NOS/JDV_J128-TypeCarte-RASS/FHIR/JDV-J128-TypeCarte-RASS
 Alias: $JDV-J101-SecteurActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J101-SecteurActivite-RASS/FHIR/JDV-J101-SecteurActivite-RASS
+Alias: $JDV-J129-CategorieEtablissement-RASS = https://mos.esante.gouv.fr/NOS/JDV_J129-CategorieEtablissement-RASS/FHIR/JDV-J129-CategorieEtablissement-RASS
 Alias: $JDV-J380-CategorieEntiteGeographiqueExercice-RASS = https://smt.esante.gouv.fr/fhir/ValueSet/jdv-j380-categorie-entite-geographique-exercice-rass
 Alias: $JDV-J78-Civilite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J78-Civilite-RASS/FHIR/JDV-J78-Civilite-RASS
 Alias: $JDV-J79-CiviliteExercice-RASS = https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS

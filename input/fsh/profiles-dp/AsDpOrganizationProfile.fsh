@@ -20,7 +20,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * identifier[finess] MS
 * identifier[siren] MS
 * identifier[siret] MS
-* identifier[adeliRang] MS
 * active MS
 * name MS
 * alias MS
