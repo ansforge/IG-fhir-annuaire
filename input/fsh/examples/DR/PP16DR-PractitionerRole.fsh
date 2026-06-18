@@ -13,7 +13,7 @@ Usage: #example
   * versionId = "0.1"
   * source = "https://annuaire.esante.gouv.fr"
   * lastUpdated = "2019-08-31T01:00:00.000+01:00"
-  * profile[as-dr-canonical] = Canonical(as-dr-practitionerrole)
+  * profile[as-dr-canonical] = Canonical(as-dr-practitionerrole|1.2.0-snapshot-2)
   * profile[fr-canonical] = "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-role|2.2.0"
 
 // Actif

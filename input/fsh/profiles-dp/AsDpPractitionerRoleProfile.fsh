@@ -5,7 +5,7 @@ Title:			"AS Donnée Publique PractitionerRole Profile"
 Description: 	"""Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."""
 
 * meta.profile contains as-dp-canonical 1..1
-* meta.profile[as-dp-canonical] = Canonical(as-dp-practitionerrole)
+* meta.profile[as-dp-canonical] = Canonical(as-dp-practitionerrole|1.2.0-snapshot-2)
 * meta.profile[fr-canonical] 1..1
 
 * extension[as-ext-practitionerrole-contracted] 0..0

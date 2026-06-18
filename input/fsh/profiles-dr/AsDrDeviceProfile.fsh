@@ -10,7 +10,7 @@ Description: "Profil restreint applicatif créé à partir du profil générique
 * meta.profile ^slicing.rules = #open
 * meta.profile ^slicing.description = "Slice based on the canonical url value"
 * meta.profile contains as-dr-canonical 1..1
-* meta.profile[as-dr-canonical] = Canonical(as-dr-device)
+* meta.profile[as-dr-canonical] = Canonical(as-dr-device|1.2.0-snapshot-2)
 
 * extension[as-ext-authorization] MS
 * identifier MS

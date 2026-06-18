@@ -5,7 +5,7 @@ Title: "AS Donnée Restreinte Organization Profile"
 Description: "Profil restreint créé à partir de as-organization  dans le contexte des données en accès restreint de l’Annuaire Santé."
 
 * meta.profile contains as-dr-canonical 1..1
-* meta.profile[as-dr-canonical] = Canonical(as-dr-organization)
+* meta.profile[as-dr-canonical] = Canonical(as-dr-organization|1.2.0-snapshot-2)
 * meta.profile[fr-canonical] 1..1
 
 * identifier[idNatSt] MS 
