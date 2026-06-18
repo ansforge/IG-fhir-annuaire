@@ -1,0 +1,312 @@
+# AS Digital Certificate Extension - Annuaire Santé v1.2.0-snapshot-1
+
+## Extension: AS Digital Certificate Extension 
+
+Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.
+
+**Context of Use**
+
+**Usage info**
+
+**Utilisations:**
+
+* Utilise ce/t/te Extension: [AS Organization Profile](StructureDefinition-as-organization.md) and [AS Practitioner Profile](StructureDefinition-as-practitioner.md)
+
+Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.annuaire|current/StructureDefinition/as-ext-digital-certificate)
+
+### Vues formelles du contenu de l'extension
+
+ [Description des profils, des différentiels, des instantanés et de leurs représentations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+*  [Tableau différentiel (differential)](#tabs-diff) 
+*  [Tableau récapitulatif (snapshot)](#tabs-snap) 
+*  [Statistiques/Références](#tabs-summ) 
+*  [Tous](#tabs-all) 
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+#### Contraintes
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+** Résumé **
+
+Extension complexe: Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.
+
+ **Vue différentielleDifferential View** 
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+ **Vue d'ensemble** 
+
+#### Contraintes
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+** Résumé **
+
+Extension complexe: Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.
+
+ 
+
+Autres représentations du profil : [CSV](../StructureDefinition-as-ext-digital-certificate.csv), [Excel](../StructureDefinition-as-ext-digital-certificate.xlsx), [Schematron](../StructureDefinition-as-ext-digital-certificate.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "as-ext-digital-certificate",
+  "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate",
+  "version" : "1.2.0-snapshot-1",
+  "name" : "AsDigitalCertificateExtension",
+  "title" : "AS Digital Certificate Extension",
+  "status" : "draft",
+  "date" : "2026-06-18T12:31:08+00:00",
+  "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
+  "contact" : [{
+    "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://esante.gouv.fr"
+    },
+    {
+      "system" : "email",
+      "value" : "monserviceclient.annuaire@esante.gouv.fr"
+    }]
+  }],
+  "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "France (la)"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
+  "kind" : "complex-type",
+  "abstract" : false,
+  "context" : [{
+    "type" : "element",
+    "expression" : "PractitionerRole"
+  },
+  {
+    "type" : "element",
+    "expression" : "Organization"
+  }],
+  "type" : "Extension",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension|4.0.1",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "AS Digital Certificate Extension",
+      "definition" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les certificats utilisés par les professionnels et les structures comme moyen d'identification."
+    },
+    {
+      "id" : "Extension.extension:serialNumber",
+      "path" : "Extension.extension",
+      "sliceName" : "serialNumber",
+      "short" : "numeroSerie : Numéro de série du certificat.\r\n format de codage des caractères en binaire codé en ASCII.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:serialNumber.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:serialNumber.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "serialNumber"
+    },
+    {
+      "id" : "Extension.extension:serialNumber.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "Extension.extension:issuer",
+      "path" : "Extension.extension",
+      "sliceName" : "issuer",
+      "short" : "dNEmetteur : DN (Distinguished Name \r\n Nom distinctif) de l’autorité de certification (AC) émettrice du certificat.\r\n le format respecte le standard RFC-4514, avec un codage des caractères en UTF8",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:issuer.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:issuer.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "issuer"
+    },
+    {
+      "id" : "Extension.extension:issuer.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "Extension.extension:subject",
+      "path" : "Extension.extension",
+      "sliceName" : "subject",
+      "short" : "dNSujet : DN (Distinguished Name - Nom distinctif) du porteur du certificat.\r\n codage des caractères en UTF8",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:subject.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:subject.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "subject"
+    },
+    {
+      "id" : "Extension.extension:subject.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "Extension.extension:validity",
+      "path" : "Extension.extension",
+      "sliceName" : "validity",
+      "short" : "Période de validité du certificat.\r\nLa date est en UTC (avec translation de l'heure locale en heure UTC par ajout du décalage négatif ou retranchement du décalage positif).",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:validity.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:validity.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "validity"
+    },
+    {
+      "id" : "Extension.extension:validity.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "Period"
+      }]
+    },
+    {
+      "id" : "Extension.extension:validity.value[x].start",
+      "path" : "Extension.extension.value[x].start",
+      "short" : "dateDebutValidite : Date et heure (en heure, minute, seconde) de début de validité du certificat."
+    },
+    {
+      "id" : "Extension.extension:validity.value[x].end",
+      "path" : "Extension.extension.value[x].end",
+      "short" : "dateFinValidite : Date et heure (en heure, minute, seconde) de fin de validité du certificat."
+    },
+    {
+      "id" : "Extension.extension:domain",
+      "path" : "Extension.extension",
+      "sliceName" : "domain",
+      "short" : "domaine : Ce champ correspond au CN du DNSujet, il contient soit un <FQDN> pour les certificats de type serveur <SSL>, soit un nom applicatif pour les autres certificats.\r\n renseigné uniquement pour les certificats logiciels de portée Structure.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:domain.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:domain.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "domain"
+    },
+    {
+      "id" : "Extension.extension:domain.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "Extension.extension:keyUsage",
+      "path" : "Extension.extension",
+      "sliceName" : "keyUsage",
+      "short" : "usage : La clé d’usage (Keyusage) qui détermine l’usage autorisé du certificat.\r\n codage des caractères en binaire codé en ASCII",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:keyUsage.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:keyUsage.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "keyUsage"
+    },
+    {
+      "id" : "Extension.extension:keyUsage.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "Extension.extension:value",
+      "path" : "Extension.extension",
+      "sliceName" : "value",
+      "short" : "valeurBinaire : Valeur binaire du certificat.\r\n format .crt en hexadécimal, codé en ASCII",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:value.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:value.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "value"
+    },
+    {
+      "id" : "Extension.extension:value.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "Attachment"
+      }]
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "max" : "0"
+    }]
+  }
+}
+
+```
