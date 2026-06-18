@@ -1,51 +1,10 @@
 Profile: AsOrganizationProfile
-Parent: fr-core-organization
+Parent: fr-core-organization-etablissement
 Id: as-organization
 Title: "AS Organization Profile"
 Description: "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les établissements sanitaires, sociaux et médico-sociaux immatriculés dans le FIchier National des Etablissements Sanitaires et Sociaux (FINESS) ou dans le Répertoire Partagé des Professionnels de Santé (RPPS)."
 
 * identifier.type ^short = "Type d’identifiant national de l’organisation"
-
-// Identifiants - slicing repris de FRCoreOrganizationProfile 2.1.0 (déplacé dans FRCoreOrganizationEtablissementProfile en 2.2.0)
-* identifier.use from IdentifierUse (required)
-* identifier.type from FRCoreValueSetOrganizationIdentifierType (extensible)
-
-* identifier ^slicing.discriminator[0].type = #pattern
-* identifier ^slicing.discriminator[0].path = "system"
-* identifier ^slicing.discriminator[1].type = #pattern
-* identifier ^slicing.discriminator[1].path = "type"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the identifier.system pattern"
-
-* identifier contains
-    idNatSt 0..* and
-    siren 0..* and
-    siret 0..* and
-    finess 0..* and
-    rppsRang 0..*
-
-* identifier[idNatSt] ^short = "Identifiant national de structure, à privilégier. Identifiant idNat_Struct délivré par une autorité d’enregistrement tel que défini dans l’Annexe Transverse Source des données métier pour les professionnels et les structures."
-* identifier[idNatSt].use = #official
-* identifier[idNatSt].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#IDNST
-* identifier[idNatSt].system = "urn:oid:1.2.250.1.71.4.2.2"
-* identifier[idNatSt].value ^short = "Identification nationale de la structure préfixée : 0 + ADELI rang, 1 + Numéro FINESS Etablissement, 2 + Numéro SIREN, 3 + Numéro SIRET, 4 + RPPS rang ou identifiant technique de la structure."
-
-* identifier[siren] ^short = "Identifiant SIREN (9 chiffres)"
-* identifier[siren].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#SIREN
-* identifier[siren].system = "https://sirene.fr"
-
-* identifier[siret] ^short = "Identifiant SIRET (14 chiffres)"
-* identifier[siret].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#SIRET
-* identifier[siret].system = "https://sirene.fr"
-
-* identifier[finess] ^short = "Identifiant FINESS Entité Géographique (EG) ou Entité Juridique (EJ)"
-* identifier[finess].type.coding.code ^short = "FINEJ | FINEG"
-* identifier[finess].type.coding.system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
-* identifier[finess].system = "https://finess.esante.gouv.fr"
-
-* identifier[rppsRang] ^short = "RPPS rang (11 chiffres RPPS + 2 ou 3 chiffres RANG)"
-* identifier[rppsRang].type = https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203#RPPSRG
-* identifier[rppsRang].system = "https://rppsrang.esante.gouv.fr"
 
 // Organization.active
 * active ^short = "La ressource est-elle active ? (active | inactive). true par défaut; false pour les structures supprimées."
