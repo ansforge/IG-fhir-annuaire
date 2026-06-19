@@ -4,9 +4,6 @@
 
 ### Introduction
 
- **Healthcare professional Directory Implementation Guide**
- This implementation guide contains the FHIR profiles of French Healthcare professionals directory and documents how the data are exposed in the national API. 
-
 L'objectif de ce guide est de présenter la modélisation FHIR des données provenant de l'Annuaire Santé en respectant le standard d'intéroperabilité FHIR. Ce guide d'implémentation a deux objectifs :
 
 * Présenter les données publiées par l'API FHIR nationale Annuaire Santé

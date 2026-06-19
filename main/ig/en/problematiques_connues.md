@@ -3,16 +3,16 @@
 ## Problématiques connues
 
  
-There is no translation page available for the current page, so it has been rendered in the default language 
+This page includes translations from the original source language in which the guide was authored. Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.md). 
 
-### Profil AsDeviceProfile
+### AsDeviceProfile
 
-Le profil AsDeviceProfile a un nom générique alors qu'il est spécifique aux équipements matériels lourds (EML). Par exemple, une ressource Device pourrait concerner un pacemaker qui ne rentre pas dans le cas d'usage de l'annuaire santé.
+The AsDeviceProfile has a generic name even though it is specific to heavy medical equipment (EML — Équipements Matériels Lourds). For example, a Device resource could relate to a pacemaker, which falls outside the scope of the Annuaire Santé use case.
 
-Deux options sont envisagées à ce jour :
+Two options are currently under consideration:
 
-* Supprimer le profil générique AsDeviceProfile tout en gardant les profils dp et dr
-* Renommer le profil en AsDeviceEMLProfile, AsDeviceHeavyEquipmentProfile, ou autre …
+* Remove the generic AsDeviceProfile while keeping the dp and dr profiles
+* Rename the profile to AsDeviceEMLProfile, AsDeviceHeavyEquipmentProfile, or similar
 
-Ces travaux seront pris en compte avec l'évolution du modèle FINESS+.
+This work will be addressed as part of the FINESS+ model evolution.
 

@@ -2,5 +2,9 @@
 
 ## Informations sur la traduction
 
-Ce document contient les informations sur les traductions.
+### Informations sur la traduction
+
+Ce guide d'implémentation est rédigé en français. La version française est la version de référence officielle.
+
+Une traduction anglaise est disponible à titre indicatif. Cette traduction a été générée automatiquement par intelligence artificielle et n'a pas fait l'objet d'une relecture par les auteurs du guide. En cas de divergence entre la version française et la version anglaise, la version française prévaut.
 

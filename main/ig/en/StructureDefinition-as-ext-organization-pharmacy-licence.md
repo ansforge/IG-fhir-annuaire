@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-organizati
   "name" : "AsOrganizationPharmacyLicenceExtension",
   "title" : "AS Organization Pharmacy Licence Extension",
   "status" : "draft",
-  "date" : "2026-06-19T13:53:04+00:00",
+  "date" : "2026-06-19T14:07:56+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

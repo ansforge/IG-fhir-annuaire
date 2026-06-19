@@ -3,34 +3,34 @@
 ## Accueil
 
  
-There is no translation page available for the current page, so it has been rendered in the default language 
+This page includes translations from the original source language in which the guide was authored. Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.md). 
 
 ### Introduction
 
  **Healthcare professional Directory Implementation Guide**
  This implementation guide contains the FHIR profiles of French Healthcare professionals directory and documents how the data are exposed in the national API. 
 
-L'objectif de ce guide est de présenter la modélisation FHIR des données provenant de l'Annuaire Santé en respectant le standard d'intéroperabilité FHIR. Ce guide d'implémentation a deux objectifs :
+The objective of this guide is to present the FHIR modelling of data from the Annuaire Santé, in compliance with the FHIR interoperability standard. This implementation guide has two objectives:
 
-* Présenter les données publiées par l'API FHIR nationale Annuaire Santé
-* Servir de socle dans la modélisation FHIR des professionnels en France (cf. profils génériques)
+* Present the data published by the Annuaire Santé national FHIR API
+* Serve as a foundation for the FHIR modelling of health professionals in France (cf. generic profiles)
 
-Ce guide d'implémentation est une spécification qui se concentre principalement sur le modèle de données et non sur la solution technique de l'API FHIR Annuaire Santé. Pour en savoir davantage sur le fonctionnement de l'API, veuillez consulter [la documentation dédiée de l'API FHIR](https://ansforge.github.io/annuaire-sante-fhir-documentation)
+This implementation guide is a specification that focuses primarily on the data model, not on the technical solution of the Annuaire Santé FHIR API. For more information on how the API works, please consult [the dedicated FHIR API documentation](https://ansforge.github.io/annuaire-sante-fhir-documentation)
 
-#### Contexte du projet
+#### Project context
 
-L’[Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) rassemble les répertoires sectoriels de référence des personnes physiques et personnes morales : le répertoire partagé des professionnels intervenant dans le système de santé (RPPS+), et le répertoire FINESS+. L'Annuaire Santé est un service à usage professionnel destiné aux acteurs des secteurs sanitaire, social et médico-social. Ce service de publication fournit également des données provenant des opérateurs MSSanté, du SI CPX et de l’Assurance Maladie.
+The [Annuaire Santé](https://esante.gouv.fr/produits-services/annuaire-sante) brings together the reference sectoral directories for natural persons and legal entities: the shared directory of professionals involved in the healthcare system (RPPS+), and the FINESS+ directory. The Annuaire Santé is a professional-use service intended for actors in the health, social, and medico-social sectors. This publication service also provides data from MSSanté operators, the SI CPX, and the Assurance Maladie.
 
-L'API FHIR Annuaire Santé est une API RESTful au format JSON et structurée selon le standard d'interoperabilité FHIR.
+The Annuaire Santé FHIR API is a RESTful API in JSON format, structured according to the FHIR interoperability standard.
 
-##### Ressources profilées
+##### Profiled resources
 
 
-La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci ont été re-profilés pour spécifier les APIs données publiques et données restreintes. Ces profils peuvent être trouvés dans l’onglet "liste des profils".
+The list below shows the generic profiles. These have been re-profiled to specify the public data and restricted data APIs. These profiles can be found in the "list of profiles" tab.
 
 | | | |
 | :--- | :--- | :--- |
-| Titre du profil | Description | URL canonique du profil parent |
+| Profile title | Description | Parent profile canonical URL |
 | [AS Device Profile](StructureDefinition-as-device.md) | Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les Equipements Matériels Lourds (EML) mis en place au sein d'un établissement. | [Device](http://hl7.org/fhir/StructureDefinition/Device|4.0.1) |
 | [AS HealthcareService HealthCare Activity Profile](StructureDefinition-as-healthcareservice-healthcare-activity.md) | Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS. | [HealthcareService](http://hl7.org/fhir/StructureDefinition/HealthcareService|4.0.1) |
 | [AS HealthcareService Social Equipment Profile](StructureDefinition-as-healthcareservice-social-equipment.md) | Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS (ex : Hébergement de personnes handicapées, hébergement de personnes âgées, services médico-sociaux à domicile, ...). | [HealthcareService](http://hl7.org/fhir/StructureDefinition/HealthcareService|4.0.1) |
@@ -39,24 +39,24 @@ La liste ci-dessous expose la liste des profils génériques profilés. Ceux-ci 
 | [AS Practitioner Profile](StructureDefinition-as-practitioner.md) | Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données liées à l'exercice professionnel d'un professionnel (professions à ordre, professions sans ordre, professionnels à rôle). | [FR Core Practitioner Profile](https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner|2.2.0) |
 | [AS PractitionerRole Profile](StructureDefinition-as-practitionerrole.md) | Profil générique créé à partir de FRCorePractitionerRole dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel. | [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-role|2.2.0) |
 
-##### Standards utilisés
+##### Standards used
 
-Ces spécifications techniques se basent sur le standard HL7 FHIR Release 4 (R4). Elles font référence à un certain nombre de ressources du standard ainsi qu’aux spécifications de l’API REST FHIR, basées sur le protocole HTTP. La syntaxe retenue est le format JSON.
+These technical specifications are based on the HL7 FHIR Release 4 (R4) standard. They reference a number of standard resources as well as the FHIR REST API specifications, based on the HTTP protocol. The syntax used is JSON format.
 
-Le schéma ci-dessous met en équivalence les deux concepts suivants : "Modèle des Objets de Santé"[(MOS)](https://esante.gouv.fr/produits-services/mos-nos) géré par l'ANS et le concept des ressources FHIR de HL7
+The diagram below maps the following two concepts: the "Modèle des Objets de Santé" [(MOS)](https://esante.gouv.fr/produits-services/mos-nos) managed by ANS, and the HL7 FHIR resource concept.
 
-#### Liens utiles
+#### Useful links
 
-* [Documentation API FHIR Annuaire Santé en libre accès](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
-* [Portail de démonstration](https://portail.openfhir.annuaire.sante.fr/)
+* [Annuaire Santé FHIR API documentation (open access)](https://ansforge.github.io/annuaire-sante-fhir-documentation/)
+* [Demo portal](https://portail.openfhir.annuaire.sante.fr/)
 
 ### Note
 
-Les exemples associés aux profils au sein de ce guide sont donnés à titre indicatif et pourraient évoluer dans le temps. Ils n'ont pas valeur de référence.
+The examples associated with the profiles in this guide are provided for informational purposes and may evolve over time. They are not to be taken as a normative reference.
 
-Les attributs marqués du tag MustSupport sont utilisés par l'API Annuaire Santé. Ces tags sont uniquement utilisés dans le cadre des profils applicatifs.
+Attributes marked with the MustSupport tag are used by the Annuaire Santé API. These tags are only used in the context of applicative profiles.
 
-### Dépendances
+### Dependencies
 
 
 

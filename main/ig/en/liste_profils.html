@@ -209,7 +209,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
 
-<p>There is no translation page available for the current page, so it has been rendered in the default language</p>
+<p>This page includes translations from the original source language in which the guide was authored.  Information on these translations and instructions on how to provide feedback on the translations can be found <a href="translationinfo.html">here</a>.</p>
 
 
 </p>
@@ -226,20 +226,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#liste-des-profils-génériques" id="markdown-toc-liste-des-profils-génériques">Liste des profils génériques</a></li>
-  <li><a href="#liste-des-profils-applicatifs---données-publiques" id="markdown-toc-liste-des-profils-applicatifs---données-publiques">Liste des profils applicatifs - données publiques</a></li>
-  <li><a href="#liste-des-profils-applicatifs---données-restreintes" id="markdown-toc-liste-des-profils-applicatifs---données-restreintes">Liste des profils applicatifs - données restreintes</a></li>
+  <li><a href="#list-of-generic-profiles" id="markdown-toc-list-of-generic-profiles">List of generic profiles</a></li>
+  <li><a href="#list-of-applicative-profiles--public-data" id="markdown-toc-list-of-applicative-profiles--public-data">List of applicative profiles — public data</a></li>
+  <li><a href="#list-of-applicative-profiles--restricted-data" id="markdown-toc-list-of-applicative-profiles--restricted-data">List of applicative profiles — restricted data</a></li>
 </ul>
 
 </div>
-<p>Les profils spécifient le format de données exposées par l'API Annuaire. Certains champs contiennent un tag Must Support (MS), symbolisés par un S encadré d'un carré rouge, indiquant que cette donnée est exposée par l'API si celle-ci existe.</p>
+<p>The profiles specify the data format exposed by the Annuaire API. Some fields carry a Must Support (MS) tag, symbolised by an S enclosed in a red square, indicating that this data is exposed by the API when it exists.</p>
 
-<h3 id="liste-des-profils-génériques">Liste des profils génériques</h3>
+<h3 id="list-of-generic-profiles">List of generic profiles</h3>
 
-<p>Ces profils génériques n'ont pas de contraintes fortes pour être héritées facilement par les autres guides tel que les volets du CI-SIS. Ces contraintes pourront être réutilisées progressivement au sein des profils d'InteropSanté.
-Ces profils héritent des ressources de base FHIR ou bien des profils InteropSanté</p>
+<p>These generic profiles have no strong constraints so that they can be easily inherited by other guides, such as CI-SIS volumes. These constraints may be progressively reused within the InteropSanté profiles.
+These profiles inherit from base FHIR resources or from InteropSanté profiles.</p>
 
-<table class="lines"><tr><td style="background-color: #eeeeee">Titre du profil</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-as-device.html">AsDeviceProfile</a></td><td><div><p>Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les Equipements Matériels Lourds (EML) mis en place au sein d'un établissement.</p>
+<table class="lines"><tr><td style="background-color: #eeeeee">Profile title</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-as-device.html">AsDeviceProfile</a></td><td><div><p>Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les Equipements Matériels Lourds (EML) mis en place au sein d'un établissement.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-healthcareservice-healthcare-activity.html">AsHealthcareServiceHealthcareActivityProfile</a></td><td><div><p>Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-healthcareservice-social-equipment.html">AsHealthcareServiceSocialEquipmentProfile</a></td><td><div><p>Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS (ex : Hébergement de personnes handicapées, hébergement de personnes âgées, services médico-sociaux à domicile, ...).</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-organization.html">AsOrganizationProfile</a></td><td><div><p>Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les établissements sanitaires, sociaux et médico-sociaux immatriculés dans le FIchier National des Etablissements Sanitaires et Sociaux (FINESS) ou dans le Répertoire Partagé des Professionnels de Santé (RPPS).</p>
@@ -248,11 +248,11 @@ Ces profils héritent des ressources de base FHIR ou bien des profils InteropSan
 </div></td></tr><tr><td><a href="StructureDefinition-as-practitionerrole.html">AsPractitionerRoleProfile</a></td><td><div><p>Profil générique créé à partir de FRCorePractitionerRole dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel.</p>
 </div></td></tr></table>
 
-<h3 id="liste-des-profils-applicatifs---données-publiques">Liste des profils applicatifs - données publiques</h3>
+<h3 id="list-of-applicative-profiles--public-data">List of applicative profiles — public data</h3>
 
-<p>Liste des profils applicatifs héritant des profils génériques pour détailler les ressources exposées en accès libre par l'API données publiques.</p>
+<p>List of applicative profiles inheriting from generic profiles, detailing the resources exposed through open access by the public data API.</p>
 
-<table class="lines"><tr><td style="background-color: #eeeeee">Titre du profil</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-as-dp-device.html">AsDpDeviceProfile</a></td><td><div><p>Profil public applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement.</p>
+<table class="lines"><tr><td style="background-color: #eeeeee">Profile title</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-as-dp-device.html">AsDpDeviceProfile</a></td><td><div><p>Profil public applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-dp-healthcareservice-healthcare-activity.html">AsDpHealthcareServiceHealthcareActivityProfile</a></td><td><div><p>Profil public applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-dp-healthcareservice-social-equipment.html">AsDpHealthcareServiceSocialEquipmentProfile</a></td><td><div><p>Profil public applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-dp-organization.html">AsDpOrganizationProfile</a></td><td><div><p>Profil public applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement.</p>
@@ -260,11 +260,11 @@ Ces profils héritent des ressources de base FHIR ou bien des profils InteropSan
 </div></td></tr><tr><td><a href="StructureDefinition-as-dp-practitionerrole.html">AsDpPractitionerRoleProfile</a></td><td><div><p>Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement.</p>
 </div></td></tr></table>
 
-<h3 id="liste-des-profils-applicatifs---données-restreintes">Liste des profils applicatifs - données restreintes</h3>
+<h3 id="list-of-applicative-profiles--restricted-data">List of applicative profiles — restricted data</h3>
 
-<p>Liste des profils applicatifs héritant des profils génériques pour détailler les ressources exposées en accès restreint.</p>
+<p>List of applicative profiles inheriting from generic profiles, detailing the resources exposed through restricted access.</p>
 
-<table class="lines"><tr><td style="background-color: #eeeeee">Titre du profil</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-as-dr-device.html">AsDrDeviceProfile</a></td><td><div><p>Profil restreint applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé.</p>
+<table class="lines"><tr><td style="background-color: #eeeeee">Profile title</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-as-dr-device.html">AsDrDeviceProfile</a></td><td><div><p>Profil restreint applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-dr-healthcareservice-healthcare-activity.html">AsDrHealthcareServiceHealthcareActivityProfile</a></td><td><div><p>Profil restreint applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès restreint de l'Annuaire Santé.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-dr-healthcareservice-social-equipment.html">AsDrHealthcareServiceSocialEquipmentProfile</a></td><td><div><p>Profil restreint applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-as-dr-organization.html">AsDrOrganizationProfile</a></td><td><div><p>Profil restreint créé à partir de as-organization  dans le contexte des données en accès restreint de l’Annuaire Santé.</p>
@@ -322,7 +322,7 @@ Ces profils héritent des ressources de base FHIR ou bien des profils InteropSan
           IG © 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  
           Package ans.fhir.fr.annuaire#1.2.0-snapshot-2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-06-19 13:53:00 +0000">
+  <span title="2026-06-19 14:07:00 +0000">
     2026-06-19
   </span>
 

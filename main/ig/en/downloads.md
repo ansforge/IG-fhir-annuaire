@@ -3,20 +3,20 @@
 ## Téléchargement du guide
 
  
-There is no translation page available for the current page, so it has been rendered in the default language 
+This page includes translations from the original source language in which the guide was authored. Information on these translations and instructions on how to provide feedback on the translations can be found [here](translationinfo.md). 
 
-L'implementation guide contient un package [téléchargeable ici](../package.tgz) permettant de valider les instances par rapport aux profils qu'il contient.
+The implementation guide contains a package [downloadable here](package.tgz) that can be used to validate instances against the profiles it contains.
 
-Pour cela, il suffit de télécharger le [package.tgz](../package.tgz) et l'importer dans un serveur, par exemple sur hapi en suivant ce [script python](https://github.com/nmdp-bioinformatics/igloader) open source.
+To do so, download the [package.tgz](package.tgz) and import it into a server — for example on HAPI using this open-source [Python script](https://github.com/nmdp-bioinformatics/igloader).
 
-Vous pourrez ensuite utiliser l'opération [$validate](https://www.hl7.org/fhir/resource-operation-validate.html) pour valider les instances de ressource contre un profil issu de cette spécification.
+You can then use the [$validate](https://www.hl7.org/fhir/resource-operation-validate.html) operation to validate resource instances against a profile from this specification.
 
-Ensemble des ressources téléchargeables :
+All downloadable resources:
 
-* [L'ensemble de la specification (zip)](../full-ig.zip)
-* [Package (tgz)](../package.tgz)
-* [JSON Définitions (zip)](../definitions.json.zip)
-* [JSON Exemples (zip)](../examples.json.zip)
-* [XML Definitions (zip)](../definitions.xml.zip)
-* [XML Exemples (zip)](../examples.xml.zip)
+* [Full specification (zip)](full-ig.zip)
+* [Package (tgz)](package.tgz)
+* [JSON Definitions (zip)](definitions.json.zip)
+* [JSON Examples (zip)](examples.json.zip)
+* [XML Definitions (zip)](definitions.xml.zip)
+* [XML Examples (zip)](examples.xml.zip)
 
