@@ -5,7 +5,7 @@ Title: "AS Donnée Publique Organization Profile"
 Description: """Profil public applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."""
 
 * meta.profile contains as-dp-canonical 1..1
-* meta.profile[as-dp-canonical] = Canonical(as-dp-organization)
+* meta.profile[as-dp-canonical] = Canonical(as-dp-organization|1.2.0-snapshot-2)
 * meta.profile[fr-canonical] 1..1
 
 * extension[as-ext-digital-certificate] MS
@@ -20,7 +20,6 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * identifier[finess] MS
 * identifier[siren] MS
 * identifier[siret] MS
-* identifier[adeliRang] MS
 * active MS
 * name MS
 * alias MS

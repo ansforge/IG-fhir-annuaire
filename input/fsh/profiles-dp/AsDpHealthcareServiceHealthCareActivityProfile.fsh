@@ -10,7 +10,7 @@ Description: """Profil public applicatif créé à partir du profil générique 
 * meta.profile ^slicing.rules = #open
 * meta.profile ^slicing.description = "Slice based on the canonical url value"
 * meta.profile contains as-dp-canonical 1..1
-* meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-healthcare-activity)
+* meta.profile[as-dp-canonical] = Canonical(as-dp-healthcareservice-healthcare-activity|1.2.0-snapshot-2)
 
 * extension[as-ext-authorization] MS
 * identifier[numAutorisationArhgos] MS

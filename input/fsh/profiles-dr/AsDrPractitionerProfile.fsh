@@ -5,7 +5,7 @@ Title:			"AS Donnée Restreinte Practitioner Profile"
 Description: 	"Profil restreint créé à partir de as-practitioner dans le contexte des données en accès restreint de l’Annuaire Santé."
 
 * meta.profile contains as-dr-canonical 1..1
-* meta.profile[as-dr-canonical] = Canonical(as-dr-practitioner)
+* meta.profile[as-dr-canonical] = Canonical(as-dr-practitioner|1.2.0-snapshot-2)
 * meta.profile[fr-canonical] 1..1
 
 * extension[as-ext-registration] MS
@@ -22,7 +22,7 @@ Description: 	"Profil restreint créé à partir de as-practitioner dans le cont
 
 * qualification contains attributionParticuliere 0..*
 
-* qualification[attributionParticuliere].code from https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS (required) 
+* qualification[attributionParticuliere].code.coding from https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS (required)
 * qualification[attributionParticuliere].code MS
 
 * qualification[attributionParticuliere].period MS

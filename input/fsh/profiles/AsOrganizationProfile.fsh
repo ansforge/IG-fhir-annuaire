@@ -1,10 +1,10 @@
 Profile: AsOrganizationProfile
-Parent: fr-core-organization
+Parent: fr-core-organization-etablissement
 Id: as-organization
 Title: "AS Organization Profile"
 Description: "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les établissements sanitaires, sociaux et médico-sociaux immatriculés dans le FIchier National des Etablissements Sanitaires et Sociaux (FINESS) ou dans le Répertoire Partagé des Professionnels de Santé (RPPS)."
 
-* identifier.type ^short = "Type d’identifiant national de l'organisation"
+* identifier.type ^short = "Type d’identifiant national de l’organisation"
 
 // Organization.active
 * active ^short = "La ressource est-elle active ? (active | inactive). true par défaut; false pour les structures supprimées."
@@ -16,16 +16,38 @@ Description: "Profil générique créé à partir de FrOrganization dans le cont
 * alias ^short = "Enseigne commerciale de la structure (Synonyme : complementRaisonSociale)."
 
 /* champ d'activite de la structure */
-// Slice de FrCoreOrganization
+// Slices de FrCoreOrganizationProfile 2.1.0 (supprimées en 2.2.0, redéfinies ici)
+* type ^slicing.discriminator.type = #value
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
+
 * type contains
-    statutJuridiqueINSEE 0..1 and 
+    organizationType 0..1 and
+    secteurActiviteRASS 0..1 and
+    categorieEtablissementRASS 0..1 and
+    statutJuridiqueINSEE 0..1 and
     sphParticipation 0..1 and
     typeEtablissement 0..1
 
-// organizationType - slice de FrCoreOrganization
+// organizationType
+* type[organizationType] from FRCoreValueSetOrganizationType (required)
+* type[organizationType].coding 1..1
+* type[organizationType].coding.system 1..
 * type[organizationType] ^short = "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
 * type[organizationType].extension contains as-ext-organization-types named as-ext-organization-types 1..1
 * type[organizationType].extension[as-ext-organization-types].valueCode = #organizationType
+
+// secteurActiviteRASS
+* type[secteurActiviteRASS] from $JDV-J101-SecteurActivite-RASS (required)
+* type[secteurActiviteRASS] ^short = "Secteurs d'activité des établissements avec la même activité dans le RASS"
+* type[secteurActiviteRASS].coding 1..1
+* type[secteurActiviteRASS].coding.system 1..
+
+// categorieEtablissementRASS
+* type[categorieEtablissementRASS] from $JDV-J129-CategorieEtablissement-RASS (required)
+* type[categorieEtablissementRASS] ^short = "Catégorie d'établissement du RASS"
+* type[categorieEtablissementRASS].coding 1..1
+* type[categorieEtablissementRASS].coding.system 1..
 
 
 // statutJuridiqueINSEE
@@ -106,7 +128,6 @@ Title:    "AsOrganization to MOS - EJ"
 * identifier[finess] -> "EntiteJuridique.numFiness"
 * identifier[siren] -> "EntiteJuridique.numSiren"
 * identifier[idNatSt] -> "EntiteJuridique.idNat_struct"
-* identifier[adeliRang] -> "EntiteGeographique.identifiantEJ"
 * identifier[rppsRang] -> "EntiteGeographique.identifiantEJ"
 * extension[as-ext-organization-pharmacy-licence] -> "EntiteJuridique.numeroLicenceOfficine"
 * name  -> "EntiteJuridique.raisonSociale"
@@ -129,7 +150,6 @@ Title:    "AsOrganization to MOS - EG"
 * identifier[siren] -> "EntiteGeographique.numSiren"
 * identifier[siret] -> "EntiteGeographique.numSiret"
 * identifier[idNatSt] -> "EntiteGeographique.idNat_struct"
-* identifier[adeliRang] -> "EntiteGeographique.identifiantEG"
 * identifier[rppsRang] -> "EntiteGeographique.identifiantEG"
 
 * active -> "EntiteGeographique.actof"

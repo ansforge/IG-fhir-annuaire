@@ -13,13 +13,15 @@ Usage: #example
   * versionId = "0.1"
   * source = "https://annuaire.esante.gouv.fr"
   * lastUpdated = "2019-08-31T01:00:00.000+01:00"
+  * profile[as-dp-canonical] = Canonical(as-dp-practitionerrole|1.2.0-snapshot-2)
+  * profile[fr-canonical] = "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-role|2.2.0"
 
 // Actif
 * active = true
 
 // Identifiant fonctionnel 
-* identifier[+]
-  * system = "https://annuaire.sante.fr"
+* identifier[idSituationExercice]
+  * system = "https://rpps.esante.gouv.fr"
   * value = "1001500032"
 
 // Lien professionnel 

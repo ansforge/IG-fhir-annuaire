@@ -9,7 +9,7 @@ Description: 	"Profil restreint créé à partir de as-person dans le contexte d
 * meta.profile ^slicing.rules = #open
 * meta.profile ^slicing.description = "Slice based on the canonical url value"
 * meta.profile contains as-dr-canonical 1..1
-* meta.profile[as-dr-canonical] = Canonical(as-dr-person)
+* meta.profile[as-dr-canonical] = Canonical(as-dr-person|1.2.0-snapshot-2)
 
 * extension[as-ext-person-birth-place] MS
 * extension[as-ext-person-deceased-date-time] MS

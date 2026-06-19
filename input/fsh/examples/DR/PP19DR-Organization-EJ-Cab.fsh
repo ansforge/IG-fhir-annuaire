@@ -11,6 +11,8 @@ Usage: #example
   * versionId = "0.1"
   * source = "https://annuaire.esante.gouv.fr"
   * lastUpdated = "2019-09-01T01:00:00.000+01:00"
+  * profile[as-dr-canonical] = Canonical(as-dr-organization|1.2.0-snapshot-2)
+  * profile[fr-canonical] = "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0"
 
 // Actif
 * active = true
@@ -31,7 +33,7 @@ Usage: #example
   * type
     * coding[+]
       * system = "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
-      * code = #INTRN
+      * code = #RPPSRG
 
 // Nom
 * name = "CABINET SAINT ANTOINE"
