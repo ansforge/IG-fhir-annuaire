@@ -1,11 +1,5 @@
 ### Introduction
 
-<p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; width: 65%">
-<b>Healthcare professional Directory Implementation Guide</b><br>
-This implementation guide contains the FHIR profiles of French Healthcare professionals directory and documents how the data are exposed in the national API.
-</p>
-
-
 {% if site.data.info.releaselabel == 'ci-build' %}
 <div style="width: 65%">
 <blockquote class="stu-note">
