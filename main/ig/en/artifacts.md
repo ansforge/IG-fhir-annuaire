@@ -1,4 +1,4 @@
-# Artifacts Summary - Annuaire Santé v1.2.0-snapshot-1
+# Artifacts Summary - Annuaire Santé v1.2.0-snapshot-2
 
 ## Artifacts Summary
 

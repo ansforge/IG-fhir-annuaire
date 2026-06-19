@@ -1,4 +1,4 @@
-# pp19dp-practitioner-role-lib - Annuaire Santé v1.2.0-snapshot-1
+# pp19dp-practitioner-role-lib - Annuaire Santé v1.2.0-snapshot-2
 
 ## Example PractitionerRole: pp19dp-practitioner-role-lib
 
@@ -12,9 +12,9 @@ version: 0.1; Last updated: 2019-09-05 01:00:00+0100; Language: fr;
 
 Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.gouv.fr)
 
-Profiles: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-practitioner-role.html), [AS Donnée Publique PractitionerRole Profile](StructureDefinition-as-dp-practitionerrole.md)
+Profiles: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner-role.html) version: 2.2.0, [AS Donnée Publique PractitionerRole Profile](StructureDefinition-as-dp-practitionerrole.md) version: 1.2.0-snapshot-2
 
-**identifier**: `https://annuaire.sante.fr`/1010399870
+**identifier**: `https://rpps.esante.gouv.fr`/1010399870
 
 **active**: true
 
@@ -36,12 +36,12 @@ Profiles: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.1.0/Structur
     "versionId" : "0.1",
     "lastUpdated" : "2019-09-05T01:00:00.000+01:00",
     "source" : "https://annuaire.esante.gouv.fr",
-    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-role",
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole"]
+    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-role|2.2.0",
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-2"]
   },
   "language" : "fr",
   "identifier" : [{
-    "system" : "https://annuaire.sante.fr",
+    "system" : "https://rpps.esante.gouv.fr",
     "value" : "1010399870"
   }],
   "active" : true,

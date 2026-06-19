@@ -1,4 +1,4 @@
-# as-sp-mailbox-mss - Annuaire Santé v1.2.0-snapshot-1
+# as-sp-mailbox-mss - Annuaire Santé v1.2.0-snapshot-2
 
 ## SearchParameter: as-sp-mailbox-mss 
 
@@ -14,10 +14,10 @@ Paramètre de recherche pour récupérer une organisation, un praticien ou une s
   "resourceType" : "SearchParameter",
   "id" : "as-sp-mailbox-mss",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsMailboxMssSearchParameter",
   "status" : "active",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

@@ -1,4 +1,4 @@
-# AS PractitionerRole Vitale Accepted - Annuaire Santé v1.2.0-snapshot-1
+# AS PractitionerRole Vitale Accepted - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS PractitionerRole Vitale Accepted 
 
@@ -60,11 +60,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-practiti
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-practitionerrole-vitale-accepted",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPractitionerRoleVitaleAccepted",
   "title" : "AS PractitionerRole Vitale Accepted",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

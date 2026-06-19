@@ -1,4 +1,4 @@
-# AS Mailbox MSS Datatype Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Mailbox MSS Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil du type de données: AS Mailbox MSS Datatype Profile 
 
@@ -25,13 +25,13 @@ Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https:/
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-contact-point.html) 
+Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html) 
 
 #### Bindings terminologiques
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-contact-point.html) 
+Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html) 
 
 ** Résumé **
 
@@ -42,7 +42,7 @@ Obligatoire : 2 éléments
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-1](StructureDefinition-as-ext-mailbox-mss-metadata.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-2](StructureDefinition-as-ext-mailbox-mss-metadata.md)
 
  **Vue des éléments clés** 
 
@@ -52,7 +52,7 @@ Cette structure fait référence à ces extensions:
 
  **Vue différentielle** 
 
-Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-contact-point.html) 
+Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html) 
 
  **Vue d'ensembleView** 
 
@@ -60,7 +60,7 @@ Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/f
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-contact-point.html) 
+Cette structure est dérivée de [FRCoreContactPointProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html) 
 
 ** Résumé **
 
@@ -71,7 +71,7 @@ Obligatoire : 2 éléments
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-1](StructureDefinition-as-ext-mailbox-mss-metadata.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-2](StructureDefinition-as-ext-mailbox-mss-metadata.md)
 
  
 
@@ -86,11 +86,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-mailbox-mss.
   "resourceType" : "StructureDefinition",
   "id" : "as-mailbox-mss",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsMailboxMSSProfile",
   "title" : "AS Mailbox MSS Datatype Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -135,7 +135,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-mailbox-mss.
   "kind" : "complex-type",
   "abstract" : false,
   "type" : "ContactPoint",
-  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.1.0",
+  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -178,7 +178,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-mailbox-mss.
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-2"]
       }]
     },
     {

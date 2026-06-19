@@ -1,4 +1,4 @@
-# AS Donnée Publique HealthcareService Social Equipment Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Publique HealthcareService Social Equipment Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Resource Profile: AS Donnée Publique HealthcareService Social Equipment Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-healthcares
   "resourceType" : "StructureDefinition",
   "id" : "as-dp-healthcareservice-social-equipment",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-social-equipment",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDpHealthcareServiceSocialEquipmentProfile",
   "title" : "AS Donnée Publique HealthcareService Social Equipment Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -72,7 +72,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-healthcares
   "kind" : "resource",
   "abstract" : false,
   "type" : "HealthcareService",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-social-equipment|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-social-equipment|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -87,7 +87,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-healthcares
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -115,7 +115,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-healthcares
       "sliceName" : "as-dp-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-social-equipment|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-social-equipment|1.2.0-snapshot-2"
     },
     {
       "id" : "HealthcareService.extension:as-ext-authorization",

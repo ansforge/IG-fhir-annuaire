@@ -1,4 +1,4 @@
-# AS Organization Types - Annuaire Santé v1.2.0-snapshot-1
+# AS Organization Types - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Organization Types 
 
@@ -69,11 +69,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-organiza
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-organization-types",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsOrganizationTypes",
   "title" : "AS Organization Types",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -134,7 +134,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-organiza
       }],
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types|1.2.0-snapshot-1"
+        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types|1.2.0-snapshot-2"
       }
     }]
   }

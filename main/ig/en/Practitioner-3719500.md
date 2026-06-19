@@ -1,4 +1,4 @@
-# pp16dr-practitioner - Annuaire Santé v1.2.0-snapshot-1
+# pp16dr-practitioner - Annuaire Santé v1.2.0-snapshot-2
 
 ## Example Practitioner: pp16dr-practitioner
 
@@ -12,7 +12,7 @@ version: 0.1; Last updated: 2019-08-31 01:00:00+0100; Language: fr;
 
 Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.gouv.fr)
 
-Profiles: [FR Core Practitioner Profile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-practitioner.html), [AS Donnée Restreinte Practitioner Profile](StructureDefinition-as-dr-practitioner.md)
+Profiles: [FR Core Practitioner Profile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner.html) version: 2.2.0, [AS Donnée Restreinte Practitioner Profile](StructureDefinition-as-dr-practitioner.md) version: 1.2.0-snapshot-2
 
 > **AS Registration Extension**
 * isFirst: false
@@ -52,8 +52,8 @@ Profiles: [FR Core Practitioner Profile](https://hl7.fr/ig/fhir/core/2.1.0/Struc
     "versionId" : "0.1",
     "lastUpdated" : "2019-08-31T01:00:00.000+01:00",
     "source" : "https://annuaire.esante.gouv.fr",
-    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner",
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner"]
+    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner|2.2.0",
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner|1.2.0-snapshot-2"]
   },
   "language" : "fr",
   "extension" : [{

@@ -1,4 +1,4 @@
-# AS Donnée Restreinte Organization Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Restreinte Organization Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS Donnée Restreinte Organization Profile 
 
@@ -36,13 +36,13 @@ Cette structure est dérivée de [AsOrganizationProfile](StructureDefinition-as-
 ** Résumé **
 
 Obligatoire : 0 élément(2 éléments obligatoire(s) imbriqué(s))
- Must-Support : 15 éléments
+ Must-Support : 14 éléments
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
  **Vue des éléments clés** 
 
@@ -65,13 +65,13 @@ Cette structure est dérivée de [AsOrganizationProfile](StructureDefinition-as-
 ** Résumé **
 
 Obligatoire : 0 élément(2 éléments obligatoire(s) imbriqué(s))
- Must-Support : 15 éléments
+ Must-Support : 14 éléments
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
  
 
@@ -86,11 +86,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-organizat
   "resourceType" : "StructureDefinition",
   "id" : "as-dr-organization",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDrOrganizationProfile",
   "title" : "AS Donnée Restreinte Organization Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -145,7 +145,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-organizat
   "kind" : "resource",
   "abstract" : false,
   "type" : "Organization",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -160,7 +160,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-organizat
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -186,7 +186,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-organizat
       "sliceName" : "as-dr-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization|1.2.0-snapshot-2"
     },
     {
       "id" : "Organization.extension:as-ext-digital-certificate",
@@ -238,11 +238,6 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dr-organizat
     {
       "id" : "Organization.type",
       "path" : "Organization.type",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Organization.name",
-      "path" : "Organization.name",
       "mustSupport" : true
     },
     {

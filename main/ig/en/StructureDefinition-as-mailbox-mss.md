@@ -1,4 +1,4 @@
-# AS Mailbox MSS Datatype Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Mailbox MSS Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Data Type Profile: AS Mailbox MSS Datatype Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-mailbox-mss.cs
   "resourceType" : "StructureDefinition",
   "id" : "as-mailbox-mss",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsMailboxMSSProfile",
   "title" : "AS Mailbox MSS Datatype Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -77,7 +77,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-mailbox-mss.cs
   "kind" : "complex-type",
   "abstract" : false,
   "type" : "ContactPoint",
-  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.1.0",
+  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -120,7 +120,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-mailbox-mss.cs
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata|1.2.0-snapshot-2"]
       }]
     },
     {

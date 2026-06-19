@@ -1,4 +1,4 @@
-# AS Donnée Restreinte Practitioner Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Restreinte Practitioner Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Resource Profile: AS Donnée Restreinte Practitioner Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
   "resourceType" : "StructureDefinition",
   "id" : "as-dr-practitioner",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDrPractitionerProfile",
   "title" : "AS Donnée Restreinte Practitioner Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -112,7 +112,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
   "kind" : "resource",
   "abstract" : false,
   "type" : "Practitioner",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -127,7 +127,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -153,7 +153,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
       "sliceName" : "as-dr-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner|1.2.0-snapshot-2"
     },
     {
       "id" : "Practitioner.extension:as-ext-registration",
@@ -241,7 +241,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-practitione
     {
       "id" : "Practitioner.qualification:attributionParticuliere.code",
       "path" : "Practitioner.qualification.code",
-      "mustSupport" : true,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Practitioner.qualification:attributionParticuliere.code.coding",
+      "path" : "Practitioner.qualification.code.coding",
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J90-AttributionParticuliere-RASS/FHIR/JDV-J90-AttributionParticuliere-RASS|20200424120000"

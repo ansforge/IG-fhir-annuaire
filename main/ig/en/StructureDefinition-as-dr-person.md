@@ -1,4 +1,4 @@
-# AS Donnée Restreinte Person Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Restreinte Person Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Resource Profile: AS Donnée Restreinte Person Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-person.csv)
   "resourceType" : "StructureDefinition",
   "id" : "as-dr-person",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDrPersonProfile",
   "title" : "AS Donnée Restreinte Person Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -77,7 +77,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-person.csv)
   "kind" : "resource",
   "abstract" : false,
   "type" : "Person",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-person|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-person|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -92,7 +92,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-person.csv)
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -120,7 +120,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-person.csv)
       "sliceName" : "as-dr-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person|1.2.0-snapshot-2"
     },
     {
       "id" : "Person.extension:as-ext-person-birth-place",
@@ -142,7 +142,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-person.csv)
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-statut-etat-civil|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-statut-etat-civil|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },

@@ -1,4 +1,4 @@
-# pp19dp-practitioner - Annuaire Santé v1.2.0-snapshot-1
+# pp19dp-practitioner - Annuaire Santé v1.2.0-snapshot-2
 
 ## Exemple Practitioner: pp19dp-practitioner
 
@@ -12,7 +12,7 @@ version : 0.1; Dernière mise à jour : 2019-09-05 01:00:00+0100; Langue : fr;
 
 Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.gouv.fr)
 
-Profils: [FR Core Practitioner Profile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-practitioner.html), [AS Donnée Publique Practitioner Profile](StructureDefinition-as-dp-practitioner.md)
+Profils: [FR Core Practitioner Profile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner.html) version : 2.2.0, [AS Donnée Publique Practitioner Profile](StructureDefinition-as-dp-practitioner.md) version : 1.2.0-snapshot-2
 
 **identifier**: Identifiant National de Professionnel de Santé/810003461033 (utilisation : official, ), N° RPPS/10003461033 (utilisation : official, )
 
@@ -38,8 +38,8 @@ Profils: [FR Core Practitioner Profile](https://hl7.fr/ig/fhir/core/2.1.0/Struct
     "versionId" : "0.1",
     "lastUpdated" : "2019-09-05T01:00:00.000+01:00",
     "source" : "https://annuaire.esante.gouv.fr",
-    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner",
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner"]
+    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner|2.2.0",
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-2"]
   },
   "language" : "fr",
   "identifier" : [{

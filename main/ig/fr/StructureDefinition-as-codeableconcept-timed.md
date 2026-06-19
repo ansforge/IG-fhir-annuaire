@@ -1,4 +1,4 @@
-# AS CodeableConceptTimed Datatype Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS CodeableConceptTimed Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil du type de données: AS CodeableConceptTimed Datatype Profile 
 
@@ -35,7 +35,7 @@ Cette structure est dérivée de [CodeableConcept](http://hl7.org/fhir/R4/dataty
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-1](StructureDefinition-as-ext-codeableconcept-timed-metadata.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-2](StructureDefinition-as-ext-codeableconcept-timed-metadata.md)
 
  **Vue des éléments clés** 
 
@@ -57,7 +57,7 @@ Cette structure est dérivée de [CodeableConcept](http://hl7.org/fhir/R4/dataty
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-1](StructureDefinition-as-ext-codeableconcept-timed-metadata.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-2](StructureDefinition-as-ext-codeableconcept-timed-metadata.md)
 
  
 
@@ -72,11 +72,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-codeableconc
   "resourceType" : "StructureDefinition",
   "id" : "as-codeableconcept-timed",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsCodeableConceptTimedProfile",
   "title" : "AS CodeableConceptTimed Datatype Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -131,7 +131,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-codeableconc
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-2"]
       }]
     }]
   }

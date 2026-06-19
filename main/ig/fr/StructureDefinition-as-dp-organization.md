@@ -1,4 +1,4 @@
-# AS Donnée Publique Organization Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Publique Organization Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS Donnée Publique Organization Profile 
 
@@ -8,7 +8,7 @@ Profil public applicatif créé à partir du profil générique as-organization 
 **Utilisations:**
 
 * Exemples pour ce/t/te Profil: [CH EURE-SEINE](Organization-158480DP.md), [PHARMACIE NOLOT](Organization-481677DP.md) and [CABINET SAINT ANTOINE](Organization-548812DP.md)
-* CapabilityStatements utilisant ce Profil: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-1]](CapabilityStatement-AsServerDPCapabilityStatement.md)
+* CapabilityStatements utilisant ce Profil: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-2]](CapabilityStatement-AsServerDPCapabilityStatement.md)
 
 Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.annuaire|current/StructureDefinition/as-dp-organization)
 
@@ -37,14 +37,14 @@ Cette structure est dérivée de [AsOrganizationProfile](StructureDefinition-as-
 ** Résumé **
 
 Obligatoire : 1 élément(2 éléments obligatoire(s) imbriqué(s))
- Must-Support : 25 éléments
- Interdit : 20 éléments
+ Must-Support : 23 éléments
+ Interdit : 18 éléments
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
  **Vue des éléments clés** 
 
@@ -67,14 +67,14 @@ Cette structure est dérivée de [AsOrganizationProfile](StructureDefinition-as-
 ** Résumé **
 
 Obligatoire : 1 élément(2 éléments obligatoire(s) imbriqué(s))
- Must-Support : 25 éléments
- Interdit : 20 éléments
+ Must-Support : 23 éléments
+ Interdit : 18 éléments
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
  
 
@@ -89,11 +89,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-organizat
   "resourceType" : "StructureDefinition",
   "id" : "as-dp-organization",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDpOrganizationProfile",
   "title" : "AS Donnée Publique Organization Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -148,7 +148,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-organizat
   "kind" : "resource",
   "abstract" : false,
   "type" : "Organization",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -163,7 +163,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-organizat
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -189,7 +189,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-organizat
       "sliceName" : "as-dp-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2"
     },
     {
       "id" : "Organization.extension:as-ext-digital-certificate",
@@ -307,22 +307,6 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-organizat
       "max" : "0"
     },
     {
-      "id" : "Organization.identifier:adeliRang",
-      "path" : "Organization.identifier",
-      "sliceName" : "adeliRang",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Organization.identifier:adeliRang.period",
-      "path" : "Organization.identifier.period",
-      "max" : "0"
-    },
-    {
-      "id" : "Organization.identifier:adeliRang.assigner",
-      "path" : "Organization.identifier.assigner",
-      "max" : "0"
-    },
-    {
       "id" : "Organization.identifier:rppsRang",
       "path" : "Organization.identifier",
       "sliceName" : "rppsRang",
@@ -378,11 +362,6 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-organizat
       "id" : "Organization.type:typeEtablissement",
       "path" : "Organization.type",
       "sliceName" : "typeEtablissement",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Organization.name",
-      "path" : "Organization.name",
       "mustSupport" : true
     },
     {

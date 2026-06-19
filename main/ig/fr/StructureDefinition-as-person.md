@@ -1,4 +1,4 @@
-# AS Person Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Person Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS Person Profile 
 
@@ -41,16 +41,16 @@ Interdit : 1 élément
 
 Cette structure fait référence à ces autres structures:
 
-* [FR Core Human Name Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-human-name.html)
-* [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-contact-point.html)
-* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1)](StructureDefinition-as-practitioner.md)
+* [FR Core Human Name Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-human-name.html)
+* [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html)
+* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2)](StructureDefinition-as-practitioner.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-1](StructureDefinition-as-ext-person-birth-place.md)
-* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-1](StructureDefinition-as-ext-person-deceased-date-time.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-2](StructureDefinition-as-ext-person-birth-place.md)
+* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-2](StructureDefinition-as-ext-person-deceased-date-time.md)
 
 **Slices**
 
@@ -84,16 +84,16 @@ Interdit : 1 élément
 
 Cette structure fait référence à ces autres structures:
 
-* [FR Core Human Name Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-human-name.html)
-* [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-contact-point.html)
-* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1)](StructureDefinition-as-practitioner.md)
+* [FR Core Human Name Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-human-name.html)
+* [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html)
+* [AS Practitioner Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2)](StructureDefinition-as-practitioner.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-1](StructureDefinition-as-ext-person-birth-place.md)
-* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-1](StructureDefinition-as-ext-person-deceased-date-time.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-2](StructureDefinition-as-ext-person-birth-place.md)
+* [http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-2](StructureDefinition-as-ext-person-deceased-date-time.md)
 
 **Slices**
 
@@ -114,11 +114,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-person.csv),
   "resourceType" : "StructureDefinition",
   "id" : "as-person",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-person",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPersonProfile",
   "title" : "AS Person Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -193,7 +193,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-person.csv),
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-person-to-mos-personne-physique",
@@ -208,7 +208,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-person.csv),
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-1"]
+        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-person-to-mos-personne-physique",
@@ -221,7 +221,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-person.csv),
       "short" : "Nom issu de l’état-civil.",
       "type" : [{
         "code" : "HumanName",
-        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.1.0"]
+        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.2.0"]
       }]
     },
     {
@@ -257,7 +257,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-person.csv),
       "short" : "Différentes instances pour les téléphones, la télécopie et l’adresse mail.",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.1.0"]
+        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0"]
       }]
     },
     {
@@ -322,7 +322,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-person.csv),
       "path" : "Person.link.target",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2"]
       }]
     }]
   }

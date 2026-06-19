@@ -1,4 +1,4 @@
-# pp19dp-organization-eg-cab - Annuaire Santé v1.2.0-snapshot-1
+# pp19dp-organization-eg-cab - Annuaire Santé v1.2.0-snapshot-2
 
 ## Example Organization: pp19dp-organization-eg-cab
 
@@ -12,11 +12,11 @@ version: 0.1; Last updated: 2019-09-01 01:00:00+0100; Language: fr;
 
 Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.gouv.fr)
 
-Profiles: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html), [AS Donnée Publique Organization Profile](StructureDefinition-as-dp-organization.md)
+Profiles: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html) version: 2.2.0, [AS Donnée Publique Organization Profile](StructureDefinition-as-dp-organization.md) version: 1.2.0-snapshot-2
 
 **Organization Period**: 2019-06-01 --> (ongoing)
 
-**identifier**: Identification nationale de structure définie par l’ANS dans le CI_SIS/1754567860 (use: official, ), FINESS d'entité géographique/754567860 (use: official, ), Identifiant interne/F754567860 (use: official, )
+**identifier**: Identification nationale de structure définie par l’ANS dans le CI_SIS/1754567860 (use: official, ), FINESS d'entité géographique/754567860 (use: official, ), N° RPPS Rang/F754567860 (use: official, )
 
 **active**: true
 
@@ -40,8 +40,8 @@ Profiles: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.1.0/Struc
     "versionId" : "0.1",
     "lastUpdated" : "2019-09-01T01:00:00.000+01:00",
     "source" : "https://annuaire.esante.gouv.fr",
-    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization",
-    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization"]
+    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0",
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2"]
   },
   "language" : "fr",
   "extension" : [{
@@ -77,7 +77,7 @@ Profiles: [FR Core Organization Profile](https://hl7.fr/ig/fhir/core/2.1.0/Struc
     "type" : {
       "coding" : [{
         "system" : "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203",
-        "code" : "INTRN"
+        "code" : "RPPSRG"
       }]
     },
     "system" : "https://rppsrang.esante.gouv.fr",

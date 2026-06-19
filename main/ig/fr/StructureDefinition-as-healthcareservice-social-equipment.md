@@ -1,4 +1,4 @@
-# AS HealthcareService Social Equipment Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS HealthcareService Social Equipment Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS HealthcareService Social Equipment Profile 
 
@@ -43,17 +43,17 @@ Obligatoire : 0 élément(1 élément obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces autres structures:
 
-* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-1](StructureDefinition-as-ext-authorization.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation|1.2.0-snapshot-1](StructureDefinition-as-ext-installation.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type|1.2.0-snapshot-1](StructureDefinition-as-ext-patient-type.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-supported-capacity|1.2.0-snapshot-1](StructureDefinition-as-ext-supported-capacity.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-2](StructureDefinition-as-ext-authorization.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation|1.2.0-snapshot-2](StructureDefinition-as-ext-installation.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type|1.2.0-snapshot-2](StructureDefinition-as-ext-patient-type.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-supported-capacity|1.2.0-snapshot-2](StructureDefinition-as-ext-supported-capacity.md)
 
 **Slices**
 
@@ -90,17 +90,17 @@ Obligatoire : 0 élément(1 élément obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces autres structures:
 
-* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-1](StructureDefinition-as-ext-authorization.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation|1.2.0-snapshot-1](StructureDefinition-as-ext-installation.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type|1.2.0-snapshot-1](StructureDefinition-as-ext-patient-type.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-supported-capacity|1.2.0-snapshot-1](StructureDefinition-as-ext-supported-capacity.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-2](StructureDefinition-as-ext-authorization.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation|1.2.0-snapshot-2](StructureDefinition-as-ext-installation.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type|1.2.0-snapshot-2](StructureDefinition-as-ext-patient-type.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-supported-capacity|1.2.0-snapshot-2](StructureDefinition-as-ext-supported-capacity.md)
 
 **Slices**
 
@@ -122,11 +122,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
   "resourceType" : "StructureDefinition",
   "id" : "as-healthcareservice-social-equipment",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-social-equipment",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsHealthcareServiceSocialEquipmentProfile",
   "title" : "AS HealthcareService Social Equipment Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -196,7 +196,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -225,7 +225,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-installation|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -254,7 +254,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -307,7 +307,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-supported-capacity|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-supported-capacity|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -414,8 +414,8 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "short" : "Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (idNat_Struct, identifiantEJ, identifiantEG).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0",
-        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1"]
+        "targetProfile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0",
+        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"]
       }]
     },
     {

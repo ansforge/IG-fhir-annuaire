@@ -1,4 +1,4 @@
-# AS CodeableConceptTimed Datatype Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS CodeableConceptTimed Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Data Type Profile: AS CodeableConceptTimed Datatype Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-codeableconcep
   "resourceType" : "StructureDefinition",
   "id" : "as-codeableconcept-timed",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsCodeableConceptTimedProfile",
   "title" : "AS CodeableConceptTimed Datatype Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -87,7 +87,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-codeableconcep
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-codeableconcept-timed-metadata|1.2.0-snapshot-2"]
       }]
     }]
   }

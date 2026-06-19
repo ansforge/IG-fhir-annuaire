@@ -1,4 +1,4 @@
-# AS CodeSystem Type Etablissement - Annuaire Santé v1.2.0-snapshot-1
+# AS CodeSystem Type Etablissement - Annuaire Santé v1.2.0-snapshot-2
 
 ## CodeSystem: AS CodeSystem Type Etablissement 
 
@@ -25,12 +25,12 @@ This Code system is referenced in the definition of the following value sets:
     "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablecodesystem|4.0.1"]
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-type-etablissement",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsCsTypeEtablissement",
   "title" : "AS CodeSystem Type Etablissement",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

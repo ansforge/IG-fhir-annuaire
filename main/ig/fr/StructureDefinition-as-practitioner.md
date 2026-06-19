@@ -1,4 +1,4 @@
-# AS Practitioner Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Practitioner Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS Practitioner Profile 
 
@@ -26,7 +26,7 @@ Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https:/
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-practitioner.html) 
+Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner.html) 
 
 #### Bindings terminologiques (différentiel)
 
@@ -34,33 +34,32 @@ Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/f
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-practitioner.html) 
+Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner.html) 
 
 ** Résumé **
 
-Obligatoire : 0 élément(2 éléments obligatoire(s) imbriqué(s))
- Must-Support : 16 éléments
- Interdit : 1 élément
+Must-Support : 16 éléments
 
 **Structures**
 
 Cette structure fait référence à ces autres structures:
 
-* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1)](StructureDefinition-as-mailbox-mss.md)
-* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-1)](StructureDefinition-as-address-extended.md)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
-* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html)
-* [AS CodeableConceptTimed Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed|1.2.0-snapshot-1)](StructureDefinition-as-codeableconcept-timed.md)
+* [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html)
+* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2)](StructureDefinition-as-mailbox-mss.md)
+* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-2)](StructureDefinition-as-address-extended.md)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
+* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
+* [AS CodeableConceptTimed Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed|1.2.0-snapshot-2)](StructureDefinition-as-codeableconcept-timed.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration|1.2.0-snapshot-1](StructureDefinition-as-ext-registration.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization|1.2.0-snapshot-1](StructureDefinition-as-ext-practitioner-authorization.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-smartcard|1.2.0-snapshot-1](StructureDefinition-as-ext-smartcard.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-1](StructureDefinition-as-ext-digital-certificate.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level|1.2.0-snapshot-1](StructureDefinition-as-ext-education-level.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration|1.2.0-snapshot-2](StructureDefinition-as-ext-registration.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization|1.2.0-snapshot-2](StructureDefinition-as-ext-practitioner-authorization.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-smartcard|1.2.0-snapshot-2](StructureDefinition-as-ext-smartcard.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-2](StructureDefinition-as-ext-digital-certificate.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level|1.2.0-snapshot-2](StructureDefinition-as-ext-education-level.md)
 
 **Slices**
 
@@ -76,7 +75,7 @@ Cette structure définit les [slices](http://hl7.org/fhir/R4/profiling.html#slic
 
  **Vue différentielle** 
 
-Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-practitioner.html) 
+Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner.html) 
 
 #### Bindings terminologiques (différentiel)
 
@@ -86,33 +85,32 @@ Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/f
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-practitioner.html) 
+Cette structure est dérivée de [FRCorePractitionerProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner.html) 
 
 ** Résumé **
 
-Obligatoire : 0 élément(2 éléments obligatoire(s) imbriqué(s))
- Must-Support : 16 éléments
- Interdit : 1 élément
+Must-Support : 16 éléments
 
 **Structures**
 
 Cette structure fait référence à ces autres structures:
 
-* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1)](StructureDefinition-as-mailbox-mss.md)
-* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-1)](StructureDefinition-as-address-extended.md)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
-* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html)
-* [AS CodeableConceptTimed Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed|1.2.0-snapshot-1)](StructureDefinition-as-codeableconcept-timed.md)
+* [FR Core Contact Point Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-contact-point.html)
+* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2)](StructureDefinition-as-mailbox-mss.md)
+* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-2)](StructureDefinition-as-address-extended.md)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
+* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
+* [AS CodeableConceptTimed Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed|1.2.0-snapshot-2)](StructureDefinition-as-codeableconcept-timed.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration|1.2.0-snapshot-1](StructureDefinition-as-ext-registration.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization|1.2.0-snapshot-1](StructureDefinition-as-ext-practitioner-authorization.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-smartcard|1.2.0-snapshot-1](StructureDefinition-as-ext-smartcard.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-1](StructureDefinition-as-ext-digital-certificate.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level|1.2.0-snapshot-1](StructureDefinition-as-ext-education-level.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration|1.2.0-snapshot-2](StructureDefinition-as-ext-registration.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization|1.2.0-snapshot-2](StructureDefinition-as-ext-practitioner-authorization.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-smartcard|1.2.0-snapshot-2](StructureDefinition-as-ext-smartcard.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-2](StructureDefinition-as-ext-digital-certificate.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level|1.2.0-snapshot-2](StructureDefinition-as-ext-education-level.md)
 
 **Slices**
 
@@ -133,11 +131,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
   "resourceType" : "StructureDefinition",
   "id" : "as-practitioner",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPractitionerProfile",
   "title" : "AS Practitioner Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -217,7 +215,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
   "kind" : "resource",
   "abstract" : false,
   "type" : "Practitioner",
-  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner|2.1.0",
+  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner|2.2.0",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -260,7 +258,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-registration|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -319,7 +317,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitioner-authorization|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -378,7 +376,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-smartcard|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-smartcard|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -437,7 +435,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -459,11 +457,6 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       }]
     },
     {
-      "id" : "Practitioner.identifier:idNatPs.type",
-      "path" : "Practitioner.identifier.type",
-      "min" : 1
-    },
-    {
       "id" : "Practitioner.identifier:rpps",
       "path" : "Practitioner.identifier",
       "sliceName" : "rpps",
@@ -471,17 +464,6 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
         "identity" : "as-practitioner-role-to-mos-professionnel",
         "map" : "Professionnel.idPP"
       }]
-    },
-    {
-      "id" : "Practitioner.identifier:rpps.type",
-      "path" : "Practitioner.identifier.type",
-      "min" : 1
-    },
-    {
-      "id" : "Practitioner.identifier:adeli",
-      "path" : "Practitioner.identifier",
-      "sliceName" : "adeli",
-      "max" : "0"
     },
     {
       "id" : "Practitioner.active",
@@ -540,6 +522,10 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
         "rules" : "open"
       },
       "short" : "[Donnée restreinte] : telecommunication. Différentes instances pour les téléphones, la télécopie et l’adresse mail.",
+      "type" : [{
+        "code" : "ContactPoint",
+        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0"]
+      }],
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-professionnel",
@@ -564,7 +550,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "*",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-exercice-professionnel",
@@ -577,7 +563,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "short" : "[Donnée restreinte] : Adresse(s) de correspondance permettant de contacter le professionnel (adresseCorrespondance).",
       "type" : [{
         "code" : "Address",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true,
       "mapping" : [{
@@ -626,7 +612,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -698,8 +684,8 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "short" : "[Donnée restreinte] : Lieu de formation pour l'obtention du diplôme (lieuFormation).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1",
-        "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2",
+        "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0"]
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-diplome",
@@ -805,7 +791,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-practitioner
       "short" : "Langue parlée (langueParlee).",
       "type" : [{
         "code" : "CodeableConcept",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-codeableconcept-timed|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true,
       "binding" : {

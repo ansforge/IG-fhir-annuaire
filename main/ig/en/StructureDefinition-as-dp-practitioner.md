@@ -1,4 +1,4 @@
-# AS Donnée Publique Practitioner Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Publique Practitioner Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Resource Profile: AS Donnée Publique Practitioner Profile 
 
@@ -8,7 +8,7 @@ Profil public applicatif créé à partir du profil générique as-practitioner 
 **Usages:**
 
 * Examples for this Profile: [Practitioner/334081DP](Practitioner-334081DP.md) and [Practitioner/3719500DP](Practitioner-3719500DP.md)
-* CapabilityStatements using this Profile: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-1]](CapabilityStatement-AsServerDPCapabilityStatement.md)
+* CapabilityStatements using this Profile: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-2]](CapabilityStatement-AsServerDPCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/ans.fhir.fr.annuaire|current/StructureDefinition/StructureDefinition-as-dp-practitioner.json)
 
@@ -29,11 +29,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-practitione
   "resourceType" : "StructureDefinition",
   "id" : "as-dp-practitioner",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDpPractitionerProfile",
   "title" : "AS Donnée Publique Practitioner Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -113,7 +113,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-practitione
   "kind" : "resource",
   "abstract" : false,
   "type" : "Practitioner",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -128,7 +128,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-practitione
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -154,7 +154,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-practitione
       "sliceName" : "as-dp-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-2"
     },
     {
       "id" : "Practitioner.extension:as-ext-registration",

@@ -1,4 +1,4 @@
-# AsServerDPCapabilityStatement - Annuaire Santé v1.2.0-snapshot-1
+# AsServerDPCapabilityStatement - Annuaire Santé v1.2.0-snapshot-2
 
 ## CapabilityStatement: AsServerDPCapabilityStatement 
 
@@ -16,7 +16,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
   "resourceType" : "CapabilityStatement",
   "id" : "AsServerDPCapabilityStatement",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "status" : "active",
   "date" : "2025-08-11T13:49:59.485+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -46,7 +46,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
     "mode" : "server",
     "resource" : [{
       "type" : "Organization",
-      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-1",
+      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2",
       "interaction" : [{
         "code" : "search-type"
       },
@@ -89,7 +89,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "address-line",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-address-line|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-address-line|1.2.0-snapshot-2",
         "type" : "string",
         "documentation" : "Recherche sur l'adresse."
       },
@@ -101,13 +101,13 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "data-information-system",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur le système d'information."
       },
       {
         "name" : "data-registration-authority",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur l'autorité d'enregistrement."
       },
@@ -124,7 +124,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "mailbox-mss",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss|1.2.0-snapshot-2",
         "type" : "string",
         "documentation" : "Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux structures."
       },
@@ -141,7 +141,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "pharmacy-licence",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-pharmacy-licence|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-pharmacy-licence|1.2.0-snapshot-2",
         "type" : "string",
         "documentation" : "Recherche sur le numéro de licence des pharmacies officines."
       },
@@ -153,7 +153,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
     },
     {
       "type" : "Device",
-      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-device|1.2.0-snapshot-1",
+      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-device|1.2.0-snapshot-2",
       "interaction" : [{
         "code" : "search-type"
       },
@@ -175,13 +175,13 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "data-information-system",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur le système d'information."
       },
       {
         "name" : "data-registration-authority",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur l'autorité d'enregistrement."
       },
@@ -224,7 +224,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
     },
     {
       "type" : "Practitioner",
-      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-1",
+      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-2",
       "interaction" : [{
         "code" : "search-type"
       },
@@ -252,13 +252,13 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "data-information-system",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur le système d'information."
       },
       {
         "name" : "data-registration-authority",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur l'autorité d'enregistrement."
       },
@@ -287,7 +287,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "mailbox-mss",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss|1.2.0-snapshot-2",
         "type" : "string",
         "documentation" : "Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux Professionnels. Les modifiers supportés par ce paramètre de recherche sont contains et exact."
       },
@@ -299,26 +299,26 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "number-smartcard",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-number-smartcard|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-number-smartcard|1.2.0-snapshot-2",
         "type" : "string",
         "documentation" : "Recherche sur le numéro de carte des Professionnels."
       },
       {
         "name" : "qualification-code",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-qualification-code|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-qualification-code|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur le diplôme, l'exercice professionnel et le savoir-faire."
       },
       {
         "name" : "type-smartcard",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-type-smartcard|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-type-smartcard|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur le type de carte des Professionnels."
       }]
     },
     {
       "type" : "PractitionerRole",
-      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-1",
+      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-2",
       "interaction" : [{
         "code" : "search-type"
       },
@@ -348,13 +348,13 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "data-information-system",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur le système d'information."
       },
       {
         "name" : "data-registration-authority",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur l'autorité d'enregistrement.\n"
       },
@@ -366,7 +366,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "mailbox-mss",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-mailbox-mss|1.2.0-snapshot-2",
         "type" : "string",
         "documentation" : "Recherche sur les Messageries Sécurisées de Santé (MSS) rattachées aux Practitioners."
       },
@@ -391,7 +391,7 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
     },
     {
       "type" : "HealthcareService",
-      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity|1.2.0-snapshot-1",
+      "profile" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity|1.2.0-snapshot-2",
       "interaction" : [{
         "code" : "search-type"
       },
@@ -430,13 +430,13 @@ CapabilityStatement décrivant les attendus de l'API de l'annuaire santé.
       },
       {
         "name" : "data-information-system",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-information-system|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur le système d'information."
       },
       {
         "name" : "data-registration-authority",
-        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-1",
+        "definition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-data-registration-authority|1.2.0-snapshot-2",
         "type" : "token",
         "documentation" : "Recherche sur l'autorité d'enregistrement."
       },

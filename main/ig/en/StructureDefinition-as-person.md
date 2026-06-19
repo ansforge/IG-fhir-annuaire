@@ -1,4 +1,4 @@
-# AS Person Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Person Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Resource Profile: AS Person Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
   "resourceType" : "StructureDefinition",
   "id" : "as-person",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-person",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPersonProfile",
   "title" : "AS Person Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -107,7 +107,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-person-to-mos-personne-physique",
@@ -122,7 +122,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-1"]
+        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-person-to-mos-personne-physique",
@@ -135,7 +135,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "short" : "Nom issu de l’état-civil.",
       "type" : [{
         "code" : "HumanName",
-        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.1.0"]
+        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-human-name|2.2.0"]
       }]
     },
     {
@@ -171,7 +171,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "short" : "Différentes instances pour les téléphones, la télécopie et l’adresse mail.",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.1.0"]
+        "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point|2.2.0"]
       }]
     },
     {
@@ -236,7 +236,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "path" : "Person.link.target",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2"]
       }]
     }]
   }

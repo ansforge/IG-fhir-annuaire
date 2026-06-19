@@ -1,4 +1,4 @@
-# AS Donnée Publique PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Donnée Publique PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS Donnée Publique PractitionerRole Profile 
 
@@ -8,7 +8,7 @@ Profil public applicatif créé à partir du profil générique as-practitionerr
 **Utilisations:**
 
 * Exemples pour ce/t/te Profil: [PractitionerRole/1578230DP](PractitionerRole-1578230DP.md), [PractitionerRole/1738459DP](PractitionerRole-1738459DP.md) and [PractitionerRole/5015602DP](PractitionerRole-5015602DP.md)
-* CapabilityStatements utilisant ce Profil: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-1]](CapabilityStatement-AsServerDPCapabilityStatement.md)
+* CapabilityStatements utilisant ce Profil: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-2]](CapabilityStatement-AsServerDPCapabilityStatement.md)
 
 Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.annuaire|current/StructureDefinition/as-dp-practitionerrole)
 
@@ -44,7 +44,7 @@ Obligatoire : 4 éléments(2 éléments obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
 **Slices**
 
@@ -80,7 +80,7 @@ Obligatoire : 4 éléments(2 éléments obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
 
 **Slices**
 
@@ -101,11 +101,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
   "resourceType" : "StructureDefinition",
   "id" : "as-dp-practitionerrole",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsDpPractitionerRoleProfile",
   "title" : "AS Donnée Publique PractitionerRole Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -155,7 +155,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
   "kind" : "resource",
   "abstract" : false,
   "type" : "PractitionerRole",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole|1.2.0-snapshot-1",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole|1.2.0-snapshot-2",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -170,7 +170,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
       }],
       "mustSupport" : true
     },
@@ -196,7 +196,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
       "sliceName" : "as-dp-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-1"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole|1.2.0-snapshot-2"
     },
     {
       "id" : "PractitionerRole.extension:as-ext-practitionerrole-contracted",

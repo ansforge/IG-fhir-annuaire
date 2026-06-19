@@ -1,4 +1,4 @@
-# AS Organization Profile - Annuaire Santé v1.2.0-snapshot-1
+# AS Organization Profile - Annuaire Santé v1.2.0-snapshot-2
 
 ## Profil de ressource: AS Organization Profile 
 
@@ -27,7 +27,7 @@ Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https:/
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCoreOrganizationProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html) 
+Cette structure est dérivée de [FRCoreOrganizationEtablissementProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization-etablissement.html) 
 
 #### Bindings terminologiques (différentiel)
 
@@ -35,32 +35,32 @@ Cette structure est dérivée de [FRCoreOrganizationProfile](https://hl7.fr/ig/f
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCoreOrganizationProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html) 
+Cette structure est dérivée de [FRCoreOrganizationEtablissementProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization-etablissement.html) 
 
 ** Résumé **
 
-Obligatoire : 0 élément(10 éléments obligatoire(s) imbriqué(s))
+Obligatoire : 0 élément(16 éléments obligatoire(s) imbriqué(s))
 
 **Structures**
 
 Cette structure fait référence à ces autres structures:
 
-* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1)](StructureDefinition-as-mailbox-mss.md)
-* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-1)](StructureDefinition-as-address-extended.md)
-* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2)](StructureDefinition-as-mailbox-mss.md)
+* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-2)](StructureDefinition-as-address-extended.md)
+* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-1](StructureDefinition-as-ext-digital-certificate.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-pharmacy-licence.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-pricing-model.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-closing-type|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-closing-type.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-budget-type.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-authorization-deadline|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-authorization-deadline.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-types.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-2](StructureDefinition-as-ext-digital-certificate.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-pharmacy-licence.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-pricing-model.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-closing-type|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-closing-type.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-budget-type.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-authorization-deadline|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-authorization-deadline.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-types.md)
 
 **Slices**
 
@@ -76,7 +76,7 @@ Cette structure définit les [slices](http://hl7.org/fhir/R4/profiling.html#slic
 
  **Vue différentielle** 
 
-Cette structure est dérivée de [FRCoreOrganizationProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html) 
+Cette structure est dérivée de [FRCoreOrganizationEtablissementProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization-etablissement.html) 
 
 #### Bindings terminologiques (différentiel)
 
@@ -86,32 +86,32 @@ Cette structure est dérivée de [FRCoreOrganizationProfile](https://hl7.fr/ig/f
 
 #### Contraintes
 
-Cette structure est dérivée de [FRCoreOrganizationProfile](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html) 
+Cette structure est dérivée de [FRCoreOrganizationEtablissementProfile](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization-etablissement.html) 
 
 ** Résumé **
 
-Obligatoire : 0 élément(10 éléments obligatoire(s) imbriqué(s))
+Obligatoire : 0 élément(16 éléments obligatoire(s) imbriqué(s))
 
 **Structures**
 
 Cette structure fait référence à ces autres structures:
 
-* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1)](StructureDefinition-as-mailbox-mss.md)
-* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-1)](StructureDefinition-as-address-extended.md)
-* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0)](https://hl7.fr/ig/fhir/core/2.1.0/StructureDefinition-fr-core-organization.html)
-* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1)](StructureDefinition-as-organization.md)
+* [AS Mailbox MSS Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2)](StructureDefinition-as-mailbox-mss.md)
+* [AS Address Extended Datatype Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-2)](StructureDefinition-as-address-extended.md)
+* [FR Core Organization Profile (https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0)](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html)
+* [AS Organization Profile (https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2)](StructureDefinition-as-organization.md)
 
 **Extensions**
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-1](StructureDefinition-as-ext-digital-certificate.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-pharmacy-licence.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-pricing-model.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-closing-type|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-closing-type.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-budget-type.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-authorization-deadline|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-authorization-deadline.md)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-1](StructureDefinition-as-ext-organization-types.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-2](StructureDefinition-as-ext-digital-certificate.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-pharmacy-licence.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-pricing-model.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-closing-type|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-closing-type.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-budget-type.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-authorization-deadline|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-authorization-deadline.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-2](StructureDefinition-as-ext-organization-types.md)
 
 **Slices**
 
@@ -132,11 +132,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
   "resourceType" : "StructureDefinition",
   "id" : "as-organization",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsOrganizationProfile",
   "title" : "AS Organization Profile",
   "status" : "draft",
-  "date" : "2026-06-18T12:01:00+00:00",
+  "date" : "2026-06-19T13:53:04+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -191,7 +191,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
   "kind" : "resource",
   "abstract" : false,
   "type" : "Organization",
-  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0",
+  "baseDefinition" : "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization-etablissement|2.2.0",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -246,7 +246,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-digital-certificate|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -258,7 +258,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pharmacy-licence|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-ej",
@@ -273,7 +273,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-pricing-model|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
@@ -288,7 +288,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-closing-type|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-closing-type|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-ej",
@@ -307,7 +307,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
@@ -322,7 +322,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-authorization-deadline|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-authorization-deadline|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
@@ -336,7 +336,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
     {
       "id" : "Organization.identifier.type",
       "path" : "Organization.identifier.type",
-      "short" : "Type d’identifiant national de l'organisation"
+      "short" : "Type d’identifiant national de l’organisation"
     },
     {
       "id" : "Organization.identifier:idNatSt",
@@ -387,19 +387,6 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       }]
     },
     {
-      "id" : "Organization.identifier:adeliRang",
-      "path" : "Organization.identifier",
-      "sliceName" : "adeliRang",
-      "mapping" : [{
-        "identity" : "as-organization-to-mos-ej",
-        "map" : "EntiteGeographique.identifiantEJ"
-      },
-      {
-        "identity" : "as-organization-to-mos-eg",
-        "map" : "EntiteGeographique.identifiantEG"
-      }]
-    },
-    {
       "id" : "Organization.identifier:rppsRang",
       "path" : "Organization.identifier",
       "sliceName" : "rppsRang",
@@ -429,7 +416,13 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "id" : "Organization.type:organizationType",
       "path" : "Organization.type",
       "sliceName" : "organizationType",
-      "short" : "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY"
+      "short" : "Type de structure \r\nEntité Juridique : LEGAL-ENTITY; \r\nEntité Géographique : GEOGRAPHICAL-ENTITY",
+      "min" : 0,
+      "max" : "1",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-organization-type|2.2.0"
+      }
     },
     {
       "id" : "Organization.type:organizationType.extension",
@@ -444,7 +437,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -453,9 +446,27 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "patternCode" : "organizationType"
     },
     {
+      "id" : "Organization.type:organizationType.coding",
+      "path" : "Organization.type.coding",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Organization.type:organizationType.coding.system",
+      "path" : "Organization.type.coding.system",
+      "min" : 1
+    },
+    {
       "id" : "Organization.type:secteurActiviteRASS",
       "path" : "Organization.type",
       "sliceName" : "secteurActiviteRASS",
+      "short" : "Secteurs d'activité des établissements avec la même activité dans le RASS",
+      "min" : 0,
+      "max" : "1",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J101-SecteurActivite-RASS/FHIR/JDV-J101-SecteurActivite-RASS|20260223120000"
+      },
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
         "map" : "EntiteGeographique.secteurActivite"
@@ -474,7 +485,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -483,13 +494,42 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "patternCode" : "secteurActiviteRASS"
     },
     {
+      "id" : "Organization.type:secteurActiviteRASS.coding",
+      "path" : "Organization.type.coding",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Organization.type:secteurActiviteRASS.coding.system",
+      "path" : "Organization.type.coding.system",
+      "min" : 1
+    },
+    {
       "id" : "Organization.type:categorieEtablissementRASS",
       "path" : "Organization.type",
       "sliceName" : "categorieEtablissementRASS",
+      "short" : "Catégorie d'établissement du RASS",
+      "min" : 0,
+      "max" : "1",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J129-CategorieEtablissement-RASS/FHIR/JDV-J129-CategorieEtablissement-RASS|20260223120000"
+      },
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
         "map" : "EntiteGeographique.categorieEtablissement"
       }]
+    },
+    {
+      "id" : "Organization.type:categorieEtablissementRASS.coding",
+      "path" : "Organization.type.coding",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Organization.type:categorieEtablissementRASS.coding.system",
+      "path" : "Organization.type.coding.system",
+      "min" : 1
     },
     {
       "id" : "Organization.type:statutJuridiqueINSEE",
@@ -524,7 +564,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -561,7 +601,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -578,7 +618,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-etablissement|1.2.0-snapshot-1"
+        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-etablissement|1.2.0-snapshot-2"
       },
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
@@ -598,7 +638,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types|1.2.0-snapshot-2"]
       }]
     },
     {
@@ -670,7 +710,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "max" : "*",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-ej",
@@ -687,7 +727,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
       "short" : "adresseEJ : Adresse géopostale de l'entité juridique ou adresseEG : Adresse(s) géopostale(s) de l'entité géographique.",
       "type" : [{
         "code" : "Address",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-1"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-ej",
@@ -708,8 +748,8 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-organization
           "valueBoolean" : true
         }],
         "code" : "Reference",
-        "targetProfile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.1.0",
-        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-1"]
+        "targetProfile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0",
+        "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"]
       }],
       "mapping" : [{
         "identity" : "as-organization-to-mos-eg",
