@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-practition
   "name" : "AsPractitionerRoleContracted",
   "title" : "AS PractitionerRole Contracted",
   "status" : "draft",
-  "date" : "2026-06-25T11:33:59+00:00",
+  "date" : "2026-06-25T12:00:53+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
