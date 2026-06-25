@@ -1,0 +1,215 @@
+# AS Data Trace Extension - Annuaire Santé v1.2.0-snapshot-2
+
+## Extension: AS Data Trace Extension 
+
+Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source.
+
+**Context of Use**
+
+**Usage info**
+
+**Utilisations:**
+
+* Utilise ce/t/te Extension: [AS Donnée Publique Device Profile](StructureDefinition-as-dp-device.md), [AS Donnée Publique HealthcareService Healthcare Activity Profile](StructureDefinition-as-dp-healthcareservice-healthcare-activity.md), [AS Donnée Publique HealthcareService Social Equipment Profile](StructureDefinition-as-dp-healthcareservice-social-equipment.md), [AS Donnée Publique Organization Profile](StructureDefinition-as-dp-organization.md)... Show 9 more, [AS Donnée Publique Practitioner Profile](StructureDefinition-as-dp-practitioner.md), [AS Donnée Publique PractitionerRole Profile](StructureDefinition-as-dp-practitionerrole.md), [AS Donnée Restreinte Device Profile](StructureDefinition-as-dr-device.md), [AS Donnée Restreinte HealthcareService Healthcare Activity Profile](StructureDefinition-as-dr-healthcareservice-healthcare-activity.md), [AS Donnée Restreinte HealthcareService Social Equipment Profile](StructureDefinition-as-dr-healthcareservice-social-equipment.md), [AS Donnée Restreinte Organization Profile](StructureDefinition-as-dr-organization.md), [AS Donnée Restreinte Person Profile](StructureDefinition-as-dr-person.md), [AS Donnée Restreinte Practitioner Profile](StructureDefinition-as-dr-practitioner.md) and [AS Donnée Restreinte PractitionerRole Profile](StructureDefinition-as-dr-practitionerrole.md)
+
+Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.annuaire|current/StructureDefinition/as-ext-data-trace)
+
+### Vues formelles du contenu de l'extension
+
+ [Description des profils, des différentiels, des instantanés et de leurs représentations](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+*  [Tableau différentiel (differential)](#tabs-diff) 
+*  [Tableau récapitulatif (snapshot)](#tabs-snap) 
+*  [Statistiques/Références](#tabs-summ) 
+*  [Tous](#tabs-all) 
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+#### Bindings terminologiques (différentiel)
+
+#### Bindings terminologiques
+
+#### Contraintes
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+** Résumé **
+
+Extension complexe: Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source.
+
+ **Vue différentielleDifferential View** 
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+#### Bindings terminologiques (différentiel)
+
+ **Vue d'ensemble** 
+
+#### Bindings terminologiques
+
+#### Contraintes
+
+Cette structure est dérivée de [Extension](http://hl7.org/fhir/R4/extensibility.html#Extension) 
+
+** Résumé **
+
+Extension complexe: Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source.
+
+ 
+
+Autres représentations du profil : [CSV](../StructureDefinition-as-ext-data-trace.csv), [Excel](../StructureDefinition-as-ext-data-trace.xlsx), [Schematron](../StructureDefinition-as-ext-data-trace.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "as-ext-data-trace",
+  "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace",
+  "version" : "1.2.0-snapshot-2",
+  "name" : "AsDataTraceExtension",
+  "title" : "AS Data Trace Extension",
+  "status" : "draft",
+  "date" : "2026-06-25T10:32:14+00:00",
+  "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
+  "contact" : [{
+    "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://esante.gouv.fr"
+    },
+    {
+      "system" : "email",
+      "value" : "monserviceclient.annuaire@esante.gouv.fr"
+    }]
+  }],
+  "description" : "Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "France (la)"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
+  "kind" : "complex-type",
+  "abstract" : false,
+  "context" : [{
+    "type" : "element",
+    "expression" : "Element"
+  }],
+  "type" : "Extension",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension|4.0.1",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "DataTrace : Informe sur l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI).",
+      "definition" : "Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source."
+    },
+    {
+      "id" : "Extension.extension:autorite-enregistrement",
+      "path" : "Extension.extension",
+      "sliceName" : "autorite-enregistrement",
+      "short" : "Autorité d'enregistrement de la ressource.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:autorite-enregistrement.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:autorite-enregistrement.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "autorite-enregistrement"
+    },
+    {
+      "id" : "Extension.extension:autorite-enregistrement.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS|20240628120000"
+      }
+    },
+    {
+      "id" : "Extension.extension:systeme-information",
+      "path" : "Extension.extension",
+      "sliceName" : "systeme-information",
+      "short" : "Système d'information de la ressource.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:systeme-information.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:systeme-information.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "systeme-information"
+    },
+    {
+      "id" : "Extension.extension:systeme-information.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "short" : "RPPS | FINESS | MSS | CG",
+      "type" : [{
+        "code" : "code"
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-systeme-information|1.2.0-snapshot-2"
+      }
+    },
+    {
+      "id" : "Extension.extension:date-maj-ae",
+      "path" : "Extension.extension",
+      "sliceName" : "date-maj-ae",
+      "short" : "Date de mise à jour de la ressource de l'autorité d'enregistrement. Cette date est différente de l'attribut lastUpdated dû au délai entre la mise à jour de la donnée au niveau de l'autorité d'enregistrement et la publication de la ressource technique au niveau de l'API FHIR.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:date-maj-ae.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:date-maj-ae.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "date-maj-ae"
+    },
+    {
+      "id" : "Extension.extension:date-maj-ae.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "date"
+      }]
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "max" : "0"
+    }]
+  }
+}
+
+```
