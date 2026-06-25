@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-data-trace
   "name" : "AsDataTraceExtension",
   "title" : "AS Data Trace Extension",
   "status" : "draft",
-  "date" : "2026-06-25T10:32:14+00:00",
+  "date" : "2026-06-25T12:09:26+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
