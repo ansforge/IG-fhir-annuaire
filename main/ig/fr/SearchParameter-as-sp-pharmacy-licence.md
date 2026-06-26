@@ -17,7 +17,7 @@ Paramètre de recherche pour récupérer une pharmacie par son numéro de licenc
   "version" : "1.2.0-snapshot-2",
   "name" : "AsPharmacyLicenceSearchParameter",
   "status" : "active",
-  "date" : "2026-06-23T12:21:55+00:00",
+  "date" : "2026-06-26T10:36:05+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
