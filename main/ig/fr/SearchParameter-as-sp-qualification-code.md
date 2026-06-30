@@ -17,7 +17,7 @@ Paramètre de recherche pour rechercher par code de qualification.
   "version" : "1.2.0-snapshot-2",
   "name" : "AsQualificationCodeSearchParameter",
   "status" : "active",
-  "date" : "2026-06-27T10:35:23+00:00",
+  "date" : "2026-06-30T07:59:11+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
