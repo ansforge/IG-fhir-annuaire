@@ -126,7 +126,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
   "name" : "AsHealthcareServiceSocialEquipmentProfile",
   "title" : "AS HealthcareService Social Equipment Profile",
   "status" : "draft",
-  "date" : "2026-06-30T07:38:14+00:00",
+  "date" : "2026-06-30T07:49:20+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
