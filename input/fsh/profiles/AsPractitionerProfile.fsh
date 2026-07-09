@@ -89,11 +89,11 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 * qualification[degree].period.end ^short = "dateFin : Date à laquelle le niveau de formation n’est plus actif (non visible hormis dans les données historisées)."
 
 // lieuFormation
-* qualification[degree].issuer ^short = "[Donnée restreinte] : Lieu de formation pour l'obtention du diplôme (lieuFormation)."
-* qualification[degree].issuer only Reference(AsOrganizationProfile or fr-core-organization)
+* qualification[degree].issuer 0..0
 
 //
 * qualification[degree].extension contains AsEducationLevelExtension named as-ext-education-level 0..* MS
+* qualification[degree].extension[as-ext-education-level].extension[trainingLocation] MS
 
 // ##############
 // # PROFESSION #
@@ -170,12 +170,12 @@ Title:    "AsPractitionerProfile to MOS - Diplome"
 * -> "Diplome"
 * qualification.code -> "Diplome.codeDiplome"
 * qualification[degree] -> "Diplome.typeDiplome"
-* qualification[degree].issuer -> "Diplome.lieuFormation"
 * qualification[degree].period.start -> "Diplome.dateDebut"
 * qualification[degree].period.end -> "Diplome.dateFin"
 * qualification[degree].extension[as-ext-education-level].extension[academicDegree] -> "Diplome.natureCycleFormation"
 * qualification[degree].extension[as-ext-education-level].extension[achievedLevel] -> "Diplome.anneeUniversitaire"
 * qualification[degree].extension[as-ext-education-level].extension[academicYear] -> "Diplome.niveauFormationAcquis"
+* qualification[degree].extension[as-ext-education-level].extension[trainingLocation] -> "Diplome.lieuFormation"
 
 Mapping:  AsPractitionerProfileToMOSProfessionnel
 Source:   AsPractitionerProfile
