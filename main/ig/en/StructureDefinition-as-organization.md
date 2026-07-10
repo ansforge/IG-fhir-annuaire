@@ -8,7 +8,7 @@ Profil générique créé à partir de FrOrganization dans le contexte de l'Annu
 **Usages:**
 
 * Derived from this Profile: [AS Donnée Publique Organization Profile](StructureDefinition-as-dp-organization.md) and [AS Donnée Restreinte Organization Profile](StructureDefinition-as-dr-organization.md)
-* Refer to this Profile: [AS Device Profile](StructureDefinition-as-device.md), [AS HealthcareService HealthCare Activity Profile](StructureDefinition-as-healthcareservice-healthcare-activity.md), [AS HealthcareService Social Equipment Profile](StructureDefinition-as-healthcareservice-social-equipment.md), [AS Organization Profile](StructureDefinition-as-organization.md)... Show 2 more, [AS Practitioner Profile](StructureDefinition-as-practitioner.md) and [AS PractitionerRole Profile](StructureDefinition-as-practitionerrole.md)
+* Refer to this Profile: [AS Device Profile](StructureDefinition-as-device.md), [AS HealthcareService HealthCare Activity Profile](StructureDefinition-as-healthcareservice-healthcare-activity.md), [AS HealthcareService Social Equipment Profile](StructureDefinition-as-healthcareservice-social-equipment.md), [AS Organization Profile](StructureDefinition-as-organization.md) and [AS PractitionerRole Profile](StructureDefinition-as-practitionerrole.md)
 * Examples for this Profile: [Hôpital fictif](Organization-example-organization-fictive.md) and [CHRU NANCY - HOPITAUX DE BRABOIS](Organization-example-organization-nancy.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/ans.fhir.fr.annuaire|current/StructureDefinition/StructureDefinition-as-organization.json)
@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-organization.c
   "name" : "AsOrganizationProfile",
   "title" : "AS Organization Profile",
   "status" : "draft",
-  "date" : "2026-06-30T07:59:11+00:00",
+  "date" : "2026-07-10T15:33:23+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

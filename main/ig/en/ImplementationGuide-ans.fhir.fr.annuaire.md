@@ -14,7 +14,7 @@
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "draft",
-  "date" : "2026-06-30T07:59:11+00:00",
+  "date" : "2026-07-10T15:33:23+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -64,7 +64,7 @@
     "id" : "ans_fr_terminologies",
     "uri" : "https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies",
     "packageId" : "ans.fr.terminologies",
-    "version" : "1.10.0"
+    "version" : "1.11.1"
   },
   {
     "id" : "hl7_terminology_r4",

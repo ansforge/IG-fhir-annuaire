@@ -72,7 +72,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-educatio
   "name" : "AsEducationLevelExtension",
   "title" : "AS Education Level Extension",
   "status" : "draft",
-  "date" : "2026-06-30T07:59:11+00:00",
+  "date" : "2026-07-10T15:33:23+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -200,6 +200,35 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-educatio
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J88-AnneeUniversitaire-RASS/FHIR/JDV-J88-AnneeUniversitaire-RASS|20251016120000"
+      }
+    },
+    {
+      "id" : "Extension.extension:trainingLocation",
+      "path" : "Extension.extension",
+      "sliceName" : "trainingLocation",
+      "short" : "[Donnée restreinte] : Type de lieu ayant délivré le diplôme (lieuFormation).",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:trainingLocation.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:trainingLocation.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "trainingLocation"
+    },
+    {
+      "id" : "Extension.extension:trainingLocation.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J235-LieuFormation-EPARS/FHIR/JDV-J235-LieuFormation-EPARS|20240726120000"
       }
     },
     {

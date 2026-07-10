@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitioner.c
   "name" : "AsPractitionerProfile",
   "title" : "AS Practitioner Profile",
   "status" : "draft",
-  "date" : "2026-06-30T07:59:11+00:00",
+  "date" : "2026-07-10T15:33:23+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -542,6 +542,16 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitioner.c
       }]
     },
     {
+      "id" : "Practitioner.qualification:degree.extension:as-ext-education-level.extension:trainingLocation",
+      "path" : "Practitioner.qualification.extension.extension",
+      "sliceName" : "trainingLocation",
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "as-practitioner-role-to-mos-diplome",
+        "map" : "Diplome.lieuFormation"
+      }]
+    },
+    {
       "id" : "Practitioner.qualification:degree.code.coding:degreeType",
       "path" : "Practitioner.qualification.code.coding",
       "sliceName" : "degreeType",
@@ -579,16 +589,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitioner.c
     {
       "id" : "Practitioner.qualification:degree.issuer",
       "path" : "Practitioner.qualification.issuer",
-      "short" : "[Donnée restreinte] : Lieu de formation pour l'obtention du diplôme (lieuFormation).",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2",
-        "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0"]
-      }],
-      "mapping" : [{
-        "identity" : "as-practitioner-role-to-mos-diplome",
-        "map" : "Diplome.lieuFormation"
-      }]
+      "max" : "0"
     },
     {
       "id" : "Practitioner.qualification:exercicePro",

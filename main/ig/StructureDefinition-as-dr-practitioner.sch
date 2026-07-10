@@ -86,11 +86,18 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:Practitioner/f:qualification</sch:title>
+    <sch:rule context="f:Practitioner/f:qualification">
+      <sch:assert test="count(f:issuer) &lt;= 0">issuer: maximum cardinality of 'issuer' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:Practitioner/f:qualification/f:extension</sch:title>
     <sch:rule context="f:Practitioner/f:qualification/f:extension">
       <sch:assert test="count(f:extension[@url = 'academicDegree']) &lt;= 1">extension with URL = 'academicDegree': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'achievedLevel']) &lt;= 1">extension with URL = 'achievedLevel': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'academicYear']) &lt;= 1">extension with URL = 'academicYear': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'trainingLocation']) &lt;= 1">extension with URL = 'trainingLocation': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
