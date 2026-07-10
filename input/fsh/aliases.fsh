@@ -41,6 +41,7 @@ Alias: $JDV-J130-CNAMAmeliSecteurConventionnement-RASS = https://mos.esante.gouv
 Alias: $JDV-J86-NatCycleForm-RASS = https://mos.esante.gouv.fr/NOS/JDV_J86-NatCycleForm-RASS/FHIR/JDV-J86-NatCycleForm-RASS
 Alias: $JDV-J87-NiveauFormAcquis-RASS = https://mos.esante.gouv.fr/NOS/JDV_J87-NiveauFormAcquis-RASS/FHIR/JDV-J87-NiveauFormAcquis-RASS
 Alias: $JDV-J88-AnneeUniversitaire-RASS = https://mos.esante.gouv.fr/NOS/JDV_J88-AnneeUniversitaire-RASS/FHIR/JDV-J88-AnneeUniversitaire-RASS
+Alias: $JDV-J235-LieuFormation-EPARS = https://mos.esante.gouv.fr/NOS/JDV_J235-LieuFormation-EPARS/FHIR/JDV-J235-LieuFormation-EPARS
 Alias: $JDV-J92-MotifFinActivite-RASS = https://mos.esante.gouv.fr/NOS/JDV_J92-MotifFinActivite-RASS/FHIR/JDV-J92-MotifFinActivite-RASS
 Alias: $JDV-J93-RegionOM-RASS = https://mos.esante.gouv.fr/NOS/JDV_J93-RegionOM-RASS/FHIR/JDV-J93-RegionOM-RASS
 Alias: $JDV-J83-AutoriteEnregistrement-RASS = https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS

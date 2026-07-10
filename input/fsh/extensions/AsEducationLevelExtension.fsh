@@ -16,8 +16,9 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 * extension contains
     academicDegree 0..1 and
     achievedLevel 0..1 and
-    academicYear 0..1 
-    
+    academicYear 0..1 and
+    trainingLocation 0..1
+
 // natureCycleFormation
 * extension[academicDegree] ^short = "[Donnée restreinte] : Nature du cycle de formation (natureCycleFormation)."
 * extension[academicDegree].value[x] only CodeableConcept
@@ -32,4 +33,9 @@ Description: 	"Extension créée dans le cadre de l'Annuaire Santé pour décrir
 * extension[academicYear] ^short = "[Donnée restreinte] : Année universitaire du professionnel (anneeUniversitaire).\nExemple : 2015-2016."
 * extension[academicYear].value[x] only CodeableConcept
 * extension[academicYear].valueCodeableConcept from $JDV-J88-AnneeUniversitaire-RASS (required)
+
+// lieuFormation
+* extension[trainingLocation] ^short = "[Donnée restreinte] : Type de lieu ayant délivré le diplôme (lieuFormation)."
+* extension[trainingLocation].value[x] only CodeableConcept
+* extension[trainingLocation].valueCodeableConcept from $JDV-J235-LieuFormation-EPARS (required)
 
