@@ -1,5 +1,9 @@
 ### Release 1.2.0 de l'Implementation Guide Annuaire
 
+#### 1.2.0-snapshot-3
+
+* DR Person : application du profil AsAddressExtendedProfile au champ address, pour aligner sur le pattern existant (AsPractitionerProfile, AsOrganizationProfile) [#312](https://github.com/ansforge/IG-fhir-annuaire/pull/312)
+
 #### 1.2.0-snapshot-2
 
 * Passage du lieu de formation (qualification.issuer) en CodeableConcept plutôt qu'en Reference vers Organization, binding JDV-J235-LieuFormation-EPARS (issue #314) [#315](https://github.com/ansforge/IG-fhir-annuaire/pull/315)
