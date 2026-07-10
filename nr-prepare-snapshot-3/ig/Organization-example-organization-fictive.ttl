@@ -1,0 +1,100 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/example-organization-fictive> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "example-organization-fictive"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization" ;
+       fhir:index 0 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"fr\" lang=\"fr\"><hr/><p><b>French</b></p><hr/><p class=\"res-header-id\"><b>Narratif généré : Organisation example-organization-fictive</b></p><a name=\"example-organization-fictive\"> </a><a name=\"hcexample-organization-fictive\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profil: <a href=\"StructureDefinition-as-organization.html\">AS Organization Profile</a></p></div><p><b>identifier</b>: Identification nationale de structure définie par l’ANS dans le CI_SIS/1458174839 (utilisation : official, ), FINESS d'entité géographique/458174839</p><p><b>active</b>: true</p><p><b>name</b>: Hôpital fictif</p><p><b>alias</b>: Hôpital fictif pour le guide d'implémentation de l'annuaire</p><p><b>telecom</b>: ph: 0248391028, fax: 0248391029, <a href=\"mailto:direction@hopital-fictif.fr\">direction@hopital-fictif.fr</a></p><p><b>address</b>: R DE LA LIBERTE, 18000 BOURGES BOURGES 18000 </p></div><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Organization example-organization-fictive</b></p><a name=\"en-example-organization-fictive\"> </a><a name=\"en-hcexample-organization-fictive\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-organization.html\">AS Organization Profile</a></p></div><p><b>identifier</b>: Identification nationale de structure définie par l’ANS dans le CI_SIS/1458174839 (use: official, ), FINESS d'entité géographique/458174839</p><p><b>active</b>: true</p><p><b>name</b>: Hôpital fictif</p><p><b>alias</b>: Hôpital fictif pour le guide d'implémentation de l'annuaire</p><p><b>telecom</b>: ph: 0248391028, fax: 0248391029, <a href=\"mailto:direction@hopital-fictif.fr\">direction@hopital-fictif.fr</a></p><p><b>address</b>: R DE LA LIBERTE, 18000 BOURGES BOURGES 18000 </p></div></div>"
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "IDNST" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.250.1.71.4.2.2" ] ;
+     fhir:Identifier.value [ fhir:value "1458174839" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "FINEG" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://finess.esante.gouv.fr" ] ;
+     fhir:Identifier.value [ fhir:value "458174839" ]
+  ] ;
+  fhir:Organization.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Organization.name [ fhir:value "Hôpital fictif"] ;
+  fhir:Organization.alias [
+     fhir:value "Hôpital fictif pour le guide d'implémentation de l'annuaire" ;
+     fhir:index 0
+  ] ;
+  fhir:Organization.telecom [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "0248391028" ] ;
+     fhir:ContactPoint.rank [ fhir:value "1"^^xsd:positiveInteger ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactPoint.system [ fhir:value "fax" ] ;
+     fhir:ContactPoint.value [ fhir:value "0248391029" ]
+  ], [
+     fhir:index 2 ;
+     fhir:ContactPoint.system [ fhir:value "email" ] ;
+     fhir:ContactPoint.value [ fhir:value "direction@hopital-fictif.fr" ]
+  ] ;
+  fhir:Organization.address [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune" ] ;
+         fhir:Coding.code [ fhir:value "18000" ]
+       ]
+     ] ;
+     fhir:Address.line [
+       fhir:value "R DE LA LIBERTE, 18000 BOURGES" ;
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType" ] ;
+         fhir:Extension.valueString [ fhir:value "R" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase" ] ;
+         fhir:Extension.valueString [ fhir:value "DE LA LIBERTE" ]
+       ]
+     ] ;
+     fhir:Address.city [ fhir:value "BOURGES" ] ;
+     fhir:Address.district [ fhir:value "18" ] ;
+     fhir:Address.postalCode [ fhir:value "18000" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/example-organization-fictive.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
