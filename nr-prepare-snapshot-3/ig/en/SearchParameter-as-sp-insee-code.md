@@ -17,7 +17,7 @@ Paramètre de recherche pour récupérer une organisation, par code Insee. Cf ht
   "version" : "1.2.0-snapshot-3",
   "name" : "AsInseeCodeSearchParameter",
   "status" : "active",
-  "date" : "2026-07-10T15:38:45+00:00",
+  "date" : "2026-07-10T15:43:51+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

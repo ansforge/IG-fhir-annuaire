@@ -30,7 +30,7 @@ Ce système de codes est référencé dans la définition des ensembles de valeu
   "title" : "AS CodeSystem type de système d'information",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-07-10T15:38:45+00:00",
+  "date" : "2026-07-10T15:43:51+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
