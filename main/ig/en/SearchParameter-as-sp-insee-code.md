@@ -1,4 +1,4 @@
-# as-sp-insee-code - Annuaire Santé v1.2.0-snapshot-2
+# as-sp-insee-code - Annuaire Santé v1.2.0-snapshot-3
 
 ## SearchParameter: as-sp-insee-code 
 
@@ -14,10 +14,10 @@ Paramètre de recherche pour récupérer une organisation, par code Insee. Cf ht
   "resourceType" : "SearchParameter",
   "id" : "as-sp-insee-code",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-insee-code",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsInseeCodeSearchParameter",
   "status" : "active",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

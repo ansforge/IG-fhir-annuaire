@@ -1,4 +1,4 @@
-# AS Donnée Publique Organization Profile - Annuaire Santé v1.2.0-snapshot-2
+# AS Donnée Publique Organization Profile - Annuaire Santé v1.2.0-snapshot-3
 
 ## Resource Profile: AS Donnée Publique Organization Profile 
 
@@ -8,7 +8,7 @@ Profil public applicatif créé à partir du profil générique as-organization 
 **Usages:**
 
 * Examples for this Profile: [CH EURE-SEINE](Organization-158480DP.md), [PHARMACIE NOLOT](Organization-481677DP.md) and [CABINET SAINT ANTOINE](Organization-548812DP.md)
-* CapabilityStatements using this Profile: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-2]](CapabilityStatement-AsServerDPCapabilityStatement.md)
+* CapabilityStatements using this Profile: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-3]](CapabilityStatement-AsServerDPCapabilityStatement.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/ans.fhir.fr.annuaire|current/StructureDefinition/StructureDefinition-as-dp-organization.json)
 
@@ -29,11 +29,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-organizatio
   "resourceType" : "StructureDefinition",
   "id" : "as-dp-organization",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsDpOrganizationProfile",
   "title" : "AS Donnée Publique Organization Profile",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-organizatio
   "kind" : "resource",
   "abstract" : false,
   "type" : "Organization",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-3",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -103,7 +103,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dp-organizatio
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-3"]
       }],
       "mustSupport" : true
     },

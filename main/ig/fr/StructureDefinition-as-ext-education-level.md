@@ -1,4 +1,4 @@
-# AS Education Level Extension - Annuaire Santé v1.2.0-snapshot-2
+# AS Education Level Extension - Annuaire Santé v1.2.0-snapshot-3
 
 ## Extension: AS Education Level Extension 
 
@@ -68,11 +68,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-educatio
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-education-level",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-education-level",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsEducationLevelExtension",
   "title" : "AS Education Level Extension",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

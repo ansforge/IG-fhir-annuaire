@@ -1,4 +1,4 @@
-# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
+# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-3
 
 ## Data Type Profile: AS Address Extended Datatype Profile 
 
@@ -7,7 +7,7 @@ Datatype profile créé à partir de FrAddress dans le contexte de l'Annuaire Sa
 
 **Usages:**
 
-* Use this DataType Profile: [AS Person Birth Place Extension](StructureDefinition-as-ext-person-birth-place.md), [AS Organization Profile](StructureDefinition-as-organization.md) and [AS Practitioner Profile](StructureDefinition-as-practitioner.md)
+* Use this DataType Profile: [AS Donnée Restreinte Person Profile](StructureDefinition-as-dr-person.md), [AS Person Birth Place Extension](StructureDefinition-as-ext-person-birth-place.md), [AS Organization Profile](StructureDefinition-as-organization.md) and [AS Practitioner Profile](StructureDefinition-as-practitioner.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/ans.fhir.fr.annuaire|current/StructureDefinition/StructureDefinition-as-address-extended.json)
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-address-extend
   "resourceType" : "StructureDefinition",
   "id" : "as-address-extended",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsAddressExtendedProfile",
   "title" : "AS Address Extended Datatype Profile",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -238,7 +238,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-address-extend
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-3"]
       }],
       "mapping" : [{
         "identity" : "as-address-extended-to-mos-exercice-professionnel",

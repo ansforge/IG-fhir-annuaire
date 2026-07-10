@@ -1,4 +1,4 @@
-# AS PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-2
+# AS PractitionerRole Profile - Annuaire Santé v1.2.0-snapshot-3
 
 ## Resource Profile: AS PractitionerRole Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitionerro
   "resourceType" : "StructureDefinition",
   "id" : "as-practitionerrole",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitionerrole",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsPractitionerRoleProfile",
   "title" : "AS PractitionerRole Profile",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -101,7 +101,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitionerro
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-contracted|1.2.0-snapshot-3"]
       }]
     },
     {
@@ -112,7 +112,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitionerro
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas|1.2.0-snapshot-3"]
       }]
     },
     {
@@ -123,7 +123,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitionerro
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-vitale-accepted|1.2.0-snapshot-3"]
       }]
     },
     {
@@ -174,7 +174,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitionerro
       "short" : "Référence permettant de lier l’exercice professionnel et la situation d'exercice à un professionnel (Practitioner).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-3"]
       }]
     },
     {
@@ -183,7 +183,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitionerro
       "short" : "Référence vers l’EG ou EJ de rattachement de la situation d’exercice (Organization)",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-2"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization|1.2.0-snapshot-3"]
       }]
     },
     {
@@ -365,7 +365,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-practitionerro
       "max" : "*",
       "type" : [{
         "code" : "ContactPoint",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-mailbox-mss|1.2.0-snapshot-3"]
       }],
       "mapping" : [{
         "identity" : "as-practitioner-role-to-mos-situation-exercice",

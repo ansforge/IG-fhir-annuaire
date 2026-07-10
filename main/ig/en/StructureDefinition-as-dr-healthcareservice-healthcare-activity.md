@@ -1,4 +1,4 @@
-# AS Donnée Restreinte HealthcareService Healthcare Activity Profile - Annuaire Santé v1.2.0-snapshot-2
+# AS Donnée Restreinte HealthcareService Healthcare Activity Profile - Annuaire Santé v1.2.0-snapshot-3
 
 ## Resource Profile: AS Donnée Restreinte HealthcareService Healthcare Activity Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-healthcares
   "resourceType" : "StructureDefinition",
   "id" : "as-dr-healthcareservice-healthcare-activity",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-healthcareservice-healthcare-activity",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsDrHealthcareServiceHealthcareActivityProfile",
   "title" : "AS Donnée Restreinte HealthcareService Healthcare Activity Profile",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-healthcares
   "kind" : "resource",
   "abstract" : false,
   "type" : "HealthcareService",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-healthcare-activity|1.2.0-snapshot-2",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-healthcareservice-healthcare-activity|1.2.0-snapshot-3",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -82,7 +82,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-dr-healthcares
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-3"]
       }],
       "mustSupport" : true
     },

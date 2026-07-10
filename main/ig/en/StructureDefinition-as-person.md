@@ -1,4 +1,4 @@
-# AS Person Profile - Annuaire Santé v1.2.0-snapshot-2
+# AS Person Profile - Annuaire Santé v1.2.0-snapshot-3
 
 ## Resource Profile: AS Person Profile 
 
@@ -28,11 +28,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
   "resourceType" : "StructureDefinition",
   "id" : "as-person",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-person",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsPersonProfile",
   "title" : "AS Person Profile",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -107,7 +107,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place|1.2.0-snapshot-3"]
       }],
       "mapping" : [{
         "identity" : "as-person-to-mos-personne-physique",
@@ -122,7 +122,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-2"]
+        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-Person.deceasedDateTime|1.2.0-snapshot-3"]
       }],
       "mapping" : [{
         "identity" : "as-person-to-mos-personne-physique",
@@ -236,7 +236,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-person.csv), [
       "path" : "Person.link.target",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2"]
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-3"]
       }]
     }]
   }

@@ -1,4 +1,4 @@
-# Historique des changements - Annuaire Santé v1.2.0-snapshot-2
+# Historique des changements - Annuaire Santé v1.2.0-snapshot-3
 
 ## Historique des changements
 

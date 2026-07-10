@@ -1,4 +1,4 @@
-# AS Organization Authorization Deadline Extension - Annuaire Santé v1.2.0-snapshot-2
+# AS Organization Authorization Deadline Extension - Annuaire Santé v1.2.0-snapshot-3
 
 ## Extension: AS Organization Authorization Deadline Extension 
 
@@ -31,11 +31,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-organizati
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-organization-authorization-deadline",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-authorization-deadline",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsOrganizationAuthorizationDeadlineExtension",
   "title" : "AS Organization Authorization Deadline Extension",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

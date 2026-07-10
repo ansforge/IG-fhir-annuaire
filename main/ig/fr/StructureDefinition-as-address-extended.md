@@ -1,4 +1,4 @@
-# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-2
+# AS Address Extended Datatype Profile - Annuaire Santé v1.2.0-snapshot-3
 
 ## Profil du type de données: AS Address Extended Datatype Profile 
 
@@ -7,7 +7,7 @@ Datatype profile créé à partir de FrAddress dans le contexte de l'Annuaire Sa
 
 **Utilisations:**
 
-* Utilise ce/t/te profil de type de données: [AS Person Birth Place Extension](StructureDefinition-as-ext-person-birth-place.md), [AS Organization Profile](StructureDefinition-as-organization.md) and [AS Practitioner Profile](StructureDefinition-as-practitioner.md)
+* Utilise ce/t/te profil de type de données: [AS Donnée Restreinte Person Profile](StructureDefinition-as-dr-person.md), [AS Person Birth Place Extension](StructureDefinition-as-ext-person-birth-place.md), [AS Organization Profile](StructureDefinition-as-organization.md) and [AS Practitioner Profile](StructureDefinition-as-practitioner.md)
 
 Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.annuaire|current/StructureDefinition/as-address-extended)
 
@@ -50,7 +50,7 @@ Cette structure fait référence à ces extensions:
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameType.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-postBox.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameBase.html)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2](StructureDefinition-as-ext-lieu-dit.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-3](StructureDefinition-as-ext-lieu-dit.md)
 
  **Vue des éléments clés** 
 
@@ -87,7 +87,7 @@ Cette structure fait référence à ces extensions:
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameType.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-postBox.html)
 * [http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.3.0](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-iso21090-ADXP-streetNameBase.html)
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2](StructureDefinition-as-ext-lieu-dit.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-3](StructureDefinition-as-ext-lieu-dit.md)
 
  
 
@@ -102,11 +102,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-address-exte
   "resourceType" : "StructureDefinition",
   "id" : "as-address-extended",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-address-extended",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsAddressExtendedProfile",
   "title" : "AS Address Extended Datatype Profile",
   "status" : "draft",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -312,7 +312,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-address-exte
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit|1.2.0-snapshot-3"]
       }],
       "mapping" : [{
         "identity" : "as-address-extended-to-mos-exercice-professionnel",

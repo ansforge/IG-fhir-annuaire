@@ -1,4 +1,4 @@
-# as-sp-address-line - Annuaire Santé v1.2.0-snapshot-2
+# as-sp-address-line - Annuaire Santé v1.2.0-snapshot-3
 
 ## SearchParameter: as-sp-address-line 
 
@@ -14,10 +14,10 @@ Recherche sur la version textuelle de l'adresse
   "resourceType" : "SearchParameter",
   "id" : "as-sp-address-line",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-address-line",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-3",
   "name" : "AsAddressLineSearchParameter",
   "status" : "active",
-  "date" : "2026-07-10T15:33:23+00:00",
+  "date" : "2026-07-10T15:46:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
