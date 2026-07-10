@@ -30,3 +30,5 @@ Description: 	"Profil restreint créé à partir de as-person dans le contexte d
 
 * name 0..1
 * photo 0..0
+* address MS
+* address only AsAddressExtendedProfile
