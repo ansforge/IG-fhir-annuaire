@@ -93,7 +93,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-organizat
   "name" : "AsDpOrganizationProfile",
   "title" : "AS Donnée Publique Organization Profile",
   "status" : "draft",
-  "date" : "2026-07-10T15:46:03+00:00",
+  "date" : "2026-08-03T13:23:25+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

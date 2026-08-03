@@ -14,7 +14,7 @@
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "draft",
-  "date" : "2026-07-10T15:46:03+00:00",
+  "date" : "2026-08-03T13:23:25+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -879,6 +879,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-address-extended.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-address-extended"
@@ -891,6 +895,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-authorization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-authorization"
@@ -903,6 +911,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-codeableconcept-timed.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-codeableconcept-timed"
@@ -915,6 +927,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-codeableconcept-timed-metadata.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-codeableconcept-timed-metadata"
@@ -927,6 +943,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-as-cs-organization-types.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/as-cs-organization-types"
@@ -939,6 +959,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-as-cs-type-systeme-information.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/as-cs-type-systeme-information"
@@ -951,6 +975,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-as-cs-type-etablissement.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/as-cs-type-etablissement"
@@ -963,6 +991,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-data-trace.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-data-trace"
@@ -975,6 +1007,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-device.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-device"
@@ -987,6 +1023,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-digital-certificate.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-digital-certificate"
@@ -999,6 +1039,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dp-device.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dp-device"
@@ -1011,6 +1055,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dp-healthcareservice-healthcare-activity.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dp-healthcareservice-healthcare-activity"
@@ -1023,6 +1071,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dp-healthcareservice-social-equipment.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dp-healthcareservice-social-equipment"
@@ -1035,6 +1087,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dp-organization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dp-organization"
@@ -1047,6 +1103,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dp-practitioner.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dp-practitioner"
@@ -1059,6 +1119,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dp-practitionerrole.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dp-practitionerrole"
@@ -1071,6 +1135,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dr-device.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dr-device"
@@ -1083,6 +1151,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dr-healthcareservice-healthcare-activity.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dr-healthcareservice-healthcare-activity"
@@ -1095,6 +1167,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dr-healthcareservice-social-equipment.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dr-healthcareservice-social-equipment"
@@ -1107,6 +1183,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dr-organization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dr-organization"
@@ -1119,6 +1199,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dr-person.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dr-person"
@@ -1131,6 +1215,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dr-practitioner.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dr-practitioner"
@@ -1143,6 +1231,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-dr-practitionerrole.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-dr-practitionerrole"
@@ -1155,6 +1247,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-education-level.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-education-level"
@@ -1167,6 +1263,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-healthcareservice-healthcare-activity.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-healthcareservice-healthcare-activity"
@@ -1179,6 +1279,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-healthcareservice-social-equipment.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-healthcareservice-social-equipment"
@@ -1191,6 +1295,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-installation.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-installation"
@@ -1203,6 +1311,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-lieu-dit.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-lieu-dit"
@@ -1215,6 +1327,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-mailbox-mss-metadata.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-mailbox-mss-metadata"
@@ -1227,6 +1343,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-mailbox-mss.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-mailbox-mss"
@@ -1239,6 +1359,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-organization-authorization-deadline.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-organization-authorization-deadline"
@@ -1251,6 +1375,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-organization-budget-type.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-organization-budget-type"
@@ -1263,6 +1391,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-organization-closing-type.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-organization-closing-type"
@@ -1275,6 +1407,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-organization-pharmacy-licence.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-organization-pharmacy-licence"
@@ -1287,6 +1423,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-organization-pricing-model.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-organization-pricing-model"
@@ -1299,6 +1439,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-organization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-organization"
@@ -1311,6 +1455,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-organization-types.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-organization-types"
@@ -1323,6 +1471,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-patient-type.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-patient-type"
@@ -1335,6 +1487,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-person-birth-place.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-person-birth-place"
@@ -1347,6 +1503,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-person-deceased-date-time.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-person-deceased-date-time"
@@ -1359,6 +1519,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-person.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-person"
@@ -1371,6 +1535,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-person-statut-etat-civil.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-person-statut-etat-civil"
@@ -1383,6 +1551,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-practitioner-authorization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-practitioner-authorization"
@@ -1395,6 +1567,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-practitioner.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-practitioner"
@@ -1407,6 +1583,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-practitionerrole-contracted.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-practitionerrole-contracted"
@@ -1419,6 +1599,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-practitionerrole-hascas.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-practitionerrole-hascas"
@@ -1431,6 +1615,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-practitionerrole.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-practitionerrole"
@@ -1443,6 +1631,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-practitionerrole-vitale-accepted.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-practitionerrole-vitale-accepted"
@@ -1455,6 +1647,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-registration.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-registration"
@@ -1467,6 +1663,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-smartcard.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-smartcard"
@@ -1479,6 +1679,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-as-ext-supported-capacity.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-ext-supported-capacity"
@@ -1491,6 +1695,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-as-vs-organization-types.html"
       }],
       "reference" : {
         "reference" : "ValueSet/as-vs-organization-types"
@@ -1503,6 +1711,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-as-vs-type-systeme-information.html"
       }],
       "reference" : {
         "reference" : "ValueSet/as-vs-type-systeme-information"
@@ -1515,6 +1727,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-as-vs-type-etablissement.html"
       }],
       "reference" : {
         "reference" : "ValueSet/as-vs-type-etablissement"
@@ -1527,6 +1743,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-address-line.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-address-line"
@@ -1539,6 +1759,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-data-information-system.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-data-information-system"
@@ -1551,6 +1775,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-data-registration-authority.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-data-registration-authority"
@@ -1563,6 +1791,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-insee-code.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-insee-code"
@@ -1575,6 +1807,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-mailbox-mss.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-mailbox-mss"
@@ -1587,6 +1823,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-mailbox-mss-type.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-mailbox-mss-type"
@@ -1599,6 +1839,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-number-smartcard.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-number-smartcard"
@@ -1611,6 +1855,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-organization-period.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-organization-period"
@@ -1623,6 +1871,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-pharmacy-licence.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-pharmacy-licence"
@@ -1635,6 +1887,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-qualification-code.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-qualification-code"
@@ -1647,6 +1903,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-as-sp-type-smartcard.html"
       }],
       "reference" : {
         "reference" : "SearchParameter/as-sp-type-smartcard"
@@ -1659,6 +1919,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CapabilityStatement-AsServerDPCapabilityStatement.html"
       }],
       "reference" : {
         "reference" : "CapabilityStatement/AsServerDPCapabilityStatement"
@@ -1671,6 +1935,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-example-organization-fictive.html"
       }],
       "reference" : {
         "reference" : "Organization/example-organization-fictive"
@@ -1682,6 +1950,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-example-organization-nancy.html"
       }],
       "reference" : {
         "reference" : "Organization/example-organization-nancy"
@@ -1693,6 +1965,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-481677DP.html"
       }],
       "reference" : {
         "reference" : "Organization/481677DP"
@@ -1704,6 +1980,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-3719500DP.html"
       }],
       "reference" : {
         "reference" : "Practitioner/3719500DP"
@@ -1715,6 +1995,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-5015602DP.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/5015602DP"
@@ -1726,6 +2010,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-481677.html"
       }],
       "reference" : {
         "reference" : "Organization/481677"
@@ -1737,6 +2025,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Person"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Person-pp16dr-person.html"
       }],
       "reference" : {
         "reference" : "Person/pp16dr-person"
@@ -1748,6 +2040,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-3719500.html"
       }],
       "reference" : {
         "reference" : "Practitioner/3719500"
@@ -1759,6 +2055,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-5015602.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/5015602"
@@ -1770,6 +2070,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-158480DP.html"
       }],
       "reference" : {
         "reference" : "Organization/158480DP"
@@ -1781,6 +2085,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-548812DP.html"
       }],
       "reference" : {
         "reference" : "Organization/548812DP"
@@ -1792,6 +2100,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-334081DP.html"
       }],
       "reference" : {
         "reference" : "Practitioner/334081DP"
@@ -1803,6 +2115,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-1738459DP.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/1738459DP"
@@ -1814,6 +2130,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-1578230DP.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/1578230DP"
@@ -1825,6 +2145,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-158480.html"
       }],
       "reference" : {
         "reference" : "Organization/158480"
@@ -1836,6 +2160,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-548812.html"
       }],
       "reference" : {
         "reference" : "Organization/548812"
@@ -1847,6 +2175,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Person"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Person-pp19dr-person.html"
       }],
       "reference" : {
         "reference" : "Person/pp19dr-person"
@@ -1858,6 +2190,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-334081.html"
       }],
       "reference" : {
         "reference" : "Practitioner/334081"
@@ -1869,6 +2205,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-1738459.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/1738459"
@@ -1880,6 +2220,10 @@
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-1578230.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/1578230"
