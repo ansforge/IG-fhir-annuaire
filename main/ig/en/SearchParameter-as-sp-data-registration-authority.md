@@ -17,7 +17,7 @@ Paramètre de recherche pour récupérer une ressource par autorité d'enregistr
   "version" : "1.2.0-snapshot-3",
   "name" : "AsDataRegistrationAuthoritySearchParameter",
   "status" : "active",
-  "date" : "2026-08-03T13:23:25+00:00",
+  "date" : "2026-08-03T14:28:09+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
