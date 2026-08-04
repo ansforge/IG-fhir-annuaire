@@ -105,7 +105,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
   "name" : "AsDpPractitionerProfile",
   "title" : "AS Donnée Publique Practitioner Profile",
   "status" : "draft",
-  "date" : "2026-08-03T14:28:09+00:00",
+  "date" : "2026-08-04T08:16:57+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
