@@ -107,16 +107,18 @@ paths:
               examples:
                 appelComplet:
                   summary: "Cas d'usage — appel complet (médecins actifs)"
-                  description: Réponse paginée à `GET /Practitioner?qualification-code=10&active=true`
+                  description: |
+                    Réponse paginée à
+                    `GET /Practitioner?qualification-code=https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante|10&active=true`
                   value:
                     resourceType: Bundle
                     type: searchset
                     total: 1825942
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/practitioner-dupont"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-4821093-5039217"
                         resource:
                           resourceType: Practitioner
-                          id: practitioner-dupont
+                          id: 003-4821093-5039217
                           meta:
                             profile:
                               - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner
@@ -135,70 +137,88 @@ paths:
                                     code: "10"
                                     display: Médecin
                     link:
-                      - relation: self
-                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner?qualification-code=10&active=true"
                       - relation: next
-                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=uN1Js3hzkfa5kFuPG0JA3Py3aGHCe_MvFWVlg7ihupH6YpFJD4PqRpR5RGD-AfoA86Lr6HLtZpHGNPpU3mklu_kFtsFoNL9dOYFodMHH9wuIoL6Cu1mIw_Kr66ngdSzpGWT8Y0jjkPYglZqsU4BIryhEPhuI2HqQlcsqTXvn6uO0EtAFAo7aPizKSCMZghxTDN14UjD0="
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=udwbRjLpi-ulE2rcqIgyxeYB037hNB2CUSABgLpRDpqSVAsJYq_1I8OUDU-GltE1TPN0EL73UawYDjWEB1zLRfmocBarSXbInzZV-TMwVeDbAQo4CIkOBDGmiEVwkrCpchvfRpSJ1CRBpme5pUmIi2jlSXYb8Jlz2YoCxIeipzrZTnZFj94LrxZ6IL4YqtSyHLZfRJMjWaFDw5RwMC0WHSP4wCCufvShoCZ1ZQOaH9tuo4ypzWCc8G1g2xO8arUxECSKNtWIxHseekxbJfElQKGEnGte09x81493K29D4iEb5maqT8iUWF6M6-D9qJg-eXzVvE5LL0J4SUuQStontpBh5Ia7CoGGCf6s0WouigSLLAOaxUb3qgQYRXwni9pcNEylFA50qDSN8GL8X6vVEz37yfrxrKtcxlaChBWgw2VFS7EPyQEu6uq2EmVeu9SiI85VOsXr02-Ns-dXLjNDmMNubwwdtmTdMiWK5"
+                      - relation: self
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner?qualification-code=https%3A%2F%2Fmos.esante.gouv.fr%2FNOS%2FTRE_G15-ProfessionSante%2FFHIR%2FTRE-G15-ProfessionSante%7C10&active=true"
                 appelDelta:
-                  summary: "Cas d'usage — appel delta (modifications depuis 30 jours)"
-                  description: Réponse à `GET /Practitioner?qualification-code=10&_lastUpdated=ge2025-09-27`
+                  summary: "Cas d'usage — appel delta (modification entre la date saisie et aujourd'hui)"
+                  description: Réponse à `GET /Practitioner?_lastUpdated=2026-09-15`
                   value:
                     resourceType: Bundle
                     type: searchset
-                    total: 9903
+                    total: 212
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/practitioner-example-2"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-2859047-4220794"
                         resource:
                           resourceType: Practitioner
-                          id: practitioner-example-2
+                          id: 003-2859047-4220794
                           meta:
-                            lastUpdated: "2025-09-28T09:12:00Z"
+                            lastUpdated: "2026-09-15T14:38:49.653+02:00"
+                            profile:
+                              - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner
                           identifier:
                             - system: https://rpps.esante.gouv.fr
-                              value: "10001234567"
-                          active: false
+                              value: "10101103181"
+                          active: true
                           name:
-                            - family: MARTIN
-                              given: [ Claire ]
+                            - family: ZAREMSKI
+                              given: [ Pierre ]
+                              prefix: [ M ]
+                          qualification:
+                            - code:
+                                coding:
+                                  - system: https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante
+                                    code: "10"
+                                    display: Médecin
                     link:
+                      - relation: next
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=fT6Nc2VxpZa1WuLmR8kD9Bx4Ht0Ja_QvGXImU3lqCoJ7ZoLKE5RtSpV6THE-BgpB97Ms7IMuAqIQaOqV5nmlv_lGutGpOM0eQZGqeNII0xvJpM7Dv2nKw_Ls77oheTaqHXU9Z1kkkQZhmZrtV5CJszjFQivJ3IrRmdtrYWo7FuBGBp8bQizLTDNa5hyEjE1="
                       - relation: self
-                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner?qualification-code=10&_lastUpdated=ge2025-09-27"
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner?_lastUpdated=2026-09-15"
                       - relation: next
                         url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=fT6Nc2VxpZa1WuLmR8kD9Bx4Ht0Ja_QvGXImU3lqCoJ7ZoLKE5RtSpV6THE-BgpB97Ms7IMuAqIQaOqV5nmlv_lGutGpOM0eQZGqeNII0xvJpM7Dv2nKw_Ls77oheTaqHXU9Z1kkkQZhmZrtV5CJszjFQivJ3IrRmdtrYWo7FuBGBp8bQizLTDNa5hyEjE1="
                 balMssPraticien:
                   summary: "Cas d'usage — BAL MSSanté personnelle"
-                  description: Réponse à `GET /Practitioner?mailbox-mss:contains=@medecin.mssante.fr`
+                  description: |
+                    Réponse (extrait) à `GET /Practitioner?mailbox-mss:contains=@medecin.mssante.fr`.
+                    Ce type de recherche peut renvoyer un grand nombre de résultats.
                   value:
                     resourceType: Bundle
                     type: searchset
-                    total: 1
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/practitioner-dupont"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-225401-195491"
                         resource:
                           resourceType: Practitioner
-                          id: practitioner-dupont
+                          id: 003-225401-195491
                           identifier:
                             - system: https://rpps.esante.gouv.fr
-                              value: "10001234567"
+                              value: "10002306479"
                           active: true
                           name:
-                            - family: DUPONT
-                              given: [ Jean ]
-                              prefix: [ Dr ]
+                            - family: TATKEU
+                              given: [ SEVIGNE ]
+                              prefix: [ MME ]
                           telecom:
                             - system: email
-                              value: jean.dupont@medecin.mssante.fr
-                              rank: 1
+                              value: sevigne.tatkeu@medecin.mssante.fr
+                              use: work
                               extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                    display: MSSANTE
                                 - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                   extension:
                                     - url: type
                                       valueCodeableConcept:
                                         coding:
-                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
                                             code: PER
-                                    - url: listeRouge
-                                      valueBoolean: false
+                                            display: Boîte aux lettres personnelle
+                                    - url: digitization
+                                      valueBoolean: true
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -264,16 +284,16 @@ paths:
                     type: searchset
                     total: 1
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/PractitionerRole/role-example-1"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/PractitionerRole/005-1938204-2847361"
                         resource:
                           resourceType: PractitionerRole
-                          id: role-example-1
+                          id: 005-1938204-2847361
                           active: true
                           practitioner:
-                            reference: Practitioner/practitioner-dupont
+                            reference: Practitioner/003-4821093-5039217
                             display: Dr Jean DUPONT
                           organization:
-                            reference: Organization/organization-example-1
+                            reference: Organization/010-7293841-6182734
                             display: Centre de santé Saint-Michel
                           code:
                             - coding:
@@ -283,15 +303,23 @@ paths:
                           telecom:
                             - system: email
                               value: jean.dupont@centre-saint-michel.mssante.fr
-                              rank: 1
+                              use: work
                               extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                    display: MSSANTE
                                 - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                   extension:
                                     - url: type
                                       valueCodeableConcept:
                                         coding:
-                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
                                             code: PER
+                                            display: Boîte aux lettres personnelle
+                                    - url: digitization
+                                      valueBoolean: true
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -377,10 +405,10 @@ paths:
                     type: searchset
                     total: 1
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Organization/organization-example-1"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Organization/010-7293841-6182734"
                         resource:
                           resourceType: Organization
-                          id: organization-example-1
+                          id: 010-7293841-6182734
                           identifier:
                             - system: https://finess.esante.gouv.fr
                               value: "750000123"
@@ -394,15 +422,21 @@ paths:
                           telecom:
                             - system: email
                               value: contact@centre-saint-michel.mssante.fr
-                              rank: 1
+                              use: work
                               extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                    display: MSSANTE
                                 - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                   extension:
                                     - url: type
                                       valueCodeableConcept:
                                         coding:
-                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
                                             code: ORG
+                                            display: Boîte aux lettres organisationnelle
                                     - url: description
                                       valueString: BAL principale de la structure
                           address:
@@ -472,16 +506,16 @@ paths:
                 type: searchset
                 total: 1
                 entry:
-                  - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/HealthcareService/hcs-example-1"
+                  - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/HealthcareService/020-3847261-9182736"
                     resource:
                       resourceType: HealthcareService
-                      id: hcs-example-1
+                      id: 020-3847261-9182736
                       identifier:
                         - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
                           value: "750000123-ACT01"
                       active: true
                       providedBy:
-                        reference: Organization/organization-example-1
+                        reference: Organization/010-7293841-6182734
                         display: Centre de santé Saint-Michel
                       type:
                         - coding:
@@ -548,10 +582,10 @@ paths:
                 type: searchset
                 total: 1
                 entry:
-                  - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Device/device-example-1"
+                  - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Device/030-6273819-4728193"
                     resource:
                       resourceType: Device
-                      id: device-example-1
+                      id: 030-6273819-4728193
                       identifier:
                         - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
                           value: "32-31-1156"
@@ -564,7 +598,7 @@ paths:
                             code: "05602"
                             display: Scanographe
                       owner:
-                        reference: Organization/organization-example-1
+                        reference: Organization/010-7293841-6182734
                         display: Centre de santé Saint-Michel
         '400':
           $ref: '#/components/responses/BadRequest'
@@ -723,8 +757,9 @@ components:
       schema:
         type: string
       description: |
-        Code de qualification (profession, diplôme, compétence). Exemple : `10` pour la
-        profession « Médecin » dans la nomenclature NOS des professions.
+        Code de qualification (profession, diplôme, compétence). Format `système|code`.
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante|10`
+        pour la profession « Médecin » dans la nomenclature NOS des professions.
 
     practitionerRevInclude:
       name: _revinclude
@@ -1148,7 +1183,7 @@ components:
       properties:
         reference:
           type: string
-          description: "Référence relative, ex. `Organization/organization-example-1`."
+          description: "Référence relative, ex. `Organization/010-7293841-6182734`."
         type:
           type: string
         identifier:
@@ -1191,6 +1226,19 @@ components:
         country:
           type: string
 
+    EmailTypeExtension:
+      type: object
+      description: |
+        Extension `fr-core-contact-point-email-type` (FR Core) portée par un `telecom` de
+        type email, précisant la nature de la messagerie (ex. MSSanté, système
+        `TRE_R256-TypeMessagerie`).
+      properties:
+        url:
+          type: string
+          enum: [ https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type ]
+        valueCoding:
+          $ref: '#/components/schemas/Coding'
+
     MailboxMssMetadataExtension:
       type: object
       description: Extension `as-ext-mailbox-mss-metadata` portée par un `telecom` de type BAL MSSanté.
@@ -1205,7 +1253,11 @@ components:
             properties:
               url:
                 type: string
-                enum: [ type, listeRouge, description, service, responsible ]
+                enum: [ type, digitization, description, service, responsible ]
+                description: |
+                  `type` (BAL personnelle/organisationnelle/applicative, système
+                  `TRE_R257-TypeBAL`) et `digitization` (numérisation) sont les plus
+                  fréquents.
               valueCodeableConcept:
                 $ref: '#/components/schemas/CodeableConcept'
               valueBoolean:
@@ -1230,7 +1282,12 @@ components:
         extension:
           type: array
           items:
-            $ref: '#/components/schemas/MailboxMssMetadataExtension'
+            oneOf:
+              - $ref: '#/components/schemas/EmailTypeExtension'
+              - $ref: '#/components/schemas/MailboxMssMetadataExtension'
+          description: |
+            Extensions portées par le contact : `fr-core-contact-point-email-type` (nature
+            de la messagerie) et/ou `as-ext-mailbox-mss-metadata` (métadonnées BAL MSSanté).
 
     Meta:
       type: object
@@ -1508,7 +1565,7 @@ components:
       summary: Praticien avec BAL MSS personnelle
       value:
         resourceType: Practitioner
-        id: practitioner-dupont
+        id: 003-4821093-5039217
         meta:
           profile:
             - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner
@@ -1523,16 +1580,22 @@ components:
         telecom:
           - system: email
             value: jean.dupont@medecin.mssante.fr
-            rank: 1
+            use: work
             extension:
+              - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                valueCoding:
+                  system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                  code: MSSANTE
+                  display: MSSANTE
               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                 extension:
                   - url: type
                     valueCodeableConcept:
                       coding:
-                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
                           code: PER
-                  - url: listeRouge
+                          display: Boîte aux lettres personnelle
+                  - url: digitization
                     valueBoolean: false
         qualification:
           - code:
@@ -1545,16 +1608,16 @@ components:
       summary: Situation d'exercice avec BAL MSS PER (RPPS + structure)
       value:
         resourceType: PractitionerRole
-        id: role-example-1
+        id: 005-1938204-2847361
         identifier:
           - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroautorisationpersonnesactivite
             value: "800012345-1"
         active: true
         practitioner:
-          reference: Practitioner/practitioner-dupont
+          reference: Practitioner/003-4821093-5039217
           display: Dr Jean DUPONT
         organization:
-          reference: Organization/organization-example-1
+          reference: Organization/010-7293841-6182734
           display: Centre de santé Saint-Michel
         code:
           - coding:
@@ -1564,21 +1627,29 @@ components:
         telecom:
           - system: email
             value: jean.dupont@centre-saint-michel.mssante.fr
-            rank: 1
+            use: work
             extension:
+              - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                valueCoding:
+                  system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                  code: MSSANTE
+                  display: MSSANTE
               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                 extension:
                   - url: type
                     valueCodeableConcept:
                       coding:
-                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
                           code: PER
+                          display: Boîte aux lettres personnelle
+                  - url: digitization
+                    valueBoolean: true
 
     OrganizationExample:
       summary: Centre de santé avec BAL MSS organisationnelle
       value:
         resourceType: Organization
-        id: organization-example-1
+        id: 010-7293841-6182734
         meta:
           profile:
             - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization
@@ -1595,15 +1666,21 @@ components:
         telecom:
           - system: email
             value: contact@centre-saint-michel.mssante.fr
-            rank: 1
+            use: work
             extension:
+              - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                valueCoding:
+                  system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                  code: MSSANTE
+                  display: MSSANTE
               - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                 extension:
                   - url: type
                     valueCodeableConcept:
                       coding:
-                        - system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
                           code: ORG
+                          display: Boîte aux lettres organisationnelle
                   - url: description
                     valueString: BAL principale de la structure
         address:
@@ -1616,13 +1693,13 @@ components:
       summary: Activité de soin rattachée à une structure
       value:
         resourceType: HealthcareService
-        id: hcs-example-1
+        id: 020-3847261-9182736
         identifier:
           - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
             value: "750000123-ACT01"
         active: true
         providedBy:
-          reference: Organization/organization-example-1
+          reference: Organization/010-7293841-6182734
           display: Centre de santé Saint-Michel
         type:
           - coding:
@@ -1634,7 +1711,7 @@ components:
       summary: Scanner rattaché à une structure
       value:
         resourceType: Device
-        id: device-example-1
+        id: 030-6273819-4728193
         identifier:
           - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
             value: "32-31-1156"
@@ -1647,7 +1724,7 @@ components:
               code: "05602"
               display: Scanographe
         owner:
-          reference: Organization/organization-example-1
+          reference: Organization/010-7293841-6182734
           display: Centre de santé Saint-Michel
 
   responses:
