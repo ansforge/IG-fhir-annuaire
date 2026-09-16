@@ -356,7 +356,8 @@ paths:
         - $ref: '#/components/parameters/organizationPartOf'
         - $ref: '#/components/parameters/organizationPharmacyLicence'
         - $ref: '#/components/parameters/count'
-        - $ref: '#/components/parameters/organizationIncludeRevinclude'
+        - $ref: '#/components/parameters/organizationInclude'
+        - $ref: '#/components/parameters/organizationRevInclude'
       responses:
         '200':
           description: Bundle searchset contenant les `Organization` correspondantes
@@ -618,11 +619,11 @@ components:
       required: false
       schema:
         type: string
-        example: ge2025-09-27
       description: |
         Filtre sur la date de dernière modification. Opérateurs supportés (préfixés à la
         date) : `eq`, `ne`, `gt`, `lt`, `ge`, `le`, `ap`.
         Pour les appels delta, l'historique n'est conservé que sur **30 jours glissants**.
+        Exemple : `ge2025-09-27`.
 
     count:
       name: _count
@@ -671,12 +672,13 @@ components:
       required: false
       schema:
         type: string
-        example: "https://rpps.esante.gouv.fr|10001234567"
       description: |
         Identifiant métier du professionnel (RPPS, IdNatPP). Format `système|valeur`.
         Systèmes usuels :
         - `https://rpps.esante.gouv.fr|{NUM_RPPS}`
         - `urn:oid:1.2.250.1.71.4.2.1|{IDNAT_PP}`
+
+        Exemple : `https://rpps.esante.gouv.fr|10001234567`.
 
     practitionerIdentifierType:
       name: identifier-type
@@ -693,7 +695,6 @@ components:
       required: false
       schema:
         type: string
-        example: "@medecin.mssante.fr"
       description: |
         Recherche sur une adresse de messagerie sécurisée de santé (BAL MSSanté PER ou
         CAB). Modificateur recommandé : `mailbox-mss:contains=...` (ex. `:contains=%40`
@@ -721,7 +722,6 @@ components:
       required: false
       schema:
         type: string
-        example: "10"
       description: |
         Code de qualification (profession, diplôme, compétence). Exemple : `10` pour la
         profession « Médecin » dans la nomenclature NOS des professions.
@@ -777,10 +777,9 @@ components:
       required: false
       schema:
         type: string
-        example: "@medecin.mssante.fr"
       description: |
         Recherche sur une BAL MSSanté de type PER rattachée à un couple RPPS + structure.
-        Modificateur recommandé : `:contains`.
+        Modificateur recommandé : `:contains`. Exemple : `@medecin.mssante.fr`.
 
     practitionerRoleOrganization:
       name: organization
@@ -869,12 +868,13 @@ components:
       required: false
       schema:
         type: string
-        example: "https://finess.esante.gouv.fr|123456789"
       description: |
         Identifiant de la structure (FINESS, SIREN, SIRET). Format `système|valeur`.
         Systèmes usuels :
         - `https://finess.esante.gouv.fr|{NUM_FINESS}`
         - `https://sirene.fr|{NUM_SIREN}` ou `{NUM_SIRET}`
+
+        Exemple : `https://finess.esante.gouv.fr|123456789`.
 
     organizationIdentifierType:
       name: identifier-type
@@ -890,7 +890,6 @@ components:
       required: false
       schema:
         type: string
-        example: "@"
       description: |
         Recherche sur une BAL MSSanté organisationnelle (`ORG`) ou applicative (`APP`).
         Modificateur recommandé : `:contains` (ex. `:contains=%40` pour toute BAL
@@ -926,15 +925,14 @@ components:
       required: false
       schema:
         type: string
-        example: "https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite|SA05"
       description: |
         Type de structure (entité géographique/légale), code APE/NAF, catégorie juridique,
         secteur d'activité, catégorie d'établissement, code ESPIC…). Format `système|code`.
-        Exemple : secteur d'activité `SA05` (centres de santé) sur le système
-        `TRE_R02-SecteurActivite`.
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite|SA05`
+        pour le secteur d'activité `SA05` (centres de santé).
 
-    organizationIncludeRevinclude:
-      name: _include / _revinclude
+    organizationInclude:
+      name: _include
       in: query
       required: false
       schema:
@@ -942,13 +940,21 @@ components:
         enum:
           - "Organization:partof"
           - "Organization:*"
+      description: Inclut dans la réponse l'entité de rattachement référencée par `partof`.
+
+    organizationRevInclude:
+      name: _revinclude
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
           - "Device:organization"
           - "HealthcareService:organization"
           - "PractitionerRole:organization"
       description: |
-        `_include=Organization:partof` remonte l'entité de rattachement ; `_revinclude`
-        redescend vers les ressources référençant la structure (`Device`,
-        `HealthcareService`, `PractitionerRole`).
+        Inclut dans la réponse les ressources référençant la structure trouvée
+        (`Device`, `HealthcareService`, `PractitionerRole`).
 
     healthcareServiceActive:
       name: active
@@ -983,8 +989,9 @@ components:
       required: false
       schema:
         type: string
-        example: "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite|SM"
-      description: Forme ou type d'activité. Format `système|code`.
+      description: |
+        Forme ou type d'activité. Format `système|code`.
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite|SM`.
 
     healthcareServiceIdentifier:
       name: identifier
@@ -1016,10 +1023,10 @@ components:
       required: false
       schema:
         type: string
-        example: "https://mos.esante.gouv.fr/NOS/TRE_R209-TypeActivite/FHIR/TRE-R209-TypeActivite|SM01"
       description: |
         Discipline de l'équipement social ou activité de soin réglementée. Format
         `système|code` (nomenclature `TRE_R209-TypeActivite`).
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_R209-TypeActivite/FHIR/TRE-R209-TypeActivite|SM01`.
 
     healthcareServiceInclude:
       name: _include
@@ -1045,10 +1052,10 @@ components:
       required: false
       schema:
         type: string
-        example: "32-31-1156,93-93-4364"
       description: |
         Numéro(s) d'équipement ARHGOS. Recherche multi-valeurs possible via une liste
         séparée par des virgules.
+        Exemple : `32-31-1156,93-93-4364`.
 
     deviceManufacturer:
       name: manufacturer
@@ -1089,7 +1096,6 @@ components:
       required: false
       schema:
         type: string
-        example: "https://mos.esante.gouv.fr/NOS/TRE_R272-EquipementMaterielLourd/FHIR/TRE-R272-EquipementMaterielLourd|05602"
       description: |
         Type d'équipement matériel lourd (nomenclature `TRE_R272-EquipementMaterielLourd`).
         Exemple : code `05602` pour un scanner. Format `système|code`.
