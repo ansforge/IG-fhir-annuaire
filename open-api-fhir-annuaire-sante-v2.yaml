@@ -1,0 +1,1758 @@
+openapi: 3.0.3
+
+info:
+  title: API FHIR Annuaire Santé — v2
+  version: "2.0"
+  description: |
+    Spécification OpenAPI de l'**API FHIR Annuaire Santé** exposée par
+    l'Agence du Numérique en Santé (ANS), couvrant exclusivement la **version 2** de l'API.
+
+    Cette spécification décrit les interactions de **recherche** (`search-type`) et de
+    **lecture** (`read`) sur les cinq ressources FHIR R4 publiées par l'Annuaire Santé :
+
+    | Ressource | Contenu |
+    |-----------|---------|
+    | `Practitioner` | Professionnels de santé (identité, RPPS, qualifications) |
+    | `PractitionerRole` | Situations d'exercice (lien professionnel ↔ structure, rôle, mode d'exercice) |
+    | `Organization` | Structures (établissements, cabinets, entités juridiques /géographiques) |
+    | `HealthcareService` | Activités de soin et équipements sociaux rattachés à une structure |
+    | `Device` | Équipements matériels lourds (scanners, IRM, etc.) |
+
+    **Documentation source** : https://ansforge.github.io/annuaire-sante-fhir-documentation/pages/guide/version-2/getting-started/introduction.html
+
+    **Guide d'implémentation API FHIR Annuaire Santé** : https://interop.esante.gouv.fr/ig/fhir/annuaire/
+
+    **Serveur FHIR** : https://github.com/ansforge/annuaire-sante-fhir-serveur
+
+    **Démonstrateur** : https://portail.openfhir.annuaire.sante
+
+    ## Authentification
+
+    Toutes les requêtes doivent porter l'en-tête `ESANTE-API-KEY` avec une clé d'API délivrée
+    par un outil de gestion des API (inscription sur le portail Gravitee https://portal.api.esante.gouv.fr/).
+
+    ## Limites techniques
+
+    - **Timeout** : le délai de réponse par défaut est de **30 secondes**. Au-delà, la
+      requête est interrompue par la passerelle API ; adapter le paramètre `_count` ou les
+      critères de recherche si ce délai est régulièrement atteint.
+    - **Débit (rate limiting)** : chaque application enregistrée sur la passerelle Gravitee
+      est limitée à **17 appels par seconde par application Gravitee**. Au-delà, la passerelle renvoie une erreur de
+      dépassement de quota ; il est recommandé de lisser les appels côté client (files
+      d'attente, retry avec backoff) plutôt que d'ouvrir plusieurs applications pour
+      contourner cette limite.
+
+    ## Format des échanges
+
+    Les réponses sont au format `application/fhir+json`. Les résultats de recherche sont
+    encapsulés dans un `Bundle` de type `searchset`, paginé via les liens `self` / `next`
+    (`relation` dans `Bundle.link`).
+
+    ## Remarque sur la fidélité du modèle
+
+    Les schémas de ce document sont des **représentations simplifiées** des profils FHIR
+    officiels (`as-dp-*`), suffisantes pour piloter un client HTTP/Swagger. Pour la validation
+    normative des ressources, se référer aux `StructureDefinition` du guide d'implémentation.
+
+  contact:
+    name: ANS — Agence du Numérique en Santé
+    url: https://esante.gouv.fr
+
+servers:
+  - url: https://gateway.api.esante.gouv.fr/fhir/v2
+    description: API FHIR Annuaire Santé — v2 (production)
+
+tags:
+  - name: Practitioner
+    description: Correspond à l'ensemble des exercices professionnels d'un professionnel.
+  - name: PractitionerRole
+    description: Correspond à l'ensemble des situations d'exercices d'un professionnel.
+  - name: Organization
+    description: Correspond à l'ensemble des structures géographiques et juridiques.
+  - name: HealthcareService
+    description: Correspond à l'ensemble activités de soins et équipements sociaux.
+  - name: Device
+    description: Correspond aux Equipements Matériels Lourds (scanners, IRM…)
+
+paths:
+
+  /Practitioner:
+    get:
+      tags: [ Practitioner ]
+      summary: Rechercher des professionnels de santé
+      description: Recherche de ressources `Practitioner`.
+      operationId: searchPractitioner
+      parameters:
+        - $ref: '#/components/parameters/searchId'
+        - $ref: '#/components/parameters/practitionerActive'
+        - $ref: '#/components/parameters/lastUpdated'
+        - $ref: '#/components/parameters/practitionerIdentifier'
+        - $ref: '#/components/parameters/practitionerIdentifierType'
+        - $ref: '#/components/parameters/practitionerFamily'
+        - $ref: '#/components/parameters/practitionerGiven'
+        - $ref: '#/components/parameters/practitionerName'
+        - $ref: '#/components/parameters/practitionerDataInformationSystem'
+        - $ref: '#/components/parameters/practitionerMailboxMss'
+        - $ref: '#/components/parameters/practitionerNumberSmartcard'
+        - $ref: '#/components/parameters/practitionerQualificationCode'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/practitionerRevInclude'
+      responses:
+        '200':
+          description: Bundle searchset contenant les `Practitioner` correspondants
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+              examples:
+                appelComplet:
+                  summary: "Cas d'usage — appel complet (médecins actifs)"
+                  description: |
+                    Réponse paginée à
+                    `GET /Practitioner?qualification-code=https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante|10&active=true`
+                  value:
+                    resourceType: Bundle
+                    type: searchset
+                    total: 1825942
+                    entry:
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-4821093-5039217"
+                        resource:
+                          resourceType: Practitioner
+                          id: 003-4821093-5039217
+                          meta:
+                            profile:
+                              - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner
+                          identifier:
+                            - system: https://rpps.esante.gouv.fr
+                              value: "10001234567"
+                          active: true
+                          name:
+                            - family: DUPONT
+                              given: [ Jean ]
+                              prefix: [ Dr ]
+                          qualification:
+                            - code:
+                                coding:
+                                  - system: https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante
+                                    code: "10"
+                                    display: Médecin
+                    link:
+                      - relation: next
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=udwbRjLpi-ulE2rcqIgyxeYB037hNB2CUSABgLpRDpqSVAsJYq_1I8OUDU-GltE1TPN0EL73UawYDjWEB1zLRfmocBarSXbInzZV-TMwVeDbAQo4CIkOBDGmiEVwkrCpchvfRpSJ1CRBpme5pUmIi2jlSXYb8Jlz2YoCxIeipzrZTnZFj94LrxZ6IL4YqtSyHLZfRJMjWaFDw5RwMC0WHSP4wCCufvShoCZ1ZQOaH9tuo4ypzWCc8G1g2xO8arUxECSKNtWIxHseekxbJfElQKGEnGte09x81493K29D4iEb5maqT8iUWF6M6-D9qJg-eXzVvE5LL0J4SUuQStontpBh5Ia7CoGGCf6s0WouigSLLAOaxUb3qgQYRXwni9pcNEylFA50qDSN8GL8X6vVEz37yfrxrKtcxlaChBWgw2VFS7EPyQEu6uq2EmVeu9SiI85VOsXr02-Ns-dXLjNDmMNubwwdtmTdMiWK5"
+                      - relation: self
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner?qualification-code=https%3A%2F%2Fmos.esante.gouv.fr%2FNOS%2FTRE_G15-ProfessionSante%2FFHIR%2FTRE-G15-ProfessionSante%7C10&active=true"
+                appelDelta:
+                  summary: "Cas d'usage — appel delta (modification entre la date saisie et aujourd'hui)"
+                  description: Réponse à `GET /Practitioner?_lastUpdated=2026-09-15`
+                  value:
+                    resourceType: Bundle
+                    type: searchset
+                    total: 212
+                    entry:
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-2859047-4220794"
+                        resource:
+                          resourceType: Practitioner
+                          id: 003-2859047-4220794
+                          meta:
+                            lastUpdated: "2026-09-15T14:38:49.653+02:00"
+                            profile:
+                              - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner
+                          identifier:
+                            - system: https://rpps.esante.gouv.fr
+                              value: "10101103181"
+                          active: true
+                          name:
+                            - family: ZAREMSKI
+                              given: [ Pierre ]
+                              prefix: [ M ]
+                          qualification:
+                            - code:
+                                coding:
+                                  - system: https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante
+                                    code: "10"
+                                    display: Médecin
+                    link:
+                      - relation: next
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=fT6Nc2VxpZa1WuLmR8kD9Bx4Ht0Ja_QvGXImU3lqCoJ7ZoLKE5RtSpV6THE-BgpB97Ms7IMuAqIQaOqV5nmlv_lGutGpOM0eQZGqeNII0xvJpM7Dv2nKw_Ls77oheTaqHXU9Z1kkkQZhmZrtV5CJszjFQivJ3IrRmdtrYWo7FuBGBp8bQizLTDNa5hyEjE1="
+                      - relation: self
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner?_lastUpdated=2026-09-15"
+                      - relation: next
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=fT6Nc2VxpZa1WuLmR8kD9Bx4Ht0Ja_QvGXImU3lqCoJ7ZoLKE5RtSpV6THE-BgpB97Ms7IMuAqIQaOqV5nmlv_lGutGpOM0eQZGqeNII0xvJpM7Dv2nKw_Ls77oheTaqHXU9Z1kkkQZhmZrtV5CJszjFQivJ3IrRmdtrYWo7FuBGBp8bQizLTDNa5hyEjE1="
+                balMssPraticien:
+                  summary: "Cas d'usage — BAL MSSanté personnelle"
+                  description: |
+                    Réponse (extrait) à `GET /Practitioner?mailbox-mss:contains=@medecin.mssante.fr`.
+                    Ce type de recherche peut renvoyer un grand nombre de résultats.
+                  value:
+                    resourceType: Bundle
+                    type: searchset
+                    entry:
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-225401-195491"
+                        resource:
+                          resourceType: Practitioner
+                          id: 003-225401-195491
+                          identifier:
+                            - system: https://rpps.esante.gouv.fr
+                              value: "10002306479"
+                          active: true
+                          name:
+                            - family: TATKEU
+                              given: [ SEVIGNE ]
+                              prefix: [ MME ]
+                          telecom:
+                            - system: email
+                              value: sevigne.tatkeu@medecin.mssante.fr
+                              use: work
+                              extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                    display: MSSANTE
+                                - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                  extension:
+                                    - url: type
+                                      valueCodeableConcept:
+                                        coding:
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                                            code: PER
+                                            display: Boîte aux lettres personnelle
+                                    - url: digitization
+                                      valueBoolean: true
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /Practitioner/{id}:
+    get:
+      tags: [ Practitioner ]
+      summary: Lire un professionnel de santé via son identifiant logique
+      operationId: readPractitioner
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      responses:
+        '200':
+          description: Ressource `Practitioner` trouvée
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Practitioner'
+              examples:
+                practitioner:
+                  $ref: '#/components/examples/PractitionerExample'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /PractitionerRole:
+    get:
+      tags: [ PractitionerRole ]
+      summary: Rechercher des situations d'exercice
+      description: |
+        Recherche de ressources `PractitionerRole`, reliant un `Practitioner` à une
+        `Organization`. Permet de reconstituer le contexte d'exercice (rôle, mode
+        d'exercice).
+      operationId: searchPractitionerRole
+      parameters:
+        - $ref: '#/components/parameters/searchId'
+        - $ref: '#/components/parameters/practitionerRoleIdentifier'
+        - $ref: '#/components/parameters/lastUpdated'
+        - $ref: '#/components/parameters/practitionerRoleActive'
+        - $ref: '#/components/parameters/practitionerRoleRole'
+        - $ref: '#/components/parameters/practitionerRoleDataInformationSystem'
+        - $ref: '#/components/parameters/practitionerRoleDataRegistrationAuthority'
+        - $ref: '#/components/parameters/practitionerRoleMailboxMss'
+        - $ref: '#/components/parameters/practitionerRoleOrganization'
+        - $ref: '#/components/parameters/practitionerRolePractitioner'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/practitionerRoleInclude'
+      responses:
+        '200':
+          description: Bundle searchset contenant les `PractitionerRole` correspondants
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+              examples:
+                balMssPer:
+                  summary: "Cas d'usage — BAL MSS PER (RPPS + structure)"
+                  description: Réponse à `GET /PractitionerRole?mailbox-mss:contains=%40`
+                  value:
+                    resourceType: Bundle
+                    type: searchset
+                    total: 1
+                    entry:
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/PractitionerRole/005-1938204-2847361"
+                        resource:
+                          resourceType: PractitionerRole
+                          id: 005-1938204-2847361
+                          active: true
+                          practitioner:
+                            reference: Practitioner/003-4821093-5039217
+                            display: Dr Jean DUPONT
+                          organization:
+                            reference: Organization/010-7293841-6182734
+                            display: Centre de santé Saint-Michel
+                          code:
+                            - coding:
+                                - system: https://mos.esante.gouv.fr/NOS/TRE_R21-Fonction/FHIR/TRE-R21-Fonction
+                                  code: "10"
+                                  display: Médecin
+                          telecom:
+                            - system: email
+                              value: jean.dupont@centre-saint-michel.mssante.fr
+                              use: work
+                              extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                    display: MSSANTE
+                                - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                  extension:
+                                    - url: type
+                                      valueCodeableConcept:
+                                        coding:
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                                            code: PER
+                                            display: Boîte aux lettres personnelle
+                                    - url: digitization
+                                      valueBoolean: true
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /PractitionerRole/{id}:
+    get:
+      tags: [ PractitionerRole ]
+      summary: Lire une situation d'exercice par identifiant logique
+      operationId: readPractitionerRole
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      responses:
+        '200':
+          description: Ressource `PractitionerRole` trouvée
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/PractitionerRole'
+              examples:
+                practitionerRole:
+                  $ref: '#/components/examples/PractitionerRoleExample'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /Organization:
+    get:
+      tags: [ Organization ]
+      summary: Rechercher des structures
+      description: |
+        Recherche de ressources `Organization` (établissements, cabinets, entités légales
+        ou géographiques). Permet la navigation hiérarchique via `partof` / `_include` et
+        le chaînage vers `PractitionerRole`, `HealthcareService`, `Device` via
+        `_revinclude`.
+
+        **Workflow type « annuaire de centre de santé »** — reconstituer l'annuaire
+        complet d'un centre de santé et ses BAL MSS (filtrer d'abord `Organization` par
+        secteur d'activité + `mailbox-mss`, puis chaîner vers `PractitionerRole` et
+        `Practitioner`) :
+        1. `Organization` filtrée par secteur d'activité + `mailbox-mss`.
+        2. `_revinclude=PractitionerRole:organization` pour obtenir les situations
+           d'exercice liées.
+        3. Extraction des identifiants de `Practitioner` référencés par ces
+           `PractitionerRole`.
+        4. `Practitioner` avec `mailbox-mss` pour obtenir les BAL personnelles.
+      operationId: searchOrganization
+      parameters:
+        - $ref: '#/components/parameters/searchId'
+        - $ref: '#/components/parameters/organizationIdentifier'
+        - $ref: '#/components/parameters/organizationIdentifierType'
+        - $ref: '#/components/parameters/organizationName'
+        - $ref: '#/components/parameters/organizationActive'
+        - $ref: '#/components/parameters/organizationMailboxMss'
+        - $ref: '#/components/parameters/organizationType'
+        - $ref: '#/components/parameters/lastUpdated'
+        - $ref: '#/components/parameters/organizationAddress'
+        - $ref: '#/components/parameters/organizationAddressCity'
+        - $ref: '#/components/parameters/organizationAddressPostalCode'
+        - $ref: '#/components/parameters/organizationDataInformationSystem'
+        - $ref: '#/components/parameters/organizationPartOf'
+        - $ref: '#/components/parameters/organizationPharmacyLicence'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/organizationInclude'
+        - $ref: '#/components/parameters/organizationRevInclude'
+      responses:
+        '200':
+          description: Bundle searchset contenant les `Organization` correspondantes
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+              examples:
+                centreDeSante:
+                  summary: "Cas d'usage — BAL MSS des centres de santé (secteur SA05)"
+                  description: |
+                    Réponse à
+                    `GET /Organization?type=https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite|SA05`
+                    `&mailbox-mss:contains=%40`
+                  value:
+                    resourceType: Bundle
+                    type: searchset
+                    total: 1
+                    entry:
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Organization/010-7293841-6182734"
+                        resource:
+                          resourceType: Organization
+                          id: 010-7293841-6182734
+                          identifier:
+                            - system: https://finess.esante.gouv.fr
+                              value: "750000123"
+                          active: true
+                          type:
+                            - coding:
+                                - system: https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite
+                                  code: SA05
+                                  display: Centre de santé
+                          name: Centre de santé Saint-Michel
+                          telecom:
+                            - system: email
+                              value: contact@centre-saint-michel.mssante.fr
+                              use: work
+                              extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                    display: MSSANTE
+                                - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                  extension:
+                                    - url: type
+                                      valueCodeableConcept:
+                                        coding:
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                                            code: ORG
+                                            display: Boîte aux lettres organisationnelle
+                                    - url: description
+                                      valueString: BAL principale de la structure
+                          address:
+                            - line: [ "12 rue de la Santé" ]
+                              city: Paris
+                              postalCode: "75013"
+                              country: FR
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /Organization/{id}:
+    get:
+      tags: [ Organization ]
+      summary: Lire une structure par identifiant logique
+      operationId: readOrganization
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      responses:
+        '200':
+          description: Ressource `Organization` trouvée
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+              examples:
+                organization:
+                  $ref: '#/components/examples/OrganizationExample'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /HealthcareService:
+    get:
+      tags: [ HealthcareService ]
+      summary: Rechercher des activités de soin ou équipements sociaux
+      description: |
+        Recherche de ressources `HealthcareService`, déclinées en deux profils :
+        activité de soin (`as-dp-healthcareservice-healthcare-activity`) et équipement
+        social (`as-dp-healthcareservice-social-equipment`), sélectionnables via
+        `_profile`. Rattachées à une structure via `organization`.
+      operationId: searchHealthcareService
+      parameters:
+        - $ref: '#/components/parameters/healthcareServiceProfile'
+        - $ref: '#/components/parameters/searchId'
+        - $ref: '#/components/parameters/lastUpdated'
+        - $ref: '#/components/parameters/healthcareServiceIdentifier'
+        - $ref: '#/components/parameters/healthcareServiceActive'
+        - $ref: '#/components/parameters/healthcareServiceDataInformationSystem'
+        - $ref: '#/components/parameters/healthcareServiceCharacteristic'
+        - $ref: '#/components/parameters/healthcareServiceOrganization'
+        - $ref: '#/components/parameters/healthcareServiceCategory'
+        - $ref: '#/components/parameters/healthcareServiceType'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/healthcareServiceInclude'
+      responses:
+        '200':
+          description: Bundle searchset contenant les `HealthcareService` correspondants
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+              example:
+                resourceType: Bundle
+                type: searchset
+                total: 1
+                entry:
+                  - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/HealthcareService/020-3847261-9182736"
+                    resource:
+                      resourceType: HealthcareService
+                      id: 020-3847261-9182736
+                      identifier:
+                        - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
+                          value: "750000123-ACT01"
+                      active: true
+                      providedBy:
+                        reference: Organization/010-7293841-6182734
+                        display: Centre de santé Saint-Michel
+                      type:
+                        - coding:
+                            - system: https://mos.esante.gouv.fr/NOS/TRE_R209-TypeActivite/FHIR/TRE-R209-TypeActivite
+                              code: SM01
+                              display: Médecine générale
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /HealthcareService/{id}:
+    get:
+      tags: [ HealthcareService ]
+      summary: Lire une activité de soin ou un équipement social par identifiant logique
+      operationId: readHealthcareService
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      responses:
+        '200':
+          description: Ressource `HealthcareService` trouvée
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/HealthcareService'
+              examples:
+                healthcareService:
+                  $ref: '#/components/examples/HealthcareServiceExample'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /Device:
+    get:
+      tags: [ Device ]
+      summary: Rechercher des équipements matériels lourds
+      description: |
+        Recherche de ressources `Device` (données complémentaires FINESS relatives aux
+        équipements matériels lourds : scanners, IRM, etc.), rattachées à une structure
+        via `organization`.
+      operationId: searchDevice
+      parameters:
+        - $ref: '#/components/parameters/searchId'
+        - $ref: '#/components/parameters/lastUpdated'
+        - $ref: '#/components/parameters/deviceIdentifier'
+        - $ref: '#/components/parameters/deviceStatus'
+        - $ref: '#/components/parameters/deviceDataInformationSystem'
+        - $ref: '#/components/parameters/deviceManufacturer'
+        - $ref: '#/components/parameters/deviceModel'
+        - $ref: '#/components/parameters/deviceOrganization'
+        - $ref: '#/components/parameters/deviceType'
+        - $ref: '#/components/parameters/count'
+        - $ref: '#/components/parameters/deviceInclude'
+      responses:
+        '200':
+          description: Bundle searchset contenant les `Device` correspondants
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+              example:
+                resourceType: Bundle
+                type: searchset
+                total: 1
+                entry:
+                  - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Device/030-6273819-4728193"
+                    resource:
+                      resourceType: Device
+                      id: 030-6273819-4728193
+                      identifier:
+                        - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
+                          value: "32-31-1156"
+                      status: active
+                      manufacturer: GE Healthcare
+                      modelNumber: Revolution CT
+                      type:
+                        coding:
+                          - system: https://mos.esante.gouv.fr/NOS/TRE_R272-EquipementMaterielLourd/FHIR/TRE-R272-EquipementMaterielLourd
+                            code: "05602"
+                            display: Scanographe
+                      owner:
+                        reference: Organization/010-7293841-6182734
+                        display: Centre de santé Saint-Michel
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /Device/{id}:
+    get:
+      tags: [ Device ]
+      summary: Lire un équipement matériel lourd par identifiant logique
+      operationId: readDevice
+      parameters:
+        - $ref: '#/components/parameters/resourceId'
+      responses:
+        '200':
+          description: Ressource `Device` trouvée
+          content:
+            application/fhir+json:
+              schema:
+                $ref: '#/components/schemas/Device'
+              examples:
+                device:
+                  $ref: '#/components/examples/DeviceExample'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+components:
+
+  parameters:
+
+    resourceId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Identifiant logique (technique) de la ressource FHIR.
+
+    searchId:
+      name: _id
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Recherche sur l'identifiant technique de la ressource.
+
+    lastUpdated:
+      name: _lastUpdated
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Filtre sur la date de dernière modification. Opérateurs supportés (préfixés à la
+        date) : `eq`, `ne`, `gt`, `lt`, `ge`, `le`, `ap`.
+        Pour les appels delta, l'historique n'est conservé que sur **30 jours glissants**.
+        Exemple : `ge2025-09-27`.
+
+    count:
+      name: _count
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 50
+      description: Nombre maximum de résultats par page (50 par défaut).
+
+    practitionerActive:
+      name: active
+      in: query
+      required: false
+      schema:
+        type: boolean
+      description: Statut d'exercice du professionnel (ouvert/fermé).
+
+    practitionerDataInformationSystem:
+      name: data-information-system
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Filtre sur le système d'information source de la donnée.
+
+    practitionerFamily:
+      name: family
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Nom d'exercice du professionnel.
+
+    practitionerGiven:
+      name: given
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Prénom d'exercice du professionnel.
+
+    practitionerIdentifier:
+      name: identifier
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Identifiant métier du professionnel (RPPS, IdNatPP). Format `système|valeur`.
+        Systèmes usuels :
+        - `https://rpps.esante.gouv.fr|{NUM_RPPS}`
+        - `urn:oid:1.2.250.1.71.4.2.1|{IDNAT_PP}`
+
+        Exemple : `https://rpps.esante.gouv.fr|10001234567`.
+
+    practitionerIdentifierType:
+      name: identifier-type
+      in: query
+      required: false
+      schema:
+        type: string
+        enum: [ RPPS, IDNPS ]
+      description: Type de l'identifiant métier recherché (`RPPS` ou `IDNPS`).
+
+    practitionerMailboxMss:
+      name: mailbox-mss
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Recherche sur une adresse de messagerie sécurisée de santé (BAL MSSanté PER ou
+        CAB). Modificateur recommandé : `mailbox-mss:contains=...` (ex. `:contains=%40`
+        pour toute BAL renseignée, `:contains=@medecin.mssante.fr` pour un domaine donné).
+
+    practitionerName:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Nom complet, avec civilité d'exercice.
+
+    practitionerNumberSmartcard:
+      name: number-smartcard
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Numéro de carte professionnelle (CPS).
+
+    practitionerQualificationCode:
+      name: qualification-code
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Code de qualification (profession, diplôme, compétence). Format `système|code`.
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante|10`
+        pour la profession « Médecin » dans la nomenclature NOS des professions.
+
+    practitionerRevInclude:
+      name: _revinclude
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - "PractitionerRole:practitioner"
+      description: |
+        Inclut dans la réponse les `PractitionerRole` référençant le(s) `Practitioner`
+        trouvé(s), pour reconstituer les situations d'exercice associées.
+
+    practitionerRoleActive:
+      name: active
+      in: query
+      required: false
+      schema:
+        type: boolean
+      description: Statut d'activité de la situation d'exercice.
+
+    practitionerRoleDataInformationSystem:
+      name: data-information-system
+      in: query
+      required: false
+      schema:
+        type: string
+        enum: [ RPPS, FINESS, MSS, CG ]
+      description: Système d'information source de la donnée.
+
+    practitionerRoleDataRegistrationAuthority:
+      name: data-registration-authority
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Autorité d'enregistrement de la donnée.
+
+    practitionerRoleIdentifier:
+      name: identifier
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Identifiant métier de la situation d'exercice.
+
+    practitionerRoleMailboxMss:
+      name: mailbox-mss
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Recherche sur une BAL MSSanté de type PER rattachée à un couple RPPS + structure.
+        Modificateur recommandé : `:contains`. Exemple : `@medecin.mssante.fr`.
+
+    practitionerRoleOrganization:
+      name: organization
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Référence (identifiant technique) de l'`Organization` associée.
+
+    practitionerRolePractitioner:
+      name: practitioner
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Référence (identifiant technique) du `Practitioner` associé.
+
+    practitionerRoleRole:
+      name: role
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Fonction, rôle de prise en charge ou mode d'exercice. Systèmes de nomenclature
+        NOS usuels : `TRE_R21-Fonction`, `TRE_R85-RolePriseCharge`,
+        `TRE_R96-AutreFonctionSanitaire`, `TRE_R22-GenreActivite`, `TRE_R23-ModeExercice`,
+        `TRE_R06-SectionTableauCNOP`, `TRE_G05-SousSectionTableauCNOP`.
+
+    practitionerRoleInclude:
+      name: _include
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - "PractitionerRole:organization"
+          - "PractitionerRole:practitioner"
+          - "PractitionerRole:*"
+      description: Inclut dans la réponse l'`Organization` et/ou le `Practitioner` référencés.
+
+    organizationActive:
+      name: active
+      in: query
+      required: false
+      schema:
+        type: boolean
+      description: Statut d'activité de la structure.
+
+    organizationAddress:
+      name: address
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Recherche libre sur l'adresse complète.
+
+    organizationAddressCity:
+      name: address-city
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Commune de la structure.
+
+    organizationAddressPostalCode:
+      name: address-postalcode
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Code postal de la structure.
+
+    organizationDataInformationSystem:
+      name: data-information-system
+      in: query
+      required: false
+      schema:
+        type: string
+        enum: [ RPPS, FINESS ]
+      description: Système d'information source de la donnée.
+
+    organizationIdentifier:
+      name: identifier
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Identifiant de la structure (FINESS, SIREN, SIRET). Format `système|valeur`.
+        Systèmes usuels :
+        - `https://finess.esante.gouv.fr|{NUM_FINESS}`
+        - `https://sirene.fr|{NUM_SIREN}` ou `{NUM_SIRET}`
+
+        Exemple : `https://finess.esante.gouv.fr|123456789`.
+
+    organizationIdentifierType:
+      name: identifier-type
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Type de l'identifiant métier recherché.
+
+    organizationMailboxMss:
+      name: mailbox-mss
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Recherche sur une BAL MSSanté organisationnelle (`ORG`) ou applicative (`APP`).
+        Modificateur recommandé : `:contains` (ex. `:contains=%40` pour toute BAL
+        renseignée).
+
+    organizationName:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Raison sociale ou dénomination commerciale de la structure.
+
+    organizationPartOf:
+      name: partof
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Référence de l'entité légale ou de rattachement parente.
+
+    organizationPharmacyLicence:
+      name: pharmacy-licence
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Numéro de licence d'officine (pharmacies).
+
+    organizationType:
+      name: type
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Type de structure (entité géographique/légale), code APE/NAF, catégorie juridique,
+        secteur d'activité, catégorie d'établissement, code ESPIC…). Format `système|code`.
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite|SA05`
+        pour le secteur d'activité `SA05` (centres de santé).
+
+    organizationInclude:
+      name: _include
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - "Organization:partof"
+          - "Organization:*"
+      description: Inclut dans la réponse l'entité de rattachement référencée par `partof`.
+
+    organizationRevInclude:
+      name: _revinclude
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - "Device:organization"
+          - "HealthcareService:organization"
+          - "PractitionerRole:organization"
+      description: |
+        Inclut dans la réponse les ressources référençant la structure trouvée
+        (`Device`, `HealthcareService`, `PractitionerRole`).
+
+    healthcareServiceActive:
+      name: active
+      in: query
+      required: false
+      schema:
+        type: boolean
+      description: Statut d'activité de l'activité de soin ou de l'équipement social.
+
+    healthcareServiceProfile:
+      name: _profile
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-healthcare-activity"
+          - "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-healthcareservice-social-equipment"
+      description: Sélectionne le profil de la ressource (activité de soin vs équipement social).
+
+    healthcareServiceDataInformationSystem:
+      name: as-sp-data-information-system
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Système d'information source de la donnée.
+
+    healthcareServiceCharacteristic:
+      name: characteristic
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Forme ou type d'activité. Format `système|code`.
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite|SM`.
+
+    healthcareServiceIdentifier:
+      name: identifier
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Identifiant ARHGOS de l'équipement social ou de l'activité de soin.
+
+    healthcareServiceOrganization:
+      name: organization
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Référence de la structure porteuse de l'activité/équipement.
+
+    healthcareServiceCategory:
+      name: service-category
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Modalité de l'activité de soin.
+
+    healthcareServiceType:
+      name: service-type
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Discipline de l'équipement social ou activité de soin réglementée. Format
+        `système|code` (nomenclature `TRE_R209-TypeActivite`).
+        Exemple : `https://mos.esante.gouv.fr/NOS/TRE_R209-TypeActivite/FHIR/TRE-R209-TypeActivite|SM01`.
+
+    healthcareServiceInclude:
+      name: _include
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - "HealthcareService:organization"
+      description: Inclut dans la réponse l'`Organization` référencée.
+
+    deviceDataInformationSystem:
+      name: data-information-system
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Système d'information source de la donnée.
+
+    deviceIdentifier:
+      name: identifier
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Numéro(s) d'équipement ARHGOS. Recherche multi-valeurs possible via une liste
+        séparée par des virgules.
+        Exemple : `32-31-1156,93-93-4364`.
+
+    deviceManufacturer:
+      name: manufacturer
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Marque de l'équipement.
+
+    deviceModel:
+      name: model
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Modèle de l'équipement.
+
+    deviceOrganization:
+      name: organization
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Référence de la structure porteuse de l'équipement.
+
+    deviceStatus:
+      name: status
+      in: query
+      required: false
+      schema:
+        type: string
+        enum: [ active, inactive, entered-in-error, unknown ]
+      description: Statut de l'équipement matériel lourd.
+
+    deviceType:
+      name: type
+      in: query
+      required: false
+      schema:
+        type: string
+      description: |
+        Type d'équipement matériel lourd (nomenclature `TRE_R272-EquipementMaterielLourd`).
+        Exemple : code `05602` pour un scanner. Format `système|code`.
+
+    deviceInclude:
+      name: _include
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - "Device:organization"
+          - "Device:*"
+      description: Inclut dans la réponse l'`Organization` référencée.
+
+  schemas:
+
+    Coding:
+      type: object
+      properties:
+        system:
+          type: string
+        code:
+          type: string
+        display:
+          type: string
+
+    CodeableConcept:
+      type: object
+      properties:
+        coding:
+          type: array
+          items:
+            $ref: '#/components/schemas/Coding'
+        text:
+          type: string
+
+    Identifier:
+      type: object
+      properties:
+        system:
+          type: string
+        value:
+          type: string
+        type:
+          $ref: '#/components/schemas/CodeableConcept'
+
+    Reference:
+      type: object
+      properties:
+        reference:
+          type: string
+          description: "Référence relative, ex. `Organization/010-7293841-6182734`."
+        type:
+          type: string
+        identifier:
+          $ref: '#/components/schemas/Identifier'
+        display:
+          type: string
+
+    HumanName:
+      type: object
+      properties:
+        use:
+          type: string
+          enum: [ usual, official, nickname ]
+        text:
+          type: string
+        family:
+          type: string
+        given:
+          type: array
+          items:
+            type: string
+        prefix:
+          type: array
+          items:
+            type: string
+
+    Address:
+      type: object
+      properties:
+        use:
+          type: string
+        line:
+          type: array
+          items:
+            type: string
+        city:
+          type: string
+        postalCode:
+          type: string
+        country:
+          type: string
+
+    EmailTypeExtension:
+      type: object
+      description: |
+        Extension `fr-core-contact-point-email-type` (FR Core) portée par un `telecom` de
+        type email, précisant la nature de la messagerie (ex. MSSanté, système
+        `TRE_R256-TypeMessagerie`).
+      properties:
+        url:
+          type: string
+          enum: [ https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type ]
+        valueCoding:
+          $ref: '#/components/schemas/Coding'
+
+    MailboxMssMetadataExtension:
+      type: object
+      description: Extension `as-ext-mailbox-mss-metadata` portée par un `telecom` de type BAL MSSanté.
+      properties:
+        url:
+          type: string
+          enum: [ https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata ]
+        extension:
+          type: array
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+                enum: [ type, digitization, description, service, responsible ]
+                description: |
+                  `type` (BAL personnelle/organisationnelle/applicative, système
+                  `TRE_R257-TypeBAL`) et `digitization` (numérisation) sont les plus
+                  fréquents.
+              valueCodeableConcept:
+                $ref: '#/components/schemas/CodeableConcept'
+              valueBoolean:
+                type: boolean
+              valueString:
+                type: string
+
+    ContactPoint:
+      type: object
+      properties:
+        system:
+          type: string
+          enum: [ phone, fax, email, url ]
+        value:
+          type: string
+        use:
+          type: string
+        rank:
+          type: integer
+          minimum: 1
+          description: Ordre de préférence (1 = priorité la plus haute).
+        extension:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/EmailTypeExtension'
+              - $ref: '#/components/schemas/MailboxMssMetadataExtension'
+          description: |
+            Extensions portées par le contact : `fr-core-contact-point-email-type` (nature
+            de la messagerie) et/ou `as-ext-mailbox-mss-metadata` (métadonnées BAL MSSanté).
+
+    Meta:
+      type: object
+      properties:
+        versionId:
+          type: string
+        lastUpdated:
+          type: string
+          format: date-time
+        profile:
+          type: array
+          items:
+            type: string
+
+    Practitioner:
+      type: object
+      description: Ressource FHIR `Practitioner` (profil `as-dp-practitioner`) — professionnel de santé.
+      properties:
+        resourceType:
+          type: string
+          enum: [ Practitioner ]
+        id:
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+          description: Identifiants RPPS / IdNatPP.
+        active:
+          type: boolean
+        name:
+          type: array
+          items:
+            $ref: '#/components/schemas/HumanName'
+        telecom:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactPoint'
+          description: Coordonnées, dont BAL MSSanté PER/CAB.
+        address:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        qualification:
+          type: array
+          items:
+            type: object
+            properties:
+              identifier:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Identifier'
+              code:
+                allOf:
+                  - $ref: '#/components/schemas/CodeableConcept'
+                description: Profession, diplôme, compétence (`qualification-code`).
+              issuer:
+                $ref: '#/components/schemas/Reference'
+
+    PractitionerRole:
+      type: object
+      description: Ressource FHIR `PractitionerRole` (profil `as-dp-practitionerrole`) — situation d'exercice.
+      properties:
+        resourceType:
+          type: string
+          enum: [ PractitionerRole ]
+        id:
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+        active:
+          type: boolean
+        practitioner:
+          $ref: '#/components/schemas/Reference'
+        organization:
+          $ref: '#/components/schemas/Reference'
+        code:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodeableConcept'
+          description: Fonction, rôle de prise en charge, mode d'exercice, genre d'activité.
+        telecom:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactPoint'
+          description: Coordonnées, dont BAL MSSanté PER.
+
+    Organization:
+      type: object
+      description: Ressource FHIR `Organization` (profil `as-dp-organization`) — structure.
+      properties:
+        resourceType:
+          type: string
+          enum: [ Organization ]
+        id:
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+          description: Identifiants FINESS / SIREN / SIRET.
+        active:
+          type: boolean
+        type:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodeableConcept'
+          description: Type d'entité (géographique/légale), catégorie juridique, secteur d'activité…
+        name:
+          type: string
+        alias:
+          type: array
+          items:
+            type: string
+        telecom:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactPoint'
+          description: Coordonnées, dont BAL MSSanté ORG/APP.
+        address:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+        partOf:
+          $ref: '#/components/schemas/Reference'
+
+    HealthcareService:
+      type: object
+      description: |
+        Ressource FHIR `HealthcareService` — activité de soin
+        (`as-dp-healthcareservice-healthcare-activity`) ou équipement social
+        (`as-dp-healthcareservice-social-equipment`).
+      properties:
+        resourceType:
+          type: string
+          enum: [ HealthcareService ]
+        id:
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+          description: Identifiant ARHGOS.
+        active:
+          type: boolean
+        providedBy:
+          allOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Structure porteuse (`organization`).
+        type:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodeableConcept'
+          description: Discipline / type réglementé (`service-type`).
+        category:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodeableConcept'
+          description: Modalité (`service-category`).
+        characteristic:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodeableConcept'
+          description: Forme d'activité.
+
+    Device:
+      type: object
+      description: Ressource FHIR `Device` (profil `as-dp-device`) — équipement matériel lourd.
+      properties:
+        resourceType:
+          type: string
+          enum: [ Device ]
+        id:
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+        identifier:
+          type: array
+          items:
+            $ref: '#/components/schemas/Identifier'
+          description: Numéro(s) ARHGOS.
+        status:
+          type: string
+          enum: [ active, inactive, entered-in-error, unknown ]
+        manufacturer:
+          type: string
+        modelNumber:
+          type: string
+        type:
+          allOf:
+            - $ref: '#/components/schemas/CodeableConcept'
+          description: Type d'équipement matériel lourd (`TRE_R272-EquipementMaterielLourd`).
+        owner:
+          allOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Structure porteuse (`organization`).
+
+    Bundle:
+      type: object
+      description: Bundle FHIR de type `searchset`.
+      properties:
+        resourceType:
+          type: string
+          enum: [ Bundle ]
+        type:
+          type: string
+          enum: [ searchset ]
+        total:
+          type: integer
+        link:
+          type: array
+          items:
+            type: object
+            properties:
+              relation:
+                type: string
+                enum: [ self, next, previous ]
+              url:
+                type: string
+        entry:
+          type: array
+          items:
+            type: object
+            properties:
+              fullUrl:
+                type: string
+              search:
+                type: object
+                properties:
+                  mode:
+                    type: string
+                    enum: [ match, include ]
+              resource:
+                type: object
+                description: >
+                  Ressource FHIR (`Practitioner`, `PractitionerRole`, `Organization`,
+                  `HealthcareService` ou `Device` selon la recherche et les
+                  `_include`/`_revinclude` demandés).
+
+    OperationOutcome:
+      type: object
+      properties:
+        resourceType:
+          type: string
+          enum: [ OperationOutcome ]
+        issue:
+          type: array
+          items:
+            type: object
+            properties:
+              severity:
+                type: string
+                enum: [ error, warning, information ]
+              code:
+                type: string
+              details:
+                type: object
+                properties:
+                  text:
+                    type: string
+
+  examples:
+
+    PractitionerExample:
+      summary: Praticien avec BAL MSS personnelle
+      value:
+        resourceType: Practitioner
+        id: 003-4821093-5039217
+        meta:
+          profile:
+            - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner
+        identifier:
+          - system: https://rpps.esante.gouv.fr
+            value: "10001234567"
+        active: true
+        name:
+          - family: DUPONT
+            given: [ Jean ]
+            prefix: [ Dr ]
+        telecom:
+          - system: email
+            value: jean.dupont@medecin.mssante.fr
+            use: work
+            extension:
+              - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                valueCoding:
+                  system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                  code: MSSANTE
+                  display: MSSANTE
+              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                extension:
+                  - url: type
+                    valueCodeableConcept:
+                      coding:
+                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                          code: PER
+                          display: Boîte aux lettres personnelle
+                  - url: digitization
+                    valueBoolean: false
+        qualification:
+          - code:
+              coding:
+                - system: https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante
+                  code: "10"
+                  display: Médecin
+
+    PractitionerRoleExample:
+      summary: Situation d'exercice avec BAL MSS PER (RPPS + structure)
+      value:
+        resourceType: PractitionerRole
+        id: 005-1938204-2847361
+        identifier:
+          - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroautorisationpersonnesactivite
+            value: "800012345-1"
+        active: true
+        practitioner:
+          reference: Practitioner/003-4821093-5039217
+          display: Dr Jean DUPONT
+        organization:
+          reference: Organization/010-7293841-6182734
+          display: Centre de santé Saint-Michel
+        code:
+          - coding:
+              - system: https://mos.esante.gouv.fr/NOS/TRE_R21-Fonction/FHIR/TRE-R21-Fonction
+                code: "10"
+                display: Médecin
+        telecom:
+          - system: email
+            value: jean.dupont@centre-saint-michel.mssante.fr
+            use: work
+            extension:
+              - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                valueCoding:
+                  system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                  code: MSSANTE
+                  display: MSSANTE
+              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                extension:
+                  - url: type
+                    valueCodeableConcept:
+                      coding:
+                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                          code: PER
+                          display: Boîte aux lettres personnelle
+                  - url: digitization
+                    valueBoolean: true
+
+    OrganizationExample:
+      summary: Centre de santé avec BAL MSS organisationnelle
+      value:
+        resourceType: Organization
+        id: 010-7293841-6182734
+        meta:
+          profile:
+            - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization
+        identifier:
+          - system: https://finess.esante.gouv.fr
+            value: "750000123"
+        active: true
+        type:
+          - coding:
+              - system: https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite
+                code: SA05
+                display: Centre de santé
+        name: Centre de santé Saint-Michel
+        telecom:
+          - system: email
+            value: contact@centre-saint-michel.mssante.fr
+            use: work
+            extension:
+              - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                valueCoding:
+                  system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                  code: MSSANTE
+                  display: MSSANTE
+              - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                extension:
+                  - url: type
+                    valueCodeableConcept:
+                      coding:
+                        - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                          code: ORG
+                          display: Boîte aux lettres organisationnelle
+                  - url: description
+                    valueString: BAL principale de la structure
+        address:
+          - line: [ "12 rue de la Santé" ]
+            city: Paris
+            postalCode: "75013"
+            country: FR
+
+    HealthcareServiceExample:
+      summary: Activité de soin rattachée à une structure
+      value:
+        resourceType: HealthcareService
+        id: 020-3847261-9182736
+        identifier:
+          - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
+            value: "750000123-ACT01"
+        active: true
+        providedBy:
+          reference: Organization/010-7293841-6182734
+          display: Centre de santé Saint-Michel
+        type:
+          - coding:
+              - system: https://mos.esante.gouv.fr/NOS/TRE_R209-TypeActivite/FHIR/TRE-R209-TypeActivite
+                code: SM01
+                display: Médecine générale
+
+    DeviceExample:
+      summary: Scanner rattaché à une structure
+      value:
+        resourceType: Device
+        id: 030-6273819-4728193
+        identifier:
+          - system: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-numeroarhgos
+            value: "32-31-1156"
+        status: active
+        manufacturer: GE Healthcare
+        modelNumber: Revolution CT
+        type:
+          coding:
+            - system: https://mos.esante.gouv.fr/NOS/TRE_R272-EquipementMaterielLourd/FHIR/TRE-R272-EquipementMaterielLourd
+              code: "05602"
+              display: Scanographe
+        owner:
+          reference: Organization/010-7293841-6182734
+          display: Centre de santé Saint-Michel
+
+  responses:
+    BadRequest:
+      description: Requête invalide (paramètre manquant ou malformé)
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+    Unauthorized:
+      description: Authentification requise ou clé d'API invalide
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+    NotFound:
+      description: Ressource introuvable
+      content:
+        application/fhir+json:
+          schema:
+            $ref: '#/components/schemas/OperationOutcome'
+
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: ESANTE-API-KEY
+      description: Clé d'API délivrée par l'ANS pour accéder à l'API FHIR Annuaire Santé.
+
+security:
+  - ApiKey: [ ]
