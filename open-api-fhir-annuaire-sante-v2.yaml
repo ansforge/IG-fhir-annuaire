@@ -79,8 +79,8 @@ paths:
   /Practitioner:
     get:
       tags: [ Practitioner ]
-      summary: Rechercher des professionnels de santé
-      description: Recherche de ressources `Practitioner`.
+      summary: Rechercher des Professionnels intervenant dans le système de Santé
+      description: La ressource `Practitioner` permet de récupérer l'ensemble des exercices professionnels d'un.
       operationId: searchPractitioner
       parameters:
         - $ref: '#/components/parameters/searchId'
@@ -179,29 +179,38 @@ paths:
                       - relation: next
                         url: "https://gateway.api.esante.gouv.fr/fhir/v2/_page?id=fT6Nc2VxpZa1WuLmR8kD9Bx4Ht0Ja_QvGXImU3lqCoJ7ZoLKE5RtSpV6THE-BgpB97Ms7IMuAqIQaOqV5nmlv_lGutGpOM0eQZGqeNII0xvJpM7Dv2nKw_Ls77oheTaqHXU9Z1kkkQZhmZrtV5CJszjFQivJ3IrRmdtrYWo7FuBGBp8bQizLTDNa5hyEjE1="
                 balMssPraticien:
-                  summary: "Cas d'usage — BAL MSSanté personnelle"
+                  summary: "Cas d'usage — Rechercher toutes les BAL avec les situations d'exercice d'un PS"
                   description: |
-                    Réponse (extrait) à `GET /Practitioner?mailbox-mss:contains=@medecin.mssante.fr`.
-                    Ce type de recherche peut renvoyer un grand nombre de résultats.
+                    Réponse à
+                    `GET /Practitioner?identifier=10100672772&_revinclude=PractitionerRole:practitioner`
+                    (`10100672772` = numéro RPPS, passé en valeur brute sans code système). Le
+                    `Practitioner` retourné porte sa BAL MSSanté personnelle, et le
+                    `PractitionerRole` inclus via `_revinclude` reconstitue sa situation
+                    d'exercice avec, ici, une BAL MSSanté propre à cette situation.
                   value:
                     resourceType: Bundle
                     type: searchset
+                    total: 1
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-225401-195491"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner/003-1589122-1577892"
                         resource:
                           resourceType: Practitioner
-                          id: 003-225401-195491
+                          id: 003-1589122-1577892
+                          meta:
+                            lastUpdated: "2026-08-24T14:50:44.475+02:00"
+                            profile:
+                              - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner
                           identifier:
                             - system: https://rpps.esante.gouv.fr
-                              value: "10002306479"
+                              value: "10100672772"
                           active: true
                           name:
-                            - family: TATKEU
-                              given: [ SEVIGNE ]
-                              prefix: [ MME ]
+                            - family: ABADIE
+                              given: [ VICTOR ]
+                              prefix: [ M ]
                           telecom:
                             - system: email
-                              value: sevigne.tatkeu@medecin.mssante.fr
+                              value: victor.abadie@aura.mssante.fr
                               use: work
                               extension:
                                 - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
@@ -219,8 +228,72 @@ paths:
                                             display: Boîte aux lettres personnelle
                                     - url: digitization
                                       valueBoolean: true
-        '400':
-          $ref: '#/components/responses/BadRequest'
+                          qualification:
+                            - code:
+                                coding:
+                                  - system: https://mos.esante.gouv.fr/NOS/TRE_G15-ProfessionSante/FHIR/TRE-G15-ProfessionSante
+                                    code: "10"
+                                    display: Médecin
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/PractitionerRole/005-1577892-1918153"
+                        resource:
+                          resourceType: PractitionerRole
+                          id: 005-1577892-1918153
+                          identifier:
+                            - system: https://rpps.esante.gouv.fr
+                              value: "1010623030"
+                          active: true
+                          practitioner:
+                            reference: Practitioner/003-1589122-1577892
+                            identifier:
+                              type:
+                                coding:
+                                  - system: https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203
+                                    code: IDNPS
+                              value: "810100672772"
+                          organization:
+                            reference: Organization/001-01-2105979
+                            identifier:
+                              type:
+                                coding:
+                                  - system: https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203
+                                    code: IDNST
+                              value: "1710978263"
+                          code:
+                            - coding:
+                                - system: https://mos.esante.gouv.fr/NOS/TRE_R22-GenreActivite/FHIR/TRE-R22-GenreActivite
+                                  code: GENR01
+                                  display: Activité de soin et de pharmacie
+                            - coding:
+                                - system: https://mos.esante.gouv.fr/NOS/TRE_R23-ModeExercice/FHIR/TRE-R23-ModeExercice
+                                  code: S
+                                  display: Salarié
+                            - coding:
+                                - system: https://mos.esante.gouv.fr/NOS/TRE_R21-Fonction/FHIR/TRE-R21-Fonction
+                                  code: FON-33
+                                  display: Salarié en poste fixe
+                          telecom:
+                            - system: email
+                              value: victor.abadie@ch-chalon71.mssante.fr
+                              extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                  extension:
+                                    - url: type
+                                      valueCodeableConcept:
+                                        coding:
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                                            code: PER
+                                            display: Boîte aux lettres personnelle
+                                    - url: digitization
+                                      valueBoolean: true
+                    link:
+                      - relation: self
+                        url: "https://gateway.api.esante.gouv.fr/fhir/v2/Practitioner?identifier=10100672772&_revinclude=PractitionerRole:practitioner"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
         '401':
           $ref: '#/components/responses/Unauthorized'
 
@@ -249,11 +322,8 @@ paths:
   /PractitionerRole:
     get:
       tags: [ PractitionerRole ]
-      summary: Rechercher des situations d'exercice
-      description: |
-        Recherche de ressources `PractitionerRole`, reliant un `Practitioner` à une
-        `Organization`. Permet de reconstituer le contexte d'exercice (rôle, mode
-        d'exercice).
+      summary: Rechercher les situations d'exercice / activités des professionnels
+      description: La ressource `PractitionerRole` permet de récupérer l'ensemble des situations d'exercices d'un professionnel. Cette ressource relie à la fois le `Practitioner` à une `Organization`.
       operationId: searchPractitionerRole
       parameters:
         - $ref: '#/components/parameters/searchId'
@@ -277,39 +347,45 @@ paths:
                 $ref: '#/components/schemas/Bundle'
               examples:
                 balMssPer:
-                  summary: "Cas d'usage — BAL MSS PER (RPPS + structure)"
-                  description: Réponse à `GET /PractitionerRole?mailbox-mss:contains=%40`
+                  summary: "Cas d'usage — Rechercher toutes les BAL MSS des situations d'exercices"
+                  description: |
+                    Réponse (extrait) à
+                    `GET /PractitionerRole?mailbox-mss:contains=%40&_elements=telecom`.
+                    `_elements=telecom` allège la réponse aux seuls éléments nécessaires
+                    (d'où le tag `SUBSETTED` et l'absence d'`organization`/`code`). Cette
+                    recherche peut renvoyer un grand nombre de résultats.
                   value:
                     resourceType: Bundle
                     type: searchset
-                    total: 1
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/PractitionerRole/005-1938204-2847361"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/PractitionerRole/005-4223913-7104447"
                         resource:
                           resourceType: PractitionerRole
-                          id: 005-1938204-2847361
+                          id: 005-4223913-7104447
+                          meta:
+                            profile:
+                              - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole
+                            tag:
+                              - system: http://terminology.hl7.org/CodeSystem/v3-ObservationValue
+                                code: SUBSETTED
+                                display: Resource encoded in summary mode
                           active: true
                           practitioner:
-                            reference: Practitioner/003-4821093-5039217
-                            display: Dr Jean DUPONT
-                          organization:
-                            reference: Organization/010-7293841-6182734
-                            display: Centre de santé Saint-Michel
-                          code:
-                            - coding:
-                                - system: https://mos.esante.gouv.fr/NOS/TRE_R21-Fonction/FHIR/TRE-R21-Fonction
-                                  code: "10"
-                                  display: Médecin
+                            reference: Practitioner/003-4053172-4223913
+                            identifier:
+                              type:
+                                coding:
+                                  - system: https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203
+                                    code: IDNPS
+                              value: "810102258240"
                           telecom:
                             - system: email
-                              value: jean.dupont@centre-saint-michel.mssante.fr
-                              use: work
+                              value: catherine.casiez@chms.aura.mssante.fr
                               extension:
                                 - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
                                   valueCoding:
                                     system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                     code: MSSANTE
-                                    display: MSSANTE
                                 - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                   extension:
                                     - url: type
@@ -320,8 +396,46 @@ paths:
                                             display: Boîte aux lettres personnelle
                                     - url: digitization
                                       valueBoolean: true
-        '400':
-          $ref: '#/components/responses/BadRequest'
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/PractitionerRole/005-88242-64412"
+                        resource:
+                          resourceType: PractitionerRole
+                          id: 005-88242-64412
+                          meta:
+                            profile:
+                              - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole
+                            tag:
+                              - system: http://terminology.hl7.org/CodeSystem/v3-ObservationValue
+                                code: SUBSETTED
+                                display: Resource encoded in summary mode
+                          active: true
+                          practitioner:
+                            reference: Practitioner/003-57530-88242
+                            identifier:
+                              type:
+                                coding:
+                                  - system: https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203
+                                    code: IDNPS
+                              value: "810002050739"
+                          telecom:
+                            - system: email
+                              value: johanne.trotobas@pharmacie-paca.mssante.fr
+                              extension:
+                                - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
+                                  valueCoding:
+                                    system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
+                                    code: MSSANTE
+                                - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
+                                  extension:
+                                    - url: type
+                                      valueCodeableConcept:
+                                        coding:
+                                          - system: https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL
+                                            code: PER
+                                            display: Boîte aux lettres personnelle
+                                    - url: digitization
+                                      valueBoolean: false
+        '500':
+          $ref: '#/components/responses/InternalServerError'
         '401':
           $ref: '#/components/responses/Unauthorized'
 
@@ -350,23 +464,10 @@ paths:
   /Organization:
     get:
       tags: [ Organization ]
-      summary: Rechercher des structures
+      summary: Rechercher des structures EGE ou PM-EJ
       description: |
-        Recherche de ressources `Organization` (établissements, cabinets, entités légales
-        ou géographiques). Permet la navigation hiérarchique via `partof` / `_include` et
-        le chaînage vers `PractitionerRole`, `HealthcareService`, `Device` via
-        `_revinclude`.
-
-        **Workflow type « annuaire de centre de santé »** — reconstituer l'annuaire
-        complet d'un centre de santé et ses BAL MSS (filtrer d'abord `Organization` par
-        secteur d'activité + `mailbox-mss`, puis chaîner vers `PractitionerRole` et
-        `Practitioner`) :
-        1. `Organization` filtrée par secteur d'activité + `mailbox-mss`.
-        2. `_revinclude=PractitionerRole:organization` pour obtenir les situations
-           d'exercice liées.
-        3. Extraction des identifiants de `Practitioner` référencés par ces
-           `PractitionerRole`.
-        4. `Practitioner` avec `mailbox-mss` pour obtenir les BAL personnelles.
+        La ressource `Organization` permet de rechercher les entités géographiques (EGE) et les entités juridiques (PM-EJ). Permet la navigation hiérarchique via `partof` / `_include` et
+        le chaînage vers `PractitionerRole`, `HealthcareService`, `Device` via `_revinclude`.
       operationId: searchOrganization
       parameters:
         - $ref: '#/components/parameters/searchId'
@@ -394,41 +495,47 @@ paths:
               schema:
                 $ref: '#/components/schemas/Bundle'
               examples:
-                centreDeSante:
-                  summary: "Cas d'usage — BAL MSS des centres de santé (secteur SA05)"
+                balMssEPS:
+                  summary: "Cas d'usage — Rechercher les BAL MSS pour tous les Etablissements Publics de Santé (SA01)"
                   description: |
-                    Réponse à
-                    `GET /Organization?type=https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite|SA05`
-                    `&mailbox-mss:contains=%40`
+                    Réponse (extrait) à `GET /Organization?mailbox-mss:contains=@&type=SA01`.
+                    Cette recherche peut renvoyer un grand nombre de résultats.
                   value:
                     resourceType: Bundle
                     type: searchset
-                    total: 1
+                    total: 643
                     entry:
-                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Organization/010-7293841-6182734"
+                      - fullUrl: "https://gateway.api.esante.gouv.fr/fhir/v2/Organization/001-01-80388"
                         resource:
                           resourceType: Organization
-                          id: 010-7293841-6182734
+                          id: 001-01-80388
+                          meta:
+                            lastUpdated: "2026-03-09T16:40:34.552+02:00"
+                            profile:
+                              - https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization
                           identifier:
                             - system: https://finess.esante.gouv.fr
-                              value: "750000123"
+                              value: "420000275"
                           active: true
                           type:
                             - coding:
                                 - system: https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite
-                                  code: SA05
-                                  display: Centre de santé
-                          name: Centre de santé Saint-Michel
+                                  code: SA01
+                                  display: Etablissement public de santé
+                          name: CH DE SAINT BONNET LE CHATEAU
                           telecom:
+                            - system: phone
+                              value: "0477505500"
+                              rank: 1
+                            - system: fax
+                              value: "0477505599"
                             - system: email
-                              value: contact@centre-saint-michel.mssante.fr
-                              use: work
+                              value: ssr@chsaintbonnet.aura.mssante.fr
                               extension:
                                 - url: https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type
                                   valueCoding:
                                     system: https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie
                                     code: MSSANTE
-                                    display: MSSANTE
                                 - url: https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata
                                   extension:
                                     - url: type
@@ -438,14 +545,19 @@ paths:
                                             code: ORG
                                             display: Boîte aux lettres organisationnelle
                                     - url: description
-                                      valueString: BAL principale de la structure
+                                      valueString: CH SAINT BONNET LE CHÂTEAU Ssr
+                                    - url: digitization
+                                      valueBoolean: true
                           address:
-                            - line: [ "12 rue de la Santé" ]
-                              city: Paris
-                              postalCode: "75013"
-                              country: FR
-        '400':
-          $ref: '#/components/responses/BadRequest'
+                            - line: [ "5 PL LAGNIER" ]
+                              city: ST BONNET LE CHATEAU
+                              postalCode: "42380"
+                          partOf:
+                            reference: Organization/001-02-65714
+                            identifier:
+                              value: "1420780694"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
         '401':
           $ref: '#/components/responses/Unauthorized'
 
@@ -522,8 +634,8 @@ paths:
                             - system: https://mos.esante.gouv.fr/NOS/TRE_R209-TypeActivite/FHIR/TRE-R209-TypeActivite
                               code: SM01
                               display: Médecine générale
-        '400':
-          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
         '401':
           $ref: '#/components/responses/Unauthorized'
 
@@ -600,8 +712,8 @@ paths:
                       owner:
                         reference: Organization/010-7293841-6182734
                         display: Centre de santé Saint-Michel
-        '400':
-          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
         '401':
           $ref: '#/components/responses/Unauthorized'
 
@@ -1553,6 +1665,9 @@ components:
                 enum: [ error, warning, information ]
               code:
                 type: string
+              diagnostics:
+                type: string
+                description: Message d'erreur détaillé (ex. paramètre de recherche inconnu ou malformé).
               details:
                 type: object
                 properties:
@@ -1562,7 +1677,7 @@ components:
   examples:
 
     PractitionerExample:
-      summary: Praticien avec BAL MSS personnelle
+      summary: Cas d'usage - PS avec BAL MSS personnelle
       value:
         resourceType: Practitioner
         id: 003-4821093-5039217
@@ -1605,7 +1720,7 @@ components:
                   display: Médecin
 
     PractitionerRoleExample:
-      summary: Situation d'exercice avec BAL MSS PER (RPPS + structure)
+      summary: Cas d'usage - Situation d'exercice d'un PS avec une BAL MSS liée à une structure d'exercice
       value:
         resourceType: PractitionerRole
         id: 005-1938204-2847361
@@ -1728,14 +1843,22 @@ components:
           display: Centre de santé Saint-Michel
 
   responses:
-    BadRequest:
-      description: Requête invalide (paramètre manquant ou malformé)
+    InternalServerError:
+      description: |
+        Erreur serveur, notamment en cas de paramètre de recherche inconnu ou malformé
+        (ex. nom de paramètre mal orthographié).
       content:
         application/fhir+json:
           schema:
             $ref: '#/components/schemas/OperationOutcome'
+          example:
+            resourceType: OperationOutcome
+            issue:
+              - severity: error
+                code: exception
+                diagnostics: Parameter idenifier not found for resource Practitioner
     Unauthorized:
-      description: Authentification requise ou clé d'API invalide
+      description: Authentification clé d'API invalide
       content:
         application/fhir+json:
           schema:
