@@ -7,7 +7,7 @@ CodeSystem définissant les types d'établissement.
 
 Ce système de codes est référencé dans la définition des ensembles de valeurs suivants :
 
-* [AsVsTypeEtablissement](ValueSet-as-vs-type-etablissement.md)
+* [AS ValueSet type Etablissement](ValueSet-as-vs-type-etablissement.md)
 
 -------
 
@@ -30,7 +30,7 @@ Ce système de codes est référencé dans la définition des ensembles de valeu
   "title" : "AS CodeSystem Type Etablissement",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-08-04T12:10:07+00:00",
+  "date" : "2026-09-22T15:44:42+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

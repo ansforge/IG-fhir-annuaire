@@ -32,7 +32,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-healthcareserv
   "name" : "AsHealthcareServiceSocialEquipmentProfile",
   "title" : "AS HealthcareService Social Equipment Profile",
   "status" : "draft",
-  "date" : "2026-08-04T12:10:07+00:00",
+  "date" : "2026-09-22T15:44:42+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -374,7 +374,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-healthcareserv
       "short" : "Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l'activité associée à la discipline (modeFonctionnement, typeActivite).",
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J138-TypeActivite-RASS/FHIR/JDV-J138-TypeActivite-RASS|20240223120000"
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J138-TypeActivite-RASS/FHIR/JDV-J138-TypeActivite-RASS|20260730120000"
       }
     }]
   }

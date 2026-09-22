@@ -7,7 +7,7 @@ CodeSystem définissant les types de systèmes d'information pouvant alimenter l
 
 This Code system is referenced in the definition of the following value sets:
 
-* [AsVsTypeSystemeInformationVS](ValueSet-as-vs-type-systeme-information.md)
+* [AS ValueSet type de système d'information](ValueSet-as-vs-type-systeme-information.md)
 
 -------
 
@@ -30,7 +30,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "AS CodeSystem type de système d'information",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-08-04T12:10:07+00:00",
+  "date" : "2026-09-22T15:44:42+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

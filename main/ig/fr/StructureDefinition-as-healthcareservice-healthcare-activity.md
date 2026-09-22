@@ -120,7 +120,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
   "name" : "AsHealthcareServiceHealthcareActivityProfile",
   "title" : "AS HealthcareService HealthCare Activity Profile",
   "status" : "draft",
-  "date" : "2026-08-04T12:10:07+00:00",
+  "date" : "2026-09-22T15:44:42+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -226,7 +226,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "short" : "La modalité étant un mode d’application ou un type de soin prévu par les textes réglementaires encadrant chaque activité de soins (modalite).",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS|20220325120000"
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J132-ModaliteActivite-RASS/FHIR/JDV-J132-ModaliteActivite-RASS|20260730120000"
       }
     },
     {
@@ -249,7 +249,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "max" : "1",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS|20201127120000"
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS|20260827120000"
       }
     },
     {
@@ -258,7 +258,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-healthcarese
       "short" : "Code définissant l'activité de soins autorisée -AS- (article L.6122-1 du CSP), \r\nla liste des activités de soins soumises à autorisation est fixée par décret en Conseil d'Etat (article L.6122-25 du CSP).\nactivite",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS|20201127120000"
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J133-ActiviteSanitaireRegulee-RASS/FHIR/JDV-J133-ActiviteSanitaireRegulee-RASS|20260827120000"
       }
     },
     {

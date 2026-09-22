@@ -17,7 +17,7 @@ Paramètre de recherche pour récupérer les situations d'exercice d'un professi
   "version" : "1.2.0-snapshot-3",
   "name" : "AsTypeSmartCardSearchParameter",
   "status" : "active",
-  "date" : "2026-08-04T12:10:07+00:00",
+  "date" : "2026-09-22T15:44:42+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

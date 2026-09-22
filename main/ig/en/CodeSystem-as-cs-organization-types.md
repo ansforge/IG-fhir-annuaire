@@ -7,7 +7,7 @@ CodeSystem définissant les types d'organisation
 
 This Code system is referenced in the definition of the following value sets:
 
-* [AsVsOrganizationTypes](ValueSet-as-vs-organization-types.md)
+* [AS ValueSet OrganizationTypes](ValueSet-as-vs-organization-types.md)
 
 -------
 
@@ -26,7 +26,7 @@ This Code system is referenced in the definition of the following value sets:
   "name" : "AsCsOrganizationTypes",
   "title" : "AS CodeSystem OrganizationTypes",
   "status" : "draft",
-  "date" : "2026-08-04T12:10:07+00:00",
+  "date" : "2026-09-22T15:44:42+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",

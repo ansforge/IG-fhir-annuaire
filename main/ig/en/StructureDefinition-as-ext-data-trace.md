@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-data-trace
   "name" : "AsDataTraceExtension",
   "title" : "AS Data Trace Extension",
   "status" : "draft",
-  "date" : "2026-08-04T12:10:07+00:00",
+  "date" : "2026-09-22T15:44:42+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -104,7 +104,7 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-data-trace
       }],
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS|20240628120000"
+        "valueSet" : "https://mos.esante.gouv.fr/NOS/JDV_J83-AutoriteEnregistrement-RASS/FHIR/JDV-J83-AutoriteEnregistrement-RASS|20260730120000"
       }
     },
     {
