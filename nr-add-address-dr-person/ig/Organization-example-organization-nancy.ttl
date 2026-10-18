@@ -1,0 +1,130 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/example-organization-nancy> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "example-organization-nancy"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization" ;
+       fhir:index 0 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"fr\" lang=\"fr\"><hr/><p><b>French</b></p><hr/><p class=\"res-header-id\"><b>Narratif généré : Organisation example-organization-nancy</b></p><a name=\"example-organization-nancy\"> </a><a name=\"hcexample-organization-nancy\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profil: <a href=\"StructureDefinition-as-organization.html\">AS Organization Profile</a></p></div><p><b>identifier</b>: Identification nationale de structure définie par l’ANS dans le CI_SIS/1540002698 (utilisation : official, ), FINESS d'entité géographique/540002698</p><p><b>active</b>: true</p><p><b>name</b>: CHRU NANCY - HOPITAUX DE BRABOIS</p><p><b>telecom</b>: ph: 0383153030, fax: 0383153522, <a href=\"mailto:direction.generale@chu-nancy.fr\">direction.generale@chu-nancy.fr</a>, <a href=\"mailto:exemple.address@address.mssante.fr\">exemple.address@address.mssante.fr</a></p><p><b>address</b>: R DU MORVAN, 54511 VANDOEUVRE LES NANCY CEDEX VANDOEUVRE LES NANCY CEDEX 54511 </p></div><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Organization example-organization-nancy</b></p><a name=\"en-example-organization-nancy\"> </a><a name=\"en-hcexample-organization-nancy\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-organization.html\">AS Organization Profile</a></p></div><p><b>identifier</b>: Identification nationale de structure définie par l’ANS dans le CI_SIS/1540002698 (use: official, ), FINESS d'entité géographique/540002698</p><p><b>active</b>: true</p><p><b>name</b>: CHRU NANCY - HOPITAUX DE BRABOIS</p><p><b>telecom</b>: ph: 0383153030, fax: 0383153522, <a href=\"mailto:direction.generale@chu-nancy.fr\">direction.generale@chu-nancy.fr</a>, <a href=\"mailto:exemple.address@address.mssante.fr\">exemple.address@address.mssante.fr</a></p><p><b>address</b>: R DU MORVAN, 54511 VANDOEUVRE LES NANCY CEDEX VANDOEUVRE LES NANCY CEDEX 54511 </p></div></div>"
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "IDNST" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.250.1.71.4.2.2" ] ;
+     fhir:Identifier.value [ fhir:value "1540002698" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "FINEG" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://finess.esante.gouv.fr" ] ;
+     fhir:Identifier.value [ fhir:value "540002698" ]
+  ] ;
+  fhir:Organization.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Organization.name [ fhir:value "CHRU NANCY - HOPITAUX DE BRABOIS"] ;
+  fhir:Organization.telecom [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "0383153030" ] ;
+     fhir:ContactPoint.rank [ fhir:value "1"^^xsd:positiveInteger ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactPoint.system [ fhir:value "fax" ] ;
+     fhir:ContactPoint.value [ fhir:value "0383153522" ]
+  ], [
+     fhir:index 2 ;
+     fhir:ContactPoint.system [ fhir:value "email" ] ;
+     fhir:ContactPoint.value [ fhir:value "direction.generale@chu-nancy.fr" ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-contact-point-email-type" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie" ] ;
+         fhir:Coding.code [ fhir:value "MSSANTE" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "type" ] ;
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL" ] ;
+             fhir:Coding.code [ fhir:value "ORG" ]
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "description" ] ;
+         fhir:Extension.valueString [ fhir:value "Description-mss" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "listeRouge" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:Extension.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-mailbox-mss-metadata" ]
+     ] ;
+     fhir:ContactPoint.system [ fhir:value "email" ] ;
+     fhir:ContactPoint.value [ fhir:value "exemple.address@address.mssante.fr" ]
+  ] ;
+  fhir:Organization.address [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune" ] ;
+         fhir:Coding.code [ fhir:value "54547" ]
+       ]
+     ] ;
+     fhir:Address.line [
+       fhir:value "R DU MORVAN, 54511 VANDOEUVRE LES NANCY CEDEX" ;
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType" ] ;
+         fhir:Extension.valueString [ fhir:value "R" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase" ] ;
+         fhir:Extension.valueString [ fhir:value "DU MORVAN" ]
+       ]
+     ] ;
+     fhir:Address.city [ fhir:value "VANDOEUVRE LES NANCY CEDEX" ] ;
+     fhir:Address.district [ fhir:value "52" ] ;
+     fhir:Address.postalCode [ fhir:value "54511" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/example-organization-nancy.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

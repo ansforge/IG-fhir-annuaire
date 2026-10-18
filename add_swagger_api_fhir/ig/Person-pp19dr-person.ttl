@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Person/pp19dr-person> a fhir:Person ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "pp19dr-person"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person" ;
+       fhir:index 0 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div xml:lang=\"fr\" lang=\"fr\"><hr/><p><b>French</b></p><hr/><p class=\"res-header-id\"><b>Narratif généré : Personne pp19dr-person</b></p><a name=\"pp19dr-person\"> </a><a name=\"hcpp19dr-person\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profil: <a href=\"StructureDefinition-as-dr-person.html\">AS Donnée Restreinte Person Profile</a></p></div><p><b>AS Person Birth Place Extension</b>: NANTES</p><p><b>name</b>: Artus Saucier (Official)</p><h3>Links</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Target</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-334081DP.html\">Practitioner Arthur Saucier </a></td></tr></table></div><div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Person pp19dr-person</b></p><a name=\"en-pp19dr-person\"> </a><a name=\"en-hcpp19dr-person\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-as-dr-person.html\">AS Donnée Restreinte Person Profile</a></p></div><p><b>AS Person Birth Place Extension</b>: NANTES</p><p><b>name</b>: Artus Saucier (Official)</p><h3>Links</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Target</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-334081DP.html\">Practitioner Arthur Saucier </a></td></tr></table></div></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-person-birth-place" ] ;
+     fhir:Extension.valueAddress [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code" ] ;
+         fhir:Extension.valueCoding [
+           fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune" ] ;
+           fhir:Coding.code [ fhir:value "44109" ]
+         ]
+       ] ;
+       fhir:Address.text [ fhir:value "NANTES" ] ;
+       fhir:Address.country [ fhir:value "99100" ]
+     ]
+  ] ;
+  fhir:Person.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Saucier" ] ;
+     fhir:HumanName.given [
+       fhir:value "Artus" ;
+       fhir:index 0
+     ] ;
+     fhir:HumanName.prefix [
+       fhir:value "M" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:Person.link [
+     fhir:index 0 ;
+     fhir:Person.link.target [
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/Practitioner/334081DP> ;
+       fhir:Reference.reference [ fhir:value "Practitioner/334081DP" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Person/pp19dr-person.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

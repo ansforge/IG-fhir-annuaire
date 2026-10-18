@@ -1,0 +1,147 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/158480DP> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "158480DP"] ;
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "0.1" ] ;
+     fhir:Meta.lastUpdated [ fhir:value "2019-09-01T01:00:00.000+01:00"^^xsd:dateTime ] ;
+     fhir:Meta.source [ fhir:value "https://annuaire.esante.gouv.fr" ] ;
+     fhir:Meta.profile [
+       fhir:value "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0" ;
+       fhir:index -1 ;
+       fhir:link <https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization|2.2.0>
+     ], [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2" ;
+       fhir:index -1 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization|1.2.0-snapshot-2>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "fr"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xml:lang=\"fr\" lang=\"fr\"><hr/><p><b>French</b></p><hr/><p class=\"res-header-id\"><b>Narratif généré : Organisation 158480DP</b></p><a name=\"158480DP\"> </a><a name=\"hc158480DP\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version : 0.1; Dernière mise à jour : 2019-09-01 01:00:00+0100; Langue : fr; </p><p style=\"margin-bottom: 0px\">Information Source: <a href=\"https://annuaire.esante.gouv.fr\">https://annuaire.esante.gouv.fr</a></p><p style=\"margin-bottom: 0px\">Profils: <a href=\"https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-organization.html\">FR Core Organization Profile</a> version : 2.2.0, <a href=\"StructureDefinition-as-dp-organization.html\">AS Donnée Publique Organization Profile</a> version : 1.2.0-snapshot-3</p></div><p><b>Organization Period</b>: 2019-06-01 --&gt; (en cours)</p><p><b>identifier</b>: Identification nationale de structure définie par l’ANS dans le CI_SIS/1754567860 (utilisation : official, ), FINESS d'entité géographique/754567860 (utilisation : official, ), N° RPPS Rang/F754567860 (utilisation : official, )</p><p><b>active</b>: true</p><p><b>type</b>: <span title=\"Codes :{https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-3307 GEOGRAPHICAL-ENTITY}\">Entité géographique</span>, <span title=\"Codes :{https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite SA01}\">Etablissement public de santé</span></p><p><b>name</b>: CH EURE-SEINE</p><p><b>telecom</b>: ph: 0450636363, fax: 0450455933</p><p><b>address</b>: null PARIS 75014 </p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/organization-period" ] ;
+     fhir:Extension.valuePeriod [
+       fhir:Period.start [ fhir:value "2019-06-01"^^xsd:date ]
+     ]
+  ] ;
+  fhir:Organization.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "IDNST" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.250.1.71.4.2.2" ] ;
+     fhir:Identifier.value [ fhir:value "1754567860" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "FINEG" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://finess.esante.gouv.fr" ] ;
+     fhir:Identifier.value [ fhir:value "754567860" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "RPPSRG" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "https://rppsrang.esante.gouv.fr" ] ;
+     fhir:Identifier.value [ fhir:value "F754567860" ]
+  ] ;
+  fhir:Organization.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Organization.type [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types" ] ;
+       fhir:Extension.valueCode [ fhir:value "organizationType" ]
+     ] ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-3307" ] ;
+       fhir:Coding.code [ fhir:value "GEOGRAPHICAL-ENTITY" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types" ] ;
+       fhir:Extension.valueCode [ fhir:value "secteurActiviteRASS" ]
+     ] ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R02-SecteurActivite/FHIR/TRE-R02-SecteurActivite" ] ;
+       fhir:Coding.code [ fhir:value "SA01" ]
+     ]
+  ] ;
+  fhir:Organization.name [ fhir:value "CH EURE-SEINE"] ;
+  fhir:Organization.telecom [
+     fhir:index -1 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "0450636363" ] ;
+     fhir:ContactPoint.rank [ fhir:value "1"^^xsd:positiveInteger ]
+  ], [
+     fhir:index -1 ;
+     fhir:ContactPoint.system [ fhir:value "fax" ] ;
+     fhir:ContactPoint.value [ fhir:value "0450455933" ]
+  ] ;
+  fhir:Organization.address [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R13-Commune/FHIR/TRE-R13-Commune" ] ;
+         fhir:Coding.code [ fhir:value "75114" ]
+       ]
+     ] ;
+     fhir:Address.line [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber" ] ;
+         fhir:Extension.valueString [ fhir:value "96" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType" ] ;
+         fhir:Extension.valueString [ fhir:value "R" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase" ] ;
+         fhir:Extension.valueString [ fhir:value "DIDOT" ]
+       ]
+     ] ;
+     fhir:Address.city [ fhir:value "PARIS" ] ;
+     fhir:Address.postalCode [ fhir:value "75014" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/Organization/158480DP.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

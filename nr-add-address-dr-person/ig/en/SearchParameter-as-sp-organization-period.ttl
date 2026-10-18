@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-organization-period> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "as-sp-organization-period"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: SearchParameter as-sp-organization-period</b></p><a name=\"en-as-sp-organization-period\"> </a><a name=\"en-hcas-sp-organization-period\"> </a><h2>AsOrganiationPeriodSearchParameter</h2><p>Parameter <code>period</code>:<code>date</code></p><div><p>Paramètre de recherche pour récupérer une organisation par période d'activité</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/organization.html\">Organization</a></td></tr><tr><td>Expression</td><td><code>address.extension.where(url='http://hl7.org/fhir/StructureDefinition/organization-period').value</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>"
+  ] ;
+  fhir:SearchParameter.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-organization-period"] ;
+  fhir:SearchParameter.version [ fhir:value "1.2.0-snapshot-2"] ;
+  fhir:SearchParameter.name [ fhir:value "AsOrganiationPeriodSearchParameter"] ;
+  fhir:SearchParameter.status [ fhir:value "active"] ;
+  fhir:SearchParameter.date [ fhir:value "2026-06-29T13:52:00+00:00"^^xsd:dateTime] ;
+  fhir:SearchParameter.publisher [ fhir:value "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ;
+  fhir:SearchParameter.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "monserviceclient.annuaire@esante.gouv.fr" ]
+     ]
+  ] ;
+  fhir:SearchParameter.description [ fhir:value "Paramètre de recherche pour récupérer une organisation par période d'activité"] ;
+  fhir:SearchParameter.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "FR" ] ;
+       fhir:Coding.display [ fhir:value "France (la)" ]
+     ]
+  ] ;
+  fhir:SearchParameter.code [ fhir:value "period"] ;
+  fhir:SearchParameter.base [
+     fhir:value "Organization" ;
+     fhir:index -1
+  ] ;
+  fhir:SearchParameter.type [ fhir:value "date"] ;
+  fhir:SearchParameter.expression [ fhir:value "address.extension.where(url='http://hl7.org/fhir/StructureDefinition/organization-period').value"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-organization-period.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
