@@ -1,5 +1,9 @@
 ### Release 1.2.0 de l'Implementation Guide Annuaire
 
+#### 1.2.0-snapshot-4
+
+* Ajout du profil AsOperationOutcomeMssProfile (erreurs de l'API BAL MSSanté), de 8 exemples et de la page « Gestion des erreurs BAL MSSanté »
+
 #### 1.2.0-snapshot-3
 
 * DR Person : application du profil AsAddressExtendedProfile au champ address, pour aligner sur le pattern existant (AsPractitionerProfile, AsOrganizationProfile) [#312](https://github.com/ansforge/IG-fhir-annuaire/pull/312)
