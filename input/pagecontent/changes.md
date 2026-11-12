@@ -1,8 +1,11 @@
 ### Release 1.2.0 de l'Implementation Guide Annuaire
 
+#### 1.2.0-snapshot-4
+
+* Ajout de l'extension isResponsible sur la BAL MSS de type CAB du Practitioner (une BAL CAB peut être associée à plusieurs Practitioner), avec invariant restreignant son usage aux BAL CAB [#319](https://github.com/ansforge/IG-fhir-annuaire/pull/319)
+
 #### 1.2.0-snapshot-3
 
-* Ajout de l'extension isResponsible sur la BAL MSS de type CAB du Practitioner (une BAL CAB peut être associée à plusieurs Practitioner), avec invariant restreignant son usage aux BAL CAB
 * DR Person : application du profil AsAddressExtendedProfile au champ address, pour aligner sur le pattern existant (AsPractitionerProfile, AsOrganizationProfile) [#312](https://github.com/ansforge/IG-fhir-annuaire/pull/312)
 * Passage du lieu de formation (qualification.issuer) en CodeableConcept plutôt qu'en Reference vers Organization, binding JDV-J235-LieuFormation-EPARS (issue #314) [#315](https://github.com/ansforge/IG-fhir-annuaire/pull/315)
 
