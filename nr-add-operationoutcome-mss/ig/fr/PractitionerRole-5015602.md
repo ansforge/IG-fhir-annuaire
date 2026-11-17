@@ -1,0 +1,81 @@
+# pp16dr-practitioner-role - Annuaire Santé v1.2.0-snapshot-3
+
+## Exemple PractitionerRole: pp16dr-practitioner-role
+
+-------
+
+**French**
+
+-------
+
+version : 0.1; Dernière mise à jour : 2019-08-31 01:00:00+0100; Langue : fr; 
+
+Information Source: [https://annuaire.esante.gouv.fr](https://annuaire.esante.gouv.fr)
+
+Profils: [FR Core Practitioner Role](https://hl7.fr/ig/fhir/core/2.2.0/StructureDefinition-fr-core-practitioner-role.html) version : 2.2.0, [AS Donnée Restreinte PractitionerRole Profile](StructureDefinition-as-dr-practitionerrole.md) version : 1.2.0-snapshot-3
+
+David CHATELIER (Identifiant National de Professionnel de Santé: 810102727017 (use: official)): Activité de soin et de pharmacie, Libéral, indépendant, artisan, commerçant, Fonction non définie at PHARMACIE NOLOT (Entité légale, Pharmacie d'officine) (Identification nationale de structure définie par l’ANS dans le CI_SIS: 1580008803 (use: official)) (https://annuaire.sante.fr#1001500032)
+
+-------
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Actif : | true | Période valide : | 2019-01-31 --> (en cours) |
+| Practitioner: | [David CHATELIER (Identifiant National de Professionnel de Santé: 810102727017 (use: official))](Practitioner-3719500.md) | | |
+| Organization: | [PHARMACIE NOLOT (Entité légale, Pharmacie d'officine) (Identification nationale de structure définie par l’ANS dans le CI_SIS: 1580008803 (use: official))](Organization-481677.md) | | |
+| Role: | * Activité de soin et de pharmacie
+* Libéral, indépendant, artisan, commerçant
+* Fonction non définie
+ | | |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "5015602",
+  "meta" : {
+    "versionId" : "0.1",
+    "lastUpdated" : "2019-08-31T01:00:00.000+01:00",
+    "source" : "https://annuaire.esante.gouv.fr",
+    "profile" : ["https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-role|2.2.0",
+    "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole|1.2.0-snapshot-2"]
+  },
+  "language" : "fr",
+  "identifier" : [{
+    "system" : "https://annuaire.sante.fr",
+    "value" : "1001500032"
+  }],
+  "active" : true,
+  "period" : {
+    "start" : "2019-01-31"
+  },
+  "practitioner" : {
+    "reference" : "Practitioner/3719500"
+  },
+  "organization" : {
+    "reference" : "Organization/481677"
+  },
+  "code" : [{
+    "coding" : [{
+      "system" : "https://mos.esante.gouv.fr/NOS/TRE_R22-GenreActivite/FHIR/TRE-R22-GenreActivite",
+      "code" : "GENR01"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "https://mos.esante.gouv.fr/NOS/TRE_R23-ModeExercice/FHIR/TRE-R23-ModeExercice",
+      "code" : "L"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "https://mos.esante.gouv.fr/NOS/TRE_R21-Fonction/FHIR/TRE-R21-Fonction",
+      "code" : "FON-AU"
+    }]
+  }]
+}
+
+```
