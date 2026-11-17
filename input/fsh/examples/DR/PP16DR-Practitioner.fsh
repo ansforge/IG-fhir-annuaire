@@ -115,6 +115,12 @@ Usage: #example
   * value = "davidchatelier@pro.mssante.fr"
   * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
   * extension[as-mailbox-mss-metadata].extension[type].valueCodeableConcept =  https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#PER
+* telecom[mailbox-mss][+]
+  * system = #email
+  * value = "cabinet.saint-antoine@pro.mssante.fr"
+  * extension[emailType].valueCoding = https://mos.esante.gouv.fr/NOS/TRE_R256-TypeMessagerie/FHIR/TRE-R256-TypeMessagerie#MSSANTE
+  * extension[as-mailbox-mss-metadata].extension[type].valueCodeableConcept = https://mos.esante.gouv.fr/NOS/TRE_R257-TypeBAL/FHIR/TRE-R257-TypeBAL#CAB
+  * extension[as-mailbox-mss-metadata].extension[isResponsible].valueBoolean = true
 
 // Qualification
 * qualification[degree][0]

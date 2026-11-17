@@ -61,6 +61,9 @@ Description: 	"Profil générique créé à partir de FrPractitioner dans le con
 
 * telecom contains mailbox-mss 0..*
 * telecom[mailbox-mss] only as-mailbox-mss
+// isResponsible : uniquement pour les BAL de type CAB (une BAL CAB peut être associée à plusieurs Practitioner)
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata].extension contains as-ext-mailbox-mss-is-responsible named isResponsible 0..1
+* telecom[mailbox-mss].extension[as-mailbox-mss-metadata] obeys as-pract-isresponsible-cab
 
 
 // adresseCorrespondance
